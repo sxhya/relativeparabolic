@@ -1,0 +1,69 @@
+\documentclass[12pt]{amsart}
+\usepackage{amscd, amsmath, verbatim, enumitem, graphicx, amssymb, mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[hypertex]{hyperref}
+\usepackage[backend=biber, citestyle=numeric-comp, natbib=true, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
+\usepackage[all]{xy}
+
+\renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+\newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+\DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
+\DeclareFieldFormat[article]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
+\DeclareFieldFormat[inproceedings]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
+\addbibresource{paper.bib}
+
+\textwidth 16cm 
+\textheight 22cm 
+\headheight 0.5cm 
+\evensidemargin 0.3cm 
+\oddsidemargin 0.2cm
+
+\numberwithin{equation}{section}
+\newcounter{thmcounter} \newcounter{lemmacounter}
+\newtheorem{thm}[thmcounter]{Theorem}
+\newtheorem{prop}[thmcounter]{Proposition}
+\newtheorem{cor}[thmcounter]{Corollary}
+\newtheorem{lemma}[lemmacounter]{Lemma}
+\theoremstyle{definition}
+\newtheorem{rem}[equation]{Remark}
+\newtheorem{example}[equation]{Example}
+\newtheorem{dfn}[equation]{Definition}
+\newtheorem{notation}[equation]{Notation}
+
+\newcommand{\K}{\operatorname{\mathrm{K}}}
+\newcommand{\GG}{\operatorname{\mathrm{G}}}
+\newcommand{\St}{\operatorname{\mathrm{St}}}
+\newcommand{\G}{\operatorname{\mathrm{G}}}
+\newcommand{\E}{\operatorname{\mathrm{E}}}
+\newcommand{\M}{\operatorname{\mathrm{M}}}
+\newcommand{\sr}{\operatorname{\mathrm{sr}}}
+\newcommand{\Um}{\operatorname{\mathrm{Um}}}
+\newcommand{\rk}{\operatorname{\mathrm{rk}}}
+\newcommand{\rA}{\mathrm{A}}
+\newcommand{\rB}{\mathrm{B}}
+\newcommand{\rC}{\mathrm{C}} 
+\newcommand{\rD}{\mathrm{D}} 
+\newcommand{\rE}{\mathrm{E}}
+
+\title{Relative parabolic factorizations of Chevalley groups}
+\keywords {Chevalley groups, relative subgroups, stability for $\K_1 $. {\em Mathematical Subject Classification (2010):} 20G35, 19B14}
+\author {Sergey Sinchuk, Andrei Smolensky}
+\email {sinchukss {\it at} yandex.ru,\ andrei.smolensky {\it at} gmail.com}
+\date {\today}
+
+\begin{document}
+
+\begin{abstract} \end{abstract}
+
+\maketitle
+
+\section {Introduction}\label{intro}
+ 
+\subsection{Acknowledgements}
+Authors of the present paper acknowledge financial support from Russian Science Foundation grant 14-11-00297.
+
+\section {Preliminaries}\label{prelim}
+                        
+\printbibliography
+
+\end{document}
