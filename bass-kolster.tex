@@ -1,0 +1,119 @@
+\begin{thm}\label{thm:BassKolster}
+Let $\Phi$ be a classical ($\rA,\rB,\rC,\rD$) root system of rank $\geqslant2$, $\Delta<\Phi$ its terminal subsystem of the same type, $(R,I)$ a commutative ring and its ideal, satisfying the following assumption:
+\begin{itemize}
+\item $\Phi=\rA_\ell$: $\operatorname{sr}(R,I)\leqslant\ell+1$,
+\item $\Phi=\rB_\ell$: $\operatorname{asr}(R,I)\leqslant\ell$,
+\item $\Phi=\rC_\ell$: $\operatorname{sr}(R,I)\leqslant2\ell$,
+\item $\Phi=\rD_\ell$: $\operatorname{asr}(R,I)\leqslant\ell$.
+\end{itemize}
+Then the principal congruence subgroup $G(\Phi,R,I)$ admits the following relative version of Bass---Kolster decomposition:
+\[ G(\Phi,R,I)=U(\Sigma^+,I)\ U(\Sigma^-,I)\cdot Z\cdot U(\Sigma^-,I)\ U(\Sigma^+,I)\cdot G(\Delta,R,I), \]
+where $\Sigma^\pm=\Phi^\pm\setminus\Delta$ and $Z=\{ z_{-\alpha_\mathrm{max}}(r,1)\mid r\in I \}$.
+\end{thm}
+
+$\Phi$ a root system, $\Delta\subset\Phi$ a terminal subsystem, $R$ a ring, $I\lhd R$.
+
+(!) $G(\Phi,R,I)=G(\Delta,R,I)\cdot E(\Phi,R,I)$.
+
+\textbf{TODO:} reformat all of the below into one subsection (math in section titles does not work with hyperref, apparently)
+
+\subsection{$\rA_n$}
+
+Assuming $sr(R,I)\leqslant n$.
+
+Working with the first column, $(1+r_1,r_2,\ldots,r_n,r_{n+1})^t\in Umd(n+1,R,I)$, $r_i\in I$. Find $c_1,\ldots,c_n\in I$ such that $(1+r_1+c_1r_{n+1},r_2+c_2r_{n+1},\ldots,r_n+c_nr_{n+1})\in Umd(n,R,I)$ and apply $n$ corresponding upper transformations.
+Now find $c_1,\ldots,c_n\in R$ such that $c_1(1+r_1)+c_2r_2+\ldots+c_nr_n=1$, then for $c_i'=c_i\cdot(r_1-r_{n+1})\in I$ one has $c_1'(1+r_1)+c_2'r_2+\ldots+c_n'r_n=r_1-r_{n+1}$. Apply $n$ lower transformations to add $c_i'r_i$ to $r_{n+1}$, so that $r_{n+1}\mapsto r_1$. Now apply $z_\gamma$, $\gamma=-\alpha_\mathrm{max}$. $z_\gamma(-r_1,1)=x_{-\gamma}(1)\cdot x_\gamma(-r_1)\cdot x_{-\gamma}(-1)$. So
+\[
+\begin{pmatrix}
+1+r_1 \\ \vdots \\ r_1
+\end{pmatrix}
+\xmapsto{x_{-\gamma}(-1)}
+\begin{pmatrix}
+1\\ \vdots \\ r_1
+\end{pmatrix}
+\xmapsto{x_\gamma(-r_1)}
+\begin{pmatrix}
+1\\ \vdots \\ 0
+\end{pmatrix}
+\xmapsto{x_{-\gamma}(1)}
+\begin{pmatrix}
+1\\ \vdots \\ 0
+\end{pmatrix}.
+\]
+Now applying $n-1$ lower transformations at level $I$ make the first column trivial. $n$ more transformation will make first row trivial. Thus $n+n+1+(n-1)+n=4n$ transformations will give a matrix from $G(\Delta,R,I)$.
+
+\subsection{$\rC_n$}
+
+\textbf{TODO:} shorten this twice (at least)
+
+Assuming $sr(R,I)\leqslant 2n$.
+First column: $(1+r_1,r_2,\ldots,r_n,r_{-n},\ldots,r_{-1})^t\in Umd(2n,R,I)$. Find $c_1,\ldots,c_{-2}\in I$ such that $(1+r_1+c_1r_{-1},\ldots,r_{-2}+c_{-2}r_{-2})=(1+r_1',\ldots,r_{-1}')\in Umd(2n-1,R,I)$. First add $c_{-i}r_{-1}$ to $r_{-i}$, so that
+\[
+\begin{pmatrix}
+1+r_1 \\ r_i \\ r_{-i} \\ r_{-1}
+\end{pmatrix}
+\mapsto
+\begin{pmatrix}
+1+r_1+\sum c_{-i}r_i\\ r_i \\ r_{-i}+c_{-i}r_{-1} \\ r_{-1}
+\end{pmatrix}=
+\begin{pmatrix}
+1+r_{11} \\ r_i \\ r_{-i}' \\ r_{-1}
+\end{pmatrix}.
+\]
+Denote $\mathfrak{a}=\sum r_{-i}'R\unlhd R$. Now add $c_ir_{-1}$ to $r_i$:
+\[
+\begin{pmatrix}
+1+r_{11} \\ r_i' \\ r_{-i}' \\ r_{-1}
+\end{pmatrix}
+\mapsto
+\begin{pmatrix}
+1+r_{11}+a \\ r_i+c_ir_{-1} \\ r_{-i}' \\ r_{-1}
+\end{pmatrix}=
+\begin{pmatrix}
+1+r_{12} \\ r_i' \\ r_{-i}' \\ r_{-1}
+\end{pmatrix},
+\ a\in\mathfrak{a}.
+\]
+Finally, add $\left(c_1+\sum_{j=2}^n c_jc_{-j}\right)r_{-1}$ to the first row:
+\begin{multline*}
+\left(1+r_1+\sum c_{-i}r_i+a\right)+\left(c_1r_{-1}+\sum c_jc_{-j}r_{-1}\right)=\\
+=(1+r_1+c_1r_{-1})+\sum c_{-i}(r_i+c_ir_{-1})+a=\\
+=1+r_1'+\sum c_{-i}r_i'+a=1+r_1''.
+\end{multline*}
+Note that $\langle 1+r_1'',r_2',\ldots,r_{-2}'\rangle=\langle 1+r_1',r_2',\ldots,r_{-2}'\rangle$, so we made the first $2n-1$ elements to form a unimodular column.
+
+Find $c_1,\ldots,c_{-2}\in I$ such that $c_1(1+r_1)+c_2r_2+\ldots+c_{-2}r_{-2}=r_1-r_{-1}$. Add $c_{-i}r_i$ to $r_{-1}$:
+\[
+\begin{pmatrix}
+1+r_1 \\ r_i \\ r_{-i} \\ r_{-1}
+\end{pmatrix}
+\mapsto
+\begin{pmatrix}
+1+r_1 \\ r_i+c_{-i}r_1 \\ r_{-i} \\ r_{-1}+\sum s_{-i}r_{-i}
+\end{pmatrix}=
+\begin{pmatrix}
+1+r_1 \\ r_i' \\ r_{-i} \\ r_{-11}
+\end{pmatrix}.
+\]
+Then add $c_ir_i'=c_i(r_1+c_{-i}r_{-i})$ to $r_{-11}$:
+\[
+1+r_1\mapsto 1+r_1,\quad r_{-11}\mapsto r_{-1}+\sum c_{-i}r_{-i}+\sum c_i(r_i+c_{-i}r_1)=r_{-12}.
+\]
+Next add $(c_1-\sum c_ic_{-i})(1+r_1)$ to $r_{-12}$:
+\begin{multline*}
+r_{-12}\mapsto r_{-1}+\sum c_{-i}r_{-i}+\sum c_i(r_i+c_{-i}(1+r_1))-\sum c_ic_{-i}(1+r_1)=\\=r_{-1}+c_1(1+r_1)+\sum(c_ir_i+c_{-i}r_{-i})=r_{-1}+(r_1-r_{-1})=r_1.
+\end{multline*}
+Again, as in case of $\rA_n$, apply $z_\gamma(-r_1,1)$ with $\gamma=-\alpha_\mathrm{max}$.
+\[
+\begin{pmatrix}1+r_1 \\ \vdots \\ r_1\end{pmatrix}
+\xmapsto{x_{-\gamma}(-1)}
+\begin{pmatrix}1 \\ \vdots \\ r_1\end{pmatrix}
+\xmapsto{x_\gamma(-r_1)}
+\begin{pmatrix}1 \\ \vdots \\ 0\end{pmatrix}
+\xmapsto{x_{-\gamma}(1)}
+\begin{pmatrix}1 \\ \vdots \\ 0\end{pmatrix}.
+\]
+Now apply $2n-2$ lower transformation to obtain zeroes on positions $i=2,\ldots,-2$, that will also add $\sum (r_i+r_{-i})$ to $r_{-1}$, so by one more transformation one can make the first column trivial. The same can be done with the first row, so in total we used $8n-3$ transformations.
+
+\subsection{$\rB_n$}
+\subsection{$\rD_n$}

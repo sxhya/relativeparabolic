@@ -1,7 +1,7 @@
 \documentclass[12pt]{amsart}
-\usepackage{amscd, amsmath, verbatim, enumitem, graphicx, amssymb, mathtools}
+\usepackage{amscd, amsmath, verbatim, enumitem, graphicx, amssymb, mathtools, xfrac}
 \usepackage[utf8]{inputenc}
-\usepackage[hypertex]{hyperref}
+%\usepackage{hyperref}
 \usepackage[backend=biber, citestyle=numeric-comp, natbib=true, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
 \usepackage[all]{xy}
 
@@ -30,23 +30,23 @@
 \newtheorem{dfn}[equation]{Definition}
 \newtheorem{notation}[equation]{Notation}
 
-\newcommand{\K}{\operatorname{\mathrm{K}}}
-\newcommand{\GG}{\operatorname{\mathrm{G}}}
-\newcommand{\St}{\operatorname{\mathrm{St}}}
-\newcommand{\G}{\operatorname{\mathrm{G}}}
-\newcommand{\E}{\operatorname{\mathrm{E}}}
-\newcommand{\M}{\operatorname{\mathrm{M}}}
-\newcommand{\sr}{\operatorname{\mathrm{sr}}}
-\newcommand{\Um}{\operatorname{\mathrm{Um}}}
-\newcommand{\rk}{\operatorname{\mathrm{rk}}}
-\newcommand{\rA}{\mathrm{A}}
-\newcommand{\rB}{\mathrm{B}}
-\newcommand{\rC}{\mathrm{C}} 
-\newcommand{\rD}{\mathrm{D}} 
-\newcommand{\rE}{\mathrm{E}}
+\DeclareMathOperator{\K}{K}
+\DeclareMathOperator{\G}{G}
+\DeclareMathOperator{\St}{St}
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\M}{M}
+\DeclareMathOperator{\sr}{sr}
+\DeclareMathOperator{\asr}{asr}
+\DeclareMathOperator{\Um}{Um}
+\DeclareMathOperator{\rk}{rk}
+\newcommand{\rA}{\mathsf{A}}
+\newcommand{\rB}{\mathsf{B}}
+\newcommand{\rC}{\mathsf{C}} 
+\newcommand{\rD}{\mathsf{D}} 
+\newcommand{\rE}{\mathsf{E}}
 
 \title{Relative parabolic factorizations of Chevalley groups}
-\keywords {Chevalley groups, relative subgroups, stability for $\K_1 $. {\em Mathematical Subject Classification (2010):} 20G35, 19B14}
+\keywords {Chevalley groups, relative subgroups, stability for $\K_1$. {\em Mathematical Subject Classification (2010):} 20G35, 19B14}
 \author {Sergey Sinchuk, Andrei Smolensky}
 \email {sinchukss {\it at} yandex.ru,\ andrei.smolensky {\it at} gmail.com}
 \date {\today}
@@ -57,13 +57,19 @@
 
 \maketitle
 
-\section {Introduction}\label{intro}
+\section {Introduction}\label{sec:intro}
  
 \subsection{Acknowledgements}
 Authors of the present paper acknowledge financial support from Russian Science Foundation grant 14-11-00297.
 
-\section {Preliminaries}\label{prelim}
-                        
+\section {Preliminaries}\label{sec:prelim}
+
+\section{Bass---Kolster decomposition}\label{sec:bass-kolster}
+\input{bass-kolster}
+
+\section{Bounded generation}\label{sec:boundgen}
+\input{congrsubgr-boundgen}
+
 \printbibliography
 
 \end{document}

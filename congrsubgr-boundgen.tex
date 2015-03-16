@@ -1,0 +1,79 @@
+
+\subsection{Relative stable rank 1}
+\begin{lemma}\label{lemma:srRI1}
+If $sr(R,I)=1$, the width of $SL(2,R,I)$ with respect to $z_\alpha$ does not exceed $4$.
+\end{lemma}
+\begin{proof}
+
+Let $A=\begin{pmatrix}a & b \\ c & d\end{pmatrix}\in SL(2,R,I)$. First column is $I$-unimodular, therefore there exists $z\in I$ such that $a+cz\in R^*$. Multiply $A$ by $x_{12}(z)$ from left to obtain invertible element in the upper left corner. Applying $x_{21}(-c/a)$ from left and $x_{12}(-b/a)$ from right, we obtain a diagonal matrix. Thus
+\begin{multline*}
+A=x_{12}(-z)\cdot x_{21}(c/a)\cdot
+\begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
+\cdot x_{12}(b/a)=\\
+=x_{12}(-z)\cdot
+\begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
+\cdot x_{21}(y) \cdot x_{12}(b/a),
+\end{multline*}
+where all the coefficients in transvections lie in $I$ and $\varepsilon\in 1+I$. The above formula is a relative version of Gauss decomposition.
+Note that
+\begin{multline*}
+\begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix} =
+\begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix}
+\begin{pmatrix} 1 & 0 \\ 1-\varepsilon & 1 \end{pmatrix}
+\begin{pmatrix} 1 & 1/\varepsilon \\ 0 & 1 \end{pmatrix}
+\begin{pmatrix} 1 & 0 \\ \varepsilon^2-\varepsilon & 1 \end{pmatrix} =\\=
+\begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix}
+\begin{pmatrix} 1 & 0 \\ 1-\varepsilon & 1 \end{pmatrix}
+\begin{pmatrix} 1 & 1+z \\ 0 & 1 \end{pmatrix}
+\begin{pmatrix} 1 & 1/\varepsilon-1-z \\ 0 & 1 \end{pmatrix}
+\begin{pmatrix} 1 & 0 \\ \varepsilon^2-\varepsilon & 1 \end{pmatrix},
+\end{multline*}
+therefore
+\[
+A=z_{21}(1-\varepsilon,-1-z)\cdot x_{12}(1/\varepsilon-1-z)\cdot x_{21}(\varepsilon^2-\varepsilon+y)\cdot x_{12}(b/a). \qedhere
+\]
+\end{proof}
+
+\subsection{Dedekind rings of arithmetic type}
+\subsubsection{Number field case}
+\paragraph{$\mathbb{Z}[\sfrac{1}{p}]$.}
+\textbf{TODO:} Insert here Moree's lemma on primitive roots
+\begin{lemma}\label{lemma:Z1p}
+Assume GRH. If $R=\mathbb{Z}[\sfrac{1}{p}]$ and $I\lhd R$, the width of $SL(2,R,I)$ does not exceed $6$.
+\end{lemma}
+\begin{proof}
+$I\lhd\mathbb{Z}[\sfrac{1}{p}]$, $I=(m)$, $m\in\mathbb{Z}$, $p\nmid m$.
+
+\[ g=\begin{pmatrix}
+x & y \\ z & w
+\end{pmatrix},\quad x =p^\alpha a,\quad y =p^\beta bm, \]
+where $a,b\in\mathbb{Z}$, $p\nmid a,b$ and $\alpha,\beta\in\mathbb{Z}$.
+
+\textsc{Case 1:} $\alpha\geqslant\beta$. Since $p^{\alpha-\beta}a\perp bm^2$ and $p\perp bm^2$, there exist infinitely many rational primes $q$ of the form $p^{\alpha-\beta}a+bm^2k$, such that $p$ is a primitive root modulo $q$. One may choose $q$ prime to $b$. Then
+\[ g_1=g\cdot x_{21}(mk) =
+\begin{pmatrix} p^\beta q & p^\beta bm \\ * & * \end{pmatrix}.\]
+$\exists u\geqslant 1: p^u\equiv b\mod q$, say $p^u=b+lq$. Then
+\[ g_2 = g_1\cdot x_{12}(ml) =
+\begin{pmatrix} p^\beta q & mp^{\beta+u} \\ * & * \end{pmatrix}. \]
+$g_2\equiv 1\mod m$, thus $p^\beta q=1+cm$.
+\begin{align*}
+g_3 = & g_2\cdot x_{21}\left(\dfrac{-c}{p^{\beta+u}}\right) =
+\begin{pmatrix} 1 & mp^{\beta+u} \\ * & * \end{pmatrix}, \\
+g_4 = & g_3\cdot x_{12}(-mp^{\beta+u}) =
+\begin{pmatrix} 1 & 0 \\ * & * \end{pmatrix}, \\
+g_5 = & g_4\cdot x_{21}\left(\dfrac{c}{p^{\beta+u}}\right) =
+\begin{pmatrix} 1 & 0 \\ * & * \end{pmatrix}.
+\end{align*}
+Note that $g_5=g_2\cdot z_{12}\left(-mp^{\beta+u},\dfrac{c}{p^{\beta+u}}\right)$ and that two other coefficients in transvections are multiples of $m$. Thus in this case the length of $g$ does not exceed $4$: $g=x_{21}z_{12}x_{12}x_{21}$.
+
+\textsc{Case 2:} $\alpha<\beta$. Since $\mathbb{Z}[\sfrac{1}{p}]/I$ is finite, $\exists k>0$ such that $p^k\equiv 1\mod I$. One can choose $k>\beta-\alpha$. Then $k+\alpha>-k+\beta$ and
+\[ g\cdot h(p^k) =
+\begin{pmatrix} p^\alpha a & p^\beta bm \\ * & * \end{pmatrix}
+\begin{pmatrix} p^k & 0 \\ 0 & p^{-k} \end{pmatrix}=
+\begin{pmatrix} p^{k+\alpha} a & p^{-k+\beta} bm \\ * & * \end{pmatrix}.
+\]
+One can apply Case 1 fot the latter, so
+$g=x_{21}z_{12}x_{12}x_{21}h^{-1}$,
+and $x_{12}h^{-1}$ can be processed in the same way, as in Lemma \ref{lemma:srRI1}:
+$g=x_{21}z_{12}x_{12}\cdot z_{12}x_{21}x_{12}$.
+\end{proof}
