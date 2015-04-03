@@ -1,3 +1,34 @@
-TODO: $\sr(R,I)$
+As we will be mainly concerned with applications to stability of $K_1$ of Chevalley groups, our treatment of stability conditions is restricted to the case of commutative $R$. 
+We refer the reader to~\cite{Ba64, Va69, Va71} for a more general exposition.
 
-TODO: $\asr(R,I)$
+\subsection{Stable rank}
+Recall the definition of {\it stable rank} introduced by H.~Bass and L.~Vaserstein (see~\cite{Ba64, Va69}).
+\begin{dfn} Recall that a row $a=(a_1,\ldots, a_n)\in {}^n\!R$ is called {\it $I$-unimodular} if elements $a_1-1, a_2, \ldots, a_n$ are contained in $I$ while $a_1, a_2, \ldots, a_n$ generate $R$ as an ideal.\end{dfn}
+A column $b \in R^n$ will be called $I$-unimodular if its transpose $b^t$ is an $I$- unimodular row. We denote the set of all $I$-unimodular rows (resp. columns) by $\Umd(n,R,I)$ (resp. $\Ums(n,R,I)$).
+When $R=I$ we refer to $R$-unimodular rows and columns as simply unimodular.
+
+\begin{lemma} \label{lemma:relstrlemma} For any $I$-unimodular row $a=(a_1, \ldots, a_n)$ there exists $I$-unimodular column $b=(b_1,\ldots, b_n)^T$ such that $ab = \sum\limits_{i=1}^n a_i b_i = 1$. \end{lemma}
+
+\begin {dfn} An $I$-unimodular row $a=(a_1,\ldots a_{n+1})$ is called {\it stable} if one can choose $b_1,\ldots, b_n\in R$ such that
+row $(a_1 + a_{n+1}b_1,\ldots, a_{n}+ a_{n+1}b_n)$ is also $I$-unimodular. if, moreover, elements $b_1,\ldots, b_n$ can be chosen from  $I$ then such $a$ will be called {\it $I$-stable}. \end{dfn} 
+
+We say that a pair $(R, I)$ satisfies stable range condition $\SR_n(R, I)$ if any $I$-unimodular row of length $n+1$ is stable.
+\begin{lemma}\label{lemma:relstrlemma2}\strut\begin{enumerate}\item The condition $\SR_n(R, I)$ implies $\SR_m(R,I)$ for any $m\geq n$.
+\item The condition $\SR_n(R, I)$ implies that any $I$-unimodular row of length $n+1$ is $I$-stable.\end{enumerate}\end{lemma}
+
+By definition, the {\it relative stable rank} $\sr(R, I)$ of a pair $(R, I)$ is the smallest natural number $n$ such that condition $\SR_n(R, I)$ holds.
+If $\SR_n(R, I)$ is not satisfied for any $n>0$ we set $\sr(R, I)=\infty$.
+
+The following proposition summarizes basic properties of stable ranks.
+\begin{prop} \label{prop:sr_properties} Let $R$ be arbitary commutative unital ring and let $I\trianglelefteq R$ be its ideal.
+ \begin{itemize}
+  \item For any ideal $J\trianglelefteq R$, $J\subseteq I$ one has $$\sr(R, I)\leq\sr(R),\quad \sr(R/J, I/J)\leq \sr(R, I).$$
+  \item Stable rank of a direct product of rings is equal to the maximum of stable ranks of its factors: $$\sr(\prod\limits_{i=1}^n R_i) = \max\limits_{i=1}^n\left(\sr(R_i)\right).$$
+  \item Stable rank does not change after taking quotient modulo nil-radical: $\sr(R)=\sr(R/\Rad(R))$.
+ \end{itemize}\end{prop} \begin{proof} See~\cite{Va71}. \end{proof}
+
+\begin{example} Since the stable rank of a field is one, one can conclude from the previous proposition that $\sr(R)=1$ for any semilocal ring $R$. \end{example}
+
+\subsection{Absolute stable rank}
+
+%TODO: $\asr(R,I)$
