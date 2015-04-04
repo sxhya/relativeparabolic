@@ -34,15 +34,16 @@ For a row $a=(a_1,\ldots, a_n) \in {}^n\!R$ denote by $\mathfrak{I}(u)$ the inte
 It is easy to see that a row $a\in R^n$ is unimodular iff $\mathfrak{I}(u)=R$. 
 Clearly, for any $g\in\GL(n, R)$ one has $\mathfrak{I}(u\cdot g)=\mathfrak{I}(u)$.
 
-A ring $R$ is said to satisfy condition $\ASR_{n}(R)$ if for any row $(a_1,\ldots,a_{n+1})^t\in {}^{n+1}\!R$ 
+A ring $R$ is said to satisfy condition $\ASR_{n}(R, I)$ if for any row $a$ such that $a_1-1,\ldots,a_{n+1}\in I$ 
 one can find elements $b_1,\ldots b_n\in R$ such that $$\mathfrak{I}(a_1+b_1a_{n+1},\ldots,a_n+b_na_{n+1})^t= \mathfrak{I}(a_1,\ldots,a_{n+1})^t.$$
-It is easy to see that $\ASR_m(R)$ implies $\ASR_n(R)$ for any $n\ge m$. 
-By definition, the {\it absolute stable rank \/} $\asr(R)$ is the smallest natural $n$ such that $\ASR_n(R)$ holds.
-Similarly, we set $\asr(R)=\infty$ if $\ASR_n(R)$ does not hold for any $n$. 
+It is easy to see that $\ASR_m(R, I)$ implies $\ASR_n(R, I)$ for any $n\ge m$. 
+By definition, the {\it absolute relative stable rank} $\asr(R, I)$ is the smallest natural $n$ such that $\ASR_n(R, I)$ holds.
+Similarly, we set $\asr(R, I)=\infty$ if such $n$ does not exist. 
+When $I=R$ we call $\asr(R, R)$ simply {\it absolute stable rank} of $R$ and denote it by $\asr(R)$.
 
 Let $R$ be a commutative ring. We denote by $\Max(R)$ its {\it maximum spectrum} i.e. the set of maximal ideals of $R$ equipped with Zariski topology.
 The following result gives an upper estimate for the absolute stable rank.~\cite[Theorem~2.3]{EO}, \cite[Theorem~3.7]{MKV}).
 \begin{thm} Let $R$ be a commutative ring whose maximum spectrum 
 $\Max(R)$ can be covered with a finite family of subsets $X_1\ldots, X_m$ such that the topological dimension of every subset $X_i$
 does not exceed some number $d$. Then $\asr(A)\leq d+1$. \end{thm}
-Clearly one has \begin{equation}\nonumber \sr(R)\leq \asr(R)\leq \dim(\Max(R))+1\leq \dim(\Spec(R))+1.\end{equation}
+Clearly one has \begin{equation}\nonumber \sr(R, I)\leq \asr(R, I)\leq \asr(R) \leq \dim(\Max(R))+1\leq \dim(\Spec(R))+1.\end{equation}
