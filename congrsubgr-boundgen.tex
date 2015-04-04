@@ -1,11 +1,12 @@
-
-\subsection{Relative stable rank 1}
+We now give an application of the above decomposition to the problem of bounded generation.
+\begin{dfn}
+Given a group $G$ and a set of generators $X$ (for simplicity we assume $X=X^{-1}$ and $1\in X$), one says that the width of $G$ with respect to $X$ equals $N$, if $G=X^N$, i.e. every element of $G$ can be represented as a product of at most $N$ generators from $X$.
+\end{dfn}
 \begin{lemma}\label{lemma:srRI1}
-If $sr(R,I)=1$, the width of $SL(2,R,I)$ with respect to $z_\alpha$ does not exceed $4$.
+If $\sr(R,I)=1$, the width of $\SL(2,R,I)$ with respect to $z_\alpha$ does not exceed $4$.
 \end{lemma}
 \begin{proof}
-
-Let $A=\begin{pmatrix}a & b \\ c & d\end{pmatrix}\in SL(2,R,I)$. First column is $I$-unimodular, therefore there exists $z\in I$ such that $a+cz\in R^*$. Multiply $A$ by $x_{12}(z)$ from left to obtain invertible element in the upper left corner. Applying $x_{21}(-c/a)$ from left and $x_{12}(-b/a)$ from right, we obtain a diagonal matrix. Thus
+Let $A=\begin{psmallmatrix}a & b \\ c & d\end{psmallmatrix}\in\SL(2,R,I)$. The first column is $I$-unimodular, therefore there exists $z\in I$ such that $a+cz\in R^*$. Multiply $A$ by $x_{12}(z)$ from the left to obtain an invertible element in the upper left corner. Applying $x_{21}(-c/a)$ from the left and $x_{12}(-b/a)$ from the right, we obtain a diagonal matrix. Thus
 \begin{multline*}
 A=x_{12}(-z)\cdot x_{21}(c/a)\cdot
 \begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
@@ -33,41 +34,40 @@ therefore
 A=z_{21}(1-\varepsilon,-1-z)\cdot x_{12}(1/\varepsilon-1-z)\cdot x_{21}(\varepsilon^2-\varepsilon+y)\cdot x_{12}(b/a). \qedhere
 \]
 \end{proof}
-
-\subsection{Dedekind rings of arithmetic type}
-\subsubsection{Number field case}
-%\paragraph{$\mathbb{Z}[\sfrac{1}{p}]$.}
-\textbf{TODO:} Insert here Moree's lemma on primitive roots
+\begin{rem}
+In the above lemma one can restrict himself to the generators of the form $x_\alpha(s)$ and $z_\alpha(s,1)$, $s\in I$, and have an estimate of $5$ factors. It might be useful since $\left\{z_\alpha(s,1)\mid s\in I\right\}=\X_\alpha(I)^{x_\alpha(1)}$ if a $1$-parameter subgroup.
+\end{rem}
+\begin{lemma}
+Let $p$ be a rational prime, $c\perp d$ two coprime integers and $p\perp d$. Then under the assumption of the Generalized Riemann Hypothesis there exist infinitely many primes $q\equiv c\pmod{d}$, such that $p$ is a primitive root modulo $q$.
+\end{lemma}
 \begin{lemma}\label{lemma:Z1p}
-Assume GRH. If $R=\mathbb{Z}[\sfrac{1}{p}]$ and $I\lhd R$, the width of $SL(2,R,I)$ does not exceed $6$.
+Assume GRH. If $R=\mathbb{Z}[\sfrac{1}{p}]$ and $I\lhd R$, the width of $\SL(2,R,I)$ does not exceed $6$.
 \end{lemma}
 \begin{proof}
-$I\lhd\mathbb{Z}[\sfrac{1}{p}]$, $I=(m)$, $m\in\mathbb{Z}$, $p\nmid m$.
-
-\[ g=\begin{pmatrix}
-x & y \\ z & w
-\end{pmatrix},\quad x =p^\alpha a,\quad y =p^\beta bm, \]
-where $a,b\in\mathbb{Z}$, $p\nmid a,b$ and $\alpha,\beta\in\mathbb{Z}$.
-
+Write $I=(m)$ for some $m\in\mathbb{Z}$, $p\nmid m$. Fix $g\in\SL(2,R,I)$:
+\[ g=\begin{pmatrix}x & y \\ z & w\end{pmatrix},\quad
+\begin{matrix*}[l]
+x=p^\alpha a,\quad & a,b,\alpha,\beta\in\mathbb{Z}, \\ y=p^\beta bm, & p\nmid a,b.
+\end{matrix*}\]
 \textsc{Case 1:} $\alpha\geqslant\beta$. Since $p^{\alpha-\beta}a\perp bm^2$ and $p\perp bm^2$, there exist infinitely many rational primes $q$ of the form $p^{\alpha-\beta}a+bm^2k$, such that $p$ is a primitive root modulo $q$. One may choose $q$ prime to $b$. Then
 \[ g_1=g\cdot x_{21}(mk) =
 \begin{pmatrix} p^\beta q & p^\beta bm \\ * & * \end{pmatrix}.\]
-$\exists u\geqslant 1: p^u\equiv b\mod q$, say $p^u=b+lq$. Then
+There exists $u\geqslant 1$ such that $p^u\equiv b\pmod q$, say $p^u=b+lq$. Then
 \[ g_2 = g_1\cdot x_{12}(ml) =
 \begin{pmatrix} p^\beta q & mp^{\beta+u} \\ * & * \end{pmatrix}. \]
-$g_2\equiv 1\mod m$, thus $p^\beta q=1+cm$.
+$g_2\equiv 1\pmod m$, thus $p^\beta q=1+cm$ for some $c$.
 \begin{align*}
 g_3 = & g_2\cdot x_{21}\left(\dfrac{-c}{p^{\beta+u}}\right) =
 \begin{pmatrix} 1 & mp^{\beta+u} \\ * & * \end{pmatrix}, \\
-g_4 = & g_3\cdot x_{12}(-mp^{\beta+u}) =
+g_4 = & g_3\cdot x_{12}\left(-mp^{\beta+u}\right) =
 \begin{pmatrix} 1 & 0 \\ * & * \end{pmatrix}, \\
 g_5 = & g_4\cdot x_{21}\left(\dfrac{c}{p^{\beta+u}}\right) =
 \begin{pmatrix} 1 & 0 \\ * & * \end{pmatrix}.
 \end{align*}
-Note that $g_5=g_2\cdot z_{12}\left(-mp^{\beta+u},\dfrac{c}{p^{\beta+u}}\right)$ and that two other coefficients in transvections are multiples of $m$. Thus in this case the length of $g$ does not exceed $4$: $g=x_{21}z_{12}x_{12}x_{21}$.
+Note that $g_5=g_2\cdot z_{12}\left(-mp^{\beta+u},c/p^{\beta+u}\right)$ and that the two other coefficients in the transvections are multiples of $m$. Thus in this case the length of $g$ does not exceed $4$: $g=x_{21}z_{12}x_{12}x_{21}$.
 
-\textsc{Case 2:} $\alpha<\beta$. Since $\mathbb{Z}[\sfrac{1}{p}]/I$ is finite, $\exists k>0$ such that $p^k\equiv 1\mod I$. One can choose $k>\beta-\alpha$. Then $k+\alpha>-k+\beta$ and
-\[ g\cdot h(p^k) =
+\textsc{Case 2:} $\alpha<\beta$. Since $\mathbb{Z}[\sfrac{1}{p}]/I$ is finite, there exists $k>0$ such that $p^k\equiv 1\pmod I$. One can choose $k>\beta-\alpha$. Then $k+\alpha>-k+\beta$ and
+\[ g\cdot h\left(p^k\right) =
 \begin{pmatrix} p^\alpha a & p^\beta bm \\ * & * \end{pmatrix}
 \begin{pmatrix} p^k & 0 \\ 0 & p^{-k} \end{pmatrix}=
 \begin{pmatrix} p^{k+\alpha} a & p^{-k+\beta} bm \\ * & * \end{pmatrix}.
