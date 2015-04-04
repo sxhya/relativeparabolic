@@ -72,8 +72,35 @@ Note that $g_5=g_2\cdot z_{12}\left(-mp^{\beta+u},c/p^{\beta+u}\right)$ and that
 \begin{pmatrix} p^k & 0 \\ 0 & p^{-k} \end{pmatrix}=
 \begin{pmatrix} p^{k+\alpha} a & p^{-k+\beta} bm \\ * & * \end{pmatrix}.
 \]
-One can apply Case 1 fot the latter, so
+One can apply Case 1 for the latter, so
 $g=x_{21}z_{12}x_{12}x_{21}h^{-1}$,
 and $x_{12}h^{-1}$ can be processed in the same way, as in Lemma \ref{lemma:srRI1}:
 $g=x_{21}z_{12}x_{12}\cdot z_{12}x_{21}x_{12}$.
+\end{proof}
+Let $\mathcal{O}_S$ be a Dedekind ring of arithmetic type, defined by a finite set $S$ of places of some global field, and $I$ an ideal in $\mathcal{O}_S$. It is shown in [?] that $E(\Phi,I)$ has finite width with respect to $\{x_\alpha(s)\mid\alpha\in\Phi,\ s\in I\}$. From this one immediately gets the bounded generation for $\G(\Phi,R,I)$.
+
+Assume for simplicity that $\K_1(\Phi,\mathcal{O}_S,I)=1$.
+\begin{lemma}
+If $\rk\Phi\geqslant2$, then $\G(\Phi,\mathcal{O}_S,I)$ has finite width with respect to $z_\alpha$.
+\end{lemma}
+\begin{proof}
+Because of the Bass---Kolster decomposition it suffices to express every element $g$ of $\SL(2,\mathcal{O}_S,I)$ as a product of a bounded number of generators in a group of rank $2$. Write
+\[ g=\begin{pmatrix}1+a & b \\ c & 1+d\end{pmatrix}\in\SL(2,\mathcal{O}_S,I),\quad a,b,c,d\in I. \]
+
+The condition $\det(g)=1$ implies $a+d=bc-ad\in I^2$.
+
+$G(I,I)$ denotes the Vaserstein's congruence subgroup
+\[ G(I,I)=\left\{ \begin{pmatrix}1+a & b \\ c & 1+d\end{pmatrix}\in\SL(2,\mathcal{O}_S,I)\;\middle|\; a,d\in I^2,\ b,c\in I \right\}. \]
+Note that $g\cdot z_{21}(a,1)\in G(I,I)$. Indeed,
+\[
+\begin{pmatrix}
+1+a & b \\ c & 1+d
+\end{pmatrix} \xmapsto{\cdot z_{21}(a,1)}
+\begin{pmatrix}
+1+ba-a^2 & b-a-ba-a^2 \\ c+a+ad-ac & 1+bc-ac
+\end{pmatrix} \in G(I,I).
+\]
+Now for a matrix $g'=\begin{psmallmatrix}1+a & b \\ c & 1+d\end{psmallmatrix}\in G(I,I)$ the matrix $x_{21}(-c)\cdot g'\cdot x_{12}(-b)\in\G(2,\mathcal{O}_S,I^2)$. Since for root systems $\Phi\neq\rC_\ell$ with $\rk\Phi\geqslant2$ one has $\E(\Phi,\mathcal{O}_S,I^2)\leqslant\E(\Phi,I)$, we are done for all groups but symplectic.
+
+\textbf{TODO:} What happens for $\rC_\ell$?
 \end{proof}
