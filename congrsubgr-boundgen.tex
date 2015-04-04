@@ -37,9 +37,11 @@ A=z_{21}(1-\varepsilon,-1-z)\cdot x_{12}(1/\varepsilon-1-z)\cdot x_{21}(\varepsi
 \begin{rem}
 In the above lemma one can restrict himself to the generators of the form $x_\alpha(s)$ and $z_\alpha(s,1)$, $s\in I$, and have an estimate of $5$ factors. It might be useful since $\left\{z_\alpha(s,1)\mid s\in I\right\}=\X_\alpha(I)^{x_\alpha(1)}$ if a $1$-parameter subgroup.
 \end{rem}
+The following lemma is a corollary of Theorems~5.7 and 5.8 of \cite{LenMorStePrimitiveRoot}.
 \begin{lemma}
 Let $p$ be a rational prime, $c\perp d$ two coprime integers and $p\perp d$. Then under the assumption of the Generalized Riemann Hypothesis there exist infinitely many primes $q\equiv c\pmod{d}$, such that $p$ is a primitive root modulo $q$.
 \end{lemma}
+One can modify Lemma~6 of \cite{VavSmSuUnitrEng} (see also \cite{VseUnitrZ1p}) in the following way:
 \begin{lemma}\label{lemma:Z1p}
 Assume GRH. If $R=\mathbb{Z}[\sfrac{1}{p}]$ and $I\lhd R$, the width of $\SL(2,R,I)$ does not exceed $6$.
 \end{lemma}
@@ -77,7 +79,7 @@ $g=x_{21}z_{12}x_{12}x_{21}h^{-1}$,
 and $x_{12}h^{-1}$ can be processed in the same way, as in Lemma \ref{lemma:srRI1}:
 $g=x_{21}z_{12}x_{12}\cdot z_{12}x_{21}x_{12}$.
 \end{proof}
-Let $\mathcal{O}_S$ be a Dedekind ring of arithmetic type, defined by a finite set $S$ of places of some global field, and $I$ an ideal in $\mathcal{O}_S$. It is shown in [?] that $E(\Phi,I)$ has finite width with respect to $\{x_\alpha(s)\mid\alpha\in\Phi,\ s\in I\}$. From this one immediately gets the bounded generation for $\G(\Phi,R,I)$.
+Let $\mathcal{O}_S$ be a Dedekind ring of arithmetic type, defined by a finite set $S$ of places of some global field, and $I$ an ideal in $\mathcal{O}_S$. It is shown in \cite{TavgenThesis} that $E(\Phi,I)$ has finite width with respect to $\{x_\alpha(s)\mid\alpha\in\Phi,\ s\in I\}$. From this one immediately gets the bounded generation for $\G(\Phi,R,I)$.
 
 Assume for simplicity that $\K_1(\Phi,\mathcal{O}_S,I)=1$.
 \begin{lemma}
@@ -89,8 +91,8 @@ Because of the Bass---Kolster decomposition it suffices to express every element
 
 The condition $\det(g)=1$ implies $a+d=bc-ad\in I^2$.
 
-$G(I,I)$ denotes the Vaserstein's congruence subgroup
-\[ G(I,I)=\left\{ \begin{pmatrix}1+a & b \\ c & 1+d\end{pmatrix}\in\SL(2,\mathcal{O}_S,I)\;\middle|\; a,d\in I^2,\ b,c\in I \right\}. \]
+Define the Vaserstein's congruence subgroup as
+\[ G(I,I)=\left\{ \begin{pmatrix}1+a & b \\ c & 1+d\end{pmatrix}\in\SL(2,\mathcal{O}_S)\;\middle|\; a,d\in I^2,\ b,c\in I \right\}. \]
 Note that $g\cdot z_{21}(a,1)\in G(I,I)$. Indeed,
 \[
 \begin{pmatrix}
