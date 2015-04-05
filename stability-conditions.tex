@@ -3,47 +3,66 @@ We refer the reader to~\cite{Ba64, Va69, Va71} for a more general exposition.
 
 \subsection{Stable rank}
 Recall the definition of {\it stable rank} introduced by H.~Bass and L.~Vaserstein (see~\cite{Ba64, Va69}).
-\begin{dfn} Recall that a row $a=(a_1,\ldots, a_n)\in {}^n\!R$ is called {\it $I$-unimodular} if elements $a_1-1, a_2, \ldots, a_n$ are contained in $I$ while $a_1, a_2, \ldots, a_n$ generate $R$ as an ideal.\end{dfn}
-A column $b \in R^n$ will be called $I$-unimodular if its transpose $b^t$ is an $I$- unimodular row. We denote the set of all $I$-unimodular rows (resp. columns) by $\Umd(n,R,I)$ (resp. $\Ums(n,R,I)$).
-When $R=I$ we refer to $R$-unimodular rows and columns as simply unimodular.
+\begin{dfn}
+Recall that a row $a=(a_1,\ldots,a_n)\in{}^n\!R$ is called {\it $I$-unimodular} if elements $a_1-1,a_2,\ldots,a_n$ are contained in $I$ while $a_1,a_2,\ldots,a_n$ generate $R$ as an ideal.
+\end{dfn}
+A column $b \in R^n$ will be called $I$-unimodular if its transpose $b^t$ is an $I$-unimodular row. We denote the set of all $I$-unimodular rows (resp. columns) by $\Umd(n,R,I)$ (resp. $\Ums(n,R,I)$).
+When $R=I$ we refer to $R$-unimodular rows and columns as unimodular.
 
-\begin{lemma} \label{lemma:relstrlemma} For any $I$-unimodular row $a=(a_1, \ldots, a_n)$ there exists $I$-unimodular column $b=(b_1,\ldots, b_n)^T$ such that $ab = \sum\limits_{i=1}^n a_i b_i = 1$. \end{lemma}
+\begin{lemma}\label{lemma:relstrlemma}
+For any $I$-unimodular row $a=(a_1,\ldots,a_n)$ there exists $I$-unimodular column $b=(b_1,\ldots,b_n)^t$ such that $ab=\sum\limits_{i=1}^n a_i b_i=1$.
+\end{lemma}
 
-\begin {dfn} An $I$-unimodular row $a=(a_1,\ldots a_{n+1})$ is called {\it stable} if one can choose $b_1,\ldots, b_n\in R$ such that
-row $(a_1 + a_{n+1}b_1,\ldots, a_{n}+ a_{n+1}b_n)$ is also $I$-unimodular. if, moreover, elements $b_1,\ldots, b_n$ can be chosen from  $I$ then such $a$ will be called {\it $I$-stable}. \end{dfn} 
+\begin {dfn} An $I$-unimodular row $a=(a_1,\ldots a_{n+1})$ is called {\it stable} if one can choose $b_1,\ldots,b_n\in R$ such that the row $(a_1+a_{n+1}b_1,\ldots,a_n+a_{n+1}b_n)$ is also $I$-unimodular. If, moreover, elements $b_1,\ldots,b_n$ can be chosen from  $I$ then such $a$ will be called {\it $I$-stable}. \end{dfn} 
 
-We say that a pair $(R, I)$ satisfies stable range condition $\SR_n(R, I)$ if any $I$-unimodular row of length $n+1$ is stable.
-\begin{lemma}\label{lemma:relstrlemma2}\strut\begin{enumerate}\item The condition $\SR_n(R, I)$ implies $\SR_m(R,I)$ for any $m\geq n$.
-\item The condition $\SR_n(R, I)$ implies that any $I$-unimodular row of length $n+1$ is $I$-stable.\end{enumerate}\end{lemma}
+We say that a pair $(R,I)$ satisfies stable range condition $\SR_n(R,I)$ if any $I$-unimodular row of length $n+1$ is stable.
+\begin{lemma}\label{lemma:relstrlemma2}\strut
+\begin{enumerate}
+\item The condition $\SR_n(R,I)$ implies $\SR_m(R,I)$ for any $m\geqslant n$.
+\item The condition $\SR_n(R,I)$ implies that any $I$-unimodular row of length $n+1$ is $I$-stable.
+\end{enumerate}
+\end{lemma}
 
-By definition, the {\it relative stable rank} $\sr(R, I)$ of a pair $(R, I)$ is the smallest natural number $n$ such that condition $\SR_n(R, I)$ holds.
-If $\SR_n(R, I)$ is not satisfied for any $n>0$ we set $\sr(R, I)=\infty$.
+By definition, the {\it relative stable rank} $\sr(R,I)$ of a pair $(R,I)$ is the smallest natural number $n$ such that condition $\SR_n(R,I)$ holds.
+If no such $n$ exists, we set $\sr(R,I)=\infty$.
 
-The following proposition summarizes basic properties of stable ranks.
-\begin{prop} \label{prop:sr_properties} Let $R$ be arbitary commutative unital ring and let $I\trianglelefteq R$ be its ideal.
- \begin{itemize}
-  \item For any ideal $J\trianglelefteq R$, $J\subseteq I$ one has $$\sr(R, I)\leq\sr(R),\quad \sr(R/J, I/J)\leq \sr(R, I).$$
-  \item Stable rank of a direct product of rings is equal to the maximum of stable ranks of its factors: $$\sr(\prod\limits_{i=1}^n R_i) = \max\limits_{i=1}^n\left(\sr(R_i)\right).$$
-  \item Stable rank does not change after taking quotient modulo nil-radical: $\sr(R)=\sr(R/\Rad(R))$.
- \end{itemize}\end{prop} \begin{proof} See~\cite{Va71}. \end{proof}
+The following proposition summarizes the basic properties of stable ranks.
+\begin{prop} \label{prop:sr_properties}
+Let $R$ be arbitrary commutative unital ring and let $I\trianglelefteq R$ be its ideal.
+\begin{itemize}
+\item For any ideal $J\trianglelefteq R$, $J\subseteq I$ one has 
+\[ \sr(R,I)\leqslant\sr(R),\quad\sr(R/J,I/J)\leqslant\sr(R,I). \]
+\item Stable rank of a direct product of rings is equal to the maximum of stable ranks of its factors:
+\[ \sr\left(\prod\limits_{i=1}^n R_i\right)=\max\limits_{i=1}^n\left(\sr(R_i)\right). \]
+\item Stable rank does not change after taking quotient modulo the nil-radical: $\sr(R)=\sr(R/\Rad(R))$.
+\end{itemize}
+\end{prop}
+\begin{proof} See~\cite{Va71}. \end{proof}
 
-\begin{example} Since the stable rank of a field is one, one can conclude from the previous proposition that $\sr(R)=1$ for any semilocal ring $R$. \end{example}
+\begin{example}
+Since the stable rank of a field is one, one can conclude from the previous proposition that $\sr(R)=1$ for any semilocal ring $R$.
+\end{example}
+\begin{example}
+Other examples of rings of stable rank $1$ include boolean rings, the ring of algebraic integers, the ring of entire functions, the disk-algebra.
+\end{example}
+\begin{example}
+If $J$ is the Jacobson radical of $R$, one has $\sr(R,J)=1$.
+\end{example}
 
 \subsection{Absolute stable rank}
-For a row $a=(a_1,\ldots, a_n) \in {}^n\!R$ denote by $\mathfrak{I}(u)$ the intersection of ideals of $R$ containing $a_1, \ldots, a_n$.
-It is easy to see that a row $a\in R^n$ is unimodular iff $\mathfrak{I}(u)=R$. 
-Clearly, for any $g\in\GL(n, R)$ one has $\mathfrak{I}(u\cdot g)=\mathfrak{I}(u)$.
+For a row $a=(a_1,\ldots,a_n)\in{}^n\!R$ denote by $\mathfrak{I}(u)$ the intersection of ideals of $R$ containing $a_1,\ldots,a_n$.
+It is easy to see that a row $a\in R^n$ is unimodular if and only if $\mathfrak{I}(u)=R$. 
+Clearly, for any $g\in\GL(n,R)$ one has $\mathfrak{I}(u\cdot g)=\mathfrak{I}(u)$.
 
-A ring $R$ is said to satisfy condition $\ASR_{n}(R, I)$ if for any row $a$ such that $a_1-1,\ldots,a_{n+1}\in I$ 
-one can find elements $b_1,\ldots b_n\in R$ such that $$\mathfrak{I}(a_1+b_1a_{n+1},\ldots,a_n+b_na_{n+1})^t= \mathfrak{I}(a_1,\ldots,a_{n+1})^t.$$
-It is easy to see that $\ASR_m(R, I)$ implies $\ASR_n(R, I)$ for any $n\ge m$. 
-By definition, the {\it absolute relative stable rank} $\asr(R, I)$ is the smallest natural $n$ such that $\ASR_n(R, I)$ holds.
-Similarly, we set $\asr(R, I)=\infty$ if such $n$ does not exist. 
-When $I=R$ we call $\asr(R, R)$ simply {\it absolute stable rank} of $R$ and denote it by $\asr(R)$.
+A ring $R$ is said to satisfy condition $\ASR_{n}(R,I)$ if for any row $a$ such that $a_1-1,\ldots,a_{n+1}\in I$ one can find elements $b_1,\ldots b_n\in R$ such that
+\[ \mathfrak{I}(a_1+b_1a_{n+1},\ldots,a_n+b_na_{n+1})^t = \mathfrak{I}(a_1,\ldots,a_{n+1})^t. \]
+It is easy to see that $\ASR_m(R,I)$ implies $\ASR_n(R,I)$ for any $n\geqslant m$. 
+By definition, the {\it absolute relative stable rank} $\asr(R,I)$ is the smallest natural $n$ such that $\ASR_n(R, I)$ holds. Similarly, we set $\asr(R,I)=\infty$ if no such $n$ exists. When $I=R$ we call $\asr(R, R)$ simply the {\it absolute stable rank} of $R$ and denote it by $\asr(R)$.
 
 Let $R$ be a commutative ring. We denote by $\Max(R)$ its {\it maximum spectrum} i.e. the set of maximal ideals of $R$ equipped with Zariski topology.
 The following result gives an upper estimate for the absolute stable rank.~\cite[Theorem~2.3]{EO}, \cite[Theorem~3.7]{MKV}).
-\begin{thm} Let $R$ be a commutative ring whose maximum spectrum 
-$\Max(R)$ can be covered with a finite family of subsets $X_1\ldots, X_m$ such that the topological dimension of every subset $X_i$
-does not exceed some number $d$. Then $\asr(A)\leq d+1$. \end{thm}
-Clearly one has \begin{equation}\nonumber \sr(R, I)\leq \asr(R, I)\leq \asr(R) \leq \dim(\Max(R))+1\leq \dim(\Spec(R))+1.\end{equation}
+\begin{thm}
+Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered with a finite family of subsets $X_1\ldots, X_m$ such that the topological dimension of every subset $X_i$ does not exceed some number $d$. Then $\asr(A)\leqslant d+1$.
+\end{thm}
+Clearly one has
+\[ \sr(R,I)\leqslant\asr(R,I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \]
