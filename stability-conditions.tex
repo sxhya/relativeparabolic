@@ -2,19 +2,16 @@ As we will be mainly concerned with applications to stability of $K_1$ of Cheval
 We refer the reader to~\cite{Ba64, Va69, Va71} for a more general exposition.
 
 \subsection{Stable rank}
-Recall the definition of {\it stable rank} introduced by H.~Bass and L.~Vaserstein (see~\cite{Ba64, Va69}).
+Recall the definition of \emph{stable rank} introduced by H.~Bass and L.~Vaserstein (see~\cite{Ba64, Va69}).
 \begin{dfn}
-Recall that a row $a=(a_1,\ldots,a_n)\in{}^n\!R$ is called {\it $I$-unimodular} if elements $a_1-1,a_2,\ldots,a_n$ are contained in $I$ while $a_1,a_2,\ldots,a_n$ generate $R$ as an ideal.
+Recall that a row $a=(a_1,\ldots,a_n)\in{}^n\!R$ is called \emph{$I$-unimodular} if elements $a_1-1,a_2,\ldots,a_n$ are contained in $I$ while $a_1,a_2,\ldots,a_n$ generate $R$ as an ideal.
 \end{dfn}
 A column $b \in R^n$ will be called $I$-unimodular if its transpose $b^t$ is an $I$-unimodular row. We denote the set of all $I$-unimodular rows (resp. columns) by $\Umd(n,R,I)$ (resp. $\Ums(n,R,I)$).
 When $R=I$ we refer to $R$-unimodular rows and columns as unimodular.
-
 \begin{lemma}\label{lemma:relstrlemma}
 For any $I$-unimodular row $a=(a_1,\ldots,a_n)$ there exists $I$-unimodular column $b=(b_1,\ldots,b_n)^t$ such that $ab=\sum\limits_{i=1}^n a_i b_i=1$.
 \end{lemma}
-
-\begin {dfn} An $I$-unimodular row $a=(a_1,\ldots a_{n+1})$ is called {\it stable} if one can choose $b_1,\ldots,b_n\in R$ such that the row $(a_1+a_{n+1}b_1,\ldots,a_n+a_{n+1}b_n)$ is also $I$-unimodular. If, moreover, elements $b_1,\ldots,b_n$ can be chosen from  $I$ then such $a$ will be called {\it $I$-stable}. \end{dfn} 
-
+\begin {dfn} An $I$-unimodular row $a=(a_1,\ldots a_{n+1})$ is called \emph{stable} if one can choose $b_1,\ldots,b_n\in R$ such that the row $(a_1+a_{n+1}b_1,\ldots,a_n+a_{n+1}b_n)$ is also $I$-unimodular. If, moreover, elements $b_1,\ldots,b_n$ can be chosen from  $I$ then such $a$ will be called \emph{$I$-stable}. \end{dfn} 
 We say that a pair $(R,I)$ satisfies stable range condition $\SR_n(R,I)$ if any $I$-unimodular row of length $n+1$ is stable.
 \begin{lemma}\label{lemma:relstrlemma2}\strut
 \begin{enumerate}
@@ -22,7 +19,6 @@ We say that a pair $(R,I)$ satisfies stable range condition $\SR_n(R,I)$ if any 
 \item The condition $\SR_n(R,I)$ implies that any $I$-unimodular row of length $n+1$ is $I$-stable.
 \end{enumerate}
 \end{lemma}
-
 By definition, the {\it relative stable rank} $\sr(R,I)$ of a pair $(R,I)$ is the smallest natural number $n$ such that condition $\SR_n(R,I)$ holds.
 If no such $n$ exists, we set $\sr(R,I)=\infty$.
 
@@ -38,7 +34,6 @@ Let $R$ be arbitrary commutative unital ring and let $I\trianglelefteq R$ be its
 \end{itemize}
 \end{prop}
 \begin{proof} See~\cite{Va71}. \end{proof}
-
 \begin{example}
 Since the stable rank of a field is one, one can conclude from the previous proposition that $\sr(R)=1$ for any semilocal ring $R$.
 \end{example}
@@ -50,17 +45,27 @@ If $J$ is the Jacobson radical of $R$, one has $\sr(R,J)=1$.
 \end{example}
 
 \subsection{Absolute stable rank}
-For a row $a=(a_1,\ldots,a_n)\in{}^n\!R$ denote by $\mathfrak{I}(u)$ the intersection of ideals of $R$ containing $a_1,\ldots,a_n$.
-It is easy to see that a row $a\in R^n$ is unimodular if and only if $\mathfrak{I}(u)=R$. 
-Clearly, for any $g\in\GL(n,R)$ one has $\mathfrak{I}(u\cdot g)=\mathfrak{I}(u)$.
+For a row $a=(a_1,\ldots,a_n)\in{}^n\!R$ denote by $\mathfrak{J}(a)$ the intersection of all maximal ideals of $R$ containing $a_1,\ldots,a_n$.
+It is easy to see that a row $a\in R^n$ is unimodular if and only if $\mathfrak{J}(a)=R$. 
+Clearly, for any $g\in\GL(n,R)$ one has $\mathfrak{J}(a\cdot g)=\mathfrak{J}(a)$.
+\begin{dfn}
+We say that a pair $(R,I)$ satisfies $\ASR_n(R,I)$ if it satisfies $\SR(R,I)$ and, moreover, for any row $a=(a_1,\ldots,a_{n+1})\in I^n$ there exist $b_1,\ldots,b_n\in I$ such that
+\[\mathfrak{J}(a_1,\ldots,a_{n+1})=\mathfrak{J}(a_1+b_1a_{n+1},\ldots,a_n+b_na_{n+1}).\]
+It is easy to see that $\ASR_m(R,I)$ implies $\ASR_n(R,I)$ for any $n\geqslant m$. The \emph{absolute relative stable rank} $\asr(R,I)$ is the smallest natural $n$ such that $\ASR_n(R, I)$ holds. Similarly, we set $\asr(R,I)=\infty$ if no such $n$ exists. When $I=R$ we call $\asr(R, R)$ simply the \emph{absolute stable rank} of $R$ and denote it by $\asr(R)$.
+\end{dfn}
+The following reformulation of the absolute stable rank condition was noted by A.~Bak.
+\begin{lemma}
+$R$ satisfies $\ASR_n(R)$ if and only if for any \emph{unimodular} row $(a_1,\ldots,a_n,b,d)\in\Ums(n+2,R)$ there exist $c_1,\ldots,c_n\in R$ such that $(a_1+c_1d,\ldots,a_n+c_nd,b+td)$ is unimodular for any $t\in R$.
+\end{lemma}
+\begin{proof}
+Assume first that $\ASR_n(R)$ holds. Then for the row $(a_1,\ldots,a_n,d)$ there exist $c_1,\ldots,c_n$ such that $\mathfrak{J}(a_1,\ldots,a_n,d)=\mathfrak{J}(a_1+c_1d,\ldots,a_n+c_nd)$. Therefore $a_1+c_1d,\ldots,a_n+c_nd$ together with $b$ generate the unit ideal. Of course, one could replace $b$ with $b+td$ from the very start.
 
-A ring $R$ is said to satisfy condition $\ASR_{n}(R,I)$ if for any row $a$ such that $a_1-1,\ldots,a_{n+1}\in I$ one can find elements $b_1,\ldots b_n\in R$ such that
-\[ \mathfrak{I}(a_1+b_1a_{n+1},\ldots,a_n+b_na_{n+1})^t = \mathfrak{I}(a_1,\ldots,a_{n+1})^t. \]
-It is easy to see that $\ASR_m(R,I)$ implies $\ASR_n(R,I)$ for any $n\geqslant m$. 
-By definition, the {\it absolute relative stable rank} $\asr(R,I)$ is the smallest natural $n$ such that $\ASR_n(R, I)$ holds. Similarly, we set $\asr(R,I)=\infty$ if no such $n$ exists. When $I=R$ we call $\asr(R, R)$ simply the {\it absolute stable rank} of $R$ and denote it by $\asr(R)$.
-
-Let $R$ be a commutative ring. We denote by $\Max(R)$ its {\it maximum spectrum} i.e. the set of maximal ideals of $R$ equipped with Zariski topology.
-The following result gives an upper estimate for the absolute stable rank.~\cite[Theorem~2.3]{EO}, \cite[Theorem~3.7]{MKV}).
+Now, given an arbitrary row $(a_1,\ldots,a_n,d)\in{}^{n+1}\!R$, consider a unimodular row $(a_1,\ldots,a_n,1,d)\in\Ums(n+2,R)$. There exist $c_1,\ldots,c_n$ such that
+\[(a'_1,\ldots,a'_n,1+td)=(a_1+c_1d,\ldots,a_n+c_nd,1+td)\]
+is unimodular for any $t\in R$. Suppose there exist a maximal ideal $\mathfrak{m}\trianglelefteq R$ such that $a'_1,\ldots,a'_n\in\mathfrak{m}$ but some of $d,a_i\notin\mathfrak{m}$. Clearly, $d\notin\mathfrak{m}$ (otherwise $a_i=a'_i-c_id\in\mathfrak{m}$). On the other hand, $1+td\notin\mathfrak{m}$, therefore in the residue field $R/\mathfrak{m}$ one has $1+\bar{t}\bar{d}\neq0$ for any $t$, but $\bar{d}\neq0$ and one can take $\bar{t}=-1/\bar{d}$.
+\end{proof}
+Let $R$ be a commutative ring. We denote by $\Max(R)$ its \emph{maximum spectrum} i.e. the set of maximal ideals of $R$ equipped with Zariski topology.
+The following result gives an upper estimate for the absolute stable rank (see~\cite[Theorem~2.3]{EO}, \cite[Theorem~3.7]{MKV}).
 \begin{thm}
 Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered with a finite family of subsets $X_1\ldots, X_m$ such that the topological dimension of every subset $X_i$ does not exceed some number $d$. Then $\asr(A)\leqslant d+1$.
 \end{thm}
