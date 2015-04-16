@@ -22,26 +22,22 @@ We say that a pair $(R,I)$ satisfies stable range condition $\SR_n(R,I)$ if any 
 By definition, the {\it relative stable rank} $\sr(R,I)$ of a pair $(R,I)$ is the smallest natural number $n$ such that condition $\SR_n(R,I)$ holds.
 If no such $n$ exists, we set $\sr(R,I)=\infty$.
 
-The following proposition summarizes the basic properties of stable ranks.
+The following proposition summarizes basic properties of stable ranks.
 \begin{prop} \label{prop:sr_properties}
-Let $R$ be arbitrary commutative unital ring and let $I\trianglelefteq R$ be its ideal.
-\begin{itemize}
-\item For any ideal $J\trianglelefteq R$, $J\subseteq I$ one has 
-\[ \sr(R,I)\leqslant\sr(R),\quad\sr(R/J,I/J)\leqslant\sr(R,I). \]
-\item Stable rank of a direct product of rings is equal to the maximum of stable ranks of its factors:
-\[ \sr\left(\prod\limits_{i=1}^n R_i\right)=\max\limits_{i=1}^n\left(\sr(R_i)\right). \]
-\item Stable rank does not change after taking quotient modulo the nil-radical: $\sr(R)=\sr(R/\Rad(R))$.
-\end{itemize}
+Let $R$ be arbitrary commutative unital ring and let $I\trianglelefteq R$ be an ideal.
+\begin{enumerate}
+\item For any ideal $J\subseteq I$ one has $\sr(R,I)\leqslant\sr(R)$, $\sr(R/J,I/J)\leqslant\sr(R,I)$.
+\item One has $\sr\left(\prod\limits_{i=1}^n R_i\right)=\max\limits_{i=1}^n\left(\sr(R_i)\right).$
+\item Let $J$ denote the Jacobson radical of $R$, then one has $\sr(R)=\sr(R/J)$ and $\sr(R, J) = 1$.
+\end{enumerate}
 \end{prop}
-\begin{proof} See~\cite{Va71}. \end{proof}
+\begin{proof} See~\cite{Va71}. 
+\textbf{TODO: Add reference for the latter fact}.
+%TODO:
+\end{proof}
 \begin{example}
-Since the stable rank of a field is one, one can conclude from the previous proposition that $\sr(R)=1$ for any semilocal ring $R$.
-\end{example}
-\begin{example}
-Other examples of rings of stable rank $1$ include boolean rings, the ring of algebraic integers, the ring of entire functions, the disk-algebra.
-\end{example}
-\begin{example}
-If $J$ is the Jacobson radical of $R$, one has $\sr(R,J)=1$.
+Since the stable rank of a field equals $1$, one can conclude from the previous proposition that $\sr(R)=1$ for any semilocal ring $R$.
+Other examples of rings of stable rank $1$ are provided by boolean rings, the ring of algebraic integers, the ring of entire functions, the disk-algebra.
 \end{example}
 
 \subsection{Absolute stable rank}
@@ -49,23 +45,35 @@ For a row $a=(a_1,\ldots,a_n)\in{}^n\!R$ denote by $\mathfrak{J}(a)$ the interse
 It is easy to see that a row $a\in R^n$ is unimodular if and only if $\mathfrak{J}(a)=R$. 
 Clearly, for any $g\in\GL(n,R)$ one has $\mathfrak{J}(a\cdot g)=\mathfrak{J}(a)$.
 \begin{dfn}
-We say that a pair $(R,I)$ satisfies $\ASR_n(R,I)$ if it satisfies $\SR_n(R,I)$ and, moreover, for any row $a=(a_1,\ldots,a_{n+1})\in I^n$ there exist $b_1,\ldots,b_n\in I$ such that
+We say that a pair $(R,I)$ satisfies $\ASR_n(R,I)$ if it satisfies $\SR_n(R,I)$ and, moreover, 
+for any row $a=(a_1,\ldots,a_{n+1})\in I^n$ there exist $b_1,\ldots,b_n\in I$ such that
 \[\mathfrak{J}(a_1,\ldots,a_{n+1})=\mathfrak{J}(a_1+b_1a_{n+1},\ldots,a_n+b_na_{n+1}).\]
-It is easy to see that $\ASR_m(R,I)$ implies $\ASR_n(R,I)$ for any $n\geqslant m$. The \emph{absolute relative stable rank} $\asr(R,I)$ is the smallest natural $n$ such that $\ASR_n(R, I)$ holds. Similarly, we set $\asr(R,I)=\infty$ if no such $n$ exists. When $I=R$ we call $\asr(R, R)$ simply the \emph{absolute stable rank} of $R$ and denote it by $\asr(R)$.
+It is easy to see that $\ASR_m(R,I)$ implies $\ASR_n(R,I)$ for any $n\geqslant m$. 
+By definition, the \emph{absolute relative stable rank} $\asr(R,I)$ is the smallest natural $n$ such that $\ASR_n(R, I)$ holds. 
+Similarly, we set $\asr(R,I)=\infty$ if no such $n$ exists.
+When $I=R$ we call $\asr(R, R)$ simply the \emph{absolute stable rank} of $R$ and denote it by $\asr(R)$.
 \end{dfn}
 The following reformulation of the absolute stable rank condition was noted by A.~Bak.
-\begin{lemma}
-$R$ satisfies $\ASR_n(R)$ if and only if for any \emph{unimodular} row $(a_1,\ldots,a_n,b,d)\in\Ums(n+2,R)$ there exist $c_1,\ldots,c_n\in R$ such that $(a_1+c_1d,\ldots,a_n+c_nd,b+td)$ is unimodular for any $t\in R$.
+\begin{lemma} For a commutative ring $R$ the following statements are equivalent:
+\begin{enumerate}
+ \item\label{asr_Stein} $R$ satisfies $\ASR_n(R)$;
+ \item\label{asr_Bak} For any \emph{unimodular} row $(a_1,\ldots,a_n,b,d)\in\Ums(n+2,R)$ there exist $c_1,\ldots,c_n\in R$ such that $(a_1+c_1d,\ldots,a_n+c_nd,b+td)$ is unimodular for all $t\in R$.
+\end{enumerate}
 \end{lemma}
 \begin{proof}
-Assume first that $\ASR_n(R)$ holds. Then for the row $(a_1,\ldots,a_n,d)$ there exist $c_1,\ldots,c_n$ such that $\mathfrak{J}(a_1,\ldots,a_n,d)=\mathfrak{J}(a_1+c_1d,\ldots,a_n+c_nd)$. Therefore $a_1+c_1d,\ldots,a_n+c_nd$ together with $b$ generate the unit ideal. Of course, one could replace $b$ with $b+td$ from the very start.
+Assume first that $\ASR_n(R)$ holds.
+Then for the row $(a_1,\ldots,a_n,d)$ there exist $c_1,\ldots,c_n$ such that $\mathfrak{J}(a_1,\ldots,a_n,d)=\mathfrak{J}(a_1+c_1d,\ldots,a_n+c_nd)$. 
+Therefore $a_1+c_1d,\ldots,a_n+c_nd$ together with $b$ generate the unit ideal.
+Of course, one could replace $b$ with $b+td$ from the very start.
 
-Now, given an arbitrary row $(a_1,\ldots,a_n,d)\in{}^{n+1}\!R$, consider a unimodular row
-\[ (a_1,\ldots,a_n,1,d)\in\Ums(n+2,R). \]
-There exist $c_1,\ldots,c_n$ such that
-\[(a'_1,\ldots,a'_n,1+td)=(a_1+c_1d,\ldots,a_n+c_nd,1+td)\]
-is unimodular for any $t\in R$. Suppose there exist a maximal ideal $\mathfrak{m}\trianglelefteq R$ such that $a'_1,\ldots,a'_n\in\mathfrak{m}$ but some of $d,a_i\notin\mathfrak{m}$. Clearly, $d\notin\mathfrak{m}$ (otherwise $a_i=a'_i-c_id\in\mathfrak{m}$). On the other hand, $1+td\notin\mathfrak{m}$, therefore in the residue field $R/\mathfrak{m}$ one has $1+\bar{t}\bar{d}\neq0$ for any $t$, but $\bar{d}\neq0$ and one can take $\bar{t}=-1/\bar{d}$. Hence no such $\mathfrak{m}$ exists and $\mathfrak{J}(a_1,\ldots,a_n,d)=\mathfrak{J}(a'_1,\ldots,a'_n)$.
+To show the converse take arbitrary row $(a_1,\ldots,a_n,d)\in{}^{n+1}\!R$ and consider the unimodular row $(a_1,\ldots,a_n,1,d)\in\Ums(n+2,R).$
+There exist $c_1,\ldots,c_n$ such that \[(a'_1,\ldots,a'_n,1+td)=(a_1+c_1d,\ldots,a_n+c_nd,1+td)\] is unimodular for all $t\in R$.
+Suppose that there exists a maximal ideal $\mathfrak{m}\trianglelefteq R$ such that $a'_1,\ldots,a'_n\in\mathfrak{m}$ but at least one of the elements $d$, $a_i$ is not in $\mathfrak{m}$.
+Clearly, $d\notin\mathfrak{m}$ (otherwise $a_i=a'_i-c_id\in\mathfrak{m}$).
+On the other hand, $1+td\notin\mathfrak{m}$, hence the inequality $1+\bar{t}\bar{d}\neq0$ in the residue field $R/\mathfrak{m}$ may not hold for arbitrary $\bar{t}$ (take e.g. $\bar{t}=-1/\bar{d}$).
+This shows that no such $\mathfrak{m}$ may exist and, therefore, $\mathfrak{J}(a_1,\ldots,a_n,d)=\mathfrak{J}(a'_1,\ldots,a'_n)$.
 \end{proof}
+
 Let $R$ be a commutative ring. We denote by $\Max(R)$ its \emph{maximum spectrum} i.e. the set of maximal ideals of $R$ equipped with Zariski topology.
 The following result gives an upper estimate for the absolute stable rank (see~\cite[Theorem~2.3]{EO}, \cite[Theorem~3.7]{MKV}).
 \begin{thm}
