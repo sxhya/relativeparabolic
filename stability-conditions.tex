@@ -69,8 +69,10 @@ Of course, one could replace $b$ with $b+td$ from the very start.
 To show the converse take arbitrary row $(a_1,\ldots,a_n,d)\in{}^{n+1}\!R$ and consider the unimodular row $(a_1,\ldots,a_n,1,d)\in\Ums(n+2,R).$
 There exist $c_1,\ldots,c_n$ such that \[(a'_1,\ldots,a'_n,1+td)=(a_1+c_1d,\ldots,a_n+c_nd,1+td)\] is unimodular for all $t\in R$.
 Suppose that there exists a maximal ideal $\mathfrak{m}\trianglelefteq R$ such that $a'_1,\ldots,a'_n\in\mathfrak{m}$ but at least one of the elements $d$, $a_i$ is not in $\mathfrak{m}$.
-Clearly, $d\notin\mathfrak{m}$ (otherwise $a_i=a'_i-c_id\in\mathfrak{m}$).
-On the other hand, $1+td\notin\mathfrak{m}$, hence the inequality $1+\bar{t}\bar{d}\neq0$ in the residue field $R/\mathfrak{m}$ may not hold for arbitrary $\bar{t}$ (take e.g. $\bar{t}=-1/\bar{d}$).
+Clearly, $d\notin\mathfrak{m}$ (otherwise $a_i=a'_i-c_id\in\mathfrak{m}$ contrary to the assumption).
+On the other hand, $1+td\notin\mathfrak{m}$,
+hence the inequality $1+\bar{t}\bar{d}\neq0$ in the residue field $R/\mathfrak{m}$ may not hold for arbitrary $\bar{t}$ 
+(take e.g. $\bar{t}=-1/\bar{d}$).
 This shows that no such $\mathfrak{m}$ may exist and, therefore, $\mathfrak{J}(a_1,\ldots,a_n,d)=\mathfrak{J}(a'_1,\ldots,a'_n)$.
 \end{proof}
 
@@ -81,3 +83,39 @@ Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered wi
 \end{thm}
 Clearly one has
 \[ \sr(R,I)\leqslant\asr(R,I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \]
+
+The following lemma illustrates a typical application of stability conditions.
+\begin{lemma} \label{lemma:uraction} 
+Let $\Phi=\rA_\ell, \rD_\ell$. Denote by $\pi$ the vector representation of $\G(\Phi, R)$ on $V=R^n$.
+Assume that one of the following conditions holds:
+\begin{itemize}
+ \item $\Phi=\rA_\ell$, $\Gamma=\{ k+1, \ldots, \ell+1\} \subset \Lambda(\pi)$ and $\sr(I)\leq k\leq \ell$;
+ \item $\Phi=\rD_\ell$, $\Gamma=\{-l,\ldots, -2, -1\} \subset \Lambda(\pi)$ and $\asr(R, I)\leq \ell-1$. 
+\end{itemize}
+Then for any unimodular column $v\in \Ums(n, R, I)$ there exist $x\in \U(\Phi^+, I)$, $y\in \U(\Phi^-, I)$ such that $(yx \cdot v)_\lambda = 0$ for $\lambda\in \Gamma$.
+\end{lemma}
+
+%Let $\sr(I)\leq l-1$, then for any unimodular column $v\in R^l=V$ there exist
+%matrices $x=\left(\begin{smallmatrix} e_{l-1}& * \\ 0 & 1 \end{smallmatrix}\right)$, $y=\left(\begin{smallmatrix} e_{l-1}& 0 \\ *& 1 \end{smallmatrix}\right)$
+%such that the $l$-th cooordinate of the vector $yx\cdot v$ is zero.\end{lemma}
+
+%Denote by $p$ the matrix which has $1$'s along its secondary diagonal and zeroes elsewhere. Call a matrix $a\in\M(l, R)$ {\it antipersymmetric} if $pa^tp = a$.
+%\begin{lemma}\label{LambdaS_lemma} Assume that $\asr(R)\leq l-1$, then for any columns $u^+, u^-\in R^l$ such that $(u^+, u^-)^t\in R^{2l}$ is unimodular there exists
+%an antipersymmetric matrix $a\in\M(l, R)$ such that $u^+ + au^- \in R^l$ is unimodular. \end{lemma}
+%\begin{proof} The statement of the lemma is a special case of \cite[Th.~1.2]{BPT} applied to $R$ viewed as a form ring with trivial involution and zero form parameter. \end{proof}
+
+%Denote by $H$ the hyperbolic embedding $H:\GL(l, R)\rightarrow\mathrm{O}(2l, R)$ of a general linear group into the even-dimensional orthogonal group,
+%i.\,e. the map which sends $g$ to $\left(\begin{smallmatrix} g & 0 \\ 0 & p(g^{t})^{-1}p \end{smallmatrix}\right)$.
+%\begin{lemma}\label{asrLemma} Assume that $\asr(R)\leq l-1$. Then for any unimodular column $v\in R^{2l}=V$ there exist orthogonal matrices 
+%$x=\left(\begin{smallmatrix} e_l & * \\ 0 & e_l \end{smallmatrix}\right)$, $y=\left(\begin{smallmatrix} e_l & 0 \\ * & e_l \end{smallmatrix}\right)$
+%such that $(yx\cdot v)_k=0$ for $k=-l,\ldots, -1.$ \end{lemma}
+%\begin{proof}
+% Applying Lemma~\ref{LambdaS_lemma} we obtain $x=\left(\begin{smallmatrix} e_l & a \\ 0 & e_l \end{smallmatrix}\right)$ such
+% that the first $l$ coor\-dinates of $x\cdot v$ form a unimodular column of height $l$.
+ 
+% The group $\E(l, R)$ acts transitively on the set of unimodular columns of height $l$, therefore
+% we can choose an appropriate $g\in\E(l, R)$ such that $$H(g)x\cdot v= (1,0,\ldots, 0,*,\ldots *)^t,$$
+% where the number of stars equals $l$.
+% Choose $y'=\left(\begin{smallmatrix} e_l & 0 \\ * & e_l \end{smallmatrix}\right)$ such that $y'H(g)x\cdot v = e_1 = (1,0,\ldots, 0)^t$.
+% Clearly $y=y'^{H(g)}$ is an orthogonal matrix of the required form and $$yx\cdot v = y'^{H(g)} x\cdot v = H(g)^{-1} e_1 = (*,\ldots, *,0,\ldots, 0)^t.$$
+% \end{proof}
