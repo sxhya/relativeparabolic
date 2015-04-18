@@ -1,55 +1,80 @@
 Throughout the present section we denote by $\EP_s(R, I)$ the subgroup $\E(\Delta_s, R, I) \cdot \U(\Sigma_s, I)$, $1 \leq s \leq n$.
+%TODO: Add Levi decomposition to preliminaries
+%TODO: Introduce notation for U(S, R)
 Set $\EP_s := \EP_s(R, R) = \E(\Delta_s, R) \cdot \U(\Sigma_s, R)$. 
 
-\subsection{Main reduction.}
-Let $i$, $j$ be two distinct indices $1\leq i,j \leq n$. From Levi decomposition it follows that the following four subsets of $\E(\Phi, R, I)$ are equal to each other:
-\begin{multline}\nonumber \U(\Phi, I)\cdot \U(\Phi^-, I) \cdot \E(\Delta_i, R, I) \cdot \EP_j(R, I) = \U(\Sigma_i, I)\cdot \U(\Sigma^-_i, I) \cdot \E(\Delta_i, R, I) \cdot \EP_j(R, I) = \\
-= \EP_i(R, I) \cdot \E(\Delta_j, R, I) \cdot \U(\Sigma_j^-, I)\cdot \U(\Sigma_j, I) = \EP_i(R, I) \cdot \U(\Sigma^-_i\cap \Sigma^-_j, I) \cdot \EP_j(R, I). \end{multline}
-Denote by $A_{ij}$ any of the equal subsets from the previous formula. 
-Clearly, $A_{ij}$ is invariant with respect to conjugation by root subgroups $X_{\alpha\ssub{k}}$ for $1\leq k\leq n$ and $X_{-\alpha\ssub{k}}$ for $k\neq i,j$.
+Let $\Phi$ be an irreducible root system of rank $\ell$.
+Let $r$, $s$ be two distinct indices $1\leq r,s \leq \ell$.
+From Levi decomposition it follows that the following four subsets of $\E(\Phi, R, I)$ are equal:
+\begin{multline}\nonumber \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = 
+\U(\Sigma_r, I)\cdot \U(\Sigma^-_r, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \\
+= \EP_r(R, I) \cdot \E(\Delta_s, R, I) \cdot \U(\Sigma_s^-, I)\cdot \U(\Sigma_s, I) = 
+\EP_i(R, I) \cdot \U(\Sigma^-_r\cap \Sigma^-_s, I) \cdot \EP_s(R, I). \end{multline}
+Denote by $A_{rs}$ any of the equal subsets from the previous formula. 
+
+\begin{thm}\label{theorem:relative_dv}
+The relative elementary subgroup $\E(\Phi, R, I)$ coincides with $A_{rs}$ under the following assumptions on $(R, I)$.
+  \begin{center}
+    \begin{tabular}{| l | l | l | l | l |} \hline
+    № & $\Phi$ & $\{r,s\}$ & ring condition \\ \hline
+    1 & $\rA_\ell$, $\ell\geq 2$ & $\{1, \ell\}$ & $\sr(I) \leq \ell-1$ \\ \hline
+    2 & $\rD_\ell$, $\ell\geq 4$ & $\{1, \ell\}$ & $\sr(I) \leq \ell-2$ \\ \hline    
+    3 & $\rE_\ell$, $\ell=6,7,8$ & $\{2, \ell\}$ & $\sr(I) \leq \ell-3$ \\ \hline     
+    4 & $\rE_\ell$, $\ell=6,7,8$ & $\{1, \ell\}$ & $\asr(R, I)\leq \ell-2$ \\ \hline    
+    5 & $\rB_\ell$, $\ell\geq 3$ & $\{1, \ell\}$ & $\sr(I) \leq \ell-2$ \\ \hline
+    \end{tabular} \end{center} 
+\end{thm}
+The proof of Theorem~\ref{theorem:relative_dv} occupies the rest of this section.
+
+Consider the usual conjugation action of $\E(\Phi, R)$ on $\E(\Phi, R, I)$. 
+This action induces an action of $\E(\Phi, R)$ on the set $\mathfrak{S}$ of all subsets of $\E(\Phi, R, I)$.
+On the other hand, $\E(\Phi, R, I)$ acts on $\mathfrak{S}$ by left multiplication.
+Denote by $N_{rs}$ and $L_{rs}$) stabilizers of $A_{rs} \in \mathfrak{S}$ with respect to these actions.
+In other words $$N_{rs} = \{ g\in \E(\Phi, R) \mid g \cdot A_{rs} \cdot g^{-1} \subseteq A_{rs} \};\quad L_{rs}= \{ g\in \E(\Phi, R, I) \mid g \cdot A_{rs} \subseteq A_{rs} \}.$$
+
+It is easy to see that $N_{rs}$ normalizes $L_{rs}$. Indeed, for $g\in N_{rs}$, $h\in L_{rs}$ one has
+$$h^g \cdot A_{rs} = g^{-1} \cdot h \cdot g \cdot A_{rs} \subseteq g^{-1} \cdot h \cdot A_{rs} \cdot g \subseteq A_{rs}^g \subseteq A_{rs}.$$
 
 \begin{lemma}\label{lemma:dv_unipotent} For any $1\leq i\leq n$ the following statements hold. \begin{enumerate} 
 \item $\U(\Phi^\pm, I) = X_{\pm\alpha\ssub{i}}(I)\cdot \U(\Phi^\pm\setminus\{\pm\alpha\ssub{i}\}, I) = \U(\Phi^\pm\setminus\{\pm\alpha\ssub{i}\}, I)\cdot X_{\pm\alpha\ssub{i}}(I).$
 \item For any $\xi\in R$ one has $\U(\Phi^\pm\setminus\{\alpha_i\}, I)^{x_{\mp\alpha\ssub{i}}(\xi)^{-1}} \subseteq \U(\Phi^\pm, I).$
-\item $\U(\Sigma_i, I)\cdot \U(\Sigma^-_i, I) \subseteq \U(\Sigma_i\setminus \{\alpha_i\}, I) \cdot \U(\Phi^-, I) \cdot X_{\alpha\ssub{i}}(I) \cdot X_{-\alpha\ssub{i}}(I)$.
+\item $\U(\Phi^+, I)\cdot \U(\Phi^-, I) \subseteq \U(\Phi^+\setminus \{\alpha_i\}, I) \cdot \U(\Phi^-, I) \cdot X_{\alpha\ssub{i}}(I) \cdot X_{-\alpha\ssub{i}}(I)$.
 \end{enumerate} \end{lemma}
 \begin{proof}
- The first two statements easily follow from Chevalley commutator formula while the last one is a formal consequence of the first two.
+ The first two statements easily follow from Chevalley commutator formula while the third one is a formal consequence of the first two.
 \end{proof}
 
-\begin{lemma}\label{lemma:conj_lemma} Let $G$ be a group, $H\leq G$ be a subgroup and $A, B\subseteq G$ be two subsets.
-Assume that $A$ is invariant with respect to left multiplication by elements of $B$ and conjugation by elements of the subgroup $H$.
-Then $A$ is invariant with respect to left multiplication by elements of the set $B^H = \{b^h \vert b\in B, h\in H\}$. \end{lemma}
-\begin{proof} $b^h \cdot A \subseteq h^{-1}\cdot b \cdot h \cdot A \subseteq h^{-1} \cdot b \cdot A \cdot h \subseteq h^{-1} \cdot A \cdot h \subseteq A. \qedhere$ \end{proof}
-
+The following lemma is a relative version of the main reduction used by M.~Stein in~\cite{St78} for the proof of Dennis--Vaserstein decomposition.
 \begin{lemma}\label{Stein_reduction}
-Let $\Phi_l = \rA_l, \rD_l, \rE_6, \rE_7$. If $\Phi\neq \rE_7$ set $s:=1$ otherwise set $s:=7$. 
-Let $r$ be any other natural number not equal to $s$.
-Assume that there exists a subset $\widetilde{L_r} \subseteq \E(\Delta_r, R, I)$ satisfying the following two conditions:
+Assume that there exists a subset $\widetilde{L_r} \subseteq \E(\Delta_r, R, I)$ with the following properties:
 \begin{enumerate}[label=(\alph*)] 
  \item\label{stein_cond1} One has $\U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \widetilde{L_r} = \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \E(\Delta_r, R, I).$
- \item\label{stein_cond2} There is an inclusion $X_{-\alpha\ssub{r}}(I)^{\widetilde{L_r}} \subseteq \EP_s(R, I).$
+ \item\label{stein_cond2} One has $X_{-\alpha\ssub{r}}(I)^{\widetilde{L_r}} \subseteq \EP_s(R, I).$
 \end{enumerate}
-Then $A_{rs} = \E(\Phi, R, I)$. \end{lemma}
+Then $X_{-\alpha_r}(I) \subseteq L_{rs}$ and $\EP_s \subseteq N_{rs}.$
+\end{lemma}
 \begin{proof} Set $A:=\U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \widetilde{L_r} \cdot \EP_s(\Phi, R, I).$
 From condition~\ref{stein_cond1} of the lemma it follows that $A_{rs}=A$.
-
-The first step of the proof is to show that $A_{rs}$ is invariant with respect to conjugation by the root subgroup $X_{-\alpha\ssub{r}}$ 
-and left multiplication by elements of $X_{-\alpha\ssub{r}}(I)$. To prove this, observe first that from Lemma~\ref{lemma:dv_unipotent} and condition~\ref{stein_cond2} it follows that
+Observe that from Lemma~\ref{lemma:dv_unipotent} and condition~\ref{stein_cond2} it follows that
 \begin{multline}\nonumber 
 A \subseteq \U(\Phi^+\setminus \{\alpha_r\}, I) \cdot \U(\Phi^-, I) \cdot X_{\alpha\ssub{r}}(I) \cdot X_{-\alpha\ssub{r}}(I) \cdot \widetilde{L_r} \cdot \EP_s(R, I) \subseteq \\ 
 \subseteq \U(\Phi^+\setminus\{\alpha_r\}, I) \cdot \U(\Phi^-, I) \cdot X_{\alpha\ssub{r}}(I) \cdot X_{-\alpha\ssub{r}}(I) \cdot \widetilde{L_r} \cdot \EP_s(R, I) \subseteq \\
 \subseteq \U(\Phi^+\setminus\{\alpha_r\}, I) \cdot \U(\Phi^-, I) \cdot \widetilde{L_r} \cdot \U(\Sigma_r, I) \cdot \EP_s(R, I)  \cdot \EP_s(R, I) \subseteq \\
 \subseteq \U(\Phi^+\setminus\{\alpha_r\}, I) \cdot \U(\Phi^-, I) \cdot \widetilde{L_r} \cdot \EP_s(R, I). \end{multline}
-Now it remains to apply Lemma~\ref{lemma:dv_unipotent} once again:
+In order to prove the first statement apply Lemma~\ref{lemma:dv_unipotent} once again:
 \begin{equation}\nonumber A^{X_{-\alpha\ssub{r}}} \subseteq \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot \widetilde{L_r} ^{X_{-\alpha\ssub{r}}} \cdot \EP_s(R, I) \subseteq A. \end{equation}
 \begin{equation}\nonumber X_{-\alpha\ssub{r}}(I) \cdot A \subseteq \U(\Phi^+, I) \cdot X_{-\alpha\ssub{r}}(I) \cdot \U(\Phi^-, I) \cdot \widetilde{L_r} \cdot \EP_s(R, I) = A. \end{equation}
+Notice that $X_{\alpha\ssub{k}}$ for $1\leq k\leq \ell$ and $X_{-\alpha\ssub{k}}$ for $k\neq r,s$ fix $A_{rs}$.
+Since $\EP_s$ is generated by $X_{\alpha\ssub{i}}$ for $1\leq i\leq n$ and $X_{-\alpha\ssub{i}}$ for $i\neq s$ we get the second part of the statement.
+\end{proof}
 
-Notice that the subgroup $\EP_s$ is generated by root subgroups $X_{\alpha\ssub{i}}$ for $1\leq i\leq n$ and $X_{-\alpha\ssub{i}}$ for $i\neq s$,
-therefore in fact we have just proved that $A$ is invariant with respect to conjugation by all elements of $\EP_s$.
+%Let $\Phi_l = \rA_l, \rD_l, \rE_6, \rE_7$. If $\Phi\neq \rE_7$ set $s:=1$ otherwise set $s:=7$. 
+%Let $r$ be any other natural number not equal to $s$.
+%The first step of the proof is to show that $A_{rs}$ is invariant with respect to conjugation by the root subgroup $X_{-\alpha\ssub{r}}$ 
+%and left multiplication by elements of $X_{-\alpha\ssub{r}}(I)$. To prove this, 
 
-Now we are ready to prove the needed equality. By virtue of Theorem~\ref{theorem:Stepanov} it suffices to show that
-$A$ is invariant with respect to left multiplication by elements of the following two families:
+Now we are ready to prove the needed equality.
+By virtue of Theorem~\ref{theorem:Stepanov} it suffices to show that $A$ is invariant with respect to left multiplication by elements of the following two families:
 \begin{itemize} \item $z_{\alpha}(s, \xi)$, $s\in I$, $\xi \in R$, $\alpha\in\Sigma^-_s$;
  \item $x_{\beta}(s)$, $s \in I$, $\beta \in \Phi$. \end{itemize}
 Thanks to Lemma~\ref{lemma:conj_lemma} it suffices to check the required statement only for the second family of elements.
@@ -63,4 +88,4 @@ Since $-\alpha_r\in S$ this implies that that $\Delta_s\subseteq S$.
 Now denote by $\widetilde{\alpha}$ the maximal root of $\Phi$. Our assumptions on $\Phi$ guarantee that $m_s(\alpha)=1$, 
 hence every two roots $\alpha, \beta \in \Sigma^-_s$ have the same $s$-shape (i.\,e. $\shape(\{s\}, \alpha = \shape(\{s\}, \beta)$).
 By Lemma~\ref{lemma:abs} $W(\Delta_s)$ interchanges $\alpha$ and $\beta$. %if their length is equal.
-Since $\alpha_s \in S$ the argument similar to the one above implies $\Sigma^-_s\subseteq S$. This completes the proof of the lemma. \end{proof}
+Since $\alpha_s \in S$ the argument similar to the one above implies $\Sigma^-_s\subseteq S$. This completes the proof of the lemma. 
