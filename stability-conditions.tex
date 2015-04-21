@@ -79,28 +79,31 @@ Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered wi
 Clearly one has
 \[ \sr(R,I)\leqslant\asr(R,I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \]
 
-The next lemma illustrates a typical application of the absolute relative stability condition.
+The next lemma is an immediate consequence of the definition of stable rank.
+\begin{lemma}\label{lemma:srUnip} Let $v\in\Ums(n, R, I)$ be a unimodular column. Assume that $\sr(I)\leq n-m$ for some $1\leq m \leq n$.
+Then one can find a matrix $a\in \M(n-m,m,I)$ such that the column $(e_{n-m},a)v\in \Ums(n-m, R, I)$. \end{lemma} 
+
 Let $v\in R^{2\ell}$ be a vector of the standard vector representation of $\G(\rD_\ell, R)$.
 It will be convenient for us to denote by $v^+$ and $v^-$ the upper and lower halves of $v$ i.e. $v^+=(v_1,\ldots, v_\ell)^t$, $v^-=(v_{-\ell},\ldots, v_{-1})^t$.
 \begin{lemma}\label{lemma:asrUnip}
  Let $\Phi=\rD_\ell$ and assume that $\asr(R, I)\leq \ell -1$. Then for any $I$-unimodular column $v=(v^+, v^-)^t\in\Ums(2\ell, R, I)$
- there exist $g\in\U(\Sigma^+_\ell, I)$ such that $(v\cdot g)^+ \in \Ums(\ell, R, I)$.
+ there exist $g\in\U(\Sigma^+_\ell, I)$ such that $(g \cdot v)^+ \in \Ums(\ell, R, I)$.
 \end{lemma}
 \begin{proof} Denote by $J$ the ideal of $R$ spanned by entries of $v^-$. Clearly, $J \leq I$.
 By Proposition~\ref{prop:sr_properties} $\sr(I/J) \leq \ell-1$ and therefore
 the elementary group $\E(\rA_{\ell-1}, R/J, I/J)$ acts transitively on $\Ums(\ell, R/J, I/J)$ (see~\cite[Theorem~2.3c]{Va69}). 
-This implies existence of $h\in \E(\Delta_\ell, R, I)$ such that for $v' = v\cdot h$ one has $(v')^+ \equiv e_1$ modulo $J$.
+This implies existence of $h\in \E(\Delta_\ell, R, I)$ such that for $v' = h \cdot v$ one has $(v')^+ \equiv e_1$ modulo $J$.
 
 By hypothesis, we can find $c_2,\ldots, c_\ell\in I$ such that for $v''=v'\cdot \prod\limits_{i=2}^{\ell}t_{-1, -i}(c_i)$ one has
 $\mathfrak{J}(v''_{-\ell},\ldots, v''_{-2}) = \mathfrak{J}(v'^-)$. Clearly, $v''_1$ is still congruent to $1$ modulo $J$, therefore 
 $(v''_1, v''_{-\ell},\ldots, v''_{-1})$ is $I$-unimodular. Now, applying condition $\sr(I) \leq \ell-1$ once again we find
-$d_1,d_3,\ldots, d_{\ell}\in I$ such that for $v'''=v''\cdot t_{-2,1}(d_1) \cdot \prod\limits_{i=3}^{\ell} t_{-2,-i}(d_i)$
+$d_1,d_3,\ldots, d_{\ell}\in I$ such that for $v'''=t_{-2,1}(d_1) \cdot \prod\limits_{i=3}^{\ell} t_{-2,-i}(d_i) \cdot v''$
 the entries $(v'''_1, v'''_{-\ell},\ldots, v'''_{-3})$ form a $I$-unimodular column.
 
 We can find $f_1, f_3,\ldots, f_\ell \in R$ such that $f_1v'''_1+\sum\limits_{i=3}^\ell f_i v'''_{-i} = 1$.
-Set $\xi = v'''_1-v'''_2-1 \in I$, $v^4=v'''\cdot t_{1,2}(\xi f_1) \cdot \prod\limits_{i=3}^\ell t_{-i,2}(\xi i_k)$.
+Set $\xi = v'''_1-v'''_2-1 \in I$, $v^4=t_{1,2}(\xi f_1) \cdot \prod\limits_{i=3}^\ell t_{-i,2}(\xi i_k) \cdot v'''$.
 Clearly $v^4_1 = v'''_1$ and $v^4_2 = v'''_1-1$, therefore $v^{4+}$ is $I$-unimodular.
-Summarizing the above, we have found $g\in \EP_\ell(R, I)$ such that $v^4=v\cdot g$
+Summarizing the above, we have found $g\in \EP_\ell(R, I)$ such that $v^4=g \cdot v$
 and assertion of the lemma immediately follows from Levi decomposition. \end{proof}
 
 \begin{lemma} \label{lemma:uraction} 
