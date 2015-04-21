@@ -99,7 +99,7 @@ $n=l+1, 2l+1, 2l,2l$ for $\Phi=\rA_l,\rB_l,\rC_l,\rD_l$.
 The latter representations have dimension $n=27, 56, 248$ for $l=6,7,8$.
 
 For a representation $\pi$ of $\G(\Phi, R)$ on $V$ we denote by $\Lambda(\pi)$ the set of weights of $\pi$.
-It will be convenient to use standard numbering for elements of $\Lambda(\pi)$ in the case when $\Phi$ is classical and $\pi$ is a vector representation (cp.~\cite[§1B]{St78}):
+It will be convenient to use standard numbering for weights of representation $\pi$ in the case when $\Phi$ is classical and $\pi$ is a vector representation (cp.~\cite[§1B]{St78}):
 $$\begin{array}{cll}
   1,2,\ldots, l+1 & \text{in the case} & \Phi =\rA_l, \\
   1,2,\ldots l, 0, -l,\ldots, -2, -1 & \text{in the case} & \Phi =\rB_l, \\
@@ -108,7 +108,6 @@ $$\begin{array}{cll}
 In particular, we write $1$ instead of $\varpi_1$, $2$ instead of $\varpi_1-\alpha_1$ and so on.
 
 \subsection{Elementary subgroup}
-
 Recall that elementary root unipotents $t_{\alpha}(\xi)$, $x\in R$, $\alpha\in\Phi$ satisfy the following set of relations called Steinberg relations.
 \begin{equation}\label{rel:add} t_\alpha(s) t_\alpha(t) = t_\alpha(s+t), \end{equation} 
 \begin{equation}\label{rel:CCF} [t_\alpha(s),  t_\beta(t)] = \left(\prod\limits t_{i\alpha + j\beta}(N_{\alpha,\beta, i, j}s^i t^j)\right),\quad \alpha\neq-\beta, N_{\alpha, \beta, i, j}\in\mathbb{Z}.\end{equation}
@@ -119,7 +118,14 @@ For $\xi\in R^*$ set $w_\alpha(\xi) := x_\alpha(\xi) x_{-\alpha}(-\xi^{-1}) x_{\
 If $\rk(\Phi)\geq 2$ the following relation is a consequence of \ref{rel:add}--\ref{rel:CCF}:
 \begin{equation}\label{rel:R3} w_\alpha(\xi) t_{\beta}(s) w_\alpha(\xi)^{-1} =
 t_{\sigma\ssub{\alpha}\beta} (\eta_{\alpha, \beta}\xi^{-\langle\beta,\alpha \rangle} s),\ \xi,s\in R. \end{equation}
+where coefficients $\eta_{\alpha, \beta} = \pm 1$ (see~\cite[\S~13]{VP} for more details on $\eta_{\alpha, \beta}$).
 
+\begin{rem} Let $\lambda_1, \lambda_2 \in \Lambda(\pi)$ be a pair of weights of a representation $\pi$ of a classical group such that $\lambda_1-\lambda_2\in \Phi$.
+In this situation it will be convenient for us to write $t_{\lambda_1,\lambda_2}(\xi)$ instead of $t_{\lambda_1-\lambda_2}(\xi)$.
+In particular, for $\Phi=\rA_\ell$ we have $t_{1,2}(\xi)=t_{2-1}(\xi)=t_{\varpi_1 - \varpi_1 + \alpha_1}(\xi) = t_{\alpha_1}(\xi)$. \end{rem}
+
+
+\subsection{Root systems}
 Let $\Pi=\{\alpha_1, \ldots, \alpha_l\}$ be a basis of $\Phi$. Denote by $\Phi^+$ and $\Phi^-$ subsets of positive and negative roots with respect to $\Pi$.
 Denote by $m_i(\alpha)$ the coefficient of $\beta$ in the expansion of $\alpha$ in $\Pi$, i.\,e. $\alpha = \sum\limits_{i=1}^n m_i(\alpha) \alpha_i$.
 

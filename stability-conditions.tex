@@ -56,7 +56,7 @@ When $I=R$ we call $\asr(R, R)$ simply the \emph{absolute stable rank} of $R$ an
 The following reformulation of the absolute stable rank condition was noted by A.~Bak.
 \begin{lemma} For a commutative ring $R$ the following statements are equivalent:
 \begin{enumerate}
- \item\label{asr_Stein} $R$ satisfies $\ASR_n(R)$;
+ \item\label{asr_Stein} $R$ satisfies $\ASR_n(R, R)$;
  \item\label{asr_Bak} For any \emph{unimodular} row $(a_1,\ldots,a_n,b,d)\in\Ums(n+2,R)$ there exist $c_1,\ldots,c_n\in R$ such that $(a_1+c_1d,\ldots,a_n+c_nd,b+td)$ is unimodular for all $t\in R$.
 \end{enumerate}
 \end{lemma}
@@ -84,7 +84,30 @@ Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered wi
 Clearly one has
 \[ \sr(R,I)\leqslant\asr(R,I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \]
 
-The following lemma illustrates a typical application of stability conditions.
+The next lemma illustrates a typical application of the absolute relative stability condition.
+Let $v\in R^{2\ell}$ be a vector of the standard vector representation of $\G(\rD_\ell, R)$.
+It will be convenient for us to denote by $v^+$ and $v^-$ the upper and lower halves of $v$ i.e. $v^+=(v_1,\ldots, v_\ell)^t$, $v^-=(v_{-\ell},\ldots, v_{-1})^t$.
+\begin{lemma}\label{lemma:asrUnip}
+ Let $\Phi=\rD_\ell$ and assume that $\asr(R, I)\leq \ell -1$. Then for any $I$-unimodular column $v=(v^+, v^-)^t\in\Ums(2\ell, R, I)$
+ there exist $g\in\U(\Sigma^+_\ell, I)$ such that $(v\cdot g)^+ \in \Ums(\ell, R, I)$.
+\end{lemma}
+\begin{proof} Denote by $J$ the ideal of $R$ spanned by entries of $v^-$. Clearly, $J \leq I$.
+By Proposition~\ref{prop:sr_properties} $\sr(I/J) \leq \ell-1$ and therefore
+the elementary group $\E(\rA_{\ell-1}, R/J, I/J)$ acts transitively on $\Ums(\ell, R/J, I/J)$. 
+This implies existence of $h\in \E(\Delta_\ell, R, I)$ such that for $v' = v\cdot h$ one has $(v')^+ \equiv e_1$ modulo $J$.
+
+By hypothesis, we can find $c_2,\ldots, c_\ell\in I$ such that for $v''=v'\cdot \prod\limits_{i=2}^{\ell}t_{-1, -i}(c_i)$ one has
+$\mathfrak{J}(v''_{-\ell},\ldots, v''_{-2}) = \mathfrak{J}(v'^-)$. Clearly, $v''_1$ is still congruent to $1$ modulo $J$, therefore 
+$(v''_1, v''_{-\ell},\ldots, v''_{-1})$ is $I$-unimodular. Now, applying condition $\sr(I) \leq \ell-1$ once again we find
+$d_1,d_3,\ldots, d_{\ell}\in I$ such that for $v'''=v''\cdot t_{-2,1}(d_1) \cdot \prod\limits_{i=3}^{\ell} t_{-2,-i}(d_i)$
+the entries $(v'''_1, v'''_{-\ell},\ldots, v'''_{-3})$ form a $I$-unimodular column.
+
+We can find $f_1, f_3,\ldots, f_\ell \in R$ such that $f_1v'''_1+\sum\limits_{i=3}^\ell f_i v'''_{-i} = 1$.
+Set $\xi = v'''_1-v'''_2-1 \in I$, $v^4=v'''\cdot t_{1,2}(\xi f_1) \cdot \prod\limits_{i=3}^\ell t_{-i,2}(\xi i_k)$.
+Clearly $v^4_1 = v'''_1$ and $v^4_2 = v'''_1-1$, therefore $v^{4+}$ is $I$-unimodular.
+Summarizing the above, we have found $g\in \EP_\ell(R, I)$ such that $v^4=v\cdot g$
+and assertion of the lemma immediately follows from Levi decomposition. \end{proof}
+
 \begin{lemma} \label{lemma:uraction} 
 Let $\Phi=\rA_\ell, \rD_\ell$. Denote by $\pi$ standard vector representation of $\G(\Phi, R)$ on $V=R^n$, $n=\ell+1,2\ell$.
 Assume that one of the following conditions holds:
