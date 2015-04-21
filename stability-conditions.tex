@@ -1,26 +1,21 @@
-As we will be mainly concerned with applications to stability of $K_1$ of Chevalley groups, our treatment of stability conditions is restricted to the case of commutative $R$. 
-We refer the reader to~\cite{Ba64, Va69, Va71} for a more general exposition.
+As we will be mainly concerned with applications to stability of $K_1$ of Chevalley groups, our treatment of stability conditions is restricted to the case of commutative $R$
+notwithstanding with the fact that the majority of constructions related to stable range conditions can be defined in a more general non-commutative setting (see e.g.~\cite{Ba64, Va69, Va71}).
 
 \subsection{Stable rank}
 Recall the definition of \emph{stable rank} introduced by H.~Bass and L.~Vaserstein (see~\cite{Ba64, Va69}).
-\begin{dfn}
-A row $a=(a_1,\ldots,a_n)\in{}^n\!R$ is called \emph{$I$-unimodular} if it equals $(1,0,\ldots,0)$ modulo $I$ and $a_1,a_2,\ldots,a_n$ generate $R$ as an ideal.
-\end{dfn}
-A column $b \in R^n$ will be called $I$-unimodular if its transpose $b^t$ is an $I$-unimodular row. We denote the set of all $I$-unimodular rows (resp. columns) by $\Umd(n,R,I)$ (resp. $\Ums(n,R,I)$).
-When $R=I$ we refer to $R$-unimodular rows and columns as unimodular.
-\begin{lemma}\label{lemma:relstrlemma}
-For any $I$-unimodular row $a=(a_1,\ldots,a_n)$ there exists $I$-unimodular column $b=(b_1,\ldots,b_n)^t$ such that $ab=\sum\limits_{i=1}^n a_i b_i=1$.
-\end{lemma}
-\begin {dfn} An $I$-unimodular row $a=(a_1,\ldots a_{n+1})$ is called \emph{stable} if one can choose $b_1,\ldots,b_n\in R$ such that the row $(a_1+a_{n+1}b_1,\ldots,a_n+a_{n+1}b_n)$ is also $I$-unimodular. If, moreover, elements $b_1,\ldots,b_n$ can be chosen from  $I$ then such $a$ will be called \emph{$I$-stable}. \end{dfn} 
-We say that a pair $(R,I)$ satisfies stable range condition $\SR_n(R,I)$ if any $I$-unimodular row of length $n+1$ is stable.
-\begin{lemma}\label{lemma:relstrlemma2}\strut
-\begin{enumerate}
-\item The condition $\SR_n(R,I)$ implies $\SR_m(R,I)$ for any $m\geqslant n$.
-\item The condition $\SR_n(R,I)$ implies that any $I$-unimodular row of length $n+1$ is $I$-stable.
-\end{enumerate}
-\end{lemma}
-By definition, the {\it relative stable rank} $\sr(R,I)$ of a pair $(R,I)$ is the smallest natural number $n$ such that condition $\SR_n(R,I)$ holds.
-If no such $n$ exists, we set $\sr(R,I)=\infty$.
+\begin{dfn} A row $a\in{}^n\!R$ is called \emph{$I$-unimodular} if it is congruent to $e_1$ modulo $I$ and its components $a_1,a_2,\ldots,a_n$ generate $R$ as an ideal. \end{dfn}
+A column $b \in R^n$ will be called $I$-unimodular if its transpose $b^t$ is an $I$-unimodular row.
+We denote the set of all $I$-unimodular rows (resp. columns) by $\Umd(n,R,I)$ (resp. $\Ums(n,R,I)$).
+When $R=I$ we refer to $R$-unimodular rows and columns as simply unimodular.
+
+It is not hard to show that for a $I$-unimodular row $a$ there exists an $I$-unimodular column $b$ such that $ab=1$ (see~\cite[\S~2]{Va69}).
+
+An $I$-unimodular row $a=(a_1,\ldots a_{n+1})$ is called \emph{stable} if one can choose $b_1,\ldots,b_n\in I$ such that the row $(a_1+a_{n+1}b_1,\ldots,a_n+a_{n+1}b_n)$ is also $I$-unimodular. 
+We say that $I$ satisfies stable range condition $\SR_n(I)$ if any $I$-unimodular row of length $n+1$ is stable.
+It is easy to see that $\SR_n(I)$ implies $\SR_m(I)$ for any $m\geqslant n$. It is also clear that validity of $\SR_n(I)$ does not depend on the ambient ring $R$.
+
+By definition, the {\it stable rank} of $I$ is the smallest natural $n$ such that $\SR_n(I)$ holds.
+We denote the stable rank of $I$ by $\sr(I)$, we set $\sr(I)=\infty$ if no such $n$ exists.
 
 The following proposition summarizes basic properties of stable ranks.
 \begin{prop} \label{prop:sr_properties}
@@ -31,7 +26,7 @@ Let $R$ be arbitrary commutative unital ring and let $I\trianglelefteq R$ be an 
 \item Let $J$ denote the Jacobson radical of $R$, then one has $\sr(R)=\sr(R/J)$ and $\sr(R, J) = 1$.
 \end{enumerate}
 \end{prop}
-\begin{proof} See~\cite{Va71}. 
+\begin{proof} See~\cite{Va71}, \cite[Theorem~2.3]{Va69}. 
 \textbf{TODO: Add reference for the latter fact}.
 %TODO:
 \end{proof}
@@ -93,7 +88,7 @@ It will be convenient for us to denote by $v^+$ and $v^-$ the upper and lower ha
 \end{lemma}
 \begin{proof} Denote by $J$ the ideal of $R$ spanned by entries of $v^-$. Clearly, $J \leq I$.
 By Proposition~\ref{prop:sr_properties} $\sr(I/J) \leq \ell-1$ and therefore
-the elementary group $\E(\rA_{\ell-1}, R/J, I/J)$ acts transitively on $\Ums(\ell, R/J, I/J)$. 
+the elementary group $\E(\rA_{\ell-1}, R/J, I/J)$ acts transitively on $\Ums(\ell, R/J, I/J)$ (see~\cite[Theorem~2.3c]{Va69}). 
 This implies existence of $h\in \E(\Delta_\ell, R, I)$ such that for $v' = v\cdot h$ one has $(v')^+ \equiv e_1$ modulo $J$.
 
 By hypothesis, we can find $c_2,\ldots, c_\ell\in I$ such that for $v''=v'\cdot \prod\limits_{i=2}^{\ell}t_{-1, -i}(c_i)$ one has
