@@ -113,11 +113,13 @@ Assume that one of the following conditions holds:
  \item $\Phi=\rA_\ell$, $\Gamma=\{ k+1, \ldots, \ell+1\} \subset \Lambda(\pi)$ and $\sr(I)\leq k\leq \ell$;
  \item $\Phi=\rD_\ell$, $\Gamma=\{-l,\ldots, -2, -1\} \subset \Lambda(\pi)$ and $\asr(R, I)\leq \ell-1$. 
 \end{itemize}
-Then for any $I$-unimodular column $g\in \G(\Phi, R, I)$ there exist $x\in \U(\Phi^+, I)$, $y\in \U(\Phi^-, I)$ such that $(yxg \cdot e_1)_\lambda = 0$ for $\lambda\in \Gamma$.
+Then for any $I$-unimodular column $g\in \G(\Phi, R, I)$ there exist $x\in \U(\Phi^+, I)$, $y\in \U(\Phi^-, I)$ such that $(yxg \cdot v^+)_\lambda = 0$ for $\lambda\in \Gamma$.
 \end{lemma}
 \begin{proof}
+\textsc{Case $\Phi=\rA_\ell$.} \textbf{TODO: Write proof for this case.}
+
 \textsc{Case $\Phi=\rD_\ell$.} From the proof of Lemma~\ref{lemma:asrUnip} it follows that there exists $h_1 \in \EP_\ell(R, I)$ such that for $v'=g\cdot v$ one has $v'_2=v'_1-1\in I$.
 Clearly, for $v'' = z_{-\alpha\ssub{2}}(-v'_2, 1)\cdot v'$ one has $v''_1=1$ and, therefore by Chevalley---Matsumoto lemma there exists $h_2 \in \U(\Phi^-, I)$ such that 
-$g'=h_2 \cdot z_{-\alpha\ssub{2}}(-v'_2, 1) \cdot h_1 \cdot g$ fix $e_1$. Using Levi decomposition we can rewrite $g'=h \cdot y \cdot x \cdot g$ for some $y\in\U(\Sigma^-_\ell, I)$, $x \in \U(\Sigma^+_\ell, I)$, $h\in\E(\Delta_\ell, R, I)$.
-Now, it is clear that $x$, $y$ are the desired elements.
+$g'=h_2 \cdot z_{-\alpha\ssub{2}}(-v'_2, 1) \cdot h_1 \cdot g$ fix $v^+$. Using Levi decomposition we can rewrite $g'=h \cdot y \cdot x \cdot g$ for some $y\in\U(\Sigma^-_\ell, I)$, $x \in \U(\Sigma^+_\ell, I)$, $h\in\E(\Delta_\ell, R, I)$.
+It is clear that $x$, $y$ are the desired elements.
 \end{proof}

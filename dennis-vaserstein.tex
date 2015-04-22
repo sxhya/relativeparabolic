@@ -18,7 +18,7 @@ The relative elementary subgroup $\E(\Phi, R, I)$ coincides with $A_{rs}$ under 
     \begin{tabular}{| l | l | l | l | l |} \hline
     № & $\Phi$ & $(s,r)$ & ring condition \\ \hline
     1. & $\rA_\ell$, $\ell\geq 2$ & $(1, \ell)$ & $\sr(I) \leq \ell-1$ \\ \hline
-    2. & $\rB_\ell$, $\ell\geq 3$ & $(1, \ell)$ & $\sr(I) \leq \ell-2$ \\ \hline
+    2. & $\rB_\ell$, $\ell\geq 3$ & $(1, \ell)$ & $\sr(I) \leq \ell-1$ \\ \hline
     3. & $\rD_\ell$, $\ell\geq 4$ & $(1, \ell)$ & $\sr(I) \leq \ell-2$ \\ \hline    
     4. & $\rE_\ell$, $\ell=6,7$ & $(\ell, 2)$ & $\sr(I) \leq \ell-3$ \\ \hline     
     5. & $\rE_\ell$, $\ell=6,7$ & $(\ell, 1)$ & $\asr(R, I)\leq \ell-2$ \\ \hline    
@@ -26,7 +26,7 @@ The relative elementary subgroup $\E(\Phi, R, I)$ coincides with $A_{rs}$ under 
 \end{thm}
 The proof of Theorem~\ref{theorem:relative_dv} occupies the rest of this section.
 
-\subsection{Main reduction.} Consider the usual conjugation action of $\E(\Phi, R)$ on $\E(\Phi, R, I)$. 
+Consider the usual conjugation action of $\E(\Phi, R)$ on $\E(\Phi, R, I)$. 
 This action induces an action of $\E(\Phi, R)$ on the set $\mathfrak{S}$ of all subsets of $\E(\Phi, R, I)$.
 On the other hand, $\E(\Phi, R, I)$ acts on $\mathfrak{S}$ by left multiplication.
 Denote by $N_{rs}$ and $L_{rs}$ stabilizers of $A_{rs} \in \mathfrak{S}$ with respect to these actions.
@@ -71,26 +71,38 @@ On the other hand, inclusions $X_{\alpha\ssub{k}} \subseteq N_{rs}$ for $\ 1\leq
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{theorem:relative_dv}]
-We first show that under specified assumptions on $(R, I)$ one can satisfy the conditions of Lemma~\ref{lemma:Stein_reduction}.
-Set $\Gamma = \{\lambda \in \varpi_s-\Sigma_s^+\cap \Delta_r \mid \lambda - \alpha_r \in \Lambda(\pi) \}$.
-It is easy to see that $|\Gamma|=1$ for cases $\Phi=\rA_\ell, \rB_\ell$, $|\Gamma|=2$ for $\Phi=\rD_\ell$, $|\Gamma|=\ell$ for $\Phi=\rE_l$.
-%TODO: Specify how we apply Lemma~\ref{lemma:uraction}
+We first show that under specified assumptions on $(R, I)$ one can meet the conditions of Lemma~\ref{lemma:Stein_reduction}.
+Consider the following two subsets of $\Lambda(\pi)$:
+$$\Gamma = \varpi_s- (\Sigma_s^+\cap \Delta_r),\quad \Gamma_0 = \{\lambda \in \Gamma \mid \lambda - \alpha_r \in \Lambda(\pi) \}.$$
+Clearly, $\Gamma$ is the set of weights of an irreducible representation of $\G(\Delta_r, R)$ corresponding to the same highest weight $\varpi_s$.
+The subsystem $\Delta_r$ has type $\rA_{\ell-1}$ in all cases except the last one.
+It is also clear that $|\Gamma_0|=1$ for $\Phi=\rA_\ell, \rB_\ell$, $|\Gamma_0|=2$ for $\Phi=\rD_\ell$, $|\Gamma_0|=3$ for $\Phi=\rE_\ell$ and $r=2$.
+In the case $\Phi=\rE_\ell$, $r=2$ the subsystem $\Delta_r$ has type $\rD_{\ell-1}$ and $|\Gamma_0|=\ell-1$.
 
-Notice that By virtue of Theorem~\ref{theorem:Stepanov} it suffices to show that $A_{rs}$ is invariant with respect to left multiplication by elements of the following two families:
+Let $\widetilde{L_r}$ be the set of all elements $g$ of $\E(\Delta_r,R, I)$ such that $(g \cdot v^+)_\lambda = 0$ for $\lambda\in\Gamma_0$.
+In any of specified cases the assumption on $(R, I)$ allows us to apply Lemma~\ref{lemma:uraction} to the subsystem $\Delta_r$ and find
+$x\in\U(\Delta_r\cap\Phi^+, I)$, $y\in \U(\Delta_r\cap\Phi^-, I)$ such that $yx\cdot g \in \widetilde{L_r}$.
+This proves the first condition of Lemma~\ref{lemma:Stein_reduction}, indeed:
+$$ \U(\Sigma^+_r, I)\cdot \U(\Sigma^-_r, I) \cdot g = \U(\Sigma^+_r, I) x^{-1} \cdot \U(\Sigma^-_r, I)^{x^{-1}} y^{-1} \cdot (yxg) \subseteq \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \widetilde{L_r}.$$
+To prove the second condition notice that by the definition of $\Gamma_0$ for any $s\in I$, $ g\in\widetilde{L_r}$ one has $x_{-\alpha_r}(s) \cdot g \cdot v^+ = g \cdot v^+$ and, therefore,
+$$X_{-\alpha\ssub{r}}(I)^{\widetilde{L_r}} \subseteq \U(\Phi^-, I) \cap \Stab(v^+) \subseteq \E(\Delta_s, R, I) \subseteq \EP_s(R, I).$$
+
+From now on we can assume that the statement of Lemma~\ref{lemma:Stein_reduction} holds and $\EP_s$ normalizes $A_{rs}$.
+Notice that in view of Theorem~\ref{theorem:Stepanov} it suffices to show that the following two families of elements are contained in $L_{rs}$:
 \begin{itemize} \item $z_{\alpha}(s, \xi)$, $s\in I$, $\xi \in R$, $\alpha\in\Sigma^-_s$;
 \item $x_{\beta}(s)$, $s \in I$, $\beta \in \Phi$. \end{itemize}
-Thanks to Lemma~\ref{lemma:conj_lemma} it suffices to check the required statement only for the second family of elements.
+Since $\EP_s \subseteq N_{rs}$ it suffices to check inclusions only for the second family of elements.
+We already know that $\U^+(\Phi, I) \subseteq L_{rs}$.
 
-Now we are ready to prove the needed equality.
-Denote by $S$ the set of all roots $\alpha$ of $\Phi$ for which one has $X_{\alpha}(I)\cdot A_{rs}\subseteq A_{rs}$.
-It remains to prove that $S$ coincides with $\Phi$. We already know that $\Phi^+ \subseteq S$.
-
-Notice that the Weyl group $W(\Delta_s)$ acts transitively on $\Delta_s$, therefore in view of~\ref{rel:R3} the subgroup
+Notice that the Weyl group $W(\Delta_s)$ acts transitively on $\Delta_s$, therefore in view of relation~\ref{rel:R3} the subgroup
 $W_s := \langle w_\alpha(1) \mid \alpha\in\Delta_s\rangle \leq \EP_s$ acts transitively on the set of root subgroups $X_\alpha(I)$, $\alpha\in \Delta_s$.
-Since $-\alpha_r\in S$ this implies that that $\Delta_s\subseteq S$.
+Since $X_{-\alpha\ssub{r}}(I) \subseteq L_{rs}$ we get that that $\U(\Delta_s \cap \Phi^-, I)\subseteq L_{rs}$.
 
-Now denote by $\widetilde{\alpha}$ the maximal root of $\Phi$. Our assumptions on $\Phi$ guarantee that $m_s(\alpha)=1$, 
-hence every two roots $\alpha, \beta \in \Sigma^-_s$ have the same $s$-shape (i.\,e. $\shape(\{s\}, \alpha = \shape(\{s\}, \beta)$).
-By Lemma~\ref{lemma:abs} $W(\Delta_s)$ interchanges $\alpha$ and $\beta$. %if their length is equal.
-Since $\alpha_s \in S$ the argument similar to the one above implies $\Sigma^-_s\subseteq S$. This completes the proof of the lemma. 
+Now denote by $\widetilde{\alpha}$ the maximal root of $\Phi$. Our assumptions on $\Phi$ guarantee that $m_s(\widetilde{\alpha})=1$, 
+and, consequently, every two roots $\alpha, \beta \in \Sigma^-_s$ have the same $s$-shape (i.\,e. $\shape(\{s\}, \alpha = \shape(\{s\}, \beta)$).
+By Lemma~\ref{lemma:abs} $W(\Delta_s)$ interchanges $\alpha$ and $\beta$ if their length is equal (which is the case if we assume additionally $\Phi\neq \rB_\ell$).
+Since $X_{\alpha\ssub{s}} \subseteq L_{rs}$ the argument similar to the one above implies $\U(\Sigma^-_s, I)\subseteq L_{rs}$.
+This completes the proof of the theorem for $\Phi\neq \rB_\ell$. 
+%TODO:
+\textbf{TODO: Finish the proof for $\Phi=\rB_\ell$.}
 \end{proof}
