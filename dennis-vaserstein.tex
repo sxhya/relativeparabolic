@@ -45,7 +45,7 @@ $$h^g \cdot A_{rs} = g^{-1} \cdot h \cdot g \cdot A_{rs} \subseteq g^{-1} \cdot 
 \end{proof}
 
 The following lemma is a relative version of the main reduction used by M.~Stein in~\cite{St78} for the proof of the absolute Dennis--Vaserstein decomposition.
-\begin{lemma}\label{Stein_reduction}
+\begin{lemma}\label{lemma:Stein_reduction}
 Assume that there exists a subset $\widetilde{L_r} \subseteq \E(\Delta_r, R, I)$ with the following properties:
 \begin{enumerate}[label=(\alph*)] 
  \item\label{stein_cond1} One has $\U(\Sigma^+_r, I)\cdot \U(\Sigma^-_r, I) \cdot \E(\Delta_r, R, I) \subseteq \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \widetilde{L_r}.$
@@ -70,11 +70,16 @@ We have just shown that $X_{-\alpha_r}\subseteq N_{rs}$.
 On the other hand, inclusions $X_{\alpha\ssub{k}} \subseteq N_{rs}$ for $\ 1\leq k\leq \ell$ and $X_{-\alpha\ssub{k}} \subseteq N_{rs}$ for $k\neq r,s$ are obvious.
 \end{proof}
 
-Now we are ready to prove the needed equality.
-By virtue of Theorem~\ref{theorem:Stepanov} it suffices to show that $A$ is invariant with respect to left multiplication by elements of the following two families:
+\begin{proof}[Proof of Theorem~\ref{theorem:relative_dv}]
+We first show that under specified assumptions on $(R, I)$ one can satisfy the conditions of Lemma~\ref{lemma:Stein_reduction}.
+%TODO: Specify how we apply Lemma~\ref{lemma:uraction}
+
+Notice that By virtue of Theorem~\ref{theorem:Stepanov} it suffices to show that $A_{rs}$ is invariant with respect to left multiplication by elements of the following two families:
 \begin{itemize} \item $z_{\alpha}(s, \xi)$, $s\in I$, $\xi \in R$, $\alpha\in\Sigma^-_s$;
- \item $x_{\beta}(s)$, $s \in I$, $\beta \in \Phi$. \end{itemize}
+\item $x_{\beta}(s)$, $s \in I$, $\beta \in \Phi$. \end{itemize}
 Thanks to Lemma~\ref{lemma:conj_lemma} it suffices to check the required statement only for the second family of elements.
+
+Now we are ready to prove the needed equality.
 Denote by $S$ the set of all roots $\alpha$ of $\Phi$ for which one has $X_{\alpha}(I)\cdot A_{rs}\subseteq A_{rs}$.
 It remains to prove that $S$ coincides with $\Phi$. We already know that $\Phi^+ \subseteq S$.
 
@@ -86,3 +91,4 @@ Now denote by $\widetilde{\alpha}$ the maximal root of $\Phi$. Our assumptions o
 hence every two roots $\alpha, \beta \in \Sigma^-_s$ have the same $s$-shape (i.\,e. $\shape(\{s\}, \alpha = \shape(\{s\}, \beta)$).
 By Lemma~\ref{lemma:abs} $W(\Delta_s)$ interchanges $\alpha$ and $\beta$. %if their length is equal.
 Since $\alpha_s \in S$ the argument similar to the one above implies $\Sigma^-_s\subseteq S$. This completes the proof of the lemma. 
+\end{proof}
