@@ -16,12 +16,12 @@ Denote by $A_{rs}$ any of the equal subsets from the previous formula.
 The relative elementary subgroup $\E(\Phi, R, I)$ coincides with $A_{rs}$ under the following assumptions on $(R, I)$.
   \begin{center}
     \begin{tabular}{| l | l | l | l | l |} \hline
-    № & $\Phi$ & $(r,s)$ & ring condition \\ \hline
-    1 & $\rA_\ell$, $\ell\geq 2$ & $(1, \ell)$ & $\sr(I) \leq \ell-1$ \\ \hline
-    2 & $\rD_\ell$, $\ell\geq 4$ & $(1, \ell)$ & $\sr(I) \leq \ell-2$ \\ \hline    
-    3 & $\rE_\ell$, $\ell=6,7$ & $(2, \ell)$ & $\sr(I) \leq \ell-3$ \\ \hline     
-    4 & $\rE_\ell$, $\ell=6,7$ & $(1, \ell)$ & $\asr(R, I)\leq \ell-2$ \\ \hline    
-    5 & $\rB_\ell$, $\ell\geq 3$ & $(1, \ell)$ & $\sr(I) \leq \ell-2$ \\ \hline
+    № & $\Phi$ & $(s,r)$ & ring condition \\ \hline
+    1. & $\rA_\ell$, $\ell\geq 2$ & $(1, \ell)$ & $\sr(I) \leq \ell-1$ \\ \hline
+    2. & $\rB_\ell$, $\ell\geq 3$ & $(1, \ell)$ & $\sr(I) \leq \ell-2$ \\ \hline
+    3. & $\rD_\ell$, $\ell\geq 4$ & $(1, \ell)$ & $\sr(I) \leq \ell-2$ \\ \hline    
+    4. & $\rE_\ell$, $\ell=6,7$ & $(\ell, 2)$ & $\sr(I) \leq \ell-3$ \\ \hline     
+    5. & $\rE_\ell$, $\ell=6,7$ & $(\ell, 1)$ & $\asr(R, I)\leq \ell-2$ \\ \hline    
     \end{tabular} \end{center} 
 \end{thm}
 The proof of Theorem~\ref{theorem:relative_dv} occupies the rest of this section.
@@ -72,6 +72,8 @@ On the other hand, inclusions $X_{\alpha\ssub{k}} \subseteq N_{rs}$ for $\ 1\leq
 
 \begin{proof}[Proof of Theorem~\ref{theorem:relative_dv}]
 We first show that under specified assumptions on $(R, I)$ one can satisfy the conditions of Lemma~\ref{lemma:Stein_reduction}.
+Set $\Gamma = \{\lambda \in \varpi_s-\Sigma_s^+\cap \Delta_r \mid \lambda - \alpha_r \in \Lambda(\pi) \}$.
+It is easy to see that $|\Gamma|=1$ for cases $\Phi=\rA_\ell, \rB_\ell$, $|\Gamma|=2$ for $\Phi=\rD_\ell$, $|\Gamma|=\ell$ for $\Phi=\rE_l$.
 %TODO: Specify how we apply Lemma~\ref{lemma:uraction}
 
 Notice that By virtue of Theorem~\ref{theorem:Stepanov} it suffices to show that $A_{rs}$ is invariant with respect to left multiplication by elements of the following two families:
