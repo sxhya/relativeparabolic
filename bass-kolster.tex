@@ -28,68 +28,19 @@ Now apply $z_\gamma(-r_1,1)$, $\gamma=-\alpha_{\max}$:
 Now $\ell-1$ lower transformations eliminates all the remaining entries in the first column, while $\ell$ more upper ones will make the first row trivial.
 
 \textsc{Case $\Phi=\rC_\ell$:}
-Denote $v=(1+r_1,r_2,\ldots,r_\ell,r_{-\ell},\ldots,r_{-1})^t\in\Ums(2\ell,R,I)$.
-Find $c_1,\ldots,c_{-2}\in I$ such that $(1+r_1+c_1r_{-1},\ldots,r_{-2}+c_{-2}r_{-1})=(1+r_1',\ldots,r_{-2}')\in\Ums(2\ell-1,R,I)$.
-First add $c_{-i}r_{-1}$ to $r_{-i}$ for $-i=-\ell,\ldots,-2$, so that
-\[ \begin{pmatrix}
-1+r_1 \\ r_i \\ r_{-i} \\ r_{-1}
-\end{pmatrix}
-\longmapsto
-\begin{pmatrix}
-1+r_1+\sum_{i=2}^\ell c_{-i}r_i\\ r_i \\ r_{-i}+c_{-i}r_{-1} \\ r_{-1}
-\end{pmatrix}=
-\begin{pmatrix}
-1+r_{11} \\ r_i \\ r_{-i}' \\ r_{-1}
-\end{pmatrix},\quad i=2,\ldots,\ell. \]
-Denote $\mathfrak{a}=\sum_{i=-\ell}^{-2} r_i'R\unlhd R$. Now add $c_ir_{-1}$ to $r_i$ for $i=2,\ldots,\ell$:
-\[ \begin{pmatrix}
-1+r_{11} \\ r_i' \\ r_{-i}' \\ r_{-1}
-\end{pmatrix}
-\longmapsto
-\begin{pmatrix}
-1+r_{11}+a \\ r_i+c_ir_{-1} \\ r_{-i}' \\ r_{-1}
-\end{pmatrix}=
-\begin{pmatrix}
-1+r_{12} \\ r_i' \\ r_{-i}' \\ r_{-1}
-\end{pmatrix},\quad
-\begin{matrix*}[l]
-a\in\mathfrak{a}\\
-i=2,\ldots,\ell
-\end{matrix*} \]
-Finally, add $\left(c_1+\sum_{i=2}^\ell c_ic_{-i}\right)r_{-1}$ to the first row:
-\begin{multline*}
-\left(1+r_1+\sum\nolimits_{i=2}^\ell c_{-i}r_i+a\right)+\left(c_1r_{-1}+\sum\nolimits_{i=2}^\ell c_ic_{-i}r_{-1}\right)=\\
-=(1+r_1+c_1r_{-1})+\sum\nolimits_{i=2}^\ell c_{-i}(r_i+c_ir_{-1})+a=\\
-=1+r_1'+\sum\nolimits_{i=2}^\ell c_{-i}r_i'+a=1+r_1''.
-\end{multline*}
-Note that $\langle 1+r_1'',r_2',\ldots,r_{-2}'\rangle=\langle 1+r_1',r_2',\ldots,r_{-2}'\rangle$, so we made the first $2\ell-1$ elements form a unimodular column.
+Denote $v=(v^+,v^-)^t\in\Ums(2\ell,R,I)$. Find $c_1,\ldots,c_{-2}\in I$ such that $(v_1+c_1v_{-1},\ldots,v_{-2}+c_{-2}v_{-1})=(v_1',\ldots,v_{-2}')$ is unimodular.
 
-Now we may assume that the first column $(1+r_1,\ldots,r_{-1})^t$ has its first $2\ell-1$ entries unimodular. Find $c_1,\ldots,c_{-2}\in I$ such that $c_1(1+r_1)+c_2r_2+\ldots+c_{-2}r_{-2}=r_1-r_{-1}$. Add $c_{-i}r_i$ to $r_{-1}$, $i=2,\ldots,\ell$:
-\[ \begin{pmatrix}
-1+r_1 \\ r_i \\ r_{-i} \\ r_{-1}
-\end{pmatrix}
-\longmapsto
-\begin{pmatrix}
-1+r_1 \\ r_i+c_{-i}r_1 \\ r_{-i} \\ r_{-1}+\sum_{i=2}^\ell c_{-i}r_{-i}
-\end{pmatrix}=
-\begin{pmatrix}
-1+r_1 \\ r_i' \\ r_{-i} \\ r_{-11}
-\end{pmatrix},\quad i=2,\ldots,\ell. \]
-Then add $c_ir_i'=c_i(r_1+c_{-i}r_{-i})$, $i=2,\ldots,\ell$ to $r_{-11}$:
-\[ 1+r_1\longmapsto 1+r_1,\quad r_{-11}\longmapsto r_{-1}+\sum_{i=2}^\ell c_{-i}r_{-i}+\sum_{i=2}^\ell c_i(r_i+c_{-i}r_1)=r_{-12}. \]
-Next add $(c_1-\sum_{i=2}^\ell c_ic_{-i})(1+r_1)$ to $r_{-12}$:
-\begin{multline*}
-r_{-12}\mapsto r_{-1}+\sum_{i=2}^\ell c_{-i}r_{-i}+\sum_{i=2}^\ell c_i(r_i+c_{-i}(1+r_1))+c_1(1+r_1)-\sum_{i=2}^\ell c_ic_{-i}(1+r_1)=\\=r_{-1}+c_1(1+r_1)+\sum_{i=2}^\ell(c_ir_i+c_{-i}r_{-i})=r_{-1}+(r_1-r_{-1})=r_1.
-\end{multline*}
-Again, as in case of $\rA_n$, apply $z_\gamma(-r_1,1)$ with $\gamma=-\alpha_\mathrm{max}$.
-\[ \begin{pmatrix}1+r_1 \\ \vdots \\ r_1\end{pmatrix}
-\xmapsto{x_{-\gamma}(-1)}
-\begin{pmatrix}1 \\ \vdots \\ r_1\end{pmatrix}
-\xmapsto{x_\gamma(-r_1)}
-\begin{pmatrix}1 \\ \vdots \\ 0\end{pmatrix}
-\xmapsto{x_{-\gamma}(1)}
-\begin{pmatrix}1 \\ \vdots \\ 0\end{pmatrix}. \]
-Now apply $2\ell-2$ lower transformation to obtain zeroes on positions $i=2,\ldots,-2$, that will also add $\sum_{i=2}^\ell (r_i+r_{-i})$ to $r_{-1}$,
+First add $c_{-i}v_{-1}$ to $v_{-i}$ for $-i=-\ell,\ldots,-2$, this will also add something to $v_1$.
+
+Then add $c_iv_{-1}$ to $v_i$ for $i=2,\ldots,\ell$. So far we have made the entries from $i=2,\ldots,-2$ equal to $v_i+c_iv_{-1}$, and one more upper transformation (corresponding to the highest root) will make the first entry equal to $v_1+c_1v_{-1}$ (note that the coefficient for that addition lies in $I$).
+
+Now we can assume that the first $2\ell-1$ entries of $v$ are unimodular and find $c_1,\ldots,c_{-2}\in I$ such that $c_1v_1+\ldots+c_{-2}v_{-2}=v_1-v_{-1}$. Add $c_{-i}v_i$ to $v_{-1}$, $i=2,\ldots,\ell$:
+\[ (v_1,v_2\ldots,v_\ell,v_{-\ell},\ldots,v_{-2},v_{-1})^t\longmapsto (v_1,v'_2\ldots,v'_\ell,v_{-\ell},\ldots,v_{-2},v'_{-1})^t. \]
+Then add $c_iv_i'=c_i(v_1+c_{-i}v_{-i})$, $i=2,\ldots,\ell$ to the last entry:
+\[ v_1\longmapsto v_1,\quad v'_{-1}\longmapsto v_{-1}+\sum_{i=2}^\ell c_{-i}v_{-i}+\sum_{i=2}^\ell c_i(v_i+c_{-i}v_1)=v''_{-1}. \]
+Next add $\left(c_1-\sum_{i=2}^\ell c_ic_{-i}\right)v_1$ to $v''_{-1}$ to get $v_1$ in position $-1$. Again, as in case of $\rA_n$, apply $z_\gamma(-v_1,1)$ with $\gamma=-\alpha_\mathrm{max}$, to get $1$ as the first entry and $0$ as the last.
+
+Now apply $2\ell-2$ lower transformation to obtain zeroes on positions $i=2,\ldots,-2$, that will also add $\sum_{i=2}^\ell (v_i+v_{-i})$ to $v_{-1}$,
 so by one more transformation one can make the first column trivial. 
 The same can be done with the first row, so in total we used $8\ell-3$ transformations.
 
