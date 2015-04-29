@@ -1,93 +1,85 @@
 As we will be mainly concerned with applications to stability of $K_1$ of Chevalley groups, our treatment of stability conditions is restricted to the case of commutative $R$
 notwithstanding with the fact that the majority of constructions related to stable range conditions can be defined in a more general non-commutative setting (see e.g.~\cite{Ba64, Va69, Va71}).
 
-\subsection{Stable rank}
-Recall the definition of \emph{stable rank} introduced by H.~Bass and L.~Vaserstein (see~\cite{Ba64, Va69}).
-\begin{dfn} A row $a\in{}^n\!R$ is called \emph{$I$-unimodular} if it is congruent to $e_1$ modulo $I$ and its components $a_1,a_2,\ldots,a_n$ generate $R$ as an ideal. \end{dfn}
-A column $b \in R^n$ will be called $I$-unimodular if its transpose $b^t$ is an $I$-unimodular row.
-We denote the set of all $I$-unimodular rows (resp. columns) by $\Umd(n,R,I)$ (resp. $\Ums(n,R,I)$).
+\subsection{Relative stable rank}
+Throughout this subsection we recall basic definitions and notation pertaining to the concept of stable rank introduced by H.~Bass and L.~Vaserstein in 1960s (see~\cite{Ba64, Va69}).
+
+Recall that a row $a\in{}^n\!R$ is called \emph{$I$-unimodular} if it is congruent to $e_1$ modulo $I$ and its components $a_1,a_2,\ldots,a_n$ generate $R$ as an ideal.
+A column $b \in R^n$ is called $I$-unimodular if its transpose $b^t$ is an $I$-unimodular row.
+We denote the set of all $I$-unimodular rows (resp. columns) by $\Umd(n, I)$ (resp. $\Ums(n, I)$).
 When $R=I$ we refer to $R$-unimodular rows and columns as simply unimodular.
 
 It is not hard to show that for a $I$-unimodular row $a$ there exists an $I$-unimodular column $b$ such that $ab=1$ (see~\cite[\S~2]{Va69}).
 
 An $I$-unimodular row $a=(a_1,\ldots a_{n+1})$ is called \emph{stable} if one can choose $b_1,\ldots,b_n\in I$ such that the row $(a_1+a_{n+1}b_1,\ldots,a_n+a_{n+1}b_n)$ is also $I$-unimodular. 
 We say that $I$ satisfies stable range condition $\SR_n(I)$ if any $I$-unimodular row of length $n+1$ is stable.
-It is easy to see that $\SR_n(I)$ implies $\SR_m(I)$ for any $m\geqslant n$. It is also clear that validity of $\SR_n(I)$ does not depend on the ambient ring $R$.
-
-By definition, the {\it stable rank} of $I$ is the smallest natural $n$ such that $\SR_n(I)$ holds.
-We denote the stable rank of $I$ by $\sr(I)$, we set $\sr(I)=\infty$ if no such $n$ exists.
+It is easy to see that $\SR_n(I)$ implies $\SR_m(I)$ for any $m\geqslant n$. 
+It is also clear that condition $\SR_n(I)$ does not depend on the choice of ambient ring $R$.
+By definition, the {\it stable rank} of $I$ (denoted $\sr(I)$) is the smallest natural $n$ such that $\SR_n(I)$ holds (we set $\sr(I)=\infty$ if no such $n$ exists).
 
 The following proposition summarizes basic properties of stable ranks.
 \begin{prop} \label{prop:sr_properties}
 Let $R$ be arbitrary commutative unital ring and let $I\trianglelefteq R$ be an ideal.
 \begin{enumerate}
-\item For any ideal $J\subseteq I$ one has $\sr(R,I)\leqslant\sr(R)$, $\sr(R/J,I/J)\leqslant\sr(R,I)$.
+\item For any ideal $J\subseteq I$ one has $\sr(J)\leqslant\sr(I)$, $\sr(I/J)\leqslant\sr(I)$.
 \item One has $\sr\left(\prod\limits_{i=1}^n R_i\right)=\max\limits_{i=1}^n\left(\sr(R_i)\right).$
-\item Let $J$ denote the Jacobson radical of $R$, then one has $\sr(R)=\sr(R/J)$ and $\sr(R, J) = 1$.
+\item Let $J$ denote the Jacobson radical of $R$, then one has $\sr(R)=\sr(R/J)$.
 \end{enumerate}
 \end{prop}
-\begin{proof} See~\cite{Va71}, \cite[Theorem~2.3]{Va69}. 
-\textbf{TODO: Add reference for the latter fact}.
-%TODO:
+\begin{proof} See~\cite[Theorem~2.3]{Va69}, \cite{Va71}. 
 \end{proof}
 \begin{example}
 Since the stable rank of a field equals $1$, one can conclude from the previous proposition that $\sr(R)=1$ for any semilocal ring $R$.
 Other examples of rings of stable rank $1$ are provided by boolean rings, the ring of algebraic integers, the ring of entire functions, the disk-algebra.
 \end{example}
 
-\subsection{Absolute stable rank}
+\subsection{Relativization of absolute stable rank condition}
 For a row $a=(a_1,\ldots,a_n)\in{}^n\!R$ denote by $\mathfrak{J}(a)$ the intersection of all maximal ideals of $R$ containing $a_1,\ldots,a_n$.
 It is easy to see that a row $a\in R^n$ is unimodular if and only if $\mathfrak{J}(a)=R$. 
 Clearly, for any $g\in\GL(n,R)$ one has $\mathfrak{J}(a\cdot g)=\mathfrak{J}(a)$.
-%TODO: Think whether a more standard term could be used instead of ``J-stable''.
 \begin{dfn}\label{dfn:j-stable}
 We say that a row $a=(a_1,\ldots,a_{n+1})\in{}^{n+1}\!I$ is {\it $\mathfrak{J}$-stable}, if there exist $c_1,\ldots,c_n\in I$ such that
 $\mathfrak{J}(a_1,\ldots,a_{n+1})=\mathfrak{J}(a_1+c_1a_{n+1},\ldots,a_n+c_na_{n+1}).$
 \end{dfn}
 \begin{dfn}\label{dfn:asr}
 We say that an ideal $I$ satisfies condition $\ASR_n(I)$ if it satisfies $\SR_n(I)$ and, moreover, any row $a\in{}^{n+1}\!I$ is $\mathfrak{J}$-stable.
-Below we will see that, as suggested by the notation, condition $\ASR_n(I)$ does not depend on the ambient ring $R$.
+\end{dfn}
 
 It is easy to see that $\ASR_m(I)$ implies $\ASR_n(I)$ for any $n\geqslant m$. 
 By definition, the \emph{absolute relative stable rank} $\asr(I)$ is the smallest natural $n$ such that $\ASR_n(I)$ holds. 
 Similarly to the case of usual stable rank, we set $\asr(I)=\infty$ if no such $n$ exists.
-%Not needed:
-%When $I=R$ we call $\asr(R, R)$ simply the \emph{absolute stable rank} of $R$ and denote it by $\asr(R)$.
-\end{dfn}
 
-We will use use the following version of the relative absolute stable rank condition.
+A priori our definition of condition $\ASR_n(I)$ depends on the ambient ring $R$.
+Below we will see that, in fact, there is no such dependence.
 \begin{lemma}\label{lemma:relative-asr-unimod}
 For a commutative ring $R$ and an ideal $I \leq R$ the following statements are equivalent:
-\begin{enumerate}
-\item\label{asr-j-stable} Any row $a\in{}^{n+1}\!I$ is $\mathfrak{J}$-stable;
-\item\label{asr-bak-like} For any $I$-unimodular row $(b,a_1,\ldots,a_n,d)\in\Ums(n+2,R,I)$ there exist $c_1,\ldots,c_n\in I$ 
- such that $(b+b',a_1+c_1d,\ldots,a_n+c_nd)$ is $I$-unimodular for any $b'\in J$, where $J=\langle a_1,\ldots,a_n,d \rangle$.
-\end{enumerate}
+\begin{enumerate} \item\label{asr-j-stable} Any row $a\in{}^{n+1}\!I$ is $\mathfrak{J}$-stable;
+\item\label{asr-bak-like} For any $I$-unimodular row $(b,a_1,\ldots,a_n,d)\in\Umd(n+2,I)$ there exist $c_1,\ldots,c_n\in I$ 
+ such that $(b+b',a_1+c_1d,\ldots,a_n+c_nd)$ is $I$-unimodular for any $b'\in J$, where $J=I \cdot a_1 + \ldots + I \cdot a_n + I \cdot d\leq I$.
+\end{enumerate} 
 \end{lemma}
 \begin{proof}
 Assume first that any row $a\in{}^{n+1}\!I$ is $\mathfrak{J}$-stable. 
-In particular for a given unimodular row $(b,a_1,\ldots,a_n,d)\in\Ums(n+2,R,I)$ there exist $c_1,\ldots,c_n$ such that
+In particular for a given $I$-unimodular row $(b,a_1,\ldots,a_n,d)\in\Umd(n+2,I)$ there exist $c_1,\ldots,c_n$ such that
 \[\mathfrak{J}(a_1,\ldots,a_{n+1})=\mathfrak{J}(a_1+c_1a_{n+1},\ldots,a_n+c_na_{n+1}).\]
-Therefore $(b,a_1+c_1d,\ldots,a_n+c_nd)$ is also unimodular. Of course, for any $b'\in J$ one could replace $b$ with $b+b'$ from the very start.
+Therefore $(b,a_1+c_1d,\ldots,a_n+c_nd)$ is also unimodular. Of course, for any $b'\in J$ we could replace $b$ with $b+b'$ from the very start.
 
-To show the converse take arbitrary row $(a_1,\ldots,a_n,d)\in{}^{n+1}\!I$ and consider $I$-unimodular row $(1,a_1,\ldots,a_n,d)\in\Ums(n+2,R,I).$
-By hypothesis, there exist $c_1,\ldots,c_n$ such that \[ (1+b',a'_1,\ldots,a'_n)=(1+b',a_1+c_1d,\ldots,a_n+c_nd) \] is unimodular for any $b'\in J$.
+To show the converse take arbitrary row $(a_1,\ldots,a_n,d)\in{}^{n+1}\!I$ and consider $I$-unimodular row $(1,a_1,\ldots,a_n,d)\in\Umd(n+2,I).$
+By hypothesis, there exist $c_1,\ldots,c_n$ such that \[ v=(1+b',a'_1,\ldots,a'_n)=(1+b',a_1+c_1d,\ldots,a_n+c_nd) \] is unimodular for any $b'\in J$.
 Assume that there exists a maximal ideal $\mathfrak{m}\trianglelefteq R$ such that all $a'_1,\ldots,a'_n$ are contained in $\mathfrak{m}$
  but at least one of the elements $d$, $a_i$ is not.
-Clearly then we must have $d\notin\mathfrak{m}$ (otherwise $a_i=a'_i-c_id\in\mathfrak{m}$ contrary to the assumption).
-Notice that unimodularity condition implies that $1+b'\notin\mathfrak{m}$ for any $b'\in J$.
-
-Consider $t\in R$ such that its image $\bar{t}$ in the residue field $R/\mathfrak{m}$ equals $-1/\bar{d}$.
-Clearly $b'=t \cdot d \in J$ while $\bar{1} + \bar{b'} = \bar{0}$. Thus we arrive at a contradiction.
+Clearly then $d\notin\mathfrak{m}$ and $I\not\subseteq \mathfrak{m}$ (otherwise $a_i=a'_i-c_id\in\mathfrak{m}$ contrary to the assumption).
+Now we can find $t\in I$ such that its image $\bar{t}$ in the residue field $R/\mathfrak{m}$ equals $-\bar{1}/\bar{d}$.
+We get that $1 + b' \in \mathfrak{m}$ for $b'=td\in J$ which contradicts unimodularity of $v$.
 This shows that no such $\mathfrak{m}$ may exist and, therefore, $\mathfrak{J}(a'_1,\ldots,a'_n)=\mathfrak{J}(a_1,\ldots,a_n,d)$.
 \end{proof}
 
-As a particular case of the above lemma we obtain the following equivalent reformulation of
-the absolute stable rank condition $\asr(R)$.
-\begin{cor}[A.~Bak, cf.~\cite{Pl98}] For a commutative ring $R$ the following statements are equivalent:
+Obviously, the second statement of Lemma~\ref{lemma:relative-asr-unimod} does not depend on $R$, hence, as suggested by the notation, $\asr(I)$ is independent of $R$.
+As another corollary of Lemma~\ref{lemma:relative-asr-unimod} we obtain the following reformulation of the absolute stable rank condition $\ASR_n(R)$ (cf.~\cite[\S~1]{Pl98}).
+\begin{cor}[A.~Bak] For a commutative ring $R$ the following statements are equivalent:
 \begin{enumerate}
  \item\label{asr_Stein} $R$ satisfies $\ASR_n(R)$;
- \item\label{asr_Bak} For any \emph{unimodular} row $(a_1,\ldots,a_n,b,d)\in\Ums(n+2,R)$ there exist $c_1,\ldots,c_n\in R$ such that $(a_1+c_1d,\ldots,a_n+c_nd,b+td)$ is unimodular for all $t\in R$.
+ \item\label{asr_Bak} For any \emph{unimodular} row $(a_1,\ldots,a_n,b,d)\in\Umd(n+2,R)$ there exist $c_1,\ldots,c_n\in R$ such that $(a_1+c_1d,\ldots,a_n+c_nd,b+td)$ is unimodular for all $t\in R$.
 \end{enumerate}
 \end{cor}
 
@@ -99,9 +91,10 @@ Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered wi
 Clearly one has
 \[ \sr(R,I)\leqslant\asr(R,I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \]
 
+\subsection{Action of unipotent radicals}
 The next lemma is an immediate consequence of the definition of stable rank.
-\begin{lemma}\label{lemma:srUnip} Let $v\in\Ums(n, R, I)$ be a unimodular column. Assume that $\sr(I)\leq n-m$ for some $1\leqslant m < n$.
-Then one can find a matrix $a\in \M(n-m,m,I)$ such that the column $(e_{n-m},a)v\in \Ums(n-m, R, I)$. \end{lemma} 
+\begin{lemma}\label{lemma:srUnip} Let $v\in\Ums(n, I)$ be a unimodular column. Assume that $\sr(I)\leq n-m$ for some $1\leqslant m < n$.
+Then one can find a matrix $a\in \M(n-m,m,I)$ such that the column $(e_{n-m},a)v\in \Ums(n-m, I)$. \end{lemma} 
 
 Let $v\in R^{2\ell}$ be a vector of the standard vector representation of $\G(\rD_\ell, R)$.
 It will be convenient for us to denote by $v^+$ and $v^-$ the upper and lower halves of $v$ i.e. $v^+=(v_1,\ldots, v_\ell)^t$, $v^-=(v_{-\ell},\ldots, v_{-1})^t$.
@@ -111,7 +104,7 @@ It will be convenient for us to denote by $v^+$ and $v^-$ the upper and lower ha
 \end{lemma}
 \begin{proof} Denote by $J$ the ideal of $R$ spanned by entries of $v^-$. Clearly, $J \leq I$.
 By Proposition~\ref{prop:sr_properties} $\sr(I/J) \leq \ell-1$ and therefore
-the elementary group $\E(\rA_{\ell-1}, R/J, I/J)$ acts transitively on $\Ums(\ell, R/J, I/J)$ (see~\cite[Theorem~2.3c]{Va69}). 
+the elementary group $\E(\rA_{\ell-1}, R/J, I/J)$ acts transitively on $\Ums(\ell, I/J)$ (see~\cite[Theorem~2.3c]{Va69}). 
 This implies existence of $h\in \E(\Delta_\ell, R, I)$ such that for $v' = h \cdot v$ one has $(v')^+ \equiv e_1$ modulo $J$.
 
 By hypothesis, we can find $c_2,\ldots, c_\ell\in I$ such that for $v''=v'\cdot \prod\limits_{i=2}^{\ell}t_{-1, -i}(c_i)$ one has
