@@ -13,16 +13,13 @@ From Levi decomposition it follows that
 Denote by $A_{rs}$ any of the equal subsets from the previous formula. 
 
 \begin{thm}\label{theorem:relative_dv}
-The relative elementary subgroup $\E(\Phi, R, I)$ coincides with $A_{rs}$ under the following assumptions on $(R, I)$.
-  \begin{center}
-    \begin{tabular}{| l | l | l | l | l |} \hline
-    № & $\Phi$ & $(s,r)$ & ring condition \\ \hline
-    1. & $\rA_\ell$, $\ell\geq 2$ & $(1, \ell)$ & $\sr(I) \leq \ell-1$ \\ \hline
-    2. & $\rB_\ell$, $\ell\geq 3$ & $(1, \ell)$ & $\sr(I) \leq \ell-1$ \\ \hline
-    3. & $\rD_\ell$, $\ell\geq 4$ & $(1, \ell)$ & $\sr(I) \leq \ell-2$ \\ \hline    
-    4. & $\rE_\ell$, $\ell=6,7$ & $(\ell, 2)$ & $\sr(I) \leq \ell-3$ \\ \hline     
-    5. & $\rE_\ell$, $\ell=6,7$ & $(\ell, 1)$ & $\asr(R, I)\leq \ell-2$ \\ \hline    
-    \end{tabular} \end{center} 
+The relative elementary subgroup $\E(\Phi, R, I)$ coincides with $A_{rs}$ under the following assumptions on $I$:
+\newline \indent \begin{tabular}{l l l l l l}      
+\textbullet & $\Phi = \rA_\ell$, $\rB_\ell$, $\ell\geq 2$ & $s = 1$, & $r = \ell$, & $\sr(I) \leq \ell-1$; \\     
+\textbullet & $\Phi = \rD_\ell$, $\ell\geq 4$, & $s=1$, & $r=\ell$, & $\sr(I) \leq \ell-2$; \\ 
+\textbullet & $\Phi = \rE_\ell$, $\ell=6,7$, & $s=\ell$, & $r=2$, & $\sr(I) \leq \ell-3$; \\ 
+\textbullet & $\Phi = \rE_\ell$, $\ell=6,7$, & $s=\ell$, & $r=1$, & $\asr(I)\leq \ell-2$. \\ 
+\end{tabular}
 \end{thm}
 The proof of Theorem~\ref{theorem:relative_dv} occupies the rest of this section.
 
@@ -71,7 +68,7 @@ On the other hand, inclusions $X_{\alpha\ssub{k}} \subseteq N_{rs}$ for $\ 1\leq
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{theorem:relative_dv}]
-We first show that under specified assumptions on $(R, I)$ one can meet the conditions of Lemma~\ref{lemma:Stein_reduction}.
+We first show that under specified assumptions on $I$ one can meet the conditions of Lemma~\ref{lemma:Stein_reduction}.
 Consider the following two subsets of $\Lambda(\pi)$:
 $$\Gamma = \varpi_s- (\Sigma_s^+\cap \Delta_r),\quad \Gamma_0 = \{\lambda \in \Gamma \mid \lambda - \alpha_r \in \Lambda(\pi) \}.$$
 Clearly, $\Gamma$ is the set of weights of an irreducible representation of $\G(\Delta_r, R)$ corresponding to the same highest weight $\varpi_s$.

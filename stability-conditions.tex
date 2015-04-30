@@ -86,16 +86,15 @@ As another corollary of Lemma~\ref{lemma:relative-asr-unimod} we obtain the foll
 Let $R$ be a commutative ring. We denote by $\Max(R)$ its \emph{maximum spectrum} i.e. the set of maximal ideals of $R$ equipped with Zariski topology.
 The following result gives an upper estimate for the absolute stable rank (see~\cite[Theorem~2.3]{EO}, \cite[Theorem~3.7]{MKV}).
 \begin{thm}
-Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered with a finite family of subsets $X_1\ldots, X_m$ such that the topological dimension of every subset $X_i$ does not exceed some number $d$. Then $\asr(A)\leqslant d+1$.
+Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered with a finite family of subsets 
+$X_1\ldots, X_m$ such that the topological dimension of every subset $X_i$ does not exceed some number $d$. 
+Then $\asr(A)\leqslant d+1$.
 \end{thm}
+%TODO: Elaborate
 Clearly one has
-\[ \sr(R,I)\leqslant\asr(R,I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \]
+\[\sr(I)\leqslant\asr(I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \]
 
 \subsection{Action of unipotent radicals}
-The next lemma is an immediate consequence of the definition of stable rank.
-\begin{lemma}\label{lemma:srUnip} Let $v\in\Ums(n, I)$ be a unimodular column. Assume that $\sr(I)\leq n-m$ for some $1\leqslant m < n$.
-Then one can find a matrix $a\in \M(n-m,m,I)$ such that the column $(e_{n-m},a)v\in \Ums(n-m, I)$. \end{lemma} 
-
 Let $v\in R^{2\ell}$ be a vector of the standard vector representation of $\G(\rD_\ell, R)$.
 It will be convenient for us to denote by $v^+$ and $v^-$ the upper and lower halves of $v$ i.e. $v^+=(v_1,\ldots, v_\ell)^t$, $v^-=(v_{-\ell},\ldots, v_{-1})^t$.
 \begin{lemma}\label{lemma:asrUnip}
@@ -120,16 +119,21 @@ Summarizing the above, we have found $g\in \EP_\ell(R, I)$ such that $v^4=g \cdo
 and assertion of the lemma immediately follows from Levi decomposition. \end{proof}
 
 \begin{lemma} \label{lemma:uraction} 
-Let $\Phi=\rA_\ell, \rD_\ell$. Denote by $\pi$ standard vector representation of $\G(\Phi, R)$ on $V=R^n$, $n=\ell+1,2\ell$.
+Let $\Phi=\rA_\ell, \rD_\ell$. Denote by $\pi$ the standard vector representation of $\G(\Phi, R)$ on $V=R^n$, $n=\ell+1,2\ell$.
 Assume that one of the following conditions holds:
 \begin{itemize}
  \item $\Phi=\rA_\ell$, $\Gamma=\{ k+1, \ldots, \ell+1\} \subset \Lambda(\pi)$ and $\sr(I)\leq k\leq \ell$;
- \item $\Phi=\rD_\ell$, $\Gamma=\{-l,\ldots, -2, -1\} \subset \Lambda(\pi)$ and $\asr(R, I)\leq \ell-1$. 
+ \item $\Phi=\rD_\ell$, $\Gamma=\{-l,\ldots, -2, -1\} \subset \Lambda(\pi)$ and $\asr(I)\leq \ell-1$. 
 \end{itemize}
-Then for any $I$-unimodular column $g\in \G(\Phi, R, I)$ there exist $x\in \U(\Phi^+, I)$, $y\in \U(\Phi^-, I)$ such that $(yxg \cdot v^+)_\lambda = 0$ for $\lambda\in \Gamma$.
+Then for $g\in \G(\Phi, R, I)$ there exist $x\in \U(\Phi^+, I)$, $y\in \U(\Phi^-, I)$ such that $(yxg \cdot v^+)_\lambda = 0$ for $\lambda\in \Gamma$.
 \end{lemma}
-\begin{proof}
-\textsc{Case $\Phi=\rA_\ell$.} \textbf{TODO: Write proof for this case.}
+\begin{proof} Denote by $v$ the image of the highest weight vector $v^+$ under $g$.
+
+\textsc{Case $\Phi=\rA_\ell$.} From the definition of the relative stable rank it follows that we can find 
+$x= \left(\begin{smallmatrix} e_k & a \\ * & e_{n-k} \end{smallmatrix}\right) \in \U(\Sigma_k^+, I)$ such that 
+the upper $k$ components of $v'= x \cdot v$ form an $I$-unimodular column. 
+Now, to obtain zeroes at desired positions it remains to subtract from $v'_{k+1},\ldots, v'_{\ell+1}$ suitable multiples of $v'_1,\ldots v'_k$.
+Clearly, this operation corresponds to the left multiplication by some element $y\in\U(\Sigma_k^-, I)$.
 
 \textsc{Case $\Phi=\rD_\ell$.} From the proof of Lemma~\ref{lemma:asrUnip} it follows that there exists $h_1 \in \EP_\ell(R, I)$ such that for $v'=g\cdot v$ one has $v'_2=v'_1-1\in I$.
 Clearly, for $v'' = z_{-\alpha\ssub{2}}(-v'_2, 1)\cdot v'$ one has $v''_1=1$ and, therefore by Chevalley---Matsumoto lemma there exists $h_2 \in \U(\Phi^-, I)$ such that 

@@ -1,34 +1,32 @@
 \begin{thm}\label{thm:BassKolster}
-Let $\Phi$ be a classical root system of rank $\geqslant2$, let $R$ be arbitary commutative ring and $I$ be an ideal, satisfying the following assumption:
-\begin{itemize}
-\item $\Phi=\rA_\ell$: $\sr(I)\leqslant\ell$,
-\item $\Phi=\rB_\ell$: $\asr(R,I)\leqslant\ell-1$,
-\item $\Phi=\rC_\ell$: $\sr(I)\leqslant2\ell-1$,
-\item $\Phi=\rD_\ell$: $\asr(R,I)\leqslant\ell-1$.
-\end{itemize}
-Then the principal congruence subgroup $\G(\Phi,R,I)$ admits the following relative version of Bass---Kolster decomposition:
-\[\G(\Phi,R,I)=\U(\Sigma^+,I)\ \U(\Sigma^-,I)\cdot \Z\cdot \U(\Sigma^-,I)\ \U(\Sigma^+,I)\cdot \G(\Delta,R,I), \]
-where $\Sigma^\pm=\Phi^\pm\setminus\Delta$ and $\Z=\left\{ z_{-\alpha_\mathrm{max}}(r,1)\mid r\in I \right\}$.
+Let $\Phi$ be a classical root system of rank $\ell\geqslant2$, let $R$ be arbitary commutative ring and $I$ be an ideal, satisfying one of the following assumptions:
+\newline \indent \begin{tabular}{l l l}      
+\textbullet & $\Phi = \rA_\ell$, $\ell\geq 2$, & $\sr(I) \leqslant \ell$; \\     
+\textbullet & $\Phi = \rB_\ell$, $\rD_\ell$ $\ell\geq 3$,  & $\asr(I) \leqslant \ell-1$; \\ 
+\textbullet & $\Phi = \rC_\ell$, $\ell\geq 2$, & $\sr(I) \leqslant 2\ell-1$; \\ 
+\end{tabular}
+
+\noindent Then the principal congruence subgroup $\G(\Phi,R,I)$ admits the following relative version of Bass---Kolster decomposition:
+\[\G(\Phi,R,I)=\U(\Sigma_1^-\setminus\{-\alpha_\mathrm{max}\},I)\cdot \U(\Sigma_1^+,I)\cdot \Z\cdot \U(\Sigma_1^-,I)\cdot \U(\Sigma_1^+,I)\cdot \G(\Delta_1,R,I), \]
+where $\Z=\left\{ z_{-\alpha_\mathrm{max}}(r,1)\mid r\in I \right\}$.
 \end{thm}
 \begin{proof}
-Let $g$ be an element of $\G(\Phi, R, I)$ and $e_1$ be the highest weight vector of the standard vector representation of $\G(\Phi, R, I)$.
-It is clear that vector $v=g\cdot e_1$ is $I$-unimodular.
-%TODO: Mention Chevalley---Matsumoto lemma in the introduction
-In view of Chevalley---Matsumoto lemma it suffices to show that $\Z \cdot \U(\Phi^-, I) \cdot \U(\Phi^+, I) \cdot g$ contains an element $g$ whose matrix entry at position $(1,1)$ is equal to $1$.
+Let $g$ be an element of $\G(\Phi, R, I)$. It is clear that vector $v=g\cdot v^+$ is $I$-unimodular.
+In view of relative Chevalley---Matsumoto lemma it suffices to show that $\Z \cdot \U(\Phi^-, I) \cdot \U(\Phi^+, I) \cdot g$ contains an element $g$ whose matrix entry at position $(1,1)$ is equal to $1$.
 We will need to analyze several cases.
 
 \textsc{Case $\Phi=\rA_\ell$:}
 Denote $v=(1+r_1,r_2,\ldots,r_\ell,r_{\ell+1})^t\in\Ums(\ell+1,R,I)$.
-One can add the last entry to the first $\ell$ with some coefficients from $I$ to make then form a unimodular column of length $\ell$.
+One can add the last entry to the first $\ell$ with some coefficients from $I$ to make them form a unimodular column of length $\ell$.
 Then $\ell$ lower transformations (with coefficients from $I$) can make the last entry equal $r_1$.
 Now apply $z_\gamma(-r_1,1)$, $\gamma=-\alpha_{\max}$:
 \begin{multline*}
 (1+r_1,r_2,\ldots,r_\ell,r_1)^t\xmapsto{x_{-\gamma}(-1)}(1,r_2,\ldots,r_\ell,r_1)^t\xmapsto{x_\gamma(-r_1)}\\\longmapsto(1,r_2,\ldots,r_\ell,0)^t\xmapsto{x_{-\gamma}(1)}(1,r_2,\ldots,r_\ell,0)^t.
 \end{multline*}
-Now $\ell-1$ lower transformations eliminates all the remaining entries in the first column, while $\ell$ more upper ones will make the first row trivial.
 
 \textsc{Case $\Phi=\rC_\ell$:}
-Denote $v=(v^+,v^-)^t\in\Ums(2\ell,R,I)$. Find $c_1,\ldots,c_{-2}\in I$ such that $(v_1+c_1v_{-1},\ldots,v_{-2}+c_{-2}v_{-1})=(v_1',\ldots,v_{-2}')$ is unimodular.
+Denote $v=(v^+,v^-)^t\in\Ums(2\ell,R,I)$. 
+Find $c_1,\ldots, c_\ell, c_{-\ell},\ldots, c_{-2}\in I$ such that $(v_1+c_1v_{-1},\ldots,v_{-2}+c_{-2}v_{-1})=(v_1',\ldots,v_{-2}')$ is $I$-unimodular.
 
 First add $c_{-i}v_{-1}$ to $v_{-i}$ for $-i=-\ell,\ldots,-2$, this will also add something to $v_1$.
 
@@ -38,11 +36,8 @@ Now we can assume that the first $2\ell-1$ entries of $v$ are unimodular and fin
 \[ (v_1,v_2\ldots,v_\ell,v_{-\ell},\ldots,v_{-2},v_{-1})^t\longmapsto (v_1,v'_2\ldots,v'_\ell,v_{-\ell},\ldots,v_{-2},v'_{-1})^t. \]
 Then add $c_iv_i'=c_i(v_1+c_{-i}v_{-i})$, $i=2,\ldots,\ell$ to the last entry:
 \[ v_1\longmapsto v_1,\quad v'_{-1}\longmapsto v_{-1}+\sum_{i=2}^\ell c_{-i}v_{-i}+\sum_{i=2}^\ell c_i(v_i+c_{-i}v_1)=v''_{-1}. \]
-Next add $\left(c_1-\sum_{i=2}^\ell c_ic_{-i}\right)v_1$ to $v''_{-1}$ to get $v_1$ in position $-1$. Again, as in case of $\rA_n$, apply $z_\gamma(-v_1,1)$ with $\gamma=-\alpha_\mathrm{max}$, to get $1$ as the first entry and $0$ as the last.
-
-Now apply $2\ell-2$ lower transformation to obtain zeroes on positions $i=2,\ldots,-2$, that will also add $\sum_{i=2}^\ell (v_i+v_{-i})$ to $v_{-1}$,
-so by one more transformation one can make the first column trivial. 
-The same can be done with the first row, so in total we used $8\ell-3$ transformations.
+Next add $\left(c_1-\sum_{i=2}^\ell c_ic_{-i}\right)v_1$ to $v''_{-1}$ to get $v_1$ in position $-1$.
+Again, as in case of $\rA_n$, apply $z_\gamma(-v_1,1)$ with $\gamma=-\alpha_\mathrm{max}$, to get $1$ as the first entry and $0$ as the last.
 
 \textsc{Case $\Phi=\rD_\ell$.} 
 By Lemma~\ref{lemma:asrUnip} we can find $h_1\in \U(\Sigma^+_\ell, I)$ such that the upper half $v'^+$ of vector $v'=h_1\cdot v$ is $I$-unimodular.
@@ -60,3 +55,16 @@ Since $\sr(I/J)\leq l$ we can find $c_1,\dots,c_\ell\in I$ such that for $v' = h
 one has $\bar{v'}^+=(\bar{v'_1},\ldots, \bar{v'_\ell}) \in \Ums(\ell, R/J, I/J)$ and, therefore, $(v'^+, v'^-) \in \Ums(2\ell, R, I)$.
 Now one can finish the proof by repeating the argument for the case $\Phi=\rD_l$.
 (clearly, the maximal root of $\rD_\ell$ maps to the maximal root of $\rB_\ell$ under the natural embedding $\rD_\ell\subseteq\rB_\ell$). \end{proof}
+
+\begin{rem} %TODO:
+\textbf{TODO: Calculate the exact number of $z_\alpha$'s involved in the decomposition}
+
+\textsc{$\Phi=\rA_\ell$}
+Now $\ell-1$ lower transformations eliminates all the remaining entries in the first column, while $\ell$ more upper ones will make the first row trivial.
+
+\textsc{$\Phi=\rC_\ell$}
+Now apply $2\ell-2$ lower transformation to obtain zeroes on positions $i=2,\ldots,-2$, that will also add $\sum_{i=2}^\ell (v_i+v_{-i})$ to $v_{-1}$, 
+so by one more transformation one can make the first column trivial. 
+The same can be done with the first row, so in total we used $8\ell-3$ transformations.
+
+\end{rem}
