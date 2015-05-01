@@ -12,16 +12,16 @@ where $\Z=\left\{ z_{-\alpha_\mathrm{max}}(r,1)\mid r\in I \right\}$.
 \end{thm}
 \begin{proof}
 Let $g$ be an element of $\G(\Phi, R, I)$. It is clear that vector $v=g\cdot v^+$ is $I$-unimodular.
-In view of relative Chevalley---Matsumoto lemma it suffices to show that $\Z \cdot \U(\Phi^-, I) \cdot \U(\Phi^+, I) \cdot g$ contains an element $g$ whose matrix entry at position $(1,1)$ is equal to $1$.
+In view of relative Chevalley---Matsumoto decomposition it suffices to show that $\Z \cdot \U(\Phi^-, I) \cdot \U(\Phi^+, I) \cdot g$ contains an element whose matrix entry at position $(1,1)$ is equal to $1$.
 We will need to analyze several cases.
 
 \textsc{Case $\Phi=\rA_\ell$:}
-Denote $v=(1+r_1,r_2,\ldots,r_\ell,r_{\ell+1})^t\in\Ums(\ell+1,R,I)$.
+Denote $v=(1+v_1,v_2,\ldots,v_\ell,v_{\ell+1})^t\in\Ums(\ell+1,R,I)$.
 One can add the last entry to the first $\ell$ with some coefficients from $I$ to make them form a unimodular column of length $\ell$.
-Then $\ell$ lower transformations (with coefficients from $I$) can make the last entry equal $r_1$.
-Now apply $z_\gamma(-r_1,1)$, $\gamma=-\alpha_{\max}$:
+Then $\ell$ lower transformations (with coefficients from $I$) can make the last entry equal to $v_1$.
+Now apply $z_\gamma(-v_1,1)$, $\gamma=-\alpha_{\max}$:
 \begin{multline*}
-(1+r_1,r_2,\ldots,r_\ell,r_1)^t\xmapsto{x_{-\gamma}(-1)}(1,r_2,\ldots,r_\ell,r_1)^t\xmapsto{x_\gamma(-r_1)}\\\longmapsto(1,r_2,\ldots,r_\ell,0)^t\xmapsto{x_{-\gamma}(1)}(1,r_2,\ldots,r_\ell,0)^t.
+(1+v_1,v_2,\ldots,v_\ell,v_1)^t\xmapsto{x_{-\gamma}(-1)}(1,v_2,\ldots,v_\ell,v_1)^t\xmapsto{x_\gamma(-v_1)}\\\longmapsto(1,v_2,\ldots,v_\ell,0)^t\xmapsto{x_{-\gamma}(1)}(1,v_2,\ldots,v_\ell,0)^t.
 \end{multline*}
 
 \textsc{Case $\Phi=\rC_\ell$:}
@@ -32,15 +32,15 @@ First add $c_{-i}v_{-1}$ to $v_{-i}$ for $-i=-\ell,\ldots,-2$, this will also ad
 
 Then add $c_iv_{-1}$ to $v_i$ for $i=2,\ldots,\ell$. So far we have made the entries from $i=2,\ldots,-2$ equal to $v_i+c_iv_{-1}$, and one more upper transformation (corresponding to the highest root) will make the first entry equal to $v_1+c_1v_{-1}$ (note that the coefficient for that addition lies in $I$).
 
-Now we can assume that the first $2\ell-1$ entries of $v$ are unimodular and find $c_1,\ldots,c_{-2}\in I$ such that $c_1v_1+\ldots+c_{-2}v_{-2}=v_1-v_{-1}$. Add $c_{-i}v_i$ to $v_{-1}$, $i=2,\ldots,\ell$:
+Now we can assume that the first $2\ell-1$ entries of $v$ are unimodular and find $c_1,\ldots,c_{-2}\in I$ such that $c_1v_1+\ldots+c_{-2}v_{-2}=(v_1-1)-v_{-1}$. Add $c_{-i}v_i$ to $v_{-1}$, $i=2,\ldots,\ell$:
 \[ (v_1,v_2\ldots,v_\ell,v_{-\ell},\ldots,v_{-2},v_{-1})^t\longmapsto (v_1,v'_2\ldots,v'_\ell,v_{-\ell},\ldots,v_{-2},v'_{-1})^t. \]
 Then add $c_iv_i'=c_i(v_1+c_{-i}v_{-i})$, $i=2,\ldots,\ell$ to the last entry:
 \[ v_1\longmapsto v_1,\quad v'_{-1}\longmapsto v_{-1}+\sum_{i=2}^\ell c_{-i}v_{-i}+\sum_{i=2}^\ell c_i(v_i+c_{-i}v_1)=v''_{-1}. \]
-Next add $\left(c_1-\sum_{i=2}^\ell c_ic_{-i}\right)v_1$ to $v''_{-1}$ to get $v_1$ in position $-1$.
-Again, as in case of $\rA_n$, apply $z_\gamma(-v_1,1)$ with $\gamma=-\alpha_\mathrm{max}$, to get $1$ as the first entry and $0$ as the last.
+Next add $\left(c_1-\sum_{i=2}^\ell c_ic_{-i}\right)v_1$ to $v''_{-1}$ to get $v_1-1$ in position $-1$.
+Again, as in case of $\rA_n$, apply $z_\gamma(1-v_1,1)$ with $\gamma=-\alpha_\mathrm{max}$, to get $1$ as the first entry and $0$ as the last.
 
 \textsc{Case $\Phi=\rD_\ell$.} 
-By Lemma~\ref{lemma:asrUnip} we can find $h_1\in \U(\Sigma^+_\ell, I)$ such that the upper half $v'^+$ of vector $v'=h_1\cdot v$ is $I$-unimodular.
+By Lemma~\ref{lemma:asrUnip} we can find $h_1\in \U(\Sigma^+_\ell, I)$ such that the upper half $v'^+$ of the vector $v'=h_1\cdot v$ is $I$-unimodular.
 Since $\sr(I)\leq \ell-1$ we can find $c_1$, $c_3, \ldots c_\ell \in I$ such that $(v''_1, v''_3, \ldots, v''_\ell) \in \Ums(\ell-1, R, I)$, where
 $v''=h_2 \cdot t_{1,2}(c_1) \cdot v'$, $h_2=\prod\limits_{i=3}^\ell t_{i,2}(c_i)$.
 
@@ -58,13 +58,4 @@ Now one can finish the proof by repeating the argument for the case $\Phi=\rD_l$
 
 \begin{rem} %TODO:
 \textbf{TODO: Calculate the exact number of $z_\alpha$'s involved in the decomposition}
-
-\textsc{$\Phi=\rA_\ell$}
-Now $\ell-1$ lower transformations eliminates all the remaining entries in the first column, while $\ell$ more upper ones will make the first row trivial.
-
-\textsc{$\Phi=\rC_\ell$}
-Now apply $2\ell-2$ lower transformation to obtain zeroes on positions $i=2,\ldots,-2$, that will also add $\sum_{i=2}^\ell (v_i+v_{-i})$ to $v_{-1}$, 
-so by one more transformation one can make the first column trivial. 
-The same can be done with the first row, so in total we used $8\ell-3$ transformations.
-
 \end{rem}
