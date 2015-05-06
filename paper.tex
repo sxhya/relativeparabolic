@@ -123,10 +123,13 @@ In this paper we work with irreducible representations of Chevalley groups corre
 $\varpi_1$ (in the case of a classical $\Phi_l$) or $\varpi_l$ (in the case $\Phi_\ell=\rE_\ell$). 
 The former are the natural vector representations of classical groups acting on free modules $V=R^n$ of dimension 
 $n=\ell+1, 2\ell+1, 2\ell,2\ell$ for $\Phi=\rA_\ell,\rB_\ell,\rC_\ell,\rD_\ell$.
-The latter representations have dimension $n=27, 56, 248$ for $\ell=6,7,8$.
+The latter representations have dimension $n=27, 56$ for $\ell=6,7$.
 
-For a representation $\pi$ of $\G(\Phi, R)$ on $V$ we denote by $\Lambda(\pi)$ the set of weights of $\pi$.
-It will be convenient to use standard numbering for weights of representation $\pi$ in the case when $\Phi$ is classical and $\pi$ is a vector representation (cp.~\cite[§1B]{St78}):
+For a representation $\pi$ of $\G(\Phi, R)$ on $V$ we denote by $\Lambda(\pi)$ the set of weights of $\pi$ and by $V_\lambda$ the weight subspace corresponding to $\lambda\in\Lambda(\pi)$.
+For any of the representations described above (with the sole exception of $(\rE_8, \varpi_8)$) all weight subspaces $V_\lambda$ are one-dimensional. 
+This allows us to choose some basis $E_\pi=\{e_\lambda\}_{\lambda\in\Lambda(\pi)}$.
+
+It will be convenient to use standard numbering for the weights of natural representations of classical groups (cp.~\cite[§1B]{St78}):
 $$\begin{array}{cll}
   1,2,\ldots, l+1 & \text{in the case} & \Phi =\rA_l, \\
   1,2,\ldots l, 0, -\ell,\ldots, -2, -1 & \text{in the case} & \Phi =\rB_\ell, \\
@@ -134,9 +137,9 @@ $$\begin{array}{cll}
 \end{array}$$
 For example, we write $1$ instead of $\varpi_1$, $2$ instead of $\varpi_1-\alpha_1$ and so on.
 
-In what follows we also assume that there is some basis $E=\{e_\lambda\}_{\lambda\in\Lambda(\pi)}$ fixed for every representation $V$.
-We denote by $v^+$ the basis vector corresponding to highest weight. 
-Using the the above notation for classical $\Phi$ we have $v^+=e_1$.
+For a weight $\lambda\in \Lambda(\pi)$ we denote by $\mu_{\lambda}\colon V\rightarrow R$ the coordinate function corresponding $\lambda$.
+In other words, $\mu_\lambda(v)$ is the coefficient of the basis vector $e_\lambda$ in the expansion of $v\in V$ in $E_\pi$.
+We denote by $v^+$ the basis vector corresponding to highest weight. Using the above notation for classical $\Phi$ we have $v^+=e_1$.
 %TODO: State Matsumoto lemma and Chevalley-Matsumoto lemma
 
 \subsection{Elementary subgroup}

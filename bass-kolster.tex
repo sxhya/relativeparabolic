@@ -6,16 +6,16 @@ Let $\Phi$ be a classical root system of rank $\ell\geqslant2$, let $R$ be arbit
 \textbullet & $\Phi = \rB_\ell$, $\rD_\ell$ $\ell\geq 3$,  & $\asr(I) \leqslant \ell-1$. \end{tabular}
 
 \noindent Then the principal congruence subgroup $\G(\Phi,R,I)$ admits the following relative version of Bass---Kolster decomposition:
-\[\G(\Phi,R,I)=\U(\Sigma_1^-\setminus\{-\alpha_\mathrm{max}\},I)\cdot \U(\Sigma_1^+,I)\cdot \Z\cdot \U(\Sigma_1^-,I)\cdot \U(\Sigma_1^+,I)\cdot \G(\Delta_1,R,I), \]
+\[\G(\Phi,R,I)=  \G(\Delta_1,R,I)\cdot \U(\Sigma_1^+,I)\cdot \U(\Sigma_1^-\setminus\{-\alpha_\mathrm{max}\},I)\cdot\Z \cdot \U(\Phi^-,I)\cdot \U(\Phi^+,I), \]
 where $\Z=\left\{ z_{-\alpha_\mathrm{max}}(r,1)\mid r\in I \right\}$.
 \end{thm}
 \begin{proof}
 Let $g$ be an element of $\G(\Phi, R, I)$. It is clear that vector $v=g\cdot v^+$ is $I$-unimodular.
-In view of relative Chevalley---Matsumoto decomposition it suffices to show that $\Z \cdot \U(\Phi^-, I) \cdot \U(\Phi^+, I) \cdot g$ contains an element whose matrix entry at position $(1,1)$ is equal to $1$.
-We will need to analyze several cases.
+By relative Chevalley---Matsumoto lemma it suffices to show that the set $\Z \cdot \U(\Phi^-, I) \cdot \U(\Phi^+, I) \cdot g$ contains an element $h$ such that $\mu_1(h\cdot v^+)=1$, $\mu_{\varpi\ssub{1} - \alpha\ssub{max}}(h \cdot v^+)=0$.
+We find such $h$ by analyzing several cases.
 
 \textsc{Case $\Phi=\rA_\ell$:}
-Denote $v=(1+v_1,v_2,\ldots,v_\ell,v_{\ell+1})^t\in\Ums(\ell+1,R,I)$.
+Set $v=(1+v_1,v_2,\ldots,v_\ell,v_{\ell+1})^t\in\Ums(\ell+1,R,I)$.
 One can add the last entry to the first $\ell$ with some coefficients from $I$ to make them form a unimodular column of length $\ell$.
 Then $\ell$ lower transformations (with coefficients from $I$) can make the last entry equal to $v_1$.
 Now apply $z_\gamma(-v_1,1)$, $\gamma=-\alpha_{\max}$:
