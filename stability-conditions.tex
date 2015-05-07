@@ -1,8 +1,8 @@
 In this section we define stability conditions used in the statements of our decomposition theorems from section~\ref{sec:factorizations}.
 First, we recall the notion of the stable rank of an ideal introduced by L.~Vaserstein in~\cite{Va69, Va71}.
-As we are mainly concerned with applications to Chevalley groups, our exposition of stable ranks is neccessarily limited to commutative rings.
-Our next goal is to define the relative version of the absolute stable rank condition which generalizes the definition of~\cite{EO, MKV}.
-In the end of this section we state several technical lemmas describing the action of certain unipotent radicals on unimodular columns under stability conditions.
+As we will be mainly concerned with applications to Chevalley groups, our exposition of stable ranks is neccessarily limited to commutative rings.
+The main goal of the subsection~\ref{sec:rel-asr} is to define the relative version of the absolute stable rank condition which generalizes the definition of~\cite{EO, MKV}.
+Finally, in the end of this section we state several technical lemmas describing the action of certain unipotent radicals on unimodular columns under stability conditions.
 
 \subsection{Relative stable rank}
 Recall that a row $a\in{}^n\!R$ is called \emph{$I$-unimodular} if it is congruent to $e_1$ modulo $I$ and its components $a_1,a_2,\ldots,a_n$ generate $R$ as an ideal.
@@ -34,7 +34,7 @@ Since the stable rank of a field equals $1$, one can conclude from the previous 
 Other examples of rings of stable rank $1$ are provided by boolean rings, the ring of algebraic integers, the ring of entire functions, the disk-algebra, etc.
 \end{example}
 
-\subsection{Relativization of absolute stable rank condition}
+\subsection{Relative absolute stable rank}\label{sec:rel-asr}
 For a row $a=(a_1,\ldots,a_n)\in{}^n\!R$ denote by $\mathfrak{J}(a)$ the intersection of all maximal ideals of $R$ containing $a_1,\ldots,a_n$.
 It is easy to see that a row $a\in R^n$ is unimodular if and only if $\mathfrak{J}(a)=R$. 
 Clearly, for any $g\in\GL(n,R)$ one has $\mathfrak{J}(a\cdot g)=\mathfrak{J}(a)$.
@@ -91,31 +91,35 @@ Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered wi
 $X_1\ldots, X_m$ such that the topological dimension of every subset $X_i$ does not exceed some number $d$. 
 Then $\asr(A)\leqslant d+1$.
 \end{thm}
-%TODO: Elaborate
+%TODO: Add more comments?
 Clearly one has
 \[\sr(I)\leqslant\asr(I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \]
 
-\subsection{Action of unipotent radicals}
-Let $v\in R^{2\ell}$ be a vector of the standard vector representation of $\G(\rD_\ell, R)$.
-It will be convenient for us to denote by $v^+$ and $v^-$ the upper and lower halves of $v$ i.e. $v^+=(v_1,\ldots, v_\ell)^t$, $v^-=(v_{-\ell},\ldots, v_{-1})^t$.
+\subsection{Action of unipotent radicals}\label{sec:ur-action}
+Let $v\in V=R^{2\ell}$ be a vector of the natural representation of $\G(\rD_\ell, R)$.
+Denote by $v_+$ and $v_-$ the upper and the lower halves of $v$ i.e. $v_+=(v_1,\ldots, v_\ell)^t$, $v_-=(v_{-\ell},\ldots, v_{-1})^t$.
 \begin{lemma}\label{lemma:asrUnip}
- Let $\Phi=\rD_\ell$ and assume that $\asr(R, I)\leq \ell -1$. Then for any $I$-unimodular column $v=(v^+, v^-)^t\in\Ums(2\ell, R, I)$
- there exist $g\in\U(\Sigma^+_\ell, I)$ such that $(g \cdot v)^+ \in \Ums(\ell, R, I)$.
+ Let $\Phi=\rD_\ell$ and assume that $\asr(I)\leq \ell -1$. 
+ Then for any $I$-unimodular column $v=(v_+, v_-)^t\in\Ums(2\ell, I)$
+ there exist $g\in\U(\Sigma^+_\ell, I)$ such that $(g \cdot v)_+ \in \Ums(\ell, I)$.
 \end{lemma}
-\begin{proof} Denote by $J$ the ideal of $R$ spanned by entries of $v^-$. Clearly, $J \leq I$.
-By Proposition~\ref{prop:sr_properties} $\sr(I/J) \leq \ell-1$ and therefore
+\begin{proof} Denote by $J$ the ideal of $R$ spanned by the components of $v_{-}$. Clearly, $J \leq I$.
+By Proposition~\ref{prop:sr_properties} $\sr(I/J) \leq \ell-1$ therefore
 the elementary group $\E(\rA_{\ell-1}, R/J, I/J)$ acts transitively on $\Ums(\ell, I/J)$ (see~\cite[Theorem~2.3c]{Va69}). 
-This implies existence of $h\in \E(\Delta_\ell, R, I)$ such that for $v' = h \cdot v$ one has $(v')^+ \equiv e_1$ modulo $J$.
+This implies existence of $h\in \E(\Delta_\ell, R, I)$ such that for $v' = h \cdot v$ and $i=1,\ldots, \ell$ one has $v'_i \equiv \delta_{i1} \mod J$.
 
-By hypothesis, we can find $c_2,\ldots, c_\ell\in I$ such that for $v''=v'\cdot \prod\limits_{i=2}^{\ell}t_{-1, -i}(c_i)$ one has
-$\mathfrak{J}(v''_{-\ell},\ldots, v''_{-2}) = \mathfrak{J}(v'^-)$. Clearly, $v''_1$ is still congruent to $1$ modulo $J$, therefore 
-$(v''_1, v''_{-\ell},\ldots, v''_{-1})$ is $I$-unimodular. Now, applying condition $\sr(I) \leq \ell-1$ once again we find
-$d_1,d_3,\ldots, d_{\ell}\in I$ such that for $v'''=t_{-2,1}(d_1) \cdot \prod\limits_{i=3}^{\ell} t_{-2,-i}(d_i) \cdot v''$
-the entries $(v'''_1, v'''_{-\ell},\ldots, v'''_{-3})$ form a $I$-unimodular column.
+Clearly, $(v'_1,v'_{-\ell},\ldots, v'_{-1})$ is $I$-unimodular.
+Applying statement~\ref{asr-bak-like} of Lemma~\ref{lemma:relative-asr-unimod} we find $c_2,\ldots, c_\ell\in I$ such that for $v''= \prod_{i=2}^{\ell}t_{-i, -1}(c_i)\cdot v'$ one has
+$(v''_1, v''_{-\ell},\ldots, v''_{-2})\in\Ums(\ell+1, I)$.
+%$\mathfrak{J}(v''_{-\ell},\ldots, v''_{-2}) = \mathfrak{J}(v'^-)$. Clearly, $v''_1$ is still congruent to $1$ modulo $J$, therefore 
+%$(v''_1, v''_{-\ell},\ldots, v''_{-2})$ is $I$-unimodular. 
+Now, applying condition $\sr(I) \leq \ell-1$ once again we find
+$d_1,d_3,\ldots, d_{\ell}\in I$ such that the entries $(v'''_1, v'''_{-\ell},\ldots, v'''_{-3})$
+of $v'''=t_{-2,1}(d_1) \cdot \prod_{i=3}^{\ell} t_{-2,-i}(d_i) \cdot v''$ form a $I$-unimodular column.
 
-We can find $f_1, f_3,\ldots, f_\ell \in R$ such that $f_1v'''_1+\sum\limits_{i=3}^\ell f_i v'''_{-i} = 1$.
-Set $\xi = v'''_1-v'''_2-1 \in I$, $v^4=t_{1,2}(\xi f_1) \cdot \prod\limits_{i=3}^\ell t_{-i,2}(\xi f_i) \cdot v'''$.
-Clearly $v^4_2 = v^4_1-1$, therefore $v^{4+}$ is $I$-unimodular.
+We can find $f_1, f_3,\ldots, f_\ell \in R$ such that $f_1v'''_1+\sum_{i=3}^\ell f_i v'''_{-i} = 1$.
+Set $\xi = v'''_1-v'''_2-1 \in I$, $v^4=t_{1,2}(\xi f_1) \cdot \prod_{i=3}^\ell t_{-i,2}(\xi f_i) \cdot v'''$.
+Clearly $v^4_2 = v^4_1-1$, therefore $v^4_+$ is $I$-unimodular.
 Summarizing the above, we have found $g\in \EP_\ell(R, I)$ such that $v^4=g \cdot v$
 and assertion of the lemma immediately follows from Levi decomposition. \end{proof}
 
