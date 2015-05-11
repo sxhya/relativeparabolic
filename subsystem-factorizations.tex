@@ -1,0 +1,29 @@
+One of the reasons to study parabolic factorizations is that they provide an easy way to obtain subsystem factorizations, that is a decomposition of a given Chevalley group into a product of some of its subsystem subgroups. Among such decompositions one is of particular interest, namely the $\rA_n$-factorization. Those, in turn, come in two denominations:
+\begin{itemize}
+\item $\SL_2$-factorizations, see~\cite{LiebNikShaSL2,VavKovSL2};
+\item $\SL_n$-factorizations for $n$ submaximal, see~\cite{NikProdDecomp}.
+\end{itemize}
+The main result of \cite{NikProdDecomp} is the following
+\begin{thm*}
+Let $G$ be a classical Chevalley group of rank $n+1$ over a finite field. Then $G$ equals the product of at most $200$ conjugates of an $\SL_{n+1}$ subgroup.
+\end{thm*}
+The above theorem holds for the twisted classical groups as well.
+
+\cite{NikProdDecomp} also contains a proof that over a field $\SL(n+1,F)$ is a product of four copies of $\SL(n,F)$. In fact, this is true for any Hermitian ring (for example, any PID qualifies).
+
+The following lemma is a reformulation of Proposition~1 from \cite{NikProdDecomp}:
+\begin{lemma}
+Let $\Phi$ be a root system of rank $\ell$, $\Delta<\Phi$ an $\rA_{\ell-1}$-subsystem, $\Sigma\subset\Phi^+$ a closed set of positive roots and $\Psi_1,\ldots,\Psi_K\subset\Phi$ be sets of roots such that:
+\begin{enumerate}
+\item For any $\alpha\in\Delta^+$ and for any $i=1,\ldots,K$, the elementary root unipotent $x_\alpha$ does not commute with at most one of $x_\beta$, $\beta\in\Psi_i$;
+\item $\Sigma\subset\Delta^++\bigcup_{i=1}^K\Psi_i$.
+\end{enumerate} 
+Then $\U(\Sigma)\subset\prod_{i=1}^{K}\left[\U(\Delta^+),a_i\right]$, where $a_i=\prod_{\beta\in\Psi_i}x_\beta(1)$.
+\end{lemma}
+Of course, each of the commutators in the statement of the Lemma can be written in the reversed order.
+
+Now starting from a unitriangular factorization, one can express $\U(\Phi^\pm)=\U(\Delta^\pm)\U(\Sigma^\pm)$ for $\Sigma^\pm=\Phi^\pm\setminus\Delta$, then cover each of $\U(\Sigma^\pm)$ with a product of conjugates of $\U(\Delta^\pm)$, and put all the factors together.
+
+However, one can start from a parabolic decomposition, which might already have a large $\rA_n$-factor, namely the Levi subgroup of a given parabolic.
+
+Over a ring $R$ of stable rank $1$ one has a decomposition $\G(\Phi,R)=P_\alpha\U_\alpha^-P_\alpha$, where $\U_\alpha^-=\U(\Sigma_\alpha^-)$ is the unipotent radical of the parabolic subgroup $P_\alpha^-$. This follows immediately from the Gauss decomposition. Choosing $\alpha\in\Pi$ so that $\Delta=\Delta_\alpha$ is of type $\rA$, we find suitable $\Psi_1,\ldots,\Psi_K$ and see that $\G(\Phi,R)=\G(\Delta_\alpha)\U(\Sigma_\alpha)\U(\Sigma_\alpha^-)\U(\Sigma_\alpha)$ is a product of $1+3\cdot\lfloor K/2\rfloor+(K\bmod2)$ conjugated of $\G(\Delta_\alpha)$.
