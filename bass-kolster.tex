@@ -18,43 +18,43 @@ Indeed, set $g'' = z_{-\alpha\ssub{max}}(-s, 1) \cdot g'$. Obviously, one has $(
 
 \textsc{Case $\Phi=\rA_\ell$, $n=\ell + 1$:}
 %Set $v=(1+v_1,v_2,\ldots,v_\ell,v_{\ell+1})^t\in\Ums(\ell+1,R,I)$.
-Thanks to the relative stable rank condition one can add suitable multiples of the last component $v_{\ell+1}$ to the first $\ell$ components of $v$ so that the upper $\ell$ coefficients of the resulting vector $v'$ form an $I$-unimodular column of length $\ell$.
-Then multiplying $v'$ by a suitable $y\in \U(\Sigma_\ell^-, I)$ we get the equalities of~\ref{eq1}.
+Thanks to the relative stable rank condition one can add suitable multiples of the last component $v_{\ell+1}$ to the first $\ell$ components of $v$ so that the upper
+$\ell$ coefficients of the resulting vector $v'$ form an $I$-unimodular column of length $\ell$.
+Now multiplying $v'$ by a suitable $y\in \U(\Sigma_\ell^-, I)$ we obtain equalities~\ref{eq1}.
 
 \textsc{Case $\Phi=\rC_\ell$, $n=2\ell$:}
-%TODO: Rewrite this.
-Subdivide $v\in V$ as in the beginning of section~\ref{sec:ur-action} i.e. $v = (v_+,v_-)^t\in\Ums(2\ell,R,I)$. 
+Notice that column $(v_1,\ldots, v_{-2}, v_{-1}^2)^t$ is also $I$-unimodular.
+Applying condition $\sr(I)\leq 2\ell-1$ wes find $c_1, c_2, \ldots, c_{-2} \in I \cdot v_{-1}$ such that upper $2\ell -1$ components of $v'=(v_1 + c_1 v_{-1}, \ldots, v_{-2} + c_{-2}v_{-1}, v_{-1})^t$ form an $I$-unimodular column.
+By the choice of $c_i$ we can find suitable $d\in I$ such that $h_1 \cdot v = v'$ for $h_1 = t_{1,-1}(c_1 + d) \cdot \prod_{i=2}^{-2} t_{i,-1}(c_i) \in \U(\Sigma_\ell, I)$.
 
-Clearly, we can find $c_1,\ldots, c_\ell, c_{-\ell},\ldots, c_{-2}\in I$ such that 
-$(v_1+c_1v_{-1},\ldots,v_{-2}+c_{-2}v_{-1})=(v_1',\ldots,v_{-2}')$ is $I$-unimodular.
+We can find $f_1, f_2,\ldots, f_{-2} \in R$ such that $f_1v'_1+\sum_{i=2}^{-2} f_i v'_i = 1$.
+Set $\xi = v''_1-v''_{-1}-1 \in I$, $h_2 = \prod_{i=1}^{-2} t_{-1,i}(\xi \cdot f_i) \in \U(\Sigma_\ell, I)$.
+Now it is clear that $v'' = h_2 \cdot v'$ satisfies equalities~\ref{eq1}.
 
-First add $c_{-i}v_{-1}$ to $v_{-i}$ for $-i=-\ell,\ldots,-2$, this will also add something to $v_1$.
+%Now we can assume that the first $2\ell-1$ entries of $v$ are unimodular and find $c_1,\ldots,c_{-2}\in I$ such that $c_1v_1+\ldots+c_{-2}v_{-2}=(v_1-1)-v_{-1}$. Add $c_{-i}v_i$ to $v_{-1}$, $i=2,\ldots,\ell$:
+%\[ (v_1,v_2\ldots,v_\ell,v_{-\ell},\ldots,v_{-2},v_{-1})^t\longmapsto (v_1,v'_2\ldots,v'_\ell,v_{-\ell},\ldots,v_{-2},v'_{-1})^t. \]
+%Then add $c_iv_i'=c_i(v_1+c_{-i}v_{-i})$, $i=2,\ldots,\ell$ to the last entry:
+%\[ v_1\longmapsto v_1,\quad v'_{-1}\longmapsto v_{-1}+\sum_{i=2}^\ell c_{-i}v_{-i}+\sum_{i=2}^\ell c_i(v_i+c_{-i}v_1)=v''_{-1}. \]
+%Next add $\left(c_1-\sum_{i=2}^\ell c_ic_{-i}\right)v_1$ to $v''_{-1}$ to get $v_1-1$ in position $-1$.
+%Again, as in case of $\rA_n$, apply $z_\gamma(1-v_1,1)$ with $\gamma=-\alpha_\mathrm{max}$, to get $1$ as the first entry and $0$ as the last.
 
-Then add $c_iv_{-1}$ to $v_i$ for $i=2,\ldots,\ell$. So far we have made the entries from $i=2,\ldots,-2$ equal to $v_i+c_iv_{-1}$, and one more upper transformation (corresponding to the highest root) will make the first entry equal to $v_1+c_1v_{-1}$ (note that the coefficient for that addition lies in $I$).
-
-Now we can assume that the first $2\ell-1$ entries of $v$ are unimodular and find $c_1,\ldots,c_{-2}\in I$ such that $c_1v_1+\ldots+c_{-2}v_{-2}=(v_1-1)-v_{-1}$. Add $c_{-i}v_i$ to $v_{-1}$, $i=2,\ldots,\ell$:
-\[ (v_1,v_2\ldots,v_\ell,v_{-\ell},\ldots,v_{-2},v_{-1})^t\longmapsto (v_1,v'_2\ldots,v'_\ell,v_{-\ell},\ldots,v_{-2},v'_{-1})^t. \]
-Then add $c_iv_i'=c_i(v_1+c_{-i}v_{-i})$, $i=2,\ldots,\ell$ to the last entry:
-\[ v_1\longmapsto v_1,\quad v'_{-1}\longmapsto v_{-1}+\sum_{i=2}^\ell c_{-i}v_{-i}+\sum_{i=2}^\ell c_i(v_i+c_{-i}v_1)=v''_{-1}. \]
-Next add $\left(c_1-\sum_{i=2}^\ell c_ic_{-i}\right)v_1$ to $v''_{-1}$ to get $v_1-1$ in position $-1$.
-Again, as in case of $\rA_n$, apply $z_\gamma(1-v_1,1)$ with $\gamma=-\alpha_\mathrm{max}$, to get $1$ as the first entry and $0$ as the last.
-
-\textsc{Case $\Phi=\rD_\ell$.} 
-By Lemma~\ref{lemma:asrUnip} we can find $h_1\in \U(\Sigma^+_\ell, I)$ such that the upper half $v'_+$ of the vector $v'=h_1\cdot v$ is $I$-unimodular.
+\textsc{Case $\Phi=\rD_\ell$, $n= 2\ell$.} 
+By Lemma~\ref{lemma:asrUnip} we can find $h_1\in \U(\Sigma^+_\ell, I)$ such that the upper half $v'_+$ of $v'=h_1 \cdot v$ is $I$-unimodular.
 Since $\sr(I)\leq \ell-1$ we can find $c_1$, $c_3, \ldots c_\ell \in I$ such that $(v''_1, v''_3, \ldots, v''_\ell) \in \Ums(\ell-1, I)$, where
-$v''=h_2 \cdot t_{1,2}(c_1) \cdot v'$, $h_2=\prod\limits_{i=3}^\ell t_{i,2}(c_i)$.
+$v''=h_2 \cdot t_{1,2}(c_1) \cdot v'$, $h_2=\prod_{i=3}^\ell t_{i,2}(c_i)$.
 
-We can find $f_1, f_3,\ldots, f_\ell \in R$ such that $f_1v''_1+\sum\limits_{i=3}^\ell f_i v''_{i} = 1$.
-Set $\xi = v''_1-v''_{-2}-1 \in I$, $h_3 = t_{1,-2}(\xi f_1) \cdot \prod\limits_{i=3}^\ell t_{i,-2}(\xi f_i)$, $v'''=h_3 \cdot v''$.
+We can find $f_1, f_3,\ldots, f_\ell \in R$ such that $f_1v''_1+\sum_{i=3}^\ell f_i v''_{i} = 1$.
+Set $\xi = v''_1-v''_{-2}-1 \in I$, $h_3 = t_{1,-2}(\xi f_1) \cdot \prod_{i=3}^\ell t_{i,-2}(\xi f_i)$, $v'''=h_3 \cdot v''$.
 %Clearly, $v'''_{-2}=v'''_1-1$, therefore for $v_4 = z_{-\alpha_{max}}(-v'''_{-2}, 1) \cdot v'''$ one has $v^4_1 = 1$, as required.
 Clearly, $t_{1,2}(c_1) \cdot h_1 \in \U(\Phi^+, I)$, while $ h_3 \cdot h_2 \in \U(\Phi^-, I)$.
 
-\textsc{Case $\Phi=\rB_\ell$:} Subdivide $v\in \Ums(2\ell+1, R, I)$ as $v=(v_+, v_0, v_-)\in R^\ell\times R\times R^\ell$.
+\textsc{Case $\Phi=\rB_\ell$, $n=2\ell+1$:} Subdivide $v\in \Ums(2\ell+1, I)$ as $v=(v_+, v_0, v_-)\in R^\ell\times R\times R^\ell$.
 Denote by $J\leq I$ the ideal spanned by components of $v_-$.
-Since $\sr(I/J)\leq l$ we can find $c_1,\dots,c_\ell\in I$ such that for $v' = h \cdot v$, $h = \prod\limits_{i=1}^\ell t_{0, i}(c_i) \in \U(\Phi^+, I)$
-one has $\bar{v'}_+=(\bar{v'_1},\ldots, \bar{v'_\ell}) \in \Ums(\ell, R/J, I/J)$ and, therefore, $(v'_+, v'_-) \in \Ums(2\ell, R, I)$.
-Now one can finish the proof by repeating the argument for the case $\Phi=\rD_l$.
-(clearly, the maximal root of $\rD_\ell$ maps to the maximal root of $\rB_\ell$ under the natural embedding $\rD_\ell\subseteq\rB_\ell$). \end{proof}
+Since $\sr(I/J)\leq \ell$ we can find $c_1,\dots,c_\ell\in I$ such that for $v' = h \cdot v$, $h = \prod_{i=1}^\ell t_{i, 0}(c_i) \in \U(\Phi^+, I)$
+one has $\bar{v'}_+=(\bar{v'_1},\ldots, \bar{v'_\ell}) \in \Ums(\ell, I/J)$ and, therefore, $(v'_+, v'_-) \in \Ums(2\ell, I)$.
+Now the proof can be finished by repeating the argument for the case $\Phi=\rD_l$ (applied to the subset of long roots of $\rB_\ell$).
+%(clearly, the maximal root of $\rD_\ell$ maps to the maximal root of $\rB_\ell$ under the natural embedding $\rD_\ell\subseteq\rB_\ell$). 
+\end{proof}
 
 \begin{rem} %TODO:
 \textbf{TODO: Calculate the exact number of $z_\alpha$'s involved in the decomposition}

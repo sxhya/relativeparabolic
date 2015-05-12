@@ -13,12 +13,12 @@ From Levi decomposition it follows that
 Denote by $A_{rs}$ any of the equal subsets from the previous formula. 
 
 \begin{thm}\label{theorem:relative_dv}
-The relative elementary subgroup $\E(\Phi, R, I)$ coincides with $A_{rs}$ under the following assumptions on $I$:
-\newline \indent \begin{tabular}{l l l l l l}      
-\textbullet & $\Phi = \rA_\ell$, $\rB_\ell$, $\ell\geq 2$, & $s = 1$, & $r = \ell$, & $\sr(I) \leq \ell-1$; \\     
-\textbullet & $\Phi = \rD_\ell$, $\ell\geq 4$, & $s=1$, & $r=\ell$, & $\sr(I) \leq \ell-2$; \\ 
-\textbullet & $\Phi = \rE_\ell$, $\ell=6,7$, & $s=\ell$, & $r=2$, & $\sr(I) \leq \ell-3$; \\ 
-\textbullet & $\Phi = \rE_\ell$, $\ell=6,7$, & $s=\ell$, & $r=1$, & $\asr(I)\leq \ell-2$. \\ 
+The relative elementary subgroup $\E(\Phi, R, I)$ coincides with the subset $A_{rs}$ under the following assumptions on $I$:
+\newline \indent \begin{tabular}{l l l l l}
+\textbullet & $\Phi = \rA_\ell$, $\rB_\ell$, $\ell\geq 2$, & $(s, r)=(1, \ell)$, & $\sr(I) \leq \ell-1$; \\     
+\textbullet & $\Phi = \rD_\ell$, $\ell\geq 4$,             & $(s, r)=(1, \ell)$, & $\sr(I) \leq \ell-2$; \\ 
+\textbullet & $\Phi = \rE_\ell$, $\ell=6,7$,               & $(s, r)=(\ell, 2)$, & $\sr(I) \leq \ell-3$; \\ 
+\textbullet & $\Phi = \rE_\ell$, $\ell=6,7$,               & $(s, r)=(\ell, 1)$, & $\asr(I)\leq \ell-2$. \\ 
 \end{tabular}
 \end{thm}
 The proof of Theorem~\ref{theorem:relative_dv} occupies the rest of this section.
@@ -76,6 +76,7 @@ The subsystem $\Delta_r$ has type $\rA_{\ell-1}$ in all cases except the last on
 It is also clear that $|\Gamma_0|=1$ for $\Phi=\rA_\ell, \rB_\ell$, $|\Gamma_0|=2$ for $\Phi=\rD_\ell$, $|\Gamma_0|=3$ for $\Phi=\rE_\ell$ and $r=2$.
 In the case $\Phi=\rE_\ell$, $r=2$ the subsystem $\Delta_r$ has type $\rD_{\ell-1}$ and $|\Gamma_0|=\ell-1$.
 
+%TODO: PICK AS L_r!!!
 Let $\widetilde{L_r}$ be the set of all elements $g$ of $\E(\Delta_r,R, I)$ such that $(g \cdot v^+)_\lambda = 0$ for $\lambda\in\Gamma_0$.
 In any of specified cases the assumption on $(R, I)$ allows us to apply Lemma~\ref{lemma:uraction} to the subsystem $\Delta_r$ and find
 $x\in\U(\Delta_r\cap\Phi^+, I)$, $y\in \U(\Delta_r\cap\Phi^-, I)$ such that $yx\cdot g \in \widetilde{L_r}$.
