@@ -28,8 +28,9 @@ Applying condition $\sr(I)\leq 2\ell-1$ wes find $c_1, c_2, \ldots, c_{-2} \in I
 By the choice of $c_i$ we can find suitable $d\in I$ such that $h_1 \cdot v = v'$ for $h_1 = t_{1,-1}(c_1 + d) \cdot \prod_{i=2}^{-2} t_{i,-1}(c_i) \in \U(\Sigma_\ell, I)$.
 
 We can find $f_1, f_2,\ldots, f_{-2} \in R$ such that $f_1v'_1+\sum_{i=2}^{-2} f_i v'_i = 1$.
-Set $\xi = v''_1-v''_{-1}-1 \in I$, $h_2 = \prod_{i=1}^{-2} t_{-1,i}(\xi \cdot f_i) \in \U(\Sigma_\ell, I)$.
-Now it is clear that $v'' = h_2 \cdot v'$ satisfies equalities~\ref{eq1}.
+%TODO: Determine exact sign
+Set $\xi = v''_1-v''_{-1}-1 \in I$, $h_2 = t_{-1,1}(\xi f_1 \pm \sum_{i=2}^\ell v_1' \xi^2 f_i f_{-i}) \cdot \prod_{i=2}^{-2} t_{-1,i}(\xi f_i) \in \U(\Sigma_\ell, I)$.
+Direct computation shows that $v'' = h_2 \cdot v'$ satisfies equalities~\ref{eq1}.
 
 %Now we can assume that the first $2\ell-1$ entries of $v$ are unimodular and find $c_1,\ldots,c_{-2}\in I$ such that $c_1v_1+\ldots+c_{-2}v_{-2}=(v_1-1)-v_{-1}$. Add $c_{-i}v_i$ to $v_{-1}$, $i=2,\ldots,\ell$:
 %\[ (v_1,v_2\ldots,v_\ell,v_{-\ell},\ldots,v_{-2},v_{-1})^t\longmapsto (v_1,v'_2\ldots,v'_\ell,v_{-\ell},\ldots,v_{-2},v'_{-1})^t. \]
