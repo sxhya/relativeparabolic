@@ -7,7 +7,7 @@ Let $\Phi$ be a classical root system of rank $\ell\geqslant2$, let $R$ be arbit
 \textbullet & $\Phi = \rB_\ell$, $\rD_\ell$ $\ell\geq 3$,  & $\asr(I) \leqslant \ell-1$. \end{tabular}
 
 \noindent Then the principal congruence subgroup $\G(\Phi,R,I)$ admits the following relative version of Bass---Kolster decomposition:
-\[\G(\Phi,R,I)=  \G(\Delta_1,R,I)\cdot \U(\Sigma_1,I)\cdot \U(\Sigma_1^-\setminus\{-\alpha_\mathrm{max}\},I)\cdot\Z \cdot \U(\Phi^-,I)\cdot \U(\Phi^+,I), \]
+\[\G(\Phi,R,I)=  \U(\Phi^+,I) \cdot \U(\Phi^-,I) \cdot Z \cdot \U(\Sigma_1^-\setminus\{-\alpha_\mathrm{max}\},I) \cdot \U(\Sigma_1,I) \cdot \G(\Delta_1,R,I)\]
 where $\Z=\left\{ z_{-\alpha_\mathrm{max}}(r,1)\mid r\in I \right\}$.
 \end{thm}
 \begin{proof}
@@ -27,7 +27,7 @@ Now multiplying $v'$ by a suitable $y\in \U(\Sigma_\ell^-, I)$ we obtain equalit
 \textsc{Case $\Phi=\rC_\ell$, $n=2\ell$:}
 Notice that column $(v_1,\ldots, v_{-2}, v_{-1}^2)^t$ is also $I$-unimodular.
 Applying condition $\sr(I)\leq 2\ell-1$ we find $c_1, c_2, \ldots, c_{-2} \in I \cdot v_{-1}$ such that upper $2\ell -1$ components of $v'=(v_1 + c_1 v_{-1}, \ldots, v_{-2} + c_{-2}v_{-1}, v_{-1})^t$ form an $I$-unimodular column.
-By the choice of $c_i$ we can find suitable $d\in I$ such that $h_1 \cdot v = v'$ for $h_1 = t_{1,-1}(c_1 + d) \cdot \prod_{i=2}^{-2} t_{i,-1}(c_i) \in \U(\Sigma_1, I)$.
+By the choice of $c_i$ we can find suitable $d\in I$ such that $h_1 \cdot v = v'$ for $h_1 = t_{1,-1}(c_1 + d) \cdot \prod_{i=2}^{-2} t_{i,-1}(c_i) \in \U(\Sigma_1^-, I)$.
 
 We can find $f_1, f_2,\ldots, f_{-2} \in R$ such that $f_1v'_1+\sum_{i=2}^{-2} f_i v'_i = 1$.
 %TODO: Determine exact sign
@@ -59,10 +59,17 @@ Now the proof can be finished by repeating the argument for the case $\Phi=\rD_l
 %(clearly, the maximal root of $\rD_\ell$ maps to the maximal root of $\rB_\ell$ under the natural embedding $\rD_\ell\subseteq\rB_\ell$). 
 \end{proof}
 
-Using standard elementary calculations we can decrease the number of elementary root unipotents involved in the decomposition of the previous theorem.
+We can estimate the number of elementary root unipotents involved in the decomposition of the previous theorem.
+\begin{lemma}
+In the assumptions and notation of Theorem~\ref{thm:BassKolster} one can write any element $g$ of 
+$\G(\Phi,R,I)$ as a product of an element of $\G(\Delta_1,R,I)$, element $z_{-\alpha}(s, 1)$ for some $s\in I$ and $n(\Phi)$ elementary unipotents $t_{\alpha_i}(s_i)$, where
+\begin{itemize}
+ \item $n(\rA_\ell)= 4 \ell -1$;
+ \item $n(\rC_\ell)= 8 \ell - 5$;
+ \item $n(\rD_\ell)= $
+\end{itemize}
 
-\begin{cor}
-In the assumptions and notation of Theorem~\ref{thm:BassKolster} one can write
-\[\G(\Phi,R,I)=  \G(\Delta_1,R,I)\cdot \U(\Sigma_1,I)\cdot \U(\Sigma_1^-,I)\cdot\Z \cdot \U(\Sigma^-_1,I)\cdot \U(\Sigma_1, I).\]
-\end{cor}
+
+\cdot \U(\Sigma_1,I)\cdot \U(\Sigma_1^-,I)\cdot\Z \cdot \U(\Sigma^-_1,I)\cdot \U(\Sigma_1, I).\]
+\end{lemma}
 
