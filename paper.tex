@@ -50,6 +50,7 @@
 \DeclareMathOperator{\Rad}{Rad}
 \DeclareMathOperator{\Max}{Max}
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spin}{Spin}
 \DeclareMathOperator{\Stab}{Stab}
 \DeclareMathOperator{\ASR}{ASR}
 \DeclareMathOperator{\asr}{asr}
@@ -87,7 +88,42 @@
 \maketitle
 
 \section{Introduction}\label{sec:intro}
- 
+Let $\Phi$ be a reduced irreducible root system.
+
+\begin{thm} Let $I$ be an ideal of a commutative ring $R$ such that
+\begin{itemize} \item either $\sr(I) = 1$;
+ \item or $R = p^{-1}\cdot \mathbb{Z}$ for some prime $p$. \end{itemize}
+In the latter case assume additionally that Generalized Riemann Hypothesis holds.
+Then for any $\Phi$ the length of the congruence subgroup $\G(\Phi, R, I)$ does not exceed $C_1|\Phi| + C_2$. \end{thm}
+%TODO: Write explicit estimate for C_1 and C_2.
+The theorem above generalizes one of the results of \cite{VavSmSuUnitrEng} where such bounds were obtained in the absolute case (i.e. when $I=R$).
+
+The next our main result concerns subsystem factorizations of Chevalley groups formulated in terms of submaximal subgroups of type $\rA_\ell$.
+The case when $R=I$ is a field this question was studied by N.~Nikolov in \cite{NikProdDecomp}. 
+\begin{thm*} Let $G$ be a classical Chevalley group (of normal or twisted type) of rank $n$ over a finite field.
+Then $G$ equals the product of at most $200$ conjugates of $\SL_n$. \end{thm*}
+
+It is also classically known that over arbitrary field $F$ the group $\SL(n+1, F)$, $n\geq 3$ is a product of at most $4$ subgroups of type $\SL(n, F)$.
+On the other hand, from the classical Dennis---Vaserstein theorem (see~\cite{Va69} and \cite[Lemma~2.1]{ST76})
+it follows that $\SL_{n+1}(R, I)$ is a product of a most $5$ subgroups of type $\SL_n(R, I)$ for any ideal $I$ satisfying $\sr(I)\leq n-1$.
+Using another Dennis---Vaserstein type factorization we obtain the following result.
+\begin{thm} Assume that $\sr(I) = 2$ then the group $\Spin_{2\ell}(R, I)=\G_{sc}(\rD_\ell, R, I)$ is a product of at most $C$ copies of subgroups of type $\rA_{\ell-1}$. \end{thm}
+
+Another applications of parabolic factorizations developed in this paper are subsystem factorizations in terms of subgroups of type $\rA_1$.
+The case of a finite field $R=F$ was studied by M.~Liebeck, N.~Nikolov and A.~Shalev in~\cite{NikProdDecomp}.
+More precisely, for an untwisted Chevalley group it has been proved that $\G(\Phi, F)$ is a product of at most $N=5|\Phi^+|$ copies of $\SL(2, F)$.
+In~\cite{VavKovSL2} N.~Vavilov and E.~Kovach noted that Bruhat decomposition immediately implies similar factorization with $N=3|\Phi^+|$ factors for arbitrary field $F$.
+In fact, Gauss decomposition (see~\cite{Sm12}) implies similar factorization for the elementary subgroup $\E(\Phi, R)$ with $3|\Phi^+|$ factors for arbitrary commutative ring of stable rank $1$.
+
+\begin{thm} Let $I$ be an ideal of a commutative ring $R$ such that $\sr(R)\leq n$, where
+\begin{itemize}
+ \item $n=1$ and $\Phi$ is either classical or of type $\rE_\ell$;
+ \item $n=2, 3$ and $\Phi$ is simply laced.
+\end{itemize}
+Then $\G(\Phi, R, I)$ is a product of at most $q_{n}(\Phi)$ copies of $\SL_{n+1}(R, I)$, where each $q_{n}(\Phi)$, $n=1,2,3$ is a quadratic function of $\rk(\Phi)$ given in Table~XXX.
+\end{thm}
+
+
 \subsection{Acknowledgements}
 Authors of the present paper acknowledge financial support from Russian Science Foundation grant 14-11-00297.
 
