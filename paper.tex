@@ -40,6 +40,8 @@
 \DeclareMathOperator{\St}{St}
 \DeclareMathOperator{\E}{E}
 \DeclareMathOperator{\EP}{EP}
+\DeclareMathOperator{\Par}{P}
+\DeclareMathOperator{\B}{B}
 \DeclareMathOperator{\U}{U}
 \DeclareMathOperator{\X}{X}
 \DeclareMathOperator{\Z}{Z}
@@ -88,17 +90,37 @@
 \maketitle
 
 \section{Introduction}\label{sec:intro}
-Let $\Phi$ be a reduced irreducible root system.
+In the present paper we study parabolic decompositions of Chevalley groups and their principal congruence subgroups. By a parabolic decomposition we mean a decomposition of a group $G$ into a product of some of its subgroups, where the subgroups in question are either parabolic or related to those in some way (mostly the unipotent radicals or their parts). We are interested in the following three versions of parabolic factorizations:
+\begin{itemize}
+\item Bass---Kolster decomposition $\G(\Phi,R) = \Par_i\U_i^-\U_i\U_i^-$;
+\item Dennis---Vaserstein decomposition $\G(\Phi,R)=\Par_r\U_{rs}^-\Par_s$;
+\item Gauss decomposition $\E(\Phi,R)=\B\U^-U$.
+\end{itemize}
+%TODO: Insert some links to VIP's papers :)
 
+The interest for parabolic factorizations comes from the following two considerations.
+
+The first is related to the fact that over rings of small dimension there is a variety of well-known tools, such as Bruhat decomposition over fields, Gauss decomposition with prescribed semisimple part over local rings, short unitriangular factorizations, etc. For each particular analytic or arithmetic setting there is a specific decomposition theorem (Iwasawa, Cartan and Iwahori decompositions to mention a few). So while groups over small-dimensional rings enjoy plenty of useful factorizations, none of those generalize to rings of large dimension. An this is exactly where parabolic decompositions enter the scene, as they hold for groups over rings satisfying very mild conditions such as the stable rank.
+
+The second is that even for rings of small dimension parabolic factorizations prove useful for applications, see below.
+
+We prove the relative versions of the three decompositions listed above (here the word "relative" refers to the principal congruence subgroups).
+
+%TODO: Insert the statements of our decompositions
+
+The first applications is the problem of bounded generation, where we use Bass---Kolster and Gauss decompositions to reduce the problem to the groups of small rank, where one can do some straightforward calculations. We obtain the following two theorems.
 \begin{thm} Let $I$ be an ideal of a commutative ring $R$ such that
 \begin{itemize} \item either $\sr(I) = 1$;
- \item or $R = p^{-1}\cdot \mathbb{Z}$ for some prime $p$. \end{itemize}
+ \item or $R = \mathbb{Z}[\sfrac{1}{p}]$ for some prime $p$. \end{itemize}
 In the latter case assume additionally that Generalized Riemann Hypothesis holds.
-Then for any $\Phi$ the length of the congruence subgroup $\G(\Phi, R, I)$ does not exceed $C_1|\Phi| + C_2$. \end{thm}
+Then for any $\Phi$ the with of the congruence subgroup $\G(\Phi, R, I)$ with respect to $z_\alpha$ does not exceed $C_1|\Phi| + C_2$. \end{thm}
 %TODO: Write explicit estimate for C_1 and C_2.
-The theorem above generalizes one of the results of \cite{VavSmSuUnitrEng} where such bounds were obtained in the absolute case (i.e. when $I=R$).
+The theorem above generalizes extends the results of \cite{VavSmSuUnitrEng}, where such bounds were obtained in the absolute case (i.e. when $I=R$).
+\begin{thm}
+Let $\mathcal{O}_S$ be a Dedekind ring of arithmetic type in some global field $k$ having a real embedding. If $\rk\Phi\geqslant2$, then $\G(\Phi,\mathcal{O}_S,I)$ has finite width with respect to $z_\alpha$.
+\end{thm}
 
-The next our main result concerns subsystem factorizations of Chevalley groups formulated in terms of submaximal subgroups of type $\rA_\ell$.
+The second application concerns subsystem factorizations of Chevalley groups formulated in terms of submaximal subgroups of type $\rA_\ell$.
 The case when $R=I$ is a field this question was studied by N.~Nikolov in \cite{NikProdDecomp}. 
 \begin{thm*} Let $G$ be a classical Chevalley group (of normal or twisted type) of rank $n$ over a finite field.
 Then $G$ equals the product of at most $200$ conjugates of $\SL_n$. \end{thm*}
@@ -112,7 +134,7 @@ Using another Dennis---Vaserstein type factorization we obtain the following res
 Another applications of parabolic factorizations developed in this paper are subsystem factorizations in terms of subgroups of type $\rA_1$.
 The case of a finite field $R=F$ was studied by M.~Liebeck, N.~Nikolov and A.~Shalev in~\cite{NikProdDecomp}.
 More precisely, for an untwisted Chevalley group it has been proved that $\G(\Phi, F)$ is a product of at most $N=5|\Phi^+|$ copies of $\SL(2, F)$.
-In~\cite{VavKovSL2} N.~Vavilov and E.~Kovach noted that Bruhat decomposition immediately implies similar factorization with $N=3|\Phi^+|$ factors for arbitrary field $F$.
+In~\cite{VavKovSL2} N.~Vavilov and E.~Kovach noted that Bruhat decomposition immediately implies a bound of $N=3|\Phi^+|$ factors for arbitrary field $F$.
 In fact, Gauss decomposition (see~\cite{Sm12}) implies similar factorization for the elementary subgroup $\E(\Phi, R)$ with $3|\Phi^+|$ factors for arbitrary commutative ring of stable rank $1$.
 
 \begin{thm} Let $I$ be an ideal of a commutative ring $R$ such that $\sr(R)\leq n$, where
