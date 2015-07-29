@@ -192,28 +192,28 @@ Then $\alpha$ and $\beta$ are conjugate under the action of $W(\Delta_J)$.
 Our exposition of Chevalley groups is standard and follows (...).
 \textbf{TODO: Write more about Chevalley groups}
 
-In this paper we work with irreducible representations of Chevalley groups corresponding to the highest weight
-$\varpi_1$ (in the case of a classical $\Phi_l$) or $\varpi_l$ (in the case $\Phi_\ell=\rE_\ell$). 
-The former are the natural vector representations of classical groups acting on free modules $V=R^n$ of dimension 
-$n=\ell+1, 2\ell+1, 2\ell,2\ell$ for $\Phi=\rA_\ell,\rB_\ell,\rC_\ell,\rD_\ell$.
-The latter representations have dimension $n=27, 56$ for $\ell=6,7$.
+In this paper we work with the irreducible representations of Chevalley groups corresponding to the highest weight
+$\varpi_1$ (in the case of a classical $\Phi_\ell$) or $\varpi_\ell$ (in the case $\Phi_\ell=\rE_\ell$). 
+The former are the natural vector representations of the classical groups acting on the free modules $V=R^n$ of dimension 
+$n=\ell+1, 2\ell+1, 2\ell,2\ell$ for $\Phi=\rA_\ell,\rB_\ell,\rC_\ell,\rD_\ell$ respectively.
+The latter are the microweight representations of dimension $n=27, 56$ for $\ell=6,7$.
 
 %TODO: Rewrite this using better terminology.
-For a representation $\pi$ of $\G(\Phi, R)$ on $V$ we denote by $\Lambda(\pi)$ the set of weights of $\pi$ and by $V_\lambda$ the weight subspace corresponding to $\lambda\in\Lambda(\pi)$.
+For a representation $\pi$ of $\G(\Phi, R)$ on $V$ we denote by $\Lambda=\Lambda(\pi)$ the set of weights of $\pi$ and by $V_\lambda$ the weight subspace corresponding to $\lambda\in\Lambda$.
 For any of the representations described above (with the sole exception of $(\rE_8, \varpi_8)$) all weight subspaces $V_\lambda$ are one-dimensional. 
-This allows us to choose some basis $E_\pi=\{e_\lambda\}_{\lambda\in\Lambda(\pi)}$.
+This allows us to choose a basis $E_\pi=\{e_\lambda\}_{\lambda\in\Lambda}$.
 
-It will be convenient to use standard numbering for the weights of natural representations of classical groups (cp.~\cite[§1B]{St78}):
-$$\begin{array}{cll}
+It will be convenient to use the standard numbering for the weights of the natural representations of the classical groups (cp.~\cite[§1B]{St78}):
+\[\begin{array}{cll}
   1,2,\ldots, \ell+1 & \text{in the case} & \Phi =\rA_\ell, \\
   1,2,\ldots \ell, 0, -\ell,\ldots, -2, -1 & \text{in the case} & \Phi =\rB_\ell, \\
   1,2,\ldots \ell, -\ell,\ldots, -2, -1 & \text{in the cases}   & \Phi =\rC_\ell, \rD_\ell. \\
-\end{array}$$
+\end{array}\]
 For example, we write $1$ instead of $\varpi_1$, $2$ instead of $\varpi_1-\alpha_1$ etc.
 
-For a weight $\lambda\in \Lambda(\pi)$ we denote by $(-)_\lambda\colon V\rightarrow R$ the coordinate function corresponding to $\lambda$.
-In other words,  $v_\lambda$ is the coefficient of the basis vector $e_\lambda$ in the expansion of $v$ in $E_\pi$, i.e. $v=\sum_{\lambda\in \Lambda(\pi)} v_\lambda e_\lambda$.
-We denote by $v^+$ the basis vector corresponding to highest weight.
+For a weight $\lambda\in \Lambda$ we denote by $(-)_\lambda\colon V\to R$ the coordinate function corresponding to $\lambda$.
+In other words,  $v_\lambda$ is the coefficient of the basis vector $e_\lambda$ in the expansion of $v$ in $E_\pi$, i.e. $v=\sum_{\lambda\in \Lambda} v_\lambda e_\lambda$.
+We denote by $v^+$ the basis vector corresponding to the highest weight.
 For classical $\Phi$ we have $v^+=e_1$.
 
 The following lemma is a relative version of the classical result sometimes called Chevalley---Matsumoto decomposition.
@@ -225,44 +225,49 @@ $g \in \U(\Sigma_s^-, I) \cdot \G_{sc}(\Delta_s, R, I) \cdot \U(\Sigma_s^+, I)$.
 \end{lemma} \begin{proof}  For $I=R$ the statement of the lemma is contained in~\cite[Theorem~1.3]{St78}). \end{proof}
 
 \subsection{Elementary subgroup}
-Recall from~\cite{St78, VP} that for $\alpha\in \Phi$, $\xi\in R$ one can define certain elements $t_{\alpha}(\xi)$ of $\G_{sc}(\Phi, R)$ called {\it elementary root unipotents}.
-These elements satisfy well-known Steinberg relations.
-\begin{equation}\label{rel:add} t_\alpha(s) t_\alpha(t) = t_\alpha(s+t), \end{equation} 
-\begin{equation}\label{rel:CCF} [t_\alpha(s),  t_\beta(t)] = \left(\prod\limits t_{i\alpha + j\beta}(N_{\alpha,\beta, i, j}s^i t^j)\right),\quad \alpha\neq-\beta, N_{\alpha, \beta, i, j}\in\mathbb{Z}.\end{equation}
+Recall from~\cite{St78, VP} that for $\alpha\in \Phi$, $\xi\in R$ one can define certain elements $x_{\alpha}(\xi)$ of $\G_{sc}(\Phi, R)$ called {\it elementary root unipotents}.
+These elements satisfy the well-known Steinberg relations:
+\begin{equation}\label{rel:add}
+x_\alpha(s) x_\alpha(t) = x_\alpha(s+t), \end{equation} 
+\begin{equation}\label{rel:CCF}
+\left[x_\alpha(s),  x_\beta(t)\right] = \prod x_{i\alpha + j\beta}\left(N_{\alpha\beta ij}\, s^i t^j\right),\quad \alpha\neq-\beta, \quad N_{\alpha\beta ij}\in\mathbb{Z}.
+\end{equation}
 The indices $i$, $j$ in the above formula range over all positive natural numbers such that $i\alpha + j\beta\in\Phi$.
-The integers $N_{\alpha, \beta, i, j}$ are called {\it structure constants} of the Chevalley group $\G(\Phi,R)$ and depend only on $\Phi$.
+The integers $N_{\alpha\beta ij}$ are called {\it structure constants} of the Chevalley group $\G(\Phi,R)$ and depend only on $\Phi$.
 
-For $\xi\in R^*$ set $w_\alpha(\xi) := x_\alpha(\xi) x_{-\alpha}(-\xi^{-1}) x_{\alpha}(\xi).$
+For $\xi\in R^*$ set $w_\alpha(\xi) = x_\alpha(\xi) x_{-\alpha}(-\xi^{-1}) x_{\alpha}(\xi).$
 If $\rk(\Phi)\geq 2$ the following relation is a consequence of \ref{rel:add}--\ref{rel:CCF}:
-\begin{equation}\label{rel:R3} w_\alpha(\xi) t_{\beta}(s) w_\alpha(\xi)^{-1} =
-t_{\sigma\ssub{\alpha}\beta} (\eta_{\alpha, \beta}\xi^{-\langle\beta,\alpha \rangle} s),\ \xi,s\in R. \end{equation}
+\begin{equation}\label{rel:R3}
+w_\alpha(\xi) x_{\beta}(s) w_\alpha(\xi)^{-1} =
+x_{\sigma\ssub{\alpha}\beta} \left(\eta_{\alpha, \beta}\xi^{-\langle\beta,\alpha \rangle} s\right),\quad \xi,s\in R.
+\end{equation}
 where coefficients $\eta_{\alpha, \beta} = \pm 1$ (see~\cite[\S13]{VP} for more details on $\eta_{\alpha, \beta}$).
 
 \begin{rem} Let $\lambda_1, \lambda_2 \in \Lambda(\pi)$ be a pair of weights of a representation $\pi$ of a classical group such that $\lambda_1-\lambda_2\in \Phi$.
-In this situation it will be convenient for us to write $t_{\lambda_1,\lambda_2}(\xi)$ instead of $t_{\lambda_1-\lambda_2}(\xi)$.
-For example, for $\Phi=\rA_\ell$ we have $t_{1,2}(\xi)=t_{1-2}(\xi)=t_{\varpi_1 - \varpi_1 + \alpha_1}(\xi) = t_{\alpha_1}(\xi)$. \end{rem}
+In this situation it will be convenient for us to write $x_{\lambda_1,\lambda_2}(\xi)$ instead of $x_{\lambda_1-\lambda_2}(\xi)$.
+For example, for $\Phi=\rA_\ell$ we have $x_{1,2}(\xi)=x_{1-2}(\xi)=x_{\varpi_1 - \varpi_1 + \alpha_1}(\xi) = x_{\alpha_1}(\xi)$. \end{rem}
 
-Let $I\leq R$ be an ideal. Denote by $\E(\Phi, I)$ the subgroup of $\G_{sc}(\Phi, R)$ generated by elementary root unipotents $t_\alpha(\xi)$, $\alpha\in\Phi$, $\xi\in I$.
+Let $I\leq R$ be an ideal. Denote by $\E(\Phi, I)$ the subgroup of $\G_{sc}(\Phi, R)$ generated by the elementary root unipotents $x_\alpha(\xi)$, $\alpha\in\Phi$, $\xi\in I$.
 In the special case $I=R$ the subgroup $\E(\Phi, R)$ is called the {\it elementary subgroup} of the Chevalley group $\G_{sc}(\Phi, R)$.
-Taddei's theorem asserts that $\E(\Phi, R)$ is a normal subgroup of $\G_{sc}(\Phi, R)$ provided $\Phi$ is an irreducible root system of rank $\geq 2$.
+Taddei's theorem asserts that $\E(\Phi, R)$ is a normal subgroup of $\G_{sc}(\Phi, R)$ provided $\Phi$ is an irreducible root system of rank $\geqslant 2$.
 
 We denote by $\E(\Phi, R, I)$ the normal closure of $\E(\Phi, I)$ in $\E(\Phi, R)$, in other words $\E(\Phi, R, I) = \E(\Phi, I)^{\E(\Phi, R)}$.
-Denote by $z_\alpha(s, \xi)$ the element $t_\alpha(s)^{t\ssub{-\alpha}(\xi)}$.
+Denote by $z_\alpha(s, \xi)$ the element $x_\alpha(s)^{x\ssub{-\alpha}(\xi)}$.
 The following result of L.~Vaserstein and J.~Tits describes a set of generators of $\E(\Phi, R, I)$ (see e.\,g.~\cite[Theorem~2]{Va86}).
 
 \begin{thm} Let $\Phi$ be an irreducible root system of rank $\geq 2$, then the relative elementary subgroup $\E(\Phi, R, I)$
-is generated by elements $z_\alpha(s, \xi)$, $\alpha\in \Phi$, $s\in I$, $\xi\in R$.
+is generated by the elements $z_\alpha(s, \xi)$, $\alpha\in \Phi$, $s\in I$, $\xi\in R$.
 \end{thm}
 
 In fact, one can choose a more economical set of generators for $\E(\Phi, R, I)$ (see~\cite[Theorem~3.4]{S}).
 \begin{thm}\label{theorem:Stepanov}
-Let $\Phi$ be a reduced irreducible root system of rank $\geq 2$ and let $S$ be any parabolic subset of roots of $\Phi$ with special part $\Sigma_S$.
-Then $\E(\Phi, R, I)$ is generated by the following two families of elements:
+Let $\Phi$ be a reduced irreducible root system of rank $\geq 2$ and let $S$ be any parabolic subset of roots of $\Phi$ with the special part $\Sigma_S$.
+Then $\E(\Phi, R, I)$ is generated by the union of the following two families of elements:
 \begin{itemize}
- \item $t_{\alpha}(s)$, where $s\in I$, $\alpha\in\Phi$;
+ \item $x_{\alpha}(s)$, where $s\in I$, $\alpha\in\Phi$;
  \item $z_\alpha(s,\xi)$, where $s\in I$, $\xi\in R$, $\alpha\in\Sigma_S$. \end{itemize} \end{thm}
  
-For a special subset of roots $S\subseteq \Phi$ we denote by $\U(S, I)$ the subgroup spanned by all $t_{\alpha}(s)$ for $s\in I$, $\alpha\in S$.
+For a special subset of roots $S\subseteq \Phi$ we denote by $\U(S, I)$ the subgroup spanned by all $x_{\alpha}(s)$ for $s\in I$, $\alpha\in S$.
 The subgroup $\U(\Sigma_J, I)$ is normalized by $\E(\Delta_J, R)$, hence the Minkowski product set $\EP_J(R, I) = \E(\Delta_J, R, I) \cdot \U(\Sigma_J, I)$ is a subgroup. 
 The following two equalities will be referred to in the sequel as {\it Levi decomposition}: 
 $$\EP_J(R, I) = \U(\Sigma_J, I) \cdot \E(\Delta_J, R, I) = \E(\Delta_J, R, I) \cdot \U(\Sigma_J, I).$$
