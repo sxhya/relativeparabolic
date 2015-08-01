@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[backend=biber, citestyle=numeric-comp, natbib=true, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
 \usepackage[all]{xy}
+\usepackage[activate={true,nocompatibility}]{microtype}
 
 \renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
 \newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
