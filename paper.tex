@@ -168,7 +168,7 @@ $G = H_1\cdot\ldots\cdot H_n$ means that every element $g\in G$ can be presented
 
 \subsection{Root systems}
 Let $\Pi=\{\alpha_1, \ldots, \alpha_l\}$ be a basis of $\Phi$. Denote by $\Phi^+$ and $\Phi^-$ subsets of positive and negative roots with respect to $\Pi$.
-Denote by $m_i(\alpha)$ the coefficient of $\beta$ in the expansion of $\alpha$ in $\Pi$, i.\,e. $\alpha = \sum\limits_{i=1}^n m_i(\alpha) \alpha_i$.
+Denote by $m_i(\alpha)$ the coefficient of $\beta$ in the expansion of $\alpha$ in $\Pi$, i.\,e. $\alpha = \sum_{i=1}^n m_i(\alpha) \alpha_i$.
 
 A root subset $S\subseteq \Phi$ is called {\it parabolic} (resp. {\it reductive}, resp. {\it special}) if $\Phi=S \cup -S$ (resp. $S = -S$, resp. $S \cap -S=\varnothing$).
 Any parabolic subset $S \subseteq \Phi$ can be decomposed into the disjoint union of its reductive and special part, i.e. 
@@ -229,7 +229,8 @@ $g \in \U(\Sigma_s^-, I) \cdot \G_{sc}(\Delta_s, R, I) \cdot \U(\Sigma_s^+, I)$.
 Recall from~\cite{St78, VP} that for $\alpha\in \Phi$, $\xi\in R$ one can define certain elements $x_{\alpha}(\xi)$ of $\G_{sc}(\Phi, R)$ called {\it elementary root unipotents}.
 These elements satisfy the well-known Steinberg relations:
 \begin{align}
-& x_\alpha(s) x_\alpha(t) = x_\alpha(s+t), \label{rel:add}\\
+& \phantom{\left[{}\vphantom{x_\beta(t)}\right.}
+x_\alpha(s) x_\alpha(t) = x_\alpha(s+t), \label{rel:add}\\
 & \left[x_\alpha(s),  x_\beta(t)\right] = \prod x_{i\alpha + j\beta}\left(N_{\alpha\beta ij}\, s^i t^j\right),\quad \alpha\neq-\beta, \quad N_{\alpha\beta ij}\in\mathbb{Z}. \label{rel:CCF}
 \end{align} 
 The indices $i$, $j$ in the above formula range over all positive natural numbers such that $i\alpha + j\beta\in\Phi$.
