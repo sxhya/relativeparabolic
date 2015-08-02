@@ -1,22 +1,26 @@
-We now give an application of the above decomposition to the problem of bounded generation.
-\begin{dfn}
-Given a group $G$ and a set of generators $X$ (for simplicity we assume $X=X^{-1}$ and $1\in X$), one says that the width of $G$ with respect to $X$ equals $N$, if $G=X^N$, i.e. every element of $G$ can be represented as a product of at most $N$ generators from $X$.
-\end{dfn}
+We now give an application of parabolic factorizations to the problem of bounded generation.
+\begin{dfn} 
+Let $G$ be an abstract group with a generating set $X \subset G$. %(for simplicity we assume $X=X^{-1}$ and $1\in X$),
+One defines {\it the width of $G$ with respect to $X$} as the smallest natural number $N$ such that 
+ every element of $G$ is a product of at most $N$ elements of $X$, i.\,e. $G=X^N$. \end{dfn}
+ 
 \begin{lemma}\label{lemma:srRI1}
-If $\sr(R,I)=1$, the width of $\SL(2,R,I)$ with respect to $z_\alpha$ does not exceed $4$.
+Suppose that $\sr(I)=1$, then the width of $\SL(2,R,I)$ with respect to generators $z_\alpha(s, \xi)$ of Theorem~\ref{theorem:Tits-Vaserstein} does not exceed $4$.
 \end{lemma}
 \begin{proof}
-Let $A=\begin{psmallmatrix}a & b \\ c & d\end{psmallmatrix}\in\SL(2,R,I)$. The first column is $I$-unimodular, therefore there exists $z\in I$ such that $a+cz\in R^*$. Multiply $A$ by $x_{12}(z)$ from the left to obtain an invertible element in the upper left corner. Applying $x_{21}(-c/a)$ from the left and $x_{12}(-b/a)$ from the right, we obtain a diagonal matrix. Thus
-\begin{multline*}
-A=x_{12}(-z)\cdot x_{21}(c/a)\cdot
+Let $A=\begin{psmallmatrix}a & b \\ c & d\end{psmallmatrix}\in\SL(2,R,I)$ be an element of $\SL(2, R, I)$.
+The first column of $A$ is $I$-unimodular, therefore there exists $z\in I$ such that $a+cz\in R^*$.
+Multiplying $A$ on the left by $x_{12}(z)$ we get matrix $A'=x_{12}(z)\cdot A=\begin{psmallmatrix}a' & b' \\ c & d\end{psmallmatrix}$ with invertible top-left corner element $a'$.
+After multiplying $A'$ on the left by $x_{21}(-c/a')$ and on the right by $x_{12}(-b'/a')$ we obtain a diagonal matrix. 
+Thus we obtain relative Gauss decomposition of $A$
+\begin{equation}\nonumber
+A=x_{12}(-z)\cdot x_{21}(c/a')\cdot
 \begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
-\cdot x_{12}(b/a)=\\
-=x_{12}(-z)\cdot
+\cdot x_{12}(b'/a')=x_{12}(-z)\cdot
 \begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
-\cdot x_{21}(y) \cdot x_{12}(b/a),
-\end{multline*}
-where all the coefficients in transvections lie in $I$ and $\varepsilon\in 1+I$. The above formula is a relative version of Gauss decomposition.
-Note that
+\cdot x_{21}(y) \cdot x_{12}(b'/a'),
+\end{equation}
+where $\varepsilon\in 1+I$ and $y\in I$. Direct calculation shows that
 \begin{multline*}
 \begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix} =
 \begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix}
@@ -30,21 +34,26 @@ Note that
 \begin{pmatrix} 1 & 0 \\ \varepsilon^2-\varepsilon & 1 \end{pmatrix},
 \end{multline*}
 therefore
-\[
-A=z_{21}(1-\varepsilon,-1-z)\cdot x_{12}(1/\varepsilon-1-z)\cdot x_{21}(\varepsilon^2-\varepsilon+y)\cdot x_{12}(b/a). \qedhere
-\]
+\[ A=z_{21}(1-\varepsilon,-1-z)\cdot x_{12}(1/\varepsilon-1-z)\cdot x_{21}(\varepsilon^2-\varepsilon+y)\cdot x_{12}(b'/a'). \qedhere \]
 \end{proof}
+
 \begin{rem}
-In the above lemma one can restrict himself to the generators of the form $x_\alpha(s)$ and $z_\alpha(s,1)$, $s\in I$, and have an estimate of $5$ factors. It might be useful since $\left\{z_\alpha(s,1)\mid s\in I\right\}=\X_\alpha(I)^{x_\alpha(1)}$ if a $1$-parameter subgroup.
+Notice tht the proof of the above Lemma also shows that the width of $\SL(2, R, I)$ respect to generators of the form $x_\alpha(s)$ and $z_\alpha(s,1)$, $s\in I$ does not exceed $5$.
+This estimate is useful since $X_\alpha(I)^{x_{-\alpha}(1)} = \left\{z_\alpha(s,1)\mid s\in I\right\}$ are $1$-parameter subgroups.
 \end{rem}
+
 The following lemma is a corollary of Theorems~5.7 and 5.8 of \cite{LenMorStePrimitiveRoot}.
 \begin{lemma}
-Let $p$ be a rational prime, $c\perp d$ two coprime integers and $p\perp d$. Then under the assumption of the Generalized Riemann Hypothesis there exist infinitely many primes $q\equiv c\pmod{d}$, such that $p$ is a primitive root modulo $q$.
+Let $p$ be a rational prime, $c\perp d$ two coprime integers and $p\perp d$.
+Then under the assumption of the Generalized Riemann Hypothesis there exist infinitely many primes $q\equiv c\pmod{d}$ such that $p$ is a primitive root modulo $q$.
 \end{lemma}
-One can modify Lemma~6 of \cite{VavSmSuUnitrEng} (see also \cite{VseUnitrZ1p}) in the following way:
+
+One can modify Lemma~6 of \cite{VavSmSuUnitrEng} in the following way (cf. also \cite{VseUnitrZ1p}):
+
 \begin{lemma}\label{lemma:Z1p}
-Assume GRH. If $R=\mathbb{Z}[\sfrac{1}{p}]$ and $I\lhd R$, the width of $\SL(2,R,I)$ does not exceed $6$.
+Assume that GRH holds. If $R=\mathbb{Z}[\sfrac{1}{p}]$ and $I\lhd R$, then the width of $\SL(2,R,I)$ does not exceed $6$.
 \end{lemma}
+
 \begin{proof}
 Write $I=(m)$ for some $m\in\mathbb{Z}$, $p\nmid m$. Fix $g\in\SL(2,R,I)$:
 \[ g=\begin{pmatrix}x & y \\ z & w\end{pmatrix},\quad
