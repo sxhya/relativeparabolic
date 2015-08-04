@@ -103,9 +103,6 @@ Let $\Phi$ be a classical root system of rank $\geqslant 2$.
 If $k$ has a real embedding, then $\G(\Phi,\mathcal{O}_S,I)$ has finite width with respect to generators $z_\alpha(s, \xi)$ of Theorem~\ref{theorem:Tits-Vaserstein}.
 \end{lemma}
 \begin{proof}
-Recall from~\cite{BassMilnorSerre} that if $k$ has a real embedding then $\K_1(\Phi,\mathcal{O}_S,I)$ is trivial for any root system $\Phi$ of rank $\geqslant2$ and arbitrary ideal $I$.
-
-
 First of all, notice that $\asr(I) \leq \asr(\mathcal{O}_S) \leq 2$. 
 By Theorem~\ref{thm:BassKolster} we can present any element of $G=\G(\Phi, \mathcal{O}_S, I)$ as a product of a finite number of generators $z_\alpha(s, \xi)$ and one element of $G_0=\G(\rA_1, \mathcal{O}_S, I)=\SL(2,\mathcal{O}_S,I)$.
 Consequently, to prove the statement of the lemma it suffices to express every element $g = \begin{psmallmatrix}1+a & b \\ c & 1+d \end{psmallmatrix} \in G_0$ as a product of a finite number of generators contained in some rank $2$ subgroup of $G$ containing $G_0$.
@@ -116,8 +113,10 @@ Recall that Vaserstein's congruence subgroup is defined as
 Notice that $g_1=g\cdot z_{21}(a,1)$ is contained in $G(I,I)$, indeed
 \[ \begin{pmatrix} 1+a & b \\ c & 1+d \end{pmatrix} \cdot \begin{pmatrix} 1-a & -a \\ a & 1+a \end{pmatrix} = \begin{pmatrix} 1+ba-a^2 & b-a-ba-a^2 \\ c+a+ad-ac & 1+bc-ac \end{pmatrix} \in G(I,I). \]
 For any matrix $g'=\begin{psmallmatrix}1+a & b \\ c & 1+d\end{psmallmatrix}\in G(I,I)$ the matrix $x_{21}(-c)\cdot g'\cdot x_{12}(-b)$ lies in $\SL\left(2,\mathcal{O}_S,I^2\right)$.
+Recall that if $k$ has a real embedding then $\G(\Phi, \mathcal{O}_S,I) = \E(\Phi, \mathcal{O}_S, I)$ for any ideal $I$ by virtue of \cite[Corollary~4.5]{Ma69} and \cite[Theorem~3.6]{BassMilnorSerre}.
+
 By Lemma~\ref{lemma:Stepanov-ideal} the group $\E\left(\Phi,\mathcal{O}_S,I^2\right)$ is contained in $\E(\Phi,I)$ for any root system $\Phi\neq\rC_\ell$ of rank $\geqslant2$.
-Under the assumptions of the lemma it is shown in~\cite{TavgenThesis} that $\E(\Phi,I)$ has finite width with respect to $\{x_\alpha(s)\mid\alpha\in\Phi,\ s\in I\}$ therefore $g$ has bounded length with respect to $z_\alpha$.
+Notice that under the assumptions of the lemma it is known that $\E(\Phi,I)$ has finite width with respect to $\{x_\alpha(s)\mid\alpha\in\Phi,\ s\in I\}$, see~\cite[Theorem~3.3]{TavgenThesis}.
 
 In remains to consider the case $\Phi=\rC_\ell$. First of all, notice that $2abc-abd\in II^{\indexbox{2}}$, indeed
 \[ \det(g_1)=a^3d-3a^2bc+a^2bd+ab^2c+a^3+a^2b+a^2d+2abc-abd+1. \]
