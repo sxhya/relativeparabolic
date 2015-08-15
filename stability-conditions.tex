@@ -97,31 +97,31 @@ Clearly one has
 
 \subsection{Action of unipotent radicals}\label{sec:ur-action}
 Let $v\in V=R^{2\ell}$ be a vector of the natural representation of $\G(\rD_\ell, R)$.
-Denote by $v_+$ and $v_-$ the upper and the lower halves of $v$ i.e. $v_+=(v_1,\ldots, v_\ell)^t$, $v_-=(v_{-\ell},\ldots, v_{-1})^t$.
+Denote by $v_+$ and $v_-$ the upper and the lower halves of $v$, i.e. $v_+=(v_1,\ldots, v_\ell)^t$, $v_-=(v_{-\ell},\ldots, v_{-1})^t$.
 \begin{lemma}\label{lemma:asrUnip}
- Let $\Phi=\rD_\ell$ and assume that $\asr(I)\leq \ell -1$. 
+ Let $\Phi=\rD_\ell$ and assume that $\asr(I)\leqslant \ell -1$. 
  Then for any $I$-unimodular column $v=(v_+, v_-)^t\in\Ums(2\ell, I)$
- there exist $g\in\U(\Sigma^+_\ell, I)$ such that $(g \cdot v)_+ \in \Ums(\ell, I)$.
+ there exists $g\in\U(\Sigma^+_\ell, I)$ such that $(g \cdot v)_+ \in \Ums(\ell, I)$.
 \end{lemma}
-\begin{proof} Denote by $J$ the ideal of $R$ spanned by the components of $v_{-}$. Clearly, $J \leq I$.
-By Proposition~\ref{prop:sr_properties} $\sr(I/J) \leq \ell-1$ therefore
+\begin{proof} Denote by $J$ the ideal of $R$ spanned by the components of $v_{-}$. Clearly, $J \subseteq I$.
+By Proposition~\ref{prop:sr_properties} $\sr(I/J) \leqslant \ell-1$, therefore
 the elementary group $\E(\rA_{\ell-1}, R/J, I/J)$ acts transitively on $\Ums(\ell, I/J)$ (see~\cite[Theorem~2.3c]{Va69}). 
-This implies existence of $h\in \E(\Delta_\ell, R, I)$ such that for $v' = h \cdot v$ and $i=1,\ldots, \ell$ one has $v'_i \equiv \delta_{i1} \mod J$.
+This implies the existence of an element $h\in \E(\Delta_\ell, R, I)$ such that the vector $v' = h \cdot v$ satisfies $v'_i \equiv \delta_{i1} \pmod J$ for $i=1,\ldots, \ell$.
 
 Clearly, $(v'_1,v'_{-\ell},\ldots, v'_{-1})$ is $I$-unimodular.
-Applying statement~\ref{asr-bak-like} of Lemma~\ref{lemma:relative-asr-unimod} we find $c_2,\ldots, c_\ell\in I$ such that for $v''= \prod_{i=2}^{\ell}t_{-i, -1}(c_i)\cdot v'$ one has
+Applying statement~\ref{asr-bak-like} of Lemma~\ref{lemma:relative-asr-unimod} we find $c_2,\ldots, c_\ell\in I$ such that for $v''= \prod_{i=2}^{\ell}x_{-i, -1}(c_i)\cdot v'$ one has
 $(v''_1, v''_{-\ell},\ldots, v''_{-2})\in\Ums(\ell+1, I)$.
 %$\mathfrak{J}(v''_{-\ell},\ldots, v''_{-2}) = \mathfrak{J}(v'^-)$. Clearly, $v''_1$ is still congruent to $1$ modulo $J$, therefore 
 %$(v''_1, v''_{-\ell},\ldots, v''_{-2})$ is $I$-unimodular. 
-Now, applying condition $\sr(I) \leq \ell-1$ once again we find
+Now, applying the condition $\sr(I) \leqslant \ell-1$ once again we find
 $d_1,d_3,\ldots, d_{\ell}\in I$ such that the entries $(v'''_1, v'''_{-\ell},\ldots, v'''_{-3})$
-of $v'''=t_{-2,1}(d_1) \cdot \prod_{i=3}^{\ell} t_{-2,-i}(d_i) \cdot v''$ form a $I$-unimodular column.
+of $v'''=x_{-2,1}(d_1) \cdot \prod_{i=3}^{\ell} x_{-2,-i}(d_i) \cdot v''$ form an $I$-unimodular column.
 
 We can find $f_1, f_3,\ldots, f_\ell \in R$ such that $f_1v'''_1+\sum_{i=3}^\ell f_i v'''_{-i} = 1$.
-Set $\xi = v'''_1-v'''_2-1 \in I$, $v^4=t_{1,2}(\xi f_1) \cdot \prod_{i=3}^\ell t_{-i,2}(\xi f_i) \cdot v'''$.
-Clearly $v^4_2 = v^4_1-1$, therefore $v^4_+$ is $I$-unimodular.
-Summarizing the above, we have found $g\in \EP_\ell(R, I)$ such that $v^4=g \cdot v$
-and assertion of the lemma immediately follows from Levi decomposition. \end{proof}
+Set $\xi = v'''_1-v'''_2-1 \in I$, $v^{(4)}=x_{1,2}(\xi f_1) \cdot \prod_{i=3}^\ell x_{-i,2}(\xi f_i) \cdot v'''$.
+Clearly $v^{(4)}_2 = v^{(4)}_1-1$, therefore $v^{(4)}_+$ is $I$-unimodular.
+Summarizing the above, we have found $g\in \EP_\ell(R, I)$ such that $v^{(4)}=g \cdot v$
+and the assertion of the lemma immediately follows from Levi decomposition. \end{proof}
 
 \begin{lemma} \label{lemma:uraction} 
 Let $\Phi=\rA_\ell, \rD_\ell$. Denote by $\pi$ the natural representation of $\G(\Phi, R)$ on $V=R^n$, $n=\ell+1,2\ell$.
