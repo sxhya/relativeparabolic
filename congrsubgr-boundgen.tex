@@ -1,11 +1,9 @@
 We now give an application of parabolic factorizations to the problem of bounded generation.
  
 \begin{lemma}\label{lemma:srRI1}
-Let $I$ be an ideal of $R$ such that $\sr(I)=1$. The following statements are true.
-\begin{enumerate}
- \item The width of $\SL(2, R, I)$ with respect to generators $z_\alpha(s, \xi)$ of Theorem~\ref{theorem:Tits-Vaserstein} does not exceed $4$.
- \item The width of $\SL(2, R, I)$ with respect to $1$-parameter subgroups of the form $X_\alpha(I)$ and $X_\alpha(I)^{x_{-\alpha}(1)} = \left\{z_\alpha(s,1)\mid s\in I\right\}$ does not exceed $5$.
-\end{enumerate}
+Let $\Phi$ be a root system, $I$ be an ideal of $R$ such that $\sr(I)=1$. Then the relative elementary Chevalley group admits Gauss decomposition
+\[ \E(\Phi,R,I) = \Hh(\Phi,R,I) \U(\Phi,I)\U^-(\Phi,I)\U(\Phi,I). \]
+As a corollary, the width of $\E(\Phi,R,I)$ with respect to generators $z_\alpha(s,\xi)$ of Theorem~\ref{theorem:Tits-Vaserstein} does not exceed $3\left|\Phi^+\right|+2\rk\Phi-1$.
 \end{lemma}
 \begin{proof}
 Let $A=\begin{psmallmatrix}a & b \\ c & d\end{psmallmatrix}\in\SL(2,R,I)$ be an element of $\SL(2, R, I)$.
@@ -20,22 +18,29 @@ A=x_{12}(-z)\cdot x_{21}(c/a')\cdot
 \begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
 \cdot x_{21}(y) \cdot x_{12}(b'/a'),
 \end{equation}
-where $\varepsilon\in 1+I$ and $y\in I$. Direct calculation shows that
-\begin{multline*}
-\begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix} =
-\begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix}
-\begin{pmatrix} 1 & 0 \\ 1-\varepsilon & 1 \end{pmatrix}
-\begin{pmatrix} 1 & 1/\varepsilon \\ 0 & 1 \end{pmatrix}
-\begin{pmatrix} 1 & 0 \\ \varepsilon^2-\varepsilon & 1 \end{pmatrix} =\\=
-\begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix}
-\begin{pmatrix} 1 & 0 \\ 1-\varepsilon & 1 \end{pmatrix}
-\begin{pmatrix} 1 & 1+z \\ 0 & 1 \end{pmatrix}
-\begin{pmatrix} 1 & 1/\varepsilon-1-z \\ 0 & 1 \end{pmatrix}
-\begin{pmatrix} 1 & 0 \\ \varepsilon^2-\varepsilon & 1 \end{pmatrix},
-\end{multline*}
-therefore
-\[ A=z_{21}(1-\varepsilon,-1-z)\cdot x_{12}(1/\varepsilon-1-z)\cdot x_{21}(\varepsilon^2-\varepsilon+y)\cdot x_{12}(b'/a'), \]
-which simultaneously implies both statements of the lemma.
+where $\varepsilon\in 1+I$ and $y\in I$. Theorem~\ref{thm:Gauss} implies that the Gauss decomposition of length $3$ hold for every relative elementary Chevalley group.
+
+To obtain the width estimates fix an element $g\in\E(\Phi,R,I)$ and decompose it into $g=u_1 h v_2 u_3$, where $h\in\Hh(\Phi,R,I)$, $u_1,u_3\in\U(\Phi,I)$, $v_2\in\U^-(\Phi,I)$. Write $h=\prod_{i=1}^\ell h_{\alpha_i}(\varepsilon_i)$, $\varepsilon\in1+I$. Each $h_{\alpha_i}(\varepsilon_i)$ decomposes into $h_{\alpha_i}(\varepsilon_i) = x_{\alpha_i}(*) z_{-\alpha_i}(*,*) x_{-\alpha_i}(*)$ (see Lemma~\ref{lemma:rel-tor-elementary}), and since the torus normalizes each of $\X_\alpha(I)$ (see formula~\ref{rel:R6}), we have a decomposition
+\[ g\in\U(\Phi,I)\cdot\prod_{\i=1}^\ell\bigl(x_{\alpha_i}(*)z_{-\alpha_i}(*,*)\bigr)\cdot \U^-(\Phi,I) \U(\Phi,I), \]
+and the estimate follows.
+%
+%
+%Direct calculation shows that
+%\begin{multline*}
+%\begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix} =
+%\begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix}
+%\begin{pmatrix} 1 & 0 \\ 1-\varepsilon & 1 \end{pmatrix}
+%\begin{pmatrix} 1 & 1/\varepsilon \\ 0 & 1 \end{pmatrix}
+%\begin{pmatrix} 1 & 0 \\ \varepsilon^2-\varepsilon & 1 \end{pmatrix} =\\=
+%\begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix}
+%\begin{pmatrix} 1 & 0 \\ 1-\varepsilon & 1 \end{pmatrix}
+%\begin{pmatrix} 1 & 1+z \\ 0 & 1 \end{pmatrix}
+%\begin{pmatrix} 1 & 1/\varepsilon-1-z \\ 0 & 1 \end{pmatrix}
+%\begin{pmatrix} 1 & 0 \\ \varepsilon^2-\varepsilon & 1 \end{pmatrix},
+%\end{multline*}
+%therefore
+%\[ A=z_{21}(1-\varepsilon,-1-z)\cdot x_{12}(1/\varepsilon-1-z)\cdot x_{21}(\varepsilon^2-\varepsilon+y)\cdot x_{12}(b'/a'), \]
+%which simultaneously implies both statements of the lemma.
 \end{proof}
 
 The following lemma is a corollary of Theorems~5.7 and 5.8 of \cite{LenMorStePrimitiveRoot}.
