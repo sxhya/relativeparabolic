@@ -8,7 +8,7 @@ Let $\Phi$ be a classical root system of rank $\ell\geqslant2$, let $R$ be an ar
 \end{array}\]
 Then the principal congruence subgroup $\G(\Phi,R,I)$ admits the following relative version of Bass---Kolster decomposition:
 \[ \G(\Phi,R,I)=  \U(\Phi^+,I) \cdot \U(\Phi^-,I) \cdot Z \cdot \U(\Sigma_1^-\setminus\{-\alpha_\mathrm{max}\},I) \cdot \U(\Sigma_1,I) \cdot \G(\Delta_1,R,I), \]
-where $\Z=\left\{ z_{-\alpha_\mathrm{max}}(r,1)\ \middle|\ r\in I \right\}$.
+where $Z=\left\{ z_{-\alpha_\mathrm{max}}(r,1)\ \middle|\ r\in I \right\}$.
 \end{thm}
 \begin{proof}
 
@@ -81,3 +81,12 @@ Summing up these upper bounds we obtain
 $$n(\rD_\ell) = (2\ell-3) + 1 + (2\ell - 4) + 1 + 2\cdot (2\ell - 2) = 8\ell - 9.$$
 
 The estimate in the case $\Phi=\rB_\ell$ can be obtained in a similar way. \end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:SL2width}]
+Consider the case $\Phi=\rA_\ell$, $\sr(I)\leq 2$. First of all, notice that we can improve the estimate of the number of factors involved in Bass---Kolster decomposition.
+Indeed, when performing the first step of the proof of Theorem~\ref{thm:BassKolster} it suffices to make only $2$ additions of $v_{\ell+1}$ (e.\,g. to $v_{1}$ and $v_2$) to make the first $\ell$ entries of $v'$ form a unimodular column.
+In particular, $\G(\Phi, R, I)$ can be presented as a product of one element of $\G(\Delta_1, R, I)$, one element of $Z$ and $3\ell+1$ root unipotents $x_\alpha(s)$, $s\in I$.
+The latter elements are contained in a product of $3\ell + 1$ copies of $\SL_2(R, I)$. Now the statement of the theorem follows by induction on $\ell$.
+
+The proof in the case $\Phi=\rC_\ell$ is similar (notice that we use the exceptional isomorphism $\SL_2\cong \Sp_2$).
+\end{proof}
