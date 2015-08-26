@@ -143,6 +143,7 @@ Our first application of parabolic factorizations is the following theorem which
 \begin{enumerate}
 \item If $\sr(I) = 1$, then $W(\E(\Phi,R,I),\mathcal{Z}(\Pi))\leqslant 3|\Phi^+|+2\rk(\Phi)-1$;
 \item Let $p$ be a prime integer, set $R = \mathbb{Z}[\sfrac{1}{p}]$ and assume $\Phi$ is classical. Then under the assumption of the Generalized Riemann Hypothesis one has
+%TODO: I'm not sure whether in the orthogonal case we have the estimate 3|\Phi^+| and not 4|\Phi^+|; doublecheck this
  $$W(\E(\Phi,R,I), \mathcal{Z}(\Sigma_\ell))\leqslant 3|\Phi^+| + 2\rk(\Phi) + 1;$$
 \item Let $\mathcal{O}_S$ be a Dedekind ring of arithmetic type embedded into some global field $k$ having a real embedding. 
 Assume $\Phi$ is classical of rank $\geqslant2$, then $W(\G(\Phi,\mathcal{O}_S,I), \mathcal{Z}(\Sigma_\ell))$ is finite.
@@ -211,7 +212,10 @@ Then $\alpha$ and $\beta$ are conjugate under the action of $W(\Delta_J)$.
 
 \subsection{Chevalley groups}
 Our exposition of Chevalley groups is standard and follows~\cite{Ta, S, St78, VP, Va86}.
-We denote by $\G(\Phi, R)$ the simply-connected split Chevalley group of type $\Phi$ over arbitrary commutative ring $R$. For example, for each of the four classical series $\Phi=\rA_\ell, \rB_\ell, \rC_\ell, \rD_\ell$ the group $\G(\Phi, R)$ equals $\SL(\ell+1, R)$, $\Spin(2\ell+1, R)$, $\Sp(2\ell, R)$, $\Spin(2\ell, R)$, respectively. Notice that from the uniqueness theorem of M.~Demazure (see~\cite[Corollaire~5.2]{SGA3}) it follows that the exceptional isomorphisms of small-rank groups (which are well-known in the theory of groups over fields) remain valid for Chevalley groups over arbitrary commutative rings $R$. In particular there are isomorphisms of groups $\Spin(5, R)\cong \Sp(4, R)$, $\Spin(6, R)\cong\SL(4, R)$ $\SL(2, R)\cong \Sp(2, R)$.  
+We denote by $\G(\Phi, R)$ the simply-connected split Chevalley group of type $\Phi$ over arbitrary commutative ring $R$. For example, for each of the four classical series $\Phi=\rA_\ell, \rB_\ell, \rC_\ell, \rD_\ell$
+the group $\G(\Phi, R)$ equals $\SL(\ell+1, R)$, $\Spin(2\ell+1, R)$, $\Sp(2\ell, R)$, $\Spin(2\ell, R)$, respectively. Notice that from the uniqueness theorem of M.~Demazure (see~\cite[Corollaire~5.2]{SGA3}) 
+it follows that the exceptional isomorphisms of small-rank groups (which are well-known in the theory of groups over fields) remain valid for Chevalley groups over arbitrary commutative rings.
+In particular, there are isomorphisms of groups $\Spin(5, R)\cong \Sp(4, R)$, $\Spin(6, R)\cong\SL(4, R)$, $\SL(2, R)\cong \Sp(2, R)$.  
 
 In this paper we work with the irreducible representations of Chevalley groups with the highest weight
 $\varpi_1$ (in the case of a classical $\Phi$) or $\varpi_\ell$ (in the case $\Phi=\rE_\ell$, $\ell=6,7$). The former are the natural vector representations of classical groups acting on free modules $V=R^n$ of dimension $n=\ell+1, 2\ell+1, 2\ell,2\ell$ for $\Phi=\rA_\ell,\rB_\ell,\rC_\ell,\rD_\ell$ respectively.
