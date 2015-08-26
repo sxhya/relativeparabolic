@@ -78,7 +78,7 @@
    {_{\lower1.5pt\hbox{$\scriptscriptstyle #1$}}}
    {_{\!\lower1.5pt\hbox{$\scriptscriptstyle #1$}}}}
 
-\title [Parabolic factorizations of congruence subgroups ] {Parabolic factorizations and width of congruence subgroups in Chevalley groups}
+\title [Parabolic factorizations of congruence subgroups] {Parabolic factorizations and width of congruence subgroups in Chevalley groups}
 \keywords {Chevalley groups, relative subgroups, stability for $\K_1$. {\em Mathematical Subject Classification (2010):} 20G40, 20G35, 19B14}
 \author {Sergey Sinchuk, Andrei Smolensky}
 \email {sinchukss {\it at} yandex.ru,\ andrei.smolensky {\it at} gmail.com}
@@ -141,11 +141,11 @@ Then $\E(\Phi, R, I)$ is generated (as an abstract group) by $\mathcal{Z}(\Sigma
 \end{thm}
 
 Our first application of parabolic factorizations is the following theorem which gives an estimate of the width of $\G(\Phi, R, I)$ in terms $\mathcal{Z}$.
-\begin{thm} Let $\Phi$ be a root system, and let $I$ be an ideal of a commutative ring $R$.
+\begin{thm} Let $\Phi$ be an irreducible root system, and let $I$ be an ideal of a commutative ring $R$.
 \begin{enumerate}
-\item If $\sr(I) = 1$, then $W(\E(\Phi,R,I),\mathcal{Z})\leqslant 3|\Phi^+|+2\rk\Phi-1$;
-\item If $R = \mathbb{Z}[\sfrac{1}{p}]$ for some prime $p$, and $\Phi$ is classical, then under the assumption of the Generalized Riemann Hypothesis $W(\E(\Phi,R,I), \mathcal{Z}(\Sigma_\ell))\leqslant ???$;
-\item If $\mathcal{O}_S$ is a Dedekind ring of arithmetic type in some global field $k$ having a real embedding and $\rk\Phi\geqslant2$, then $W(\G(\Phi,\mathcal{O}_S,I), \mathcal{Z}(\Sigma_\ell))$ is finite.
+\item If $\sr(I) = 1$, then $W(\E(\Phi,R,I),\mathcal{Z})\leqslant 3|\Phi^+|+2\rk(\Phi)-1$;
+\item Let $p$ be a prime integer, set $R = \mathbb{Z}[\sfrac{1}{p}]$ and assume that $\Phi$ is classical, then under the assumption of the Generalized Riemann Hypothesis one has $W(\E(\Phi,R,I), \mathcal{Z}(\Sigma_\ell))\leqslant 3|\Phi^+| + 2\rk(\Phi) + 6$;
+\item If $\mathcal{O}_S$ is a Dedekind ring of arithmetic type in some global field $k$ having a real embedding and $\rk(\Phi)\geqslant2$, then $W(\G(\Phi,\mathcal{O}_S,I), \mathcal{Z}(\Sigma_\ell))$ is finite.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -163,7 +163,7 @@ In~\cite{VavKovSL2} N.~Vavilov and E.~Kovach noted that Bruhat decomposition imm
 In fact, Gauss decomposition (see~\cite{Sm12}) implies a similar factorization for the elementary subgroup $\E(\Phi, R)$ 
 with $3|\Phi^+|$ factors for arbitrary commutative ring of stable rank $1$.
 
-In the linear and symplectic case the above results can be extended to even larger class of rings (which includes all Dedekind rings, for example).
+In the linear and symplectic case the above results can be extended to even larger class of rings (which e.\,g. includes all Dedekind rings).
 \begin{thm}\label{thm:SL2width}
 Assume that one of the following is true:
 \begin{itemize} 
@@ -216,13 +216,11 @@ Then $\alpha$ and $\beta$ are conjugate under the action of $W(\Delta_J)$.
 \end{lemma}
 
 \subsection{Chevalley groups}
-Our exposition of Chevalley groups is standard and follows (...).
-\textbf{TODO: Write more about Chevalley groups}
+Our exposition of Chevalley groups is standard and follows~\cite{Ta, S, St78, VP, Va86}.
+We denote by $\G(\Phi, R)$ the simply-connected split Chevalley group of type $\Phi$ over arbitrary commutative ring $R$. For example, for each of the four classical series $\Phi=\rA_\ell, \rB_\ell, \rC_\ell, \rD_\ell$ the group $\G(\Phi, R)$ equals $\SL(\ell+1, R)$, $\Spin(2\ell+1, R)$, $\Sp(2\ell, R)$, $\Spin(2\ell, R)$, respectively. Notice that from the uniqueness theorem of M.~Demazure (see~\cite[Corollaire~5.2]{SGA3}) it follows that the exceptional isomorphisms of small-rank groups (which are well-known in the theory of groups over fields) remain valid for Chevalley groups over arbitrary commutative rings $R$. In particular there are isomorphisms of groups $\Spin(5, R)\cong \Sp(4, R)$, $\Spin(6, R)\cong\SL(4, R)$ $\SL(2, R)\cong \Sp(2, R)$.  
 
-In this paper we work with the irreducible representations of Chevalley groups corresponding to the highest weight
-$\varpi_1$ (in the case of a classical $\Phi_\ell$) or $\varpi_\ell$ (in the case $\Phi_\ell=\rE_\ell$). 
-The former are the natural vector representations of the classical groups acting on the free modules $V=R^n$ of dimension 
-$n=\ell+1, 2\ell+1, 2\ell,2\ell$ for $\Phi=\rA_\ell,\rB_\ell,\rC_\ell,\rD_\ell$ respectively.
+In this paper we work with the irreducible representations of Chevalley groups with the highest weight
+$\varpi_1$ (in the case of a classical $\Phi$) or $\varpi_\ell$ (in the case $\Phi=\rE_\ell$, $\ell=6,7$). The former are the natural vector representations of classical groups acting on free modules $V=R^n$ of dimension $n=\ell+1, 2\ell+1, 2\ell,2\ell$ for $\Phi=\rA_\ell,\rB_\ell,\rC_\ell,\rD_\ell$ respectively.
 The latter are the microweight representations of dimension $n=27, 56$ for $\ell=6,7$.
 
 %TODO: Rewrite this using better terminology.
@@ -230,7 +228,7 @@ For a representation $\pi$ of $\G(\Phi, R)$ on $V$ we denote by $\Lambda=\Lambda
 For any of the representations described above (with the sole exception of $(\rE_8, \varpi_8)$) all weight subspaces $V_\lambda$ are one-dimensional. 
 This allows us to choose a basis $E_\pi=\{e_\lambda\}_{\lambda\in\Lambda}$.
 
-It will be convenient to use the standard numbering for the weights of the natural representations of the classical groups (cp.~\cite[§1B]{St78}):
+It will be convenient to use the standard numbering for the weights of the natural representations of classical groups (cp.~\cite[§1B]{St78}):
 \[\begin{array}{cll}
   1,2,\ldots, \ell+1 & \text{in the case} & \Phi =\rA_\ell, \\
   1,2,\ldots \ell, 0, -\ell,\ldots, -2, -1 & \text{in the case} & \Phi =\rB_\ell, \\
