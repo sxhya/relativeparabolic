@@ -58,15 +58,14 @@ Clearly, $t_{1,2}(c_1) \cdot h_1 \in \U(\Phi^+, I)$, $ h_3 \cdot h_2 \in \U(\Phi
 Denote by $J\leq I$ the ideal spanned by components of $v_-$.
 Since $\sr(I/J)\leq \ell$ we can find $c_1,\dots,c_\ell\in I$ such that for $v' = h \cdot v$, $h = \prod_{i=1}^\ell x_{i,0}(c_i) \in \U(\Phi^+, I)$
 one has $\bar{v'}_+=(\bar{v'_1},\ldots, \bar{v'_\ell}) \in \Ums(\ell, I/J)$ and, therefore, $(v'_+, v'_-) \in \Ums(2\ell, I)$.
-Now the proof can be finished by repeating the argument for the case $\Phi=\rD_l$ (applied to the subset of long roots of $\rB_\ell$).
+Now the proof can be finished by repeating the argument for the case $\Phi=\rD_\ell$ (applied to the subset of long roots of $\rB_\ell$).
 %(clearly, the maximal root of $\rD_\ell$ maps to the maximal root of $\rB_\ell$ under the natural embedding $\rD_\ell\subseteq\rB_\ell$). 
 \end{proof}
 
 It is easy to see that the proof of the above theorem is effective and gives an estimate of the total number of elementary root unipotents involved in the decomposition.
 \begin{cor}
 In the assumptions and notation of Theorem~\ref{thm:BassKolster} every element of $\G(\Phi,R,I)$ 
-can be factored into a product of one element of $\G(\Delta_1,R,I)$ one element of $Z$ and at most $n(\Phi)$ elementary root unipotents $x_\alpha(s)$ of level $I$, where
-$n(\rA_\ell)= 4 \ell - 1$, $n(\rB_\ell)= 8 \ell - 5$, $n(\rC_\ell)= 8 \ell - 5$, $n(\rD_\ell)= 8 \ell - 9$. \end{cor}
+can be factored into a product of one element of $\G(\Delta_1,R,I)$ one element of $Z$ and at most $4(|\Phi^+| - |\Delta_1^+|)-1$ elementary root unipotents $x_\alpha(s)$ of level $I$. \end{cor}
 \begin{proof}
 The above estimates can be obtained by a careful analysis of the proof of the previous theorem.
 Cases $\Phi=\rA_\ell, \rC_\ell$ are immediate.
@@ -78,7 +77,7 @@ We can present an element $g$ of $\U(\Sigma_\ell, I)$ as a product of $g_1 \in \
 An examination of the extended Dynkin diagram of $\rD_\ell$ implies that $g_2$ either centralizes or normalizes all factors of the above decomposition (except the last one) and therefore can be moved to the right until it is consumed by $\G(\Delta_1)$.
 On the other hand, $g_1$ is a product of at most $2\ell-3$ elementary unipotents, while the width of $\U(\Sigma_1^\pm, I)$ and $\U(\Sigma_2^-\cap\Delta_1)$ in elementary unipotents does not exceed $2\ell-2$ and $2\ell-4$, respectively.
 Summing up these upper bounds we obtain
-$$n(\rD_\ell) = (2\ell-3) + 1 + (2\ell - 4) + 1 + 2\cdot (2\ell - 2) = 8\ell - 9.$$
+$$(2\ell-3) + 1 + (2\ell - 4) + 1 + 2\cdot (2\ell - 2) = 8\ell - 9 = 4(|\rD_\ell| - |\rD_{\ell-1}|) - 1.$$
 
 The estimate in the case $\Phi=\rB_\ell$ can be obtained in a similar way. \end{proof}
 
@@ -86,7 +85,7 @@ The estimate in the case $\Phi=\rB_\ell$ can be obtained in a similar way. \end{
 Consider the case $\Phi=\rA_\ell$, $\sr(I)\leq 2$. First of all, notice that we can improve the estimate of the number of factors involved in Bass---Kolster decomposition.
 Indeed, when performing the first step of the proof of Theorem~\ref{thm:BassKolster} it suffices to make only $2$ additions of $v_{\ell+1}$ (e.\,g. to $v_{1}$ and $v_2$) to make the first $\ell$ entries of $v'$ form a unimodular column.
 In particular, $\G(\Phi, R, I)$ can be presented as a product of one element of $\G(\Delta_1, R, I)$, one element of $Z$ and $3\ell+1$ root unipotents $x_\alpha(s)$, $s\in I$.
-The latter elements are contained in a product of $3\ell + 1$ copies of $\SL_2(R, I)$. Now the statement of the theorem follows by induction on $\ell$.
+The latter elements are contained in a product of $3\ell + 1$ copies of $\SL(2, R, I)$. Now the statement of the theorem follows by induction on $\ell$.
 
-The proof in the case $\Phi=\rC_\ell$ is similar (notice that we use the exceptional isomorphism $\SL_2\cong \Sp_2$).
+The proof in the case $\Phi=\rC_\ell$ is similar (notice that we use the exceptional isomorphism $\SL(2, R)\cong \Sp(2, R)$).
 \end{proof}

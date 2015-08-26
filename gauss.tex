@@ -1,11 +1,13 @@
-\begin{thm}\label{thm:Gauss}
+The proof of Gauss decomposition presented below is similar to the absolute case (cf.~\cite[Theorem~5.1]{Sm12}).
+
+\begin{prop}\label{thm:Gauss}
 Let $\Phi$ be a reduced irreducible root system of rank $\ell$ and let $\Delta_1, \Delta_\ell$ be
 two reductive subsystems of $\Phi$ corresponding to the endnodes of the Dynkin diagram of $\Phi$.
 Suppose that both relative elementary subgroups $\E(\Delta_i, R, I)$, $i=1,\ell$ admit triangular decomposition with $N$ triangular factors:
 \[ \E(\Delta_i, R, I) = \Hh(\Delta_i, R, I) \cdot \U(\Delta^+_i, I) \cdot \U(\Delta^-_i, I) \cdot \ldots \cdot \U(\Delta^\pm_i, I),\quad i=1,\ell. \]
 Then the group $\E(\Phi, R, I)$ admits the decomposition with the same number of factors:
 \[ \E(\Phi, R, I) = \Hh(\Phi,R,I) \cdot \U(\Phi^+,I) \cdot \U(\Phi^-, I) \cdot \ldots \cdot \U(\Phi^\pm,I). \]
-\end{thm}
+\end{prop}
 \begin{proof}
 Denote by $Y$ the product of subgroups in the right-hand side of the above equality.
 To show that $Y=\E(\Phi,R,I)$ it suffices to check that
@@ -30,3 +32,25 @@ Every root is a conjugate of some fundamental root under the action of $W(\Phi)$
 Since $\E(\Phi,R)$ contains the normalizer of the torus, the set $X^{\E(\Phi,R)}$ contains all the generators of the group $\E(\Phi, I) = \langle x_\alpha(\xi),\  \alpha\in\Phi,\ \xi\in I \rangle$.
 Finally, the inclusion $XY \subseteq Y$ follows from the fact that $\Hh(\Phi,R,I)$ normalizes every root subgroup $\X_\alpha(I)$.
 \end{proof}
+
+\begin{lemma}\label{lemma:srRI1}
+Let $\Phi$ be a root system, let $I$ be an ideal of arbitrary commutative ring $R$ such that $\sr(I)=1$.
+Then the relative elementary Chevalley group admits Gauss decomposition
+\[ \E(\Phi,R,I) = \Hh(\Phi,R,I) \cdot \U(\Phi,I) \cdot \U(\Phi^-,I) \cdot \U(\Phi,I). \]
+\end{lemma}
+\begin{proof}
+In view of the above proposition it suffices to prove that Gauss decomposition of length $3$ holds for $\Phi=\rA_1$.
+
+Let $A=\begin{psmallmatrix}a & b \\ c & d\end{psmallmatrix}\in\SL(2,R,I)$ be an element of $\SL(2, R, I)$.
+The first column of $A$ is $I$-unimodular, therefore there exists $z\in I$ such that $a+cz\in R^*$.
+Multiplying $A$ on the left by $x_{12}(z)$ we get matrix $A'=x_{12}(z)\cdot A=\begin{psmallmatrix}a' & b' \\ c & d\end{psmallmatrix}$ with invertible top-left corner element $a'$.
+After multiplying $A'$ on the left by $x_{21}(-c/a')$ and on the right by $x_{12}(-b'/a')$ we get a diagonal matrix. 
+Thus we obtain relative Gauss decomposition of $A$
+\begin{equation}\nonumber
+A=x_{12}(-z)\cdot x_{21}(c/a')\cdot
+\begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
+\cdot x_{12}(b'/a')=x_{12}(-z)\cdot
+\begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
+\cdot x_{21}(y) \cdot x_{12}(b'/a'),
+\end{equation}
+where $\varepsilon\in 1+I$ and $y\in I$. \end{proof}
