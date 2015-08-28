@@ -22,16 +22,20 @@ The following proposition summarizes basic properties of stable ranks.
 \begin{prop} \label{prop:sr_properties}
 Let $R$ be arbitrary commutative unital ring and let $I\trianglelefteq R$ be an ideal.
 \begin{enumerate}
-\item For any ideal $J\subseteq I$ one has $\sr(J)\leqslant\sr(I)$, $\sr(I/J)\leqslant\sr(I)$.
-\item One has $\sr\left(\prod\limits_{i=1}^n R_i\right)=\max\limits_{i=1}^n\left(\sr(R_i)\right).$
-\item Let $J$ denote the Jacobson radical of $R$, then one has $\sr(R)=\sr(R/J)$.
+\item For any ideal $J\subseteq I$ one has $\sr(J)\leqslant\sr(I)$, $\sr(I/J)\leqslant\sr(I)$;
+\item One has $\sr\left(\prod\limits_{i=1}^n R_i\right)=\max\limits_{i=1}^n\left(\sr(R_i)\right)$;
+\item Let $J$ denote the Jacobson radical of $R$, then one has $\sr(R)=\sr(R/J)$;
+\item If $I\subseteq J$, then $\sr(I)=1$;
+\item Let $I^1$ denote the ring obtained by formally adjoining $1$ to $I$. Then $\sr(I^1)=\max(2,\sr(I))$.
 \end{enumerate}
 \end{prop}
 \begin{proof} See~\cite[Theorem~2.3]{Va69}, \cite{Va71}. 
 \end{proof}
 \begin{example}
 Since the stable rank of a field equals $1$, one can conclude from the previous proposition that $\sr(R)=1$ for any semilocal ring $R$.
-Other examples of rings of stable rank $1$ are provided by boolean rings, the ring of algebraic integers, the ring of entire functions, the disk-algebra, etc.
+Other examples of rings of stable rank $1$ are provided by boolean rings, the ring of algebraic integers, the ring of entire functions, the disk-algebra, etc. For this and many other examples see~\cite{VasSR1}.
+
+Formally adjoining a unit to a non-unital ring of stable rank $1$ produces a non-trivial example of an ideal having the stable rank strictly lower that the ambient ring.
 \end{example}
 
 \subsection{Relative absolute stable rank}\label{sec:rel-asr}
@@ -94,6 +98,7 @@ Then $\asr(A)\leqslant d+1$.
 %TODO: Add more comments?
 Clearly one has
 \[\sr(I)\leqslant\asr(I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \]
+\cite{MKV} gives the examples of rings of stable rank $1$ but of absolute stable rank $\geqslant2$. Theorem~1.3 therein shows that for principal ideal rings $\sr(R)=\asr(R)$.
 
 \subsection{Action of unipotent radicals}\label{sec:ur-action}
 Let $v\in V=R^{2\ell}$ be a vector of the natural representation of $\G(\rD_\ell, R)$.
