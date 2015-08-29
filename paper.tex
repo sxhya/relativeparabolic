@@ -35,6 +35,7 @@
 \newtheorem*{lemma*}{Lemma}
 
 \DeclareMathOperator{\K}{K}
+\DeclareMathOperator{\SK}{SK}
 \DeclareMathOperator{\G}{G}
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\SL}{SL}
@@ -275,6 +276,13 @@ Taddei's theorem asserts that $\E(\Phi, R)$ is a normal subgroup of $\G_{sc}(\Ph
 
 We denote by $\E(\Phi, R, I)$ the normal closure of $\E(\Phi, I)$ in $\E(\Phi, R)$, in other words $\E(\Phi, R, I) = \E(\Phi, I)^{\E(\Phi, R)}$.
 Denote by $z_\alpha(s, \xi)$ the element $x_\alpha(s)^{x\ssub{-\alpha}(\xi)}$.
+
+Since elementary subgroup $\E(\Phi,R,I)$ is normal in $\G(\Phi,R,I)$, one can define the $\K_1$-functor by $\K_1(\Phi,R,I)=\G(\Phi,R,I)/\E(\Phi,R,I)$. When $I=R$, we write $\K_1(\Phi,R)$ for $\K_1(\Phi,R,R)$. In some cases it is known that $\K_1(\Phi,R,I)$ is trivial. For example, $\SK_1(\ell+1,R)=\K(\rA_\ell,R)=1$ for any ring of stable rank $1$ (see Section~\ref{sec:stability-conditions}), and for other root systems some stronger assumption is required such as $\asr(R)=1$ or being semilocal. For a Euclidean ring $\K_1$ is trivial for every root system.
+
+Let $k$ be a global field, $S$ be a set of places of $k$, $\mathcal{O}_S$ be the Dedekind ring of arithmetic type defined by $S$ and $I$ be an ideal of $\mathcal{O}_S$.
+\begin{thm*}[{\cite[Theorem~3.6]{BassMilnorSerre} and \cite[Corollary~4.5]{Ma69}}]
+Assume that the field $k$ has a real embedding. Then $\K_1(\Phi,\mathcal{O}_S,I)=1$.
+\end{thm*}
 
 %The following result of L.~Vaserstein and J.~Tits describes a set of generators of $\E(\Phi, R, I)$ (see e.\,g.~\cite[Theorem~2]{Va86}).
 %\begin{thm}\label{theorem:Tits-Vaserstein} Let $\Phi$ be an irreducible root system of rank $\geq 2$, then the relative elementary subgroup $\E(\Phi, R, I)$
