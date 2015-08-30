@@ -146,8 +146,11 @@ Our first application of parabolic factorizations is the following theorem which
 \begin{enumerate}
 \item If $\sr(I) = 1$, then $W(\E(\Phi,R,I),\mathcal{Z}(-\Pi))\leqslant 3|\Phi^+|+2\rk(\Phi)-1$;
 \item Let $p$ be a prime integer, set $R = \mathbb{Z}[\sfrac{1}{p}]$ and assume $\Phi$ is classical. Then under the assumption of the Generalized Riemann Hypothesis one has
-%TODO: I'm not sure whether in the orthogonal case we have the estimate 3|\Phi^+| and not 4|\Phi^+|; doublecheck this
- $$W(\E(\Phi,R,I), \mathcal{Z}(\Sigma_\ell^-))\leqslant 3|\Phi^+| + 2\rk(\Phi) + 1;$$
+%TODO: Now check the coefficients of \rk(\Phi) in the expression below
+\begin{alignat*}{2}
+& W(\E(\Phi,R,I), \mathcal{Z}(\Sigma_\ell^-))\leqslant 3|\Phi^+| + 2\rk(\Phi) + 1 & \text{ if } \Phi=\rA_\ell,\rC_\ell, \\
+& W(\E(\Phi,R,I), \mathcal{Z}(\Sigma_\ell^-))\leqslant 4|\Phi^+| + \rk(\Phi) + 1 & \text{ if } \Phi=\rB_\ell,\rD_\ell;
+\end{alignat*}
 \item Let $\mathcal{O}_S$ be a Dedekind ring of arithmetic type embedded into some global field $k$ having a real embedding. 
 Assume $\Phi$ is classical of rank $\geqslant2$, then $W(\G(\Phi,\mathcal{O}_S,I), \mathcal{Z}(\Sigma_\ell^-))$ is finite.
 \end{enumerate}
