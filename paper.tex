@@ -2,8 +2,9 @@
 \usepackage{amscd, amsmath, verbatim, enumitem, graphicx, amssymb, mathtools, xfrac, amsthm, amsfonts, amstext, hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[backend=biber, citestyle=numeric-comp, natbib=true, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
-\usepackage[all]{xy}
+%\usepackage[all]{xy}
 \usepackage[activate={true,nocompatibility}]{microtype}
+\usepackage{tikz-cd}
 
 \renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
 \newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
@@ -158,7 +159,7 @@ Assume $\Phi$ is classical of rank $\geqslant2$, then $W(\G(\Phi,\mathcal{O}_S,I
 The particular case $\Phi = \rA_\ell$, $R = I = \mathbb{Z}$ of the above theorem is similar in spirit to a recent theorem of U.~Hadad (see ~\cite[Theorem~1.6]{Ha12}).
 
 Another application of parabolic factorizations developed in this paper are subsystem factorizations in terms of subgroups of type $\rA_1$.
-The case of a finite field $R=F$ was exhaustively studied by M.~Liebeck, N.~Nikolov and A.~Shalev in~\cite{NikProdDecomp}.
+The case of a finite field $R=F$ was studied by M.~Liebeck, N.~Nikolov and A.~Shalev in~\cite{LiebNikShaSL2}.
 More precisely, for an untwisted Chevalley group it has been proved that $\G(\Phi, F)$ is a product of at most $N=5|\Phi^+|$ copies of $\SL(2, F)$.
 In~\cite{VavKovSL2} N.~Vavilov and E.~Kovach noted that Bruhat decomposition immediately implies a bound of $N=3|\Phi^+|$ factors for arbitrary field $F$.
 In fact, Gauss decomposition (see~\cite{Sm12}) implies a similar factorization for the elementary subgroup $\E(\Phi, R)$ 
@@ -171,7 +172,8 @@ Assume that one of the following is true:
 \item $I$ is an ideal such that $\sr(I)\leq 2$, $\Phi=\rA_\ell$, $l\geq 2$, $N=3|\Phi^+|+\rk(\Phi) - 3$.
 \item $I$ is an ideal such that $\sr(I)\leq 3$, $\Phi=\rC_\ell$, $l\geq 2$, $N=3|\Phi^+|+2\rk(\Phi) - 4$
 \end{itemize}
-Then $\G(\Phi, R, I)$ can be presented as a product of at most $N$ copies of its subgroups isomorphic to $\G(\rA_1, R, I)$. \end{thm}
+Then $\G(\Phi, R, I)$ can be presented as a product of at most $N$ copies of its subgroups isomorphic to $\G(\rA_1, R, I)$.
+\end{thm}
 
 Yet another application of parabolic factorizations concerns subsystem factorizations of Chevalley groups formulated in terms of submaximal subgroups of type $\rA_\ell$.
 In case when $R=I$ is a field this question was studied by N.~Nikolov in \cite{NikProdDecomp}. 

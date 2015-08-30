@@ -88,6 +88,14 @@ Assume $\sr(R)\leqslant2$ in case $\Phi=\rA_\ell,\rC_\ell$ and $\asr(R)\leqslant
 \begin{proof}
 The improved estimate for $\Phi=\rA_\ell,\rC_\ell$ is obtained by using the fact that it suffices to make only two additions to make the shorter column unimodular in the first step of the Bass---Kolster decomposition.
 \end{proof}
+\[
+\begin{tikzcd}[row sep=tiny]
+\rD_4 \arrow[out=0,in=120]{rd}{\asr\leqslant3} & & & \\
+\rA_4 \arrow{r}{\sr\leqslant4} & \rA_3 \arrow{r}{\sr\leqslant3} & \rA_2 \arrow{r}{\sr\leqslant2} & \rA_1 \\
+\rC_4 \arrow{r}{\sr\leqslant7} & \rC_3 \arrow{r}{\sr\leqslant5} & \rC_2 \arrow[out=0,in=-120,swap]{ru}{\sr\leqslant3} \\
+\rB_4 \arrow{r}{\asr\leqslant3} & \rB_3 \arrow[out=0,in=-120,swap]{ru}{\asr\leqslant2} & &
+\end{tikzcd}
+\]
 \begin{proof}[Proof of Theorem~\ref{thm:SL2width}]
 Consider the case $\Phi=\rA_\ell$, $\sr(I)\leq 2$. First of all, notice that we can improve the estimate of the number of factors involved in Bass---Kolster decomposition.
 Indeed, when performing the first step of the proof of Theorem~\ref{thm:BassKolster} it suffices to make only $2$ additions of $v_{\ell+1}$ (e.\,g. to $v_{1}$ and $v_2$) to make the first $\ell$ entries of $v'$ form a unimodular column.
