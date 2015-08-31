@@ -1,15 +1,16 @@
-Let $\Phi$ be an irreducible root system of rank $\ell$.
-For an integer $1 \leq s \leq \ell$ consider the following two subgroups of $\E(\Phi, R)$:
-$$\EP_s(R) = \E(\Delta_s, R) \cdot \U(\Sigma_s, R),\ \EP_s(R, I) = \E(\Delta_s, R, I) \cdot \U(\Sigma_s, I).$$
-
-Let $1\leq r,s \leq \ell$ be two distinct integers.
-From Levi decomposition it follows that the following four subsets of $\E(\Phi, R, I)$ are equal:
+Let $\Phi$ be an irreducible root system of rank $\ell$ and let $1\leq r,s \leq \ell$ be two distinct integers.
+From Levi decomposition~\ref{rel:Levi-decomp} it follows that the following four subsets of $\E(\Phi, R, I)$ are equal:
 \begin{multline*}
 \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \\
 = \U(\Sigma_r, I)\cdot \U(\Sigma^-_r, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \hspace{5em} \\
 \hspace{5em} = \EP_r(R, I) \cdot \E(\Delta_s, R, I) \cdot \U(\Sigma_s^-, I)\cdot \U(\Sigma_s, I) = \\
 = \EP_r(R, I) \cdot \U(\Sigma^-_r\cap \Sigma^-_s, I) \cdot \EP_s(R, I).
 \end{multline*}
+
+\begin{lemma}\label{lemma:dv-normal} The set $A_{rs}$ is normalized by the subgroup $\EP_{\{r,s\}}(R) \leq \E(\Phi, R)$. \end{lemma}
+
+
+
 \begin{dfn}
  Denote by $A_{rs}$ any of the above equal subsets.
  We call the decomposition of the form $\E(\Phi, R, I) = A_{rs}$ the {\it relative Dennis---Vaserstein} decomposition.
