@@ -32,18 +32,22 @@ Since $p^{\alpha-\beta}a\perp bm^2$ and $p\perp bm^2$, there exist infinitely ma
 such that $p$ is a primitive root modulo $q$. 
 Without loss of generality we may assume that $q$ is prime to $b$. 
 Write
-\[ g_1=x_{12}(mk)\cdot g =
-\begin{pmatrix} p^\beta q & * \\ p^\beta bm & * \end{pmatrix}.\]
-There exists $u\geqslant 1$ such that $p^u\equiv b\pmod q$, say $p^u=b+lq$. Then
-\[ g_2 =  x_{21}(ml)\cdot g_1 =
-\begin{pmatrix} p^\beta q & * \\ mp^{\beta+u} & * \end{pmatrix}. \]
-Since $g_2\equiv 1\pmod m$, we can write $p^\beta q=1+cm$ for some $c$. Now let
 \begin{align*}
-g_3 = & x_{12}\left(\dfrac{-c}{p^{\beta+u}}\right)\cdot g_2 =
+g_1 & = x_{12}(mk)\cdot g =
+\begin{pmatrix} p^\beta q & * \\ p^\beta bm & * \end{pmatrix}. \\
+\intertext{
+There exists $u\geqslant 1$ such that $p^u\equiv b\pmod q$, say $p^u=b+lq$. Then
+}
+g_2 & = x_{21}(ml)\cdot g_1 =
+\begin{pmatrix} p^\beta q & * \\ mp^{\beta+u} & * \end{pmatrix}. \\
+\intertext{
+Since $g_2\equiv 1\pmod m$, we can write $p^\beta q=1+cm$ for some $c$. Now let
+}
+g_3 & = x_{12}\left(\dfrac{-c}{p^{\beta+u}}\right)\cdot g_2 =
 \begin{pmatrix} 1 & * \\ mp^{\beta+u} & * \end{pmatrix}, \\
-g_4 = & x_{21}\left(-mp^{\beta+u}\right)\cdot g_3 =
+g_4 & = x_{21}\left(-mp^{\beta+u}\right)\cdot g_3 =
 \begin{pmatrix} 1 & * \\ 0 & * \end{pmatrix}, \\
-g_5 = & x_{12}\left(\dfrac{c}{p^{\beta+u}}\right)\cdot g_4 =
+g_5 & = x_{12}\left(\dfrac{c}{p^{\beta+u}}\right)\cdot g_4 =
 \begin{pmatrix} 1 & * \\ 0 & * \end{pmatrix}.
 \end{align*}
 Notice that $g_5=z_{21}\left(-mp^{\beta+u},c/p^{\beta+u}\right)\cdot g_2$ hence $g=x_{12} \cdot x_{21} \cdot z_{21} \cdot x_{12}$
