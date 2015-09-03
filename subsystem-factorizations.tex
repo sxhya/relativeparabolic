@@ -1,32 +1,36 @@
-One of the reasons to study parabolic factorizations is that they provide an easy way to obtain subsystem factorizations, 
-that is a decomposition of a given Chevalley group into a product of some of its subsystem subgroups. 
-Among such decompositions one is of particular interest, namely the $\rA_n$-factorization. 
-Those, in turn, come in two denominations:
-\begin{itemize}
-\item $\SL_2$-factorizations, see~\cite{LiebNikShaSL2,VavKovSL2};
-\item $\SL_n$-factorizations for $n$ submaximal, see~\cite{NikProdDecomp}.
-\end{itemize}
 The main result of \cite{NikProdDecomp} is the following
 \begin{thm*}
-Let $G$ be a classical Chevalley group of rank $n+1$ over a finite field. Then $G$ equals the product of at most $200$ conjugates of an $\SL_{n+1}$ subgroup.
+Let $G$ be a classical (possibly twisted) Chevalley group of rank $n$ over a finite field. Then $G$ equals the product of at most $200$ conjugates of an $\SL_n$ subgroup.
 \end{thm*}
-The above theorem holds for the twisted classical groups as well.
-
-\cite{NikProdDecomp} also contains a proof that over a field $\SL(n+1,F)$ is a product of four copies of $\SL(n,F)$. In fact, this is true for any Hermitian ring (for example, any PID qualifies).
-
-The following lemma is a reformulation of Proposition~1 from \cite{NikProdDecomp}:
+As indicated in the introduction, the Dennis---Vaserstein decomposition gives the following result.
 \begin{lemma}
-Let $\Phi$ be a root system of rank $\ell$, $\Delta<\Phi$ an $\rA_{\ell-1}$-subsystem, $\Sigma\subset\Phi^+$ a closed set of positive roots and $\Psi_1,\ldots,\Psi_K\subset\Phi$ be sets of roots such that:
-\begin{enumerate}
-\item For any $\alpha\in\Delta^+$ and for any $i=1,\ldots,K$, the elementary root unipotent $x_\alpha$ does not commute with at most one of $x_\beta$, $\beta\in\Psi_i$;
-\item $\Sigma\subset\Delta^++\bigcup_{i=1}^K\Psi_i$.
-\end{enumerate} 
-Then $\U(\Sigma)\subset\prod_{i=1}^{K}\left[\U(\Delta^+),a_i\right]$, where $a_i=\prod_{\beta\in\Psi_i}x_\beta(1)$.
+Assume $\sr(I)\leqslant n-1$. Then $\SL(n+1,R,I)$ is a product of at most $5$ subgroups isomorphic to $\SL(n,R,I)$.
 \end{lemma}
-Of course, each of the commutators in the statement of the Lemma can be written in the reversed order.
+\begin{proof}
+By the Dennis---Vaserstein decomposition one can present $\SL(n+1,R,I)$ as a product
+\[ \SL(n+1,R,I) =  \Par_1\cdot X_{n1}\cdot\Par_n=S_1\U_1\cdot X_{n1}\cdot\U_n S_n, \]
+where $S_1$ and $S_n$ are two obvious embeddings of $\SL(n,R,I)$ in $\SL(n+1,R,I)$, avoiding respectively the first and the last row and column. Now $\U_1=(\U_1\cap S_n)\cdot X_{1n}$ and $U_n= X_{1n}\cdot(U_n\cap S_1)$, while $X_{1n}X_{n1}X_{1n}\in S_1^{w_{12}(1)}$.
+\end{proof}
+We will now elaborate on the case $\Phi=\rD_\ell$ to show that the Dennis---Vaserstein decomposition is suitable for handling other Chevalley groups, albeit with a stronger assumption on the base ring. The following lemma is an analogue of Proposition~1 of~\cite{NikProdDecomp}.
+\begin{lemma}
+Let $\Phi=\rD_\ell$. There exist an element $y\in\G(\Phi,R)$ and an element $w\in\widetilde{W}(\Phi)$ such that $\U(\Sigma_\ell)\subset[\U(\Delta_\ell^-),y]\cdot{}^w\U(\Delta_\ell^+)$.
+\end{lemma}
+\begin{proof}
+Set $\beta_i = \alpha_{2i-1} + 2\alpha_{2i}+ \ldots + 2\alpha_{\ell-2} + \alpha_{\ell-1} + \alpha_\ell$, for $i=1,\ldots,\lfloor\ell/2\rfloor$, i.\,e. $\beta_i$ form a maximal set of pairwise orthogonal maximal roots in some subsystems of type $\rD_{k}$. Denote $B=\{\beta_i\}$, then decompose $\U(\Sigma_\ell)=\U(\Sigma_\ell\setminus B)\cdot\U(B)$.
 
-Now starting from a unitriangular factorization, one can express $\U(\Phi^\pm)=\U(\Delta^\pm)\U(\Sigma^\pm)$ for $\Sigma^\pm=\Phi^\pm\setminus\Delta$, then cover each of $\U(\Sigma^\pm)$ with a product of conjugates of $\U(\Delta^\pm)$, and put all the factors together.
+Set $y=\prod_{\beta\in B}x_\beta(1)$. We will now show that $\U(\Sigma_\ell\setminus B)\subset[\U(\Delta_\ell^-),y]\cdot\U(B)$.
 
-However, one can start from a parabolic decomposition, which might already have a large $\rA_n$-factor, namely the Levi subgroup of a given parabolic.
-
-Over a ring $R$ of stable rank $1$ one has a decomposition $\G(\Phi,R)=P_\alpha\U_\alpha^-P_\alpha$, where $\U_\alpha^-=\U(\Sigma_\alpha^-)$ is the unipotent radical of the parabolic subgroup $P_\alpha^-$. This follows immediately from the Gauss decomposition. Choosing $\alpha\in\Pi$ so that $\Delta=\Delta_\alpha$ is of type $\rA$, we find suitable $\Psi_1,\ldots,\Psi_K$ and see that $\G(\Phi,R)=\G(\Delta_\alpha)\U(\Sigma_\alpha)\U(\Sigma_\alpha^-)\U(\Sigma_\alpha)$ is a product of $1+3\cdot\lfloor K/2\rfloor+(K\bmod2)$ conjugated of $\G(\Delta_\alpha)$.
+We first note that
+\[ \bigl[\U(\Delta_2^-),x_{\beta_1}(1)\bigr]=1,\quad \Bigl[\U(\Sigma_2^-\cap\Delta_\ell),\prod_{i\neq1}x_{\beta_i}(1)\Bigr]=1. \]
+This implies
+\[ \Bigl[ \U(\Sigma_2^-\cap\Delta_\ell)\cdot\U(\Delta_{2,\ell}^-), x_{\beta_1}(1)\cdot\prod_{i\neq1}x_{\beta_i}(1) \Bigr] \equiv \bigl[ \U(\Sigma_2^-\cap\Delta_\ell), x_{\beta_1}(1) \bigr] \bmod \U(\Sigma_\ell\cap\Delta_2). \]
+Take an element $u\in\U(\Sigma_2^-\cap\Delta_\ell)$ and decompose it as $u=vw$, $v\in\U(\Sigma_{1,2}^-\cap\Delta_\ell)$, $w\in\U(\Sigma_2^-\cap\Delta_{1,\ell})$, then, using the identity $[ab,c]={}^a[b,c]\cdot[a,c]$, rewrite
+\[ [vw,x_{\beta_1}(1)] = {}^v[w,x_{\beta_1}(1)]\cdot[v,x_{\beta_1}(1)].  \]
+Since $\U(\Sigma_{1,2}^-\cap\Delta_\ell)$ and $\U(\Sigma_2^-\cap\Delta_{1,\ell})$ are abelian, it is easy to see that
+\[ [v,x_{\beta_1}(1)]\in\U(\Sigma_{2,\ell}\cap\Delta_1), \quad [w,x_{\beta_1}(1)]\in\U(\Sigma_{1,\ell}\setminus\{\beta_1\}), \]
+and varying $v$ and $w$ one can obtain any element of $\U(\Sigma_{2,\ell}\cap\Delta_1)$ and $\U(\Sigma_{1,\ell}\setminus\{\beta_1\})$ respectively. By the Levi decomposition
+\[ {}^v\U(\Sigma_{1,\ell}\setminus\{\beta_1\}) \equiv \U(\Sigma_{1,\ell}\setminus\{\beta_1\}) \bmod \U(\Sigma_\ell\cap\Delta_2). \]
+Thus we have shown that
+\[ [\U(\Sigma_2^-)\cdot\U(\Delta_{2,\ell}),y] \equiv \U(\Sigma_{1,\ell}\cup\Sigma_{2,\ell}\setminus\{\beta_1\}) \bmod \U(\Sigma_\ell\cap\Delta_2), \]
+and this reduces the problem to the $\rD_{\ell-2}$-subsystem $\Delta_{1,2}$. So we can carry the induction on the rank of the subsystem, and construct for any given $a\in\U(\Sigma_\ell\setminus B)$ an element $b\in\U(\Delta_\ell^-)$ such that $a\in[b,y]\cdot\prod_{\beta\in B}X_\beta\subset[\U(\Delta_\ell^-),y]\cdot\U(B)$.
+\end{proof}
