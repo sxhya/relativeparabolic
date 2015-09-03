@@ -16,20 +16,16 @@ From Levi decomposition~\ref{rel:Levi-decomp} it follows that the following four
 The main result of this subsection is the following theorem which is a relative version of \cite[Lemma~2.1]{ST76} and \cite[Theorem~2.5]{St78}).
 \begin{thm}\label{thm:DennisVaserstein}
 The relative elementary subgroup $\E(\Phi, R, I)$ admits Dennis---Vaserstein decomposition under the following assumptions on $I$.
-\[\begin{array}{l@{\qquad}c@{\quad}c@{\qquad}l}
-\Phi & s & r & \text{ring condition} \\ \hline\vphantom{\Bigl(}
-\rA_\ell, \rB_\ell,\ \ell\geqslant 2 & 1 & \ell & \sr(I) \leqslant \ell-1 \\     
-\rC_\ell,\ \ell \geqslant 2          & 1 & \ell & \sr(I) \leqslant \ell-1 \\
-\rD_\ell,\ \ell\geqslant 4           & 1 & \ell & \sr(I) \leqslant \ell-2 \\ 
-\rD_\ell,\ \ell\geqslant 4           & \ell & \ell-1 & \sr(I) \leqslant 2 \\
-\rE_\ell,\ \ell=6,7             & \ell & 2 & \sr(I) \leqslant \ell-3 \\ 
-\rE_\ell,\ \ell=6,7             & \ell & 1 & \asr(I)\leqslant \ell-2
-\end{array}\]
+\[\begin{array}{l@{\qquad}l@{\qquad}c@{\quad}c@{\qquad}l}
+   & \Phi                                 & s    & r      & \text{ring condition} \\ \hline\vphantom{\Bigl(}
+1. & \rA_\ell,\ \ell\geqslant 2            & 1    & \ell   & \sr(I) \leqslant \ell-1                         \\    
+2. & \rB_\ell,\ \ell\geqslant 2            & 1    & \ell   & \sr(I) \leqslant \ell-1                         \\
+3. & \rC_\ell,\ \ell \geqslant 2          & 1    & \ell   & \sr(I) \leqslant \ell-1,\ 2I+I^{\indexbox{2}}=I \\
+4. & \rD_\ell,\ \ell\geqslant 4           & 1    & \ell   & \sr(I) \leqslant \ell-2                         \\ 
+5. & \rD_\ell,\ \ell\geqslant 4           & \ell & \ell-1 & \sr(I) \leqslant 2                              \\
+6. & \rE_\ell,\ \ell=6,7                  & \ell & 2      & \sr(I) \leqslant \ell-3                         \\ 
+7. & \rE_\ell,\ \ell=6,7                  & \ell & 1      & \asr(I)\leqslant \ell-2                         \end{array}\]
 \end{thm}
-%Consider the usual conjugation action of $\E(\Phi, R)$ on $\E(\Phi, R, I)$. 
-%This action induces an action of $\E(\Phi, R)$ on the set $\mathfrak{S}$ of all subsets of $\E(\Phi, R, I)$.
-%On the other hand, $\E(\Phi, R, I)$ acts on $\mathfrak{S}$ by left multiplication.
-%Denote by $N_{rs}$ and $L_{rs}$ stabilizers of $A_{rs} \in \mathfrak{S}$ with respect to these actions.
 Consider the following two submonoids of $\E(\Phi, R)$:
 \[ N_{rs} = \left\{ g\in \E(\Phi, R)\ \middle|\ g \cdot A_{rs} \cdot g^{-1} \subseteq A_{rs} \right\}, \quad
    L_{rs}=  \left\{ g\in \E(\Phi, R, I)\ \middle|\ g \cdot A_{rs} \subseteq A_{rs} \right\}. \]
@@ -64,7 +60,7 @@ Assume that there exists a subset $B \subseteq \E(\Delta_r, R, I)$ satisfying th
  \item\label{stein_cond1} One has $\U(\Sigma^+_r, I)\cdot \U(\Sigma^-_r, I) \cdot \E(\Delta_r, R, I) \subseteq \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot B.$
  \item\label{stein_cond2} One has $X_{-\alpha\ssub{r}}(I)^B \subseteq \EP_s(R, I).$
 \end{enumerate}
-Then $X_{-\alpha_r}(I) \subseteq L_{rs}$ and $X_{-\alpha_r}(R) \subseteq N_{rs}.$
+Then $X_{-\alpha_r}(R) \subseteq N_{rs}.$
 \end{lemma}
 \begin{proof} Set $A:=\U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).$
 From the first assumption of the lemma it follows that $A_{rs}=A$.
@@ -75,35 +71,61 @@ On the other hand, by the second assumption we have
  B \cdot \EP_s(R, I). \end{multline*}
 Together with the third statement of~\cref{lemma:dv_unipotent} this implies that
 \begin{equation*} \label{rel:sred} A = \U(\Phi^+\setminus\{\alpha_r\}, I) \cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I). \end{equation*}
-Consequently, from the second statement of~\cref{lemma:dv_unipotent} it follows that
-\begin{equation} \label{rel:linv} X_{-\alpha\ssub{r}}(I) \cdot A \subseteq \U(\Phi^+, I) \cdot X_{-\alpha\ssub{r}}(I) \cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I) = A. \end{equation}
-Since $[B, X_{-\alpha_r}(R)] \subseteq \U(\Sigma_r^-, R) \cap \E(\Phi, R, I) = \U(\Sigma_r^-, I)$ we also get that:
-\begin{equation} \label{rel:ninv} A^{X_{-\alpha\ssub{r}}(R)} = \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B ^{X_{-\alpha\ssub{r}}(R)} \cdot \EP_s(R, I) = A. \end{equation}
-Clearly, the assertion of the lemma follows from~\ref{rel:linv}--\ref{rel:ninv}. \end{proof}
+%Consequently, from the second statement of~\cref{lemma:dv_unipotent} it follows that
+%\begin{equation*} \label{rel:linv} X_{-\alpha\ssub{r}}(I) \cdot A \subseteq \U(\Phi^+, I) \cdot X_{-\alpha\ssub{r}}(I) \cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I) = A. \end{equation*}
+Consequently, since $[B, X_{-\alpha_r}(R)] \subseteq \U(\Sigma_r^-, R) \cap \E(\Phi, R, I) = \U(\Sigma_r^-, I)$ we get that:
+\begin{equation*} \label{rel:ninv} A^{X_{-\alpha\ssub{r}}(R)} = \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B ^{X_{-\alpha\ssub{r}}(R)} \cdot \EP_s(R, I) = A, \end{equation*}
+which implies the assertion of the lemma.
+%Clearly, the assertion of the lemma follows from~\ref{rel:linv}--\ref{rel:ninv}.
+\end{proof}
 
-%To prove the second part of the statement observe first that $\EP_s(R)$ is generated by $X_{\alpha\ssub{i}}(R)$ for $1\leqslant i\leqslant n$ and $X_{-\alpha\ssub{i}}(R)$ for $i\neq s$.
-%From \ref{rel:ninv} it follows that $X_{-\alpha_r}(R)\subseteq N_{rs}$.
-%On the other hand, inclusions $X_{\alpha\ssub{k}}(R) \subseteq N_{rs}$ for $\ 1\leqslant k\leqslant \ell$ and $X_{-\alpha\ssub{k}}(R) \subseteq N_{rs}$ for $k\neq r,s$ are obvious.
+First of all we show that the assumptions on $I$ formulated in \cref{thm:DennisVaserstein} imply the conditions of Lemma~\ref{lemma:Stein_reduction}.
+Denote by $\pi$ the irreducible representation of $G=\G(\Phi, R)$ on a free module $V$ with the highest weight $\varpi_s$.
+The type of $\pi$ and the total number of weights in $\Lambda(\pi)$ are listed in Figure~\ref{fig:table}.
 
-We first show that the assumed stability conditions on $I$ imply the assumptions of Lemma~\ref{lemma:Stein_reduction}.
-Consider the following two subsets of $\Lambda(\pi)$:
-$$\Gamma = \varpi_s- (\Sigma_s^+\cap \Delta_r),\quad \Gamma_0 = \{\lambda \in \Gamma \mid \lambda - \alpha_r \in \Lambda(\pi) \}.$$
-With the choice of $s$ as in the assumption, $\Gamma$ is the set of weights of an irreducible representation of $\G(\Delta_r, R)$ corresponding to the same highest weight $\varpi_s$.
-The subsystem $\Delta_r$ has type $\rA_{\ell-1}$ in all cases except the last one.
-It is also clear that $|\Gamma_0|=1$ for $\Phi=\rA_\ell, \rB_\ell$, $|\Gamma_0|=2$ for $\Phi=\rD_\ell$, and $|\Gamma_0|=3$ in case $\Phi=\rE_\ell$ and $r=2$.
-If $\Phi=\rE_\ell$, $r=1$, the subsystem $\Delta_r$ has type $\rD_{\ell-1}$ and $|\Gamma_0|=\ell-1$.
+Clearly, after restricting the representation $(V, \pi)$ to the subgroup $G'=G(\Delta_r, R)$ it becomes reducible.
+Denote by $(V', \pi')$ the irreducible component corresponding to the same highest weight $\varpi_s \in \Lambda(\pi)$.
 
-%TODO: PICK AS L_r!!!
-Let $B$ be the set of all elements $g$ of $\E(\Delta_r,R, I)$ such that $(g \cdot v^+)_\lambda = 0$ for $\lambda\in\Gamma_0$.
-In any of  the specified cases the assumption on $I$ allows us to apply Lemma~\ref{lemma:uraction} to the subsystem $\Delta_r$ and find
+Consider the following subset of $\Lambda(\pi')$:
+$$ \Gamma = \{\lambda \in \Lambda(\pi') \mid \lambda - \alpha_r \in \Lambda(\pi) \}.$$
+
+The type of $\pi'$ and the number of elements in $\Lambda(\pi')$, $\Gamma$ are listed in Figure~\ref{fig:table}.
+
+\begin{rem}
+The sets $\Lambda(\pi')$, $\Gamma$ can be visualized using the technique of {\it weight diagrams} developed in~\cite{PSV98}.
+In the simplest case of a microweight representation (i.\,e. a representation without zero weights)
+the weight diagram of $(V, \pi)$ is just a graph whose vertices are in one-to-one correspondence with the set of weights $\Lambda(\pi)$.
+Two vertices $\lambda$, $\mu$ of the diagram are joined by a bond marked $i$ iff $\lambda-\mu = \alpha_i$.
+
+Now let $G$ be the weight diagram of $\pi$.
+The authors of~\cite{PSV98} locate the vertex corresponding to the highest weight of $\pi$ to the upper-left corner of the picture.
+Therefore the subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the upper-left connected component of the graph obtained from $G$ by removing all bonds marked $r$.
+On the other hand, the set $\Gamma$ corresponds to vertices of $\Lambda(\pi')$ which are incident with the removed bonds.
+\end{rem}
+
+\begin{figure}
+\[\begin{array}{l @{\qquad} l @{\qquad} l @{\qquad} c @{\quad} c @{\qquad} l @{\qquad} l}
+   & \Phi                                 & (s,r)         & |\Lambda(\pi)| & \text{type of $\pi$} & \text{type of $\pi'$}        & (|\Gamma|, |\Gamma_0|)  \\ \hline\vphantom{\Bigl(}
+1. & \rA_\ell,\ \ell\geqslant 2           & (1,\ell)      & \ell+1         & \text{natural}       & (\rA_{l-1}, \varpi_1)        & (\ell,1)  \\     
+2. & \rB_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell+1        & \text{natural}       & (\rA_{l-1}, \varpi_1)        & (\ell,1) \\     
+3. & \rC_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell          & \text{natural}       & (\rA_{l-1}, \varpi_1)        & (\ell,1)  \\
+4. & \rD_\ell,\ \ell\geqslant 4           & (1,\ell)      & 2\ell          & \text{natural}       & (\rA_{l-1}, \varpi_1)        & (\ell,2)  \\ 
+5. & \rD_\ell,\ \ell\geqslant 4           & (\ell,\ell-1) & 2^{\ell-1}     & \text{half-spinor}   & (\rA_{l-1}, \varpi_{\ell-1}) & (\ell,\ell-2)  \\
+6. & \rE_\ell,\ \ell=6,7                  & (\ell,2)      & 27, 56         & \text{minimal}       & (\rA_{l-1}, \varpi_1)        & (\ell,3)  \\ 
+7. & \rE_\ell,\ \ell=6,7                  & (\ell,1)      & 27, 56         & \text{minimal}       & (\rD_{l-1}, \varpi_1)        & (2\ell-2,\ell-1)  \end{array}\]
+ \caption[Table]{List of representation involved in the proof of~\cref{thm:DennisVaserstein}.} \label{fig:table}
+\end{figure}
+
+Now let $B$ be the set of all elements $g$ of $\E(\Delta_r,R, I)$ such that $(g \cdot v^+)_\lambda = 0$ for $\lambda\in\Gamma$.
+Applying~\cref{lemma:uraction} to the subsystem $\Delta_r$ we find
 $x\in\U(\Delta_r\cap\Phi^+, I)$, $y\in \U(\Delta_r\cap\Phi^-, I)$ such that $yx\cdot g \in B$.
-This proves the first condition of Lemma~\ref{lemma:Stein_reduction}, indeed:
-\[ \U(\Sigma^+_r, I) \U(\Sigma^-_r, I) \cdot g = \U(\Sigma^+_r, I) x^{-1} \cdot \U(\Sigma^-_r, I)^{x^{-1}} y^{-1} (yxg) \subseteq \U(\Phi^+, I) \U(\Phi^-, I) B. \]
-To prove the second assumption of Lemma~\ref{lemma:Stein_reduction} notice that by the definition of $\Gamma_0$ for any $s\in I$, $ g\in B$ one has $x_{-\alpha_r}(s) \cdot g \cdot v^+ = g \cdot v^+$ hence
-\[ X_{-\alpha\ssub{r}}(I)^{B} \subseteq \U(\Phi^-, I) \cap \Stab(v^+) \subseteq \E(\Delta_s, R, I) \subseteq \EP_s(R, I). \]
+This proves the first assumption of Lemma~\ref{lemma:Stein_reduction}, indeed:
+\[ \U(\Sigma^+_r, I) \cdot \U(\Sigma^-_r, I) \cdot g = \U(\Sigma^+_r, I) x^{-1} \cdot \U(\Sigma^-_r, I)^{x^{-1}} y^{-1} (yxg) \subseteq \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B. \]
+To prove the second assumption of Lemma~\ref{lemma:Stein_reduction} notice that by the definition of $\Gamma$ and~\cref{lemma:Matsumoto} for any $s\in I$, $ g\in B$ one has $x_{-\alpha_r}(s) \cdot g \cdot v^+ = g \cdot v^+$ hence
+\[ X_{-\alpha\ssub{r}}(I)^{B} \subseteq \U(\Phi^-, I) \cap \Stab(v^+) \subseteq \U(\Delta_s \cap \Phi^-, I) \subseteq \EP_s(R, I). \]
 
 \begin{proof}[Proof of Theorem~\ref{thm:DennisVaserstein}]
-We may assume that the assertion of~\cref{lemma:Stein_reduction} holds.
+By the above discussion we may assume that the assertion of~\cref{lemma:Stein_reduction} holds.
 Set $\Pi' = \Pi \setminus \{\alpha_s\}$.
 From~\cref{lemma:dv-normal} and \cref{lemma:Stein_reduction} it follows that $X_\alpha(R) \subseteq N_{rs}$ for $\alpha \in \Pi' \cup -\Pi'$.
 Since $\Delta_s$ is irreducible in all the cases under consideration we get from~\cref{item-egen} that $\E(\Delta_s, R) \subseteq N_{rs}$.
