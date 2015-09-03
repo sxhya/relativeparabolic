@@ -12,8 +12,8 @@ By the Dennis---Vaserstein decomposition one can present $\SL(n+1,R,I)$ as a pro
 where $S_1$ and $S_n$ are two obvious embeddings of $\SL(n,R,I)$ in $\SL(n+1,R,I)$, avoiding respectively the first and the last row and column. Now $\U_1=(\U_1\cap S_n)\cdot X_{1n}$ and $U_n= X_{1n}\cdot(U_n\cap S_1)$, while $X_{1n}X_{n1}X_{1n}\in S_1^{w_{12}(1)}$.
 \end{proof}
 We will now elaborate on the case $\Phi=\rD_\ell$ to show that the Dennis---Vaserstein decomposition is suitable for handling other Chevalley groups, albeit with a stronger assumption on the base ring. The following lemma is an analogue of Proposition~1 of~\cite{NikProdDecomp}.
-\begin{lemma}
-Let $\Phi=\rD_\ell$. There exist an element $y\in\G(\Phi,R)$ and an element $w\in\widetilde{W}(\Phi)$ such that $\U(\Sigma_\ell)\subset[\U(\Delta_\ell^-),y]\cdot{}^w\U(\Delta_\ell^+)$.
+\begin{lemma}\label{lemma:nikolov-type-dl}
+Let $\Phi=\rD_\ell$. There exist an element $y\in\G(\Phi,R)$ and an element $w\in\widetilde{W}(\Phi)$ such that $\U(\Sigma_\ell)\subset[\U(\Delta_\ell^-),y]\cdot{}^w\!\U(\Delta_\ell^+)$.
 \end{lemma}
 \begin{proof}
 Set $\beta_i = \alpha_{2i-1} + 2\alpha_{2i}+ \ldots + 2\alpha_{\ell-2} + \alpha_{\ell-1} + \alpha_\ell$, for $i=1,\ldots,\lfloor\ell/2\rfloor$, i.\,e. $\beta_i$ form a maximal set of pairwise orthogonal maximal roots in some subsystems of type $\rD_{k}$. Denote $B=\{\beta_i\}$, then decompose $\U(\Sigma_\ell)=\U(\Sigma_\ell\setminus B)\cdot\U(B)$.
@@ -29,8 +29,21 @@ Take an element $u\in\U(\Sigma_2^-\cap\Delta_\ell)$ and decompose it as $u=vw$, 
 Since $\U(\Sigma_{1,2}^-\cap\Delta_\ell)$ and $\U(\Sigma_2^-\cap\Delta_{1,\ell})$ are abelian, it is easy to see that
 \[ [v,x_{\beta_1}(1)]\in\U(\Sigma_{2,\ell}\cap\Delta_1), \quad [w,x_{\beta_1}(1)]\in\U(\Sigma_{1,\ell}\setminus\{\beta_1\}), \]
 and varying $v$ and $w$ one can obtain any element of $\U(\Sigma_{2,\ell}\cap\Delta_1)$ and $\U(\Sigma_{1,\ell}\setminus\{\beta_1\})$ respectively. By the Levi decomposition
-\[ {}^v\U(\Sigma_{1,\ell}\setminus\{\beta_1\}) \equiv \U(\Sigma_{1,\ell}\setminus\{\beta_1\}) \bmod \U(\Sigma_\ell\cap\Delta_2). \]
+\[ {}^v\!\U(\Sigma_{1,\ell}\setminus\{\beta_1\}) \equiv \U(\Sigma_{1,\ell}\setminus\{\beta_1\}) \bmod \U(\Sigma_\ell\cap\Delta_2). \]
 Thus we have shown that
 \[ [\U(\Sigma_2^-)\cdot\U(\Delta_{2,\ell}),y] \equiv \U(\Sigma_{1,\ell}\cup\Sigma_{2,\ell}\setminus\{\beta_1\}) \bmod \U(\Sigma_\ell\cap\Delta_2), \]
 and this reduces the problem to the $\rD_{\ell-2}$-subsystem $\Delta_{1,2}$. So we can carry the induction on the rank of the subsystem, and construct for any given $a\in\U(\Sigma_\ell\setminus B)$ an element $b\in\U(\Delta_\ell^-)$ such that $a\in[b,y]\cdot\prod_{\beta\in B}X_\beta\subset[\U(\Delta_\ell^-),y]\cdot\U(B)$.
+
+It remains to note that the roots $\pm\beta_i$ lie inside a maximal root subsystem of type $\rA_1+\ldots+\rA_1+\rD_3$. All such subsystemrs are conjugate under the action of the Weyl group, so there exist an element $w\in W(\Phi)$ such that $w(\beta_1)=\alpha_1$, $w(\beta_2)=\alpha_3$, $w(\beta_3)=\alpha_5$ and so on, so that all of $w(\beta_i)$ lie in $\Delta_\ell^+$.
+\end{proof}
+\begin{proof}[Proof of Theorem~\ref{thm:spin-sln-prod}]
+By Theorem~\ref{thm:DennisVaserstein} one has a decomposition
+\[ \Spin(2\ell,R,I) = \Par_{\ell-1}\cdot\U_{\ell-1,\ell}^-\cdot\Par_{\ell} = \G(\Delta_{\ell-1})\cdot\U(\Sigma_{\ell-1})\cdot\U(\Sigma_{\ell-1,\ell}^-)\cdot\U(\Sigma_{\ell})\cdot\G(\Delta_\ell). \]
+By Lemma~\ref{lemma:nikolov-type-dl} there exist elements $y_1,y_2,y_3\in\G(\rD_\ell,R)$ and $w_1,w_2,w_3\in\widetilde{W}(\rD_\ell)$ such that
+\begin{align*}
+& \U(\Sigma_{\ell-1}) \subset \U(\Delta_{\ell-1}^-) \cdot {}^{y_1}\!\U(\Delta_{\ell-1}^-) \cdot {}^{w_1}\!\U(\Delta_{\ell-1}^+), \\
+& \U(\Sigma_\ell) \subset {}^{w_2}\!\U(\Delta_\ell^+) \cdot {}^{y_2}\!\U(\Delta_\ell^-) \cdot \U(\Delta_\ell^-), \\
+& \U(\Sigma_{\ell-1,\ell}^-) \subset \U(\Delta_\ell^+) \cdot {}^{y_3}\!\U(\Delta_\ell^+) \cdot {}^{w_3}\!\U(\Delta_\ell^-).
+\end{align*}
+Thus $\G(\rD_\ell,R,I)$ is a product of $9$ subgroups isomorphic to $\G(\rA_{\ell-1},R,I)\cong\SL(\ell,R,I)$ (and conjugated inside $\G(\rD_\ell,R)$).
 \end{proof}
