@@ -37,7 +37,6 @@ Consider the following two submonoids of $\E(\Phi, R)$:
 It is easy to see that $N_{rs}$ normalizes $L_{rs}$, i.e. ${L_{rs}}^{N_{rs}} \subseteq L_{rs}$. 
 Indeed, for $g\in N_{rs}$, $h\in L_{rs}$ one has
 \begin{equation}\label{rel:NnormL} h^g \cdot A_{rs} = g^{-1} \cdot h \cdot g \cdot A_{rs} \subseteq g^{-1} \cdot h \cdot A_{rs} \cdot g \subseteq {A_{rs}}^g \subseteq A_{rs}.\end{equation}
-It is also clear that $L_{rs}$ contains $\EP_r(R, I)$.
 
 \begin{lemma}\label{lemma:dv-normal} 
 For every $\alpha \in \Delta_{\{r,s\}} \cup (\Phi^+ \setminus (\Sigma^+_r \cap \Sigma^+_s))$ one has $X_\alpha(R) \subseteq N_{rs}$. \end{lemma}
@@ -115,13 +114,22 @@ In the case $\Phi\neq \rB_\ell, \rC_\ell$ all roots of $\Sigma^+_s$ have the sam
 In the case $\Phi=\rB_\ell$ (resp. $\Phi=\rC_\ell$) the above argument only shows that $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$ (resp. $\U(\Sigma_s^{+<}, R) \subseteq N_{rs}$)
 and a separate argument is needed for the root subgroup corresponding to the sole short (resp. long) root of $\Sigma_s^+$.
  
-Specializing commutator formula~\ref{rel:CCF} to the odd orthogonal (resp. symplectic) case we get:
+Specializing identity~\ref{rel:CCF} to the odd orthogonal (resp. symplectic) case we get:
 \begin{equation} \label{rel:CCF-specBC} t_{1,0}(ab) = [t_{1, 2}(a), t_{2, 0}(b)] \cdot t_{1,-2}(-a b^2), \quad t_{1,-1}(-ab^2) = t_{-2,1}(ab) \cdot [t_{-2, 2}(a), t_{2, -1}(b)]. \end{equation}
 Clearly, the root subgroup $X_{2, 0}(R)$ (resp. $X_{-2,2}(R)$) is contained in $\E(\Delta_s, R) \subseteq N_{rs}$ while we already know by the above argument that the subgroups $X_{2, 0}(R)$, $X_{1,-2}(R)$
 (resp. $X_{-2,1}(R)$, $X_{2,-1}(R)$) are contained in $N_{rs}$.
 
-Our ultimate goal is to show the inclusion $\E(\Phi, R, I) \subseteq L_{rs}$. By~\cref{prop:Stepanov} it is enough to prove the inclusion $\mathcal{Z}(\Sigma^-_s) \subseteq L_{rs}$.
-In turn, in view of identity \ref{rel:NnormL} and the previous part of the proof it suffices to show that $\mathcal{X} \subseteq L_{rs}$.
+Our ultimate goal is to show the inclusion $\E(\Phi, R, I) \subseteq L_{rs}$. 
+By~\cref{prop:Stepanov} it is enough to prove that $\mathcal{Z}(\Sigma^-_s) \subseteq L_{rs}$.
+In fact, in view of identity \ref{rel:NnormL} and the previous part of the proof it suffices to show only that $\mathcal{X} \subseteq L_{rs}$.
+It is obvious that $\EP_r(R, I) \subseteq L_{rs}$.
+From $\EP_s(R, I) \subseteq \EP_s(R) \subseteq N_{rs}$ we also conclude that $\EP_s(R, I) \subseteq L_{rs}$.
+Thus, we are left to prove the inclusion $\U(\Sigma^-_r \cap \Sigma^-_s, I) \subseteq L_{rs}$.
+
+Just as in the above argument all the cases except $\Phi = \rB_\ell, \rC_\ell$ follow from~\cref{item-trans2}.
+The proof in the case $\Phi=\rB_\ell$ is also similar to the one presented above.
+Indeed, from the identity $t_{0, 1}(-a) = [t_{2,1}(-a); t_{0, 2}(-1)] t_{-2,1}(a)$ we conclude that
+$$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{t_{0,2}(1)} \cdot X_{-2,1}(I) \subseteq L_{rs} \cdot L_{rs}^{N_{rs}} \cdot L_{rs} \subseteq L_{rs}.$$
 
 %TODO: finish proof of the theorem
 \end{proof}
