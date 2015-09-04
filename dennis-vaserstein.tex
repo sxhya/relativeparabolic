@@ -62,15 +62,20 @@ Assume that there exists a subset $B \subseteq \E(\Delta_r, R, I)$ satisfying th
 \end{enumerate}
 Then $X_{-\alpha_r}(R) \subseteq N_{rs}.$
 \end{lemma}
-\begin{proof} Set $A:=\U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).$
+\begin{proof}
+Set $A:=\U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).$
 From the first assumption of the lemma it follows that $A_{rs}=A$.
 On the other hand, by the second assumption we have
-\begin{multline*} X_{\alpha_r}(I) \cdot X_{-\alpha_r}(I) \cdot B \cdot \EP_s(R, I) \subseteq 
- X_{\alpha_r}(I) \cdot B \cdot \EP_s(R, I) \cdot \EP_s(R, I) \subseteq \\
- \subseteq B \cdot \U(\Sigma_r, I) \cdot \EP_s(R, I) \subseteq 
- B \cdot \EP_s(R, I). \end{multline*}
+\begin{multline*}
+X_{\alpha_r}(I) \cdot X_{-\alpha_r}(I) \cdot B \cdot \EP_s(R, I) \subseteq 
+X_{\alpha_r}(I) \cdot B \cdot \EP_s(R, I) \cdot \EP_s(R, I) \subseteq \\
+\subseteq B \cdot \U(\Sigma_r, I) \cdot \EP_s(R, I) =
+B \cdot \EP_s(R, I).
+\end{multline*}
 Together with the third statement of~\cref{lemma:dv_unipotent} this implies that
-\begin{equation*} \label{rel:sred} A = \U(\Phi^+\setminus\{\alpha_r\}, I) \cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I). \end{equation*}
+\begin{equation*} \label{rel:sred}
+A = \U(\Phi^+\setminus\{\alpha_r\}, I) \cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).
+\end{equation*}
 %Consequently, from the second statement of~\cref{lemma:dv_unipotent} it follows that
 %\begin{equation*} \label{rel:linv} X_{-\alpha\ssub{r}}(I) \cdot A \subseteq \U(\Phi^+, I) \cdot X_{-\alpha\ssub{r}}(I) \cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I) = A. \end{equation*}
 Consequently, since $[B, X_{-\alpha_r}(R)] \subseteq \U(\Sigma_r^-, R) \cap \E(\Phi, R, I) = \U(\Sigma_r^-, I)$ we get that:
@@ -79,11 +84,12 @@ which implies the assertion of the lemma.
 %Clearly, the assertion of the lemma follows from~\ref{rel:linv}--\ref{rel:ninv}.
 \end{proof}
 
-First of all we show that the assumptions on $I$ formulated in \cref{thm:DennisVaserstein} imply the conditions of Lemma~\ref{lemma:Stein_reduction}.
+Let us construct a set $B$ satisfying the assumptions of \cref{lemma:Stein_reduction} explicitly.
+
 Denote by $\pi$ the irreducible representation of $G=\G(\Phi, R)$ on a free module $V$ with the highest weight $\varpi_s$.
 The type of $\pi$ and the total number of weights in $\Lambda(\pi)$ are listed in Figure~\ref{fig:table}.
 
-Clearly, after restricting the representation $(V, \pi)$ to the subgroup $G'=G(\Delta_r, R)$ it becomes reducible.
+Clearly, after restricting the representation $(V, \pi)$ to the subgroup $G'=\G(\Delta_r, R)$ it becomes reducible.
 Denote by $(V', \pi')$ the irreducible component corresponding to the same highest weight $\varpi_s \in \Lambda(\pi)$.
 
 Consider the following subset of $\Lambda(\pi')$:
@@ -94,18 +100,17 @@ The type of $\pi'$ and the number of elements in $\Lambda(\pi')$, $\Gamma$ are l
 \begin{rem}
 The sets $\Lambda(\pi')$, $\Gamma$ can be visualized using the technique of {\it weight diagrams} developed in~\cite{PSV98}.
 In the simplest case of a microweight representation (i.\,e. a representation without zero weights)
-the weight diagram of $(V, \pi)$ is just a graph whose vertices are in one-to-one correspondence with the set of weights $\Lambda(\pi)$.
+the weight diagram of $(V, \pi)$ is just a graph whose vertices are in one-to-one correspondence with the elements of $\Lambda(\pi)$.
 Two vertices $\lambda$, $\mu$ of the diagram are joined by a bond marked $i$ iff $\lambda-\mu = \alpha_i$.
 
-Now let $G$ be the weight diagram of $\pi$.
-The authors of~\cite{PSV98} locate the vertex corresponding to the highest weight of $\pi$ to the upper-left corner of the picture.
-Therefore the subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the upper-left connected component of the graph obtained from $G$ by removing all bonds marked $r$.
-On the other hand, the set $\Gamma$ corresponds to vertices of $\Lambda(\pi')$ which are incident with the removed bonds.
+The authors of~\cite{PSV98} put the vertex corresponding to the highest weight $\varpi_s$ of $\pi$ in the upper-left corner of the weight diagram.
+Therefore the subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the upper-left connected component of the graph obtained by removing all bonds marked $r$.
+In turn, the set $\Gamma$ corresponds to the vertices of $\Lambda(\pi')$ incident to the removed bonds.
 \end{rem}
 
 \begin{figure}
 \[\begin{array}{l @{\qquad} l @{\qquad} l @{\qquad} c @{\quad} c @{\qquad} l @{\qquad} l}
-   & \Phi                                 & (s,r)         & |\Lambda(\pi)| & \text{type of $\pi$} & \text{type of $\pi'$}        & (|\Gamma|, |\Gamma_0|)  \\ \hline\vphantom{\Bigl(}
+   & \Phi                                 & (s,r)         & |\Lambda(\pi)| & \text{type of $\pi$} & \text{type of $\pi'$}        & (|\Lambda(\pi')|, |\Gamma|)  \\ \hline\vphantom{\Bigl(}
 1. & \rA_\ell,\ \ell\geqslant 2           & (1,\ell)      & \ell+1         & \text{natural}       & (\rA_{l-1}, \varpi_1)        & (\ell,1)  \\     
 2. & \rB_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell+1        & \text{natural}       & (\rA_{l-1}, \varpi_1)        & (\ell,1) \\     
 3. & \rC_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell          & \text{natural}       & (\rA_{l-1}, \varpi_1)        & (\ell,1)  \\
@@ -116,13 +121,13 @@ On the other hand, the set $\Gamma$ corresponds to vertices of $\Lambda(\pi')$ w
  \caption[Table]{List of representation involved in the proof of~\cref{thm:DennisVaserstein}.} \label{fig:table}
 \end{figure}
 
-Now let $B$ be the set of all elements $g$ of $\E(\Delta_r,R, I)$ such that $(g \cdot v^+)_\lambda = 0$ for $\lambda\in\Gamma$.
+Now let $B$ be the set of all elements $g$ of $\E(\Delta_r,R, I)$ such that $(g \cdot v^+)_\lambda = 0$ for all $\lambda\in\Gamma$.
 Applying~\cref{lemma:uraction} to the subsystem $\Delta_r$ we find
-$x\in\U(\Delta_r\cap\Phi^+, I)$, $y\in \U(\Delta_r\cap\Phi^-, I)$ such that $yx\cdot g \in B$.
+$x\in\U(\Delta_r^+, I)$, $y\in \U(\Delta_r^-, I)$ such that $yx\cdot g \in B$.
 This proves the first assumption of Lemma~\ref{lemma:Stein_reduction}, indeed:
 \[ \U(\Sigma^+_r, I) \cdot \U(\Sigma^-_r, I) \cdot g = \U(\Sigma^+_r, I) x^{-1} \cdot \U(\Sigma^-_r, I)^{x^{-1}} y^{-1} (yxg) \subseteq \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B. \]
 To prove the second assumption of Lemma~\ref{lemma:Stein_reduction} notice that by the definition of $\Gamma$ and~\cref{lemma:Matsumoto} for any $s\in I$, $ g\in B$ one has $x_{-\alpha_r}(s) \cdot g \cdot v^+ = g \cdot v^+$ hence
-\[ X_{-\alpha\ssub{r}}(I)^{B} \subseteq \U(\Phi^-, I) \cap \Stab(v^+) \subseteq \U(\Delta_s \cap \Phi^-, I) \subseteq \EP_s(R, I). \]
+\[ X_{-\alpha\ssub{r}}(I)^{B} \subseteq \U(\Phi^-, I) \cap \Stab(v^+) \subseteq \U(\Delta_s^-, I) \subseteq \EP_s(R, I). \]
 
 \begin{proof}[Proof of Theorem~\ref{thm:DennisVaserstein}]
 By the above discussion we may assume that the assertion of~\cref{lemma:Stein_reduction} holds.
@@ -136,16 +141,17 @@ In the case $\Phi\neq \rB_\ell, \rC_\ell$ all roots of $\Sigma^+_s$ have the sam
 In the case $\Phi=\rB_\ell$ (resp. $\Phi=\rC_\ell$) the above argument only shows that $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$ (resp. $\U(\Sigma_s^{+<}, R) \subseteq N_{rs}$)
 and a separate argument is needed for the root subgroup corresponding to the sole short (resp. long) root of $\Sigma_s^+$.
  
-Specializing identity~\ref{rel:CCF} to the odd orthogonal (resp. symplectic) case we get:
+Specializing identity~\eqref{rel:CCF} to the odd orthogonal (resp. symplectic) case we get:
 \begin{equation} \label{rel:CCF-specBC} t_{1,0}(ab) = [t_{1, 2}(a), t_{2, 0}(b)] \cdot t_{1,-2}(-a b^2), \quad t_{1,-1}(-ab^2) = t_{-2,1}(ab) \cdot [t_{-2, 2}(a), t_{2, -1}(b)]. \end{equation}
 Clearly, the root subgroup $X_{2, 0}(R)$ (resp. $X_{-2,2}(R)$) is contained in $\E(\Delta_s, R) \subseteq N_{rs}$ while we already know by the above argument that the subgroups $X_{2, 0}(R)$, $X_{1,-2}(R)$
 (resp. $X_{-2,1}(R)$, $X_{2,-1}(R)$) are contained in $N_{rs}$.
 
 Our ultimate goal is to show the inclusion $\E(\Phi, R, I) \subseteq L_{rs}$. 
 By~\cref{prop:Stepanov} it is enough to prove that $\mathcal{Z}(\Sigma^-_s) \subseteq L_{rs}$.
-In fact, in view of identity \ref{rel:NnormL} and the previous part of the proof it suffices to show only that $\mathcal{X} \subseteq L_{rs}$.
+In fact, in view of formula~\eqref{rel:NnormL} and the previous part of the proof it suffices to show only that $\mathcal{X} \subseteq L_{rs}$.
 It is obvious that $\EP_r(R, I) \subseteq L_{rs}$.
-From $\EP_s(R, I) \subseteq \EP_s(R) \subseteq N_{rs}$ we also conclude that $\EP_s(R, I) \subseteq L_{rs}$.
+From $\EP_s(R, I) \subseteq \EP_s(R) \subseteq N_{rs}$ we also conclude that $\EP_s(R, I) \subseteq L_{rs}$. Indeed, for $g\in\EP_s(R,I)$
+\[ gA_{rs} \subseteq g {A_{rs}}^g = A_rs g = A_rs. \]
 Thus, we are left to prove the inclusion $\U(\Sigma^-_r \cap \Sigma^-_s, I) \subseteq L_{rs}$.
 
 Just as in the above argument all the cases except $\Phi = \rB_\ell, \rC_\ell$ follow from~\cref{item-trans2}.

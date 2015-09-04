@@ -10,7 +10,7 @@ A column $b \in R^n$ is called $I$-unimodular if its transpose $b^t$ is an $I$-u
 We denote the set of all $I$-unimodular rows (resp. columns) by $\Umd(n, I)$ (resp. $\Ums(n, I)$).
 When $R=I$ we refer to $R$-unimodular rows and columns as simply unimodular.
 
-It is not hard to show that for a $I$-unimodular row $a$ there exists an $I$-unimodular column $b$ such that $ab=1$ (see~\cite[\S~2]{Va69}).
+It is not hard to show that for an $I$-unimodular row $a$ there exists an $I$-unimodular column $b$ such that $ab=1$ (see~\cite[\S~2]{Va69}).
 
 An $I$-unimodular row $a=(a_1,\ldots a_{n+1})$ is called \emph{stable} if one can choose $b_1,\ldots,b_n\in I$ such that the row $(a_1+a_{n+1}b_1,\ldots,a_n+a_{n+1}b_n)$ is also $I$-unimodular. 
 We say that $I$ satisfies stable range condition $\SR_n(I)$ if any $I$-unimodular row of length $n+1$ is stable.
@@ -23,10 +23,10 @@ The following proposition summarizes basic properties of stable ranks.
 Let $R$ be arbitrary commutative unital ring and let $I\trianglelefteq R$ be an ideal.
 \begin{enumerate}
 \item For any ideal $J\subseteq I$ one has $\sr(J)\leqslant\sr(I)$, $\sr(I/J)\leqslant\sr(I)$;
-\item One has $\sr\left(\prod\limits_{i=1}^n R_i\right)=\max\limits_{i=1}^n\left(\sr(R_i)\right)$;
+\item One has $\sr\Bigl(\prod\limits_{i=1}^n R_i\Bigr)=\max\limits_{i=1}^n\bigl(\sr(R_i)\bigr)$;
 \item Let $J$ denote the Jacobson radical of $R$, then one has $\sr(R)=\sr(R/J)$;
 \item If $I\subseteq J$, then $\sr(I)=1$;
-\item Let $I^1$ denote the ring obtained by formally adjoining $1$ to $I$. Then $\sr(I^1)=\max(2,\sr(I))$.
+\item Let $I\rtimes\mathbb{Z}$ denote the ring obtained by formally adjoining $1$ to $I$. Then $\sr(I\rtimes\mathbb{Z})=\max(2,\sr(I))$.
 \end{enumerate}
 \end{prop}
 \begin{proof} See~\cite[Theorem~2.3]{Va69}, \cite{Va71}. 
@@ -35,7 +35,7 @@ Let $R$ be arbitrary commutative unital ring and let $I\trianglelefteq R$ be an 
 Since the stable rank of a field equals $1$, one can conclude from the previous proposition that $\sr(R)=1$ for any semilocal ring $R$.
 Other examples of rings of stable rank $1$ are provided by boolean rings, the ring of algebraic integers, the ring of entire functions, the disk-algebra, etc. For this and many other examples see~\cite{VasSR1}.
 
-Formally adjoining a unit to a non-unital ring of stable rank $1$ produces a non-trivial example of an ideal having the stable rank strictly lower that the ambient ring.
+%Formally adjoining a unit to a non-unital ring of stable rank $1$ produces a non-trivial example of an ideal having the stable rank strictly lower that the ambient ring.
 \end{example}
 
 \subsection{Relative absolute stable rank}\label{sec:rel-asr}
@@ -80,25 +80,26 @@ This shows that no such $\mathfrak{m}$ may exist and, therefore, $\mathfrak{J}(a
 \end{proof}
 
 Obviously, the second statement of Lemma~\ref{lemma:relative-asr-unimod} does not depend on $R$, hence, as suggested by the notation, $\asr(I)$ is independent of $R$.
-As another corollary of Lemma~\ref{lemma:relative-asr-unimod} we obtain the following reformulation of the absolute stable rank condition $\ASR_n(R)$ (cf.~\cite[\S~1]{Pl98}).
-\begin{cor}[A.~Bak] For a commutative ring $R$ the following statements are equivalent:
+As another corollary of Lemma~\ref{lemma:relative-asr-unimod} we obtain the following reformulation of the absolute stable rank condition $\ASR_n(R)$.
+\begin{cor}[A.~Bak, {cf.~\cite[\S~1]{Pl98}}] For a commutative ring $R$ the following statements are equivalent:
 \begin{enumerate}
  \item\label{asr_Stein} $R$ satisfies $\ASR_n(R)$;
  \item\label{asr_Bak} For any \emph{unimodular} row $(a_1,\ldots,a_n,b,d)\in\Umd(n+2,R)$ there exist $c_1,\ldots,c_n\in R$ such that $(a_1+c_1d,\ldots,a_n+c_nd,b+td)$ is unimodular for all $t\in R$.
 \end{enumerate}
 \end{cor}
 
-Let $R$ be a commutative ring. We denote by $\Max(R)$ its \emph{maximum spectrum} i.e. the set of maximal ideals of $R$ equipped with Zariski topology.
+Let $R$ be a commutative ring. We denote by $\Max(R)$ its \emph{maximum spectrum} i.e. the set of maximal ideals of $R$ equipped with Zariski topology. For a topological space $X$ denote by $\dim(X)$ its usual topological dimension.
 The following result gives an upper estimate for the absolute stable rank (see~\cite[Theorem~2.3]{EO}, \cite[Theorem~3.7]{MKV}).
-\begin{thm}
+\begin{prop}
 Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered with a finite family of subsets 
-$X_1\ldots, X_m$ such that the topological dimension of every subset $X_i$ does not exceed some number $d$. 
-Then $\asr(A)\leqslant d+1$.
-\end{thm}
+$X_1\ldots, X_m$ such that $\dim(X_i)\leqslant d$ for every $i$. Then $\asr(A)\leqslant d+1$.
+\end{prop}
 %TODO: Add more comments?
-Clearly one has
-\[\sr(I)\leqslant\asr(I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \]
-\cite{MKV} gives the examples of rings of stable rank $1$ but of absolute stable rank $\geqslant2$. Theorem~1.3 therein shows that for principal ideal rings $\sr(R)=\asr(R)$.
+From the definition of $\asr(I)$ and the previous proposition it follows that
+\[ \sr(I)\leqslant\asr(I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \]
+\begin{rem}
+There exist examples of rings for which the first inequality in the above formula is strict. Namely, there are rings of stable rank $1$ but of absolute stable rank $\geqslant2$, see~\cite{MKV}. However, \cite[Theorem~1.3]{MKV} shows that $\sr(R)=\asr(R)$ for any principal ideal ring $R$.
+\end{rem}
 
 \subsection{Action of unipotent radicals}\label{sec:ur-action}
 Let $v\in V=R^{2\ell}$ be a vector of the natural representation of $\G(\rD_\ell, R)$.
