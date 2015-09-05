@@ -17,10 +17,10 @@
 \setlist[thmlist]{label=(\roman{thmlisti}), ref=\thethm.(\roman{thmlisti}),noitemsep}
 
 \declaretheorem[name=Theorem, Refname={Theorem,Theorems}]{thm}
-\declaretheorem[name=Corollary, Refname={Corollary, Corollaries}, sibling=thm]{cor}
+\declaretheorem[name=Proposition, Refname={Proposition,Propositions}, sibling=thm]{prop}
+\declaretheorem[name=Corollary, Refname={Corollary, Corollaries}, numberwithin=section]{cor}
+\declaretheorem[name=Lemma, Refname={Lemma,Lemmas}, numberwithin=section]{lemma}
 
-\declaretheorem[name=Lemma, Refname={Lemma,Lemmas}]{lemma}
-\declaretheorem[name=Proposition, Refname={Proposition,Propositions}, sibling=lemma]{prop}
 
 \Crefname{thm}{Theorem}{Theorems}
 \Crefname{lemma}{Lemma}{Lemmas}
@@ -159,7 +159,7 @@ Then $\E(\Phi, R, I)$ is generated as an abstract group by $\mathcal{Z}(\Sigma_S
 Our first application of parabolic factorizations is the following theorem which gives an estimate of the width of $\G(\Phi, R, I)$ in terms of certain subsets of $\mathcal{Z}$.
 \begin{thm}\label{thm:width} Let $\Phi$ be an irreducible root system, and let $I$ be an ideal of a commutative ring $R$.
 \begin{enumerate}
-\item If $\sr(I) = 1$, then $W(\E(\Phi,R,I),\mathcal{Z}(-\Pi))\leqslant 3|\Phi^+|+2\rk(\Phi)-1$;
+\item If $\sr(I) = 1$, then $W(\E(\Phi,R,I),\mathcal{Z}(\Pi))\leqslant 3|\Phi^+|+2\rk(\Phi)-1$;
 \item Let $p$ be a prime integer, set $R = \mathbb{Z}[\sfrac{1}{p}]$ and assume $\Phi$ is classical. Then under the assumption of the Generalized Riemann Hypothesis one has
 %TODO: Now check the coefficients of \rk(\Phi) in the expression below
 \begin{alignat*}{2}
@@ -195,14 +195,13 @@ In case when $R=I$ is a field this question was studied by N.~Nikolov in \cite{N
 \begin{thm*} Let $G$ be a classical Chevalley group (of normal or twisted type) of rank $n$ over a finite field.
 Then $G$ equals the product of at most $200$ conjugates of $\SL_n$. \end{thm*}
 
-It is also classically known that over an arbitrary field $F$ the group $\SL(n+1, F)$, $n\geq 3$ is a product of at most $4$ subgroups of type $\SL(n, F)$.
+It is also classically known that over an arbitrary field $F$ the group $\SL_{n+1}(F)$, $n\geq 3$ is a product of at most $4$ subgroups of type $\SL(n, F)$.
 On the other hand, from the classical Dennis---Vaserstein theorem (see~\cite{Va69} and \cite[Lemma~2.1]{ST76})
-it follows that $\SL(n+1, R, I)$ is a product of a most $5$ subgroups of type $\SL_n(R, I)$ for any ideal $I$ satisfying $\sr(I)\leqslant n-1$.
+it follows that $\SL_{n+1}(R, I)$ is a product of a most $5$ subgroups of type $\SL_n(R, I)$ for any ideal $I$ satisfying $\sr(I)\leqslant n-1$.
 Using another Dennis---Vaserstein type factorization we obtain the following result.
 \begin{thm}\label{thm:spin-sln-prod}
-Assume that $\sr(I) \leqslant 2$ then the group $\Epin_{2\ell}(R, I)=\E_{sc}(\rD_\ell, R, I)$ is a product of at most $9$ copies of subgroups of type $\rA_{\ell-1}$.
+Assume that $\sr(I) \leqslant 2$ then the group $\Epin_{2\ell}(R, I)=\E(\rD_\ell, R, I)$ is a product of at most $9$ copies of its subgroups of type $\rA_{\ell-1}$.
 \end{thm}
-
 
 \subsection{Acknowledgements}
 Authors of the present paper acknowledge financial support from Russian Science Foundation grant 14-11-00297.
