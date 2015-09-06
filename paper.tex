@@ -225,10 +225,16 @@ For a reductive subset $\Delta\subseteq \Phi$ denote by $W(\Delta)$ the subgroup
 
 Let $J\subseteq \Pi$ be a subset of simple roots. 
 For a root $\beta = \sum m_i(\beta)\alpha_i \in \Phi$ set $\shape(J, \beta):=\sum\limits_{i\in J} m_i(\beta) \alpha_i$.
-Set $$\Delta_J = \{\alpha \in \Phi \mid \shape(J, \alpha)=0\},\quad \Sigma^\pm_J = \{\alpha \in \Phi \mid \shape(J, \alpha)\in\mathbb{Z}_{\geqslant0}\Phi^\pm \}, \quad S_J^\pm := \Delta_J \sqcup \Sigma_J^\pm.$$
+Set
+\begin{align*}
+& \Delta_J = \{\alpha \in \Phi \mid \shape(J, \alpha)=0\},\\
+& \Sigma^\pm_J = \{\alpha \in \Phi \mid \shape(J, \alpha) \in \mathbb{Z}_{\geqslant0} \Phi^\pm \},\\
+& S_J^\pm := \Delta_J \sqcup \Sigma_J^\pm.
+\end{align*}
 Clearly, $\Delta_J$ is a reductive subset, while $S^\pm_J$ and $\Sigma^\pm_J$ are parabolic and special subsets, respectively.
 For two disjoint subsets $I, J\subseteq \Pi$ one has 
 \[ \Sigma^\pm_{I \cup J} = \Sigma^\pm_I\cup\Sigma^\pm_J, \quad \Delta_{I\cup J} = \Delta_I \cap \Delta_J. \]
+We often omit the curly braces in the notations above, so, for example, $\Delta_k=\Delta_{\{k\}}$ and $\Sigma_{i,j}=\Sigma_{\{i,j\}}$.
 
 \begin{lemma}[{\cite[Lemma~1]{ABS}}]\label{lemma:abs}
 Let $\alpha, \beta \in \Sigma^\pm_J$ be two roots having the same length such that $\shape(J,\alpha)=\shape(J,\beta)\neq 0$.
