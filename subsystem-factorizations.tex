@@ -16,25 +16,32 @@ We will now elaborate on the case $\Phi=\rD_\ell$ to show that the Dennis---Vase
 Let $\Phi=\rD_\ell$. There exist an element $y\in\G(\Phi,R)$ and an element $w\in\widetilde{W}(\Phi)$ such that $\U(\Sigma_\ell)\subset[\U(\Delta_\ell^-),y]\cdot{}^w\!\U(\Delta_\ell^+)$.
 \end{lemma}
 \begin{proof}
-Set $\beta_i = \alpha_{2i-1} + 2\alpha_{2i}+ \ldots + 2\alpha_{\ell-2} + \alpha_{\ell-1} + \alpha_\ell$, for $i=1,\ldots,\lfloor\ell/2\rfloor$, i.\,e. $\beta_i$ form a maximal set of pairwise orthogonal maximal roots in some subsystems of type $\rD_{k}$. Denote $B=\{\beta_i\}$, then decompose $\U(\Sigma_\ell)=\U(\Sigma_\ell\setminus B)\cdot\U(B)$.
+Set $\beta_i = \alpha_{2i-1} + 2\alpha_{2i}+ \ldots + 2\alpha_{\ell-2} + \alpha_{\ell-1} + \alpha_\ell$, for $i=1,\ldots,\lfloor\ell/2\rfloor-1$. Set $\beta_{\lfloor\ell/2\rfloor}=\alpha_{\ell-2}+\alpha_{\ell-1}+\alpha_\ell$ if $\ell$ is odd, and $\beta_{\lfloor\ell/2\rfloor}=\alpha_\ell$ if $\ell$ is even.  Denote $B=\{\beta_i\}$, then decompose $\U(\Sigma_\ell)=\U(\Sigma_\ell\setminus B)\cdot\U(B)$. In fact, $\U(\Sigma_\ell)$ is abelian.
 
 Set $y=\prod_{\beta\in B}x_\beta(1)$. We will now show that $\U(\Sigma_\ell\setminus B)\subset[\U(\Delta_\ell^-),y]\cdot\U(B)$.
 
-We first note that
+Note that \eqref{rel:CCF} implies
 \[ \bigl[\U(\Delta_2^-),x_{\beta_1}(1)\bigr]=1,\quad \Bigl[\U(\Sigma_2^-\cap\Delta_\ell),\prod_{i\neq1}x_{\beta_i}(1)\Bigr]=1. \]
-This implies
+The first follows from the fact that the only root $\alpha$ with $m_2(\alpha)=2$ is $\beta_1$. The second holds since a root $\alpha\in(\Sigma_2^-\cap\Delta_\ell)+(B\setminus\{\beta_1\})$ must simultaneously satisfy $m_2(\alpha)=-1$ and $m_\ell(\alpha)=1$, which is impossible.
+
+Since $B\setminus\{\beta_1\}\subset\Sigma_\ell\cap\Delta_2$, this implies
 \[ \Bigl[ \U(\Sigma_2^-\cap\Delta_\ell)\cdot\U(\Delta_{2,\ell}^-), x_{\beta_1}(1)\cdot\prod_{i\neq1}x_{\beta_i}(1) \Bigr] \equiv \bigl[ \U(\Sigma_2^-\cap\Delta_\ell), x_{\beta_1}(1) \bigr] \bmod \U(\Sigma_\ell\cap\Delta_2). \]
-Take an element $u\in\U(\Sigma_2^-\cap\Delta_\ell)$ and decompose it as $u=vw$, $v\in\U(\Sigma_{1,2}^-\cap\Delta_\ell)$, $w\in\U(\Sigma_2^-\cap\Delta_{1,\ell})$, then, using the identity $[ab,c]={}^a[b,c]\cdot[a,c]$, rewrite
+Take an element $u\in\U(\Sigma_2^-\cap\Delta_\ell)$ and decompose it as $u=vw$, $v\in\U(\Sigma_1^-\cap\Sigma_2^-\cap\Delta_\ell)$, $w\in\U(\Sigma_2^-\cap\Delta_{1,\ell})$, then, using the identity
+\begin{equation}\label{eq:comm-ab-c}
+[ab,c]={}^a[b,c]\cdot[a,c],
+\end{equation}
+rewrite
 \[ [vw,x_{\beta_1}(1)] = {}^v[w,x_{\beta_1}(1)]\cdot[v,x_{\beta_1}(1)].  \]
-Since $\U(\Sigma_{1,2}^-\cap\Delta_\ell)$ and $\U(\Sigma_2^-\cap\Delta_{1,\ell})$ are abelian, it is easy to see that
-\[ [v,x_{\beta_1}(1)]\in\U(\Sigma_{2,\ell}\cap\Delta_1), \quad [w,x_{\beta_1}(1)]\in\U(\Sigma_{1,\ell}\setminus\{\beta_1\}), \]
-and varying $v$ and $w$ one can obtain any element of $\U(\Sigma_{2,\ell}\cap\Delta_1)$ and $\U(\Sigma_{1,\ell}\setminus\{\beta_1\})$ respectively. By the Levi decomposition
-\[ {}^v\!\U(\Sigma_{1,\ell}\setminus\{\beta_1\}) \equiv \U(\Sigma_{1,\ell}\setminus\{\beta_1\}) \bmod \U(\Sigma_\ell\cap\Delta_2). \]
+Since $\U(\Sigma_1^-\cap\Sigma_2^-\cap\Delta_\ell)$ and $\U(\Sigma_2^-\cap\Delta_{1,\ell})$ are abelian, it is easy to see that
+\[ [v,x_{\beta_1}(1)]\in\U(\Sigma_2\cap\Sigma_\ell\cap\Delta_1), \quad [w,x_{\beta_1}(1)]\in\U((\Sigma_1\cap\Sigma_\ell)\setminus\{\beta_1\}). \]
+Varying $v$ and $w$ one can obtain any element of $\U(\Sigma_2\cap\Sigma_\ell\cap\Delta_1)$ and $\U((\Sigma_1\cap\Sigma_\ell)\setminus\{\beta_1\})$ respectively. This is easy to see by using \eqref{eq:comm-ab-c} repeatedly and the fact that $\U(\Sigma_2^-\cap\Delta_\ell)$ commutes with $\U(\Sigma_\ell)$.
+Now by the Levi decomposition
+\[ {}^v\!\U((\Sigma_1\cap\Sigma_\ell)\setminus\{\beta_1\}) \equiv \U((\Sigma_1\cap\Sigma_\ell)\setminus\{\beta_1\}) \bmod \U(\Sigma_\ell\cap\Delta_2). \]
 Thus we have shown that
-\[ [\U(\Sigma_2^-)\cdot\U(\Delta_{2,\ell}),y] \equiv \U(\Sigma_{1,\ell}\cup\Sigma_{2,\ell}\setminus\{\beta_1\}) \bmod \U(\Sigma_\ell\cap\Delta_2), \]
+\[ [\U(\Sigma_2^-)\cdot\U(\Delta_{2,\ell}),y] \equiv \U((\Sigma_{1,2}\cap\Sigma_\ell)\setminus\{\beta_1\}) \bmod \U(\Sigma_\ell\cap\Delta_2), \]
 and this reduces the problem to the $\rD_{\ell-2}$-subsystem $\Delta_{1,2}$. So we can carry the induction on the rank of the subsystem, and construct for any given $a\in\U(\Sigma_\ell\setminus B)$ an element $b\in\U(\Delta_\ell^-)$ such that $a\in[b,y]\cdot\prod_{\beta\in B}X_\beta\subset[\U(\Delta_\ell^-),y]\cdot\U(B)$.
 
-It remains to note that the roots $\pm\beta_i$ lie inside a maximal root subsystem of type $\rA_1+\ldots+\rA_1+\rD_3$. All such subsystemrs are conjugate under the action of the Weyl group, so there exist an element $w\in W(\Phi)$ such that $w(\beta_1)=\alpha_1$, $w(\beta_2)=\alpha_3$, $w(\beta_3)=\alpha_5$ and so on, so that all of $w(\beta_i)$ lie in $\Delta_\ell^+$.
+It remains to note that the roots $\pm\beta_i$ lie inside a maximal root subsystem of type $\rA_1+\ldots+\rA_1+\rD_3$. All such subsystems are conjugate under the action of the Weyl group, so there exist an element $w\in W(\Phi)$ such that $w(\beta_1)=\alpha_1$, $w(\beta_2)=\alpha_3$, $w(\beta_3)=\alpha_5$ and so on, so that all of $w(\beta_i)$ lie in $\Delta_\ell^+$.
 \end{proof}
 \begin{proof}[Proof of Theorem~\ref{thm:spin-sln-prod}]
 By Theorem~\ref{thm:DennisVaserstein} one has a decomposition
