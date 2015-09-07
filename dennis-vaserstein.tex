@@ -138,18 +138,12 @@ Since $\Delta_s$ is irreducible in all the cases under consideration we get from
 Our next step is to show that $\U(\Sigma_s, R) \subseteq N_{rs}$.
 First of all, notice that by~\cref{lemma:dv-normal} we have that $X_{\alpha_s}(R) \subseteq N_{rs}$.
 In the case $\Phi\neq \rB_\ell, \rC_\ell$ all roots of $\Sigma^+_s$ have the same $s$-shape and length therefore the needed statement follows from~\cref{item-trans2}.
-In the case $\Phi=\rB_\ell$ (resp. $\Phi=\rC_\ell$) the above argument only shows that $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$ (resp. $\U(\Sigma_s^{+<}, R) \subseteq N_{rs}$)
-and a separate argument is needed for the root subgroup corresponding to the sole short (resp. long) root of $\Sigma_s^+$.
- 
-Specializing identity~\eqref{rel:CCF} to the odd orthogonal (resp. symplectic) case we get:
-\begin{align*} \label{rel:CCF-specBC}
-& x_{1,0}(ab) = [x_{1, 2}(a), x_{2, 0}(b)] \cdot x_{1,-2}(-a b^2), \\
-& x_{1,-1}(-ab^2) = x_{-2,1}(ab) \cdot [x_{-2, 2}(a), x_{2, -1}(b)].
-\end{align*}
-The root subgroup $X_{2, 0}(R)$ (resp. $X_{-2,2}(R)$) is contained in $\E(\Delta_s, R) \subseteq N_{rs}$.
-On the other hand, by the above argument we know that the subgroup $X_{1,-2}(R)$ (resp. subgroups $X_{-2,1}(R)$, $X_{2,-1}(R)$) are contained in $N_{rs}$.
-Therefore $X_{1,0}(R) \subseteq N_{rs}$ (resp. $X_{1,-1}(R) \subseteq N_{rs}$).
-Thus in all the cases we have $\U(\Sigma_s, R) \subseteq N_{rs}$.
+In the case $\Phi=\rB_\ell$ the above argument only shows that $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$ and a separate argument is needed for the root subgroup corresponding to the sole short root of $\Sigma_s^+$.
+Specializing identity~\eqref{rel:CCF} we get:
+\begin{equation*} \label{rel:CCF-specBC} x_{1,0}(ab) = [x_{1, 2}(a), x_{2, 0}(b)] \cdot x_{1,-2}(-a b^2) \end{equation*}
+The root subgroup $X_{2, 0}(R)$ is contained in $\E(\Delta_s, R) \subseteq N_{rs}$.
+On the other hand, by the above argument we know that $X_{1,-2}(R) \subseteq N_{rs}$, therefore $X_{1,0}(R) \subseteq N_{rs}$ and $\U(\Sigma_s, R) \subseteq N_{rs}$.
+The case $\Phi=\rC_\ell$ will be analyzed separately below (see~\cref{lemma:DVcaseCl}).
 
 Our ultimate goal is to show the inclusion $\E(\Phi, R, I) \subseteq L_{rs}$. 
 By~\cref{prop:Stepanov} it is enough to prove that $\mathcal{Z}(\Sigma^-_s) \subseteq L_{rs}$.
@@ -161,9 +155,10 @@ Thus, we are left to prove the inclusion $\U(\Sigma^-_r \cap \Sigma^-_s, I) \sub
 
 Just as in the above argument all the cases except $\Phi = \rB_\ell, \rC_\ell$ follow from~\cref{item-trans2}.
 In the case $\Phi=\rB_\ell$ from $x_{0, 1}(-a) = [x_{2,1}(-a), x_{0, 2}(-1)]\cdot x_{-2,1}(a)$ we conclude that
-$$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{t_{0,2}(1)} \cdot X_{-2,1}(I) \subseteq L_{rs} \cdot L_{rs}^{N_{rs}} \cdot L_{rs} \subseteq L_{rs}.$$
-In the case $\Phi=\rC_\ell$ from $x_{}$
-$$X_{-1,1}(I) = X_{-1,1}(I^\indexbox{2}) \cdot X_{-1,1}(2I) \subseteq \cdot $$
+$$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{x_{0,2}(1)} \cdot X_{-2,1}(I) \subseteq L_{rs} \cdot L_{rs}^{N_{rs}} \cdot L_{rs} \subseteq L_{rs},$$
+whence the statement of the theorem follows. \end{proof}
 
-%TODO: finish proof of the theorem
-\end{proof}
+\begin{lemma} \label{lemma:DVcaseCl}
+ 
+\end{lemma}
+
