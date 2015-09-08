@@ -159,6 +159,28 @@ $$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{x_{0,2}(1)} \cdot X_{-2,1}(I
 whence the statement of the theorem follows. \end{proof}
 
 \begin{lemma} \label{lemma:DVcaseCl}
- 
+Let $\Phi=\rC_\ell$ and let $I$ be any ideal satisfying $\sr(I) \leq \ell-1$. Then $X_{-\alpha_1}(R) \subseteq N_{\ell, 1}$.
 \end{lemma}
+\begin{proof}
+Consider the subset $C \subseteq \EP_1(R, I)$ consisting of matrices such that matrix components $v=(g_{i,2})$, $i=2,\ldots, \ell$ form an $I$-unimodular column of height $\ell-1$.
+We are going to show that $C$ satisfies the following properties.
+ \begin{enumerate}
+  \item \label{item-dvc1} For every $g \in \EP_1(R, I)$ there exists $x \in \U(\Sigma_\ell \cap \Delta_1, I)$ such that $xg \in C$.  
+  \item \label{item-dvc2} For every $g \in C$ one can choose $y \in \U(\Sigma_1 \cap \Delta_\ell, I)$ such that $(y g)_{1,2} = 0$.
+ \end{enumerate}
+%TODO: Write proof of these 2 facts. 
+ 
+Now set $A' = \EP_\ell(R, I) \cdot \U(\Sigma_1^- \cap \Sigma_\ell^-, I) \cdot C$.
+Notice that from the first property of $C$ we immediately obtain that $A_{\ell, 1} = A'$.
+Indeed for $g\in \EP_1(R, I)$ we have
+\begin{equation} \EP_\ell(R, I) \cdot \U(\Sigma_1^- \cap \Sigma_\ell^-, I) \cdot g \subseteq 
+ \EP_\ell(R, I)x^{-1}  \cdot \U(\Sigma_1^-, I) \cdot xg \subseteq A'. \end{equation}
 
+On the other hand, from the second property of $C$ we obtain for every $g\in C$ that
+\begin{multline*}
+ \EP_\ell(R, I) \cdot \U(\Sigma_1^- \cap \Sigma_\ell^-, I) \cdot g \subseteq \EP_\ell(R, I) y^{-1} \cdot \U(\Sigma_\ell^-\cap \Sigma_1^-, I)^{y^{-1}} \cdot y g \subseteq \\
+  \subseteq \EP_\ell(R, I) \cdot \U(\Sigma_\ell^-, I) \cdot y g
+\end{multline*}
+It is clear that $(yg)^{x_{2,1}(\xi)} \in \EP_1(R, I)$ hence
+\begin{equation*} A'^{X_{2,1}(R)} \subseteq (\EP_\ell(R, I) \cdot \U(\Sigma_\ell^-, I) \cdot ?) ^ {X_{2,1}(R)} \subseteq \EP_\ell(R, I) \cdot \U(\Sigma_\ell^-, I) \cdot \EP_1(R, I) \subseteq A_{\ell,1}. \end{equation*}
+\end{proof}
