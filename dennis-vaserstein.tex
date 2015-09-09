@@ -12,15 +12,15 @@ Denote by $A_{rs}$ any of the above equal subsets.
 The main result of this subsection is the following theorem which is a relative version of \cite[Lemma~2.1]{ST76} and \cite[Theorem~2.5]{St78}).
 \begin{thm}\label{thm:DennisVaserstein}
 The relative elementary subgroup $\E(\Phi, R, I)$ admits Dennis---Vaserstein decomposition, i.\,e. a decompostion of the form $\E(\Phi, R, I) = A_{rs}$ under the following assumptions on $I$ and $\Phi$.
-\[\begin{array}{l@{\qquad}l@{\qquad}c@{\quad}c@{\qquad}l}
-   & \Phi                                 & s    & r      & \text{ring condition} \\ \hline\vphantom{\Bigl(}
-1. & \rA_\ell,\ \ell\geqslant 2            & 1    & \ell   & \sr(I) \leqslant \ell-1 \\    
-2. & \rB_\ell,\ \ell\geqslant 2            & 1    & \ell   & \sr(I) \leqslant \ell-1 \\
-3. & \rC_\ell,\ \ell \geqslant 2          & 1    & \ell   & \sr(I) \leqslant \ell-1 \\
-4. & \rD_\ell,\ \ell\geqslant 4           & 1    & \ell   & \sr(I) \leqslant \ell-2 \\ 
-5. & \rD_\ell,\ \ell\geqslant 4           & \ell & \ell-1 & \sr(I) \leqslant 2      \\
-6. & \rE_\ell,\ \ell=6,7                  & \ell & 2      & \sr(I) \leqslant \ell-3 \\ 
-7. & \rE_\ell,\ \ell=6,7                  & \ell & 1      & \asr(I)\leqslant \ell-2 \end{array}\]
+\[\begin{array}{l@{\qquad}c@{\quad}c@{\qquad}l}
+\Phi                                 & s    & r      & \text{ring condition} \\ \hline\vphantom{\Bigl(}
+\rA_\ell,\ \ell\geqslant 2            & 1    & \ell   & \sr(I) \leqslant \ell-1 \\    
+\rB_\ell,\ \ell\geqslant 2            & 1    & \ell   & \sr(I) \leqslant \ell-1 \\
+\rC_\ell,\ \ell \geqslant 2          & 1    & \ell   & \sr(I) \leqslant \ell-1 \\
+\rD_\ell,\ \ell\geqslant 4           & 1    & \ell   & \sr(I) \leqslant \ell-2 \\ 
+\rD_\ell,\ \ell\geqslant 4           & \ell & \ell-1 & \sr(I) \leqslant 2      \\
+\rE_\ell,\ \ell=6,7                  & \ell & 2      & \sr(I) \leqslant \ell-3 \\ 
+\rE_\ell,\ \ell=6,7                  & \ell & 1      & \asr(I)\leqslant \ell-2 \end{array}\]
 \end{thm}
 Consider the following two submonoids of $\E(\Phi, R)$:
 \[ N_{rs} = \left\{ g\in \E(\Phi, R)\ \middle|\ g \cdot A_{rs} \cdot g^{-1} \subseteq A_{rs} \right\}, \quad
@@ -91,28 +91,26 @@ Using the language of weight diagrams subsets $\Lambda(\pi')$, $\Gamma$ can be v
 After removing all bonds marked $r$ the diagram of $\pi$ splits into several connected components.
 The subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the component containg the vertex $\varpi_s$.
 In turn, the set $\Gamma$ corresponds to vertices of $\Lambda(\pi')$ incident to any of the removed bonds.
-%Calculating with weight diagrams we get the number of weights in $\Lambda(\pi')$ and $\Gamma$ (see~Figure~\ref{fig:table}).
 
 Notice that $\Delta_s$ has type either $\rD_\ell$ (in the case $\Phi=\rE_\ell$, $(r,s)=(2,\ell)$) or $\rA_\ell$ (otherwise).
-The number of elements in $\Lambda(\pi')$, $\Gamma$ are listed in Figure~\ref{fig:table}.
-Clearly, in all cases $\pi'$ is the natural representation of $\G(\Delta_s, R)$.
+From a consideration of weight diagrams we determine the number of elements in $\Lambda(\pi')$ and $\Gamma$ (see~Figure~\ref{fig:table}).
+It is clear that in all cases $\pi'$ is the natural representation of $\G(\Delta_s, R)$.
 
-Another advantage of weight diagrams is that they allow one to visualize the action of elementary root unipotents $x_\alpha(\xi)$ on $v = \sum_{\lambda \in \Lambda(\pi)} v_\lambda e_\lambda \in V$ described in~\cref{lemma:Matsumoto}.
+Yet another advantage of weight diagrams is that they allow one to visualize the action of elementary root unipotents $x_\alpha(\xi)$ on $v = \sum_{\lambda \in \Lambda(\pi)} v_\lambda e_\lambda \in V$ described in~\cref{lemma:Matsumoto}.
 Such description for microweight $\pi$ and $\alpha = \pm\alpha_i\in \pm\Pi$ is particularly simple: 
 for every bond of the diagram joining vertices $\lambda$ and $\lambda + \alpha$ the element $x_{\alpha}(\xi)$ adds $\pm \xi \cdot v_\lambda$ to $v_{\lambda+\alpha}$.
 See~\cite[Section~3.4]{PSV98} for more detailed description.
 
-
 \begin{figure}
-\[\begin{array}{l @{\qquad} l @{\qquad} l @{\qquad} c @{\quad} c @{\qquad} l @{\qquad} l}
-   & \Phi                                 & (s,r)         & |\Lambda(\pi)| & \text{type of $\pi$} & |\Lambda(\pi')|& |\Gamma|  \\ \hline\vphantom{\Bigl(}
-1. & \rA_\ell,\ \ell\geqslant 2           & (1,\ell)      & \ell+1         & \text{natural}       & \ell           & 1  \\     
-2. & \rB_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell+1        & \text{natural}       & \ell           & 1  \\     
-3. & \rC_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell          & \text{natural}       & \ell           & 1  \\
-4. & \rD_\ell,\ \ell\geqslant 4           & (1,\ell)      & 2\ell          & \text{natural}       & \ell           & 2  \\ 
-5. & \rD_\ell,\ \ell\geqslant 4           & (\ell,\ell-1) & 2^{\ell-1}     & \text{half-spinor}   & \ell           & \ell-2  \\
-6. & \rE_\ell,\ \ell=6,7                  & (\ell,2)      & 27, 56         & \text{minimal}       & \ell           & 3       \\ 
-7. & \rE_\ell,\ \ell=6,7                  & (\ell,1)      & 27, 56         & \text{minimal}       & 2(\ell-1)      & \ell-1  \end{array}\]
+\[\begin{array}{l @{\qquad} l @{\qquad} c @{\quad} c @{\qquad} l @{\qquad} l}
+\Phi                                 & (s,r)         & |\Lambda(\pi)| & \text{type of $\pi$} & |\Lambda(\pi')|& |\Gamma|  \\ \hline\vphantom{\Bigl(}
+\rA_\ell,\ \ell\geqslant 2           & (1,\ell)      & \ell+1         & \text{natural}       & \ell           & 1  \\     
+\rB_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell+1        & \text{natural}       & \ell           & 1  \\     
+\rC_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell          & \text{natural}       & \ell           & 1  \\
+\rD_\ell,\ \ell\geqslant 4           & (1,\ell)      & 2\ell          & \text{natural}       & \ell           & 2  \\ 
+\rD_\ell,\ \ell\geqslant 4           & (\ell,\ell-1) & 2^{\ell-1}     & \text{half-spinor}   & \ell           & \ell-2  \\
+\rE_\ell,\ \ell=6,7                  & (\ell,2)      & 27, 56         & \text{minimal}       & \ell           & 3       \\ 
+\rE_\ell,\ \ell=6,7                  & (\ell,1)      & 27, 56         & \text{minimal}       & 2(\ell-1)      & \ell-1  \end{array}\]
  \caption[Table]{List of representation involved in the proof of~\cref{thm:DennisVaserstein}.} \label{fig:table}
 \end{figure}
 
@@ -128,26 +126,25 @@ To prove the second assumption of~\cref{lemma:Stein_reduction} notice that by th
 By the above discussion we may assume that the assertion of~\cref{lemma:Stein_reduction} holds.
 Set $\Pi' = \Pi \setminus \{\alpha_s\}$.
 From~\cref{lemma:dv-normal} and \cref{lemma:Stein_reduction} it follows that $X_\alpha(R) \subseteq N_{rs}$ for $\alpha \in \Pi' \cup -\Pi'$.
-Since $\Delta_s$ is irreducible in all the cases under consideration we get from~\cref{item-egen} that $\E(\Delta_s, R) \subseteq N_{rs}$.
+Since $\Delta_s$ is irreducible we get from~\cref{item-egen} that $\E(\Delta_s, R) \subseteq N_{rs}$.
 
 Our next step is to show that $\U(\Sigma_s, R) \subseteq N_{rs}$.
-First of all, notice that by~\cref{lemma:dv-normal} we have that $X_{\alpha_s}(R) \subseteq N_{rs}$.
-For $\Phi\neq \rB_\ell, \rC_\ell$ all roots of $\Sigma^+_s$ have the same $s$-shape and length hence the assertion follows from~\cref{item-trans2}.
+First of all, notice that by~\cref{lemma:dv-normal} we have the inclusion $X_{\alpha_s}(R) \subseteq N_{rs}$.
+In all cases under consideration except $\Phi=\rC_\ell$ we have $m_s(\alpha_{\mathrm{max}})=1$.
+Therefore, for $\Phi\neq \rB_\ell, \rC_\ell$ all the roots of $\Sigma^+_s$ have the same $s$-shape and length and the assertion follows from~\cref{item-trans2}.
 
-In the case $\Phi=\rB_\ell$ the above reasoning only shows that $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$ and a separate argument is needed for the root subgroup corresponding to the sole short root of $\Sigma_s^+$.
+In the case $\Phi=\rB_\ell$ the above argument only proves that $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$ and a separate treatment is needed for the sole root subgroup $X_{1,0}(R)$ corresponding to the short root of $\Sigma_s^+$.
 Specializing identity~\eqref{rel:CCF} we get:
 \begin{equation*} \label{rel:CCF-specBC} x_{1,0}(ab) = [x_{1, 2}(a), x_{2, 0}(b)] \cdot x_{1,-2}(-a b^2) \end{equation*}
-The root subgroup $X_{2, 0}(R)$ is contained in $\E(\Delta_s, R) \subseteq N_{rs}$.
-On the other hand, by the above argument we know that $X_{1,-2}(R) \subseteq N_{rs}$, therefore $X_{1,0}(R) \subseteq N_{rs}$ and $\U(\Sigma_s, R) \subseteq N_{rs}$.
+We already know that $X_{2, 0}(R)$ and $X_{1,-2}(R)$ are contained in $\E(\Delta_s, R) \subseteq N_{rs}$ hence $X_{1,0}(R) \subseteq N_{rs}$, as claimed.
 
 We defer the proof in the case $\Phi=\rC_\ell$ until we prove~\cref{lemma:DVcaseCl} below.
 
 Our ultimate goal is to show the inclusion $\E(\Phi, R, I) \subseteq L_{rs}$. 
 By~\cref{prop:Stepanov} it is enough to prove that $\mathcal{Z}(\Sigma^-_s) \subseteq L_{rs}$.
-In fact, in view of formula~\eqref{rel:NnormL} and the previous part of the proof it suffices to show only that $\mathcal{X} \subseteq L_{rs}$.
-It is obvious that $\EP_r(R, I) \subseteq L_{rs}$.
-Since $\EP_s(R, I) \subseteq \EP_s(R) \subseteq N_{rs}$ we also conclude that $\EP_s(R, I) \subseteq L_{rs}$.
-Indeed, for $g \in s\EP_s(R,I)$ one has
+In view of formula~\eqref{rel:NnormL} and the previous part of the proof it suffices to show only that $\mathcal{X} \subseteq L_{rs}$.
+It is clear that $\EP_r(R, I) \subseteq L_{rs}$.
+Since $\EP_s(R, I) \subseteq \EP_s(R) \subseteq N_{rs}$ we also conclude that $\EP_s(R, I) \subseteq L_{rs}$, indeed, for $g \in \EP_s(R,I)$ one has
 \[ g \cdot A_{rs} \subseteq g \cdot {A_{rs}}^g = A_{rs} \cdot g = A_{rs}. \]
 Thus, we are left to prove the inclusion $\U(\Sigma^-_r \cap \Sigma^-_s, I) \subseteq L_{rs}$.
 
