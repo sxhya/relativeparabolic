@@ -58,10 +58,11 @@ A priori our definition of condition $\ASR_n(I)$ depends on $R$.
 Below we will see that, in fact, there is no such dependence.
 \begin{lemma}\label{lemma:relative-asr-unimod}
 For a commutative ring $R$ and an ideal $I \leq R$ the following statements are equivalent:
-\begin{enumerate} \item\label{asr-j-stable} Any row $a\in{}^{n+1}\!I$ is $\mathfrak{J}$-stable;
+\begin{lemlist} 
+\item\label{asr-j-stable} Any row $a\in{}^{n+1}\!I$ is $\mathfrak{J}$-stable;
 \item\label{asr-bak-like} For any $I$-unimodular row $(b,a_1,\ldots,a_n,d)\in\Umd(n+2,I)$ there exist $c_1,\ldots,c_n\in I$ 
  such that $(b+b',a_1+c_1d,\ldots,a_n+c_nd)$ is $I$-unimodular for any $b'\in J$, where $J=I \cdot a_1 + \ldots + I \cdot a_n + I \cdot d\leq I$.
-\end{enumerate} 
+\end{lemlist} 
 \end{lemma}
 \begin{proof}
 Assume first that any row $a\in{}^{n+1}\!I$ is $\mathfrak{J}$-stable. 
@@ -79,8 +80,8 @@ We get that $1 + b' \in \mathfrak{m}$ for $b'=td\in J$ which contradicts unimodu
 This shows that no such $\mathfrak{m}$ may exist and, therefore, $\mathfrak{J}(a'_1,\ldots,a'_n)=\mathfrak{J}(a_1,\ldots,a_n,d)$.
 \end{proof}
 
-Obviously, the second statement of Lemma~\ref{lemma:relative-asr-unimod} does not depend on $R$, hence, as suggested by the notation, $\asr(I)$ is independent of $R$.
-As another corollary of Lemma~\ref{lemma:relative-asr-unimod} we obtain the following reformulation of the absolute stable rank condition $\ASR_n(R)$.
+Obviously, the second statement of~\cref{lemma:relative-asr-unimod} does not depend on $R$, hence, as suggested by the notation, $\asr(I)$ is independent of $R$.
+As another corollary of~\cref{lemma:relative-asr-unimod} we obtain the following reformulation of the absolute stable rank condition $\ASR_n(R)$.
 \begin{cor}[A.~Bak, {cf.~\cite[\S~1]{Pl98}}] For a commutative ring $R$ the following statements are equivalent:
 \begin{enumerate}
  \item\label{asr_Stein} $R$ satisfies $\ASR_n(R)$;
@@ -123,7 +124,7 @@ By the definition of the relative stable rank we can find a matrix $b\in \M(\ell
 such that the upper half $v''_+$ of the vector $v''= g(b) \cdot v'$, where 
 $g(b)=\left(\begin{smallmatrix} e_\ell & p \cdot b \\ 0 & e_{\ell} \end{smallmatrix}\right)$, is $I$-unimodular.
 It is clear that $v''_+ = v'_+ + pb v'_- = v_+ + pbd v_-$. 
-Define matrix $a \in M(\ell, I)$ by 
+Consider the matrix $a \in M(\ell, I)$ defined by 
 \begin{align*}
  & a_{ij} = b_{ij} v_{-j} + b_{ji} v_{-i},\ j\neq i,\\
  & a_{ii} = b_{ii} v_{-i} - \sum\limits_{j=1, j\neq i}^\ell b_{ji} v_{-j}.
@@ -134,12 +135,12 @@ On the other hand, direct calculation shows that $(g(a)\cdot v)_+=v_+ + pav_- = 
 %\left(b_{kk}v_{-k} - \sum\limits_{i=1,\ i\neq k}^\ell b_{ik} v_{-i}\right)v_{-k} = \sum\limits_{i=1}^\ell b_{ki} v_{-i}^2 = (bdv_-)_k$$
 
 \textsc{Case $\Phi=\rD_\ell$.} Denote by $J$ the ideal of $R$ spanned by the components of $v_{-}$. Clearly, $J \subseteq I$.
-By Proposition~\ref{prop:sr_properties} $\sr(I/J) \leqslant \ell-1$, therefore
+By~\cref{prop:sr_properties} $\sr(I/J) \leqslant \ell-1$, therefore
 the elementary group $\E(\rA_{\ell-1}, R/J, I/J)$ acts transitively on $\Ums(\ell, I/J)$ (see~\cite[Theorem~2.3c]{Va69}). 
 This implies the existence of an element $h\in \E(\Delta_\ell, R, I)$ such that the vector $v' = h \cdot v$ satisfies $v'_i \equiv \delta_{i1} \pmod J$ for $i=1,\ldots, \ell$.
 
 Clearly, $(v'_1,v'_{-\ell},\ldots, v'_{-1})$ is $I$-unimodular.
-Applying statement~\ref{asr-bak-like} of Lemma~\ref{lemma:relative-asr-unimod} we find $c_2,\ldots, c_\ell\in I$ such that for $v''= \prod_{i=2}^{\ell}x_{-i, -1}(c_i)\cdot v'$ one has
+Applying~\cref{asr-bak-like} we find $c_2,\ldots, c_\ell\in I$ such that for $v''= \prod_{i=2}^{\ell}x_{-i, -1}(c_i)\cdot v'$ one has
 $(v''_1, v''_{-\ell},\ldots, v''_{-2})\in\Ums(\ell+1, I)$.
 Now, applying the condition $\sr(I) \leqslant \ell-1$ once again we find
 $d_1,d_3,\ldots, d_{\ell}\in I$ such that the entries $(v'''_1, v'''_{-\ell},\ldots, v'''_{-3})$
@@ -154,10 +155,10 @@ and the assertion of the lemma immediately follows from Levi decomposition. \end
 \begin{lemma} \label{lemma:uraction} 
 Let $\Phi=\rA_\ell, \rD_\ell$. Denote by $\pi$ the natural representation of $\G(\Phi, R)$ on $V=R^n$, $n=\ell+1,2\ell$.
 Assume that one of the following conditions holds:
-\begin{itemize}
- \item $\Phi=\rA_\ell$, $\Gamma=\{ k+1, \ldots, \ell+1\} \subset \Lambda(\pi)$ and $\sr(I)\leq k\leq \ell$;
- \item $\Phi=\rD_\ell$, $\Gamma=\{-\ell,\ldots, -2, -1\} \subset \Lambda(\pi)$ and $\asr(I)\leq \ell-1$. 
-\end{itemize}
+\begin{lemlist}
+ \item \label{item:uractionA} $\Phi=\rA_\ell$, $\Gamma=\{ k+1, \ldots, \ell+1\} \subset \Lambda(\pi)$ and $\sr(I)\leq k\leq \ell$;
+ \item \label{item:uractionD} $\Phi=\rD_\ell$, $\Gamma=\{-\ell,\ldots, -2, -1\} \subset \Lambda(\pi)$ and $\asr(I)\leq \ell-1$. 
+\end{lemlist}
 Then for $g\in \G(\Phi, R, I)$ there exist $x\in \U(\Phi^+, I)$, $y\in \U(\Phi^-, I)$ such that $(yxg \cdot v^+)_\lambda = 0$ for $\lambda\in \Gamma$.
 \end{lemma}
 \begin{proof} Denote by $v$ the image of the highest weight vector $v^+$ under $g$.
@@ -168,8 +169,8 @@ the upper $k$ components of $v'= x \cdot v$ form an $I$-unimodular column.
 Now, to obtain zeroes at desired positions it remains to subtract from $v'_{k+1},\ldots, v'_{\ell+1}$ suitable multiples of $v'_1,\ldots v'_k$.
 Clearly, this operation corresponds to the left multiplication by some element $y\in\U(\Sigma_k^-, I)$.
 
-\textsc{Case $\Phi=\rD_\ell$.} From the proof of Lemma~\ref{lemma:asrUnip} it follows that there exists $h_1 \in \EP_\ell(R, I)$ such that for $v'=h_1\cdot v$ one has $v'_2=v'_1-1\in I$.
-Clearly, for $v'' = z_{-\alpha\ssub{2}}(-v'_2, 1)\cdot v'$ one has $v''_1=1$ hence by Chevalley---Matsumoto lemma there exists $h_2 \in \U(\Phi^-, I)$ such that the element
+\textsc{Case $\Phi=\rD_\ell$.} From the proof of~\cref{item:asrUnipD} it follows that there exists $h_1 \in \EP_\ell(R, I)$ such that for $v'=h_1\cdot v$ one has $v'_2=v'_1-1\in I$.
+Clearly, for $v'' = z_{-\alpha\ssub{2}}(-v'_2, 1)\cdot v'$ one has $v''_1=1$ hence by~\cref{lemma:Chevalley-Matsumoto} there exists $h_2 \in \U(\Phi^-, I)$ such that the element
 $g'=h_2 \cdot z_{-\alpha\ssub{2}}(-v'_2, 1) \cdot h_1 \cdot g$ fixes $v^+$. 
 Using Levi decomposition we can write $g'=h \cdot y \cdot x \cdot g$ for some $y\in\U(\Sigma^-_\ell, I)$, $x \in \U(\Sigma^+_\ell, I)$, $h\in\E(\Delta_\ell, R, I)$.
 It is clear that $x$, $y$ are the desired elements.

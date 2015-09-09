@@ -1,6 +1,6 @@
 Let $\Phi$ be an irreducible root system of rank $\ell$.
 In what follows, $r$ and $s$ are two distinct integers such that $1 \leq r, s \leq \ell$.
-From Levi decomposition~\ref{rel:Levi-decomp} it follows that the following four subsets of $\E(\Phi, R, I)$ are equal:
+From Levi decomposition~\eqref{rel:Levi-decomp} it follows that the following four subsets of $\E(\Phi, R, I)$ are equal:
 \begin{multline*}
 \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \\
 = \U(\Sigma_r, I)\cdot \U(\Sigma^-_r, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \hspace{5em} \\
@@ -49,7 +49,7 @@ Assume, for example, the latter. It remains to notice that $\U(\Sigma_r^- \cap \
 \item \label{item-dvu2} For any $\xi\in R$ one has $\U(\Phi^+\setminus\{\alpha_i\}, I)^{x_{-\alpha\ssub{i}}(\xi)} \subseteq \U(\Phi^+, I)$.
 \item \label{item-dvu3} $\U(\Phi^+, I)\cdot \U(\Phi^-, I) \subseteq \U(\Phi^+\setminus \{\alpha_i\}, I) \cdot \U(\Phi^-, I) \cdot X_{\alpha\ssub{i}}(I) \cdot X_{-\alpha\ssub{i}}(I)$.
 \end{thmlist} \end{lemma}
-\begin{proof} The first two statements easily follow from Chevalley commutator formula~\ref{rel:CCF} while the third one is a formal consequence of the first two. \end{proof}
+\begin{proof} The first two statements easily follow from Chevalley commutator formula~\eqref{rel:CCF} while the third one is a formal consequence of the first two. \end{proof}
 
 %The following lemma is a relative version of the main reduction used by M.~Stein in~\cite{St78}
 %for the proof of the absolute Dennis--Vaserstein decomposition.
@@ -100,8 +100,11 @@ the weight diagram of $(V, \pi)$ is just a graph whose vertices are in one-to-on
 Two vertices $\lambda$, $\mu$ of the diagram are joined by a bond marked $i$ iff $\lambda-\mu = \alpha_i$.
 
 The authors of~\cite{PSV98} put the vertex corresponding to the highest weight $\varpi_s$ of $\pi$ in the upper-left corner of the weight diagram.
-Therefore the subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the upper-left connected component of the graph obtained by removing all bonds marked $r$.
+Thus the subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the upper-left connected component of the graph obtained by removing all bonds marked $r$.
 In turn, the set $\Gamma$ corresponds to the vertices of $\Lambda(\pi')$ incident to the removed bonds.
+
+The action of elementary root unipotents $x_\alpha(\xi)$ on $V$ also can be visualized using weight diagrams.
+
 \end{rem}
 
 \begin{figure}
@@ -120,12 +123,12 @@ In turn, the set $\Gamma$ corresponds to the vertices of $\Lambda(\pi')$ inciden
 Now let $B$ be the set of all elements $g$ of $\E(\Delta_r,R, I)$ such that $(g \cdot v^+)_\lambda = 0$ for all $\lambda\in\Gamma$.
 Applying~\cref{lemma:uraction} to the subsystem $\Delta_r$ we find
 $x\in\U(\Delta_r^+, I)$, $y\in \U(\Delta_r^-, I)$ such that $yx\cdot g \in B$.
-This proves the first assumption of Lemma~\ref{lemma:Stein_reduction}, indeed:
+This proves the first assumption of~\cref{lemma:Stein_reduction}, indeed:
 \[ \U(\Sigma^+_r, I) \cdot \U(\Sigma^-_r, I) \cdot g = \U(\Sigma^+_r, I) x^{-1} \cdot \U(\Sigma^-_r, I)^{x^{-1}} y^{-1} (yxg) \subseteq \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B. \]
-To prove the second assumption of Lemma~\ref{lemma:Stein_reduction} notice that by the definition of $\Gamma$ and by~\cref{lemma:Matsumoto} for any $s\in I$, $ g\in B$ one has $x_{-\alpha_r}(s) \cdot g \cdot v^+ = g \cdot v^+$ hence
+To prove the second assumption of~\cref{lemma:Stein_reduction} notice that by the definition of $\Gamma$ and by~\cref{lemma:Matsumoto} for any $s\in I$, $ g\in B$ one has $x_{-\alpha_r}(s) \cdot g \cdot v^+ = g \cdot v^+$ hence
 \[ X_{-\alpha\ssub{r}}(I)^{B} \subseteq \U(\Phi^-, I) \cap \Stab(v^+) \subseteq \U(\Delta_s^-, I) \subseteq \EP_s(R, I). \]
 
-\begin{proof}[Proof of Theorem~\ref{thm:DennisVaserstein}]
+\begin{proof}[Proof of~\cref{thm:DennisVaserstein}]
 By the above discussion we may assume that the assertion of~\cref{lemma:Stein_reduction} holds.
 Set $\Pi' = \Pi \setminus \{\alpha_s\}$.
 From~\cref{lemma:dv-normal} and \cref{lemma:Stein_reduction} it follows that $X_\alpha(R) \subseteq N_{rs}$ for $\alpha \in \Pi' \cup -\Pi'$.
@@ -181,7 +184,7 @@ Direct calculation using~\cref{lemma:Chevalley-Matsumoto} shows that $(yg)^{x_{2
  as claimed.
 \end{proof}
 
-\begin{proof}[End of proof of Theorem~\ref{thm:DennisVaserstein}]
+\begin{proof}[End of the proof of~\cref{thm:DennisVaserstein}]
 In the remaining case $\Phi=\rC_\ell$ we conclude from~\cref{lemma:dv-normal,lemma:Stein_reduction,lemma:DVcaseCl} that $X_{\pm \alpha_i}(R) \subseteq N_{\ell,1}$, $1\leq i\leq \ell$.
 Therefore, by~\cref{lemma:weylfacts} we get that $\widetilde{W}(\Phi) \subseteq N_{\ell,1}$ and hence $\mathcal{X} \subseteq L_{\ell,1}$ as required.
 \end{proof}
