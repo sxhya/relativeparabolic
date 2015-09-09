@@ -109,26 +109,29 @@ Let $v\in V=R^{2\ell}$ be a vector of the natural representation of $\G(\rD_\ell
 Denote by $v_+$ and $v_-$ the upper and the lower halves of $v$, i.e. $v_+=(v_1,\ldots, v_\ell)^t$, $v_-=(v_{-\ell},\ldots, v_{-1})^t$.
 \begin{lemma}\label{lemma:asrUnip}
 Then for any $I$-unimodular column $v=(v_+, v_-)^t\in\Ums(2\ell, I)$ there exists $g\in\U(\Sigma^+_\ell, I) \leq \G(\Phi, R, I)$ such that $(g \cdot v)_+ \in \Ums(\ell, I)$ under the following assumptions on $\Phi$ and $I$.
-\begin{thmlist}
+\begin{lemlist}
 \item \label{item:asrUnipC} $\Phi=\rC_\ell$ and $\sr(I) \leqslant \ell$;
 \item \label{item:asrUnipD} $\Phi=\rD_\ell$ and $\asr(I)\leqslant \ell -1$.
-\end{thmlist}
+\end{lemlist}
 \end{lemma}
 \begin{proof} 
 \textsc{Case $\Phi=\rC_\ell$.}
+Denote by $p$ the matrix of size $\ell$ such that its only nonzero entries equal $1$ and are located on the skew-diagonal, i.\,e. $p_{ij}=(\delta_{i, \ell-j+1})$. 
 Set $d =\mathrm{diag}(v_{-\ell},\ldots,v_{-1}).$
-It is easy to see that the column $$v'=(v_1,\ldots,v_\ell, v_{-\ell}^2,\ldots,v_{-1}^2)^t$$ is also $I$-unimodular.
+Notice that the column $$v'=(v_1,\ldots,v_\ell, v_{-\ell}^2,\ldots,v_{-1}^2)^t$$ is also $I$-unimodular.
 By the definition of the relative stable rank we can find a matrix $b\in \M(\ell,I)$
-such that the upper half $v''_+$ of the vector $v''= g \cdot v'$, $g=\left(\begin{smallmatrix} e_\ell & b \\ 0 & e_{\ell} \end{smallmatrix}\right)$ is $I$-unimodular.
-It is clear that $v''_+ = v'_+ + b v'_- = v_+ + bd v_-$. Define matrix $a \in M(\ell, I)$ by 
-$$a_{ij} = b_{ij} v_{-j} + b_{ji} v_{-i},\ a_{ii} = b_{ii} v_{-i} - \sum\limits_{j\neq i} b_{ji} v_{-j}. $$
-Direct calculation shows that $v_+ + (bd)v_- = v_+ + av_-$.
-
-%Denote by $p$ the matrix of size $\ell$ such that its only nonzero entries equal $1$ and are located on the skew-diagonal, i.\,e. $p_{ij}=(\delta_{i, \ell-j+1})$.
-%Notice that if we could choose $b$ to be persymmetric (i.\,e. such that $(pb)^t=pb$) the assertion of the lemma would follow. Indeed, in such a case $g$ would lie in $\U(\Sigma_\ell, I)$.
-%Choose a diagonal matrix $d' \in \M(\ell, R)$ such that $du^- = -(bd)^tu^-$ and set $a = bd + (bd)^t - d'.$
-%Then obviously, $u^++pa\cdot u^-=u^++p(bd)\cdot u^-$, $a=a^t\in \M(n,I)$.
-%Остаётся воспользоваться замечанием~\ref{UnitarySpecialCases} и леммой~\ref{unipAction}.
+such that the upper half $v''_+$ of the vector $v''= g(b) \cdot v'$, where 
+$g(b)=\left(\begin{smallmatrix} e_\ell & p \cdot b \\ 0 & e_{\ell} \end{smallmatrix}\right)$, is $I$-unimodular.
+It is clear that $v''_+ = v'_+ + pb v'_- = v_+ + pbd v_-$. 
+Define matrix $a \in M(\ell, I)$ by 
+\begin{align*}
+ & a_{ij} = b_{ij} v_{-j} + b_{ji} v_{-i},\ j\neq i,\\
+ & a_{ii} = b_{ii} v_{-i} - \sum\limits_{j=1, j\neq i}^\ell b_{ji} v_{-j}.
+\end{align*}
+It is clear that the matrix $pa$ is persymmetric and that $g(a) \in \U(\Sigma_\ell, I)$. 
+On the other hand, direct calculation shows that $(g(a)\cdot v)_+=v_+ + pav_- = v_+ + pbdv_- = v''_+ \in \Ums(\ell, I)$.
+%$$(av_-)_k = \sum\limits_{i=1,\ i\neq k}^\ell \left( b_{ki} v_{-i} + b_{ik} v_{-k} \right)v_{-i}  +
+%\left(b_{kk}v_{-k} - \sum\limits_{i=1,\ i\neq k}^\ell b_{ik} v_{-i}\right)v_{-k} = \sum\limits_{i=1}^\ell b_{ki} v_{-i}^2 = (bdv_-)_k$$
 
 \textsc{Case $\Phi=\rD_\ell$.} Denote by $J$ the ideal of $R$ spanned by the components of $v_{-}$. Clearly, $J \subseteq I$.
 By Proposition~\ref{prop:sr_properties} $\sr(I/J) \leqslant \ell-1$, therefore

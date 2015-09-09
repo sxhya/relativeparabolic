@@ -18,13 +18,13 @@ The main result of this subsection is the following theorem which is a relative 
 The relative elementary subgroup $\E(\Phi, R, I)$ admits Dennis---Vaserstein decomposition under the following assumptions on $I$.
 \[\begin{array}{l@{\qquad}l@{\qquad}c@{\quad}c@{\qquad}l}
    & \Phi                                 & s    & r      & \text{ring condition} \\ \hline\vphantom{\Bigl(}
-1. & \rA_\ell,\ \ell\geqslant 2            & 1    & \ell   & \sr(I) \leqslant \ell-1                         \\    
-2. & \rB_\ell,\ \ell\geqslant 2            & 1    & \ell   & \sr(I) \leqslant \ell-1                         \\
-3. & \rC_\ell,\ \ell \geqslant 2          & 1    & \ell   & \sr(I) \leqslant \ell-1,\ 2I+I^{\indexbox{2}}=I \\
-4. & \rD_\ell,\ \ell\geqslant 4           & 1    & \ell   & \sr(I) \leqslant \ell-2                         \\ 
-5. & \rD_\ell,\ \ell\geqslant 4           & \ell & \ell-1 & \sr(I) \leqslant 2                              \\
-6. & \rE_\ell,\ \ell=6,7                  & \ell & 2      & \sr(I) \leqslant \ell-3                         \\ 
-7. & \rE_\ell,\ \ell=6,7                  & \ell & 1      & \asr(I)\leqslant \ell-2                         \end{array}\]
+1. & \rA_\ell,\ \ell\geqslant 2            & 1    & \ell   & \sr(I) \leqslant \ell-1 \\    
+2. & \rB_\ell,\ \ell\geqslant 2            & 1    & \ell   & \sr(I) \leqslant \ell-1 \\
+3. & \rC_\ell,\ \ell \geqslant 2          & 1    & \ell   & \sr(I) \leqslant \ell-1 \\
+4. & \rD_\ell,\ \ell\geqslant 4           & 1    & \ell   & \sr(I) \leqslant \ell-2 \\ 
+5. & \rD_\ell,\ \ell\geqslant 4           & \ell & \ell-1 & \sr(I) \leqslant 2      \\
+6. & \rE_\ell,\ \ell=6,7                  & \ell & 2      & \sr(I) \leqslant \ell-3 \\ 
+7. & \rE_\ell,\ \ell=6,7                  & \ell & 1      & \asr(I)\leqslant \ell-2 \end{array}\]
 \end{thm}
 Consider the following two submonoids of $\E(\Phi, R)$:
 \[ N_{rs} = \left\{ g\in \E(\Phi, R)\ \middle|\ g \cdot A_{rs} \cdot g^{-1} \subseteq A_{rs} \right\}, \quad
@@ -76,13 +76,9 @@ Together with the third statement of~\cref{lemma:dv_unipotent} this implies that
 \begin{equation*} \label{rel:sred}
 A = \U(\Phi^+\setminus\{\alpha_r\}, I) \cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).
 \end{equation*}
-%Consequently, from the second statement of~\cref{lemma:dv_unipotent} it follows that
-%\begin{equation*} \label{rel:linv} X_{-\alpha\ssub{r}}(I) \cdot A \subseteq \U(\Phi^+, I) \cdot X_{-\alpha\ssub{r}}(I) \cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I) = A. \end{equation*}
 Consequently, since $[B, X_{-\alpha_r}(R)] \subseteq \U(\Sigma_r^-, R) \cap \E(\Phi, R, I) = \U(\Sigma_r^-, I)$ we get that:
 \begin{equation*} \label{rel:ninv} A^{X_{-\alpha\ssub{r}}(R)} = \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B ^{X_{-\alpha\ssub{r}}(R)} \cdot \EP_s(R, I) = A, \end{equation*}
-which implies the assertion of the lemma.
-%Clearly, the assertion of the lemma follows from~\ref{rel:linv}--\ref{rel:ninv}.
-\end{proof}
+which implies the assertion of the lemma. \end{proof}
 
 Let us construct a set $B$ satisfying the assumptions of \cref{lemma:Stein_reduction} explicitly.
 
@@ -137,20 +133,22 @@ Since $\Delta_s$ is irreducible in all the cases under consideration we get from
 
 Our next step is to show that $\U(\Sigma_s, R) \subseteq N_{rs}$.
 First of all, notice that by~\cref{lemma:dv-normal} we have that $X_{\alpha_s}(R) \subseteq N_{rs}$.
-In the case $\Phi\neq \rB_\ell, \rC_\ell$ all roots of $\Sigma^+_s$ have the same $s$-shape and length therefore the needed statement follows from~\cref{item-trans2}.
-In the case $\Phi=\rB_\ell$ the above argument only shows that $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$ and a separate argument is needed for the root subgroup corresponding to the sole short root of $\Sigma_s^+$.
+In cases $\Phi\neq \rB_\ell, \rC_\ell$ all roots of $\Sigma^+_s$ have the same $s$-shape and length therefore the needed statement follows from~\cref{item-trans2}.
+We defer the proof in the case $\Phi=\rC_\ell$ until we prove a separate lemma (see~\cref{lemma:DVcaseCl} below).
+
+In the case $\Phi=\rB_\ell$ the above reasoning only shows that $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$ and a separate argument is needed for the root subgroup corresponding to the sole short root of $\Sigma_s^+$.
 Specializing identity~\eqref{rel:CCF} we get:
 \begin{equation*} \label{rel:CCF-specBC} x_{1,0}(ab) = [x_{1, 2}(a), x_{2, 0}(b)] \cdot x_{1,-2}(-a b^2) \end{equation*}
 The root subgroup $X_{2, 0}(R)$ is contained in $\E(\Delta_s, R) \subseteq N_{rs}$.
 On the other hand, by the above argument we know that $X_{1,-2}(R) \subseteq N_{rs}$, therefore $X_{1,0}(R) \subseteq N_{rs}$ and $\U(\Sigma_s, R) \subseteq N_{rs}$.
-The case $\Phi=\rC_\ell$ will be analyzed separately below (see~\cref{lemma:DVcaseCl}).
 
 Our ultimate goal is to show the inclusion $\E(\Phi, R, I) \subseteq L_{rs}$. 
 By~\cref{prop:Stepanov} it is enough to prove that $\mathcal{Z}(\Sigma^-_s) \subseteq L_{rs}$.
 In fact, in view of formula~\eqref{rel:NnormL} and the previous part of the proof it suffices to show only that $\mathcal{X} \subseteq L_{rs}$.
 It is obvious that $\EP_r(R, I) \subseteq L_{rs}$.
-From $\EP_s(R, I) \subseteq \EP_s(R) \subseteq N_{rs}$ we also conclude that $\EP_s(R, I) \subseteq L_{rs}$. Indeed, for $g\in\EP_s(R,I)$ one has
-\[ gA_{rs} \subseteq g {A_{rs}}^g = A_rs g = A_rs. \]
+Since $\EP_s(R, I) \subseteq \EP_s(R) \subseteq N_{rs}$ we also conclude that $\EP_s(R, I) \subseteq L_{rs}$.
+Indeed, for $g \in s\EP_s(R,I)$ one has
+\[ g \cdot A_{rs} \subseteq g \cdot {A_{rs}}^g = A_{rs} \cdot g = A_{rs}. \]
 Thus, we are left to prove the inclusion $\U(\Sigma^-_r \cap \Sigma^-_s, I) \subseteq L_{rs}$.
 
 Just as in the above argument all the cases except $\Phi = \rB_\ell, \rC_\ell$ follow from~\cref{item-trans2}.
@@ -159,29 +157,31 @@ $$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{x_{0,2}(1)} \cdot X_{-2,1}(I
 whence the statement of the theorem follows. \end{proof}
 
 \begin{lemma} \label{lemma:DVcaseCl}
-Let $\Phi=\rC_\ell$ and let $I$ be any ideal satisfying $\sr(I) \leq \ell-1$. Then $X_{-\alpha_1}(R) \subseteq N_{\ell, 1}$.
+For $\Phi=\rC_\ell$ and any ideal $I$ satisfying $\sr(I) \leq \ell-1$ one has $X_{-\alpha_1}(R) \subseteq N_{\ell, 1}$.
 \end{lemma}
 \begin{proof}
 Consider the subset $C \subseteq \EP_1(R, I)$ consisting of matrices such that matrix components $v=(g_{i,2})$, $i=2,\ldots, \ell$ form an $I$-unimodular column of height $\ell-1$.
-We are going to show that $C$ satisfies the following properties.
- \begin{enumerate}
-  \item \label{item-dvc1} For every $g \in \EP_1(R, I)$ there exists $x \in \U(\Sigma_\ell \cap \Delta_1, I)$ such that $xg \in C$.  
-  \item \label{item-dvc2} For every $g \in C$ one can choose $y \in \U(\Sigma_1 \cap \Delta_\ell, I)$ such that $(y g)_{1,2} = 0$.
- \end{enumerate}
-%TODO: Write proof of these 2 facts. 
- 
-Now set $A' = \EP_\ell(R, I) \cdot \U(\Sigma_1^- \cap \Sigma_\ell^-, I) \cdot C$.
-Notice that from the first property of $C$ we immediately obtain that $A_{\ell, 1} = A'$.
-Indeed for $g\in \EP_1(R, I)$ we have
-\begin{equation} \EP_\ell(R, I) \cdot \U(\Sigma_1^- \cap \Sigma_\ell^-, I) \cdot g \subseteq 
- \EP_\ell(R, I)x^{-1}  \cdot \U(\Sigma_1^-, I) \cdot xg \subseteq A'. \end{equation}
+Set $A' = \EP_\ell(R, I) \cdot \U(\Sigma_1^- \cap \Sigma_\ell^-, I) \cdot C$.
 
-On the other hand, from the second property of $C$ we obtain for every $g\in C$ that
+By~\cref{item:asrUnipC} (applied to the subgroup $\G(\Delta_1, R, I)$) we find for every $g \in \EP_1(R, I)$ a matrix $x \in \U(\Sigma_\ell \cap \Delta_1, I)$ such that $xg \in C$.  
+Notice that one immediately gets the equality $A_{\ell, 1} = A'$ from this.
+Indeed for $g\in \EP_1(R, I)$ one has
+\begin{equation*} \EP_\ell(R, I) \cdot \U(\Sigma_1^- \cap \Sigma_\ell^-, I) \cdot g \subseteq 
+ \EP_\ell(R, I)x^{-1}  \cdot \U(\Sigma_1^-, I) \cdot xg \subseteq A'. \end{equation*}
+
+By the very definition of $C$, for every $g \in C$ one can choose $y \in \U(\Sigma_1 \cap \Delta_\ell, I)$ such that $(y \cdot g)_{1,2} = 0$.
+Consequently, for every $g\in C$ one has
 \begin{multline*}
  \EP_\ell(R, I) \cdot \U(\Sigma_1^- \cap \Sigma_\ell^-, I) \cdot g \subseteq \EP_\ell(R, I) y^{-1} \cdot \U(\Sigma_\ell^-\cap \Sigma_1^-, I)^{y^{-1}} \cdot y g \subseteq \\
   \subseteq \EP_\ell(R, I) \cdot \U(\Sigma_\ell^-, I) \cdot y g
 \end{multline*}
-Direct calculation using~\cref{lemma:Chevalley-Matsumoto} shows that $(yg)^{x_{2,1}(\xi)} = u h$ for $\xi \in R$, $u \in \U(\Sigma_1^-, I)$, $h \in \EP_1(R, I)$, consequently
+Direct calculation using~\cref{lemma:Chevalley-Matsumoto} shows that $(yg)^{x_{2,1}(\xi)} = u h$ for $\xi \in R$, $u \in \U(\Sigma_1^-, I)$, $h \in \EP_1(R, I)$ hence
 \begin{multline*} {A_{\ell,1}}^{X_{-\alpha_1}(R)} = A'^{X_{2,1}(R)} \subseteq \EP_\ell(R, I)^{X_{2,1}(R)} \cdot \U(\Sigma_\ell^-, I)^{X_{2,1}(R)} \cdot \U(\Sigma_1^-, I) \cdot \EP_1(R, I) \subseteq \\
- \subseteq \EP_\ell(R, I) \cdot \U(\Phi^-, I) \cdot \EP_1(R, I) \subseteq A_{\ell,1}. \end{multline*}
+ \subseteq \EP_\ell(R, I) \cdot \U(\Phi^-, I) \cdot \EP_1(R, I) \subseteq A_{\ell,1} \end{multline*}
+ as claimed.
+\end{proof}
+
+\begin{proof}[End of proof of Theorem~\ref{thm:DennisVaserstein}]
+In the remaining case $\Phi=\rC_\ell$ we conclude from~\cref{lemma:dv-normal,lemma:Stein_reduction,lemma:DVcaseCl} that $X_{\pm \alpha_i}(R) \subseteq N_{\ell,1}$, $1\leq i\leq \ell$.
+Therefore, by~\cref{lemma:weylfacts} we get that $\widetilde{W}(\Phi) \subseteq N_{\ell,1}$ and hence $\mathcal{X} \subseteq L_{\ell,1}$ as required.
 \end{proof}
