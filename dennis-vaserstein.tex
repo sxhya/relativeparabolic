@@ -7,15 +7,11 @@ From Levi decomposition~\eqref{rel:Levi-decomp} it follows that the following fo
 \hspace{5em} = \EP_r(R, I) \cdot \E(\Delta_s, R, I) \cdot \U(\Sigma_s^-, I)\cdot \U(\Sigma_s, I) = \\
 = \EP_r(R, I) \cdot \U(\Sigma^-_r \cap \Sigma^-_s, I) \cdot \EP_s(R, I).
 \end{multline*}
-
-\begin{dfn}
- Denote by $A_{rs}$ any of the above equal subsets.
- We call the decomposition of the form $\E(\Phi, R, I) = A_{rs}$ the {\it relative Dennis---Vaserstein} decomposition.
-\end{dfn}
+Denote by $A_{rs}$ any of the above equal subsets.
 
 The main result of this subsection is the following theorem which is a relative version of \cite[Lemma~2.1]{ST76} and \cite[Theorem~2.5]{St78}).
 \begin{thm}\label{thm:DennisVaserstein}
-The relative elementary subgroup $\E(\Phi, R, I)$ admits Dennis---Vaserstein decomposition under the following assumptions on $I$.
+The relative elementary subgroup $\E(\Phi, R, I)$ admits Dennis---Vaserstein decomposition, i.\,e. a decompostion of the form $\E(\Phi, R, I) = A_{rs}$ under the following assumptions on $I$ and $\Phi$.
 \[\begin{array}{l@{\qquad}l@{\qquad}c@{\quad}c@{\qquad}l}
    & \Phi                                 & s    & r      & \text{ring condition} \\ \hline\vphantom{\Bigl(}
 1. & \rA_\ell,\ \ell\geqslant 2            & 1    & \ell   & \sr(I) \leqslant \ell-1 \\    
@@ -80,43 +76,43 @@ Consequently, since $[B, X_{-\alpha_r}(R)] \subseteq \U(\Sigma_r^-, R) \cap \E(\
 \begin{equation*} \label{rel:ninv} A^{X_{-\alpha\ssub{r}}(R)} = \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B ^{X_{-\alpha\ssub{r}}(R)} \cdot \EP_s(R, I) = A, \end{equation*}
 which implies the assertion of the lemma. \end{proof}
 
-Let us construct a set $B$ satisfying the assumptions of \cref{lemma:Stein_reduction} explicitly.
-
-Denote by $\pi$ the irreducible representation of $G=\G(\Phi, R)$ on a free module $V$ with the highest weight $\varpi_s$.
-The type of $\pi$ and the total number of weights in $\Lambda(\pi)$ are listed in Figure~\ref{fig:table}.
-
-Clearly, after restricting the representation $(V, \pi)$ to the subgroup $G'=\G(\Delta_r, R)$ it becomes reducible.
-Denote by $(V', \pi')$ the irreducible component corresponding to the same highest weight $\varpi_s \in \Lambda(\pi)$.
-
-Consider the following subset of $\Lambda(\pi')$:
-$$ \Gamma = \{\lambda \in \Lambda(\pi') \mid \lambda - \alpha_r \in \Lambda(\pi) \}.$$
-
-The type of $\pi'$ and the number of elements in $\Lambda(\pi')$, $\Gamma$ are listed in Figure~\ref{fig:table}.
-
-\begin{rem}
-The sets $\Lambda(\pi')$, $\Gamma$ can be visualized using the technique of {\it weight diagrams} developed in~\cite{PSV98}.
+The next step of the proof is to construct explicitly the set $B$ satisfying the assumptions of \cref{lemma:Stein_reduction}.
+For this purpose we are going to use the technique of {\it weight diagrams} developed in~\cite{PSV98}.
 In the simplest case of a microweight representation (i.\,e. a representation without zero weights)
 the weight diagram of $(V, \pi)$ is just a graph whose vertices are in one-to-one correspondence with the elements of $\Lambda(\pi)$.
 Two vertices $\lambda$, $\mu$ of the diagram are joined by a bond marked $i$ iff $\lambda-\mu = \alpha_i$.
 
-The authors of~\cite{PSV98} put the vertex corresponding to the highest weight $\varpi_s$ of $\pi$ in the upper-left corner of the weight diagram.
-Thus the subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the upper-left connected component of the graph obtained by removing all bonds marked $r$.
-In turn, the set $\Gamma$ corresponds to the vertices of $\Lambda(\pi')$ incident to the removed bonds.
+Denote by $\pi$ the irreducible representation of $G=\G(\Phi, R)$ on a free module $V$ with the highest weight $\varpi_s$.
+Clearly, after restricting the representation $(V, \pi)$ to the subgroup $G'=\G(\Delta_r, R)$ it becomes reducible.
+Denote by $(V', \pi')$ the irreducible component corresponding to the same highest weight $\varpi_s \in \Lambda(\pi)$.
+Set $\Gamma = \{\lambda \in \Lambda(\pi') \mid \lambda - \alpha_r \in \Lambda(\pi) \}.$ 
 
-The action of elementary root unipotents $x_\alpha(\xi)$ on $V$ also can be visualized using weight diagrams.
+Using the language of weight diagrams subsets $\Lambda(\pi')$, $\Gamma$ can be visualized as follows.
+After removing all bonds marked $r$ the diagram of $\pi$ splits into several connected components.
+The subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the component containg the vertex $\varpi_s$.
+In turn, the set $\Gamma$ corresponds to vertices of $\Lambda(\pi')$ incident to any of the removed bonds.
+%Calculating with weight diagrams we get the number of weights in $\Lambda(\pi')$ and $\Gamma$ (see~Figure~\ref{fig:table}).
 
-\end{rem}
+Notice that $\Delta_s$ has type either $\rD_\ell$ (in the case $\Phi=\rE_\ell$, $(r,s)=(2,\ell)$) or $\rA_\ell$ (otherwise).
+The number of elements in $\Lambda(\pi')$, $\Gamma$ are listed in Figure~\ref{fig:table}.
+Clearly, in all cases $\pi'$ is the natural representation of $\G(\Delta_s, R)$.
+
+Another advantage of weight diagrams is that they allow one to visualize the action of elementary root unipotents $x_\alpha(\xi)$ on $v = \sum_{\lambda \in \Lambda(\pi)} v_\lambda e_\lambda \in V$ described in~\cref{lemma:Matsumoto}.
+Such description for microweight $\pi$ and $\alpha = \pm\alpha_i\in \pm\Pi$ is particularly simple: 
+for every bond of the diagram joining vertices $\lambda$ and $\lambda + \alpha$ the element $x_{\alpha}(\xi)$ adds $\pm \xi \cdot v_\lambda$ to $v_{\lambda+\alpha}$.
+See~\cite[Section~3.4]{PSV98} for more detailed description.
+
 
 \begin{figure}
 \[\begin{array}{l @{\qquad} l @{\qquad} l @{\qquad} c @{\quad} c @{\qquad} l @{\qquad} l}
-   & \Phi                                 & (s,r)         & |\Lambda(\pi)| & \text{type of $\pi$} & \text{type of $\pi'$}        & (|\Lambda(\pi')|, |\Gamma|)  \\ \hline\vphantom{\Bigl(}
-1. & \rA_\ell,\ \ell\geqslant 2           & (1,\ell)      & \ell+1         & \text{natural}       & (\rA_{l-1}, \varpi_1)        & (\ell,1)  \\     
-2. & \rB_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell+1        & \text{natural}       & (\rA_{l-1}, \varpi_1)        & (\ell,1) \\     
-3. & \rC_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell          & \text{natural}       & (\rA_{l-1}, \varpi_1)        & (\ell,1)  \\
-4. & \rD_\ell,\ \ell\geqslant 4           & (1,\ell)      & 2\ell          & \text{natural}       & (\rA_{l-1}, \varpi_1)        & (\ell,2)  \\ 
-5. & \rD_\ell,\ \ell\geqslant 4           & (\ell,\ell-1) & 2^{\ell-1}     & \text{half-spinor}   & (\rA_{l-1}, \varpi_{\ell-1}) & (\ell,\ell-2)  \\
-6. & \rE_\ell,\ \ell=6,7                  & (\ell,2)      & 27, 56         & \text{minimal}       & (\rA_{l-1}, \varpi_1)        & (\ell,3)  \\ 
-7. & \rE_\ell,\ \ell=6,7                  & (\ell,1)      & 27, 56         & \text{minimal}       & (\rD_{l-1}, \varpi_1)        & (2\ell-2,\ell-1)  \end{array}\]
+   & \Phi                                 & (s,r)         & |\Lambda(\pi)| & \text{type of $\pi$} & |\Lambda(\pi')|& |\Gamma|  \\ \hline\vphantom{\Bigl(}
+1. & \rA_\ell,\ \ell\geqslant 2           & (1,\ell)      & \ell+1         & \text{natural}       & \ell           & 1  \\     
+2. & \rB_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell+1        & \text{natural}       & \ell           & 1  \\     
+3. & \rC_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell          & \text{natural}       & \ell           & 1  \\
+4. & \rD_\ell,\ \ell\geqslant 4           & (1,\ell)      & 2\ell          & \text{natural}       & \ell           & 2  \\ 
+5. & \rD_\ell,\ \ell\geqslant 4           & (\ell,\ell-1) & 2^{\ell-1}     & \text{half-spinor}   & \ell           & \ell-2  \\
+6. & \rE_\ell,\ \ell=6,7                  & (\ell,2)      & 27, 56         & \text{minimal}       & \ell           & 3       \\ 
+7. & \rE_\ell,\ \ell=6,7                  & (\ell,1)      & 27, 56         & \text{minimal}       & 2(\ell-1)      & \ell-1  \end{array}\]
  \caption[Table]{List of representation involved in the proof of~\cref{thm:DennisVaserstein}.} \label{fig:table}
 \end{figure}
 
@@ -136,14 +132,15 @@ Since $\Delta_s$ is irreducible in all the cases under consideration we get from
 
 Our next step is to show that $\U(\Sigma_s, R) \subseteq N_{rs}$.
 First of all, notice that by~\cref{lemma:dv-normal} we have that $X_{\alpha_s}(R) \subseteq N_{rs}$.
-In cases $\Phi\neq \rB_\ell, \rC_\ell$ all roots of $\Sigma^+_s$ have the same $s$-shape and length therefore the needed statement follows from~\cref{item-trans2}.
-We defer the proof in the case $\Phi=\rC_\ell$ until we prove a separate lemma (see~\cref{lemma:DVcaseCl} below).
+For $\Phi\neq \rB_\ell, \rC_\ell$ all roots of $\Sigma^+_s$ have the same $s$-shape and length hence the assertion follows from~\cref{item-trans2}.
 
 In the case $\Phi=\rB_\ell$ the above reasoning only shows that $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$ and a separate argument is needed for the root subgroup corresponding to the sole short root of $\Sigma_s^+$.
 Specializing identity~\eqref{rel:CCF} we get:
 \begin{equation*} \label{rel:CCF-specBC} x_{1,0}(ab) = [x_{1, 2}(a), x_{2, 0}(b)] \cdot x_{1,-2}(-a b^2) \end{equation*}
 The root subgroup $X_{2, 0}(R)$ is contained in $\E(\Delta_s, R) \subseteq N_{rs}$.
 On the other hand, by the above argument we know that $X_{1,-2}(R) \subseteq N_{rs}$, therefore $X_{1,0}(R) \subseteq N_{rs}$ and $\U(\Sigma_s, R) \subseteq N_{rs}$.
+
+We defer the proof in the case $\Phi=\rC_\ell$ until we prove~\cref{lemma:DVcaseCl} below.
 
 Our ultimate goal is to show the inclusion $\E(\Phi, R, I) \subseteq L_{rs}$. 
 By~\cref{prop:Stepanov} it is enough to prove that $\mathcal{Z}(\Sigma^-_s) \subseteq L_{rs}$.
