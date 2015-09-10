@@ -16,7 +16,7 @@ Let $g$ be an element of $\G(\Phi, R, I)$. Set $v=g \cdot v^+\in\Ums(n, I)$.
 Notice that in each case it suffices to find $g' \in \U(\Phi^-, I) \cdot \U(\Phi^+, I) \cdot g$ such that 
 \begin{equation} \label{eq1} (g'\cdot v^+)_{1} = 1 + s \text{ and } (g'\cdot v^+)_{\varpi\ssub{1}-\alpha\ssub{max}} = s\ \text{for some}\ s\in I. \end{equation}
 Indeed, set $g'' = z_{-\alpha\ssub{max}}(-s, 1) \cdot g'$.
-Obviously, one has $(g''\cdot v^+)_1 = 1$, $(g''\cdot v^+)_{\varpi\ssub{1}-\alpha\ssub{max}}=0$ and the conclusion of the theorem follows from~\cref{lemma:Chevalley-Matsumoto}.
+Obviously, one has $(g''\cdot v^+)_1 = 1$, $(g''\cdot v^+)_{\varpi\ssub{1}-\alpha\ssub{max}}=0$ and the conclusion of the theorem follows from \cref{lemma:Chevalley-Matsumoto}.
 
 \textsc{Case $\Phi=\rA_\ell$, $n=\ell + 1$.}
 %Set $v=(1+v_1,v_2,\ldots,v_\ell,v_{\ell+1})^t\in\Ums(\ell+1,R,I)$.
@@ -37,7 +37,7 @@ Set $\xi = v''_1-v''_{-1}-1 \in I$,
 Direct computation shows that $v'' = h_2 \cdot v'$ satisfies equalities~\eqref{eq1}.
 
 \textsc{Case $\Phi=\rD_\ell$, $n= 2\ell$.} 
-By~\cref{item:asrUnipD} we can find $h_1\in \U(\Sigma^+_\ell, I)$ such that the upper half $v'_+$ of $v'=h_1 \cdot v$ is $I$-unimodular.
+By \cref{item:asrUnipD} we can find $h_1\in \U(\Sigma^+_\ell, I)$ such that the upper half $v'_+$ of $v'=h_1 \cdot v$ is $I$-unimodular.
 Since $\sr(I)\leq \ell-1$ we can find $c_1$, $c_3, \ldots c_\ell \in I$ such that $(v''_1, v''_3, \ldots, v''_\ell) \in \Ums(\ell-1, I)$, where
 \[ v''=h_2 \cdot x_{1,2}(c_1) \cdot v', \quad h_2=\prod_{i=3}^\ell x_{i,2}(c_i). \]
 
@@ -55,13 +55,13 @@ Now the proof can be finished by repeating the argument for the case $\Phi=\rD_\
 
 It is easy to see that the proof of the above theorem is effective and gives an estimate of the total number of elementary root unipotents involved in the decomposition.
 \begin{cor}\label{cor:bass-kolster-count}
-In the assumptions and notation of~\cref{thm:BassKolster} every element of $\G(\Phi,R,I)$ 
+In the assumptions and notation of \cref{thm:BassKolster} every element of $\G(\Phi,R,I)$ 
 can be factored into a product of one element of $\G(\Delta_1,R,I)$ one element of $Z$ and at most $4|\Sigma_1|-1$ elementary root unipotents $x_\alpha(s)$ of level $I$.
 \end{cor}
 \begin{proof}
 The above estimates can be obtained by a careful analysis of the proof of the previous theorem.
 Cases $\Phi=\rA_\ell, \rC_\ell$ are immediate.
-In the case $\Phi=\rD_\ell$ the proof of~\cref{thm:BassKolster} implies that
+In the case $\Phi=\rD_\ell$ the proof of \cref{thm:BassKolster} implies that
 \begin{multline}\nonumber
 \G(\Phi,R,I) =  \U(\Sigma_\ell,I) \cdot X_{\alpha_1}(I) \cdot \U(\Sigma_2^-\cap\Delta_1,I) \cdot X_{-\alpha\ssub{\mathrm{max}}}(I) \cdot Z  \cdot \\ \cdot \U(\Sigma_1^-,I) \cdot \U(\Sigma_1,I) \cdot \G(\Delta_1,R,I).
 \end{multline}
@@ -72,7 +72,7 @@ Summing up these upper bounds we obtain
 $$(2\ell-3) + 1 + (2\ell - 4) + 1 + 2\cdot (2\ell - 2) = 8\ell - 9 = 4(|\rD_\ell| - |\rD_{\ell-1}|) - 1.$$
 
 The estimate in the case $\Phi=\rB_\ell$ can be obtained in a similar way. \end{proof}
-The Bass---Kolster decomposition can be iterated if the stability assumption allows, with a slight improvement of~\cref{cor:bass-kolster-count}.
+The Bass---Kolster decomposition can be iterated if the stability assumption allows, with a slight improvement of \cref{cor:bass-kolster-count}.
 \begin{cor}\label{cor:bass-kolster-iterated}
 Let $\Phi$ be a root system, $R$ a commutative ring and $I$ its ideal. Then under a suitable stability assumption every element of $\G(\Phi,R,I)$ is a product of an element of $\G(\langle\pm\alpha_\ell\rangle,R,I)\cong\SL(2,R,I)$, at most $\ell-1$ elements of the form $z_{-\alpha}(*,*)$, $\alpha$ the maximal root of some terminal subsystem containing $\alpha_\ell$, and at most $N$ elementary root unipotents $x_\alpha(s)$, $s\in I$. The stability assumption and the number $N$ are as follows:
 \[\begin{array}{l@{\quad}l@{\quad}l}
@@ -96,6 +96,6 @@ The improved estimate for $\Phi=\rA_\ell$ or $\rC_\ell$ is obtained by using the
 \caption{Reductions provided by the Bass---Kolster decomposition}
 \end{figure}
 
-\begin{proof}[Proof of~\cref{thm:SL2width}]
-A direct application of~\cref{cor:bass-kolster-iterated}.
+\begin{proof}[Proof of \cref{thm:SL2width}]
+A direct application of \cref{cor:bass-kolster-iterated}.
 \end{proof}

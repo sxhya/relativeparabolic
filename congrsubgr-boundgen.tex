@@ -1,13 +1,13 @@
 We now give an application of parabolic factorizations to the problem of bounded generation.
  
 \begin{lemma}\label{lemma:srRI1_width}
-In the assumptions of~\cref{thm:srRI1} the width of $\E(\Phi,R,I)$ with respect to $\mathcal{Z}(\Pi)$ does not exceed $3\left|\Phi^+\right|+2\rk\Phi-1$.
+In the assumptions of \cref{thm:srRI1} the width of $\E(\Phi,R,I)$ with respect to $\mathcal{Z}(\Pi)$ does not exceed $3\left|\Phi^+\right|+2\rk\Phi-1$.
 \end{lemma}
 \begin{proof}
 Take an element $g\in\E(\Phi,R,I)$ and decompose it into $g=u_1 h v_2 u_3$, where $h\in\Hh(\Phi,R,I)$, $u_1,u_3\in\U(\Phi,I)$, $v_2\in\U(\Phi^-,I)$. 
 Write $h=\prod_{i=1}^\ell h_{\alpha_i}(\varepsilon_i)$, $\varepsilon\in1+I$. 
 Each $h_{\alpha_i}(\varepsilon_i)$ decomposes into $h_{\alpha_i}(\varepsilon_i) = x_{\alpha_i}(*) z_{-\alpha_i}(*,*) x_{-\alpha_i}(*)$ 
- (see~\cref{lemma:rel-tor-elementary}), and since the torus normalizes each of $X_\alpha(I)$ (see formula~\eqref{rel:h-w}), we have a decomposition
+ (see \cref{lemma:rel-tor-elementary}), and since the torus normalizes each of $X_\alpha(I)$ (see formula~\eqref{rel:h-w}), we have a decomposition
 \[ g\in\U(\Phi,I)\cdot\prod_{i=1}^\ell\bigl(x_{\alpha_i}(*)z_{-\alpha_i}(*,*)\bigr)\cdot \U^-(\Phi,I) \U(\Phi,I), \]
 and the estimate follows.
 \end{proof}
@@ -65,7 +65,7 @@ Then $k+\alpha>-k+\beta$ and
 \begin{pmatrix} p^\alpha a & * \\ p^\beta bm & * \end{pmatrix}=
 \begin{pmatrix} p^{k+\alpha} a & * \\ p^{-k+\beta} bm & * \end{pmatrix}. \]
 We find ourselves in the situation of Case 1, therefore we can write $g=h_{12}\cdot x_{12} \cdot x_{21} \cdot z_{21} \cdot x_{12}$.
-Finally, expressing $h=x_{21}\cdot z_{21}\cdot x_{12}$ as in~\cref{lemma:rel-tor-elementary}, we get that $g=x_{21} \cdot z_{21} \cdot x_{12} \cdot x_{21} \cdot z_{21} \cdot x_{12}$.
+Finally, expressing $h=x_{21}\cdot z_{21}\cdot x_{12}$ as in \cref{lemma:rel-tor-elementary}, we get that $g=x_{21} \cdot z_{21} \cdot x_{12} \cdot x_{21} \cdot z_{21} \cdot x_{12}$.
 \end{proof}
 
 For the rest of this subsection $k$ denotes a global field. We assume that there is some finite set of places $S$ chosen on $k$. 
@@ -78,7 +78,7 @@ If $k$ has a real embedding, then $\G(\Phi,\mathcal{O}_S,I)$ has finite width wi
 \end{lemma}
 \begin{proof}
 First of all, notice that $\asr(I) \leq \asr(\mathcal{O}_S) \leq 2$. 
-By~\cref{cor:bass-kolster-iterated} we can present any element 
+By \cref{cor:bass-kolster-iterated} we can present any element 
 of $G=\G(\Phi, \mathcal{O}_S, I)$ as a product of a finite number of generators $\mathcal{Z}(\Sigma_\ell)$ and one element of 
 $\G(\{\alpha_\ell, -\alpha_\ell\}, \mathcal{O}_S, I)\cong\SL(2,\mathcal{O}_S,I)$.
 Consequently, to prove the statement of the lemma it suffices to express every element 
@@ -92,7 +92,7 @@ Notice that $g_1=g\cdot z_{21}(a,1)$ is contained in $G(I,I)$, indeed
 \[ \begin{pmatrix} 1+a & b \\ c & 1+d \end{pmatrix} \cdot \begin{pmatrix} 1-a & -a \\ a & 1+a \end{pmatrix} = \begin{pmatrix} 1+ba-a^2 & b-a-ba-a^2 \\ c+a+ad-ac & 1+bc-ac \end{pmatrix} \in G(I,I). \]
 For any matrix $g'=\begin{psmallmatrix}1+a & b \\ c & 1+d\end{psmallmatrix}\in G(I,I)$ the matrix $x_{21}(-c)\cdot g'\cdot x_{12}(-b)$ lies in $\SL\left(2,\mathcal{O}_S,I^2\right)$.
 
-By~\cref{lemma:Stepanov-ideal} the group $\E\left(\Phi,\mathcal{O}_S,I^2\right)$ is contained in $\E(\Phi,I)$ for any root system $\Phi\neq\rC_\ell$ of rank $\geqslant2$.
+By \cref{lemma:Stepanov-ideal} the group $\E\left(\Phi,\mathcal{O}_S,I^2\right)$ is contained in $\E(\Phi,I)$ for any root system $\Phi\neq\rC_\ell$ of rank $\geqslant2$.
 Notice that under the assumptions of the lemma it is known that $\E(\Phi,I)$ has finite width with respect to $\mathcal{X}$, see~\cite{Tavgen93} or \cite[Theorem~3.3]{TavgenThesis}.
 
 In remains to consider the case $\Phi=\rC_\ell$. First of all, notice that $2abc-abd\in II^{\indexbox{2}}$, indeed
@@ -107,8 +107,8 @@ Now for $g_3=g_2\cdot z_{12}\left(a^2-ab,1\right)$ we have that
 & g_3\equiv\begin{pmatrix} 1 & -2ab \\ -abc-a^2+ab-ac+ad & 1 \end{pmatrix}\bmod II^{\indexbox{2}},\\
 & g_4=x_{12}(2ab)\cdot g_3\equiv x_{21}\left(-abc-a^2+ab-ac+ad\right)\bmod II^{\indexbox{2}}.
 \end{align*}
-Thus $g_4\cdot x_{21}(*)\in\SL\left(2,\mathcal{O}_S,II^{\indexbox{2}}\right)$ is contained in $\E(\rC_\ell,I)$ by~\cref{lemma:Stepanov-ideal} and therefore can be expressed as a bounded product of $x_\alpha$.
+Thus $g_4\cdot x_{21}(*)\in\SL\left(2,\mathcal{O}_S,II^{\indexbox{2}}\right)$ is contained in $\E(\rC_\ell,I)$ by \cref{lemma:Stepanov-ideal} and therefore can be expressed as a bounded product of $x_\alpha$.
 \end{proof}
 
-\begin{proof}[Proof of~\cref{thm:width}] The first statement of the theorem is contained in~\cref{lemma:srRI1_width}.
-The second and third statement follow from~\cref{lemma:Z1p,lemma:width-dedekind}. \end{proof}
+\begin{proof}[Proof of \cref{thm:width}] The first statement of the theorem is contained in \cref{lemma:srRI1_width}.
+The second and third statement follow from \cref{lemma:Z1p,lemma:width-dedekind}. \end{proof}
