@@ -21,23 +21,25 @@ Now let $\beta_k$ be the maximal root of $\Phi_k$, i.\,e. $\beta_k = \alpha_\mat
 Denote by $B$ the set of all $\beta_k$. From the definition it is clear that elements of $B$ are mutually perpendicular to each other.
 The roots $\beta_k$ can also be defined by explicit formulae:
 \begin{align*}
- \beta_k =  \alpha_{2k-1} + 2\alpha_{2k}+ \ldots + 2\alpha_{\ell-2} + \alpha_{\ell-1} + \alpha_\ell, & \text{ for } i=1,\ldots,\lfloor\ell/2\rfloor-1, \\
+ \beta_k =  \alpha_{2k-1} + 2\alpha_{2k}+ \ldots + 2\alpha_{\ell-2} + \alpha_{\ell-1} + \alpha_\ell, & \text{ for } k=1,\ldots,\lfloor\ell/2\rfloor-1, \\
  \beta_{\lfloor\ell/2\rfloor} = \alpha_{\ell-2}+\alpha_{\ell-1}+\alpha_\ell, & \text{ if $\ell$ is odd,} \\
  \beta_{\lfloor\ell/2\rfloor} = \alpha_\ell, & \text{ if $\ell$ is even.}
 \end{align*}
 
 \begin{lemma}\label{lemma:nikolov-weyl} There exists an element $w\in W(\rD_\ell)$ such that $w(B) \subseteq \Delta_\ell^+$. \end{lemma}
 \begin{proof}
-\textsc{Case $\ell=4$.} \textbf{TODO: Write proof}
+\textsc{Case $\ell=4$.} Set $w = \sigma_{\alpha\ssub{1} + \alpha\ssub{2}} \circ \sigma_{\alpha\ssub{2} + \alpha\ssub{4}}$.
+Straightforward computation shows that 
+$$w(\beta_1) = w(\alpha_\mathrm{max}) = \sigma_{\alpha\ssub{1} + \alpha\ssub{2}}(\alpha_1 + \alpha_2 + \alpha_3) = \alpha_3,\quad w(\beta_2) = w(\alpha_4) = \sigma_{\alpha\ssub{1} + \alpha\ssub{2}}(- \alpha_2) = \alpha_1 $$
+which implies the assertion of the lemma.
 
 \textsc{Case $\ell \geq 5$.}
 Recall from \cite[Table~9]{Dy72} that for odd (resp. even) $\ell$ all maximal subsystems of type $\rA_1+\ldots+\rA_1+\rD_3$
 (resp. $\rA_1+\ldots+\rA_1+\rD_4$) are conjugate under the action of $W(\Phi)$. Consequently, we can find $w\in W(\Phi)$
-such that $w(\beta_k) = \alpha_{2k-1}$ for $k < \lfloor\ell/2\rfloor$ (resp. $k < \lfloor\ell/2\rfloor-1$). It remains to
-notice that we can move the remaining root $\beta_{\lfloor\ell/2\rfloor}$ 
+such that $w(\beta_k) = \alpha_{2k-1}$ for $k < \lfloor\ell/2\rfloor$ (resp. $k < \lfloor\ell/2\rfloor-1$). 
+Now using transitivity of the action of $W(\rD_3)$ on roots (resp. by the same argument as in the case $\ell=4$) we can move the remaining root $\beta_{\lfloor\ell/2\rfloor}$ 
 (resp. the remaining $2$ roots $\beta_{\lfloor\ell/2\rfloor-1}$, $\beta_{\lfloor\ell/2\rfloor}$) to
-$\alpha_{\ell-1}$ (resp. to $\alpha_{\ell-3}$, $\alpha_{\ell-1}$) using the fact that the Weyl group $W(\rD_3)$ acts
-transitively on roots (resp. using the first part of the proof of the lemma). \end{proof}
+$\alpha_{\ell-1}$ (resp. to $\alpha_{\ell-3}$, $\alpha_{\ell-1}$) while fixing all the other $\beta_k$. \end{proof}
 
 The following lemma is an analogue of Proposition~1 of~\cite{NikProdDecomp}.
 \begin{lemma}\label{lemma:nikolov-type-dl}
