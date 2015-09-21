@@ -14,13 +14,14 @@ The main result of this subsection is the following theorem which is a relative 
 The relative elementary subgroup $\E(\Phi, R, I)$ admits Dennis---Vaserstein decomposition, i.\,e. a decompostion of the form $\E(\Phi, R, I) = A_{rs}$ under the following assumptions on $I$ and $\Phi$.
 \[\begin{array}{l@{\qquad}c@{\quad}c@{\qquad}l}
 \Phi                                 & s    & r      & \text{ring condition} \\ \hline\vphantom{\Bigl(}
-\rA_\ell,\ \ell\geqslant 2            & 1    & \ell   & \sr(I) \leqslant \ell-1 \\    
-\rB_\ell,\ \ell\geqslant 2            & 1    & \ell   & \sr(I) \leqslant \ell-1 \\
+\rA_\ell,\ \ell\geqslant 2           & 1    & \ell   & \sr(I) \leqslant \ell-1 \\    
+\rB_\ell,\ \ell\geqslant 2           & 1    & \ell   & \sr(I) \leqslant \ell-1 \\
 \rC_\ell,\ \ell \geqslant 2          & 1    & \ell   & \sr(I) \leqslant \ell-1 \\
 \rD_\ell,\ \ell\geqslant 4           & 1    & \ell   & \sr(I) \leqslant \ell-2 \\ 
 \rD_\ell,\ \ell\geqslant 4           & \ell & \ell-1 & \sr(I) \leqslant 2      \\
 \rE_\ell,\ \ell=6,7                  & \ell & 2      & \sr(I) \leqslant \ell-3 \\ 
-\rE_\ell,\ \ell=6,7                  & \ell & 1      & \asr(I)\leqslant \ell-2 \end{array}\]
+\rE_\ell,\ \ell=6,7                  & \ell & 1      & \asr(I)\leqslant \ell-2 \\ 
+\rF_4                                & 4    & 1      & \asr(I)\leqslant 3 \end{array}\]
 \end{thm}
 Consider the following two submonoids of $\E(\Phi, R)$:
 \[ N_{rs} = \left\{ g\in \E(\Phi, R)\ \middle|\ g \cdot A_{rs} \cdot g^{-1} \subseteq A_{rs} \right\}, \quad
@@ -102,15 +103,16 @@ for every bond of the diagram joining vertices $\lambda$ and $\lambda + \alpha$ 
 See~\cite[Section~3.4]{PSV98} for more detailed description.
 
 \begin{figure}
-\[\begin{array}{l @{\qquad} l @{\qquad} c @{\quad} c @{\qquad} c @{\qquad} c}
-\Phi                                 & (s,r)         & |\Lambda(\pi)| & \text{type of $\pi$} & |\Lambda(\pi')|& |\Gamma|  \\ \hline\vphantom{\Bigl(}
-\rA_\ell,\ \ell\geqslant 2           & (1,\ell)      & \ell+1         & \text{natural}       & \ell           & 1  \\     
-\rB_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell+1        & \text{natural}       & \ell           & 1  \\     
-\rC_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell          & \text{natural}       & \ell           & 1  \\
-\rD_\ell,\ \ell\geqslant 4           & (1,\ell)      & 2\ell          & \text{natural}       & \ell           & 2  \\ 
-\rD_\ell,\ \ell\geqslant 4           & (\ell,\ell-1) & 2^{\ell-1}     & \text{half-spinor}   & \ell           & \ell-2  \\
-\rE_\ell,\ \ell=6,7                  & (\ell,2)      & 27, 56         & \text{minimal}       & \ell           & 3       \\ 
-\rE_\ell,\ \ell=6,7                  & (\ell,1)      & 27, 56         & \text{minimal}       & 2(\ell-1)      & \ell-1  \end{array}\]
+\[\begin{array}{l @{\qquad} l @{\qquad} c @{\quad} c @{\qquad} c @{\qquad} c @{\qquad} c}
+\Phi                                 & (s,r)         & |\Lambda(\pi)| & \text{type of $\pi$} & \text{type of $\Delta_r$} & |\Lambda(\pi')|& |\Gamma|  \\ \hline\vphantom{\Bigl(}
+\rA_\ell,\ \ell\geqslant 2           & (1,\ell)      & \ell+1         & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\     
+\rB_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell+1        & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\     
+\rC_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell          & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\
+\rD_\ell,\ \ell\geqslant 4           & (1,\ell)      & 2\ell          & \text{natural}       & \rA_{\ell-1}              & \ell           & 2  \\ 
+\rD_\ell,\ \ell\geqslant 4           & (\ell,\ell-1) & 2^{\ell-1}     & \text{half-spinor}   & \rA_{\ell-1}              & \ell           & \ell-2  \\
+\rE_\ell,\ \ell=6,7                  & (\ell,2)      & 27, 56         & \text{minimal}       & \rA_{\ell-1}              & \ell           & 3       \\ 
+\rE_\ell,\ \ell=6,7                  & (\ell,1)      & 27, 56         & \text{minimal}       & \rD_{\ell-1}              & 2(\ell-1)      & \ell-1  \\
+\rF_4                                & (4, 1)        & 26             & \text{minimal}       & \rC_3                     & 6              & 3\end{array}\]
  \caption[Table]{List of representation involved in the proof of \cref{thm:DennisVaserstein}.} \label{fig:table}
 \end{figure}
 
@@ -154,34 +156,34 @@ $$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{x_{0,2}(1)} \cdot X_{-2,1}(I
 whence the statement of the theorem follows. \end{proof}
 
 \begin{lemma} \label{lemma:DVcaseCl}
-For $\Phi=\rC_\ell$ and any ideal $I$ satisfying $\sr(I) \leq \ell-1$ one has $X_{-\alpha_1}(R) \subseteq N_{\ell, 1}$.
+For $\Phi=\rC_\ell$ and any ideal $I$ satisfying $\sr(I) \leq \ell-1$ one has $X_{-\alpha_s}(R) \subseteq N_{rs}$.
 \end{lemma}
 \begin{proof}
-Consider the subset $C \subseteq \EP_1(R, I)$ consisting of matrices such that matrix components $v=(g_{i,2})$, $i=2,\ldots, \ell$ form an $I$-unimodular column of height $\ell-1$.
-Set $A' = \EP_\ell(R, I) \cdot \U(\Sigma_1^- \cap \Sigma_\ell^-, I) \cdot C$.
+Consider the subset $C \subseteq \EP_s(R, I)$ consisting of matrices such that matrix components $v=(g_{i,2})$, $i=2,\ldots, \ell$ form an $I$-unimodular column of height $\ell-1$.
+Set $A' = \EP_\ell(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot C$.
 
-By \cref{item:asrUnipC} (applied to the subgroup $\G(\Delta_1, R, I)$) we find for every $g \in \EP_1(R, I)$ a matrix $x \in \U(\Sigma_\ell \cap \Delta_1, I)$ such that $xg \in C$.  
-Notice that one immediately gets the equality $A_{\ell, 1} = A'$ from this.
-Indeed for $g\in \EP_1(R, I)$ one has
-\begin{equation*} \EP_\ell(R, I) \cdot \U(\Sigma_1^- \cap \Sigma_\ell^-, I) \cdot g \subseteq 
- \EP_\ell(R, I)x^{-1}  \cdot \U(\Sigma_1^-, I) \cdot xg \subseteq A'. \end{equation*}
+By \cref{item:asrUnipC} (applied to the subgroup $\G(\Delta_s, R, I)$) we find for every $g \in \EP_s(R, I)$ a matrix $x \in \U(\Sigma_r \cap \Delta_s, I)$ such that $xg \in C$.  
+Notice that one immediately gets the equality $A_{rs} = A'$ from this.
+Indeed for $g\in \EP_s(R, I)$ one has
+\begin{equation*} \EP_r(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot g \subseteq 
+ \EP_r(R, I)x^{-1}  \cdot \U(\Sigma_s^-, I) \cdot xg \subseteq A'. \end{equation*}
 
-By the very definition of $C$, for every $g \in C$ one can choose $y \in \U(\Sigma_1 \cap \Delta_\ell, I)$ such that $(y \cdot g)_{1,2} = 0$.
+By the very definition of $C$, for every $g \in C$ one can choose $y \in \U(\Sigma_s \cap \Delta_r, I)$ such that $(y \cdot g)_{1,2} = 0$.
 Consequently, for every $g\in C$ one has
 \begin{multline*}
- \EP_\ell(R, I) \cdot \U(\Sigma_1^- \cap \Sigma_\ell^-, I) \cdot g \subseteq \EP_\ell(R, I) y^{-1} \cdot \U(\Sigma_\ell^-\cap \Sigma_1^-, I)^{y^{-1}} \cdot y g \subseteq \\
-  \subseteq \EP_\ell(R, I) \cdot \U(\Sigma_\ell^-, I) \cdot y g
+ \EP_r(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot g \subseteq \EP_r(R, I) y^{-1} \cdot \U(\Sigma_r^-\cap \Sigma_s^-, I)^{y^{-1}} \cdot y g \subseteq \\
+  \subseteq \EP_r(R, I) \cdot \U(\Sigma_r^-, I) \cdot y g
 \end{multline*}
 Notice that the matrix entry $(yg)_{1,1}$ is invertible.
 From the choice of $y$ it follows that for every $\xi\in R$ the element $g_1:=(yg)^{x_{2,1}(\xi)}$
-satisfies the assumptions of \cref{lemma:Chevalley-Matsumoto} and therefore can be rewritten as $g_1 = uh$ for some $u \in \U(\Sigma_1^-, I)$, $h \in \EP_1(R, I)$.
+satisfies the assumptions of \cref{lemma:Chevalley-Matsumoto} and therefore can be rewritten as $g_1 = uh$ for some $u \in \U(\Sigma_s^-, I)$, $h \in \EP_1(R, I)$.
 Consequently, one has
-\begin{multline*} {A_{\ell,1}}^{X_{-\alpha_1}(R)} = A'^{X_{2,1}(R)} \subseteq \EP_\ell(R, I)^{X_{2,1}(R)} \cdot \U(\Sigma_\ell^-, I)^{X_{2,1}(R)} \cdot \U(\Sigma_1^-, I) \cdot \EP_1(R, I) \subseteq \\
- \subseteq \EP_\ell(R, I) \cdot \U(\Phi^-, I) \cdot \EP_1(R, I) \subseteq A_{\ell,1} \end{multline*}
+\begin{multline*} {A_{rs}}^{X_{-\alpha_s}(R)} = A'^{X_{2,1}(R)} \subseteq \EP_r(R, I)^{X_{2,1}(R)} \cdot \U(\Sigma_r^-, I)^{X_{2,1}(R)} \cdot \U(\Sigma_s^-, I) \cdot \EP_s(R, I) \subseteq \\
+ \subseteq \EP_\ell(R, I) \cdot \U(\Phi^-, I) \cdot \EP_s(R, I) \subseteq A_{rs} \end{multline*}
  as claimed.
 \end{proof}
 
 \begin{proof}[End of the proof of \cref{thm:DennisVaserstein}]
-In the remaining case $\Phi=\rC_\ell$ we conclude from \cref{lemma:dv-normal,lemma:Stein_reduction,lemma:DVcaseCl} that $X_{\pm \alpha_i}(R) \subseteq N_{\ell,1}$, $1\leq i\leq \ell$.
-Therefore, by \cref{lemma:weylfacts} we get that $\widetilde{W}(\Phi) \subseteq N_{\ell,1}$ and hence $\mathcal{X} \subseteq L_{\ell,1}$ as required.
+In the remaining case $\Phi=\rC_\ell$ we conclude from \cref{lemma:dv-normal,lemma:Stein_reduction,lemma:DVcaseCl} that $X_{\pm \alpha_i}(R) \subseteq N_{rs}$, $1\leq i\leq \ell$.
+Therefore, by \cref{lemma:weylfacts} we get that $\widetilde{W}(\Phi) \subseteq N_{rs}$ and hence $\mathcal{X} \subseteq L_{rs}$ as required.
 \end{proof}
