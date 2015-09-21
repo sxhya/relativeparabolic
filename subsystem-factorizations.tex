@@ -1,7 +1,7 @@
-The main result of \cite{NikProdDecomp} is the following
-\begin{thm*}
-Let $G$ be a classical (possibly twisted) Chevalley group of rank $n$ over a finite field. Then $G$ equals the product of at most $200$ conjugates of an $\SL_n$ subgroup.
-\end{thm*}
+%The main result of \cite{NikProdDecomp} is the following
+%\begin{thm*}
+%Let $G$ be a classical (possibly twisted) Chevalley group of rank $n$ over a finite field. Then $G$ equals the product of at most $200$ conjugates of an $\SL_n$ subgroup.
+%\end{thm*}
 As indicated in the introduction, the Dennis---Vaserstein decomposition gives the following result.
 \begin{lemma}
 Assume $\sr(I)\leqslant n-1$. Then $\SL(n+1,R,I)$ is a product of at most $5$ subgroups isomorphic to $\SL(n,R,I)$.
@@ -11,37 +11,74 @@ By the Dennis---Vaserstein decomposition one can present $\SL(n+1,R,I)$ as a pro
 \[ \SL(n+1,R,I) =  \Par_1\cdot X_{n1}\cdot\Par_n=S_1\U_1\cdot X_{n1}\cdot\U_n S_n, \]
 where $S_1$ and $S_n$ are two obvious embeddings of $\SL(n,R,I)$ in $\SL(n+1,R,I)$, avoiding respectively the first and the last row and column. Now $\U_1=(\U_1\cap S_n)\cdot X_{1n}$ and $U_n= X_{1n}\cdot(U_n\cap S_1)$, while $X_{1n}X_{n1}X_{1n}\in S_1^{w_{12}(1)}$.
 \end{proof}
-We will now elaborate on the case $\Phi=\rD_\ell$ to show that the Dennis---Vaserstein decomposition is suitable for handling other Chevalley groups, albeit with a stronger assumption on the base ring. The following lemma is an analogue of Proposition~1 of~\cite{NikProdDecomp}.
+We will now elaborate on the case $\Phi=\rD_\ell$ to show that the Dennis---Vaserstein decomposition is suitable for handling other Chevalley groups, albeit with a stronger assumption on the base ring. 
+
+Consider the decreasing chain $\Phi_k$, $k=1,\ldots, \lfloor \ell/2 \rfloor$ of root subsystems of $\Phi=\rD_\ell$ defined as follows.
+If $2k \neq \ell$ let $\Phi_k$ be the subsystem of $\Phi$ spanned by simple roots $\alpha_{2k-1}, \ldots, \alpha_\ell$.
+Clearly, such $\Phi_k$ has type $\rD_{(\ell-2k+2)}$. 
+In the remaining case $2k = \ell$ set $\Phi_k = \langle \alpha_\ell \rangle \cong \rA_1$.
+Now let $\beta_k$ be the maximal root of $\Phi_k$, i.\,e. $\beta_k = \alpha_\mathrm{max}(\Phi_k)$, $k=1,\ldots, \lfloor \ell/2 \rfloor$.
+Denote by $B$ the set of all $\beta_k$. From the definition it is clear that elements of $B$ are mutually perpendicular to each other.
+The roots $\beta_k$ can also be defined by explicit formulae:
+\begin{align*}
+ \beta_k =  \alpha_{2k-1} + 2\alpha_{2k}+ \ldots + 2\alpha_{\ell-2} + \alpha_{\ell-1} + \alpha_\ell, & \text{ for } i=1,\ldots,\lfloor\ell/2\rfloor-1, \\
+ \beta_{\lfloor\ell/2\rfloor} = \alpha_{\ell-2}+\alpha_{\ell-1}+\alpha_\ell, & \text{ if $\ell$ is odd,} \\
+ \beta_{\lfloor\ell/2\rfloor} = \alpha_\ell, & \text{ if $\ell$ is even.}
+\end{align*}
+
+\begin{lemma}\label{lemma:nikolov-weyl} There exists an element $w\in W(\rD_\ell)$ such that $w(B) \subseteq \Delta_\ell^+$. \end{lemma}
+\begin{proof}
+\textsc{Case $\ell=4$.} \textbf{TODO: Write proof}
+
+\textsc{Case $\ell \geq 5$.}
+Recall from \cite[Table~9]{Dy72} that for odd (resp. even) $\ell$ all maximal subsystems of type $\rA_1+\ldots+\rA_1+\rD_3$
+(resp. $\rA_1+\ldots+\rA_1+\rD_4$) are conjugate under the action of $W(\Phi)$. Consequently, we can find $w\in W(\Phi)$
+such that $w(\beta_k) = \alpha_{2k-1}$ for $k < \lfloor\ell/2\rfloor$ (resp. $k < \lfloor\ell/2\rfloor-1$). It remains to
+notice that we can move the remaining root $\beta_{\lfloor\ell/2\rfloor}$ 
+(resp. the remaining $2$ roots $\beta_{\lfloor\ell/2\rfloor-1}$, $\beta_{\lfloor\ell/2\rfloor}$) to
+$\alpha_{\ell-1}$ (resp. to $\alpha_{\ell-3}$, $\alpha_{\ell-1}$) using the fact that the Weyl group $W(\rD_3)$ acts
+transitively on roots (resp. using the first part of the proof of the lemma). \end{proof}
+
+The following lemma is an analogue of Proposition~1 of~\cite{NikProdDecomp}.
 \begin{lemma}\label{lemma:nikolov-type-dl}
-Let $\Phi=\rD_\ell$. There exist an element $y\in\G(\Phi,R)$ and an element $w\in\widetilde{W}(\Phi)$ such that $\U(\Sigma_\ell)\subset[\U(\Delta_\ell^-),y]\cdot{}^w\!\U(\Delta_\ell^+)$.
+Let $\Phi=\rD_\ell$, $\ell\geq 4$.
+There exist an element $y\in\E(\Phi,R)$ and an element $w\in\widetilde{W}(\Phi)$ such that $\U(\Sigma_\ell, I)\subset[\U(\Delta_\ell^-, I),y]\cdot{}^w\!\U(\Delta_\ell^+, I)$.
 \end{lemma}
 \begin{proof}
-Set $\beta_i = \alpha_{2i-1} + 2\alpha_{2i}+ \ldots + 2\alpha_{\ell-2} + \alpha_{\ell-1} + \alpha_\ell$, for $i=1,\ldots,\lfloor\ell/2\rfloor-1$. Set $\beta_{\lfloor\ell/2\rfloor}=\alpha_{\ell-2}+\alpha_{\ell-1}+\alpha_\ell$ if $\ell$ is odd, and $\beta_{\lfloor\ell/2\rfloor}=\alpha_\ell$ if $\ell$ is even.  Denote $B=\{\beta_i\}$, then decompose $\U(\Sigma_\ell)=\U(\Sigma_\ell\setminus B)\cdot\U(B)$. In fact, $\U(\Sigma_\ell)$ is abelian.
+Since $\U(\Sigma_\ell, I)$ is abelian we can decompose it as $\U(\Sigma_\ell, I)=\U(\Sigma_\ell\setminus B, I) \cdot \U(B, I)$. 
+Set $y=\prod_{\beta\in B}x_\beta(1)$. We will now show that $\U(\Sigma_\ell\setminus B, I)\subset[\U(\Delta_\ell^-, I),y]\cdot\U(B, I)$.
 
-Set $y=\prod_{\beta\in B}x_\beta(1)$. We will now show that $\U(\Sigma_\ell\setminus B)\subset[\U(\Delta_\ell^-),y]\cdot\U(B)$.
-
-Note that \eqref{rel:CCF} implies
-\[ \bigl[\U(\Delta_2^-),x_{\beta_1}(1)\bigr]=1,\quad \Bigl[\U(\Sigma_2^-\cap\Delta_\ell),\prod_{i\neq1}x_{\beta_i}(1)\Bigr]=1. \]
-The first follows from the fact that the only root $\alpha$ with $m_2(\alpha)=2$ is $\beta_1$. The second holds since a root $\alpha\in(\Sigma_2^-\cap\Delta_\ell)+(B\setminus\{\beta_1\})$ must simultaneously satisfy $m_2(\alpha)=-1$ and $m_\ell(\alpha)=1$, which is impossible.
-
-Since $B\setminus\{\beta_1\}\subset\Sigma_\ell\cap\Delta_2$, this implies
-\[ \Bigl[ \U(\Sigma_2^-\cap\Delta_\ell)\cdot\U(\Delta_{2,\ell}^-), x_{\beta_1}(1)\cdot\prod_{i\neq1}x_{\beta_i}(1) \Bigr] \equiv \bigl[ \U(\Sigma_2^-\cap\Delta_\ell), x_{\beta_1}(1) \bigr] \bmod \U(\Sigma_\ell\cap\Delta_2). \]
-Take an element $u\in\U(\Sigma_2^-\cap\Delta_\ell)$ and decompose it as $u=vw$, $v\in\U(\Sigma_1^-\cap\Sigma_2^-\cap\Delta_\ell)$, $w\in\U(\Sigma_2^-\cap\Delta_{1,\ell})$, then, using the identity
+Notice that $\beta_1$ is the only root of $\Phi$ satisfying $m_2(\beta_1)=2$ therefore the commutator formula~\eqref{rel:CCF} implies
+\[ \bigl[\U(\Delta_2^-, I),x_{\beta_1}(1)\bigr]=1. \]
+Since the set $A=(\Sigma_2^-\cap\Delta_\ell)+(B\setminus\{\beta_1\})$ is disjoint from $\Phi$ 
+(for $\alpha\in A$ one has $m_2(\alpha)=-1$ and $m_\ell(\alpha)=1$)
+we also get from~~\eqref{rel:CCF} that
+\[\Bigl[\U(\Sigma_2^-\cap\Delta_\ell, I),\prod_{i\neq1}x_{\beta_i}(1)\Bigr]=1. \]
+Since $B\setminus\{\beta_1\}\subset\Sigma_\ell\cap\Delta_2$, the above identities imply
+\[ \Bigl[ \U(\Sigma_2^-\cap\Delta_\ell, I)\cdot\U(\Delta_{2,\ell}^-, I), x_{\beta_1}(1)\cdot\prod_{i\neq1}x_{\beta_i}(1) \Bigr] \equiv \bigl[ \U(\Sigma_2^-\cap\Delta_\ell, I), x_{\beta_1}(1) \bigr] \bmod \U(\Sigma_\ell\cap\Delta_2, I). \]
+Take an element $u\in\U(\Sigma_2^-\cap\Delta_\ell, I)$ and decompose it as $u=vw$, $v\in\U(\Sigma_1^-\cap\Sigma_2^-\cap\Delta_\ell, I)$, $w\in\U(\Sigma_2^-\cap\Delta_{1,\ell}, I)$.
+Using the identity
 \begin{equation}\label{eq:comm-ab-c}
 [ab,c]={}^a[b,c]\cdot[a,c],
 \end{equation}
-rewrite
+we can rewrite
 \[ [vw,x_{\beta_1}(1)] = {}^v[w,x_{\beta_1}(1)]\cdot[v,x_{\beta_1}(1)].  \]
-Since $\U(\Sigma_1^-\cap\Sigma_2^-\cap\Delta_\ell)$ and $\U(\Sigma_2^-\cap\Delta_{1,\ell})$ are abelian, it is easy to see that
-\[ [v,x_{\beta_1}(1)]\in\U(\Sigma_2\cap\Sigma_\ell\cap\Delta_1), \quad [w,x_{\beta_1}(1)]\in\U((\Sigma_1\cap\Sigma_\ell)\setminus\{\beta_1\}). \]
+Since $\U(\Sigma_1^-\cap\Sigma_2^-\cap\Delta_\ell, I)$ and $\U(\Sigma_2^-\cap\Delta_{1,\ell}, I)$ are abelian, it is easy to see that
+\[ [v,x_{\beta_1}(1)]\in\U(\Sigma_2\cap\Sigma_\ell\cap\Delta_1, I), \quad [w,x_{\beta_1}(1)]\in\U((\Sigma_1\cap\Sigma_\ell)\setminus\{\beta_1\}, I). \]
+%TODO: <add text from thesis>
 Varying $v$ and $w$ one can obtain any element of $\U(\Sigma_2\cap\Sigma_\ell\cap\Delta_1)$ and $\U((\Sigma_1\cap\Sigma_\ell)\setminus\{\beta_1\})$ respectively. This is easy to see by using \eqref{eq:comm-ab-c} repeatedly and the fact that $\U(\Sigma_2^-\cap\Delta_\ell)$ commutes with $\U(\Sigma_\ell)$.
 Now by the Levi decomposition
 \[ {}^v\!\U((\Sigma_1\cap\Sigma_\ell)\setminus\{\beta_1\}) \equiv \U((\Sigma_1\cap\Sigma_\ell)\setminus\{\beta_1\}) \bmod \U(\Sigma_\ell\cap\Delta_2). \]
 Thus we have shown that
 \[ [\U(\Sigma_2^-)\cdot\U(\Delta_{2,\ell}),y] \equiv \U((\Sigma_{1,2}\cap\Sigma_\ell)\setminus\{\beta_1\}) \bmod \U(\Sigma_\ell\cap\Delta_2), \]
 and this reduces the problem to the $\rD_{\ell-2}$-subsystem $\Delta_{1,2}$. So we can carry the induction on the rank of the subsystem, and construct for any given $a\in\U(\Sigma_\ell\setminus B)$ an element $b\in\U(\Delta_\ell^-)$ such that $a\in[b,y]\cdot\prod_{\beta\in B}X_\beta\subset[\U(\Delta_\ell^-),y]\cdot\U(B)$.
+%TODO: </add text from thesis>
 
-It remains to note that the roots $\pm\beta_i$ lie inside a maximal root subsystem of type $\rA_1+\ldots+\rA_1+\rD_3$. All such subsystems are conjugate under the action of the Weyl group, so there exist an element $w\in W(\Phi)$ such that $w(\beta_1)=\alpha_1$, $w(\beta_2)=\alpha_3$, $w(\beta_3)=\alpha_5$ and so on, so that all of $w(\beta_i)$ lie in $\Delta_\ell^+$.
+It remains to notice that the assertion of the lemma follows from~\cref{lemma:nikolov-weyl}.
+%It remains to note that the roots $\pm\beta_i$ lie inside a maximal root subsystem of type $\rA_1+\ldots+\rA_1+\rD_3$.
+%All such subsystems are conjugate under the action of the Weyl group, so there exist an element $w\in W(\Phi)$ such that
+%$w(\beta_1)=\alpha_1$, $w(\beta_2)=\alpha_3$, $w(\beta_3)=\alpha_5$ and so on, so that all of 
+%$w(\beta_i)$ lie in $\Delta_\ell^+$.
 \end{proof}
 \begin{proof}[Proof of \cref{thm:spin-sln-prod}]
 By \cref{thm:DennisVaserstein} one has a decomposition
