@@ -132,15 +132,15 @@ Since $\Delta_s$ is irreducible we get from \cref{item-egen} that $\E(\Delta_s, 
 
 Our next step is to show that $\U(\Sigma_s, R) \subseteq N_{rs}$.
 First of all, notice that by \cref{lemma:dv-normal} we have the inclusion $X_{\alpha_s}(R) \subseteq N_{rs}$.
-In all the cases except $\Phi=\rC_\ell$ we have $m_s(\alpha_{\mathrm{max}})=1$,
-therefore for $\Phi\neq \rB_\ell, \rC_\ell$ all the roots of $\Sigma^+_s$ have the same $s$-shape and length and the assertion follows from \cref{item-trans2}.
+In all the cases except $\Phi=\rC_\ell, \rF_4$ we have $m_s(\alpha_{\mathrm{max}})=1$,
+therefore for $\Phi\neq \rB_\ell, \rC_\ell, \rF_4$ all the roots of $\Sigma^+_s$ have the same $s$-shape and length and the assertion follows from \cref{item-trans2}.
 
 In the case $\Phi=\rB_\ell$ the above argument only proves that $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$ and a separate treatment is needed for the sole root subgroup $X_{1,0}(R)$ corresponding to the short root of $\Sigma_s^+$.
 Specializing identity~\eqref{rel:CCF} we get:
 \begin{equation*} \label{rel:CCF-specBC} x_{1,0}(ab) = [x_{1, 2}(a), x_{2, 0}(b)] \cdot x_{1,-2}(-a b^2) \end{equation*}
 We already know that $X_{2, 0}(R)$ and $X_{1,-2}(R)$ are contained in $\E(\Delta_s, R) \subseteq N_{rs}$ hence $X_{1,0}(R) \subseteq N_{rs}$, as claimed.
 
-We defer the proof in the case $\Phi=\rC_\ell$ until we prove \cref{lemma:DVcaseCl} below.
+We defer the proof in the cases $\Phi=\rC_\ell, \rF_4$ until we prove \cref{lemma:DVcaseCl} below.
 
 Our ultimate goal is to show the inclusion $\E(\Phi, R, I) \subseteq L_{rs}$. 
 By \cref{prop:Stepanov} it is enough to prove that $\mathcal{Z}(\Sigma^-_s) \subseteq L_{rs}$.
@@ -150,35 +150,40 @@ Since $\EP_s(R, I) \subseteq \EP_s(R) \subseteq N_{rs}$ we also conclude that $\
 \[ g \cdot A_{rs} \subseteq g \cdot {A_{rs}}^g = A_{rs} \cdot g = A_{rs}. \]
 Thus, we are left to prove the inclusion $\U(\Sigma^-_r \cap \Sigma^-_s, I) \subseteq L_{rs}$.
 
-Just as in the above argument all the cases except $\Phi = \rB_\ell, \rC_\ell$ follow from \cref{item-trans2}.
+Just as in the above argument all the cases except $\Phi = \rB_\ell, \rC_\ell, \rF_4$ follow from \cref{item-trans2}.
 In the case $\Phi=\rB_\ell$ from $x_{0, 1}(-a) = [x_{2,1}(-a), x_{0, 2}(-1)]\cdot x_{-2,1}(a)$ we conclude that
 $$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{x_{0,2}(1)} \cdot X_{-2,1}(I) \subseteq L_{rs} \cdot L_{rs}^{N_{rs}} \cdot L_{rs} \subseteq L_{rs},$$
-whence the statement of the theorem follows. \end{proof}
+and the statement of the theorem follows. \end{proof}
 
-\begin{lemma} \label{lemma:DVcaseCl}
-For $\Phi=\rC_\ell$ and any ideal $I$ satisfying $\sr(I) \leq \ell-1$ one has $X_{-\alpha_s}(R) \subseteq N_{rs}$.
+\begin{lemma}\label{lemma:DVST}
+Assume that one of the following holds:
+\begin{lemlist}
+ \item \label{lemma:DVcaseCl} $\Phi=\rC_\ell$ and $\sr(I) \leq \ell-1$;
+ \item \label{lemma:DVcaseF4} $\Phi=\rF_4$ and $\asr(I) \leq 3$.
+\end{lemlist}
+Then one has $X_{-\alpha_s}(R) \subseteq N_{rs}$.
 \end{lemma}
 \begin{proof}
 Consider the subset $C \subseteq \EP_s(R, I)$ consisting of matrices such that matrix components $v=(g_{i,2})$, $i=2,\ldots, \ell$ form an $I$-unimodular column of height $\ell-1$.
 Set $A' = \EP_\ell(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot C$.
 
-By \cref{item:asrUnipC} (applied to the subgroup $\G(\Delta_s, R, I)$) we find for every $g \in \EP_s(R, I)$ a matrix $x \in \U(\Sigma_r \cap \Delta_s, I)$ such that $xg \in C$.  
+By \cref{item:asrUnipC} and \cref{cor:embeddingBD} (applied to the subgroup $\G(\Delta_s, R, I)$) we find for every $g \in \EP_s(R, I)$ a matrix $x \in \U(\Sigma_r \cap \Delta_s, I)$ such that $xg \in C$.  
 Notice that one immediately gets the equality $A_{rs} = A'$ from this.
 Indeed for $g\in \EP_s(R, I)$ one has
 \begin{equation*} \EP_r(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot g \subseteq 
  \EP_r(R, I)x^{-1}  \cdot \U(\Sigma_s^-, I) \cdot xg \subseteq A'. \end{equation*}
 
-By the very definition of $C$, for every $g \in C$ one can choose $y \in \U(\Sigma_s \cap \Delta_r, I)$ such that $(y \cdot g)_{1,2} = 0$.
+By the very definition of $C$, for every $g \in C$ one can choose $y \in \U(\Sigma_s \cap \Delta_r, I)$ such that $(y \cdot g)_{\varpi_s,\varpi_s - \alpha_s} = 0$.
 Consequently, for every $g\in C$ one has
 \begin{multline*}
  \EP_r(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot g \subseteq \EP_r(R, I) y^{-1} \cdot \U(\Sigma_r^-\cap \Sigma_s^-, I)^{y^{-1}} \cdot y g \subseteq \\
   \subseteq \EP_r(R, I) \cdot \U(\Sigma_r^-, I) \cdot y g
 \end{multline*}
-Notice that the matrix entry $(yg)_{1,1}$ is invertible.
-From the choice of $y$ it follows that for every $\xi\in R$ the element $g_1:=(yg)^{x_{2,1}(\xi)}$
+Notice that the matrix entry $(yg)_{\varpi_s,\varpi_s}$ is invertible.
+From the choice of $y$ it follows that for every $\xi\in R$ the element $g_1:=(yg)^{x_{-\alpha_s}(\xi)}$
 satisfies the assumptions of \cref{lemma:Chevalley-Matsumoto} and therefore can be rewritten as $g_1 = uh$ for some $u \in \U(\Sigma_s^-, I)$, $h \in \EP_1(R, I)$.
 Consequently, one has
-\begin{multline*} {A_{rs}}^{X_{-\alpha_s}(R)} = A'^{X_{2,1}(R)} \subseteq \EP_r(R, I)^{X_{2,1}(R)} \cdot \U(\Sigma_r^-, I)^{X_{2,1}(R)} \cdot \U(\Sigma_s^-, I) \cdot \EP_s(R, I) \subseteq \\
+\begin{multline*} {A_{rs}}^{X_{-\alpha_{s}}(R)} \subseteq \EP_r(R, I)^{X_{-\alpha_{s}}(R)} \cdot \U(\Sigma_r^-, I)^{X_{-\alpha_{s}}(R)} \cdot \U(\Sigma_s^-, I) \cdot \EP_s(R, I) \subseteq \\
  \subseteq \EP_\ell(R, I) \cdot \U(\Phi^-, I) \cdot \EP_s(R, I) \subseteq A_{rs} \end{multline*}
  as claimed.
 \end{proof}
