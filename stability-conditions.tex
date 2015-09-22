@@ -110,10 +110,23 @@ For example, if $F$ is algebraic over a finite field then $\sr(F[x_1,\ldots,x_n]
 On the other hand, it is known that $\sr(F[x,y])=3$ for every $F$ with $\K_2^M(F)\neq0$ \cite{KrusenmeyerThesis} and $\sr(F[x_1,\ldots,x_n])=n+1$ for $F\subseteq\mathbb{R}$, see~\cite[Theorem~8]{Va71}.
 
 \subsection{Action of unipotent radicals}\label{sec:ur-action}
+\begin{lemma}\label{lemma:PSV-symplectic-trick}
+ Let $v=(v_1,\ldots, v_n)^t$ be a column. Denote by $v'$ the vector composed of squares of the components of $v$, i.\,e. $v'=(v_1^2, \ldots, v_n^2)^t$.
+ Then for any matrix $b \in M(n, I)$ one can find a symmetric matrix $a \in M(n, I)$, $a=a^t$ such that $b \cdot v' = a \cdot v$. \end{lemma}
+\begin{proof}
+Straightforward computation shows that the assertion of lemma holds for the matrix $a$ defined by
+\begin{equation*}
+a_{ij} = b_{ij} v_{j} + b_{ji} v_{i},\ j\neq i,\quad a_{ii} = b_{ii} v_{i} - \sum\limits_{\mathclap{\substack{j=1 \\ j\neq i}}}^\ell b_{ji} v_{j}. \qedhere
+\end{equation*}
+%$$(av)_k = \sum\limits_{i=1,\ i\neq k}^\ell \left( b_{ki} v_{i} + b_{ik} v_{k} \right)v_{i}  +
+%\left(b_{kk}v_{k} - \sum\limits_{i=1,\ i\neq k}^\ell b_{ik} v_{i}\right)v_{k} = \sum\limits_{i=1}^\ell b_{ki} v_{i}^2 = (bv')_k$$
+\end{proof}
+
 Let $v\in V=R^{2\ell}$ be a vector of the natural representation of $\G(\rD_\ell, R)$.
 Denote by $v_+$ and $v_-$ the upper and the lower halves of $v$, i.e. $v_+=(v_1,\ldots, v_\ell)^t$, $v_-=(v_{-\ell},\ldots, v_{-1})^t$.
 \begin{lemma}\label{lemma:asrUnip}
-Then for any $I$-unimodular column $v=(v_+, v_-)^t\in\Ums(2\ell, I)$ there exists $g\in\U(\Sigma^+_\ell, I) \leq \G(\Phi, R, I)$ such that $(g \cdot v)_+ \in \Ums(\ell, I)$ under the following assumptions on $\Phi$ and $I$.
+For any $I$-unimodular column $v=(v_+, v_-)^t\in\Ums(2\ell, I)$ there exists $g\in\U(\Sigma^+_\ell, I) \leq \E(\Phi, R, I)$ 
+such that $(g \cdot v)_+ \in \Ums(\ell, I)$ under the following assumptions on $\Phi$ and $I$.
 \begin{lemlist}
 \item \label{item:asrUnipC} $\Phi=\rC_\ell$ and $\sr(I) \leqslant \ell$;
 \item \label{item:asrUnipD} $\Phi=\rD_\ell$ and $\asr(I)\leqslant \ell -1$.
@@ -121,22 +134,15 @@ Then for any $I$-unimodular column $v=(v_+, v_-)^t\in\Ums(2\ell, I)$ there exist
 \end{lemma}
 \begin{proof} 
 \textsc{Case $\Phi=\rC_\ell$.}
-Denote by $p$ the matrix of size $\ell$ such that its only nonzero entries equal $1$ and are located on the skew-diagonal, i.\,e. $p_{ij}=(\delta_{i, \ell-j+1})$. 
-Set $d =\mathrm{diag}(v_{-\ell},\ldots,v_{-1}).$
-Notice that the column $$v'=(v_1,\ldots,v_\ell, v_{-\ell}^2,\ldots,v_{-1}^2)^t$$ is also $I$-unimodular.
-By the definition of the relative stable rank we can find a matrix $b\in \M(\ell,I)$
-such that the upper half $v''_+$ of the vector $v''= g(b) \cdot v'$, where 
-$g(b)=\left(\begin{smallmatrix} e_\ell & p \cdot b \\ 0 & e_{\ell} \end{smallmatrix}\right)$, is $I$-unimodular.
-It is clear that $v''_+ = v'_+ + pb v'_- = v_+ + pbd v_-$. 
-Consider the matrix $a \in M(\ell, I)$ defined by 
-\begin{align*}
- & a_{ij} = b_{ij} v_{-j} + b_{ji} v_{-i},\ j\neq i,\\
- & a_{ii} = b_{ii} v_{-i} - \sum\limits_{\mathclap{\substack{j=1 \\ j\neq i}}}^\ell b_{ji} v_{-j}.
-\end{align*}
-It is clear that the matrix $pa$ is persymmetric and that $g(a) \in \U(\Sigma_\ell, I)$. 
-On the other hand, direct calculation shows that $(g(a)\cdot v)_+=v_+ + pav_- = v_+ + pbdv_- = v''_+ \in \Ums(\ell, I)$.
-%$$(av_-)_k = \sum\limits_{i=1,\ i\neq k}^\ell \left( b_{ki} v_{-i} + b_{ik} v_{-k} \right)v_{-i}  +
-%\left(b_{kk}v_{-k} - \sum\limits_{i=1,\ i\neq k}^\ell b_{ik} v_{-i}\right)v_{-k} = \sum\limits_{i=1}^\ell b_{ki} v_{-i}^2 = (bdv_-)_k$$
+Denote by $p$ the matrix of size $\ell$ such that its only nonzero entries equal $1$ and are on the skew-diagonal, i.\,e. $p_{ij}=(\delta_{i, \ell-j+1})$. 
+For $b \in M(\ell, I)$ set $g(b)=\left(\begin{smallmatrix} e_\ell & p \cdot b \\ 0 & e_{\ell} \end{smallmatrix}\right)$.
+Clearly, if $b$ is symmetric then $g(b)$ lies in $\U(\Sigma_\ell, I)\leq \E(\rC_\ell, R, I)$.
+
+Notice that the column $v'=(v_1,\ldots,v_\ell, v_{-\ell}^2,\ldots,v_{-1}^2)^t$ is $I$-unimodular.
+By the definition of the relative stable rank we can find a matrix $b\in \M(\ell,I)$ such that the upper half $v''_+$ of the vector $v''= g(b) \cdot v'$ is $I$-unimodular.
+It is clear that $v''_+ = v_+ + pb v'_-$. 
+Finally, applying \cref{lemma:PSV-symplectic-trick} we find a symmetric matrix $a$ such that
+$$(g(a)\cdot v)_+=v_+ + pav_- = v_+ + pbv'_- = v''_+ \in \Ums(\ell, I).$$
 
 \textsc{Case $\Phi=\rD_\ell$.} Denote by $J$ the ideal of $R$ spanned by the components of $v_{-}$. Clearly, $J \subseteq I$.
 By \cref{prop:sr_properties} $\sr(I/J) \leqslant \ell-1$, therefore
@@ -157,10 +163,11 @@ Summarizing the above, we have found $g\in \EP_\ell(R, I)$ such that $v^{(4)}=g 
 and the assertion of the lemma immediately follows from Levi decomposition. \end{proof}
 
 \begin{lemma} \label{lemma:uraction} 
-Let $\Phi=\rA_\ell, \rD_\ell$. Denote by $\pi$ the natural representation of $\G(\Phi, R)$ on $V=R^n$, $n=\ell+1,2\ell$.
+Let $\Phi=\rA_\ell, \rC_\ell, \rD_\ell$. Denote by $\pi$ the natural representation of $\G(\Phi, R)$ on $V=R^n$, $n=\ell+1,2\ell$.
 Assume that one of the following conditions holds:
 \begin{lemlist}
  \item \label{item:uractionA} $\Phi=\rA_\ell$, $\Gamma=\{ k+1, \ldots, \ell+1\} \subset \Lambda(\pi)$ and $\sr(I)\leq k\leq \ell$;
+ \item \label{item:uractionC} $\Phi=\rC_\ell$, $\Gamma=\{-\ell,\ldots, -2, -1\} \subset \Lambda(\pi)$ and $\sr(I)\leq \ell$. 
  \item \label{item:uractionD} $\Phi=\rD_\ell$, $\Gamma=\{-\ell,\ldots, -2, -1\} \subset \Lambda(\pi)$ and $\asr(I)\leq \ell-1$. 
 \end{lemlist}
 Then for $g\in \G(\Phi, R, I)$ there exist $x\in \U(\Phi^+, I)$, $y\in \U(\Phi^-, I)$ such that $(yxg \cdot v^+)_\lambda = 0$ for $\lambda\in \Gamma$.
@@ -172,6 +179,13 @@ $x= \left(\begin{smallmatrix} e_k & a \\ 0 & e_{n-k} \end{smallmatrix}\right) \i
 the upper $k$ components of $v'= x \cdot v$ form an $I$-unimodular column. 
 Now, to obtain zeroes at desired positions it remains to subtract from $v'_{k+1},\ldots, v'_{\ell+1}$ suitable multiples of $v'_1,\ldots v'_k$.
 Clearly, this operation corresponds to the left multiplication by some element $y\in\U(\Sigma_k^-, I)$.
+
+\textsc{Case $\Phi=\rC_\ell$.} 
+Applying \cref{item:asrUnipC} we find $x \in \U(\Sigma_\ell, I)$ such that the upper half $v'_+$ of $v' = x \cdot v$ is unimodular.
+Set $g(a) = \left(\begin{smallmatrix} e_\ell & 0 \\ p \cdot a & e_{\ell} \end{smallmatrix}\right)$.
+Clearly, if $a$ is symmetric then $g(a) \in \U(\Sigma_\ell^-, I)$.
+Since the column $v''_+ = ({v'_1}^2, \ldots, {v'_\ell}^2)^t$ is $I$-unimodular there exists a matrix $b \in M(\ell, I)$ such that $v'_- + p b v''_+ = 0$.
+Finally, using \cref{lemma:PSV-symplectic-trick} we find a symmetric matrix $a$ such that $(g(a) \cdot v')_- = p a v'_+ + v'_- = p b v''_+ + v'_- = 0$.
 
 \textsc{Case $\Phi=\rD_\ell$.} From the proof of \cref{item:asrUnipD} it follows that there exists $h_1 \in \EP_\ell(R, I)$ such that for $v'=h_1\cdot v$ one has $v'_2=v'_1-1\in I$.
 Clearly, for $v'' = z_{-\alpha\ssub{2}}(-v'_2, 1)\cdot v'$ one has $v''_1=1$ hence by \cref{lemma:Chevalley-Matsumoto} there exists $h_2 \in \U(\Phi^-, I)$ such that the element
