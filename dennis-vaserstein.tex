@@ -2,16 +2,16 @@ Let $\Phi$ be an irreducible root system of rank $\ell$.
 In what follows, $r$ and $s$ are two distinct integers such that $1 \leq r, s \leq \ell$.
 From Levi decomposition~\eqref{rel:Levi-decomp} it follows that the following four subsets of $\E(\Phi, R, I)$ are equal:
 \begin{multline*}
-\U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \\
+A_{rs} := \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \\
 = \U(\Sigma_r, I)\cdot \U(\Sigma^-_r, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \hspace{5em} \\
 \hspace{5em} = \EP_r(R, I) \cdot \E(\Delta_s, R, I) \cdot \U(\Sigma_s^-, I)\cdot \U(\Sigma_s, I) = \\
 = \EP_r(R, I) \cdot \U(\Sigma^-_r \cap \Sigma^-_s, I) \cdot \EP_s(R, I).
 \end{multline*}
-Denote by $A_{rs}$ any of the above equal subsets.
 
-The main result of this subsection is the following theorem which is a relative version of \cite[Lemma~2.1]{ST76} and \cite[Theorem~2.5]{St78}).
+The main result of this subsection is the following theorem which is a relative version of Dennis---Vaserstein theorem (compare with \cite[Lemma~2.1]{ST76} and \cite[Theorem~2.5]{St78}).
+Notice that M.~Stein uses the first of the above $4$ equivalent ways of writing down the decomposition while A.~Suslin and M.~Tulenbaev use the fourth.
 \begin{thm}\label{thm:DennisVaserstein}
-The relative elementary subgroup $\E(\Phi, R, I)$ admits Dennis---Vaserstein decomposition, i.\,e. a decompostion of the form $\E(\Phi, R, I) = A_{rs}$ under the following assumptions on $I$ and $\Phi$.
+The relative elementary subgroup $\E(\Phi, R, I)$ admits Dennis---Vaserstein decomposition, i.\,e. $\E(\Phi, R, I) = A_{rs}$ under the following assumptions on $I$ and $\Phi$.
 \[\begin{array}{l@{\qquad}c@{\quad}c@{\qquad}l}
 \Phi                                 & s    & r      & \text{ring condition} \\ \hline\vphantom{\Bigl(}
 \rA_\ell,\ \ell\geqslant 2           & 1    & \ell   & \sr(I) \leqslant \ell-1 \\    
@@ -23,13 +23,8 @@ The relative elementary subgroup $\E(\Phi, R, I)$ admits Dennis---Vaserstein dec
 \rE_\ell,\ \ell=6,7                  & \ell & 1      & \asr(I)\leqslant \ell-2 \\ 
 \rF_4                                & 4    & 1      & \asr(I)\leqslant 3 \end{array}\]
 \end{thm}
-Consider the following two submonoids of $\E(\Phi, R)$:
-\[ N_{rs} = \left\{ g\in \E(\Phi, R)\ \middle|\ g \cdot A_{rs} \cdot g^{-1} \subseteq A_{rs} \right\}, \quad
-   L_{rs}=  \left\{ g\in \E(\Phi, R, I)\ \middle|\ g \cdot A_{rs} \subseteq A_{rs} \right\}. \]
-
-It is easy to see that $N_{rs}$ normalizes $L_{rs}$, i.e. ${L_{rs}}^{N_{rs}} \subseteq L_{rs}$. 
-Indeed, for $g\in N_{rs}$, $h\in L_{rs}$ one has
-\begin{equation}\label{rel:NnormL} h^g \cdot A_{rs} = g^{-1} \cdot h \cdot g \cdot A_{rs} \subseteq g^{-1} \cdot h \cdot A_{rs} \cdot g \subseteq {A_{rs}}^g \subseteq A_{rs}.\end{equation}
+Denote by $N_{rs}$ the submonoid of $\E(\Phi, R)$ consisting of elements which normalize the subset $A_{rs}$, i.\,e.
+\[ N_{rs} = \left\{ g\in \E(\Phi, R)\ \middle|\ g \cdot A_{rs} \cdot g^{-1} \subseteq A_{rs} \right\}. \]
 
 \begin{lemma}\label{lemma:dv-normal} 
 For every $\alpha \in \Delta_{\{r,s\}} \cup (\Phi^+ \setminus (\Sigma^+_r \cap \Sigma^+_s))$ one has $X_\alpha(R) \subseteq N_{rs}$. \end{lemma}
@@ -39,6 +34,38 @@ Since $\U(\Sigma_r^- \cap \Sigma_s^-, I)$ is normalized by $\E(\Delta_{\{r,s\}},
 
 Now if $\alpha$ lies in $\Phi^+ \setminus \Sigma_r \cap \Sigma_s$ it is contained either in $\Delta_r$ or in $\Delta_s$.
 Assume, for example, the latter. It remains to notice that $\U(\Sigma_r^- \cap \Sigma_s^-, I)^{X_\alpha(R)} \subseteq \U(\Sigma_s^-, I) \subseteq A_{rs}.$
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:DennisVaserstein}]
+Denote by $L_{rs}$ the set consisting of all the elements $g\in \E(\Phi, R, I)$ such that $g \cdot A_{rs} \subseteq A_{rs}$.
+It is easy to see that $N_{rs}$ normalizes $L_{rs}$, i.\,e. ${L_{rs}}^{N\ssub{rs}}\subseteq L_{rs}$. Indeed, for $g\in N_{rs}$, $h\in L_{rs}$ one has
+\begin{equation}\label{rel:NnormL} h^g \cdot A_{rs} = g^{-1} \cdot h \cdot g \cdot A_{rs} \subseteq g^{-1} \cdot h \cdot A_{rs} \cdot g \subseteq {A_{rs}}^g \subseteq A_{rs}.\end{equation}
+
+The first step of the proof is show that $N_{rs}$ contains sufficiently many elements. 
+This is accomplished in~\cref{lemma:Stein_reduction} below, where we invoke the stability conditions for the first time.
+We show that $N_{rs}$ contains the root subgroup $X_{-\alpha\ssub{s}}(R)$, which together with \cref{lemma:dv-normal} and \cref{item-egen} immediately implies that $N_{rs}$ contains the Levi subgroup $\E(\Delta_s, R)$ and hence the extended Weyl group $\widetilde{W}(\Delta_s)$.
+
+The next goal is to demonstrate the inclusion $\U(\Sigma_s, R) \subseteq N_{rs}$ (which implies $\EP_s(R) \subseteq N_{rs}$).
+All the possibilities for $(\Phi, r, s)$ mentioned in the statement of the theorem fall into one of the following three categories:
+\begin{enumerate}
+ \item \textit{Case $m_s(\alpha_{\mathrm{max}})=1$ and $\Phi$ is simply laced.}
+  In this case all the roots of $\Sigma^+_s$ have the same $s$-shape and length, hence the assertion follows from \cref{item-trans2}, \eqref{rel:NnormL} and the fact that we already have the inclusion $X_{\alpha_s}(R) \subseteq N_{rs}$.
+ \item \textit{Case $\Phi = \rB_\ell$.} Using the argument as in the first case we get $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$.
+  It remains to prove the inclusion $X_{1,0}(R) \subset N_{rs}$.
+  Specializing identity~\eqref{rel:CCF} we get \begin{equation*} \label{rel:CCF-specBC} x_{1,0}(ab) = [x_{1, 2}(a), x_{2, 0}(b)] \cdot x_{1,-2}(-a b^2) \end{equation*}
+  We already know that $X_{2, 0}(R)$ and $X_{1,-2}(R)$ are contained in $\E(\Delta_s, R) \subseteq N_{rs}$ hence we obtain $X_{1,0}(R) \subseteq N_{rs}$, as claimed.
+ \item \textit{Case $\Phi = \rC_\ell, \rF_4, \rE_8$.}
+ We settle these remaining cases in \cref{lemma:DVST} where we invoke the stability conditions one more time. 
+ In fact, we prove a stronger result, namely that $N_{rs}$ contains $X_{-\alpha\ssub{r}}(R)$ and, consequently, $N_{rs} = \E(\Phi, R)$.
+\end{enumerate}
+
+In view of \cref{prop:Stepanov} to prove the theorem it suffices to show that $L_{rs}$ contains the generating set $\mathcal{Z}(\Sigma_s^-) \cup \mathcal{X}$ of $\E(\Phi, R, I)$.
+From $\mathcal{Z}(\Sigma_s^-) \subseteq \mathcal{X}^{\EP_s(R)}$ and \eqref{rel:NnormL} it follows that we only have to show $\mathcal{X} \subseteq L_{rs}$.
+
+Finally, the last inclusion follows from the same transitivity argument as above and the fact that $X_\alpha(I) \subseteq \EP_r(R, I) \subseteq L_{rs}$ for $\alpha \in \Delta_r \cup \Sigma_r$.
+For $\Phi=\rB_\ell$ one has to use additionally the fact that
+%from $x_{0, 1}(-a) = [x_{2,1}(-a), x_{0, 2}(-1)]\cdot x_{-2,1}(a)$ we conclude that
+$$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{x_{0,2}(1)} \cdot X_{-2,1}(I) \subseteq L_{rs} \cdot L_{rs}^{N_{rs}} \cdot L_{rs} \subseteq L_{rs}. \qedhere$$ 
 \end{proof}
 
 \begin{lemma}\label{lemma:dv_unipotent} For any $1\leq i\leq n$ the following statements hold. 
@@ -114,37 +141,6 @@ This proves the first assumption of \cref{lemma:Stein_reduction}, indeed:
 \[ \U(\Sigma^+_r, I) \cdot \U(\Sigma^-_r, I) \cdot g = \U(\Sigma^+_r, I) x^{-1} \cdot \U(\Sigma^-_r, I)^{x^{-1}} y^{-1} (yxg) \subseteq \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B. \]
 To prove the second assumption of \cref{lemma:Stein_reduction} notice that by \cref{lemma:Matsumoto} and the definition of $\Gamma$ for any $s\in I$, $ g\in B$ one has $x_{-\alpha_r}(s) \cdot g \cdot v^+ = g \cdot v^+$ hence
 \[ X_{-\alpha\ssub{r}}(I)^{B} \subseteq \U(\Phi^-, I) \cap \Stab(v^+) \subseteq \U(\Delta_s^-, I) \subseteq \EP_s(R, I). \]
-
-\begin{proof}[Proof of \cref{thm:DennisVaserstein}]
-By the above discussion we may assume that the assertion of \cref{lemma:Stein_reduction} holds.
-Set $\Pi' = \Pi \setminus \{\alpha_s\}$.
-From \cref{lemma:dv-normal} and \cref{lemma:Stein_reduction} it follows that $X_\alpha(R) \subseteq N_{rs}$ for $\alpha \in \Pi' \cup -\Pi'$.
-Since $\Delta_s$ is irreducible we get from \cref{item-egen} that $\E(\Delta_s, R) \subseteq N_{rs}$.
-
-Our next step is to show that $\U(\Sigma_s, R) \subseteq N_{rs}$.
-First of all, notice that by \cref{lemma:dv-normal} we have the inclusion $X_{\alpha_s}(R) \subseteq N_{rs}$.
-In all the cases except $\Phi=\rC_\ell, \rF_4$ we have $m_s(\alpha_{\mathrm{max}})=1$,
-therefore for $\Phi\neq \rB_\ell, \rC_\ell, \rF_4$ all the roots of $\Sigma^+_s$ have the same $s$-shape and length and the assertion follows from \cref{item-trans2}.
-
-In the case $\Phi=\rB_\ell$ the above argument only proves that $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$ and a separate treatment is needed for the sole root subgroup $X_{1,0}(R)$ corresponding to the short root of $\Sigma_s^+$.
-Specializing identity~\eqref{rel:CCF} we get:
-\begin{equation*} \label{rel:CCF-specBC} x_{1,0}(ab) = [x_{1, 2}(a), x_{2, 0}(b)] \cdot x_{1,-2}(-a b^2) \end{equation*}
-We already know that $X_{2, 0}(R)$ and $X_{1,-2}(R)$ are contained in $\E(\Delta_s, R) \subseteq N_{rs}$ hence $X_{1,0}(R) \subseteq N_{rs}$, as claimed.
-
-We defer the proof in the cases $\Phi=\rC_\ell, \rF_4$ until we prove \cref{lemma:DVcaseCl} below.
-
-Our ultimate goal is to show the inclusion $\E(\Phi, R, I) \subseteq L_{rs}$. 
-By \cref{prop:Stepanov} it is enough to prove that $\mathcal{Z}(\Sigma^-_s) \subseteq L_{rs}$.
-In view of formula~\eqref{rel:NnormL} and the previous part of the proof it suffices to show only that $\mathcal{X} \subseteq L_{rs}$.
-It is clear that $\EP_r(R, I) \subseteq L_{rs}$.
-Since $\EP_s(R, I) \subseteq \EP_s(R) \subseteq N_{rs}$ we also conclude that $\EP_s(R, I) \subseteq L_{rs}$, indeed, for $g \in \EP_s(R,I)$ one has
-\[ g \cdot A_{rs} \subseteq g \cdot {A_{rs}}^g = A_{rs} \cdot g = A_{rs}. \]
-Thus, we are left to prove the inclusion $\U(\Sigma^-_r \cap \Sigma^-_s, I) \subseteq L_{rs}$.
-
-Just as in the above argument all the cases except $\Phi = \rB_\ell, \rC_\ell, \rF_4$ follow from \cref{item-trans2}.
-In the case $\Phi=\rB_\ell$ from $x_{0, 1}(-a) = [x_{2,1}(-a), x_{0, 2}(-1)]\cdot x_{-2,1}(a)$ we conclude that
-$$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{x_{0,2}(1)} \cdot X_{-2,1}(I) \subseteq L_{rs} \cdot L_{rs}^{N_{rs}} \cdot L_{rs} \subseteq L_{rs},$$
-and the statement of the theorem follows. \end{proof}
 
 \begin{lemma}\label{lemma:DVST}
 Assume that one of the following holds:
