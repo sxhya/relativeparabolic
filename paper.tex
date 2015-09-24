@@ -238,7 +238,7 @@ Set
 Clearly, $\Delta_J$ is a reductive subset, while $S^\pm_J$ and $\Sigma^\pm_J$ are parabolic and special subsets, respectively.
 For two disjoint subsets $I, J\subseteq \Pi$ one has 
 \[ \Sigma^\pm_{I \cup J} = \Sigma^\pm_I\cup\Sigma^\pm_J, \quad \Delta_{I\cup J} = \Delta_I \cap \Delta_J. \]
-We often omit the curly braces in the notations above, so, for example, $\Delta_k=\Delta_{\{k\}}$ and $\Sigma_{i,j}=\Sigma_{\{i,j\}}$.
+We tend to omit curly braces in the above notations in the case when $J$ is a one or two element set, e.\,g. $\Delta_k=\Delta_{\{k\}}$ and $\Sigma_{i,j}=\Sigma_{\{i,j\}}$ etc.
 
 \begin{lemma}[{\cite[Lemma~1]{ABS}}]\label{lemma:abs}
 Let $\alpha, \beta \in \Sigma^\pm_J$ be two roots having the same length such that $\shape(J,\alpha)=\shape(J,\beta)\neq 0$.
@@ -293,7 +293,7 @@ To prove the second assertion notice that the subgroup $\langle X_\alpha(R) \mid
 
 Define semisimple root elements $h_\alpha(\varepsilon)$, $\alpha\in\Phi$, $\varepsilon\in R^*$ as $h_\alpha(\varepsilon)=w_\alpha(\varepsilon)w_\alpha(-1)$.
 The elements $h_\alpha(\varepsilon)$ satisfy the following relations:
-\begin{alignat}{2}
+\begin{alignat}{2} 
 & [ h_\alpha(\varepsilon_1), h_\beta(\varepsilon_2)] = 1, &\quad& \alpha, \beta \in \Phi,\ \varepsilon_1, \varepsilon_2 \in R^*; \label{rel:h-comm} \\
 & \phantom{[} h_\alpha(\varepsilon_1 \varepsilon_2) = h_\alpha(\varepsilon_1) h_\alpha(\varepsilon_2), && \alpha \in \Phi,\ \varepsilon_1, \varepsilon_2 \in R^*; \label{rel:h-mult} \\
 & \phantom{[} h_\alpha(\varepsilon)x_\beta(\xi)h_\alpha(\varepsilon)^{-1} = x_\beta\left(\varepsilon^{\langle\beta,\alpha\rangle}\xi\right), && \alpha, \beta \in \Phi,\ \varepsilon \in R^*, \xi \in R. \label{rel:h-w}
@@ -304,14 +304,13 @@ Our notation and terminology pertaining to representations of Chevalley groups f
 Let $\pi$ be an irreducible representation of $\G(\Phi, R)$ acting on a free $R$-module $V$.
 We denote by $\Lambda=\Lambda(\pi)$ the set of weights of $\pi$ and by $\Lambda(\pi)^*$ the subset of non-zero weights.
 Denote by $V_\lambda \leq V$ the \emph{weight subspace} corresponding to $\lambda\in\Lambda(\pi)$ and denote by $m_\lambda$ the dimension of $V_\lambda$.
-Clearly, $V = V_0 \oplus V'$, where $V'$ denotes the sum of all weight subspaces $V_\lambda$, $\lambda \in \Lambda(\pi)^*$.
 
 A representation $\pi$ is called \emph{basic} if for every pair of non-zero weights $\lambda, \mu \in \Lambda^*(\pi)$ such that $\lambda - \mu \in \Pi$ one has $\sigma_\alpha(\lambda) = \mu$.
 Obviously, this is equivalent to saying that $W(\Phi)$ acts transitively on $\Lambda(\pi)^*$.
 
 The irreducible representations of Chevalley groups used in these paper form a sublist of~\cite[Table~2]{PSV98}.
 More specifically, all of them are \emph{fundamental} (i.\,e. their highest weight is fundamental) and basic.
-We widely employ the technique of \emph{weight diagrams} (see~\cite[\S~2]{PSV98}) to help visualize their structure.
+We widely employ the technique of \emph{weight diagrams} (see~\cite[\S~2]{PSV98}) to help visualize the structure of these representations.
 In the simplest case of a \emph{microweight} representation $\pi$ (i.\,e. $\pi$ such that $V_0 = 0$)
 the weight diagram of $(V, \pi)$ is just an undirected graph whose vertices are in one-to-one correspondence with the elements of $\Lambda(\pi)$.
 Two vertices $\lambda$, $\mu$ of the diagram are joined by a bond marked $i$ iff $\lambda-\mu = \alpha_i$.
@@ -319,11 +318,11 @@ Two vertices $\lambda$, $\mu$ of the diagram are joined by a bond marked $i$ iff
 An immediate application of weight diagrams is that they allow one to quickly read off the branching of a given basic representation with respect to a subsystem subgroup.
 If $J$ is a subset of $\Pi$ and $\Delta$ is the subsystem of $\Phi$ spanned by $J$ then the weight diagram of $\pi$ restricted to $G(\Delta, R)$ can be obtained
 from the weight diagram of $\pi$ by simply removing all the bonds whose label $i$ is such that $\alpha_i\not\in J$ (cf.~\cite[\S~2.7]{PSV98}).
-
+ 
 Recall that all nonzero weights of a basic representation have multiplicty one and the multiplicity $m_0$ of the zero weight subspace equals $|\Delta(\pi)|$, where $\Delta(\pi)= \Lambda(\pi)^* \cap \Pi$ (see~\cite[Lemma~2.1]{Ma69}).
-Consequently, one can pick a basis $E_\pi = \{ e_\lambda \}_{\lambda \in \Lambda^*(\pi)}$ of $V'$,
-choose elements $e_0(\alpha) \in V_0$, $\alpha \in \Phi$ (of which $e_0(\alpha)$, $\alpha \in \Delta(\pi)$ form a basis of $V_0$)
-and functionals $\alpha_* \in V_0^* = \Hom_R(V_0, R)$, $\alpha \in \Phi$ in such a way that the action of elementary root unipotents $x_\alpha(\xi)$ has particularly simple description.
+For $\alpha \in \Phi$ one can define certain elements $e_0(\alpha) \in V_0$ and $\alpha_* \in V_0^* = \Hom_R(V_0, R)$
+and choose some set of vectors $E^* = \{ e_\lambda \}_{\lambda \in \Lambda^*(\pi)}$ in such a way that 
+$E_\pi = E^* \cup \{ e_0(\alpha) \}_{\alpha \in \Delta(\pi)}$ forms a basis of $V$ in which the action of elementary root unipotents $x_\alpha(\xi)$ has particularly simple description.
 
 \begin{lemma}[{\cite[Lemma~2.3]{Ma69}}]\label{lemma:Matsumoto}
 Let $(V, \pi)$ be a basic representation of $\G(\Phi, R)$.

@@ -8,21 +8,33 @@ A_{rs} := \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(
 = \EP_r(R, I) \cdot \U(\Sigma^-_r \cap \Sigma^-_s, I) \cdot \EP_s(R, I).
 \end{multline*}
 
-The main result of this subsection is the following theorem which is a relative version of Dennis---Vaserstein theorem (compare with \cite[Lemma~2.1]{ST76} and \cite[Theorem~2.5]{St78}).
-Notice that M.~Stein uses the first of the above $4$ equivalent ways of writing down the decomposition while A.~Suslin and M.~Tulenbaev use the fourth.
+The main result of this subsection is the following theorem which is a relative version of Dennis---Vaserstein theorem (cf. \cite[Lemma~2.1]{ST76} and \cite[Theorem~2.5]{St78}).
+Notice that M.~Stein uses the first of the above $4$ equivalent ways of writing down the decomposition while A.~Suslin and M.~Tulenbaev use the 4th.
 \begin{thm}\label{thm:DennisVaserstein}
-The relative elementary subgroup $\E(\Phi, R, I)$ admits Dennis---Vaserstein decomposition, i.\,e. $\E(\Phi, R, I) = A_{rs}$ under the following assumptions on $I$ and $\Phi$.
-\[\begin{array}{l@{\qquad}c@{\quad}c@{\qquad}l}
-\Phi                                 & s    & r      & \text{ring condition} \\ \hline\vphantom{\Bigl(}
-\rA_\ell,\ \ell\geqslant 2           & 1    & \ell   & \sr(I) \leqslant \ell-1 \\    
-\rB_\ell,\ \ell\geqslant 2           & 1    & \ell   & \sr(I) \leqslant \ell-1 \\
-\rC_\ell,\ \ell \geqslant 2          & 1    & \ell   & \sr(I) \leqslant \ell-1 \\
-\rD_\ell,\ \ell\geqslant 4           & 1    & \ell   & \sr(I) \leqslant \ell-2 \\ 
-\rD_\ell,\ \ell\geqslant 4           & \ell & \ell-1 & \sr(I) \leqslant 2      \\
-\rE_\ell,\ \ell=6,7                  & \ell & 2      & \sr(I) \leqslant \ell-3 \\ 
-\rE_\ell,\ \ell=6,7                  & \ell & 1      & \asr(I)\leqslant \ell-2 \\ 
-\rF_4                                & 4    & 1      & \asr(I)\leqslant 3 \end{array}\]
+Let $\Phi$ be a reduced irreducible root system not equal to $\rE_8$ and let $\{ r, s \}$ denote the labels of some pair of distinct endnodes of the Dynkin diagram of $\Phi$
+such that $\{ r, s\} \neq \{ 1,2 \}$ for $\Phi=\rE_\ell$. Denote by $d$ the distance between $r$ and $s$ on the Dynkin diagram.
+Then the relative elementary subgroup $\E(\Phi, R, I)$ admits Dennis---Vaserstein decomposition, i.\,e. $\E(\Phi, R, I) = A_{rs}$ 
+under the following assumption on $I$:
+\begin{enumerate}
+ \item $\asr(I) \leq d$ for $\Phi=\rF_4$ or $\Phi=\rE_\ell$, $\{r, s\} = \{1, \ell \}$,
+ \item $\sr(I) \leq d$, otherwise.
+\end{enumerate}
+
+%The relative elementary subgroup $\E(\Phi, R, I)$ admits Dennis---Vaserstein decomposition, i.\,e. $\E(\Phi, R, I) = A_{rs}$ under the following assumptions on $I$ and $\Phi$.
+%\[\begin{array}{l@{\qquad}c@{\quad}c@{\qquad}l}
+%\Phi                                 & s    & r      & \text{ring condition} \\ \hline\vphantom{\Bigl(}
+%\rA_\ell,\ \ell\geqslant 2           & 1    & \ell   & \sr(I) \leqslant \ell-1 \\    
+%\rB_\ell,\ \ell\geqslant 2           & 1    & \ell   & \sr(I) \leqslant \ell-1 \\
+%\rC_\ell,\ \ell \geqslant 2          & 1    & \ell   & \sr(I) \leqslant \ell-1 \\
+%\rD_\ell,\ \ell\geqslant 4           & 1    & \ell   & \sr(I) \leqslant \ell-2 \\ 
+%\rD_\ell,\ \ell\geqslant 4           & \ell & \ell-1 & \sr(I) \leqslant 2      \\
+%\rE_\ell,\ \ell=6,7                  & \ell & 2      & \sr(I) \leqslant \ell-3 \\ 
+%\rE_\ell,\ \ell=6,7                  & \ell & 1      & \asr(I)\leqslant \ell-2 \\ 
+%\rF_4                                & 4    & 1      & \asr(I)\leqslant 3 \end{array}\]
 \end{thm}
+Using identities~\ref{rel:h-comm}--\ref{rel:h-w} it is easy to show that Dennis---Vaserstein decomposition is a consequence of Gauss decomposition (see \cref{thm:srRI1}).
+In particular, for rings of stable rank $1$ and groups of rank $2$ (e.\,g. $\Phi=\rG_2$) it is preferable to use Gauss decomposition since it is more accurate.
+
 Denote by $N_{rs}$ the submonoid of $\E(\Phi, R)$ consisting of elements which normalize the subset $A_{rs}$, i.\,e.
 \[ N_{rs} = \left\{ g\in \E(\Phi, R)\ \middle|\ g \cdot A_{rs} \cdot g^{-1} \subseteq A_{rs} \right\}. \]
 
@@ -38,7 +50,7 @@ Assume, for example, the latter. It remains to notice that $\U(\Sigma_r^- \cap \
 
 \begin{proof}[Proof of \cref{thm:DennisVaserstein}]
 Denote by $L_{rs}$ the set consisting of all the elements $g\in \E(\Phi, R, I)$ such that $g \cdot A_{rs} \subseteq A_{rs}$.
-It is easy to see that $N_{rs}$ normalizes $L_{rs}$, i.\,e. ${L_{rs}}^{N\ssub{rs}}\subseteq L_{rs}$. Indeed, for $g\in N_{rs}$, $h\in L_{rs}$ one has
+It is easy to see that $L_{rs}$ contains $\EP_r(R, I)$ and that $N_{rs}$ normalizes $L_{rs}$, i.\,e. ${L_{rs}}^{N\ssub{rs}}\subseteq L_{rs}$. Indeed, for $g\in N_{rs}$, $h\in L_{rs}$ one has
 \begin{equation}\label{rel:NnormL} h^g \cdot A_{rs} = g^{-1} \cdot h \cdot g \cdot A_{rs} \subseteq g^{-1} \cdot h \cdot A_{rs} \cdot g \subseteq {A_{rs}}^g \subseteq A_{rs}.\end{equation}
 
 The first step of the proof is show that $N_{rs}$ contains sufficiently many elements. 
@@ -50,10 +62,10 @@ All the possibilities for $(\Phi, r, s)$ mentioned in the statement of the theor
 \begin{enumerate}
  \item \textit{Case $m_s(\alpha_{\mathrm{max}})=1$ and $\Phi$ is simply laced.}
   In this case all the roots of $\Sigma^+_s$ have the same $s$-shape and length, hence the assertion follows from \cref{item-trans2}, \eqref{rel:NnormL} and the fact that we already have the inclusion $X_{\alpha_s}(R) \subseteq N_{rs}$.
- \item \textit{Case $\Phi = \rB_\ell$.} Using the argument as in the first case we get $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$.
+ \item \textit{Case $\Phi = \rB_\ell$.} Using the argument from the previous case we get that $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$.
   It remains to prove the inclusion $X_{1,0}(R) \subset N_{rs}$.
   Specializing identity~\eqref{rel:CCF} we get \begin{equation*} \label{rel:CCF-specBC} x_{1,0}(ab) = [x_{1, 2}(a), x_{2, 0}(b)] \cdot x_{1,-2}(-a b^2) \end{equation*}
-  We already know that $X_{2, 0}(R)$ and $X_{1,-2}(R)$ are contained in $N_{rs}$ hence we obtain $X_{1,0}(R) \subseteq N_{rs}$, as claimed.
+  Since $X_{2, 0}(R)$ and $X_{1,-2}(R)$ are contained in $N_{rs}$, the inclusion $X_{1,0}(R) \subseteq N_{rs}$ follows.
  \item \textit{Case $\Phi = \rC_\ell, \rF_4$.}
  We settle these remaining cases in \cref{lemma:DVST} where we invoke the stability conditions one more time. 
  In fact, we prove a stronger result, namely that $N_{rs}$ contains $X_{-\alpha\ssub{s}}(R)$ and, consequently, $N_{rs} = \E(\Phi, R)$.
@@ -64,7 +76,6 @@ From $\mathcal{Z}(\Sigma_s^-) \subseteq \mathcal{X}^{\EP_s(R)}$ and \eqref{rel:N
 
 Finally, the last inclusion follows from the same transitivity argument as above and the fact that $X_\alpha(I) \subseteq \EP_r(R, I) \subseteq L_{rs}$ for $\alpha \in \Delta_r \cup \Sigma_r$.
 For $\Phi=\rB_\ell$ one has to additionally use the fact that
-%from $x_{0, 1}(-a) = [x_{2,1}(-a), x_{0, 2}(-1)]\cdot x_{-2,1}(a)$ we conclude that
 $$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{x_{0,2}(1)} \cdot X_{-2,1}(I) \subseteq L_{rs} \cdot L_{rs}^{N_{rs}} \cdot L_{rs} \subseteq L_{rs}. \qedhere$$ 
 \end{proof}
 
@@ -74,9 +85,6 @@ $$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{x_{0,2}(1)} \cdot X_{-2,1}(I
 \item \label{item-dvu3} $\U(\Phi^+, I)\cdot \U(\Phi^-, I) \subseteq \U(\Phi^+\setminus \{\alpha_i\}, I) \cdot \U(\Phi^-, I) \cdot X_{\alpha\ssub{i}}(I) \cdot X_{-\alpha\ssub{i}}(I)$.
 \end{thmlist} \end{lemma}
 \begin{proof} The first two statements easily follow from Chevalley commutator formula~\eqref{rel:CCF} while the third one is a formal consequence of the first two. \end{proof}
-
-%The following lemma is a relative version of the main reduction used by M.~Stein in~\cite{St78}
-%for the proof of the absolute Dennis--Vaserstein decomposition.
 
 \begin{lemma}\label{lemma:Stein_reduction}
 Under the assumptions of \cref{thm:DennisVaserstein} one has $X_{-\alpha_r}(R) \subseteq N_{rs}.$
@@ -90,7 +98,7 @@ Set $\Gamma = \{\lambda \in \Lambda(\pi') \mid \lambda - \alpha_r \in \Lambda(\p
 
 The set $\Gamma$ can be visualized using weight diagrams in the following manner.
 After removing all bonds marked $r$ the weight diagram of $\pi$ splits into several connected components.
-The subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the component of the diagram containg the vertex marked $\varpi_s$.
+The subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the component of the diagram containing the vertex marked $\varpi_s$.
 Clearly, $\Gamma$ consists of weights from $\Lambda(\pi')$ incident to the removed bonds.
 
 From a consideration of weight diagrams (see~\cite{PSV98}) we determine the number of elements in $\Lambda(\pi')$ and $\Gamma$ (cf.~Figure~\ref{fig:table}).
@@ -105,7 +113,7 @@ From a consideration of weight diagrams (see~\cite{PSV98}) we determine the numb
 \rE_\ell,\ \ell=6,7                  & (\ell,2)      & 27, 56         & \text{minimal}       & \rA_{\ell-1}              & \ell           & 3       \\ 
 \rE_\ell,\ \ell=6,7                  & (\ell,1)      & 27, 56         & \text{minimal}       & \rD_{\ell-1}              & 2(\ell-1)      & \ell-1  \\
 \rF_4                                & (4, 1)        & 26             & \text{minimal}       & \rC_3                     & 6              & 3\end{array}\]
- \caption[Table]{List of representation involved in the proof of \cref{thm:DennisVaserstein}.} \label{fig:table}
+ \caption[Table]{List of representations involved in the proof of \cref{thm:DennisVaserstein}.} \label{fig:table}
 \end{figure}
 Consider the subset $B \in \E(\Delta_r, R, I)$ consisting of elements $g$ such that $(g \cdot v^+)_\lambda = 0$ for all $\lambda\in\Gamma$.
 Set $A:=\U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).$
