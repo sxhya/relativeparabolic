@@ -43,7 +43,7 @@ It is easy to see that $N_{rs}$ normalizes $L_{rs}$, i.\,e. ${L_{rs}}^{N\ssub{rs
 
 The first step of the proof is show that $N_{rs}$ contains sufficiently many elements. 
 This is accomplished in~\cref{lemma:Stein_reduction} below, where we invoke the stability conditions for the first time.
-We show that $N_{rs}$ contains the root subgroup $X_{-\alpha\ssub{s}}(R)$, which together with \cref{lemma:dv-normal} and \cref{item-egen} immediately implies that $N_{rs}$ contains the Levi subgroup $\E(\Delta_s, R)$ and hence the extended Weyl group $\widetilde{W}(\Delta_s)$.
+We show that $N_{rs}$ contains the root subgroup $X_{-\alpha\ssub{r}}(R)$, which together with \cref{lemma:dv-normal} and \cref{item-egen} immediately implies that $N_{rs}$ contains the Levi subgroup $\E(\Delta_s, R)$ and hence the extended Weyl group $\widetilde{W}(\Delta_s)$.
 
 The next goal is to demonstrate the inclusion $\U(\Sigma_s, R) \subseteq N_{rs}$ (which implies $\EP_s(R) \subseteq N_{rs}$).
 All the possibilities for $(\Phi, r, s)$ mentioned in the statement of the theorem fall into one of the following three categories:
@@ -53,17 +53,17 @@ All the possibilities for $(\Phi, r, s)$ mentioned in the statement of the theor
  \item \textit{Case $\Phi = \rB_\ell$.} Using the argument as in the first case we get $\U(\Sigma_s^{+>}, R) \subseteq N_{rs}$.
   It remains to prove the inclusion $X_{1,0}(R) \subset N_{rs}$.
   Specializing identity~\eqref{rel:CCF} we get \begin{equation*} \label{rel:CCF-specBC} x_{1,0}(ab) = [x_{1, 2}(a), x_{2, 0}(b)] \cdot x_{1,-2}(-a b^2) \end{equation*}
-  We already know that $X_{2, 0}(R)$ and $X_{1,-2}(R)$ are contained in $\E(\Delta_s, R) \subseteq N_{rs}$ hence we obtain $X_{1,0}(R) \subseteq N_{rs}$, as claimed.
- \item \textit{Case $\Phi = \rC_\ell, \rF_4, \rE_8$.}
+  We already know that $X_{2, 0}(R)$ and $X_{1,-2}(R)$ are contained in $N_{rs}$ hence we obtain $X_{1,0}(R) \subseteq N_{rs}$, as claimed.
+ \item \textit{Case $\Phi = \rC_\ell, \rF_4$.}
  We settle these remaining cases in \cref{lemma:DVST} where we invoke the stability conditions one more time. 
- In fact, we prove a stronger result, namely that $N_{rs}$ contains $X_{-\alpha\ssub{r}}(R)$ and, consequently, $N_{rs} = \E(\Phi, R)$.
+ In fact, we prove a stronger result, namely that $N_{rs}$ contains $X_{-\alpha\ssub{s}}(R)$ and, consequently, $N_{rs} = \E(\Phi, R)$.
 \end{enumerate}
 
 In view of \cref{prop:Stepanov} to prove the theorem it suffices to show that $L_{rs}$ contains the generating set $\mathcal{Z}(\Sigma_s^-) \cup \mathcal{X}$ of $\E(\Phi, R, I)$.
 From $\mathcal{Z}(\Sigma_s^-) \subseteq \mathcal{X}^{\EP_s(R)}$ and \eqref{rel:NnormL} it follows that we only have to show $\mathcal{X} \subseteq L_{rs}$.
 
 Finally, the last inclusion follows from the same transitivity argument as above and the fact that $X_\alpha(I) \subseteq \EP_r(R, I) \subseteq L_{rs}$ for $\alpha \in \Delta_r \cup \Sigma_r$.
-For $\Phi=\rB_\ell$ one has to use additionally the fact that
+For $\Phi=\rB_\ell$ one has to additionally use the fact that
 %from $x_{0, 1}(-a) = [x_{2,1}(-a), x_{0, 2}(-1)]\cdot x_{-2,1}(a)$ we conclude that
 $$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{x_{0,2}(1)} \cdot X_{-2,1}(I) \subseteq L_{rs} \cdot L_{rs}^{N_{rs}} \cdot L_{rs} \subseteq L_{rs}. \qedhere$$ 
 \end{proof}
@@ -79,47 +79,21 @@ $$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{x_{0,2}(1)} \cdot X_{-2,1}(I
 %for the proof of the absolute Dennis--Vaserstein decomposition.
 
 \begin{lemma}\label{lemma:Stein_reduction}
-Assume that there exists a subset $B \subseteq \E(\Delta_r, R, I)$ satisfying the following assumptions:
-\begin{enumerate}
- \item\label{stein_cond1} One has $\U(\Sigma^+_r, I)\cdot \U(\Sigma^-_r, I) \cdot \E(\Delta_r, R, I) \subseteq \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot B.$
- \item\label{stein_cond2} One has $X_{-\alpha\ssub{r}}(I)^B \subseteq \EP_s(R, I).$
-\end{enumerate}
-Then $X_{-\alpha_r}(R) \subseteq N_{rs}.$
+Under the assumptions of \cref{thm:DennisVaserstein} one has $X_{-\alpha_r}(R) \subseteq N_{rs}.$
 \end{lemma}
 \begin{proof}
-Set $A:=\U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).$
-From the first assumption of the lemma it follows that $A_{rs}=A$.
-On the other hand, by the second assumption we have
-\begin{multline*}
-X_{\alpha_r}(I) \cdot X_{-\alpha_r}(I) \cdot B \cdot \EP_s(R, I) \subseteq 
-X_{\alpha_r}(I) \cdot B \cdot \EP_s(R, I) \cdot \EP_s(R, I) \subseteq \\
-\subseteq B \cdot \U(\Sigma_r, I) \cdot \EP_s(R, I) =
-B \cdot \EP_s(R, I).
-\end{multline*}
-Together with the third statement of \cref{lemma:dv_unipotent} this implies that
-\begin{equation*} \label{rel:sred}
-A = \U(\Phi^+\setminus\{\alpha_r\}, I) \cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).
-\end{equation*}
-Consequently, since $[B, X_{-\alpha_r}(R)] \subseteq \U(\Sigma_r^-, R) \cap \E(\Phi, R, I) = \U(\Sigma_r^-, I)$ we get that:
-\begin{equation*} \label{rel:ninv} A^{X_{-\alpha\ssub{r}}(R)} = \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B ^{X_{-\alpha\ssub{r}}(R)} \cdot \EP_s(R, I) = A, \end{equation*}
-which implies the assertion of the lemma. \end{proof}
+Let $(\pi, V)$ be the irreducible representation of $\G(\Phi, R)$ with the highest weight $\varpi_s$.
+Notice that $\Delta_r$ is an irreducible classical root system of type $\rA_\ell$, $\rC_\ell$ or $\rD_\ell$.
+Denote by $(\pi', V')$ the irreducible component of the restriction of $\pi$ to $\G(\Delta_r, R)$ containing the highest weight vector $v^+$ of $\pi$.
+In all the cases under consideration, $\pi'$ is isomorphic to the natural representation of $\G(\Delta, R)$.
+Set $\Gamma = \{\lambda \in \Lambda(\pi') \mid \lambda - \alpha_r \in \Lambda(\pi) \}.$
 
-The next step of the proof is to construct explicitly the set $B$ satisfying the assumptions of \cref{lemma:Stein_reduction}.
+The set $\Gamma$ can be visualized using weight diagrams in the following manner.
+After removing all bonds marked $r$ the weight diagram of $\pi$ splits into several connected components.
+The subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the component of the diagram containg the vertex marked $\varpi_s$.
+Clearly, $\Gamma$ consists of weights from $\Lambda(\pi')$ incident to the removed bonds.
 
-%Denote by $\pi$ the irreducible representation of $G=\G(\Phi, R)$ on a free module $V$ with the highest weight $\varpi_s$.
-%Clearly, after restricting the representation $(V, \pi)$ to the subgroup $G'=\G(\Delta_r, R)$ it becomes reducible.
-%Denote by $(V', \pi')$ the irreducible component corresponding to the same highest weight $\varpi_s \in \Lambda(\pi)$.
-%Set $\Gamma = \{\lambda \in \Lambda(\pi') \mid \lambda - \alpha_r \in \Lambda(\pi) \}.$ 
-
-Using the language of weight diagrams subsets $\Lambda(\pi')$, $\Gamma$ can be visualized as follows.
-After removing all bonds marked $r$ the diagram of $\pi$ splits into several connected components.
-The subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the component containg the vertex $\varpi_s$.
-In turn, the set $\Gamma$ corresponds to vertices of $\Lambda(\pi')$ incident to any of the removed bonds.
-
-Notice that $\Delta_s$ has type either $\rD_\ell$ (in the case $\Phi=\rE_\ell$, $(r,s)=(2,\ell)$) or $\rA_\ell$ (otherwise).
-From a consideration of weight diagrams we determine the number of elements in $\Lambda(\pi')$ and $\Gamma$ (see~Figure~\ref{fig:table}).
-It is clear that in all cases $\pi'$ is the natural representation of $\G(\Delta_s, R)$.
-
+From a consideration of weight diagrams (see~\cite{PSV98}) we determine the number of elements in $\Lambda(\pi')$ and $\Gamma$ (cf.~Figure~\ref{fig:table}).
 \begin{figure}
 \[\begin{array}{l @{\qquad} l @{\qquad} c @{\quad} c @{\qquad} c @{\qquad} c @{\qquad} c}
 \Phi                                 & (s,r)         & |\Lambda(\pi)| & \text{type of $\pi$} & \text{type of $\Delta_r$} & |\Lambda(\pi')|& |\Gamma|  \\ \hline\vphantom{\Bigl(}
@@ -133,14 +107,31 @@ It is clear that in all cases $\pi'$ is the natural representation of $\G(\Delta
 \rF_4                                & (4, 1)        & 26             & \text{minimal}       & \rC_3                     & 6              & 3\end{array}\]
  \caption[Table]{List of representation involved in the proof of \cref{thm:DennisVaserstein}.} \label{fig:table}
 \end{figure}
+Consider the subset $B \in \E(\Delta_r, R, I)$ consisting of elements $g$ such that $(g \cdot v^+)_\lambda = 0$ for all $\lambda\in\Gamma$.
+Set $A:=\U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).$
 
-Now let $B$ be the set of all elements $g$ of $\E(\Delta_r,R, I)$ such that $(g \cdot v^+)_\lambda = 0$ for all $\lambda\in\Gamma$.
 Applying \cref{lemma:uraction} to the subsystem $\Delta_r$ we find
 $x\in\U(\Delta_r^+, I)$, $y\in \U(\Delta_r^-, I)$ such that $yx\cdot g \in B$.
-This proves the first assumption of \cref{lemma:Stein_reduction}, indeed:
-\[ \U(\Sigma^+_r, I) \cdot \U(\Sigma^-_r, I) \cdot g = \U(\Sigma^+_r, I) x^{-1} \cdot \U(\Sigma^-_r, I)^{x^{-1}} y^{-1} (yxg) \subseteq \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B. \]
-To prove the second assumption of \cref{lemma:Stein_reduction} notice that by \cref{lemma:Matsumoto} and the definition of $\Gamma$ for any $s\in I$, $ g\in B$ one has $x_{-\alpha_r}(s) \cdot g \cdot v^+ = g \cdot v^+$ hence
-\[ X_{-\alpha\ssub{r}}(I)^{B} \subseteq \U(\Phi^-, I) \cap \Stab(v^+) \subseteq \U(\Delta_s^-, I) \subseteq \EP_s(R, I). \]
+Consequenty, this shows that $A = A_{rs}$, indeed:
+\begin{equation*} \U(\Sigma^+_r, I) \cdot \U(\Sigma^-_r, I) \cdot g = \U(\Sigma^+_r, I) x^{-1} \cdot \U(\Sigma^-_r, I)^{x^{-1}} y^{-1} (yxg) \subseteq \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B. \end{equation*}
+
+Notice that by the definition of $\Gamma$ and \cref{lemma:Matsumoto} for any $s\in I$, $ g\in B$ one has $x_{-\alpha_r}(s) \cdot g \cdot v^+ = g \cdot v^+$.
+Consequently, one has
+\[ X_{-\alpha\ssub{r}}(I)^{B} \subseteq \U(\Phi^-, I) \cap \Stab(v^+) \subseteq \U(\Delta_s^-, I) \subseteq \EP_s(R, I), \]
+which implies the following inclusion
+\begin{multline*}
+X_{\alpha_r}(I) \cdot X_{-\alpha_r}(I) \cdot B \cdot \EP_s(R, I) \subseteq 
+X_{\alpha_r}(I) \cdot B \cdot \EP_s(R, I) \cdot \EP_s(R, I) \subseteq \\
+\subseteq B \cdot \U(\Sigma_r, I) \cdot \EP_s(R, I) =
+B \cdot \EP_s(R, I).
+\end{multline*}
+Together with the third statement of \cref{lemma:dv_unipotent} this shows that
+\begin{equation*} \label{rel:sred}
+A = \U(\Phi^+\setminus\{\alpha_r\}, I) \cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).
+\end{equation*}
+Finally, since $[B, X_{-\alpha_r}(R)] \subseteq \U(\Sigma_r^-, R) \cap \E(\Phi, R, I) = \U(\Sigma_r^-, I)$ we obtain the assertion of the lemma, indeed
+\begin{equation*} \label{rel:ninv} A^{X_{-\alpha\ssub{r}}(R)} = \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B ^{X_{-\alpha\ssub{r}}(R)} \cdot \EP_s(R, I) = A. \qedhere \end{equation*}
+\end{proof}
 
 \begin{lemma}\label{lemma:DVST}
 Assume that one of the following holds:
@@ -173,9 +164,4 @@ Consequently, one has
 \begin{multline*} {A_{rs}}^{X_{-\alpha_{s}}(R)} \subseteq \EP_r(R, I)^{X_{-\alpha_{s}}(R)} \cdot \U(\Sigma_r^-, I)^{X_{-\alpha_{s}}(R)} \cdot \U(\Sigma_s^-, I) \cdot \EP_s(R, I) \subseteq \\
  \subseteq \EP_\ell(R, I) \cdot \U(\Phi^-, I) \cdot \EP_s(R, I) \subseteq A_{rs} \end{multline*}
  as claimed.
-\end{proof}
-
-\begin{proof}[End of the proof of \cref{thm:DennisVaserstein}]
-In the remaining case $\Phi=\rC_\ell$ we conclude from \cref{lemma:dv-normal,lemma:Stein_reduction,lemma:DVcaseCl} that $X_{\pm \alpha_i}(R) \subseteq N_{rs}$, $1\leq i\leq \ell$.
-Therefore, by \cref{lemma:weylfacts} we get that $\widetilde{W}(\Phi) \subseteq N_{rs}$ and hence $\mathcal{X} \subseteq L_{rs}$ as required.
 \end{proof}

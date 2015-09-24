@@ -84,6 +84,8 @@
    {_{\lower1.5pt\hbox{$\scriptscriptstyle #1$}}}
    {_{\!\lower1.5pt\hbox{$\scriptscriptstyle #1$}}}}
 
+\newcommand\restr[2]{\ensuremath{\left.#1\right|_{#2}}}   
+   
 \title [Parabolic factorizations of congruence subgroups] {Parabolic factorizations of principal congruence subgroups in Chevalley groups and their applications}
 \keywords {Chevalley groups, relative subgroups, stability for $\K_1$. {\em Mathematical Subject Classification (2010):} 20G40, 20G35, 19B14}
 \author {Sergey Sinchuk, Andrei Smolensky}
@@ -297,7 +299,7 @@ The elements $h_\alpha(\varepsilon)$ satisfy the following relations:
 & \phantom{[} h_\alpha(\varepsilon)x_\beta(\xi)h_\alpha(\varepsilon)^{-1} = x_\beta\left(\varepsilon^{\langle\beta,\alpha\rangle}\xi\right), && \alpha, \beta \in \Phi,\ \varepsilon \in R^*, \xi \in R. \label{rel:h-w}
 \end{alignat}
 
-\subsection{Representations of Chevalley groups}
+\subsection{Representations of Chevalley groups} \label{sec:repr}
 Our notation and terminology pertaining to representations of Chevalley groups follows \cite[\S~1.4]{PSV98} and \cite[\S~I.2]{Ma69})
 Let $\pi$ be an irreducible representation of $\G(\Phi, R)$ acting on a free $R$-module $V$.
 We denote by $\Lambda=\Lambda(\pi)$ the set of weights of $\pi$ and by $\Lambda(\pi)^*$ the subset of non-zero weights.
@@ -314,7 +316,7 @@ In the simplest case of a \emph{microweight} representation $\pi$ (i.\,e. $\pi$ 
 the weight diagram of $(V, \pi)$ is just an undirected graph whose vertices are in one-to-one correspondence with the elements of $\Lambda(\pi)$.
 Two vertices $\lambda$, $\mu$ of the diagram are joined by a bond marked $i$ iff $\lambda-\mu = \alpha_i$.
 
-An immediate application of weight diagrams is that allow one to quickly read off the branching of a given basic representation with respect to a subsystem subgroup.
+An immediate application of weight diagrams is that they allow one to quickly read off the branching of a given basic representation with respect to a subsystem subgroup.
 If $J$ is a subset of $\Pi$ and $\Delta$ is the subsystem of $\Phi$ spanned by $J$ then the weight diagram of $\pi$ restricted to $G(\Delta, R)$ can be obtained
 from the weight diagram of $\pi$ by simply removing all the bonds whose label $i$ is such that $\alpha_i\not\in J$ (cf.~\cite[\S~2.7]{PSV98}).
 
