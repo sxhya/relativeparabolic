@@ -163,13 +163,18 @@ Summarizing the above, we have found $g\in \EP_\ell(R, I)$ such that $v^{(4)}=g 
 and the assertion of the lemma immediately follows from Levi decomposition. \end{proof}
 
 \begin{cor} \label{cor:embeddingBD}
- Denote by $i$ the standard embedding $\B_3 \hookrightarrow \rD_4$. 
- If $\asr(I)\leq 3$ then for every $I$-unimodular column $v \in \Ums(8, I)$ there exists $g \in \U(\Sigma_3, I) \leq \E(\rB_3, R, I)$ such that
+ Denote by $i$ the standard embedding $\G(\rB_{\ell-1}, R, I) \hookrightarrow \G(\rD_\ell, R, I)$. 
+ If $\asr(I) \leqslant \ell-1$ then for every $I$-unimodular column $v \in \Ums(8, I)$ there exists $g \in \U(\Sigma_3, I) \leq \E(\rB_3, R, I)$ such that
  the upper half of the vector $i(g) \cdot v$ forms an $I$-unimodular column of height $4$.
 \end{cor}
 \begin{proof}
- The assertion follows from the fact that for every $g \in \U(\Sigma_4, I) \leq \E(\rD_4, R, I)$ one can find $g' \in \G(\Delta_4, R, I)$ such that
- $gg'$ lies in the image of $i\colon \G(\rB_3, R, I) \hookrightarrow \G(\rD_4, R, I)$.
+ The assertion follows from the fact that for every $u \in \U(\Sigma_\ell, I) \leq \E(\rD_\ell, R, I)$ one can find $u' \in \G(\Delta_\ell, R, I)$ such that
+ $uu'$ lies in the image of $i$. Namely, denote by $\sigma$ the symmetry of the Dynkin diagram of $\rD_\ell$,
+ and decompose $u$ into the product $u_1 \cdot u_2$, $u_1 \in \U(\Sigma_\ell\cap\Delta_{\ell-1}, I)$, $u_2 \in \Sigma(\Sigma_\ell \cap \Sigma_{\ell-1}, I)$.
+ Then one takes $u' = \sigma(u_1)$.
+
+ Now by \cref{item:asrUnipD} one finds a suitable $u \in \U(\Sigma_\ell, I) \leqslant \E(\rD_\ell, R, I)$ which makes the upper half unimodular,
+ and since $u'$ lies in $\G(\Delta_\ell, R, I)$, the upper half remains unimodular.
 \end{proof}
 
 \begin{lemma} \label{lemma:uraction} 
