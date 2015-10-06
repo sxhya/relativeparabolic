@@ -72,17 +72,20 @@ Summing up these upper bounds we obtain
 $$(2\ell-3) + 1 + (2\ell - 4) + 1 + 2\cdot (2\ell - 2) = 8\ell - 9 = 4(|\rD_\ell| - |\rD_{\ell-1}|) - 1.$$
 
 The estimate in the case $\Phi=\rB_\ell$ can be obtained in a similar way. \end{proof}
-The Bass---Kolster decomposition can be iterated if the stability assumption allows, with a slight improvement of \cref{cor:bass-kolster-count}.
+By iterating Bass---Kolster decomposition one obtains the following result.
 \begin{cor}\label{cor:bass-kolster-iterated}
-Let $\Phi$ be a root system, $R$ a commutative ring and $I$ its ideal. Then under a suitable stability assumption every element of $\G(\Phi,R,I)$ is a product of an element of $\G(\langle\pm\alpha_\ell\rangle,R,I)\cong\SL(2,R,I)$, at most $\ell-1$ elements of the form $z_{-\alpha}(*,*)$, $\alpha$ the maximal root of some terminal subsystem containing $\alpha_\ell$, and at most $N$ elementary root unipotents $x_\alpha(s)$, $s\in I$. The stability assumption and the number $N$ are as follows:
+Under the assumptions stated below every element of $\G(\Phi,R,I)$ can be factored as a product of one element of 
+$\G(\langle\pm\alpha_\ell\rangle,R,I)\cong\SL(2,R,I)$ and at most $N$ elements of $\mathcal{Z}(\Sigma_\ell)$, where
 \[\begin{array}{l@{\quad}l@{\quad}l}
-\Phi=\rA_\ell, & \sr(I)\leqslant 2, & N=3\left|\Phi^+\right|+\ell; \\
-\Phi=\rC_\ell, & \sr(I)\leqslant 3, & N=3\left|\Phi^+\right|+2\ell; \\
-\Phi=\rB_\ell,\rD_\ell, & \asr(I)\leqslant 2, & N=4\left|\Phi^+\right|-\ell.
+\Phi=\rA_\ell, & \sr(I)\leqslant 2, & N=3\left|\Phi^+\right|+2\ell - 1; \\
+\Phi=\rC_\ell, & \sr(I)\leqslant 3, & N=3\left|\Phi^+\right|+3\ell - 1; \\
+\Phi=\rB_\ell,\rD_\ell, & \asr(I)\leqslant 2, & N=4\left|\Phi^+\right|-1.
 \end{array}\]
 \end{cor}
 \begin{proof}
-The improved estimate for $\Phi=\rA_\ell$ or $\rC_\ell$ is obtained by using the fact that it suffices to make only two or three additions respectively to make the shorter column unimodular in the first step of the Bass---Kolster decomposition.
+A direct consequence of~\cref{cor:bass-kolster-count}.
+The improved estimate for $\Phi=\rA_\ell$ (resp. $\rC_\ell$) follows from the fact that it takes only two (resp. three) additions to shorten 
+the unimodular column in the first step of the proof of~\cref{thm:BassKolster}.
 \end{proof}
 \begin{figure}[htb]\label{fig:bass-kolster}
 \[
