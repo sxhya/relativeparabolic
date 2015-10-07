@@ -95,9 +95,8 @@
 \begin{document}
 
 \begin{abstract} 
-We formulate and prove relative analogues (i.\,e. analogues for principal congruence subgroups) of Gauss, Bass---Kolster and Dennis---Vaserstein decompositions.
-As an application we obtain upper estimates for the width of principal congruence subgroups with respect to several families of generators.
-%elementary generators and subgroups of type $\SL_2$ we also study submaximal factorizations of Chevalley groups of type $\rA_\ell$ and $\rD_\ell$.
+We formulate and prove relative versions of Gauss, Bass---Kolster and Dennis---Vaserstein decompositions.
+As an application we obtain upper estimates for the width of principal congruence subgroups in terms of several families of generators.
 \end{abstract}
 
 \maketitle
@@ -181,13 +180,13 @@ with $3|\Phi^+|$ factors for arbitrary commutative ring of stable rank $1$.
 
 In the linear and symplectic case the above results can be extended to even larger class of rings (which e.\,g. includes all Dedekind rings).
 \begin{thm}\label{thm:SL2width}
-Let $I\trianglelefteq R$ be an ideal, $\Phi$ be a classical root system. Then under a suitable stability assumption the prncipal congruence subgroup $\G(\Phi,R,I)$ can be presented as a product of at most $N$ copies of its subgroups isomorphic to $\G(\rA_1,R,I)$, where the stability assumption and the corresponding value of $N$ is as follows:
-%TODO: Constants for A and C - where do they come from?
+Let $I\trianglelefteq R$ be an ideal, $\Phi$ be an irreducible classical root system satisfying the following assumptions.
 \[\begin{array}{l@{\quad}l@{\quad}l}
-\Phi=\rA_\ell, & \sr(I)\leqslant 2, & N=3\left|\Phi^+\right|+\rk(\Phi) - 3; \\
-\Phi=\rC_\ell, & \sr(I)\leqslant 3, & N=3\left|\Phi^+\right|+2\rk(\Phi) - 4; \\
-\Phi=\rB_\ell,\rD_\ell, & \asr(I)\leqslant 2, & N=4\left|\Phi^+\right|.
+\Phi=\rA_\ell, & \sr(I)\leqslant 2, & N=3\left|\Phi^+\right| - \rk(\Phi) - 1; \\
+\Phi=\rC_\ell, & \sr(I)\leqslant 3, & N=3\left|\Phi^+\right| - 2; \\
+\Phi=\rB_\ell,\rD_\ell, & \asr(I)\leqslant 2, & N=4\left|\Phi^+\right| - 3\rk(\Phi).
 \end{array}\]
+Then the principal congruence subgroup $\G(\Phi,R,I)$ can be presented as a product of at most $N$ copies of its (regularly embedded) subgroups isomorphic to $\SL_2(R, I)$.
 \end{thm}
 
 Yet another application of parabolic factorizations concerns subsystem factorizations of Chevalley groups formulated in terms of submaximal subgroups of type $\rA_\ell$.
@@ -448,10 +447,10 @@ In this section we formulate and prove relative versions of decompositions from~
 \subsection{Relative Dennis---Vaserstein decompositions}\label{sec:dennis-vaserstein}
 \input{dennis-vaserstein}
 
-%\section{Applications} %\label{sec:applications}
-\section{Bounded generation}\label{sec:boundgen}
+\section{Applications} %\label{sec:applications}
+\subsection{Bounded generation}\label{sec:boundgen}
 \input{congrsubgr-boundgen}
-\section{Subsystem factorizations}\label{sec:subsysfact}
+\subsection{Subsystem factorizations}\label{sec:subsysfact}
 \input{subsystem-factorizations}
 
 \printbibliography
