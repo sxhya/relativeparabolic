@@ -19,34 +19,48 @@ A_{rs} := \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(
 %\rE_\ell,\ \ell=6,7                  & \ell & 2      & \sr(I) \leqslant \ell-3 \\ 
 %\rE_\ell,\ \ell=6,7                  & \ell & 1      & \asr(I)\leqslant \ell-2 \\ 
 %\rF_4                                & 4    & 1      & \asr(I)\leqslant 3 \end{array}\]
-
-Using identities~\ref{rel:h-comm}--\ref{rel:h-w} it is easy to show that Dennis---Vaserstein decomposition is a consequence of Gauss decomposition (see \cref{thm:srRI1}).
-In particular, for rings of stable rank $1$ and groups of rank $2$ (e.\,g. $\Phi=\rG_2$) it is preferable to use Gauss decomposition since it is more accurate.
-
 Denote by $N_{rs}$ the submonoid of $\E(\Phi, R)$ consisting of elements which normalize the subset $A_{rs}$, i.\,e.
 \[ N_{rs} = \left\{ g\in \E(\Phi, R)\ \middle|\ g \cdot A_{rs} \cdot g^{-1} \subseteq A_{rs} \right\}. \]
 
 \begin{lemma}\label{lemma:dv-normal} 
 For every $\alpha \in \Delta_{\{r,s\}} \cup (\Phi^+ \setminus (\Sigma^+_r \cap \Sigma^+_s))$ one has $X_\alpha(R) \subseteq N_{rs}$. \end{lemma}
 \begin{proof}
-Notice that for every $i$ the factor $\EP_i(R, I)$ is normalized by $\EP_i(R)$, hence a fortiori it is normalized by $X_\alpha(R)$, $\alpha \in S_i^+$.
+Notice that for every $i$ the group $\EP_i(R, I)$ is normalized by $\EP_i(R)$, hence a fortiori it is normalized by $X_\alpha(R)$, $\alpha \in S_i^+$.
 Since $\U(\Sigma_r^- \cap \Sigma_s^-, I)$ is normalized by $\E(\Delta_{\{r,s\}}, R)$ we obtain the assertion of the lemma for $\alpha \in \Delta_{\{r, s\}}$.
 
 Now if $\alpha$ lies in $\Phi^+ \setminus \Sigma_r \cap \Sigma_s$ it is contained either in $\Delta_r$ or in $\Delta_s$.
-Assume, for example, the latter. By Levi decomopsition $\U(\Sigma_r^- \cap \Sigma_s^-, I)^{X_\alpha(R)} \subseteq \U(\Sigma_s^-, I) \subseteq A_{rs}.$
+Assume, for example, the latter. By Levi decomposition we have $\U(\Sigma_r^- \cap \Sigma_s^-, I)^{X_\alpha(R)} \subseteq \U(\Sigma_s^-, I) \subseteq A_{rs}$
+which again implies the assertion of the lemma.
 \end{proof}
 
 \begin{proof}[Proof of \cref{thm:DennisVaserstein}]
+First of all, notice that in the special case $\Phi=\rG_2$ \cref{thm:DennisVaserstein} formally follows from \cref{thm:srRI1} and identities~\ref{rel:h-comm}--\ref{rel:h-w}.
+Since $A_{rs} = \E(\Phi, R, I)$ implies $A_{sr} = \E(\Phi, R, I)$, 
+it suffices to consider only the choices for $\Phi$, $r$ and $s$ listed in the table below.
+\begin{table}[htb]
+\[\begin{array}{l @{\qquad} l @{\qquad} c @{\quad} c @{\qquad} c @{\qquad} c @{\qquad} c}
+\Phi                                 & (s,r)         & |\Lambda(\pi)| & \text{type of $\pi$} & \text{type of $\Delta_r$} & |\Lambda(\pi')|& |\Gamma|  \\ \hline\vphantom{\Bigl(}
+\rA_\ell,\ \ell\geqslant 2           & (1,\ell)      & \ell+1         & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\     
+\rB_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell+1        & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\     
+\rC_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell          & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\
+\rD_\ell,\ \ell\geqslant 4           & (1,\ell)      & 2\ell          & \text{natural}       & \rA_{\ell-1}              & \ell           & 2  \\ 
+\rD_\ell,\ \ell\geqslant 4           & (\ell,\ell-1) & 2^{\ell-1}     & \text{half-spinor}   & \rA_{\ell-1}              & \ell           & \ell-2  \\
+\rE_\ell,\ \ell=6,7                  & (\ell,2)      & 27, 56         & \text{minimal}       & \rA_{\ell-1}              & \ell           & 3       \\ 
+\rE_\ell,\ \ell=6,7                  & (\ell,1)      & 27, 56         & \text{minimal}       & \rD_{\ell-1}              & 2(\ell-1)      & \ell-1  \\
+\rF_4                                & (4, 1)        & 26             & \text{minimal}       & \rC_3                     & 6              & 3\end{array}\]
+ \caption{List of representations involved in the proof of \cref{thm:DennisVaserstein}.} \label{table:dv-reps}
+\end{table}
+
 Denote by $L_{rs}$ the set consisting of all the elements $g\in \E(\Phi, R, I)$ such that $g \cdot A_{rs} \subseteq A_{rs}$.
 Obviously, $L_{rs}$ contains $\EP_r(R, I)$, and it is easy to see that $N_{rs}$ normalizes $L_{rs}$, i.\,e. ${L_{rs}}^{N\ssub{rs}}\subseteq L_{rs}$. Indeed, for $g\in N_{rs}$, $h\in L_{rs}$ one has
 \begin{equation}\label{rel:NnormL} h^g \cdot A_{rs} = g^{-1} \cdot h \cdot g \cdot A_{rs} \subseteq g^{-1} \cdot h \cdot A_{rs} \cdot g \subseteq {A_{rs}}^g \subseteq A_{rs}.\end{equation}
 
-The first step of the proof is show that $N_{rs}$ contains sufficiently many elements. 
-This is accomplished in~\cref{lemma:Stein_reduction} below, where we invoke the stability conditions for the first time.
+The first step of the proof is to show that $N_{rs}$ contains sufficiently many elements. 
+This is accomplished in~\cref{lemma:Stein_reduction} below, where we invoke stability conditions for the first time.
 We show that $N_{rs}$ contains the root subgroup $X_{-\alpha\ssub{r}}(R)$, which together with \cref{lemma:dv-normal} and \cref{item-egen} immediately implies that $N_{rs}$ contains the Levi subgroup $\E(\Delta_s, R)$ and hence the extended Weyl group $\widetilde{W}(\Delta_s)$.
 
 The next goal is to demonstrate the inclusion $\U(\Sigma_s, R) \subseteq N_{rs}$ (which implies $\EP_s(R) \subseteq N_{rs}$).
-All the possibilities for $(\Phi, r, s)$ mentioned in the statement of the theorem fall into one of the following three categories:
+All the possibilities for $\Phi$, $r$ and $s$ appearing in the statement of the theorem fall into one of the following three cases:
 \begin{enumerate}
  \item \textit{Case $m_s(\alpha_{\mathrm{max}})=1$ and $\Phi$ is simply laced.}
   In this case all the roots of $\Sigma^+_s$ have the same $s$-shape and length, hence the assertion follows from \cref{item-trans2}, \eqref{rel:NnormL} and the fact that we already have the inclusion $X_{\alpha_s}(R) \subseteq N_{rs}$.
@@ -63,7 +77,7 @@ In view of \cref{prop:Stepanov} to prove the theorem it suffices to show that $L
 From $\mathcal{Z}(\Sigma_s^-) \subseteq \mathcal{X}^{\EP_s(R)}$ and \eqref{rel:NnormL} it follows that we only have to show $\mathcal{X} \subseteq L_{rs}$.
 
 The last inclusion follows from the same transitivity argument as above and the fact that $X_\alpha(I) \subseteq \EP_r(R, I) \subseteq L_{rs}$ for $\alpha \in \Delta_r \cup \Sigma_r$.
-For $\Phi=\rB_\ell$ one has to additionally use the Chevalley commutator formula~\eqref{rel:CCF-specBC}:
+For $\Phi=\rB_\ell$ one has to once again apply Chevalley commutator formula~\eqref{rel:CCF}:
 $$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{x_{0,2}(1)} \cdot X_{-2,1}(I) \subseteq L_{rs} \cdot L_{rs}^{N_{rs}} \cdot L_{rs} \subseteq L_{rs}. \qedhere$$ 
 \end{proof}
 
@@ -78,7 +92,7 @@ $$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{x_{0,2}(1)} \cdot X_{-2,1}(I
 Under the assumptions of \cref{thm:DennisVaserstein} one has $X_{-\alpha_r}(R) \subseteq N_{rs}.$
 \end{lemma}
 \begin{proof}
-Let $(\pi, V)$ be the irreducible representation of $\G(\Phi, R)$ with the highest weight $\varpi_s$.
+Let $\pi$ be the irreducible representation of $\G(\Phi, R)$ with the highest weight $\varpi_s$ (see Table~\ref{table:dv-reps}).
 Notice that $\Delta_r$ is an irreducible classical root system of type $\rA_\ell$, $\rC_\ell$ or $\rD_\ell$.
 Denote by $(\pi', V')$ the irreducible component of the restriction of $\pi$ to $\G(\Delta_r, R)$ containing the highest weight vector $v^+$ of $\pi$.
 In all the cases under consideration, $\pi'$ is isomorphic to the natural representation of $\G(\Delta, R)$.
@@ -90,19 +104,6 @@ The subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the component o
 Clearly, $\Gamma$ consists of weights from $\Lambda(\pi')$ incident to the removed bonds.
 
 From a consideration of the weight diagrams (see~\cite{PSV98}) we determine the number of elements in $\Lambda(\pi')$ and $\Gamma$ (see~Table~\ref{table:dv-reps}).
-\begin{table}[htb]
-\[\begin{array}{l @{\qquad} l @{\qquad} c @{\quad} c @{\qquad} c @{\qquad} c @{\qquad} c}
-\Phi                                 & (s,r)         & |\Lambda(\pi)| & \text{type of $\pi$} & \text{type of $\Delta_r$} & |\Lambda(\pi')|& |\Gamma|  \\ \hline\vphantom{\Bigl(}
-\rA_\ell,\ \ell\geqslant 2           & (1,\ell)      & \ell+1         & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\     
-\rB_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell+1        & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\     
-\rC_\ell,\ \ell\geqslant 2           & (1,\ell)      & 2\ell          & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\
-\rD_\ell,\ \ell\geqslant 4           & (1,\ell)      & 2\ell          & \text{natural}       & \rA_{\ell-1}              & \ell           & 2  \\ 
-\rD_\ell,\ \ell\geqslant 4           & (\ell,\ell-1) & 2^{\ell-1}     & \text{half-spinor}   & \rA_{\ell-1}              & \ell           & \ell-2  \\
-\rE_\ell,\ \ell=6,7                  & (\ell,2)      & 27, 56         & \text{minimal}       & \rA_{\ell-1}              & \ell           & 3       \\ 
-\rE_\ell,\ \ell=6,7                  & (\ell,1)      & 27, 56         & \text{minimal}       & \rD_{\ell-1}              & 2(\ell-1)      & \ell-1  \\
-\rF_4                                & (4, 1)        & 26             & \text{minimal}       & \rC_3                     & 6              & 3\end{array}\]
- \caption{List of representations involved in the proof of \cref{thm:DennisVaserstein}.} \label{table:dv-reps}
-\end{table}
 
 Consider the subset $B \subset \E(\Delta_r, R, I)$ consisting of elements $g$ such that $(g \cdot v^+)_\lambda = 0$ for all $\lambda\in\Gamma$.
 Set $A:=\U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).$
