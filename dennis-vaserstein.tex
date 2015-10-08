@@ -33,12 +33,12 @@ Notice that for every $i$ the factor $\EP_i(R, I)$ is normalized by $\EP_i(R)$, 
 Since $\U(\Sigma_r^- \cap \Sigma_s^-, I)$ is normalized by $\E(\Delta_{\{r,s\}}, R)$ we obtain the assertion of the lemma for $\alpha \in \Delta_{\{r, s\}}$.
 
 Now if $\alpha$ lies in $\Phi^+ \setminus \Sigma_r \cap \Sigma_s$ it is contained either in $\Delta_r$ or in $\Delta_s$.
-Assume, for example, the latter. It remains to notice that $\U(\Sigma_r^- \cap \Sigma_s^-, I)^{X_\alpha(R)} \subseteq \U(\Sigma_s^-, I) \subseteq A_{rs}.$
+Assume, for example, the latter. By Levi decomopsition $\U(\Sigma_r^- \cap \Sigma_s^-, I)^{X_\alpha(R)} \subseteq \U(\Sigma_s^-, I) \subseteq A_{rs}.$
 \end{proof}
 
 \begin{proof}[Proof of \cref{thm:DennisVaserstein}]
 Denote by $L_{rs}$ the set consisting of all the elements $g\in \E(\Phi, R, I)$ such that $g \cdot A_{rs} \subseteq A_{rs}$.
-It is easy to see that $L_{rs}$ contains $\EP_r(R, I)$ and that $N_{rs}$ normalizes $L_{rs}$, i.\,e. ${L_{rs}}^{N\ssub{rs}}\subseteq L_{rs}$. Indeed, for $g\in N_{rs}$, $h\in L_{rs}$ one has
+Obviously, $L_{rs}$ contains $\EP_r(R, I)$, and it is easy to see that $N_{rs}$ normalizes $L_{rs}$, i.\,e. ${L_{rs}}^{N\ssub{rs}}\subseteq L_{rs}$. Indeed, for $g\in N_{rs}$, $h\in L_{rs}$ one has
 \begin{equation}\label{rel:NnormL} h^g \cdot A_{rs} = g^{-1} \cdot h \cdot g \cdot A_{rs} \subseteq g^{-1} \cdot h \cdot A_{rs} \cdot g \subseteq {A_{rs}}^g \subseteq A_{rs}.\end{equation}
 
 The first step of the proof is show that $N_{rs}$ contains sufficiently many elements. 
@@ -62,8 +62,8 @@ All the possibilities for $(\Phi, r, s)$ mentioned in the statement of the theor
 In view of \cref{prop:Stepanov} to prove the theorem it suffices to show that $L_{rs}$ contains the generating set $\mathcal{Z}(\Sigma_s^-) \cup \mathcal{X}$ of $\E(\Phi, R, I)$.
 From $\mathcal{Z}(\Sigma_s^-) \subseteq \mathcal{X}^{\EP_s(R)}$ and \eqref{rel:NnormL} it follows that we only have to show $\mathcal{X} \subseteq L_{rs}$.
 
-Finally, the last inclusion follows from the same transitivity argument as above and the fact that $X_\alpha(I) \subseteq \EP_r(R, I) \subseteq L_{rs}$ for $\alpha \in \Delta_r \cup \Sigma_r$.
-For $\Phi=\rB_\ell$ one has to additionally use the fact that
+The last inclusion follows from the same transitivity argument as above and the fact that $X_\alpha(I) \subseteq \EP_r(R, I) \subseteq L_{rs}$ for $\alpha \in \Delta_r \cup \Sigma_r$.
+For $\Phi=\rB_\ell$ one has to additionally use the Chevalley commutator formula~\eqref{rel:CCF-specBC}:
 $$X_{0,1}(I) \subseteq X_{2,1}(I) \cdot X_{2,1}(I)^{x_{0,2}(1)} \cdot X_{-2,1}(I) \subseteq L_{rs} \cdot L_{rs}^{N_{rs}} \cdot L_{rs} \subseteq L_{rs}. \qedhere$$ 
 \end{proof}
 
@@ -89,8 +89,8 @@ After removing all bonds marked $r$ the weight diagram of $\pi$ splits into seve
 The subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the component of the diagram containing the vertex marked $\varpi_s$.
 Clearly, $\Gamma$ consists of weights from $\Lambda(\pi')$ incident to the removed bonds.
 
-From a consideration of weight diagrams (see~\cite{PSV98}) we determine the number of elements in $\Lambda(\pi')$ and $\Gamma$ (cf.~Figure~\ref{fig:table}).
-\begin{figure}
+From a consideration of the weight diagrams (see~\cite{PSV98}) we determine the number of elements in $\Lambda(\pi')$ and $\Gamma$ (see~Table~\ref{table:dv-reps}).
+\begin{table}[htb]
 \[\begin{array}{l @{\qquad} l @{\qquad} c @{\quad} c @{\qquad} c @{\qquad} c @{\qquad} c}
 \Phi                                 & (s,r)         & |\Lambda(\pi)| & \text{type of $\pi$} & \text{type of $\Delta_r$} & |\Lambda(\pi')|& |\Gamma|  \\ \hline\vphantom{\Bigl(}
 \rA_\ell,\ \ell\geqslant 2           & (1,\ell)      & \ell+1         & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\     
@@ -101,9 +101,10 @@ From a consideration of weight diagrams (see~\cite{PSV98}) we determine the numb
 \rE_\ell,\ \ell=6,7                  & (\ell,2)      & 27, 56         & \text{minimal}       & \rA_{\ell-1}              & \ell           & 3       \\ 
 \rE_\ell,\ \ell=6,7                  & (\ell,1)      & 27, 56         & \text{minimal}       & \rD_{\ell-1}              & 2(\ell-1)      & \ell-1  \\
 \rF_4                                & (4, 1)        & 26             & \text{minimal}       & \rC_3                     & 6              & 3\end{array}\]
- \caption[Table]{List of representations involved in the proof of \cref{thm:DennisVaserstein}.} \label{fig:table}
-\end{figure}
-Consider the subset $B \in \E(\Delta_r, R, I)$ consisting of elements $g$ such that $(g \cdot v^+)_\lambda = 0$ for all $\lambda\in\Gamma$.
+ \caption{List of representations involved in the proof of \cref{thm:DennisVaserstein}.} \label{table:dv-reps}
+\end{table}
+
+Consider the subset $B \subset \E(\Delta_r, R, I)$ consisting of elements $g$ such that $(g \cdot v^+)_\lambda = 0$ for all $\lambda\in\Gamma$.
 Set $A:=\U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).$
 
 Applying \cref{lemma:uraction} to the subsystem $\Delta_r$ we find
