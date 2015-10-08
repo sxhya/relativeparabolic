@@ -87,7 +87,7 @@
 \newcommand\restr[2]{\ensuremath{\left.#1\right|_{#2}}}   
    
 \title {Decompositions of relative Chevalley groups}
-\keywords {Chevalley groups, principal congruence subgroups, stability for $\K_1$, bounded generation, subsystem factorizations, $\SL_2$-factorizations. {\em Mathematical Subject Classification (2010):} 20G40, 20G35, 19B14}
+\keywords {Chevalley groups, principal congruence subgroups, stability for $\K_1$, bounded generation, $\SL_2$-factorizations. {\em Mathematical Subject Classification (2010):} 20G40, 20G35, 19B14}
 \author {Sergey Sinchuk, Andrei Smolensky}
 \email {sinchukss {\it at} yandex.ru,\ andrei.smolensky {\it at} gmail.com}
 \date {\today}
@@ -167,7 +167,7 @@ Then $\E(\Phi, R, I) = \EP_r(R, I) \cdot \U(\Sigma^-_r \cap \Sigma^-_s, I) \cdot
 Even in the special case $I=R$ the above theorem contains several new cases as compared to~\cite[Theorems~2.5, 4.1]{St78}.
 The term ``Dennis---Vaserstein decomposition'' is due to A.~Suslin and M.~Tulenbaev (cf.~\cite[Lemma~2.1]{ST76}).
 
-The condition $\asr(I)$ used in the statement of \cref{thm:DennisVaserstein} is a relative version of the \emph{absolute stable rank} of D.~Estes and J.~Ohm which does not depend on the ambient ring $R$ (see section~\ref{sec:rel-asr}).
+The condition $\asr(I) \leq d$ used in the statement of \cref{thm:DennisVaserstein} is a relative version of the \emph{absolute stable range} condition of D.~Estes and J.~Ohm which depends only on the ideal $I$ (see section~\ref{sec:rel-asr}).
 
 Let $G$ be an abstract group with a generating set $X \subset G$. 
 We denote by $W(G, X)$ the \emph{width of $G$ with respect to $X$}, i.\,e. the smallest natural number $N$ such that every element of $G$ is a product of at most $N$ elements of $X$.
@@ -177,9 +177,12 @@ We denote by $W(G, X)$ the \emph{width of $G$ with respect to $X$}, i.\,e. the s
 
 %On the other hand, much less is known about the width of the relative group $\G(\Phi, R, I)$ and the relative elementary group $\E(\Phi, R, I)$.
 
-Our first application of parabolic factorizations is the following theorem which gives an estimate of the width of relative Chevalley groups in terms of Tits generators.
+Our first application of parabolic factorizations is the following theorem which gives an estimate of the width of $\E(\Phi, R)$ in terms of Tits generators and is, thus, a quantitative analogue of \cref{prop:Stepanov}
+and a relative analogue of the results of~\cite{CK83, Tavgen91, Mo07, VseUnitrZ1p, VavSmSuUnitrEng}.
 \begin{thm}\label{thm:width} Let $\Phi$ be an irreducible root system, and let $I$ be an ideal of a commutative ring $R$.
 \begin{enumerate}
+\item Let $\mathcal{O}_S$ be a Dedekind ring of arithmetic type in some global field $k$ having a real embedding. 
+Assume that $\Phi$ is classical of rank $\geqslant2$, then $W(\G(\Phi,\mathcal{O}_S,I), \mathcal{Z}(\Sigma_\ell^-))$ is finite.
 \item If $\sr(I) = 1$, then $W(\E(\Phi,R,I),\mathcal{Z}(\Pi))\leqslant 3|\Phi^+|+2\rk(\Phi)-1$;
 \item Let $p$ be a prime integer, set $R = \mathbb{Z}[\sfrac{1}{p}]$ and assume $\Phi$ is classical. Then under the assumption of the Generalized Riemann Hypothesis one has
 %TODO: Now check the coefficients of \rk(\Phi) in the expression below
@@ -187,21 +190,20 @@ Our first application of parabolic factorizations is the following theorem which
 & W(\E(\Phi,R,I), \mathcal{Z}(\Sigma_\ell^-))\leqslant 3|\Phi^+| + 2\rk(\Phi) + 1 & \text{ if } \Phi=\rA_\ell,\rC_\ell, \\
 & W(\E(\Phi,R,I), \mathcal{Z}(\Sigma_\ell^-))\leqslant 4|\Phi^+| + \rk(\Phi) + 1 & \text{ if } \Phi=\rB_\ell,\rD_\ell;
 \end{alignat*}
-\item Let $\mathcal{O}_S$ be a Dedekind ring of arithmetic type in some global field $k$ having a real embedding. 
-Assume that $\Phi$ is classical of rank $\geqslant2$, then $W(\G(\Phi,\mathcal{O}_S,I), \mathcal{Z}(\Sigma_\ell^-))$ is finite.
 \end{enumerate}
 \end{thm}
-Notice that a recent result of U.~Hadad and D.~W.~Morris \cite[Theorem~1.6]{Ha12} implies finiteness of $W(\E(\Phi, R, I), \mathcal{Z}(\Phi^+))$
-for $R=\mathbb{Z}$ and $\Phi=\rA_\ell$.
+The first assertion of the above theorem is essentially a reformulation of a previously known result of O.~Tavgen (see \cite{Tavgen93, TavgenThesis}),
+while for the second and the third assertion we give a direct proof.
+Compare \cref{thm:width} also with a recent result of U.~Hadad and D.~W.~Morris \cite[Theorem~1.6]{Ha12} which asserts that 
+$W(\SL(n, \mathbb{Z}, I), \mathcal{Z}(\Pi))$ is finite for any ideal $I \leq \mathbb{Z}$ and $n \geq 3$.
 
 Another application of parabolic factorizations developed in this paper are subsystem factorizations in terms of subgroups of type $\rA_1$.
 The case of a finite field $R=F$ was studied by M.~Liebeck, N.~Nikolov and A.~Shalev in~\cite{LiebNikShaSL2}.
 More precisely, for an untwisted Chevalley group it has been proved that $\G(\Phi, F)$ is a product of at most $N=5|\Phi^+|$ copies of $\SL(2, F)$.
-In~\cite{VavKovSL2} N.~Vavilov and E.~Kovach noted that Bruhat decomposition immediately implies a bound of $N=3|\Phi^+|$ factors for arbitrary field $F$.
-In fact, Gauss decomposition (see~\cite{Sm12}) implies a similar factorization for the elementary subgroup $\E(\Phi, R)$ 
-with $3|\Phi^+|$ factors for arbitrary commutative ring of stable rank $1$.
 
-In the linear and symplectic case the above results can be extended to even larger class of rings (which e.\,g. includes all Dedekind rings).
+In~\cite{VavKovSL2} N.~Vavilov and E.~Kovach noted that Bruhat decomposition immediately implies a bound of $N=3|\Phi^+|$ factors for arbitrary field $F$.
+In fact, in the context of \cref{thm:srRI1} one can immediately obtain the decomposition of $\E(\Phi, R, I)$ with $3|\Phi^+|$ factors of type $\rA_1$.
+Our next result further extends this to even larger class of rings (which e.\,g. includes ideals of all Dedekind rings).
 \begin{thm}\label{thm:SL2width}
 Let $I\trianglelefteq R$ be an ideal, $\Phi$ be an irreducible classical root system satisfying the following assumptions.
 \[\begin{array}{l@{\quad}l@{\quad}l}
@@ -212,15 +214,15 @@ Let $I\trianglelefteq R$ be an ideal, $\Phi$ be an irreducible classical root sy
 Then the principal congruence subgroup $\G(\Phi,R,I)$ can be presented as a product of at most $N$ copies of its (regularly embedded) subgroups isomorphic to $\SL_2(R, I)$.
 \end{thm}
 
-Yet another application of parabolic factorizations concerns subsystem factorizations of Chevalley groups formulated in terms of submaximal subgroups of type $\rA_\ell$.
-In case when $R=I$ is a field this question was studied by N.~Nikolov in \cite{NikProdDecomp}. 
+Our yet another application of parabolic factorizations concerns product decompositions of Chevalley groups formulated in terms of subgroups of type $\rA_\ell$ of submaximal rank.
+Recall that in \cite{NikProdDecomp} N.~Nikolov proves the following result. 
 \begin{thm*} Let $G$ be a classical Chevalley group (of normal or twisted type) of rank $n$ over a finite field.
 Then $G$ equals the product of at most $200$ conjugates of $\SL_n$. \end{thm*}
 
-It is also classically known that over an arbitrary field $F$ the group $\SL_{n+1}(F)$, $n\geq 3$ is a product of at most $4$ subgroups of type $\SL(n, F)$.
-On the other hand, from the classical Dennis---Vaserstein theorem (see~\cite{Va69} and \cite[Lemma~2.1]{ST76})
-it follows that $\SL_{n+1}(R, I)$ is a product of a most $5$ subgroups of type $\SL_n(R, I)$ for any ideal $I$ satisfying $\sr(I)\leqslant n-1$.
-Using another Dennis---Vaserstein type factorization we obtain the following result.
+It is classically known that over an arbitrary field $F$ the group $\SL_{n+1}(F)$, $n\geq 3$ is a product of at most $4$ subgroups of type $\SL(n, F)$.
+On the other hand, one immediately obtains from \cref{thm:DennisVaserstein} that $\SL_{n+1}(R, I)$ factors into a product of a most $5$ subgroups of type $\SL_n(R, I)$ for any ideal $I$ satisfying $\sr(I)\leqslant n-1$.
+
+Applying \cref{thm:DennisVaserstein} and generalizing (in the special case $\Phi=\rD_\ell$) Nikolov's \cite[Proposition~1]{NikProdDecomp} to arbitrary rings we obtain the following result.
 \begin{thm}\label{thm:spin-sln-prod}
 Assume that $\sr(I) \leqslant 2$ then the group $\Epin_{2\ell}(R, I)=\E(\rD_\ell, R, I)$ is a product of at most $9$ conjugates of (regularly embedded) subgroups of type $\rA_{\ell-1}$.
 \end{thm}
