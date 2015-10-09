@@ -80,16 +80,16 @@ Assume that $\Phi$ and $I$ satisfy one of the following assumptions
 Then every element of $\G(\Phi,R,I)$ can be factored into a product of one element of $\G(\langle\pm\alpha_\ell\rangle,R,I)\cong\SL(2,R,I)$ and at most $N'$ elements of $\mathcal{Z}(\Sigma_\ell)$:
 \end{cor}
 \begin{proof}
-\begin{figure}[htb]\label{fig:bass-kolster}
+The assertion can be obtained by iteratively applying (for a total of $\ell-1$ times) the decomposition of \cref{thm:BassKolster}.
+The improved estimate for $\Phi=\rA_\ell$ (resp. $\rC_\ell$) follows from the fact that it suffices to make only two (resp. three) additions to shorten the unimodular column in the first step of the proof of \cref{thm:BassKolster}.
+\end{proof}
+\begin{figure}[hb]\label{fig:bass-kolster}
 \[\begin{tikzcd}[row sep=tiny]
 \rD_4 \arrow[out=0,in=120]{rd}{\asr\leqslant3} & & & \\
 \rA_4 \arrow{r}{\sr\leqslant4} & \rA_3 \arrow{r}{\sr\leqslant3} & \rA_2 \arrow{r}{\sr\leqslant2} & \rA_1 \\
 \rC_4 \arrow{r}{\sr\leqslant7} & \rC_3 \arrow{r}{\sr\leqslant5} & \rC_2 \arrow[out=0,in=-120,swap]{ru}{\sr\leqslant3} \\
 \rB_4 \arrow{r}{\asr\leqslant3} & \rB_3 \arrow[out=0,in=-120,swap]{ru}{\asr\leqslant2} & &
 \end{tikzcd}\] \caption{Reductions used in the proof of \cref{cor:bass-kolster-iterated} and \cref{thm:SL2width}} \end{figure}
-The assertion can be obtained by iteratively applying (for a total of $\ell-1$ times) the decomposition of \cref{thm:BassKolster}.
-The improved estimate for $\Phi=\rA_\ell$ (resp. $\rC_\ell$) follows from the fact that it suffices to make only two (resp. three) additions to shorten the unimodular column in the first step of the proof of \cref{thm:BassKolster}.
-\end{proof}
 \begin{proof}[Proof of \cref{thm:SL2width}]
  As in the proof of the above corollary one has to iteratively apply \cref{thm:BassKolster}.
  To reduce the number of $\SL_2$-factors involved in the decompositoin one has to group into a single $\SL_2$-factor a pair of opposite root subgroups $X_{\alpha}(I)$, $X_{-\alpha}(I)$ (or $Z_{\pm\alpha}(I)$) appearing on each
