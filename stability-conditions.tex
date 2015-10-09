@@ -137,7 +137,7 @@ such that $(g \cdot v)_+ \in \Ums(\ell, I)$ under the following assumptions on $
 \textsc{Case $\Phi=\rC_\ell$.}
 Denote by $p$ the matrix of size $\ell$ such that its only nonzero entries equal $1$ and are on the skew-diagonal, i.\,e. $p_{ij}=(\delta_{i, \ell-j+1})$. 
 For $b \in M(\ell, I)$ set $g(b)=\left(\begin{smallmatrix} e_\ell & p \cdot b \\ 0 & e_{\ell} \end{smallmatrix}\right)$.
-Clearly, if $b$ is symmetric then $g(b)$ lies in $\U(\Sigma_\ell, I)\leq \E(\rC_\ell, R, I)$.
+Clearly, if $b$ is symmetric then $g(b)$ lies in $\U(\Sigma_\ell^+, I)\leq \E(\rC_\ell, R, I)$.
 
 Notice that the column $v'=(v_1,\ldots,v_\ell, v_{-\ell}^2,\ldots,v_{-1}^2)^t$ is $I$-unimodular.
 By the definition of the relative stable rank we can find a matrix $b\in \M(\ell,I)$ such that the upper half $v''_+$ of the vector $v''= g(b) \cdot v'$ is $I$-unimodular.
@@ -165,16 +165,16 @@ and the assertion of the lemma immediately follows from Levi decomposition. \end
 
 \begin{cor} \label{cor:embeddingBD}
  Denote by $i$ the standard embedding $\G(\rB_{\ell-1}, R, I) \hookrightarrow \G(\rD_\ell, R, I)$. 
- If $\asr(I) \leqslant \ell-1$ then for every $I$-unimodular column $v \in \Ums(2\ell, I)$ there exists $g \in \U(\Sigma_{\ell-1}, I) \leq \E(\rB_{\ell-1}, R, I)$ such that
+ If $\asr(I) \leqslant \ell-1$ then for every $I$-unimodular column $v \in \Ums(2\ell, I)$ there exists $g \in \U(\Sigma_{\ell-1}^+, I) \leq \E(\rB_{\ell-1}, R, I)$ such that
  the upper half of the vector $i(g) \cdot v$ forms an $I$-unimodular column of height $\ell$.
 \end{cor}
 \begin{proof}
- The assertion follows from the fact that for every $u \in \U(\Sigma_\ell, I) \leq \E(\rD_\ell, R, I)$ one can find $u' \in \G(\Delta_\ell, R, I)$ such that $uu'$ lies in the image of $i$. 
+ The assertion follows from the fact that for every $u \in \U(\Sigma_\ell^+, I) \leq \E(\rD_\ell, R, I)$ one can find $u' \in \G(\Delta_\ell, R, I)$ such that $uu'$ lies in the image of $i$. 
  Indeed, denote by $\sigma$ the symmetry of the Dynkin diagram of $\rD_\ell$,
- and decompose $u$ into the product $u_1 \cdot u_2$, $u_1 \in \U(\Sigma_\ell\cap\Delta_{\ell-1}, I)$, $u_2 \in \U(\Sigma_\ell \cap \Sigma_{\ell-1}, I)$.
+ and decompose $u$ into the product $u_1 \cdot u_2$, $u_1 \in \U(\Sigma_\ell^+\cap\Delta_{\ell-1}, I)$, $u_2 \in \U(\Sigma_\ell^+ \cap \Sigma_{\ell-1}^+, I)$.
  Then one takes $u' = \sigma(u_1)$.
 
- Now by \cref{item:asrUnipD} one finds a suitable $u \in \U(\Sigma_\ell, I) \leqslant \E(\rD_\ell, R, I)$ which makes the upper half unimodular,
+ Now by \cref{item:asrUnipD} one finds a suitable $u \in \U(\Sigma_\ell^+, I) \leqslant \E(\rD_\ell, R, I)$ which makes the upper half unimodular,
  and since $u'$ lies in $\G(\Delta_\ell, R, I)$, the upper half remains unimodular.
 \end{proof}
 
@@ -197,7 +197,7 @@ Now, to obtain zeroes at desired positions it remains to subtract from $v'_{k+1}
 Clearly, this operation corresponds to the left multiplication by some element $y\in\U(\Sigma_k^-, I)$.
 
 \textsc{Case $\Phi=\rC_\ell$.} 
-Applying \cref{item:asrUnipC} we find $x \in \U(\Sigma_\ell, I)$ such that the upper half $v'_+$ of $v' = x \cdot v$ is unimodular.
+Applying \cref{item:asrUnipC} we find $x \in \U(\Sigma_\ell^+, I)$ such that the upper half $v'_+$ of $v' = x \cdot v$ is unimodular.
 Set $g(a) = \left(\begin{smallmatrix} e_\ell & 0 \\ p \cdot a & e_{\ell} \end{smallmatrix}\right)$.
 Clearly, if $a$ is symmetric then $g(a) \in \U(\Sigma_\ell^-, I)$.
 Since the column $v''_+ = ({v'_1}^2, \ldots, {v'_\ell}^2)^t$ is $I$-unimodular there exists a matrix $b \in M(\ell, I)$ such that $v'_- + p b v''_+ = 0$.

@@ -3,8 +3,8 @@ In what follows, $r$ and $s$ are two distinct integers such that $1 \leq r, s \l
 From Levi decomposition~\eqref{rel:Levi-decomp} it follows that the following four subsets of $\E(\Phi, R, I)$ are equal:
 \begin{multline*}
 A_{rs} := \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \\
-= \U(\Sigma_r, I)\cdot \U(\Sigma^-_r, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \hspace{5em} \\
-\hspace{5em} = \EP_r(R, I) \cdot \E(\Delta_s, R, I) \cdot \U(\Sigma_s^-, I)\cdot \U(\Sigma_s, I) = \\
+= \U(\Sigma_r^+, I)\cdot \U(\Sigma^-_r, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \hspace{5em} \\
+\hspace{5em} = \EP_r(R, I) \cdot \E(\Delta_s, R, I) \cdot \U(\Sigma_s^-, I)\cdot \U(\Sigma_s^+, I) = \\
 = \EP_r(R, I) \cdot \U(\Sigma^-_r \cap \Sigma^-_s, I) \cdot \EP_s(R, I).
 \end{multline*}
 
@@ -28,7 +28,7 @@ For every $\alpha \in \Delta_{\{r,s\}} \cup (\Phi^+ \setminus (\Sigma^+_r \cap \
 Notice that for every $i$ the group $\EP_i(R, I)$ is normalized by $\EP_i(R)$, hence a fortiori it is normalized by $X_\alpha(R)$, $\alpha \in S_i^+$.
 Since $\U(\Sigma_r^- \cap \Sigma_s^-, I)$ is normalized by $\E(\Delta_{\{r,s\}}, R)$ we obtain the assertion of the lemma for $\alpha \in \Delta_{\{r, s\}}$.
 
-Now if $\alpha$ lies in $\Phi^+ \setminus \Sigma_r \cap \Sigma_s$ it is contained either in $\Delta_r$ or in $\Delta_s$.
+Now if $\alpha$ lies in $\Phi^+ \setminus \Sigma_r^+ \cap \Sigma_s^+$ it is contained either in $\Delta_r$ or in $\Delta_s$.
 Assume, for example, the latter. By Levi decomposition we have $\U(\Sigma_r^- \cap \Sigma_s^-, I)^{X_\alpha(R)} \subseteq \U(\Sigma_s^-, I) \subseteq A_{rs}$
 which again implies the assertion of the lemma.
 \end{proof}
@@ -58,7 +58,7 @@ The first step of the proof is to show that $N_{rs}$ contains sufficiently many 
 This is accomplished in~\cref{lemma:Stein_reduction} below, where we invoke stability conditions for the first time.
 We show that $N_{rs}$ contains the root subgroup $X_{-\alpha\ssub{r}}(R)$, which together with \cref{lemma:dv-normal} and \cref{item-egen} immediately implies that $N_{rs}$ contains the Levi subgroup $\E(\Delta_s, R)$ and hence the extended Weyl group $\widetilde{W}(\Delta_s)$.
 
-The next goal is to demonstrate the inclusion $\U(\Sigma_s, R) \subseteq N_{rs}$ (which implies $\EP_s(R) \subseteq N_{rs}$).
+The next goal is to demonstrate the inclusion $\U(\Sigma_s^+, R) \subseteq N_{rs}$ (which implies $\EP_s(R) \subseteq N_{rs}$).
 All the possibilities for $\Phi$, $s$ and $r$ fall into one of the following three cases:
 \begin{enumerate}
  \item \textit{Case $m_s(\alpha_{\mathrm{max}})=1$ and $\Phi$ is simply laced.}
@@ -119,7 +119,7 @@ which implies the following inclusion
 \begin{multline*}
 X_{\alpha_r}(I) \cdot X_{-\alpha_r}(I) \cdot B \cdot \EP_s(R, I) \subseteq 
 X_{\alpha_r}(I) \cdot B \cdot \EP_s(R, I) \cdot \EP_s(R, I) \subseteq \\
-\subseteq B \cdot \U(\Sigma_r, I) \cdot \EP_s(R, I) =
+\subseteq B \cdot \U(\Sigma_r^+, I) \cdot \EP_s(R, I) =
 B \cdot \EP_s(R, I).
 \end{multline*}
 Together with the third statement of \cref{lemma:dv_unipotent} this shows that
@@ -147,13 +147,13 @@ Consider the subset $C \subseteq \EP_s(R, I)$ consisting of elements satisfying 
 
 Set $A' = \EP_\ell(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot C$.
 By \cref{item:asrUnipC} (in the case $\Phi=\rC_\ell$) or \cref{cor:embeddingBD} (in the case $\Phi=\rF_4$) applied to the subgroup $\G(\Delta_s, R, I)$ 
-we find for every $g \in \EP_s(R, I)$ an element $x \in \U(\Sigma_r \cap \Delta_s, I)$ such that $xg \in C$.  
+we find for every $g \in \EP_s(R, I)$ an element $x \in \U(\Sigma_r^+ \cap \Delta_s, I)$ such that $xg \in C$.  
 Notice that one immediately gets the equality $A_{rs} = A'$ from this.
 Indeed for $g\in \EP_s(R, I)$ one has
 \begin{equation*} \EP_r(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot g \subseteq 
  \EP_r(R, I)x^{-1}  \cdot \U(\Sigma_s^-, I) \cdot xg \subseteq A'. \end{equation*}
 
-By the very definition of $C$, for every $g \in C$ one can choose $y \in \U(\Sigma_s \cap \Delta_r, I)$ such that $(y \cdot g)_{\varpi_s,\varpi_s - \alpha_s} = 0$.
+By the very definition of $C$, for every $g \in C$ one can choose $y \in \U(\Sigma_s^+ \cap \Delta_r, I)$ such that $(y \cdot g)_{\varpi_s,\varpi_s - \alpha_s} = 0$.
 Consequently, for every $g\in C$ one has
 \begin{multline*}
  \EP_r(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot g \subseteq \EP_r(R, I) y^{-1} \cdot \U(\Sigma_r^-\cap \Sigma_s^-, I)^{y^{-1}} \cdot y g \subseteq \\
