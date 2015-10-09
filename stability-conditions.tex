@@ -43,38 +43,36 @@ For a row $a=(a_1,\ldots,a_n)\in{}^n\!R$ denote by $\mathfrak{J}(a)$ the interse
 It is easy to see that a row $a\in R^n$ is unimodular if and only if $\mathfrak{J}(a)=R$. 
 Clearly, for any $g\in\GL(n,R)$ one has $\mathfrak{J}(a\cdot g)=\mathfrak{J}(a)$.
 \begin{dfn}\label{dfn:j-stable}
-We say that a row $a=(a_1,\ldots,a_{n+1})\in{}^{n+1}\!I$ is {\it $\mathfrak{J}$-stable}, if there exist $c_1,\ldots,c_n\in I$ such that
+We say that a row $a=(a_1,\ldots,a_{n+1})\in{}^{n+1}\!I$ can be {\it $I$-shortened}, if there exist $c_1,\ldots,c_n\in I$ such that
 $\mathfrak{J}(a_1,\ldots,a_{n+1})=\mathfrak{J}(a_1+c_1a_{n+1},\ldots,a_n+c_na_{n+1}).$
 \end{dfn}
 \begin{dfn}\label{dfn:asr}
-We say that an ideal $I$ satisfies condition $\ASR_n(I)$ if it satisfies $\SR_n(I)$ and, moreover, any row $a\in{}^{n+1}\!I$ is $\mathfrak{J}$-stable.
+We say that an ideal $I$ satisfies condition $\ASR_n(I)$ if it satisfies $\SR_n(I)$ and, moreover, any row $a\in{}^{n+1}\!I$ can be $I$-shortened.
 \end{dfn}
 
 It is easy to see that $\ASR_m(I)$ implies $\ASR_n(I)$ for any $n\geqslant m$. 
-By definition, the \emph{absolute relative stable rank} $\asr(I)$ is the smallest natural $n$ such that $\ASR_n(I)$ holds. 
-Similarly to the case of usual stable rank, we set $\asr(I)=\infty$ if no such $n$ exists.
+By definition, the \emph{absolute relative stable rank} $\asr(I)$ is the smallest natural $n$ such that $\ASR_n(I)$ holds (again we set $\asr(I)=\infty$ if no such $n$ exists).
 
 A priori our definition of $\ASR_n(I)$ depends on $R$.
 Below we will see that, in fact, there is no such dependence.
-The following lemma is a relativization of~\cite[Lemma~8.2]{MKV}. 
+The following lemma is a relative version of~\cite[Lemma~8.2]{MKV}. 
 \begin{lemma}\label{lemma:relative-asr-unimod}
 For a commutative ring $R$ and an ideal $I \leq R$ the following statements are equivalent:
 \begin{lemlist} 
-\item\label{asr-j-stable} Any row $a\in{}^{n+1}\!I$ is $\mathfrak{J}$-stable;
+\item\label{asr-j-stable} Any row $a\in{}^{n+1}\!I$ can be $I$-shortened;
 \item\label{asr-bak-like} For any $I$-unimodular row $(b,a_1,\ldots,a_n,d)\in\Umd(n+2,I)$ there exist $c_1,\ldots,c_n\in I$ 
  such that $(b+b',a_1+c_1d,\ldots,a_n+c_nd)$ is $I$-unimodular for any $b'\in J$, where $J=I \cdot a_1 + \ldots + I \cdot a_n + I \cdot d\leq I$.
 \end{lemlist} 
 \end{lemma}
 \begin{proof}
-Assume first that any row $a\in{}^{n+1}\!I$ is $\mathfrak{J}$-stable. 
+Assume first that any row $a\in{}^{n+1}\!I$ can be $I$-shortened. 
 In particular for a given $I$-unimodular row $(b,a_1,\ldots,a_n,d)\in\Umd(n+2,I)$ there exist $c_1,\ldots,c_n$ such that
 \[\mathfrak{J}(a_1,\ldots,a_{n+1})=\mathfrak{J}(a_1+c_1a_{n+1},\ldots,a_n+c_na_{n+1}).\]
 Therefore $(b,a_1+c_1d,\ldots,a_n+c_nd)$ is also unimodular. Of course, for any $b'\in J$ we could replace $b$ with $b+b'$ from the very start.
 
 To show the converse take arbitrary row $(a_1,\ldots,a_n,d)\in{}^{n+1}\!I$ and consider $I$-unimodular row $(1,a_1,\ldots,a_n,d)\in\Umd(n+2,I).$
 By hypothesis, there exist $c_1,\ldots,c_n$ such that \[ v=(1+b',a'_1,\ldots,a'_n)=(1+b',a_1+c_1d,\ldots,a_n+c_nd) \] is unimodular for any $b'\in J$.
-Assume that there exists a maximal ideal $\mathfrak{m}\trianglelefteq R$ such that all $a'_1,\ldots,a'_n$ are contained in $\mathfrak{m}$
- but at least one of the elements $d$, $a_i$ is not.
+Assume that there exists a maximal ideal $\mathfrak{m}\trianglelefteq R$ such that all $a'_1,\ldots,a'_n$ are contained in $\mathfrak{m}$ but at least one of the elements $d$, $a_i$ is not.
 Clearly then $d\notin\mathfrak{m}$ and $I\not\subseteq \mathfrak{m}$ (otherwise $a_i=a'_i-c_id\in\mathfrak{m}$ contrary to the assumption).
 Now we can find $t\in I$ such that its image $\bar{t}$ in the residue field $R/\mathfrak{m}$ equals $-\bar{1}/\bar{d}$.
 We get that $1 + b' \in \mathfrak{m}$ for $b'=td\in J$ which contradicts unimodularity of $v$.
@@ -91,18 +89,16 @@ Obviously, the second statement of \cref{lemma:relative-asr-unimod} does not dep
 %\end{cor}
 
 Let $R$ be a commutative ring. We denote by $\Max(R)$ its \emph{maximum spectrum} i.e. the set of maximal ideals of $R$ equipped with Zariski topology. For a topological space $X$ denote by $\dim(X)$ its usual topological dimension.
-The following result gives an upper estimate for the absolute stable rank (see~).
+%The following result gives an upper estimate for the absolute stable rank (see~).
 %\begin{prop}\label{prop:asr-dimmax}
 %Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered with a finite family of subsets 
 %$X_1\ldots, X_m$ such that $\dim(X_i)\leqslant d$ for every $i$. Then $\asr(A)\leqslant d+1$.
 %\end{prop}
 From the definition of $\asr(I)$ and \cite[Theorem~2.3]{EO} (or~\cite[Theorem~3.7]{MKV}) it follows that
-\begin{equation} \label{sr-estimates}
-\sr(I)\leqslant\asr(I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1.
-\end{equation}
-\begin{rem}
-There exist examples of rings for which the first inequality in the above formula is strict. Namely, there are rings of stable rank $1$ but of absolute stable rank $\geqslant2$, see~\cite{MKV}. However, \cite[Theorem~1.3]{MKV} shows that $\sr(R)=\asr(R)$ for any principal ideal ring $R$.
-\end{rem}
+\begin{equation} \label{sr-estimates} \sr(I)\leqslant\asr(I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \end{equation}
+There exist examples of rings for which the first inequality in the above formula is strict.
+More precisely, there are rings of stable rank $1$ but of absolute stable rank $\geqslant2$, see~\cite{MKV}.
+On the other hand, \cite[Theorem~1.3]{MKV} shows that $\sr(R)=\asr(R)$ for any principal ideal ring $R$.
 \begin{example}
 \eqref{sr-estimates} shows in particular, that every Dedekind domain $R$ satisfies $\asr(R)\leqslant2$, and that $\sr(A[x])\leqslant3$ for every locally principal ring $A$. It is shown in \cite{GruMenVasSL2ZxSL2kxy} that $\sr(\mathbb{Z}[x])=3$. Note that $\sr(\mathbb{Z}[x_1,\ldots,x_n])=n+1$ if $n>1$ \cite[Example after Theorem~18.2]{VasSusSerreProblem}.
 
