@@ -91,24 +91,27 @@ Obviously, the second statement of \cref{lemma:relative-asr-unimod} does not dep
 %\end{cor}
 
 Let $R$ be a commutative ring. We denote by $\Max(R)$ its \emph{maximum spectrum} i.e. the set of maximal ideals of $R$ equipped with Zariski topology. For a topological space $X$ denote by $\dim(X)$ its usual topological dimension.
-The following result gives an upper estimate for the absolute stable rank (see~\cite[Theorem~2.3]{EO}, \cite[Theorem~3.7]{MKV}).
-\begin{prop}\label{prop:asr-dimmax}
-Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered with a finite family of subsets 
-$X_1\ldots, X_m$ such that $\dim(X_i)\leqslant d$ for every $i$. Then $\asr(A)\leqslant d+1$.
-\end{prop}
-%TODO: Add more comments?
-From the definition of $\asr(I)$ and the previous proposition it follows that
-\[ \sr(I)\leqslant\asr(I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \]
+The following result gives an upper estimate for the absolute stable rank (see~).
+%\begin{prop}\label{prop:asr-dimmax}
+%Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered with a finite family of subsets 
+%$X_1\ldots, X_m$ such that $\dim(X_i)\leqslant d$ for every $i$. Then $\asr(A)\leqslant d+1$.
+%\end{prop}
+From the definition of $\asr(I)$ and \cite[Theorem~2.3]{EO} (or~\cite[Theorem~3.7]{MKV}) it follows that
+\begin{equation} \label{sr-estimates}
+\sr(I)\leqslant\asr(I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1.
+\end{equation}
 \begin{rem}
 There exist examples of rings for which the first inequality in the above formula is strict. Namely, there are rings of stable rank $1$ but of absolute stable rank $\geqslant2$, see~\cite{MKV}. However, \cite[Theorem~1.3]{MKV} shows that $\sr(R)=\asr(R)$ for any principal ideal ring $R$.
 \end{rem}
-\cref{prop:asr-dimmax} shows in particular, that every Dedekind domain $R$ satisfies $\asr(R)\leqslant2$, and that $\sr(A[x])\leqslant3$ for every locally principal ring $A$. It is shown in \cite{GruMenVasSL2ZxSL2kxy} that $\sr(\mathbb{Z}[x])=3$. Note that $\sr(\mathbb{Z}[x_1,\ldots,x_n])=n+1$ if $n>1$ \cite[Example after Theorem~18.2]{VasSusSerreProblem}.
+\begin{example}
+\eqref{sr-estimates} shows in particular, that every Dedekind domain $R$ satisfies $\asr(R)\leqslant2$, and that $\sr(A[x])\leqslant3$ for every locally principal ring $A$. It is shown in \cite{GruMenVasSL2ZxSL2kxy} that $\sr(\mathbb{Z}[x])=3$. Note that $\sr(\mathbb{Z}[x_1,\ldots,x_n])=n+1$ if $n>1$ \cite[Example after Theorem~18.2]{VasSusSerreProblem}.
 
-Another corollary of \cref{prop:asr-dimmax} is an estimate for the stable rank of the polynomial rings over a field.
+Another corollary of \eqref{sr-estimates} is an estimate for the stable rank of the polynomial rings over a field.
 Namely, $\sr(F[x_1,\ldots,x_n])\leqslant n+1$ for any field $F$.
 For certain classes of fields this upper estimate can be further improved.
 For example, if $F$ is algebraic over a finite field then $\sr(F[x_1,\ldots,x_n])\leqslant n$ by~\cite[Corollary~17.4]{VasSusSerreProblem}.
 On the other hand, it is known that $\sr(F[x,y])=3$ for every $F$ with $\K_2^M(F)\neq0$ \cite{KrusenmeyerThesis} and $\sr(F[x_1,\ldots,x_n])=n+1$ for $F\subseteq\mathbb{R}$, see~\cite[Theorem~8]{Va71}.
+\end{example}
 
 \subsection{Action of unipotent radicals}\label{sec:ur-action}
 \begin{lemma}\label{lemma:PSV-symplectic-trick}
