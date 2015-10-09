@@ -18,7 +18,7 @@ If $2k \neq \ell$ let $\Phi_k$ be the subsystem of $\Phi$ spanned by simple root
 Clearly, such $\Phi_k$ has type $\rD_{(\ell-2k+2)}$. 
 In the remaining case $2k = \ell$ set $\Phi_k = \langle \alpha_\ell \rangle \cong \rA_1$.
 Now let $\beta_k$ be the maximal root of $\Phi_k$, i.\,e. $\beta_k = \alpha_\mathrm{max}(\Phi_k)$, $k=1,\ldots, \lfloor \ell/2 \rfloor$.
-Denote by $B$ the set of all $\beta_k$. From the definition it is clear that elements of $B$ are mutually perpendicular to each other.
+Denote by $B$ the set of all $\beta_k$. From the definition it is clear that elements of $B$ are mutually orthogonal to each other.
 The roots $\beta_k$ can also be defined by explicit formulae:
 \begin{align*}
  \beta_k =  \alpha_{2k-1} + 2\alpha_{2k}+ \ldots + 2\alpha_{\ell-2} + \alpha_{\ell-1} + \alpha_\ell, & \text{ for } k=1,\ldots,\lfloor\ell/2\rfloor-1, \\
@@ -43,7 +43,7 @@ $\alpha_{\ell-1}$ (resp. to $\alpha_{\ell-3}$, $\alpha_{\ell-1}$) while fixing a
 
 The following lemma is an analogue of Proposition~1 of~\cite{NikProdDecomp}.
 \begin{lemma}\label{lemma:nikolov-type-dl}
-Let $\Phi=\rD_\ell$, $\ell\geq 2$ and let $R$ be arbitrary ring.
+Let $\Phi=\rD_\ell$, $\ell\geq 2$ and let $R$ be a commutative ring.
 There exist an element $y\in\E(\Phi,R)$ and an element $w\in\widetilde{W}(\Phi)$ such that $\U(\Sigma_\ell, I)\subset[\U(\Delta_\ell^-, I),y]\cdot{}^w\!\U(\Delta_\ell^+, I)$.
 \end{lemma}
 \begin{proof}
@@ -51,15 +51,13 @@ Since $\U(\Sigma_\ell, I)$ is abelian we can decompose it as $\U(\Sigma_\ell, I)
 Set $y=\prod_{\beta\in B}x_\beta(1)$. 
 We will now show by induction on $\ell$ that 
 \begin{equation}\label{eq:ind-stat} \U(\Sigma_\ell\setminus B, I)\subset[\U(\Delta_\ell^-, I),y]\cdot\U(B, I). \end{equation}
-The induction base in the cases $\ell=2,3$ is trivial.
+The induction base in the cases $\ell=2, 3$ is trivial.
 
-Notice that $\beta_1$ is the only root of $\Phi$ satisfying $m_2(\beta_1)=2$ therefore the commutator formula~\eqref{rel:CCF} implies
+Notice that $\beta_1$ is the only root of $\Phi$ satisfying $m_2(\beta_1)=2$, therefore the commutator formula~\eqref{rel:CCF} implies
 \[ \bigl[\U(\Delta_2^-, I),x_{\beta_1}(1)\bigr]=1. \]
-Since the set $A=(\Sigma_2^-\cap\Delta_\ell)+(B\setminus\{\beta_1\})$ is disjoint from $\Phi$ 
-(for $\alpha\in A$ one has $m_2(\alpha)=-1$ and $m_\ell(\alpha)=1$)
-we also get from~~\eqref{rel:CCF} that
+There is no root of the form $\gamma=\alpha+\beta$ with $\alpha\in\Sigma_2^-\cap\Delta_\ell$ and $\beta\in B\setminus\{\beta_1\}$, because such a root $\gamma$ must satisfy $m_2(\gamma)=-1$ and $m_\ell(\gamma)=1$. Thus~\eqref{rel:CCF} gives
 \[\Bigl[\U(\Sigma_2^-\cap\Delta_\ell, I),\prod_{i\neq1}x_{\beta_i}(1)\Bigr]=1. \]
-Since $B\setminus\{\beta_1\}\subset\Sigma_\ell\cap\Delta_2$, the above identities imply
+Since $B\setminus\{\beta_1\}\subset\Sigma_\ell\cap\Delta_2$, the above two identities imply
 \[ \Bigl[ \U(\Sigma_2^-\cap\Delta_\ell, I)\cdot\U(\Delta_{2,\ell}^-, I), x_{\beta_1}(1)\cdot\prod_{i\neq1}x_{\beta_i}(1) \Bigr] \equiv \bigl[ \U(\Sigma_2^-\cap\Delta_\ell, I), x_{\beta_1}(1) \bigr] \bmod \U(\Sigma_\ell\cap\Delta_2, I). \]
 Take an element $u\in\U(\Sigma_2^-\cap\Delta_\ell, I)$ and decompose it as $u=vw$, $v\in\U(\Sigma_1^-\cap\Sigma_2^-\cap\Delta_\ell, I)$, $w\in\U(\Sigma_2^-\cap\Delta_{1,\ell}, I)$.
 Using the identity
@@ -70,17 +68,19 @@ we can rewrite
 \[ [vw,x_{\beta_1}(1)] = {}^v[w,x_{\beta_1}(1)]\cdot[v,x_{\beta_1}(1)].  \]
 Since $\U(\Sigma_1^-\cap\Sigma_2^-\cap\Delta_\ell, I)$ and $\U(\Sigma_2^-\cap\Delta_{1,\ell}, I)$ are abelian, it is easy to see that
 \[ [v,x_{\beta_1}(1)]\in\U(\Sigma_2\cap\Sigma_\ell\cap\Delta_1, I), \quad [w,x_{\beta_1}(1)]\in\U((\Sigma_1\cap\Sigma_\ell)\setminus\{\beta_1\}, I). \]
-Every element of $\U(\Sigma_2\cap\Sigma_\ell\cap\Delta_1, I)$ (resp. $\U(\Sigma_1\cap\Sigma_\ell\setminus\{\beta_1\}, I)$) can be obtained as above for a suitable choice of $v$ (resp. $w$).
+Every element of $\U(\Sigma_2\cap\Sigma_\ell\cap\Delta_1, I)$ (resp. $\U(\Sigma_1\cap\Sigma_\ell\setminus\{\beta_1\}, I)$) can be expressed as such a commutator for a suitable choice of $v$ (resp. $w$).
 Indeed, set $v=x_\gamma(\xi_\gamma)\cdot v'$, $\gamma=-\alpha_1-\alpha_2$, $v' \in \U(\Sigma_1^- \cap \Sigma_2^- \cap \Delta_\ell \setminus \{\gamma\})$.
 Using relation \eqref{eq:comm-ab-c} and the fact that $\U(\Sigma_2^-\cap\Delta_\ell)$ commutes with $\U(\Sigma_\ell)$ we get that:
-\begin{multline*} [v, x_{\beta_1}(1)] = [x_\gamma(\xi_\gamma)\cdot v', x_{\beta_1}(1)] = {}^{x_\gamma(\xi_\alpha)}[v', x_{\beta_1}(1)] \cdot [x_\gamma(\xi_\gamma), x_{\beta_1}(1)] = \\
- = [v', x_{\beta_1}(1)]\cdot x_{\beta_1-\alpha_1-\alpha_2}(\xi_\gamma) = \ldots = \prod_{\mathclap{\alpha\in\Sigma_1^- \cap \Sigma_2^- \cap \Delta_\ell}} x_{\beta_1+\alpha}(\xi_\alpha). \end{multline*}
+\begin{multline*}
+[v, x_{\beta_1}(1)] = [x_\gamma(\xi_\gamma)\cdot v', x_{\beta_1}(1)] = {}^{x_\gamma(\xi_\alpha)}[v', x_{\beta_1}(1)] \cdot [x_\gamma(\xi_\gamma), x_{\beta_1}(1)] = \\
+= [v', x_{\beta_1}(1)]\cdot x_{\beta_1-\alpha_1-\alpha_2}(\xi_\gamma) = \ldots = \prod_{\mathclap{\alpha\in\Sigma_1^- \cap \Sigma_2^- \cap \Delta_\ell}} x_{\beta_1+\alpha}(\xi_\alpha).
+ \end{multline*}
 It remains to note that $\Sigma_2 \cap \Sigma_\ell \cap \Delta_1 = \beta_1 + \Sigma_1^- \cap \Sigma_2^- \cap \Delta_\ell$. The same argument works for $[w, x_{\beta_1}(1)]$.
 Direct calculation using the commutator formula shows that
 \[ {}^v\!\U(\Sigma_1\cap\Sigma_\ell\setminus\{\beta_1\}, I) \equiv \U(\Sigma_1\cap\Sigma_\ell\setminus\{\beta_1\}, I) \bmod \U(\Sigma_\ell\cap\Delta_2, I). \]
 Summing up the above arguments, we get that
-\[ [\U(\Sigma_2^-, I)\cdot\U(\Delta_{2,\ell}^-, I),y] \equiv \U((\Sigma_{1,2}\cap\Sigma_\ell)\setminus\{\beta_1\}) \bmod \U(\Sigma_\ell\cap\Delta_2, I). \]
-hence \eqref{eq:ind-stat} follows from the induction hypothesis (applied to $\Delta_{1,2} \cong \rD_{\ell-2}$). 
+\[ [\U(\Sigma_2^-, I)\cdot\U(\Delta_{2,\ell}^-, I),y] \equiv \U((\Sigma_{1,2}\cap\Sigma_\ell)\setminus\{\beta_1\}) \bmod \U(\Sigma_\ell\cap\Delta_2, I), \]
+hence the inclusion~\eqref{eq:ind-stat} follows from the induction hypothesis (applied to $\Delta_{1,2} \cong \rD_{\ell-2}$). 
 
 Finally, we have found $a\in\U(\Sigma_\ell\setminus B, I)$ and $b\in\U(\Delta_\ell^-, I)$
 such that $$a\in[b,y]\cdot\prod_{\beta\in B}X_\beta\subset[\U(\Delta_\ell^-, I),y]\cdot\U(B, I).$$
