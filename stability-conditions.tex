@@ -38,7 +38,7 @@ Other examples of rings of stable rank $1$ are provided by boolean rings, the ri
 %Formally adjoining a unit to a non-unital ring of stable rank $1$ produces a non-trivial example of an ideal having the stable rank strictly lower that the ambient ring.
 \end{example}
 
-\subsection{Relative absolute stable rank}\label{sec:rel-asr}
+\subsection{Relativization of the absolute stable rank}\label{sec:rel-asr}
 For a row $a=(a_1,\ldots,a_n)\in{}^n\!R$ denote by $\mathfrak{J}(a)$ the intersection of all maximal ideals of $R$ containing $a_1,\ldots,a_n$.
 It is easy to see that a row $a\in R^n$ is unimodular if and only if $\mathfrak{J}(a)=R$. 
 Clearly, for any $g\in\GL(n,R)$ one has $\mathfrak{J}(a\cdot g)=\mathfrak{J}(a)$.
@@ -54,8 +54,9 @@ It is easy to see that $\ASR_m(I)$ implies $\ASR_n(I)$ for any $n\geqslant m$.
 By definition, the \emph{absolute relative stable rank} $\asr(I)$ is the smallest natural $n$ such that $\ASR_n(I)$ holds. 
 Similarly to the case of usual stable rank, we set $\asr(I)=\infty$ if no such $n$ exists.
 
-A priori our definition of condition $\ASR_n(I)$ depends on $R$.
+A priori our definition of $\ASR_n(I)$ depends on $R$.
 Below we will see that, in fact, there is no such dependence.
+The following lemma is a relativization of~\cite[Lemma~8.2]{MKV}. 
 \begin{lemma}\label{lemma:relative-asr-unimod}
 For a commutative ring $R$ and an ideal $I \leq R$ the following statements are equivalent:
 \begin{lemlist} 
@@ -81,13 +82,13 @@ This shows that no such $\mathfrak{m}$ may exist and, therefore, $\mathfrak{J}(a
 \end{proof}
 
 Obviously, the second statement of \cref{lemma:relative-asr-unimod} does not depend on $R$, hence, as suggested by the notation, $\asr(I)$ is independent of $R$.
-As another corollary of \cref{lemma:relative-asr-unimod} we obtain the following reformulation of the absolute stable rank condition $\ASR_n(R)$.
-\begin{cor}[A.~Bak, {cf.~\cite[\S~1]{Pl98}}] For a commutative ring $R$ the following statements are equivalent:
-\begin{enumerate}
- \item\label{asr_Stein} $R$ satisfies $\ASR_n(R)$;
- \item\label{asr_Bak} For any \emph{unimodular} row $(a_1,\ldots,a_n,b,d)\in\Umd(n+2,R)$ there exist $c_1,\ldots,c_n\in R$ such that $(a_1+c_1d,\ldots,a_n+c_nd,b+td)$ is unimodular for all $t\in R$.
-\end{enumerate}
-\end{cor}
+%As another corollary of \cref{lemma:relative-asr-unimod} we obtain the following reformulation of the absolute stable rank condition $\ASR_n(R)$.
+%\begin{cor}[A.~Bak, {cf.~\cite[\S~1]{Pl98}}] For a commutative ring $R$ the following statements are equivalent:
+%\begin{enumerate}
+% \item\label{asr_Stein} $R$ satisfies $\ASR_n(R)$;
+% \item\label{asr_Bak} For any \emph{unimodular} row $(a_1,\ldots,a_n,b,d)\in\Umd(n+2,R)$ there exist $c_1,\ldots,c_n\in R$ such that $(a_1+c_1d,\ldots,a_n+c_nd,b+td)$ is unimodular for all $t\in R$.
+%\end{enumerate}
+%\end{cor}
 
 Let $R$ be a commutative ring. We denote by $\Max(R)$ its \emph{maximum spectrum} i.e. the set of maximal ideals of $R$ equipped with Zariski topology. For a topological space $X$ denote by $\dim(X)$ its usual topological dimension.
 The following result gives an upper estimate for the absolute stable rank (see~\cite[Theorem~2.3]{EO}, \cite[Theorem~3.7]{MKV}).
