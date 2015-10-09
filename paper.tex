@@ -1,9 +1,12 @@
 \documentclass[12pt]{amsart}
-\usepackage{amscd, amsmath, amssymb, amsthm, amsfonts, amstext, verbatim, enumitem, graphicx, mathtools, xfrac, tikz-cd, nameref, thmtools, hyperref}
+\usepackage{amscd, amsmath, amssymb, amsthm, amsfonts, amstext, geometry, verbatim, enumitem, graphicx, mathtools, xfrac, tikz-cd, nameref, thmtools, hyperref}
 \usepackage[utf8]{inputenc}
+
 \usepackage[backend=biber, citestyle=numeric-comp, natbib=true, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
 \usepackage[activate={true,nocompatibility}]{microtype}
 \usepackage[capitalize]{cleveref}
+
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
 
 %Bibliography
 \renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
@@ -15,24 +18,36 @@
 \newlist{thmlist}{enumerate}{1} \setlist[thmlist]{label=(\roman{thmlisti}), ref=\thethm.(\roman{thmlisti}),noitemsep} \Crefname{thmlisti}{Theorem}{Theorems}
 \newlist{lemlist}{enumerate}{1} \setlist[lemlist]{label=(\roman{lemlisti}), ref=\thelemma.(\roman{lemlisti}),noitemsep} \Crefname{lemlisti}{Lemma}{Lemmas}
 
-\theoremstyle{plain} \declaretheorem[name=Theorem, Refname={Theorem,Theorems}]{thm} \Crefname{thm}{Theorem}{Theorems}
+\theoremstyle{plain}
+
+\newtheorem{thm}{Theorem}
+\Crefname{thm}{Theorem}{Theorems}
 \numberwithin{equation}{section}
 
-\newtheorem{lemma}{Lemma} \numberwithin{lemma}{section} \Crefname{lemma}{Lemma}{Lemmas}
-\newtheorem{cor}[lemma]{Corollary} \Crefname{cor}{Corollary}{Corollaries}
-\newtheorem{prop}[lemma]{Proposition} \Crefname{prop}{Proposition}{Propositions}
+\newtheorem{lemma}{Lemma}
+\numberwithin{lemma}{section}
+\Crefname{lemma}{Lemma}{Lemmas}
+
+\newtheorem{cor}[lemma]{Corollary}
+\Crefname{cor}{Corollary}{Corollaries}
+
+\newtheorem{prop}[lemma]{Proposition}
+\Crefname{prop}{Proposition}{Propositions}
+
 \newtheorem*{thm*}{Theorem}
 \newtheorem*{lemma*}{Lemma}
-\theoremstyle{definition} \newtheorem{dfn}[lemma]{Definition} \Crefname{dfn}{Definition}{Definitions}
-\newtheorem{example}[lemma]{Example} \Crefname{example}{Example}{Examples}
-\theoremstyle{remark} \newtheorem{rem}[lemma]{Remark} \Crefname{rem}{Remark}{Remarks}
 
-%Page layout
-\textwidth 16cm 
-\textheight 22cm 
-\headheight 0.5cm 
-\evensidemargin 0.3cm 
-\oddsidemargin 0.2cm
+\theoremstyle{definition}
+
+\newtheorem{dfn}[lemma]{Definition}
+\Crefname{dfn}{Definition}{Definitions}
+\newtheorem{example}[lemma]{Example}
+\Crefname{example}{Example}{Examples}
+
+\theoremstyle{remark}
+
+\newtheorem{rem}[lemma]{Remark}
+\Crefname{rem}{Remark}{Remarks}
 
 %Math operators
 \DeclareMathOperator{\K}{K}
