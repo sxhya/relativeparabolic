@@ -69,6 +69,7 @@
 \DeclareMathOperator{\M}{M}
 \DeclareMathOperator{\SR}{SR}
 \DeclareMathOperator{\sr}{sr}
+\DeclareMathOperator{\asr}{asr}
 \DeclareMathOperator{\shape}{shape}
 \DeclareMathOperator{\Rad}{Rad}
 \DeclareMathOperator{\Max}{Max}
@@ -77,7 +78,6 @@
 \DeclareMathOperator{\Epin}{Epin}
 \DeclareMathOperator{\Stab}{Stab}
 \DeclareMathOperator{\ASR}{ASR}
-\DeclareMathOperator{\asr}{asr}
 \DeclareMathOperator{\Ums}{Ums}
 \DeclareMathOperator{\Umd}{Umd}
 \DeclareMathOperator{\rk}{rk}
@@ -167,8 +167,8 @@ Let $\Phi$ be a root system, let $I$ be an ideal of arbitrary commutative ring $
 Then the relative elementary Chevalley $\E(\Phi, R, I)$ group admits the following decomposition
 \[ \E(\Phi,R,I) = \Hh(\Phi,R,I) \cdot \U(\Phi,I) \cdot \U(\Phi^-,I) \cdot \U(\Phi,I). \]
 \end{thm}
-In the special case when $I$ is contained in the Jacobson radical of $R$ the above theorem boils down to~\cite[Proposition~2.3]{AbeSuzNormalSubgroups}. 
-The special case $I=R$ was treated by the second named author in~\cite{Sm12}.
+In the special case when $I$ is contained in the Jacobson radical of $R$ \cref{thm:srRI1} boils down to~\cite[Proposition~2.3]{AbeSuzNormalSubgroups}. 
+We also note that the absolute case (i.\,e. $I=R$) of the theorem was treated by the second named author in~\cite{Sm12}.
 
 The next main result is a relative Dennis---Vaserstein decomposition which holds for a broader class of groups of rings as compared to \cref{thm:srRI1}.
 \begin{thm}\label{thm:DennisVaserstein}
@@ -445,18 +445,19 @@ It remains to note that $(1+s)^{-1}\in 1+I$ and so all the factors lie in $\E(\P
 \end{proof}
 
 The following lemma is a relative version of the classical result sometimes called Chevalley---Matsumoto decomposition.
+It can be deduced easily from the absolute statement (see~\cite[Theorem~1.3]{St78}).
 \begin{lemma}\label{lemma:Chevalley-Matsumoto}
-Let $\pi$ be the fundamental representation of $\G_{sc}(\Phi, R)$ with the highest weight $\varpi_s$.
+Let $\pi$ be a basic fundamental representation of $\G_{sc}(\Phi, R)$ with the highest weight $\varpi_s$.
 Assume that $g\in \G_{sc}(\Phi, R, I)$ is such that $(g\cdot v^+)_{\varpi\ssub{s}}=1$, then 
 \[ g \in \U(\Sigma_s^-, I) \cdot \G_{sc}(\Delta_s, R, I) \cdot \U(\Sigma_s^+, I). \]
 \end{lemma}
-\begin{proof}
-In the absolute case ($I=R$) the statement of the lemma is contained in~\cite[Theorem~1.3]{St78}. 
-Thus we can write $g=u_1\cdot g'\cdot u_2$, where $u_1\in\U(\Sigma_s^-,R)$, $u_2\in\U(\Sigma_s^+,R)$ and $g'\in\G(\Delta_s,R)$.
-Since $g$ lies in $\G(\Phi,R,I)$, the vector $gv^+$ is $I$-unimodular. 
-On the other hand, $g'u_2v^+=v^+$, so $u_1\in\G(\Phi,R,I)\cap\U(\Sigma_s^-,R)=\U(\Sigma_s^-,I)$.
-The matrix $g'u_2$ is an element of $\left(\G(\Delta_s,R)\U(\Sigma_s^+,R)\right)\cap\G(\Phi,R,I)$, and by Levi decomposition $u_2\in\U(\Sigma_s^+,I)$, $g'\in\G(\Delta_s,R,I)$.
-\end{proof}
+%\begin{proof}
+%In the absolute case ($I=R$) the statement of the lemma is contained in~\cite[Theorem~1.3]{St78}. 
+%Thus we can write $g=u_1\cdot g'\cdot u_2$, where $u_1\in\U(\Sigma_s^-,R)$, $u_2\in\U(\Sigma_s^+,R)$ and $g'\in\G(\Delta_s,R)$.
+%Since $g$ lies in $\G(\Phi,R,I)$, the vector $gv^+$ is $I$-unimodular. 
+%On the other hand, $g'u_2v^+=v^+$, so $u_1\in\G(\Phi,R,I)\cap\U(\Sigma_s^-,R)=\U(\Sigma_s^-,I)$.
+%The matrix $g'u_2$ is an element of $\left(\G(\Delta_s,R)\U(\Sigma_s^+,R)\right)\cap\G(\Phi,R,I)$, and by Levi decomposition $u_2\in\U(\Sigma_s^+,I)$, $g'\in\G(\Delta_s,R,I)$.
+%\end{proof}
 
 \subsection{$\K_1$-functor modeled on Chevalley groups}
 Recall that by Taddei's theorem $\E(\Phi, R)$ is a normal subgroup of $\G_{sc}(\Phi, R)$ provided $\Phi$ is an irreducible root system of rank $\geqslant 2$ (see~\cite{Ta}).
