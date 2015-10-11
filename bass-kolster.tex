@@ -2,13 +2,13 @@ The next theorem is a relative version of the so called Bass---Kolster decomposi
 \begin{thm}\label{thm:BassKolster}
 Let $\Phi$ be a classical root system of rank $\ell\geqslant2$, let $R$ be an arbitrary commutative ring and $I$ be an ideal, satisfying one of the following assumptions:
 \[\begin{array}{l@{\quad}l@{\quad}l@{\quad}c}
-\Phi = \rA_\ell,\ \ell\geqslant 2, & \sr(I) \leqslant \ell; \\
-\Phi = \rC_\ell,\ \ell\geqslant 2, & \sr(I) \leqslant 2\ell-1; \\
-\Phi = \rB_\ell, \rD_\ell,\ \ell\geqslant 3, & \asr(I) \leqslant \ell-1.
+\Phi = \rA_\ell, \ \ell\geqslant 2, & \sr(I) \leqslant \ell; \\
+\Phi = \rC_\ell, \ \ell\geqslant 2, & \sr(I) \leqslant 2\ell-1; \\
+\Phi = \rB_\ell, \rD_\ell, \ \ell\geqslant 3, & \asr(I) \leqslant \ell-1.
 \end{array}\]
-Then the principal congruence subgroup $\G(\Phi,R,I)$ admits the following relative version of Bass---Kolster decomposition:
-\[ \G(\Phi,R,I)=  \U(\Phi^+,I) \cdot \U(\Phi^-,I) \cdot Z \cdot \U(\Sigma_1^-\setminus\{-\alpha_\mathrm{max}\},I) \cdot \U(\Sigma_1,I) \cdot \G(\Delta_1,R,I), \]
-where $Z = Z_{\alpha_\mathrm{max}}(I)=\left\{z_{-\alpha_\mathrm{max}}(r,1)\ \middle|\ r\in I \right\}$.
+Then the principal congruence subgroup $\G(\Phi, R, I)$ admits the following relative version of Bass---Kolster decomposition:
+\[ \G(\Phi, R, I)=  \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot Z \cdot \U(\Sigma_1^-\setminus\{-\alpha_\mathrm{max}\}, I) \cdot \U(\Sigma_1, I) \cdot \G(\Delta_1, R, I), \]
+where $Z = Z_{\alpha_\mathrm{max}}(I)=\left\{z_{-\alpha_\mathrm{max}}(r, 1)\ \middle|\ r\in I \right\}$.
 \end{thm}
 \begin{proof}
 
@@ -19,49 +19,49 @@ Indeed, set $g'' = z_{-\alpha\ssub{max}}(-s, 1) \cdot g'$.
 Obviously, one has $(g''\cdot v^+)_1 = 1$, $(g''\cdot v^+)_{\varpi\ssub{1}-\alpha\ssub{max}}=0$ and the conclusion of the theorem follows from \cref{lemma:Chevalley-Matsumoto}.
 
 \textsc{Case $\Phi=\rA_\ell$, $n=\ell + 1$.}
-Since $\sr(I)\leqslant\ell$, one can find $a_1,\ldots,a_\ell\in I$ such that $(v_1+a_1v_{\ell+1},\ldots,v_\ell+a_\ell v_{\ell+1})^t=(v'_1,\ldots,v'_\ell)^t$ is $I$-unimodular.
-Then there are $b_1,\ldots,b_\ell\in I$ such that $b_1v'_1+\ldots b_\ell v'_\ell=v'-1\in I$. 
-Thus the vector \[ v'' = \prod_{i=1}^\ell x_{\ell+1,i}(b_i) \cdot \prod_{i=1}^\ell x_{i,\ell+1}(a_i) \cdot v \]
+Since $\sr(I)\leqslant\ell$, one can find $a_1, \ldots, a_\ell\in I$ such that $(v_1+a_1v_{\ell+1}, \ldots, v_\ell+a_\ell v_{\ell+1})^t=(v'_1, \ldots, v'_\ell)^t$ is $I$-unimodular.
+Then there are $b_1, \ldots, b_\ell\in I$ such that $b_1v'_1+\ldots b_\ell v'_\ell=v'-1\in I$. 
+Thus the vector \[ v'' = \prod_{i=1}^\ell x_{\ell+1, i}(b_i) \cdot \prod_{i=1}^\ell x_{i, \ell+1}(a_i) \cdot v \]
 satisfies the equalities~\eqref{eq1}.
 
 \textsc{Case $\Phi=\rC_\ell$, $n=2\ell$.}
-Notice that the column $(v_1,\ldots, v_{-2}, v_{-1}^2)^t$ is also $I$-unimodular.
+Notice that the column $(v_1, \ldots, v_{-2}, v_{-1}^2)^t$ is also $I$-unimodular.
 Applying condition $\sr(I)\leq 2\ell-1$ we find $c_1, c_2, \ldots, c_{-2} \in I \cdot v_{-1}$ such that upper $2\ell -1$ components of $v'=(v_1 + c_1 v_{-1}, \ldots, v_{-2} + c_{-2}v_{-1}, v_{-1})^t$ form an $I$-unimodular column.
 By the choice of $c_i$ we can find suitable $d\in I$ such that $h_1 \cdot v = v'$ for
-\[ h_1 = x_{1,-1}(c_1 + d) \cdot \prod_{i=2}^{-2} x_{i,-1}(c_i) \in \U(\Sigma_1^+, I). \]
+\[ h_1 = x_{1, -1}(c_1 + d) \cdot \prod_{i=2}^{-2} x_{i, -1}(c_i) \in \U(\Sigma_1^+, I). \]
 
-We can find $f_1, f_2,\ldots, f_{-2} \in R$ such that $f_1v'_1+\sum_{i=2}^{-2} f_i v'_i = 1$.
-Set $\xi = v''_1-v''_{-1}-1 \in I$,
-\[ h_2 = x_{-1,1}\biggl(\xi f_1 + \sum_{i=2}^\ell v_1' \xi^2 f_i f_{-i}\biggr) \cdot \prod_{i=2}^{-2} x_{-1,i}(\xi f_i) \in \U(\Sigma_1^-, I). \]
+We can find $f_1, f_2, \ldots, f_{-2} \in R$ such that $f_1v'_1+\sum_{i=2}^{-2} f_i v'_i = 1$.
+Set $\xi = v''_1-v''_{-1}-1 \in I$, 
+\[ h_2 = x_{-1, 1}\biggl(\xi f_1 + \sum_{i=2}^\ell v_1' \xi^2 f_i f_{-i}\biggr) \cdot \prod_{i=2}^{-2} x_{-1, i}(\xi f_i) \in \U(\Sigma_1^-, I). \]
 Direct computation shows that $v'' = h_2 \cdot v'$ satisfies equalities~\eqref{eq1}.
 
 \textsc{Case $\Phi=\rD_\ell$, $n= 2\ell$.} 
 By \cref{item:asrUnipD} we can find $h_1\in \U(\Sigma^+_\ell, I)$ such that the upper half $v'_+$ of $v'=h_1 \cdot v$ is $I$-unimodular.
 Since $\sr(I)\leq \ell-1$ we can find $c_1$, $c_3, \ldots c_\ell \in I$ such that $(v''_1, v''_3, \ldots, v''_\ell) \in \Ums(\ell-1, I)$, where
-\[ v''=h_2 \cdot x_{1,2}(c_1) \cdot v', \quad h_2=\prod_{i=3}^\ell x_{i,2}(c_i). \]
-We can find $f_1, f_3,\ldots, f_\ell \in R$ such that $f_1v''_1+\sum_{i=3}^\ell f_i v''_{i} = 1$.
+\[ v''=h_2 \cdot x_{1, 2}(c_1) \cdot v', \quad h_2=\prod_{i=3}^\ell x_{i, 2}(c_i). \]
+We can find $f_1, f_3, \ldots, f_\ell \in R$ such that $f_1v''_1+\sum_{i=3}^\ell f_i v''_{i} = 1$.
 As before, set
-\[ \xi = v''_1-v''_{-2}-1 \in I, \quad h_3 = x_{-2,1}(\xi f_1) \cdot \prod_{i=3}^\ell x_{-2,i}(\xi f_i), \quad v'''=h_3 \cdot v''. \]
-Clearly, $t_{1,2}(c_1) \cdot h_1 \in \U(\Phi^+, I)$, $ h_3 \cdot h_2 \in \U(\Phi^-, I)$ and $v'''$ satisfies~\eqref{eq1}.
+\[ \xi = v''_1-v''_{-2}-1 \in I, \quad h_3 = x_{-2, 1}(\xi f_1) \cdot \prod_{i=3}^\ell x_{-2, i}(\xi f_i), \quad v'''=h_3 \cdot v''. \]
+Clearly, $t_{1, 2}(c_1) \cdot h_1 \in \U(\Phi^+, I)$, $ h_3 \cdot h_2 \in \U(\Phi^-, I)$ and $v'''$ satisfies~\eqref{eq1}.
 
 \textsc{Case $\Phi=\rB_\ell$, $n=2\ell+1$.} Subdivide $v\in \Ums(2\ell+1, I)$ as $v=(v_+, v_0, v_-)\in R^\ell\times R\times R^\ell$.
 Denote by $J\leq I$ the ideal spanned by components of $v_-$.
-Since $\sr(I/J)\leq \ell$ we can find $c_1,\dots,c_\ell\in I$ such that for $v' = h \cdot v$, $h = \prod_{i=1}^\ell x_{i,0}(c_i) \in \U(\Phi^+, I)$
-one has $\bar{v'}_+=(\bar{v'_1},\ldots, \bar{v'_\ell}) \in \Ums(\ell, I/J)$ and, therefore, $(v'_+, v'_-) \in \Ums(2\ell, I)$.
+Since $\sr(I/J)\leq \ell$ we can find $c_1, \dots, c_\ell\in I$ such that for $v' = h \cdot v$, $h = \prod_{i=1}^\ell x_{i, 0}(c_i) \in \U(\Phi^+, I)$
+one has $\bar{v'}_+=(\bar{v'_1}, \ldots, \bar{v'_\ell}) \in \Ums(\ell, I/J)$ and, therefore, $(v'_+, v'_-) \in \Ums(2\ell, I)$.
 Now the proof can be finished by repeating the argument for the case $\Phi=\rD_\ell$ (applied to the subset of long roots of $\rB_\ell$).
 \end{proof}
 
 It is easy to see that the proof of the above theorem is effective and gives an estimate of the total number of elementary root unipotents involved in the decomposition.
 \begin{cor}\label{cor:bass-kolster-count}
-In the assumptions and notation of \cref{thm:BassKolster} every element of $\G(\Phi,R,I)$ 
-can be factored into a product of one element of $\G(\Delta_1,R,I)$ one element of $Z$ and at most $4|\Sigma_1|-1$ elements of $\mathcal{X}$.
+In the assumptions and notation of \cref{thm:BassKolster} every element of $\G(\Phi, R, I)$ 
+can be factored into a product of one element of $\G(\Delta_1, R, I)$ one element of $Z$ and at most $4|\Sigma_1|-1$ elements of $\mathcal{X}$.
 \end{cor}
 \begin{proof}
 The assertion can be obtained by a careful analysis of the proof of the previous theorem.
 Cases $\Phi=\rA_\ell, \rC_\ell$ are immediate.
 In the case $\Phi=\rD_\ell$ from the proof of \cref{thm:BassKolster} one obtains that
-\begin{equation*} \G(\Phi,R,I) =  \U(\Sigma_\ell^+,I) \cdot X_{\alpha_1}(I) \cdot \U(\Sigma_2^-\cap\Delta_1,I) \cdot X_{-\alpha\ssub{\mathrm{max}}}(I) \cdot Z \cdot \U(\Sigma_1^-,I) \cdot \U(\Sigma_1^+,I) \cdot \G(\Delta_1,R,I). \end{equation*}
-We can present an element $g$ of $\U(\Sigma_\ell^+, I)$ as a product of $g_1 \in \U(\Sigma_{\{1,2\}^+} \cap \Sigma_\ell^+)$ and $g_2\in \U(\Delta_{\{1,2\}}\cap \Sigma_\ell^+)$.
+\begin{equation*} \G(\Phi, R, I) =  \U(\Sigma_\ell^+, I) \cdot X_{\alpha_1}(I) \cdot \U(\Sigma_2^-\cap\Delta_1, I) \cdot X_{-\alpha\ssub{\mathrm{max}}}(I) \cdot Z \cdot \U(\Sigma_1^-, I) \cdot \U(\Sigma_1^+, I) \cdot \G(\Delta_1, R, I). \end{equation*}
+We can present an element $g$ of $\U(\Sigma_\ell^+, I)$ as a product of $g_1 \in \U(\Sigma_{\{1, 2\}^+} \cap \Sigma_\ell^+)$ and $g_2\in \U(\Delta_{\{1, 2\}}\cap \Sigma_\ell^+)$.
 An examination of the extended Dynkin diagram of $\rD_\ell$ implies that $g_2$ either centralizes or normalizes all factors of the above decomposition (except the last one)
 and therefore can be moved to the right until it is consumed by $\G(\Delta_1, R, I)$.
 On the other hand, $g_1$ is a product of at most $2\ell-3$ elementary unipotents, while the width of $\U(\Sigma_1^\pm, I)$ and $\U(\Sigma_2^-\cap\Delta_1)$ in elementary unipotents does not exceed $2\ell-2$ and $2\ell-4$, respectively.
@@ -74,9 +74,9 @@ Assume that $\Phi$ and $I$ satisfy one of the following assumptions
 \[\begin{array}{l@{\quad}l@{\quad}l}
 \Phi=\rA_\ell, & \sr(I)\leqslant 2, & N'=3\left|\Phi^+\right|+2\ell - 5; \\
 \Phi=\rC_\ell, & \sr(I)\leqslant 3, & N'=3\left|\Phi^+\right|+3\ell - 6; \\
-\Phi=\rB_\ell,\rD_\ell, & \asr(I)\leqslant 2, & N'=4\left|\Phi^+\right| - 4.
+\Phi=\rB_\ell, \rD_\ell, & \asr(I)\leqslant 2, & N'=4\left|\Phi^+\right| - 4.
 \end{array}\]
-Then every element of $\G(\Phi,R,I)$ can be factored into a product of one element of $\G(\langle\pm\alpha_\ell\rangle,R,I)\cong\SL(2,R,I)$ and at most $N'$ elements of $\mathcal{Z}(\Sigma_\ell)$:
+Then every element of $\G(\Phi, R, I)$ can be decomposed into a product of one element of $\G(\langle\pm\alpha_\ell\rangle, R, I) \cong \SL(2, R, I)$ and at most $N'$ elements of $\mathcal{Z}(\Sigma_\ell)$:
 \end{cor}
 \begin{proof}
 The assertion can be obtained by iteratively applying (for a total of $\ell-1$ times) the decomposition of \cref{thm:BassKolster}.
@@ -84,10 +84,10 @@ The improved estimate for $\Phi=\rA_\ell$ (resp. $\rC_\ell$) follows from the fa
 \end{proof}
 \begin{figure}[hb]\label{fig:bass-kolster}
 \[\begin{tikzcd}[row sep=tiny]
-\rD_4 \arrow[out=0,in=120]{rd}{\asr\leqslant3} & & & \\
+\rD_4 \arrow[out=0, in=120]{rd}{\asr\leqslant3} & & & \\
 \rA_4 \arrow{r}{\sr\leqslant4} & \rA_3 \arrow{r}{\sr\leqslant3} & \rA_2 \arrow{r}{\sr\leqslant2} & \rA_1 \\
-\rC_4 \arrow{r}{\sr\leqslant7} & \rC_3 \arrow{r}{\sr\leqslant5} & \rC_2 \arrow[out=0,in=-120,swap]{ru}{\sr\leqslant3} \\
-\rB_4 \arrow{r}{\asr\leqslant3} & \rB_3 \arrow[out=0,in=-120,swap]{ru}{\asr\leqslant2} & &
+\rC_4 \arrow{r}{\sr\leqslant7} & \rC_3 \arrow{r}{\sr\leqslant5} & \rC_2 \arrow[out=0, in=-120, swap]{ru}{\sr\leqslant3} \\
+\rB_4 \arrow{r}{\asr\leqslant3} & \rB_3 \arrow[out=0, in=-120, swap]{ru}{\asr\leqslant2} & &
 \end{tikzcd}\] \caption{Reductions used in the proof of \cref{cor:bass-kolster-iterated} and \cref{thm:SL2width}} \end{figure}
 \begin{proof}[Proof of \cref{thm:SL2width}]
  As in the proof of the above corollary one has to iteratively apply \cref{thm:BassKolster}.
