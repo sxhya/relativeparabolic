@@ -22,10 +22,9 @@ The following proposition summarizes basic properties of stable ranks.
 \begin{prop} \label{prop:sr_properties}
 Let $R$ be arbitrary commutative unital ring and let $I\trianglelefteq R$ be an ideal.
 \begin{enumerate}
-\item For any ideal $J\subseteq I$ one has $\sr(J)\leqslant\sr(I)$, $\sr(I/J)\leqslant\sr(I)$;
+\item For any ideal $I'\subseteq I$ one has $\sr(I')\leqslant\sr(I)$, $\sr(I/I')\leqslant\sr(I)$;
 \item One has $\sr\Bigl(\prod\limits_{i=1}^n R_i\Bigr)=\max\limits_{i=1}^n\bigl(\sr(R_i)\bigr)$;
-\item Let $J$ denote the Jacobson radical of $R$, then one has $\sr(R)=\sr(R/J)$;
-\item If $I\subseteq J$, then $\sr(I)=1$;
+\item Let $J(R)$ denote the Jacobson radical of $R$, then $\sr(R)=\sr(R/J(R))$ and $\sr(J(R))=1$;
 \item Let $I\rtimes\mathbb{Z}$ denote the ring obtained by formally adjoining $1$ to $I$. Then $\sr(I\rtimes\mathbb{Z})=\max(2,\sr(I))$.
 \end{enumerate}
 \end{prop}
@@ -107,8 +106,7 @@ From inequality~\eqref{sr-estimates} one concludes, in particular, that
 \item $\asr(A[x])\leqslant3$ for every locally principal ring $A$;
 \item $\asr(F[x_1,\ldots,x_n])\leqslant n+1$ for any field $F$.
 \end{itemize}
-
-The last estimate further improves to $\sr(F[x_1, \ldots, x_n])\leqslant n$ for $F$ algebraic over a finite field (see~\cite[Corollary~17.4]{VS76}).
+%The last estimate further improves to $\sr(F[x_1, \ldots, x_n])\leqslant n$ for $F$ algebraic over a finite field (see~\cite[Corollary~17.4]{VS76}).
 For certain classes of fields there is also a lower estimate for $\sr(F[x_1, \ldots, x_n])$ which allows to compute precisely the value of both $\sr(R)$ and $\asr(R)$.
 For example, $\sr(F[x,y])=3$ for every $F$ with $\K_2^M(F)\neq0$ (see~\cite{Kru73}) and $\sr(F[x_1, \ldots, x_n])=n+1$ for $F\subseteq\mathbb{R}$, see~\cite[Theorem~8]{Va71}.
 Notice also that $\sr(\mathbb{Z}[x])=3$ (see \cite{GMV}) and $\sr(\mathbb{Z}[x_1,\ldots,x_n])=n+1$ for $n>1$ (see example after~\cite[Theorem~18.2]{VS76}).
