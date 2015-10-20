@@ -1,10 +1,10 @@
-The proof of Gauss decomposition presented below is similar to the absolute case (cf. with the proof of~\cite[Theorem~5.1]{Sm12}).
+The proof of the Gauss decomposition presented below is similar to the absolute case (cf.~\cite[Theorem~5.1]{Sm12}).
 \begin{prop}\label{thm:Gauss}
-Let $\Phi$ be a reduced irreducible root system of rank $\ell$ and let $\Delta_1, \Delta_\ell$ be
-two reductive subsystems of $\Phi$ corresponding to the endnodes of the Dynkin diagram of $\Phi$.
-Suppose that both relative elementary subgroups $\E(\Delta_i, R, I)$, $i=1, \ell$ admit triangular decomposition with $N$ triangular factors:
+Let $\Phi$ be a reduced irreducible root system of rank $\ell$ and let $\Delta_1$, $\Delta_\ell$ be
+two reductive subsystems of $\Phi$, corresponding to the endnodes of the Dynkin diagram of $\Phi$.
+Suppose that both relative elementary subgroups $\E(\Delta_i, R, I)$, $i=1, \ell$ admit the triangular decomposition with $N$ triangular factors:
 \[ \E(\Delta_i, R, I) = \Hh(\Delta_i, R, I) \cdot \U(\Delta^+_i, I) \cdot \U(\Delta^-_i, I) \cdot \ldots \cdot \U(\Delta^\pm_i, I), \quad i=1, \ell. \]
-Then the group $\E(\Phi, R, I)$ admits the decomposition with the same number of factors:
+Then the ambient group $\E(\Phi, R, I)$ admits the decomposition with the same number of factors:
 \[ \E(\Phi, R, I) = \Hh(\Phi, R, I) \cdot \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot \ldots \cdot \U(\Phi^\pm, I). \]
 \end{prop}
 \begin{proof}
@@ -12,10 +12,10 @@ Denote by $Y$ the product of subgroups in the right-hand side of the above equal
 To show that $Y=\E(\Phi, R, I)$ it suffices to check that
 \begin{enumerate}
 \item $Y$ is normalized by $\E(\Phi, R)$, i.\,e. $Y^{\E(\Phi, R)}\subseteq Y$;
-\item there exists a set $X$ generating $\E(\Phi, R, I)$ as a \emph{normal} subgroup of $\E(\Phi, R)$ such that $XY\subseteq Y$.
+\item there exists a set $X$, generating $\E(\Phi, R, I)$ as a \emph{normal} subgroup of $\E(\Phi, R)$ such that $XY\subseteq Y$.
 \end{enumerate}
 To prove the first assertion it suffices to show that $Y^{x_\alpha(\xi)} \subseteq Y$ for any $\alpha\in \pm \Pi$, $\xi\in R$.
-Fix a root $\alpha\in\pm\Pi$. Clearly, $\alpha \in \Delta_i$ for $i=1$ or $i=\ell$ and we can expand $Y$ as follows:
+Fix a root $\alpha\in\pm\Pi$. Clearly, $\alpha \in \Delta_i$ for $i=1$ or for $i=\ell$, and we can expand $Y$ as follows:
 \[ Y=\Hh(\Phi, R, I) \cdot \U(\Delta_i^+, I) \cdot \ldots \cdot \U^\pm(\Delta_i, I) \cdot \U(\Sigma_i^+, I) \cdot \ldots \cdot \U(\Sigma_i^\pm, I). \]
 For every  $h \in \Hh(\Phi, R, I)$ one has for some $s\in I$
 \[ x_\alpha(\xi)\cdot h = h\cdot x_\alpha((1+s)\xi)=h\cdot x_\alpha(\xi)\, x_\alpha(s\xi). \]
@@ -33,18 +33,18 @@ Finally, the inclusion $XY \subseteq Y$ follows from the fact that $\Hh(\Phi, R,
 \end{proof}
 
 \begin{proof}[Proof of \cref{thm:srRI1}]
-In view of the above proposition it suffices to prove that Gauss decomposition of length $3$ holds for $\Phi=\rA_1$.
+In view of the above proposition it suffices to prove that the Gauss decomposition of length $3$ holds for $\Phi=\rA_1$.
 
 Let $A=\begin{psmallmatrix}a & b \\ c & d\end{psmallmatrix}$ be an element of $\SL(2, R, I)$.
 The first column of $A$ is $I$-unimodular, therefore there exists $z\in I$ such that $a+cz\in R^*$.
-Multiplying $A$ on the left by $x_{12}(z)$ we get matrix $A'=x_{12}(z)\cdot A=\begin{psmallmatrix}a' & b' \\ c & d\end{psmallmatrix}$ with invertible top-left corner element $a'$.
+Multiplying $A$ on the left by $x_{12}(z)$, we get a matrix $A'=x_{12}(z)\cdot A=\begin{psmallmatrix}a' & b' \\ c & d\end{psmallmatrix}$ with the invertible  element $a'$ in the top-left corner.
 After multiplying $A'$ on the left by $x_{21}(-c/a')$ and on the right by $x_{12}(-b'/a')$ we get a diagonal matrix. 
-Thus we obtain relative Gauss decomposition of $A$
-\begin{equation}\nonumber
+Thus we have obtained the relative Gauss decomposition of $A$
+\begin{equation*}
 A=x_{12}(-z)\cdot x_{21}(c/a')\cdot
 \begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
 \cdot x_{12}(b'/a')=x_{12}(-z)\cdot
 \begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
 \cdot x_{21}(y) \cdot x_{12}(b'/a'), 
-\end{equation}
+\end{equation*}
 where $\varepsilon\in 1+I$ and $y\in I$. \end{proof}

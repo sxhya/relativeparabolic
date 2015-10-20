@@ -1,26 +1,26 @@
-In this section we define stability conditions used in the statements of our decomposition theorems from section~\ref{sec:factorizations}.
+In this section we define the stability conditions used in the statements of our decomposition theorems in section~\ref{sec:factorizations}.
 First, we recall the notion of the stable rank of an ideal introduced by L.~Vaserstein in~\cite{Va69, Va71}.
-As we will be mainly concerned with applications to Chevalley groups, our exposition of stable ranks is neccessarily limited to commutative rings.
-The main goal of the subsection~\ref{sec:rel-asr} is to define the relative version of the absolute stable rank condition which generalizes the definition of~\cite{EO, MKV}.
-Finally, in the end of this section we state several technical lemmas describing the action of certain unipotent radicals on unimodular columns under stability conditions.
+As we will be mainly concerned with applications to Chevalley groups, our exposition of the stable ranks is neccessarily limited to commutative rings.
+The main goal of subsection~\ref{sec:rel-asr} is to define the relative version of the absolute stable rank condition, which generalizes the definition in~\cite{EO, MKV}.
+Finally, in the end of this section we state several technical lemmas describing the action of certain unipotent radicals on the unimodular columns under the assumption of a suitable stability condition.
 
 \subsection{Relative stable rank}
-Recall that a row $a\in{}^n\!R$ is called \emph{$I$-unimodular} if it is congruent to $e_1$ modulo $I$ and its components $a_1,a_2,\ldots,a_n$ generate $R$ as an ideal.
+Recall that a row $a\in{}^n\!R$ is called \emph{$I$-unimodular} if it is congruent to $(1, 0, \ldots, 0)$ modulo $I$ and its components $a_1, a_2, \ldots, a_n$ generate $R$ as an ideal.
 A column $b \in R^n$ is called $I$-unimodular if its transpose $b^t$ is an $I$-unimodular row.
 We denote the set of all $I$-unimodular rows (resp. columns) by $\Umd(n, I)$ (resp. $\Ums(n, I)$).
-When $R=I$ we refer to $R$-unimodular rows and columns as simply unimodular.
+When $I=R$, we refer to the $R$-unimodular rows and columns as simply \emph{unimodular}.
 
 It is not hard to show that for an $I$-unimodular row $a$ there exists an $I$-unimodular column $b$ such that $ab=1$ (see~\cite[\S~2]{Va69}).
 
-An $I$-unimodular row $a=(a_1,\ldots a_{n+1})$ is called \emph{stable} if one can choose $b_1,\ldots,b_n\in I$ such that the row $(a_1+a_{n+1}b_1,\ldots,a_n+a_{n+1}b_n)$ is also $I$-unimodular. 
-We say that $I$ satisfies stable range condition $\SR_n(I)$ if any $I$-unimodular row of length $n+1$ is stable.
+An $I$-unimodular row $a=(a_1, \ldots, a_{n+1})$ is called \emph{stable} if one can choose $b_1, \ldots, b_n\in I$ such that the row $(a_1+a_{n+1}b_1, \ldots, a_n+a_{n+1}b_n)$ is also $I$-unimodular. 
+We say that $I$ satisfies the stable range condition $\SR_n(I)$ if any $I$-unimodular row of length $n+1$ is stable.
 Vaserstein noted~\cite[Theorem~1]{Va71} that $\SR_n(I)$ implies $\SR_m(I)$ for any $m\geqslant n$. 
-It is also clear that condition $\SR_n(I)$ does not depend on the choice of the ambient ring $R$.
-By definition, the {\it stable rank} of $I$ (denoted $\sr(I)$) is the smallest natural number $n$ such that $\SR_n(I)$ holds (we set $\sr(I)=\infty$ if no such $n$ exists).
+It is also clear that the condition $\SR_n(I)$ does not depend on the choice of the ambient ring $R$.
+By definition, the \emph{stable rank} of $I$ (denoted $\sr(I)$) is the smallest natural number $n$ such that $\SR_n(I)$ holds (we set $\sr(I)=\infty$ if no such $n$ exists).
 
-The following proposition summarizes basic properties of stable ranks.
+The following proposition summarizes the basic properties of the stable rank.
 \begin{prop} \label{prop:sr_properties}
-Let $R$ be arbitrary commutative unital ring and let $I\trianglelefteq R$ be an ideal.
+Let $R$ be an arbitrary commutative unital ring and let $I\trianglelefteq R$ be an ideal.
 \begin{enumerate}
 \item For any ideal $I'\subseteq I$ one has $\sr(I')\leqslant\sr(I)$, $\sr(I/I')\leqslant\sr(I)$;
 \item One has $\sr\Bigl(\prod\limits_{i=1}^n R_i\Bigr)=\max\limits_{i=1}^n\bigl(\sr(R_i)\bigr)$;
@@ -32,50 +32,52 @@ Let $R$ be arbitrary commutative unital ring and let $I\trianglelefteq R$ be an 
 \end{proof}
 \begin{example}
 Since the stable rank of a field equals $1$, one can conclude from the previous proposition that $\sr(R)=1$ for any semilocal ring $R$.
-Other examples of rings of stable rank $1$ are provided by boolean rings, the ring of algebraic integers, the ring of entire functions, the disk-algebra, etc. For this and many other examples see~\cite{VasSR1}.
+Other examples of rings of stable rank $1$ are provided by the Boolean rings, the ring of all algebraic integers, the ring of entire functions, the disk-algebra, etc. For this and many other examples see~\cite{VasSR1}.
 
 %Formally adjoining a unit to a non-unital ring of stable rank $1$ produces a non-trivial example of an ideal having the stable rank strictly lower that the ambient ring.
 \end{example}
 
 \subsection{Relativization of the absolute stable rank}\label{sec:rel-asr}
-For a row $a=(a_1,\ldots,a_n)\in{}^n\!R$ denote by $\mathfrak{J}(a)$ the intersection of all maximal ideals of $R$ containing $a_1,\ldots,a_n$.
+For a row $a=(a_1, \ldots, a_n)\in{}^n\!R$ denote by $\mathfrak{J}(a)$ the intersection of all maximal ideals of $R$ containing $a_1, \ldots, a_n$.
 It is easy to see that a row $a\in R^n$ is unimodular if and only if $\mathfrak{J}(a)=R$. 
 Clearly, for any $g\in\GL(n,R)$ one has $\mathfrak{J}(a\cdot g)=\mathfrak{J}(a)$.
 \begin{dfn}\label{dfn:j-stable}
-We say that a row $a=(a_1,\ldots,a_{n+1})\in{}^{n+1}\!I$ can be {\it $I$-shortened}, if there exist $c_1,\ldots,c_n\in I$ such that
-$\mathfrak{J}(a_1,\ldots,a_{n+1})=\mathfrak{J}(a_1+c_1a_{n+1},\ldots,a_n+c_na_{n+1}).$
+We say that a row $a=(a_1, \ldots, a_{n+1})\in{}^{n+1}\!I$ can be \emph{$I$-shortened}, if there exist $c_1, \ldots, c_n\in I$ such that
+$\mathfrak{J}(a_1, \ldots, a_{n+1})=\mathfrak{J}(a_1+c_1a_{n+1}, \ldots, a_n+c_na_{n+1}).$
 \end{dfn}
 \begin{dfn}\label{dfn:asr}
-We say that an ideal $I$ satisfies condition $\ASR_n(I)$ if it satisfies $\SR_n(I)$ and, moreover, any row $a\in{}^{n+1}\!I$ can be $I$-shortened.
+We say that an ideal $I$ satisfies the condition $\ASR_n(I)$ if it satisfies $\SR_n(I)$ and, moreover, any row $a\in{}^{n+1}\!I$ can be $I$-shortened.
 \end{dfn}
 
 It is easy to see that $\ASR_m(I)$ implies $\ASR_n(I)$ for any $n\geqslant m$. 
 By definition, the \emph{absolute relative stable rank} $\asr(I)$ is the smallest natural $n$ such that $\ASR_n(I)$ holds (again we set $\asr(I)=\infty$ if no such $n$ exists).
 
 A priori our definition of $\ASR_n(I)$ depends on $R$.
-Below we will see that, in fact, there is no such dependence.
+Below we will see that in fact there is no such dependence.
 The following lemma is a relative version of~\cite[Lemma~8.2]{MKV}. 
 \begin{lemma}\label{lemma:relative-asr-unimod}
-For a commutative ring $R$ and an ideal $I \leq R$ the following statements are equivalent:
+For a commutative ring $R$ and an ideal $I \trianglelefteq R$ the following statements are equivalent:
 \begin{lemlist} 
 \item\label{asr-j-stable} Any row $a\in{}^{n+1}\!I$ can be $I$-shortened;
-\item\label{asr-bak-like} For any $I$-unimodular row $(b,a_1,\ldots,a_n,d)\in\Umd(n+2,I)$ there exist $c_1,\ldots,c_n\in I$ 
- such that $(b+b',a_1+c_1d,\ldots,a_n+c_nd)$ is $I$-unimodular for any $b'\in J$, where $J=I \cdot a_1 + \ldots + I \cdot a_n + I \cdot d\leq I$.
+\item\label{asr-bak-like} For any $I$-unimodular row $(b, a_1, \ldots, a_n, d)\in\Umd(n+2, I)$ there exist $c_1, \ldots, c_n\in I$ 
+ such that $(b+b', a_1+c_1d, \ldots, a_n+c_nd)$ is $I$-unimodular for any $b'\in J$, where $J=I \cdot a_1 + \ldots + I \cdot a_n + I \cdot d\leqslant I$.
 \end{lemlist} 
 \end{lemma}
 \begin{proof}
 Assume first that any row $a\in{}^{n+1}\!I$ can be $I$-shortened. 
-In particular for a given $I$-unimodular row $(b,a_1,\ldots,a_n,d)\in\Umd(n+2,I)$ there exist $c_1,\ldots,c_n$ such that
-\[\mathfrak{J}(a_1,\ldots,a_{n+1})=\mathfrak{J}(a_1+c_1a_{n+1},\ldots,a_n+c_na_{n+1}).\]
+In particular, for a given $I$-unimodular row $(b, a_1, \ldots, a_n, d)\in\Umd(n+2, I)$ there exist $c_1, \ldots, c_n$ such that
+\[\mathfrak{J}(a_1, \ldots, a_{n+1})=\mathfrak{J}(a_1+c_1a_{n+1}, \ldots, a_n+c_na_{n+1}).\]
 Therefore $(b,a_1+c_1d,\ldots,a_n+c_nd)$ is also unimodular. Of course, for any $b'\in J$ we could replace $b$ with $b+b'$ from the very start.
 
-To show the converse take arbitrary row $(a_1,\ldots,a_n,d)\in{}^{n+1}\!I$ and consider $I$-unimodular row $(1,a_1,\ldots,a_n,d)\in\Umd(n+2,I).$
-By hypothesis, there exist $c_1,\ldots,c_n$ such that \[ v=(1+b',a'_1,\ldots,a'_n)=(1+b',a_1+c_1d,\ldots,a_n+c_nd) \] is unimodular for any $b'\in J$.
-Assume that there exists a maximal ideal $\mathfrak{m}\trianglelefteq R$ such that all $a'_1,\ldots,a'_n$ are contained in $\mathfrak{m}$ but at least one of the elements $d$, $a_i$ is not.
-Clearly then $d\notin\mathfrak{m}$ and $I\not\subseteq \mathfrak{m}$ (otherwise $a_i=a'_i-c_id\in\mathfrak{m}$ contrary to the assumption).
+To show the converse take an arbitrary row $(a_1, \ldots, a_n, d)\in{}^{n+1}\!I$ and consider the $I$-unimodular row $(1, a_1, \ldots, a_n, d)\in\Umd(n+2, I).$
+By the hypothesis, there exist $c_1, \ldots, c_n\in I$ such that
+\[ v=(1+b', a'_1, \ldots, a'_n)=(1+b', a_1+c_1d, \ldots, a_n+c_nd) \]
+is unimodular for any $b'\in J$.
+Assume that there exists a maximal ideal $\mathfrak{m}\trianglelefteq R$ such that all $a'_1, \ldots, a'_n$ are contained in $\mathfrak{m}$, but at least one of the elements $d$, $a_i$ is not.
+Then clearly $d\notin\mathfrak{m}$ and $I\not\subseteq \mathfrak{m}$ (otherwise $a_i=a'_i-c_id\in\mathfrak{m}$, contrary to the assumption).
 Now we can find $t\in I$ such that its image $\bar{t}$ in the residue field $R/\mathfrak{m}$ equals $-\bar{1}/\bar{d}$.
-We get that $1 + b' \in \mathfrak{m}$ for $b'=td\in J$ which contradicts unimodularity of $v$.
-This shows that no such $\mathfrak{m}$ may exist and, therefore, $\mathfrak{J}(a'_1,\ldots,a'_n)=\mathfrak{J}(a_1,\ldots,a_n,d)$.
+This means that $1 + b' \in \mathfrak{m}$ for $b'=td\in J$ which, contradicts the unimodularity of $v$.
+This shows that no such $\mathfrak{m}$ may exist and, therefore, $\mathfrak{J}(a'_1, \ldots, a'_n)=\mathfrak{J}(a_1, \ldots, a_n, d)$.
 \end{proof}
 
 Obviously, the second statement of \cref{lemma:relative-asr-unimod} does not depend on $R$, hence, as suggested by the notation, $\asr(I)$ is independent of $R$.
@@ -87,7 +89,7 @@ Obviously, the second statement of \cref{lemma:relative-asr-unimod} does not dep
 %\end{enumerate}
 %\end{cor}
 
-Let $R$ be a commutative ring. We denote by $\Max(R)$ its \emph{maximum spectrum} i.e. the set of maximal ideals of $R$ equipped with Zariski topology. For a topological space $X$ denote by $\dim(X)$ its usual topological dimension.
+Let $R$ be a commutative ring. We denote by $\Max(R)$ its \emph{maximum spectrum}, i.e. the set of maximal ideals of $R$, equipped with the Zariski topology. For a topological space $X$ denote by $\dim(X)$ its usual topological dimension.
 %The following result gives an upper estimate for the absolute stable rank (see~).
 %\begin{prop}\label{prop:asr-dimmax}
 %Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered with a finite family of subsets 
@@ -114,7 +116,7 @@ Notice also that $\sr(\mathbb{Z}[x])=3$ (see \cite{GMV}) and $\sr(\mathbb{Z}[x_1
 
 \subsection{Action of unipotent radicals}\label{sec:ur-action}
 \begin{lemma}\label{lemma:PSV-symplectic-trick}
- Let $v=(v_1,\ldots, v_n)^t$ be a column. Denote by $v'$ the vector composed of squares of the components of $v$, i.\,e. $v'=(v_1^2, \ldots, v_n^2)^t$.
+ Let $v=(v_1, \ldots, v_n)^t$ be a column. Denote by $v'$ the vector composed of squares of the components of $v$, i.\,e. $v'=(v_1^2, \ldots, v_n^2)^t$.
  Then for any matrix $b \in M(n, I)$ one can find a symmetric matrix $a \in M(n, I)$, $a=a^t$ such that $b \cdot v' = a \cdot v$. \end{lemma}
 \begin{proof}
 Straightforward computation shows that the assertion of lemma holds for the matrix $a$ defined by
@@ -126,7 +128,7 @@ a_{ij} = b_{ij} v_{j} + b_{ji} v_{i},\ j\neq i,\quad a_{ii} = b_{ii} v_{i} - \su
 \end{proof}
 
 Let $v\in V=R^{2\ell}$ be a vector of the natural representation of $\G(\rD_\ell, R)$.
-Denote by $v_+$ and $v_-$ the upper and the lower halves of $v$, i.e. $v_+=(v_1,\ldots, v_\ell)^t$, $v_-=(v_{-\ell},\ldots, v_{-1})^t$.
+Denote by $v_+$ and $v_-$ the upper and the lower halves of $v$, i.\,e. $v_+=(v_1, \ldots, v_\ell)^t$, $v_-=(v_{-\ell}, \ldots, v_{-1})^t$.
 \begin{lemma}\label{lemma:asrUnip}
 For any $I$-unimodular column $v=(v_+, v_-)^t\in\Ums(2\ell, I)$ there exists $g\in\U(\Sigma^+_\ell, I) \leq \E(\Phi, R, I)$ 
 such that $(g \cdot v)_+ \in \Ums(\ell, I)$ under the following assumptions on $\Phi$ and $I$.
@@ -137,43 +139,43 @@ such that $(g \cdot v)_+ \in \Ums(\ell, I)$ under the following assumptions on $
 \end{lemma}
 \begin{proof} 
 \textsc{Case $\Phi=\rC_\ell$.}
-Denote by $p$ the matrix of size $\ell$ such that its only nonzero entries equal $1$ and are on the skew-diagonal, i.\,e. $p_{ij}=(\delta_{i, \ell-j+1})$. 
+Denote by $p$ the matrix of size $\ell$ such that its only nonzero entries equal $1$ and are on the skew-diagonal, i.\,e. $p_{ij}=\delta_{i, \ell-j+1}$. 
 For $b \in M(\ell, I)$ set $g(b)=\left(\begin{smallmatrix} e_\ell & p \cdot b \\ 0 & e_{\ell} \end{smallmatrix}\right)$.
 Clearly, if $b$ is symmetric then $g(b)$ lies in $\U(\Sigma_\ell^+, I)\leq \E(\rC_\ell, R, I)$.
 
 Notice that the column $v'=(v_1,\ldots,v_\ell, v_{-\ell}^2,\ldots,v_{-1}^2)^t$ is $I$-unimodular.
 By the definition of the relative stable rank we can find a matrix $b\in \M(\ell,I)$ such that the upper half $v''_+$ of the vector $v''= g(b) \cdot v'$ is $I$-unimodular.
 It is clear that $v''_+ = v_+ + pb v'_-$. 
-Finally, applying \cref{lemma:PSV-symplectic-trick} we find a symmetric matrix $a$ such that
-$$(g(a)\cdot v)_+=v_+ + pav_- = v_+ + pbv'_- = v''_+ \in \Ums(\ell, I).$$
+Finally, applying \cref{lemma:PSV-symplectic-trick}, we find a symmetric matrix $a$ such that
+\[ (g(a)\cdot v)_+=v_+ + pav_- = v_+ + pbv'_- = v''_+ \in \Ums(\ell, I). \]
 
 \textsc{Case $\Phi=\rD_\ell$.} Denote by $J$ the ideal of $R$ spanned by the components of $v_{-}$. Clearly, $J \subseteq I$.
 By \cref{prop:sr_properties} $\sr(I/J) \leqslant \ell-1$, therefore
 the elementary group $\E(\rA_{\ell-1}, R/J, I/J)$ acts transitively on $\Ums(\ell, I/J)$ (see~\cite[Theorem~2.3c]{Va69}). 
-This implies the existence of an element $h\in \E(\Delta_\ell, R, I)$ such that the vector $v' = h \cdot v$ satisfies $v'_i \equiv \delta_{i1} \pmod J$ for $i=1,\ldots, \ell$.
+This implies the existence of an element $h\in \E(\Delta_\ell, R, I)$ such that the vector $v' = h \cdot v$ satisfies $v'_i \equiv \delta_{i1} \pmod J$ for $i=1, \ldots, \ell$.
 
-Clearly, $(v'_1,v'_{-\ell},\ldots, v'_{-1})$ is $I$-unimodular.
-Applying \cref{asr-bak-like} we find $c_2,\ldots, c_\ell\in I$ such that for $v''= \prod_{i=2}^{\ell}x_{-i, -1}(c_i)\cdot v'$ one has
+Clearly, $(v'_1, v'_{-\ell}, \ldots, v'_{-1})$ is $I$-unimodular.
+Applying \cref{asr-bak-like}, we find $c_2, \ldots, c_\ell\in I$ such that for $v''= \prod_{i=2}^{\ell}x_{-i, -1}(c_i)\cdot v'$ one has
 $(v''_1, v''_{-\ell},\ldots, v''_{-2})\in\Ums(\ell+1, I)$.
-Now, applying the condition $\sr(I) \leqslant \ell-1$ once again we find
-$d_1,d_3,\ldots, d_{\ell}\in I$ such that the entries $(v'''_1, v'''_{-\ell},\ldots, v'''_{-3})$
-of $v'''=x_{-2,1}(d_1) \cdot \prod_{i=3}^{\ell} x_{-2,-i}(d_i) \cdot v''$ form an $I$-unimodular column.
+Now, applying the condition $\sr(I) \leqslant \ell-1$ once again, we find
+$d_1, d_3, \ldots, d_{\ell}\in I$ such that the entries $(v'''_1, v'''_{-\ell}, \ldots, v'''_{-3})$
+of $v'''=x_{-2, 1}(d_1) \cdot \prod_{i=3}^{\ell} x_{-2, -i}(d_i) \cdot v''$ form an $I$-unimodular column.
 
 We can find $f_1, f_3,\ldots, f_\ell \in R$ such that $f_1v'''_1+\sum_{i=3}^\ell f_i v'''_{-i} = 1$.
 Set $\xi = v'''_1-v'''_2-1 \in I$, $v^{(4)}=x_{1,2}(\xi f_1) \cdot \prod_{i=3}^\ell x_{-i,2}(\xi f_i) \cdot v'''$.
 Clearly $v^{(4)}_2 = v^{(4)}_1-1$, therefore $v^{(4)}_+$ is $I$-unimodular.
 Summarizing the above, we have found $g\in \EP_\ell(R, I)$ such that $v^{(4)}=g \cdot v$
-and the assertion of the lemma immediately follows from Levi decomposition. \end{proof}
+and the assertion of the lemma immediately follows from the Levi decomposition. \end{proof}
 
 \begin{cor} \label{cor:embeddingBD}
  Denote by $i$ the standard embedding $\G(\rB_{\ell-1}, R, I) \hookrightarrow \G(\rD_\ell, R, I)$. 
- If $\asr(I) \leqslant \ell-1$ then for every $I$-unimodular column $v \in \Ums(2\ell, I)$ there exists $g \in \U(\Sigma_{\ell-1}^+, I) \leq \E(\rB_{\ell-1}, R, I)$ such that
+ If $\asr(I) \leqslant \ell-1$, then for every $I$-unimodular column $v \in \Ums(2\ell, I)$ there exists $g \in \U(\Sigma_{\ell-1}^+, I) \leqslant \E(\rB_{\ell-1}, R, I)$ such that
  the upper half of the vector $i(g) \cdot v$ forms an $I$-unimodular column of height $\ell$.
 \end{cor}
 \begin{proof}
- The assertion follows from the fact that for every $u \in \U(\Sigma_\ell^+, I) \leq \E(\rD_\ell, R, I)$ one can find $u' \in \G(\Delta_\ell, R, I)$ such that $uu'$ lies in the image of $i$. 
+ The assertion follows from the fact that for every $u \in \U(\Sigma_\ell^+, I) \leqslant \E(\rD_\ell, R, I)$ one can find $u' \in \G(\Delta_\ell, R, I)$ such that $uu'$ lies in the image of $i$. 
  Indeed, denote by $\sigma$ the symmetry of the Dynkin diagram of $\rD_\ell$,
- and decompose $u$ into the product $u_1 \cdot u_2$, $u_1 \in \U(\Sigma_\ell^+\cap\Delta_{\ell-1}, I)$, $u_2 \in \U(\Sigma_\ell^+ \cap \Sigma_{\ell-1}^+, I)$.
+ and decompose $u$ into the product $u_1 \cdot u_2$, where $u_1 \in \U(\Sigma_\ell^+\cap\Delta_{\ell-1}, I)$ and $u_2 \in \U(\Sigma_\ell^+ \cap \Sigma_{\ell-1}^+, I)$.
  Then one takes $u' = \sigma(u_1)$.
 
  Now by \cref{item:asrUnipD} one finds a suitable $u \in \U(\Sigma_\ell^+, I) \leqslant \E(\rD_\ell, R, I)$ which makes the upper half unimodular,
@@ -181,33 +183,33 @@ and the assertion of the lemma immediately follows from Levi decomposition. \end
 \end{proof}
 
 \begin{lemma} \label{lemma:uraction} 
-Let $\Phi=\rA_\ell, \rC_\ell, \rD_\ell$. Denote by $\pi$ the natural representation of $\G(\Phi, R)$ on $V=R^n$, $n=\ell+1,2\ell$.
-Assume that one of the following conditions holds:
+Let $\Phi=\rA_\ell, \rC_\ell, \rD_\ell$. Denote by $\pi$ the natural representation of $\G(\Phi, R)$ on $V=R^n$, $n=\ell+1, 2\ell, 2\ell$ respectively.
+Assume that one of the following assumptions holds:
 \begin{lemlist}
  \item \label{item:uractionA} $\Phi=\rA_\ell$, $\Gamma=\{ k+1, \ldots, \ell+1\} \subset \Lambda(\pi)$ and $\sr(I)\leq k\leq \ell$;
  \item \label{item:uractionC} $\Phi=\rC_\ell$, $\Gamma=\{-\ell,\ldots, -2, -1\} \subset \Lambda(\pi)$ and $\sr(I)\leq \ell$. 
  \item \label{item:uractionD} $\Phi=\rD_\ell$, $\Gamma=\{-\ell,\ldots, -2, -1\} \subset \Lambda(\pi)$ and $\asr(I)\leq \ell-1$. 
 \end{lemlist}
-Then for $g\in \G(\Phi, R, I)$ there exist $x\in \U(\Phi^+, I)$, $y\in \U(\Phi^-, I)$ such that $(yxg \cdot v^+)_\lambda = 0$ for $\lambda\in \Gamma$.
+Then for any $g\in \G(\Phi, R, I)$ there exist $x\in \U(\Phi^+, I)$, $y\in \U(\Phi^-, I)$ such that $(yxg \cdot v^+)_\lambda = 0$ for all $\lambda\in \Gamma$.
 \end{lemma}
 \begin{proof} Denote by $v$ the image of the highest weight vector $v^+$ under $g$.
 
 \textsc{Case $\Phi=\rA_\ell$.} From the definition of the relative stable rank it follows that we can find 
 $x= \left(\begin{smallmatrix} e_k & a \\ 0 & e_{n-k} \end{smallmatrix}\right) \in \U(\Sigma_k^+, I)$ such that 
 the upper $k$ components of $v'= x \cdot v$ form an $I$-unimodular column. 
-Now, to obtain zeroes at desired positions it remains to subtract from $v'_{k+1},\ldots, v'_{\ell+1}$ suitable multiples of $v'_1,\ldots v'_k$.
-Clearly, this operation corresponds to the left multiplication by some element $y\in\U(\Sigma_k^-, I)$.
+Now, to obtain zeroes at the desired positions it remains to subtract from $v'_{k+1},\ldots, v'_{\ell+1}$ suitable multiples of $v'_1, \ldots, v'_k$.
+This operation corresponds to the left multiplication by some element $y\in\U(\Sigma_k^-, I)$.
 
 \textsc{Case $\Phi=\rC_\ell$.} 
-Applying \cref{item:asrUnipC} we find $x \in \U(\Sigma_\ell^+, I)$ such that the upper half $v'_+$ of $v' = x \cdot v$ is unimodular.
+Applying \cref{item:asrUnipC}, we find $x \in \U(\Sigma_\ell^+, I)$ such that the upper half $v'_+$ of $v' = x \cdot v$ is unimodular.
 Set $g(a) = \left(\begin{smallmatrix} e_\ell & 0 \\ p \cdot a & e_{\ell} \end{smallmatrix}\right)$.
-Clearly, if $a$ is symmetric then $g(a) \in \U(\Sigma_\ell^-, I)$.
-Since the column $v''_+ = ({v'_1}^2, \ldots, {v'_\ell}^2)^t$ is $I$-unimodular there exists a matrix $b \in M(\ell, I)$ such that $v'_- + p b v''_+ = 0$.
-Finally, using \cref{lemma:PSV-symplectic-trick} we find a symmetric matrix $a$ such that $(g(a) \cdot v')_- = p a v'_+ + v'_- = p b v''_+ + v'_- = 0$.
+Clearly, if $a$ is symmetric, then $g(a) \in \U(\Sigma_\ell^-, I)$.
+Since the column $v''_+ = ({v'_1}^2, \ldots, {v'_\ell}^2)^t$ is $I$-unimodular, there exists a matrix $b \in M(\ell, I)$ such that $v'_- + p b v''_+ = 0$.
+Finally, using \cref{lemma:PSV-symplectic-trick}, we find a symmetric matrix $a$ such that $(g(a) \cdot v')_- = p a v'_+ + v'_- = p b v''_+ + v'_- = 0$.
 
 \textsc{Case $\Phi=\rD_\ell$.} From the proof of \cref{item:asrUnipD} it follows that there exists $h_1 \in \EP_\ell(R, I)$ such that for $v'=h_1\cdot v$ one has $v'_2=v'_1-1\in I$.
-Clearly, for $v'' = z_{-\alpha\ssub{2}}(-v'_2, 1)\cdot v'$ one has $v''_1=1$ hence by \cref{lemma:Chevalley-Matsumoto} there exists $h_2 \in \U(\Phi^-, I)$ such that the element
+Clearly, for $v'' = z_{-\alpha\ssub{2}}(-v'_2, 1)\cdot v'$ one has $v''_1=1$, hence by \cref{lemma:Chevalley-Matsumoto} there exists $h_2 \in \U(\Phi^-, I)$ such that the element
 $g'=h_2 \cdot z_{-\alpha\ssub{2}}(-v'_2, 1) \cdot h_1 \cdot g$ fixes $v^+$. 
-Using Levi decomposition we can write $g'=h \cdot y \cdot x \cdot g$ for some $y\in\U(\Sigma^-_\ell, I)$, $x \in \U(\Sigma^+_\ell, I)$, $h\in\E(\Delta_\ell, R, I)$.
+Using the Levi decomposition we can write $g'=h \cdot y \cdot x \cdot g$ for some $y\in\U(\Sigma^-_\ell, I)$, $x \in \U(\Sigma^+_\ell, I)$, $h\in\E(\Delta_\ell, R, I)$.
 It is clear that $x$, $y$ are the desired elements.
 \end{proof}

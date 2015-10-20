@@ -1,8 +1,8 @@
 Let $\Phi$ be an irreducible root system of rank $\ell$.
-In what follows, $r$ and $s$ are two distinct integers such that $1 \leq r, s \leq \ell$.
-From Levi decomposition~\eqref{rel:Levi-decomp} it follows that the following four subsets of $\E(\Phi, R, I)$ are equal:
+In what follows, $r$ and $s$ are two distinct integers such that $1 \leqslant r, s \leqslant \ell$.
+From the Levi decomposition~\eqref{rel:Levi-decomp} it follows that the following four subsets of $\E(\Phi, R, I)$ are equal:
 \begin{multline*}
-A_{rs} := \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \\
+A_{rs} \coloneqq \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \\
 = \U(\Sigma_r^+, I)\cdot \U(\Sigma^-_r, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \hspace{5em} \\
 \hspace{5em} = \EP_r(R, I) \cdot \E(\Delta_s, R, I) \cdot \U(\Sigma_s^-, I)\cdot \U(\Sigma_s^+, I) = \\
 = \EP_r(R, I) \cdot \U(\Sigma^-_r \cap \Sigma^-_s, I) \cdot \EP_s(R, I).
@@ -19,23 +19,23 @@ A_{rs} := \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(
 %\rE_\ell, \ \ell=6, 7                  & \ell & 2      & \sr(I) \leqslant \ell-3 \\ 
 %\rE_\ell, \ \ell=6, 7                  & \ell & 1      & \asr(I)\leqslant \ell-2 \\ 
 %\rF_4                                & 4    & 1      & \asr(I)\leqslant 3 \end{array}\]
-Denote by $N_{rs}$ the submonoid of $\E(\Phi, R)$ consisting of elements which normalize the subset $A_{rs}$, i.\,e.
+Denote by $N_{rs}$ the submonoid of $\E(\Phi, R)$, consisting of the elements which normalize the subset $A_{rs}$, i.\,e.
 \[ N_{rs} = \left\{ g\in \E(\Phi, R)\ \middle|\ g \cdot A_{rs} \cdot g^{-1} \subseteq A_{rs} \right\}. \]
 
 \begin{lemma}\label{lemma:dv-normal} 
-For every $\alpha \in \Delta_{\{r, s\}} \cup (\Phi^+ \setminus (\Sigma^+_r \cap \Sigma^+_s))$ one has $X_\alpha(R) \subseteq N_{rs}$. \end{lemma}
+For every $\alpha \in \Delta_{r, s} \cup (\Phi^+ \setminus (\Sigma^+_r \cap \Sigma^+_s))$ one has $X_\alpha(R) \subseteq N_{rs}$. \end{lemma}
 \begin{proof}
 Notice that for every $i$ the group $\EP_i(R, I)$ is normalized by $\EP_i(R)$, hence a fortiori it is normalized by $X_\alpha(R)$, $\alpha \in S_i^+$.
-Since $\U(\Sigma_r^- \cap \Sigma_s^-, I)$ is normalized by $\E(\Delta_{\{r, s\}}, R)$ we obtain the assertion of the lemma for $\alpha \in \Delta_{\{r, s\}}$.
+Since $\U(\Sigma_r^- \cap \Sigma_s^-, I)$ is normalized by $\E(\Delta_{\{r, s\}}, R)$, we obtain the assertion of the lemma for $\alpha \in \Delta_{r, s}$.
 
-Now if $\alpha$ lies in $\Phi^+ \setminus \Sigma_r^+ \cap \Sigma_s^+$ it is contained either in $\Delta_r$ or in $\Delta_s$.
-Assume, for example, the latter. By Levi decomposition we have $\U(\Sigma_r^- \cap \Sigma_s^-, I)^{X_\alpha(R)} \subseteq \U(\Sigma_s^-, I) \subseteq A_{rs}$
+Now if $\alpha$ lies in $\Phi^+ \setminus (\Sigma_r^+ \cap \Sigma_s^+)$, then it is contained either in $\Delta_r$ or in $\Delta_s$.
+Assume, for example, the latter. By the Levi decomposition we have $\U(\Sigma_r^- \cap \Sigma_s^-, I)^{X_\alpha(R)} \subseteq \U(\Sigma_s^-, I) \subseteq A_{rs}$,
 which again implies the assertion of the lemma.
 \end{proof}
 
 \begin{proof}[Proof of \cref{thm:DennisVaserstein}]
 First of all, notice that in the case $\Phi=\rG_2$ the assertion of the theorem formally follows from \cref{thm:srRI1} and identities~\ref{rel:h-comm}--\ref{rel:h-w}.
-Since $A_{rs} = \E(\Phi, R, I)$ implies $A_{sr} = \E(\Phi, R, I)$, it suffices to consider only the following possibilities for $\Phi$, $s$, $r$.
+Since the equality $A_{rs} = \E(\Phi, R, I)$ implies $A_{sr} = \E(\Phi, R, I)$, it suffices to consider only the following possibilities for $\Phi$, $s$, $r$:
 \begin{table}[htb]
 \[\begin{array}{l @{\qquad} l @{\qquad} c @{\quad} c @{\quad} c @{\qquad} c @{\qquad} c @{\qquad} c}
 \Phi                                 & s    &r      & |\Lambda(\pi)| & \text{type of $\pi$} & \text{type of $\Delta_r$} & |\Lambda(\pi')|& |\Gamma|  \\ \hline\vphantom{\Bigl(}
@@ -55,7 +55,7 @@ It is easy to see that $L_{rs}$ contains $\EP_r(R, I)$ and is normalized by $N_{
 \begin{equation}\label{rel:NnormL} h^g \cdot A_{rs} = g^{-1} \cdot h \cdot g \cdot A_{rs} \subseteq g^{-1} \cdot h \cdot A_{rs} \cdot g \subseteq {A_{rs}}^g \subseteq A_{rs}.\end{equation}
 
 The first step of the proof is to show that $N_{rs}$ contains sufficiently many elements. 
-This is accomplished in~\cref{lemma:Stein_reduction} below, where we invoke stability conditions for the first time.
+This is accomplished in~\cref{lemma:Stein_reduction} below, where we invoke the stability conditions for the first time.
 We show that $N_{rs}$ contains the root subgroup $X_{-\alpha\ssub{r}}(R)$, which together with \cref{lemma:dv-normal} and \cref{item-egen} immediately implies that $N_{rs}$ contains the Levi subgroup $\E(\Delta_s, R)$ and hence the extended Weyl group $\widetilde{W}(\Delta_s)$.
 
 The next goal is to demonstrate the inclusion $\U(\Sigma_s^+, R) \subseteq N_{rs}$ (which implies $\EP_s(R) \subseteq N_{rs}$).
@@ -63,20 +63,20 @@ All the possibilities for $\Phi$, $s$ and $r$ fall into one of the following thr
 \begin{enumerate}
  \item \textit{Case $m_s(\alpha_{\mathrm{max}})=1$ and $\Phi$ is simply laced.}
   In this case all the roots of $\Sigma^+_s$ have the same $s$-shape and length, hence the assertion follows from \cref{item-trans2}, \eqref{rel:NnormL} and the fact that we already have the inclusion $X_{\alpha_s}(R) \subseteq N_{rs}$.
- \item \textit{Case $\Phi = \rB_\ell$.} Using the argument from the previous case we get that $N_{rs}$ contains the subgroup generated by the root subgroups $X_\alpha(R)$, where $\alpha$ varies over long roots of $\Sigma_s^+$. 
+ \item \textit{Case $\Phi = \rB_\ell$.} Using the argument from the previous case, we get that $N_{rs}$ contains the subgroup generated by the root subgroups $X_\alpha(R)$, where $\alpha$ varies over long roots of $\Sigma_s^+$. 
   It remains to prove the inclusion $X_{1, 0}(R) \subset N_{rs}$.
-  Specializing identity~\eqref{rel:CCF} we get \begin{equation*} \label{rel:CCF-specBC} x_{1, 0}(ab) = [x_{1, 2}(a), x_{2, 0}(b)] \cdot x_{1, -2}(-a b^2) \end{equation*}
+  Specializing identity~\eqref{rel:CCF}, we get \begin{equation*} \label{rel:CCF-specBC} x_{1, 0}(ab) = [x_{1, 2}(a), x_{2, 0}(b)] \cdot x_{1, -2}(-a b^2) \end{equation*}
   Since $X_{2, 0}(R)$ and $X_{1, -2}(R)$ are contained in $N_{rs}$, the inclusion $X_{1, 0}(R) \subseteq N_{rs}$ follows.
  \item \textit{Case $\Phi = \rC_\ell, \rF_4$.}
- We settle these remaining cases in \cref{lemma:DVST} where we invoke the stability conditions one more time. 
+ We settle these remaining cases in \cref{lemma:DVST}, where we invoke the stability conditions one more time. 
  In fact, we prove a stronger result, namely that $N_{rs}$ contains $X_{-\alpha\ssub{s}}(R)$ and, consequently, $N_{rs} = \E(\Phi, R)$.
 \end{enumerate}
 
 In view of \cref{prop:Stepanov} to prove the theorem it suffices to show that $L_{rs}$ contains the generating set $\mathcal{Z}(\Sigma_s^-)$ of $\E(\Phi, R, I)$.
-From $\mathcal{Z}(\Sigma_s^-) \subseteq \mathcal{X}^{\EP_s(R)}$ and \eqref{rel:NnormL} it follows that we only have to show $\mathcal{X} \subseteq L_{rs}$.
+From the inclusion $\mathcal{Z}(\Sigma_s^-) \subseteq \mathcal{X}^{\EP_s(R)}$ and \eqref{rel:NnormL} it follows that we only have to show that $\mathcal{X} \subseteq L_{rs}$.
 
 The last inclusion follows from the same transitivity argument as above and the fact that $X_\alpha(I) \subseteq \EP_r(R, I) \subseteq L_{rs}$ for $\alpha \in \Delta_r \cup \Sigma_r$.
-For $\Phi=\rB_\ell$ one has to once again apply Chevalley commutator formula~\eqref{rel:CCF}:
+For $\Phi=\rB_\ell$ one has to once again apply the Chevalley commutator formula~\eqref{rel:CCF}:
 \[ X_{0, 1}(I) \subseteq X_{2, 1}(I) \cdot X_{2, 1}(I)^{x_{0, 2}(1)} \cdot X_{-2, 1}(I) \subseteq L_{rs} \cdot L_{rs}^{N_{rs}} \cdot L_{rs} \subseteq L_{rs}. \qedhere \] 
 \end{proof}
 
@@ -85,7 +85,7 @@ For $\Phi=\rB_\ell$ one has to once again apply Chevalley commutator formula~\eq
 \item \label{item-dvu2} For any $\xi\in R$ one has $\U(\Phi^+\setminus\{\alpha_i\}, I)^{x_{-\alpha\ssub{i}}(\xi)} \subseteq \U(\Phi^+, I)$.
 \item \label{item-dvu3} $\U(\Phi^+, I)\cdot \U(\Phi^-, I) \subseteq \U(\Phi^+\setminus \{\alpha_i\}, I) \cdot \U(\Phi^-, I) \cdot X_{\alpha\ssub{i}}(I) \cdot X_{-\alpha\ssub{i}}(I)$.
 \end{thmlist} \end{lemma}
-\begin{proof} The first two statements easily follow from Chevalley commutator formula~\eqref{rel:CCF} while the third one is a formal consequence of the first two. \end{proof}
+\begin{proof} The first two statements easily follow from the Chevalley commutator formula~\eqref{rel:CCF} while the third one is a formal consequence of the first two. \end{proof}
 
 \begin{lemma}\label{lemma:Stein_reduction}
 Under the assumptions of \cref{thm:DennisVaserstein} one has $X_{-\alpha_r}(R) \subseteq N_{rs}.$
@@ -93,29 +93,29 @@ Under the assumptions of \cref{thm:DennisVaserstein} one has $X_{-\alpha_r}(R) \
 \begin{proof}
 Let $\pi$ be the irreducible representation of $\G(\Phi, R)$ with the highest weight $\varpi_s$ (see Table~\ref{table:dv-reps}).
 Notice that $\Delta_r$ is an irreducible classical root system of type $\rA_\ell$, $\rC_\ell$ or $\rD_\ell$.
-Denote by $(\pi', V')$ the irreducible component of the restriction of $\pi$ to $\G(\Delta_r, R)$ containing the highest weight vector $v^+$ of $\pi$.
+Denote by $(\pi', V')$ the irreducible component of the restriction of $\pi$ to $\G(\Delta_r, R)$ that contains the highest weight vector $v^+$ of $\pi$.
 In all the cases under consideration, $\pi'$ is isomorphic to the natural representation of $\G(\Delta, R)$.
 Set $\Gamma = \{\lambda \in \Lambda(\pi') \mid \lambda - \alpha_r \in \Lambda(\pi) \}.$
 
-The set $\Gamma$ can be visualized using weight diagrams in the following manner.
-After removing all bonds marked $r$ the weight diagram of $\pi$ splits into several connected components.
-The subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the component of the diagram containing the vertex marked $\varpi_s$.
+The set $\Gamma$ can be visualized using the weight diagrams in the following manner.
+After the removal of all bonds marked $r$ the weight diagram of $\pi$ splits into several connected components.
+The subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the component of the diagram that contains the vertex marked $\varpi_s$.
 Clearly, $\Gamma$ consists of the weights of $\Lambda(\pi')$ incident to the removed bonds.
 
-From a consideration of the weight diagrams (see~\cite{PSV98}) we determine the number of elements in $\Lambda(\pi')$ and $\Gamma$ (see~Table~\ref{table:dv-reps}).
+By a consideration of the weight diagrams (see~\cite{PSV98}) we determine the number of elements in $\Lambda(\pi')$ and $\Gamma$ (see~Table~\ref{table:dv-reps}).
 
-Consider the subset $B \subset \E(\Delta_r, R, I)$ consisting of elements $g$ such that $(g \cdot v^+)_\lambda = 0$ for all $\lambda\in\Gamma$.
-Set $A:=\U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).$
+Consider the subset $B \subset \E(\Delta_r, R, I)$, consisting of all elements $g$ such that $(g \cdot v^+)_\lambda = 0$ for all $\lambda\in\Gamma$.
+Set $A\coloneqq\U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).$
 
-Let $g$ be an element of $\E(\Delta_r, R, I)$. Applying \cref{lemma:uraction} to the subsystem $\Delta_r$ we find
-$x\in\U(\Delta_r^+, I)$, $y\in \U(\Delta_r^-, I)$ such that $yx\cdot g \in B$.
+Let $g$ be an element of $\E(\Delta_r, R, I)$. Applying \cref{lemma:uraction} to the subsystem $\Delta_r$, we find
+$x\in\U(\Delta_r^+, I)$ and $y\in \U(\Delta_r^-, I)$ such that $yx\cdot g \in B$.
 Consequenty, this shows that $A = A_{rs}$, indeed:
 \begin{equation*} \U(\Sigma^+_r, I) \cdot \U(\Sigma^-_r, I) \cdot g = \U(\Sigma^+_r, I) x^{-1} \cdot \U(\Sigma^-_r, I)^{x^{-1}} y^{-1} (yxg) \subseteq \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B. \end{equation*}
 
 Notice that by the definition of $\Gamma$ and \cref{lemma:Matsumoto} for any $s\in I$, $ g\in B$ one has $x_{-\alpha_r}(s) \cdot g \cdot v^+ = g \cdot v^+$.
 Consequently, one has
 \[ X_{-\alpha\ssub{r}}(I)^{B} \subseteq \U(\Phi^-, I) \cap \Stab(v^+) \subseteq \U(\Delta_s^-, I) \subseteq \EP_s(R, I), \]
-which implies the following inclusion
+which implies the following inclusion:
 \begin{multline*}
 X_{\alpha_r}(I) \cdot X_{-\alpha_r}(I) \cdot B \cdot \EP_s(R, I) \subseteq 
 X_{\alpha_r}(I) \cdot B \cdot \EP_s(R, I) \cdot \EP_s(R, I) \subseteq \\
@@ -126,7 +126,7 @@ Together with the third statement of \cref{lemma:dv_unipotent} this shows that
 \begin{equation*} \label{rel:sred}
 A = \U(\Phi^+\setminus\{\alpha_r\}, I) \cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).
 \end{equation*}
-Finally, since $[B, X_{-\alpha_r}(R)] \subseteq \U(\Sigma_r^-, R) \cap \E(\Phi, R, I) = \U(\Sigma_r^-, I)$ we obtain the assertion of the lemma, indeed
+Finally, since $[B, X_{-\alpha_r}(R)] \subseteq \U(\Sigma_r^-, R) \cap \E(\Phi, R, I) = \U(\Sigma_r^-, I)$, we obtain the assertion of the lemma. Indeed,
 \begin{equation*} \label{rel:ninv} A^{X_{-\alpha\ssub{r}}(R)} = \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B ^{X_{-\alpha\ssub{r}}(R)} \cdot \EP_s(R, I) = A. \qedhere \end{equation*}
 \end{proof}
 
@@ -139,17 +139,17 @@ Assume that one of the following holds:
 Then one has $X_{-\alpha_s}(R) \subseteq N_{rs}$.
 \end{lemma}
 \begin{proof}
-Consider the subset $C \subseteq \EP_s(R, I)$ consisting of elements satisfying the following condition:
+Consider the subset $C \subseteq \EP_s(R, I)$, consisting of the elements satisfying the following condition:
 \begin{itemize}
  \item \textsc{Case $\Phi=\rC_\ell$.} Matrix entries $(g_{i, 2})$, $i=2, \ldots, \ell$ form an $I$-unimodular column of height $\ell-1$.
  \item \textsc{Case $\Phi=\rF_4$.} Matrix entries $(g_{\lambda, \lambda}, \ldots, g_{\lambda, \lambda - \alpha_3 - \alpha_2 - \alpha_1})$, where $\lambda = \varpi_4 - \alpha_4$ (see~\cite[Fig.~26]{PSV98}), 
                                      form an $I$-unimodular column of height $4$. \end{itemize}
 
 Set $A' = \EP_\ell(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot C$.
-By \cref{item:asrUnipC} (in the case $\Phi=\rC_\ell$) or \cref{cor:embeddingBD} (in the case $\Phi=\rF_4$) applied to the subgroup $\G(\Delta_s, R, I)$ 
+By \cref{item:asrUnipC} (in the case $\Phi=\rC_\ell$) or \cref{cor:embeddingBD} (in the case $\Phi=\rF_4$), applied to the subgroup $\G(\Delta_s, R, I)$,
 we find for every $g \in \EP_s(R, I)$ an element $x \in \U(\Sigma_r^+ \cap \Delta_s, I)$ such that $xg \in C$.  
 Notice that one immediately gets the equality $A_{rs} = A'$ from this.
-Indeed for $g\in \EP_s(R, I)$ one has
+Indeed, for $g\in \EP_s(R, I)$ one has
 \begin{equation*} \EP_r(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot g \subseteq 
  \EP_r(R, I)x^{-1}  \cdot \U(\Sigma_s^-, I) \cdot xg \subseteq A'. \end{equation*}
 
@@ -160,7 +160,7 @@ Consequently, for every $g\in C$ one has
   \subseteq \EP_r(R, I) \cdot \U(\Sigma_r^-, I) \cdot y g
 \end{multline*}
 Notice that the matrix entry $(yg)_{\varpi_s, \varpi_s}$ is invertible.
-From the choice of $y$ it follows that for every $\xi\in R$ the element $g_1:=(yg)^{x_{-\alpha_s}(\xi)}$
+From the choice of $y$ it follows that for every $\xi\in R$ the element $g_1 \coloneqq (yg)^{x_{-\alpha_s}(\xi)}$
 satisfies the assumptions of \cref{lemma:Chevalley-Matsumoto} and therefore can be rewritten as $g_1 = uh$ for some $u \in \U(\Sigma_s^-, I)$, $h \in \EP_1(R, I)$.
 Consequently, one has
 \begin{multline*} {A_{rs}}^{X_{-\alpha_{s}}(R)} \subseteq \EP_r(R, I)^{X_{-\alpha_{s}}(R)} \cdot \U(\Sigma_r^-, I)^{X_{-\alpha_{s}}(R)} \cdot \U(\Sigma_s^-, I) \cdot \EP_s(R, I) \subseteq \\

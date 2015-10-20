@@ -1,4 +1,4 @@
-We now give an application of parabolic factorizations to the problem of bounded generation.
+We now give an application of the parabolic factorizations to the problem of bounded generation.
  
 \begin{lemma}\label{lemma:srRI1_width}
 In the assumptions of \cref{thm:srRI1} the width of $\E(\Phi,R,I)$ with respect to $\mathcal{Z}(\Pi)$ does not exceed $3\left|\Phi^+\right|+2\rk\Phi-1$.
@@ -15,14 +15,16 @@ and the estimate follows.
 The following lemma is a corollary of Theorems~5.7 and 5.8 of~\cite{LSM}.
 \begin{lemma}
 Let $p$ be a rational prime, let $c$, $d$ be a pair of coprime integers such that $p \perp d$.
-Then under the assumption of Generalized Riemann Hypothesis there exist infinitely many primes $q\equiv c\pmod{d}$ such that $p$ is a primitive root modulo $q$.
+Then under the assumption of the Generalized Riemann Hypothesis there exist infinitely many primes $q\equiv c\pmod{d}$ such that $p$ is a primitive root modulo $q$.
 \end{lemma}
 
-The following lemma is a relative version of \cite[Lemma~6]{VavSmSuUnitrEng} (cf. also \cite{VseUnitrZ1p}):
+The following lemma is a relative version of \cite[Lemma~6]{VavSmSuUnitrEng} (see also~\cite{VseUnitrZ1p}):
 
 \begin{lemma}\label{lemma:Z1p}
 Set $R=\mathbb{Z}[\sfrac{1}{p}]$ and let $I$ be an ideal of $R$.
-Under the assumption of GRH the width of $\SL(2,R,I)$ with respect to the generating set $$\mathcal{Z}(\{-\alpha_1\})=X_{12}(I)\cup X_{21}(I) \cup \{z_{21}(s, \xi) \mid s\in I,\ \xi\in R\}$$ does not exceed $6$.
+Under the assumption of the GRH the width of $\SL(2, R, I)$ with respect to the generating set
+\[ \mathcal{Z}(\{-\alpha_1\})=X_{12}(I)\cup X_{21}(I) \cup \{z_{21}(s, \xi) \mid s\in I,\ \xi\in R\} \]
+does not exceed $6$.
 \end{lemma}
 
 \begin{proof}
@@ -33,7 +35,7 @@ Let $g$ be an element of $\SL(2,R,I)$. Write
 \textsc{Case 1:} $\alpha\geqslant\beta$. 
 Since $p^{\alpha-\beta}a\perp bm^2$ and $p\perp bm^2$, there exist infinitely many rational primes $q$ of the form $p^{\alpha-\beta}a+bm^2k$,
 such that $p$ is a primitive root modulo $q$. 
-Without loss of generality we may assume that $q$ is prime to $b$. 
+We may assume that $q$ is prime to $b$. 
 Write
 \begin{align*}
 g_1 & = x_{12}(mk)\cdot g =
@@ -44,7 +46,7 @@ There exists $u\geqslant 1$ such that $p^u\equiv b\pmod q$, say $p^u=b+lq$. Then
 g_2 & = x_{21}(ml)\cdot g_1 =
 \begin{pmatrix} p^\beta q & * \\ mp^{\beta+u} & * \end{pmatrix}. \\
 \intertext{
-Since $g_2\equiv 1\pmod m$, we can write $p^\beta q=1+cm$ for some $c$. Now let
+Since $g_2\equiv 1\pmod m$, we can write $p^\beta q=1+cm$ for some $c$. Now set
 }
 g_3 & = x_{12}\left(\dfrac{-c}{p^{\beta+u}}\right)\cdot g_2 =
 \begin{pmatrix} 1 & * \\ mp^{\beta+u} & * \end{pmatrix}, \\
@@ -69,7 +71,7 @@ Finally, expressing $h=x_{21}\cdot z_{21}\cdot x_{12}$ as in \eqref{eq:rel-tor-e
 \end{proof}
 
 For the rest of this subsection $k$ denotes a global field. We assume that there is some finite set of places $S$ chosen on $k$. 
-Let $\mathcal{O}_S$ be a Dedekind ring of arithmetic type defined by $S$ and let $I$ be any ideal of $\mathcal{O}_S$.
+Let $\mathcal{O}_S$ be a Dedekind ring of arithmetic type defined by $S$ and let $I$ be an ideal of $\mathcal{O}_S$.
 
 %Now it is easy to derive bounded generation property for $\G(\Phi, \mathcal{O}_S, I)$ from the above statements.
 \begin{lemma}\label{lemma:width-dedekind}
@@ -77,27 +79,27 @@ Let $\Phi$ be an irreducible classical root system of rank $\ell \geqslant 2$.
 If $k$ has a real embedding, then $\G(\Phi, \mathcal{O}_S, I)$ has finite width with respect to the generating set $\mathcal{Z}(\Sigma_\ell)$.
 \end{lemma}
 \begin{proof}
-First of all, notice that $\asr(I) \leq \asr(\mathcal{O}_S) \leq 2$. 
+First of all, notice that $\asr(I) \leqslant \asr(\mathcal{O}_S) \leqslant 2$. 
 By \cref{cor:bass-kolster-iterated} we can present any element 
-of $G=\G(\Phi, \mathcal{O}_S, I)$ as a product of a finite number of generators $\mathcal{Z}(\Sigma_\ell)$ and one element of 
+of $G=\G(\Phi, \mathcal{O}_S, I)$ as a product of a finite number of generators from $\mathcal{Z}(\Sigma_\ell)$ and one element of 
 $G_0 = \G(\{\alpha_\ell, -\alpha_\ell\}, \mathcal{O}_S, I)\cong\SL(2, \mathcal{O}_S, I)$.
 Consequently, to prove the statement of the lemma it suffices to express every element 
 $g = \begin{psmallmatrix}1+a & b \\ c & 1+d \end{psmallmatrix} \in G_0$
 as a product of a finite number of generators contained in some rank $2$ subgroup of $G$ containing $G_0$.
 
 From $\det(g)=1$ we conclude that $a+d=bc-ad\in I^2$. 
-Recall that Vaserstein's congruence subgroup is defined as
+Recall that the Vaserstein's congruence subgroup is defined as
 \[ G(I, I)=\left\{ \begin{pmatrix}1+a & b \\ c & 1+d\end{pmatrix}\in\SL(2, \mathcal{O}_S)\;\middle|\; a, d\in I^2, \ b, c\in I \right\}. \]
-Notice that $g_1=g\cdot z_{21}(a, 1)$ is contained in $G(I, I)$, indeed
+Notice that $g_1=g\cdot z_{21}(a, 1)$ is contained in $G(I, I)$, indeed,
 \[ \begin{pmatrix} 1+a & b \\ c & 1+d \end{pmatrix} \cdot \begin{pmatrix} 1-a & -a \\ a & 1+a \end{pmatrix} = \begin{pmatrix} 1+ba-a^2 & b-a-ba-a^2 \\ c+a+ad-ac & 1+bc-ac \end{pmatrix} \in G(I, I). \]
 For any matrix $g'=\begin{psmallmatrix}1+a & b \\ c & 1+d\end{psmallmatrix}\in G(I, I)$ the matrix $x_{21}(-c)\cdot g'\cdot x_{12}(-b)$ lies in $\SL\left(2, \mathcal{O}_S, I^2\right)$.
 
 By \cref{lemma:Stepanov-ideal} the group $\E\left(\Phi, \mathcal{O}_S, I^2\right)$ is contained in $\E(\Phi, I)$ for any root system $\Phi\neq\rC_\ell$ of rank $\geqslant2$.
 Notice that under the assumptions of the lemma it is known that $\E(\Phi, I)$ has finite width with respect to $\mathcal{X}$, see~\cite[Theorem~3.3]{TavgenThesis}.
 
-In remains to consider the case $\Phi=\rC_\ell$. First of all, notice that $2abc-abd\in II^{\indexbox{2}}$, indeed
+In remains to consider the case $\Phi=\rC_\ell$. First of all, notice that $2abc-abd\in II^{\indexbox{2}}$, indeed,
 \[ \det(g_1)=a^3d-3a^2bc+a^2bd+ab^2c+a^3+a^2b+a^2d+2abc-abd+1. \]
-Consequently, we have that
+This means that
 \[ g_2=x_{21}(-a-c)\cdot g_1\cdot x_{12}(a-b)\equiv
 \begin{pmatrix}
 1+ab-a^2 & -ab-a^2 \\ ad-ac-abc & 1-ab+a^2
