@@ -1,4 +1,4 @@
-\documentclass[12pt]{amsart}
+\documentclass[oneside, 12pt]{amsart}
 \usepackage{amscd, amsmath, amssymb, amsthm, amsfonts, amstext, geometry, verbatim, enumitem, graphicx, mathtools, xfrac, tikz-cd, nameref, thmtools, hyperref}
 \usepackage[utf8]{inputenc}
 
@@ -6,7 +6,15 @@
 \usepackage[activate={true,nocompatibility}]{microtype}
 \usepackage[capitalize]{cleveref}
 
-\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+%\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+\oddsidemargin 5mm
+\marginparwidth 5mm
+\topmargin 0mm
+\textheight 225mm
+\textwidth 165mm
+\headheight 0mm
+\headsep 10mm
+\footskip 5mm
 
 %Bibliography
 \renewbibmacro*{volume+number+eid}{\ifentrytype{article}{\- \iffieldundef{volume}{}{Vol.~\printfield{volume},}\iffieldundef{number}{}{ No.~\printfield{number},}}}
@@ -15,6 +23,7 @@
 \DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
 \DeclareFieldFormat[article, inproceedings, inbook, thesis]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
 \addbibresource{paper.bib}
+\renewcommand*{\bibfont}{\small}
 
 \newlist{thmlist}{enumerate}{1} \setlist[thmlist]{label=(\roman{thmlisti}), ref=\thethm.(\roman{thmlisti}),noitemsep} \Crefname{thmlisti}{Theorem}{Theorems}
 \newlist{lemlist}{enumerate}{1} \setlist[lemlist]{label=(\roman{lemlisti}), ref=\thelemma.(\roman{lemlisti}),noitemsep} \Crefname{lemlisti}{Lemma}{Lemmas}
@@ -102,10 +111,13 @@
 
 \newcommand\restr[2]{\ensuremath{\left.#1\right|_{#2}}}   
    
-\title {Decompositions of congruence subgroups of Chevalley groups}
-\keywords {parabolic decompositions, stability for $\K_1$, bounded generation, $\SL_2$-factorizations, subsystem factorizations. {\em Mathematical Subject Classification (2010):} 20G40, 20G35, 19B14}
-\author {Sergey Sinchuk, Andrei Smolensky}
-\email {sinchukss {\it at} yandex.ru, \ andrei.smolensky {\it at} gmail.com}
+\title [Decompositions of congruence subgroups of Chevalley groups] {Decompositions of congruence subgroups \\ of Chevalley groups}
+\keywords {parabolic decomposition, bounded generation, $\SL_2$-factorization, subsystem factorization. {\em Mathematical Subject Classification (2010):} 20G40, 20G35, 19B14}
+\author{Sergey Sinchuk}
+\author{Andrei Smolensky}
+\email{sinchukss {\it at} yandex.ru; andrei.smolensky {\it at} gmail.com}
+\thanks{Authors of the present paper acknowledge the financial support from Russian Science Foundation grant 14-11-00297}
+
 \date {\today}
 
 \begin{document}
@@ -249,9 +261,6 @@ The rest of the article is organized as follows.
 In sections \ref{sec:prelim}--\ref{sec:stability-conditions} we introduce the principal notation and prove some basic facts pertaining to Chevalley groups over rings and the stability conditions.
 In section \ref{sec:factorizations} we construct various parabolic factorizations and thus prove \cref{thm:srRI1,thm:DennisVaserstein,thm:SL2width}.
 Finally, we treat the bounded generation and the product decompositions separately in section~\ref{sec:applications}, where \cref{thm:width,thm:spin-sln-prod} are proved.
-
-\subsection{Acknowledgements}
-Authors of the present paper acknowledge the financial support from Russian Science Foundation grant 14-11-00297.
 
 \section{Preliminaries}\label{sec:prelim}
 For any collection of subsets $H_1, \ldots, H_n$ of a group $G$ we denote by $H_1\ldots H_n$ their Minkowski set-product, 
