@@ -25,8 +25,8 @@
 \addbibresource{paper.bib}
 \renewcommand*{\bibfont}{\small}
 
-\newlist{thmlist}{enumerate}{1} \setlist[thmlist]{label=(\roman{thmlisti}), ref=\thethm.(\roman{thmlisti}),noitemsep} \Crefname{thmlisti}{Theorem}{Theorems}
-\newlist{lemlist}{enumerate}{1} \setlist[lemlist]{label=(\roman{lemlisti}), ref=\thelemma.(\roman{lemlisti}),noitemsep} \Crefname{lemlisti}{Lemma}{Lemmas}
+\newlist{thmlist}{enumerate}{1} \setlist[thmlist]{label={\rm(\arabic{thmlisti})}, ref=\thethm.(\roman{thmlisti}),noitemsep} \Crefname{thmlisti}{Theorem}{Theorems}
+\newlist{lemlist}{enumerate}{1} \setlist[lemlist]{label={\rm(\arabic{lemlisti})}, ref=\thelemma.(\roman{lemlisti}),noitemsep} \Crefname{lemlisti}{Lemma}{Lemmas}
 
 \theoremstyle{plain}
 
@@ -188,10 +188,10 @@ The next main result is the relative Dennis---Vaserstein decomposition, which ho
 \begin{thm}\label{thm:DennisVaserstein}
 Let $\Phi \neq \rE_8$ be a reduced irreducible root system of rank $\ell$ and let $\{ r, s \}$ be a pair of distinct terminal vertices of the Dynkin diagram of $\Phi$. Denote the distance between $r$ and $s$ by $d$.
 Assume that $\Phi$, $I$ and $\{r, s\}$ satisfy either of the following assumptions:
-\begin{enumerate}
+\begin{thmlist}
  \item $\asr(I) \leqslant d$ for $\Phi=\rF_4, \rE_\ell$ and $\{r, s\} = \{1, \ell \}$, 
  \item $\sr(I) \leqslant d$, for $\Phi\neq\rF_4, \rE_\ell$.
-\end{enumerate}
+\end{thmlist}
 Then $\E(\Phi, R, I) = \EP_r(R, I) \cdot \U(\Sigma^-_r \cap \Sigma^-_s, I) \cdot \EP_s(R, I).$ \end{thm}
 Even in the special case $I=R$ the above theorem contains several new cases as compared to~\cite[Theorems~2.5 and~4.1]{St78}.
 The term ``Dennis---Vaserstein decomposition'' is due to A.~Suslin and M.~Tulenbaev (cf.~\cite[Lemma~2.1]{ST76}).
@@ -209,7 +209,7 @@ We denote by $W(G, X)$ the \emph{width of $G$ with respect to $X$}, i.\,e. the s
 Our first application of the parabolic factorizations is the following theorem, which gives an upper bound on the width of $\E(\Phi, R)$ in terms of Tits generators. Thus it is a quantitative analogue of \cref{prop:Stepanov}
 and a relative analogue of the results of~\cite{Tavgen91, VseUnitrZ1p, VavSmSuUnitrEng}.
 \begin{thm}\label{thm:width} Let $I$ be an ideal of a commutative ring $R$.
-\begin{enumerate}
+\begin{thmlist}
 \item If $R=\mathcal{O}_S$ is a Dedekind ring of arithmetic type posessing a real embedding and $\Phi$ is classical of rank $\geqslant2$, then 
 $W(\G(\Phi, R, I), \mathcal{Z}(\Sigma_\ell^-))$ is finite.
 \item If $\sr(I) = 1$ and $\Phi$ is an arbitrary irreducible root system, then 
@@ -219,7 +219,7 @@ $W(\G(\Phi, R, I), \mathcal{Z}(\Sigma_\ell^-))$ is finite.
 & W(\E(\Phi, R, I), \mathcal{Z}(\Sigma_\ell^-))\leqslant 3|\Phi^+| + 2\rk(\Phi) + 1 & \text{ if } \Phi=\rA_\ell, \rC_\ell, \\
 & W(\E(\Phi, R, I), \mathcal{Z}(\Sigma_\ell^-))\leqslant 4|\Phi^+| + \rk(\Phi) + 1 & \text{ if } \Phi=\rB_\ell, \rD_\ell;
 \end{alignat*}
-\end{enumerate}
+\end{thmlist}
 \end{thm}
 The first assertion of the above theorem is essentially a reformulation of a previously known result of O.~Tavgen (see \cite{TavgenThesis}, cf.~\cite{Mo07}), 
 while for the second and the third assertion we give a direct proof.
