@@ -440,24 +440,726 @@ Let $\Phi$ be a root system of rank $\geqslant2$. Assume that the field $k$ has 
 \begin{proof} Follows from \cite[Theorem~3.6]{BMS} and \cite[Corollary~4.5]{Ma69}. \end{proof}
 
 \section{Stability conditions}\label{sec:stability-conditions}
-\input{stability-conditions}
+In this section we define the stability conditions used in the statements of our decomposition theorems in section~\ref{sec:factorizations}.
+First, we recall the notion of the stable rank of an ideal introduced by L.~Vaserstein in~\cite{Va69, Va71}.
+As we will be mainly concerned with applications to Chevalley groups, our exposition of the stable ranks is neccessarily limited to commutative rings.
+The main goal of subsection~\ref{sec:rel-asr} is to define the relative version of the absolute stable rank condition, which generalizes the definition in~\cite{EO, MKV}.
+Finally, in the end of this section we state several technical lemmas describing the action of certain unipotent radicals on the unimodular columns under the assumption of a suitable stability condition.
+
+\subsection{Relative stable rank}
+Recall that a row $a\in{}^n\!R$ is called \emph{$I$-unimodular} if it is congruent to $(1, 0, \ldots, 0)$ modulo $I$ and its components $a_1, a_2, \ldots, a_n$ generate $R$ as an ideal.
+A column $b \in R^n$ is called $I$-unimodular if its transpose $b^t$ is an $I$-unimodular row.
+We denote the set of all $I$-unimodular rows (resp. columns) by $\Umd(n, I)$ (resp. $\Ums(n, I)$).
+When $I=R$, we refer to the $R$-unimodular rows and columns as simply \emph{unimodular}.
+
+It is not hard to show that for an $I$-unimodular row $a$ there exists an $I$-unimodular column $b$ such that $ab=1$ (see~\cite[\S~2]{Va69}).
+
+An $I$-unimodular row $a=(a_1, \ldots, a_{n+1})$ is called \emph{stable} if one can choose $b_1, \ldots, b_n\in I$ such that the row $(a_1+a_{n+1}b_1, \ldots, a_n+a_{n+1}b_n)$ is also $I$-unimodular. 
+We say that $I$ satisfies the stable range condition $\SR_n(I)$ if any $I$-unimodular row of length $n+1$ is stable.
+Vaserstein noted~\cite[Theorem~1]{Va71} that $\SR_n(I)$ implies $\SR_m(I)$ for any $m\geqslant n$. 
+It is also clear that the condition $\SR_n(I)$ does not depend on the choice of the ambient ring $R$.
+By definition, the \emph{stable rank} of $I$ (denoted $\sr(I)$) is the smallest natural number $n$ such that $\SR_n(I)$ holds (we set $\sr(I)=\infty$ if no such $n$ exists).
+
+The following proposition summarizes the basic properties of the stable rank.
+\begin{prop} \label{prop:sr_properties}
+Let $R$ be an arbitrary commutative unital ring and let $I\trianglelefteq R$ be an ideal.
+\begin{lemlist}
+\item For any ideal $I'\subseteq I$ one has $\sr(I')\leqslant\sr(I)$, $\sr(I/I')\leqslant\sr(I)$;
+\item One has $\sr\Bigl(\prod\limits_{i=1}^n R_i\Bigr)=\max\limits_{i=1}^n\bigl(\sr(R_i)\bigr)$;
+\item Let $J(R)$ denote the Jacobson radical of $R$, then $\sr(R)=\sr(R/J(R))$ and $\sr(J(R))=1$;
+\item Let $I\rtimes\mathbb{Z}$ denote the ring obtained by formally adjoining $1$ to $I$. Then $\sr(I\rtimes\mathbb{Z})=\max(2,\sr(I))$.
+\end{lemlist}
+\end{prop}
+\begin{proof} See~\cite[Theorem~2.3]{Va69}, \cite{Va71}. 
+\end{proof}
+\begin{example}
+Since the stable rank of a field equals $1$, one can conclude from the previous proposition that $\sr(R)=1$ for any semilocal ring $R$.
+Other examples of rings of stable rank $1$ are provided by the Boolean rings, the ring of all algebraic integers, the ring of entire functions, the disk-algebra, etc. For this and many other examples see~\cite{VasSR1}.
+
+%Formally adjoining a unit to a non-unital ring of stable rank $1$ produces a non-trivial example of an ideal having the stable rank strictly lower that the ambient ring.
+\end{example}
+
+\subsection{Relativization of the absolute stable rank}\label{sec:rel-asr}
+For a row $a=(a_1, \ldots, a_n)\in{}^n\!R$ denote by $\mathfrak{J}(a)$ the intersection of all maximal ideals of $R$ containing $a_1, \ldots, a_n$.
+It is easy to see that a row $a\in R^n$ is unimodular if and only if $\mathfrak{J}(a)=R$. 
+Clearly, for any $g\in\GL(n,R)$ one has $\mathfrak{J}(a\cdot g)=\mathfrak{J}(a)$.
+\begin{dfn}\label{dfn:j-stable}
+We say that a row $a=(a_1, \ldots, a_{n+1})\in{}^{n+1}\!I$ can be \emph{$I$-shortened}, if there exist $c_1, \ldots, c_n\in I$ such that
+$\mathfrak{J}(a_1, \ldots, a_{n+1})=\mathfrak{J}(a_1+c_1a_{n+1}, \ldots, a_n+c_na_{n+1}).$
+\end{dfn}
+\begin{dfn}\label{dfn:asr}
+We say that an ideal $I$ satisfies the condition $\ASR_n(I)$ if it satisfies $\SR_n(I)$ and, moreover, any row $a\in{}^{n+1}\!I$ can be $I$-shortened.
+\end{dfn}
+
+It is easy to see that $\ASR_m(I)$ implies $\ASR_n(I)$ for any $n\geqslant m$. 
+By definition, the \emph{absolute relative stable rank} $\asr(I)$ is the smallest natural $n$ such that $\ASR_n(I)$ holds (again we set $\asr(I)=\infty$ if no such $n$ exists).
+
+A priori our definition of $\ASR_n(I)$ depends on $R$.
+Below we will see that in fact there is no such dependence.
+The following lemma is a relative version of~\cite[Lemma~8.2]{MKV}. 
+\begin{lemma}\label{lemma:relative-asr-unimod}
+For a commutative ring $R$ and an ideal $I \trianglelefteq R$ the following statements are equivalent:
+\begin{lemlist} 
+\item\label{asr-j-stable} Any row $a\in{}^{n+1}\!I$ can be $I$-shortened;
+\item\label{asr-bak-like} For any $I$-unimodular row $(b, a_1, \ldots, a_n, d)\in\Umd(n+2, I)$ there exist $c_1, \ldots, c_n\in I$ 
+ such that $(b+b', a_1+c_1d, \ldots, a_n+c_nd)$ is $I$-unimodular for any $b'\in J$, where $J=I \cdot a_1 + \ldots + I \cdot a_n + I \cdot d\leqslant I$.
+\end{lemlist} 
+\end{lemma}
+\begin{proof}
+Assume first that any row $a\in{}^{n+1}\!I$ can be $I$-shortened. 
+In particular, for a given $I$-unimodular row $(b, a_1, \ldots, a_n, d)\in\Umd(n+2, I)$ there exist $c_1, \ldots, c_n$ such that
+\[\mathfrak{J}(a_1, \ldots, a_{n+1})=\mathfrak{J}(a_1+c_1a_{n+1}, \ldots, a_n+c_na_{n+1}).\]
+Therefore $(b,a_1+c_1d,\ldots,a_n+c_nd)$ is also unimodular. Of course, for any $b'\in J$ we could replace $b$ with $b+b'$ from the very start.
+
+To show the converse take an arbitrary row $(a_1, \ldots, a_n, d)\in{}^{n+1}\!I$ and consider the $I$-unimodular row $(1, a_1, \ldots, a_n, d)\in\Umd(n+2, I).$
+By the hypothesis, there exist $c_1, \ldots, c_n\in I$ such that
+\[ v=(1+b', a'_1, \ldots, a'_n)=(1+b', a_1+c_1d, \ldots, a_n+c_nd) \]
+is unimodular for any $b'\in J$.
+Assume that there exists a maximal ideal $\mathfrak{m}\trianglelefteq R$ such that all $a'_1, \ldots, a'_n$ are contained in $\mathfrak{m}$, but at least one of the elements $d$, $a_i$ is not.
+Then clearly $d\notin\mathfrak{m}$ and $I\not\subseteq \mathfrak{m}$ (otherwise $a_i=a'_i-c_id\in\mathfrak{m}$, contrary to the assumption).
+Now we can find $t\in I$ such that its image $\bar{t}$ in the residue field $R/\mathfrak{m}$ equals $-\bar{1}/\bar{d}$.
+This means that $1 + b' \in \mathfrak{m}$ for $b'=td\in J$ which, contradicts the unimodularity of $v$.
+This shows that no such $\mathfrak{m}$ may exist and, therefore, $\mathfrak{J}(a'_1, \ldots, a'_n)=\mathfrak{J}(a_1, \ldots, a_n, d)$.
+\end{proof}
+
+Obviously, the second statement of \cref{lemma:relative-asr-unimod} does not depend on $R$, hence, as suggested by the notation, $\asr(I)$ is independent of $R$.
+
+Let $R$ be a commutative ring. We denote by $\Max(R)$ its \emph{maximum spectrum}, i.e. the set of maximal ideals of $R$, equipped with the Zariski topology. For a topological space $X$ denote by $\dim(X)$ its usual topological dimension.
+From the definition of $\asr(I)$ and \cite[Theorem~2.3]{EO} (or~\cite[Theorem~3.7]{MKV}) it follows that
+\begin{equation} \label{sr-estimates} \sr(I)\leqslant\asr(I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \end{equation}
+There exist examples of rings for which the first inequality in the above formula is strict.
+More precisely, there are rings of stable rank $1$ but of absolute stable rank $\geqslant2$, see~\cite{MKV}.
+On the other hand, \cite[Theorem~1.3]{MKV} shows that $\sr(R)=\asr(R)$ for any principal ideal ring $R$.
+\begin{example}
+From inequality~\eqref{sr-estimates} one concludes, in particular, that 
+\begin{itemize}
+\item $\asr(R) = 1$ for every semilocal ring $R$;
+\item $\asr(R)\leqslant2$ for every Dedekind domain $R$;
+\item $\asr(A[x])\leqslant3$ for every locally principal ring $A$;
+\item $\asr(F[x_1,\ldots,x_n])\leqslant n+1$ for any field $F$.
+\end{itemize}
+For certain classes of fields there is also a lower estimate for $\sr(F[x_1, \ldots, x_n])$ which allows to compute precisely the value of both $\sr(R)$ and $\asr(R)$.
+For example, $\sr(F[x,y])=3$ for every $F$ with $\K_2^M(F)\neq0$ (see~\cite{Kru73}) and $\sr(F[x_1, \ldots, x_n])=n+1$ for $F\subseteq\mathbb{R}$, see~\cite[Theorem~8]{Va71}.
+Notice also that $\sr(\mathbb{Z}[x])=3$ (see \cite{GMV}) and $\sr(\mathbb{Z}[x_1,\ldots,x_n])=n+1$ for $n>1$ (see example after~\cite[Theorem~18.2]{VS76}).
+\end{example}
+
+\subsection{Action of unipotent radicals}\label{sec:ur-action}
+\begin{lemma}\label{lemma:PSV-symplectic-trick}
+ Let $v=(v_1, \ldots, v_n)^t$ be a column. Denote by $v'$ the vector composed of squares of the components of $v$, i.\,e. $v'=(v_1^2, \ldots, v_n^2)^t$.
+ Then for any matrix $b \in M(n, I)$ one can find a symmetric matrix $a \in M(n, I)$, $a=a^t$ such that $b \cdot v' = a \cdot v$. \end{lemma}
+\begin{proof}
+Straightforward computation shows that the assertion of lemma holds for the matrix $a$ defined by
+\begin{equation*}
+a_{ij} = b_{ij} v_{j} + b_{ji} v_{i},\ j\neq i,\quad a_{ii} = b_{ii} v_{i} - \sum\limits_{\mathclap{\substack{j=1 \\ j\neq i}}}^\ell b_{ji} v_{j}. \qedhere
+\end{equation*}
+\end{proof}
+
+Let $v\in V=R^{2\ell}$ be a vector of the natural representation of $\G(\rD_\ell, R)$.
+Denote by $v_+$ and $v_-$ the upper and the lower halves of $v$, i.\,e. $v_+=(v_1, \ldots, v_\ell)^t$, $v_-=(v_{-\ell}, \ldots, v_{-1})^t$.
+\begin{lemma}\label{lemma:asrUnip}
+For any $I$-unimodular column $v=(v_+, v_-)^t\in\Ums(2\ell, I)$ there exists $g\in\U(\Sigma^+_\ell, I) \leq \E(\Phi, R, I)$ 
+such that $(g \cdot v)_+ \in \Ums(\ell, I)$ under the following assumptions on $\Phi$ and $I$.
+\begin{lemlist}
+\item \label{item:asrUnipC} $\Phi=\rC_\ell$ and $\sr(I) \leqslant \ell$;
+\item \label{item:asrUnipD} $\Phi=\rD_\ell$ and $\asr(I)\leqslant \ell -1$.
+\end{lemlist}
+\end{lemma}
+\begin{proof} 
+\textsc{Case $\Phi=\rC_\ell$.}
+Denote by $p$ the matrix of size $\ell$ such that its only nonzero entries equal $1$ and are on the skew-diagonal, i.\,e. $p_{ij}=\delta_{i, \ell-j+1}$. 
+For $b \in M(\ell, I)$ set $g(b)=\left(\begin{smallmatrix} e_\ell & p \cdot b \\ 0 & e_{\ell} \end{smallmatrix}\right)$.
+Clearly, if $b$ is symmetric then $g(b)$ lies in $\U(\Sigma_\ell^+, I)\leq \E(\rC_\ell, R, I)$.
+
+Notice that the column $v'=(v_1,\ldots,v_\ell, v_{-\ell}^2,\ldots,v_{-1}^2)^t$ is $I$-unimodular.
+By the definition of the relative stable rank we can find a matrix $b\in \M(\ell,I)$ such that the upper half $v''_+$ of the vector $v''= g(b) \cdot v'$ is $I$-unimodular.
+It is clear that $v''_+ = v_+ + pb v'_-$. 
+Finally, applying \cref{lemma:PSV-symplectic-trick}, we find a symmetric matrix $a$ such that
+\[ (g(a)\cdot v)_+=v_+ + pav_- = v_+ + pbv'_- = v''_+ \in \Ums(\ell, I). \]
+
+\textsc{Case $\Phi=\rD_\ell$.} Denote by $J$ the ideal of $R$ spanned by the components of $v_{-}$. Clearly, $J \subseteq I$.
+By \cref{prop:sr_properties} $\sr(I/J) \leqslant \ell-1$, therefore
+the elementary group $\E(\rA_{\ell-1}, R/J, I/J)$ acts transitively on $\Ums(\ell, I/J)$ (see~\cite[Theorem~2.3c]{Va69}). 
+This implies the existence of an element $h\in \E(\Delta_\ell, R, I)$ such that the vector $v' = h \cdot v$ satisfies $v'_i \equiv \delta_{i1} \pmod J$ for $i=1, \ldots, \ell$.
+
+Clearly, $(v'_1, v'_{-\ell}, \ldots, v'_{-1})$ is $I$-unimodular.
+Applying \cref{asr-bak-like}, we find $c_2, \ldots, c_\ell\in I$ such that for $v''= \prod_{i=2}^{\ell}x_{-i, -1}(c_i)\cdot v'$ one has
+$(v''_1, v''_{-\ell},\ldots, v''_{-2})\in\Ums(\ell+1, I)$.
+Now, applying the condition $\sr(I) \leqslant \ell-1$ once again, we find
+$d_1, d_3, \ldots, d_{\ell}\in I$ such that the entries $(v'''_1, v'''_{-\ell}, \ldots, v'''_{-3})$
+of $v'''=x_{-2, 1}(d_1) \cdot \prod_{i=3}^{\ell} x_{-2, -i}(d_i) \cdot v''$ form an $I$-unimodular column.
+
+We can find $f_1, f_3,\ldots, f_\ell \in R$ such that $f_1v'''_1+\sum_{i=3}^\ell f_i v'''_{-i} = 1$.
+Set $\xi = v'''_1-v'''_2-1 \in I$, $v^{(4)}=x_{1,2}(\xi f_1) \cdot \prod_{i=3}^\ell x_{-i,2}(\xi f_i) \cdot v'''$.
+Clearly $v^{(4)}_2 = v^{(4)}_1-1$, therefore $v^{(4)}_+$ is $I$-unimodular.
+Summarizing the above, we have found $g\in \EP_\ell(R, I)$ such that $v^{(4)}=g \cdot v$
+and the assertion of the lemma immediately follows from the Levi decomposition. \end{proof}
+
+\begin{cor} \label{cor:embeddingBD}
+ Denote by $i$ the standard embedding $\G(\rB_{\ell-1}, R, I) \hookrightarrow \G(\rD_\ell, R, I)$. 
+ If $\asr(I) \leqslant \ell-1$, then for every $I$-unimodular column $v \in \Ums(2\ell, I)$ there exists $g \in \U(\Sigma_{\ell-1}^+, I) \leqslant \E(\rB_{\ell-1}, R, I)$ such that
+ the upper half of the vector $i(g) \cdot v$ forms an $I$-unimodular column of height $\ell$.
+\end{cor}
+\begin{proof}
+ The assertion follows from the fact that for every $u \in \U(\Sigma_\ell^+, I) \leqslant \E(\rD_\ell, R, I)$ one can find $u' \in \G(\Delta_\ell, R, I)$ such that $uu'$ lies in the image of $i$. 
+ Indeed, denote by $\sigma$ the symmetry of the Dynkin diagram of $\rD_\ell$,
+ and decompose $u$ into the product $u_1 \cdot u_2$, where $u_1 \in \U(\Sigma_\ell^+\cap\Delta_{\ell-1}, I)$ and $u_2 \in \U(\Sigma_\ell^+ \cap \Sigma_{\ell-1}^+, I)$.
+ Then one takes $u' = \sigma(u_1)$.
+
+ Now by \cref{item:asrUnipD} one finds a suitable $u \in \U(\Sigma_\ell^+, I) \leqslant \E(\rD_\ell, R, I)$ which makes the upper half unimodular,
+ and since $u'$ lies in $\G(\Delta_\ell, R, I)$, the upper half remains unimodular.
+\end{proof}
+
+\begin{lemma} \label{lemma:uraction} 
+Let $\Phi=\rA_\ell, \rC_\ell, \rD_\ell$. Denote by $\pi$ the natural representation of $\G(\Phi, R)$ on $V=R^n$, $n=\ell+1, 2\ell, 2\ell$ respectively.
+Assume that one of the following assumptions holds:
+\begin{lemlist}
+ \item \label{item:uractionA} $\Phi=\rA_\ell$, $\Gamma=\{ k+1, \ldots, \ell+1\} \subset \Lambda(\pi)$ and $\sr(I)\leq k\leq \ell$;
+ \item \label{item:uractionC} $\Phi=\rC_\ell$, $\Gamma=\{-\ell,\ldots, -2, -1\} \subset \Lambda(\pi)$ and $\sr(I)\leq \ell$. 
+ \item \label{item:uractionD} $\Phi=\rD_\ell$, $\Gamma=\{-\ell,\ldots, -2, -1\} \subset \Lambda(\pi)$ and $\asr(I)\leq \ell-1$. 
+\end{lemlist}
+Then for any $g\in \G(\Phi, R, I)$ there exist $x\in \U(\Phi^+, I)$, $y\in \U(\Phi^-, I)$ such that $(yxg \cdot v^+)_\lambda = 0$ for all $\lambda\in \Gamma$.
+\end{lemma}
+\begin{proof} Denote by $v$ the image of the highest weight vector $v^+$ under $g$.
+
+\textsc{Case $\Phi=\rA_\ell$.} From the definition of the relative stable rank it follows that we can find 
+$x= \left(\begin{smallmatrix} e_k & a \\ 0 & e_{n-k} \end{smallmatrix}\right) \in \U(\Sigma_k^+, I)$ such that 
+the upper $k$ components of $v'= x \cdot v$ form an $I$-unimodular column. 
+Now, to obtain zeroes at the desired positions it remains to subtract from $v'_{k+1},\ldots, v'_{\ell+1}$ suitable multiples of $v'_1, \ldots, v'_k$.
+This operation corresponds to the left multiplication by some element $y\in\U(\Sigma_k^-, I)$.
+
+\textsc{Case $\Phi=\rC_\ell$.} 
+Applying \cref{item:asrUnipC}, we find $x \in \U(\Sigma_\ell^+, I)$ such that the upper half $v'_+$ of $v' = x \cdot v$ is unimodular.
+Set $g(a) = \left(\begin{smallmatrix} e_\ell & 0 \\ p \cdot a & e_{\ell} \end{smallmatrix}\right)$.
+Clearly, if $a$ is symmetric, then $g(a) \in \U(\Sigma_\ell^-, I)$.
+Since the column $v''_+ = ({v'_1}^2, \ldots, {v'_\ell}^2)^t$ is $I$-unimodular, there exists a matrix $b \in M(\ell, I)$ such that $v'_- + p b v''_+ = 0$.
+Finally, using \cref{lemma:PSV-symplectic-trick}, we find a symmetric matrix $a$ such that $(g(a) \cdot v')_- = p a v'_+ + v'_- = p b v''_+ + v'_- = 0$.
+
+\textsc{Case $\Phi=\rD_\ell$.} From the proof of \cref{item:asrUnipD} it follows that there exists $h_1 \in \EP_\ell(R, I)$ such that for $v'=h_1\cdot v$ one has $v'_2=v'_1-1\in I$.
+Clearly, for $v'' = z_{-\alpha\ssub{2}}(-v'_2, 1)\cdot v'$ one has $v''_1=1$, hence by \cref{lemma:Chevalley-Matsumoto} there exists $h_2 \in \U(\Phi^-, I)$ such that the element
+$g'=h_2 \cdot z_{-\alpha\ssub{2}}(-v'_2, 1) \cdot h_1 \cdot g$ fixes $v^+$. 
+Using the Levi decomposition we can write $g'=h \cdot y \cdot x \cdot g$ for some $y\in\U(\Sigma^-_\ell, I)$, $x \in \U(\Sigma^+_\ell, I)$, $h\in\E(\Delta_\ell, R, I)$.
+It is clear that $x$, $y$ are the desired elements.
+\end{proof}s
 
 \section{Relative parabolic factorizations} \label{sec:factorizations}
-%TODO: Add references to works of Dennis, Bass, Vaserstein, Suslin etc.
 In this section we formulate and prove the relative versions of the decompositions from~\cite{St78}, which will be the main technical tools throughout the next section.
 
 \subsection{Relative Gauss decomposition}\label{sec:gauss}
-\input{gauss}
+The proof of the Gauss decomposition presented below is similar to the absolute case (cf.~\cite[Theorem~5.1]{Sm12}).
+\begin{prop}\label{thm:Gauss}
+Let $\Phi$ be a reduced irreducible root system of rank $\ell$ and let $\Delta_1$, $\Delta_\ell$ be
+two reductive subsystems of $\Phi$, corresponding to the endnodes of the Dynkin diagram of $\Phi$.
+Suppose that both relative elementary subgroups $\E(\Delta_i, R, I)$, $i=1, \ell$ admit the triangular decomposition with $N$ triangular factors:
+\[ \E(\Delta_i, R, I) = \Hh(\Delta_i, R, I) \cdot \U(\Delta^+_i, I) \cdot \U(\Delta^-_i, I) \cdot \ldots \cdot \U(\Delta^\pm_i, I), \quad i=1, \ell. \]
+Then the ambient group $\E(\Phi, R, I)$ admits the decomposition with the same number of factors:
+\[ \E(\Phi, R, I) = \Hh(\Phi, R, I) \cdot \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot \ldots \cdot \U(\Phi^\pm, I). \]
+\end{prop}
+\begin{proof}
+Denote by $Y$ the product of subgroups in the right-hand side of the above equality.
+To show that $Y=\E(\Phi, R, I)$ it suffices to check that
+\begin{enumerate}
+\item $Y$ is normalized by $\E(\Phi, R)$, i.\,e. $Y^{\E(\Phi, R)}\subseteq Y$;
+\item there exists a set $X$, generating $\E(\Phi, R, I)$ as a \emph{normal} subgroup of $\E(\Phi, R)$ such that $XY\subseteq Y$.
+\end{enumerate}
+To prove the first assertion it suffices to show that $Y^{x_\alpha(\xi)} \subseteq Y$ for any $\alpha\in \pm \Pi$, $\xi\in R$.
+Fix a root $\alpha\in\pm\Pi$. Clearly, $\alpha \in \Delta_i$ for $i=1$ or for $i=\ell$, and we can expand $Y$ as follows:
+\[ Y=\Hh(\Phi, R, I) \cdot \U(\Delta_i^+, I) \cdot \ldots \cdot \U^\pm(\Delta_i, I) \cdot \U(\Sigma_i^+, I) \cdot \ldots \cdot \U(\Sigma_i^\pm, I). \]
+For every  $h \in \Hh(\Phi, R, I)$ one has for some $s\in I$
+\[ x_\alpha(\xi)\cdot h = h\cdot x_\alpha((1+s)\xi)=h\cdot x_\alpha(\xi)\, x_\alpha(s\xi). \]
+
+Therefore by the assumption of the theorem
+\begin{multline*}
+Y^{x_\alpha(\xi)} \subseteq \Hh(\Phi, R, I) \cdot x_\alpha(-\xi) \cdot X_{\alpha}(I) \cdot \E(\Delta_i, R, I)\cdot x_\alpha(\xi) \cdot \U(\Sigma^+_i, I) \cdot \ldots \cdot \U(\Sigma^\pm_i, I) =\\
+= \Hh(\Phi, R, I) \cdot \E(\Delta_i, R, I) \cdot \U(\Sigma^+_i, I) \cdot \ldots \cdot \U(\Sigma^\pm_i, I) = Y.
+\end{multline*}
+
+Now set $X=\left\{x_\alpha(\xi)\ \middle|\ \alpha\in\Pi, \ \xi\in I \right\}$. 
+Every root is a conjugate of some fundamental root under the action of $W(\Phi)$.
+Since $\E(\Phi, R)$ contains the normalizer of the torus, the set $X^{\E(\Phi, R)}$ contains all the generators of the group $\E(\Phi, I) = \langle x_\alpha(\xi), \  \alpha\in\Phi, \ \xi\in I \rangle$.
+Finally, the inclusion $XY \subseteq Y$ follows from the fact that $\Hh(\Phi, R, I)$ normalizes every root subgroup $X_\alpha(I)$.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:srRI1}]
+In view of the above proposition it suffices to prove that the Gauss decomposition of length $3$ holds for $\Phi=\rA_1$.
+
+Let $A=\begin{psmallmatrix}a & b \\ c & d\end{psmallmatrix}$ be an element of $\SL(2, R, I)$.
+The first column of $A$ is $I$-unimodular, therefore there exists $z\in I$ such that $a+cz\in R^*$.
+Multiplying $A$ on the left by $x_{12}(z)$, we get a matrix $A'=x_{12}(z)\cdot A=\begin{psmallmatrix}a' & b' \\ c & d\end{psmallmatrix}$ with the invertible  element $a'$ in the top-left corner.
+After multiplying $A'$ on the left by $x_{21}(-c/a')$ and on the right by $x_{12}(-b'/a')$ we get a diagonal matrix. 
+Thus we have obtained the relative Gauss decomposition of $A$
+\begin{equation*}
+A=x_{12}(-z)\cdot x_{21}(c/a')\cdot
+\begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
+\cdot x_{12}(b'/a')=x_{12}(-z)\cdot
+\begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
+\cdot x_{21}(y) \cdot x_{12}(b'/a'), 
+\end{equation*}
+where $\varepsilon\in 1+I$ and $y\in I$. \end{proof}
+
 \subsection{Relative Bass---Kolster decompositions}\label{sec:bass-kolster}
-\input{bass-kolster}
+The next theorem is a relative version of the so-called Bass---Kolster decomposition (cf.~\cite[Theorem~2.1]{St78}).
+\begin{thm}\label{thm:BassKolster}
+Let $\Phi$ be a classical root system of rank $\ell\geqslant2$, let $R$ be an arbitrary commutative ring and $I$ be an ideal, satisfying one of the following assumptions:
+\[\begin{array}{l@{\quad}l@{\quad}l@{\quad}c}
+\Phi = \rA_\ell, \ \ell\geqslant 2, & \sr(I) \leqslant \ell; \\
+\Phi = \rC_\ell, \ \ell\geqslant 2, & \sr(I) \leqslant 2\ell-1; \\
+\Phi = \rB_\ell, \rD_\ell, \ \ell\geqslant 3, & \asr(I) \leqslant \ell-1.
+\end{array}\]
+Then the principal congruence subgroup $\G(\Phi, R, I)$ admits the following relative version of the Bass---Kolster decomposition:
+\[ \G(\Phi, R, I)=  \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot Z \cdot \U(\Sigma_1^-\setminus\{-\alpha_\mathrm{max}\}, I) \cdot \U(\Sigma_1, I) \cdot \G(\Delta_1, R, I), \]
+where $Z = Z_{\alpha_\mathrm{max}}(I)=\left\{z_{-\alpha_\mathrm{max}}(r, 1)\ \middle|\ r\in I \right\}$.
+\end{thm}
+\begin{proof}
+
+Let $g$ be an element of $\G(\Phi, R, I)$. Set $v=g \cdot v^+\in\Ums(n, I)$. 
+Notice that in each case it suffices to find $g' \in \U(\Phi^-, I) \cdot \U(\Phi^+, I) \cdot g$ such that 
+\begin{equation} \label{eq1} (g'\cdot v^+)_{1} = 1 + s \text{ and } (g'\cdot v^+)_{\varpi\ssub{1}-\alpha\ssub{max}} = s\ \text{for some}\ s\in I. \end{equation}
+Indeed, set $g'' = z_{-\alpha\ssub{max}}(-s, 1) \cdot g'$.
+Obviously, one has $(g''\cdot v^+)_1 = 1$, $(g''\cdot v^+)_{\varpi\ssub{1}-\alpha\ssub{max}}=0$ and the conclusion of the theorem follows from \cref{lemma:Chevalley-Matsumoto}.
+
+\textsc{Case $\Phi=\rA_\ell$, $n=\ell + 1$.}
+Since $\sr(I)\leqslant\ell$, one can find $a_1, \ldots, a_\ell\in I$ such that $(v_1+a_1v_{\ell+1}, \ldots, v_\ell+a_\ell v_{\ell+1})^t=(v'_1, \ldots, v'_\ell)^t$ is $I$-unimodular.
+Then there are $b_1, \ldots, b_\ell\in I$ such that $b_1v'_1+\ldots b_\ell v'_\ell=v'-1\in I$. 
+Thus the vector \[ v'' = \prod_{i=1}^\ell x_{\ell+1, i}(b_i) \cdot \prod_{i=1}^\ell x_{i, \ell+1}(a_i) \cdot v \]
+satisfies the equalities~\eqref{eq1}.
+
+\textsc{Case $\Phi=\rC_\ell$, $n=2\ell$.}
+Notice that the column $(v_1, \ldots, v_{-2}, v_{-1}^2)^t$ is also $I$-unimodular.
+Applying the assumption $\sr(I)\leqslant 2\ell-1$, we find $c_1, c_2, \ldots, c_{-2} \in I \cdot v_{-1}$ such that upper $2\ell -1$ components of $v'=(v_1 + c_1 v_{-1}, \ldots, v_{-2} + c_{-2}v_{-1}, v_{-1})^t$ form an $I$-unimodular column.
+By the choice of $c_i$ we can find suitable $d\in I$ such that $h_1 \cdot v = v'$ for
+\[ h_1 = x_{1, -1}(c_1 + d) \cdot \prod_{i=2}^{-2} x_{i, -1}(c_i) \in \U(\Sigma_1^+, I). \]
+
+We can find $f_1, f_2, \ldots, f_{-2} \in R$ such that $f_1v'_1+\sum_{i=2}^{-2} f_i v'_i = 1$.
+Set $\xi = v''_1-v''_{-1}-1 \in I$, 
+\[ h_2 = x_{-1, 1}\biggl(\xi f_1 + \sum_{i=2}^\ell v_1' \xi^2 f_i f_{-i}\biggr) \cdot \prod_{i=2}^{-2} x_{-1, i}(\xi f_i) \in \U(\Sigma_1^-, I). \]
+Direct computation shows that the vector $v'' = h_2 \cdot v'$ satisfies equalities~\eqref{eq1}.
+
+\textsc{Case $\Phi=\rD_\ell$, $n= 2\ell$.} 
+By \cref{item:asrUnipD} we can find $h_1\in \U(\Sigma^+_\ell, I)$ such that the upper half $v'_+$ of $v'=h_1 \cdot v$ is $I$-unimodular.
+Since $\sr(I)\leqslant \ell-1$, we can find $c_1$, $c_3, \ldots c_\ell \in I$ such that $(v''_1, v''_3, \ldots, v''_\ell) \in \Ums(\ell-1, I)$, where
+\[ v''=h_2 \cdot x_{1, 2}(c_1) \cdot v', \quad h_2=\prod_{i=3}^\ell x_{i, 2}(c_i). \]
+We can find $f_1, f_3, \ldots, f_\ell \in R$ such that $f_1v''_1+\sum_{i=3}^\ell f_i v''_{i} = 1$.
+As before, set
+\[ \xi = v''_1-v''_{-2}-1 \in I, \quad h_3 = x_{-2, 1}(\xi f_1) \cdot \prod_{i=3}^\ell x_{-2, i}(\xi f_i), \quad v'''=h_3 \cdot v''. \]
+Clearly, $t_{1, 2}(c_1) \cdot h_1 \in \U(\Phi^+, I)$, $ h_3 \cdot h_2 \in \U(\Phi^-, I)$ and $v'''$ satisfies~\eqref{eq1}.
+
+\textsc{Case $\Phi=\rB_\ell$, $n=2\ell+1$.} Subdivide $v\in \Ums(2\ell+1, I)$ as $v=(v_+, v_0, v_-)\in R^\ell\times R\times R^\ell$.
+Denote by $J\leqslant I$ the ideal spanned by the components of $v_-$.
+Since $\sr(I/J)\leqslant \ell$, we can find $c_1, \dots, c_\ell\in I$ such that for $v' = h \cdot v$, $h = \prod_{i=1}^\ell x_{i, 0}(c_i) \in \U(\Phi^+, I)$
+one has $\bar{v'}_+=(\bar{v'_1}, \ldots, \bar{v'_\ell}) \in \Ums(\ell, I/J)$ and, therefore, $(v'_+, v'_-) \in \Ums(2\ell, I)$.
+Now the proof can be finished by repeating the argument for the case $\Phi=\rD_\ell$ (applied to the subset of long roots of $\rB_\ell$).
+\end{proof}
+
+It is easy to see that the proof of the above theorem is effective and gives an estimate of the total number of elementary root unipotents involved in the decomposition.
+\begin{cor}\label{cor:bass-kolster-count}
+In the assumptions and notation of \cref{thm:BassKolster} every element of $\G(\Phi, R, I)$ 
+can be factored into a product of one element of $\G(\Delta_1, R, I)$, one element of $Z$ and at most $4|\Sigma_1|-1$ elements of $\mathcal{X}$.
+\end{cor}
+\begin{proof}
+The assertion can be obtained by a careful analysis of the proof of the previous theorem.
+Cases $\Phi=\rA_\ell, \rC_\ell$ are immediate.
+In the case $\Phi=\rD_\ell$ from the proof of \cref{thm:BassKolster} one obtains that
+\begin{equation*} \G(\Phi, R, I) =  \U(\Sigma_\ell^+, I) \cdot X_{\alpha_1}(I) \cdot \U(\Sigma_2^-\cap\Delta_1, I) \cdot X_{-\alpha\ssub{\mathrm{max}}}(I) \cdot Z \cdot \U(\Sigma_1^-, I) \cdot \U(\Sigma_1^+, I) \cdot \G(\Delta_1, R, I). \end{equation*}
+We can present an element $g$ of $\U(\Sigma_\ell^+, I)$ as a product of $g_1 \in \U(\Sigma_{1, 2}^+ \cap \Sigma_\ell^+)$ and $g_2\in \U(\Delta_{1, 2}\cap \Sigma_\ell^+)$.
+An examination of the extended Dynkin diagram of $\rD_\ell$ shows that $g_2$ either centralizes or normalizes all factors of the above decomposition (except the last one)
+and therefore can be moved to the right until it is consumed by $\G(\Delta_1, R, I)$.
+On the other hand, $g_1$ is a product of at most $2\ell-3$ elementary unipotents, while the width of $\U(\Sigma_1^\pm, I)$ and $\U(\Sigma_2^-\cap\Delta_1)$ with respect to the elementary unipotents does not exceed $2\ell-2$ and $2\ell-4$, respectively.
+Summing up these upper bounds, we obtain
+$$(2\ell-3) + 1 + (2\ell - 4) + 1 + 2\cdot (2\ell - 2) = 8\ell - 9 = 4|\Sigma_1| - 1.$$
+
+The estimate in the case $\Phi=\rB_\ell$ can be obtained in a similar way. \end{proof}
+\begin{cor}\label{cor:bass-kolster-iterated}
+Assume that $\Phi$ and $I$ satisfy one of the following assumptions
+\[\begin{array}{l@{\quad}l@{\quad}l}
+\Phi=\rA_\ell, & \sr(I)\leqslant 2, & N'=3\left|\Phi^+\right|+2\ell - 5; \\
+\Phi=\rC_\ell, & \sr(I)\leqslant 3, & N'=3\left|\Phi^+\right|+3\ell - 6; \\
+\Phi=\rB_\ell, \rD_\ell, & \asr(I)\leqslant 2, & N'=4\left|\Phi^+\right| - 4.
+\end{array}\]
+
+Then every element of $\G(\Phi, R, I)$ can be decomposed into a product of one element of $\G(\langle\pm\alpha_\ell\rangle, R, I) \cong \SL(2, R, I)$ and at most $N'$ elements of $\mathcal{Z}(\Sigma_\ell)$:
+\end{cor}
+\begin{proof}
+The assertion can be obtained by iteratively applying (for a total of $\ell-1$ times) the decomposition of \cref{thm:BassKolster}.
+The improved estimate for $\Phi=\rA_\ell$ (resp. $\rC_\ell$) follows from the fact that it suffices to make only two (resp. three) additions to shorten the unimodular column in the first step of the proof of \cref{thm:BassKolster}.
+\end{proof}
+\begin{proof}[Proof of \cref{thm:SL2width}]
+ As in the proof of the above corollary one has to iteratively apply \cref{thm:BassKolster}.
+ To reduce the number of $\SL_2$-factors involved in the decompositoin one has to group into a single $\SL_2$-factor a pair of opposite root subgroups $X_{\alpha}(I)$, $X_{-\alpha}(I)$ (or $Z_{\pm\alpha}(I)$) appearing on each
+ of the $3$ junctions between the positive and negative unipotent subgroups in the Bass---Kolster decomposition.
+ Since a total of $\ell-1$ reductions are used, we get the estimate $N \leq N' - 3(\ell - 1) + 1$ and the assertion of \cref{thm:SL2width} follows.
+\end{proof}
+\begin{figure}[hb]\label{fig:bass-kolster}
+\[\begin{tikzcd}[row sep=tiny]
+\rD_4 \arrow[out=0, in=120]{rd}{\asr\leqslant3} & & & \\
+\rA_4 \arrow{r}{\sr\leqslant4} & \rA_3 \arrow{r}{\sr\leqslant3} & \rA_2 \arrow{r}{\sr\leqslant2} & \rA_1 \\
+\rC_4 \arrow{r}{\sr\leqslant7} & \rC_3 \arrow{r}{\sr\leqslant5} & \rC_2 \arrow[out=0, in=-120, swap]{ru}{\sr\leqslant3} \\
+\rB_4 \arrow{r}{\asr\leqslant3} & \rB_3 \arrow[out=0, in=-120, swap]{ru}{\asr\leqslant2} & &
+\end{tikzcd}\] \caption{Reductions used in the proof of \cref{cor:bass-kolster-iterated} and \cref{thm:SL2width}} \end{figure}
+
 \subsection{Relative Dennis---Vaserstein decompositions}\label{sec:dennis-vaserstein}
-\input{dennis-vaserstein}
+Let $\Phi$ be an irreducible root system of rank $\ell$.
+In what follows, $r$ and $s$ are two distinct integers such that $1 \leqslant r, s \leqslant \ell$.
+From the Levi decomposition~\eqref{rel:Levi-decomp} it follows that the following four subsets of $\E(\Phi, R, I)$ are equal:
+\begin{multline*}
+A_{rs} \coloneqq \U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \\
+= \U(\Sigma_r^+, I)\cdot \U(\Sigma^-_r, I) \cdot \E(\Delta_r, R, I) \cdot \EP_s(R, I) = \hspace{5em} \\
+\hspace{5em} = \EP_r(R, I) \cdot \E(\Delta_s, R, I) \cdot \U(\Sigma_s^-, I)\cdot \U(\Sigma_s^+, I) = \\
+= \EP_r(R, I) \cdot \U(\Sigma^-_r \cap \Sigma^-_s, I) \cdot \EP_s(R, I).
+\end{multline*}
+
+Denote by $N_{rs}$ the submonoid of $\E(\Phi, R)$, consisting of the elements which normalize the subset $A_{rs}$, i.\,e.
+\[ N_{rs} = \left\{ g\in \E(\Phi, R)\ \middle|\ g \cdot A_{rs} \cdot g^{-1} \subseteq A_{rs} \right\}. \]
+
+\begin{lemma}\label{lemma:dv-normal} 
+For every $\alpha \in \Delta_{r, s} \cup (\Phi^+ \setminus (\Sigma^+_r \cap \Sigma^+_s))$ one has $X_\alpha(R) \subseteq N_{rs}$. \end{lemma}
+\begin{proof}
+Notice that for every $i$ the group $\EP_i(R, I)$ is normalized by $\EP_i(R)$, hence a fortiori it is normalized by $X_\alpha(R)$, $\alpha \in S_i^+$.
+Since $\U(\Sigma_r^- \cap \Sigma_s^-, I)$ is normalized by $\E(\Delta_{\{r, s\}}, R)$, we obtain the assertion of the lemma for $\alpha \in \Delta_{r, s}$.
+
+Now if $\alpha$ lies in $\Phi^+ \setminus (\Sigma_r^+ \cap \Sigma_s^+)$, then it is contained either in $\Delta_r$ or in $\Delta_s$.
+Assume, for example, the latter. By the Levi decomposition we have $\U(\Sigma_r^- \cap \Sigma_s^-, I)^{X_\alpha(R)} \subseteq \U(\Sigma_s^-, I) \subseteq A_{rs}$,
+which again implies the assertion of the lemma.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:DennisVaserstein}]
+First of all, notice that in the case $\Phi=\rG_2$ the assertion of the theorem formally follows from \cref{thm:srRI1} and identities~\ref{rel:h-comm}--\ref{rel:h-w}.
+Since the equality $A_{rs} = \E(\Phi, R, I)$ implies $A_{sr} = \E(\Phi, R, I)$, it suffices to consider only the following possibilities for $\Phi$, $s$, $r$:
+\begin{table}[htb]
+\[\begin{array}{l @{\qquad} l @{\qquad} c @{\quad} c @{\quad} c @{\qquad} c @{\qquad} c @{\qquad} c}
+\Phi                                 & s    &r      & |\Lambda(\pi)| & \text{type of $\pi$} & \text{type of $\Delta_r$} & |\Lambda(\pi')|& |\Gamma|  \\ \hline\vphantom{\Bigl(}
+\rA_\ell, \ \ell\geqslant 2           & 1    &\ell   & \ell+1         & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\     
+\rB_\ell, \ \ell\geqslant 2           & 1    &\ell   & 2\ell+1        & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\     
+\rC_\ell, \ \ell\geqslant 2           & 1    &\ell   & 2\ell          & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\
+\rD_\ell, \ \ell\geqslant 4           & 1    &\ell   & 2\ell          & \text{natural}       & \rA_{\ell-1}              & \ell           & 2  \\ 
+\rD_\ell, \ \ell\geqslant 4           & \ell &\ell-1 & 2^{\ell-1}     & \text{half-spinor}   & \rA_{\ell-1}              & \ell           & \ell-2  \\
+\rE_\ell, \ \ell=6, 7                  & \ell &2      & 27, 56         & \text{minimal}       & \rA_{\ell-1}              & \ell           & 3       \\ 
+\rE_\ell, \ \ell=6, 7                  & \ell &1      & 27, 56         & \text{minimal}       & \rD_{\ell-1}              & 2(\ell-1)      & \ell-1  \\
+\rF_4                                & 4    &1     & 26             & \text{minimal}       & \rC_3                     & 6              & 3\end{array}\]
+ \caption{List of the cases considered in the proof of \cref{thm:DennisVaserstein}.} \label{table:dv-reps}
+\end{table}
+
+Denote by $L_{rs}$ the set consisting of all the elements $g\in \E(\Phi, R, I)$ such that $g \cdot A_{rs} \subseteq A_{rs}$.
+It is easy to see that $L_{rs}$ contains $\EP_r(R, I)$ and is normalized by $N_{rs}$, i.\,e. ${L_{rs}}^{N\ssub{rs}}\subseteq L_{rs}$. Indeed, for $g\in N_{rs}$, $h\in L_{rs}$ one has
+\begin{equation}\label{rel:NnormL} h^g \cdot A_{rs} = g^{-1} \cdot h \cdot g \cdot A_{rs} \subseteq g^{-1} \cdot h \cdot A_{rs} \cdot g \subseteq {A_{rs}}^g \subseteq A_{rs}.\end{equation}
+
+The first step of the proof is to show that $N_{rs}$ contains sufficiently many elements. 
+This is accomplished in~\cref{lemma:Stein_reduction} below, where we invoke the stability conditions for the first time.
+We show that $N_{rs}$ contains the root subgroup $X_{-\alpha\ssub{r}}(R)$, which together with \cref{lemma:dv-normal} and \cref{item-egen} immediately implies that $N_{rs}$ contains the Levi subgroup $\E(\Delta_s, R)$ and hence the extended Weyl group $\widetilde{W}(\Delta_s)$.
+
+The next goal is to demonstrate the inclusion $\U(\Sigma_s^+, R) \subseteq N_{rs}$ (which implies $\EP_s(R) \subseteq N_{rs}$).
+All the possibilities for $\Phi$, $s$ and $r$ fall into one of the following three cases:
+\begin{enumerate}
+ \item \textit{Case $m_s(\alpha_{\mathrm{max}})=1$ and $\Phi$ is simply laced.}
+  In this case all the roots of $\Sigma^+_s$ have the same $s$-shape and length, hence the assertion follows from \cref{item-trans2}, \eqref{rel:NnormL} and the fact that we already have the inclusion $X_{\alpha_s}(R) \subseteq N_{rs}$.
+ \item \textit{Case $\Phi = \rB_\ell$.} Using the argument from the previous case, we get that $N_{rs}$ contains the subgroup generated by the root subgroups $X_\alpha(R)$, where $\alpha$ varies over long roots of $\Sigma_s^+$. 
+  It remains to prove the inclusion $X_{1, 0}(R) \subset N_{rs}$.
+  Specializing identity~\eqref{rel:CCF}, we get \begin{equation*} \label{rel:CCF-specBC} x_{1, 0}(ab) = [x_{1, 2}(a), x_{2, 0}(b)] \cdot x_{1, -2}(-a b^2) \end{equation*}
+  Since $X_{2, 0}(R)$ and $X_{1, -2}(R)$ are contained in $N_{rs}$, the inclusion $X_{1, 0}(R) \subseteq N_{rs}$ follows.
+ \item \textit{Case $\Phi = \rC_\ell, \rF_4$.}
+ We settle these remaining cases in \cref{lemma:DVST}, where we invoke the stability conditions one more time. 
+ In fact, we prove a stronger result, namely that $N_{rs}$ contains $X_{-\alpha\ssub{s}}(R)$ and, consequently, $N_{rs} = \E(\Phi, R)$.
+\end{enumerate}
+
+In view of \cref{prop:Stepanov} to prove the theorem it suffices to show that $L_{rs}$ contains the generating set $\mathcal{Z}(\Sigma_s^-)$ of $\E(\Phi, R, I)$.
+From the inclusion $\mathcal{Z}(\Sigma_s^-) \subseteq \mathcal{X}^{\EP_s(R)}$ and \eqref{rel:NnormL} it follows that we only have to show that $\mathcal{X} \subseteq L_{rs}$.
+
+The last inclusion follows from the same transitivity argument as above and the fact that $X_\alpha(I) \subseteq \EP_r(R, I) \subseteq L_{rs}$ for $\alpha \in \Delta_r \cup \Sigma_r$.
+For $\Phi=\rB_\ell$ one has to once again apply the Chevalley commutator formula~\eqref{rel:CCF}:
+\[ X_{0, 1}(I) \subseteq X_{2, 1}(I) \cdot X_{2, 1}(I)^{x_{0, 2}(1)} \cdot X_{-2, 1}(I) \subseteq L_{rs} \cdot L_{rs}^{N_{rs}} \cdot L_{rs} \subseteq L_{rs}. \qedhere \] 
+\end{proof}
+
+\begin{lemma}\label{lemma:dv_unipotent} For any $1\leq i\leq n$ the following statements hold. 
+\begin{thmlist} \item \label{item-dvu1} $\U(\Phi^+, I) = X_{\alpha\ssub{i}}(I)\cdot \U(\Phi^+\setminus\{\alpha\ssub{i}\}, I) = \U(\Phi^+\setminus\{\alpha\ssub{i}\}, I)\cdot X_{\alpha\ssub{i}}(I)$.
+\item \label{item-dvu2} For any $\xi\in R$ one has $\U(\Phi^+\setminus\{\alpha_i\}, I)^{x_{-\alpha\ssub{i}}(\xi)} \subseteq \U(\Phi^+, I)$.
+\item \label{item-dvu3} $\U(\Phi^+, I)\cdot \U(\Phi^-, I) \subseteq \U(\Phi^+\setminus \{\alpha_i\}, I) \cdot \U(\Phi^-, I) \cdot X_{\alpha\ssub{i}}(I) \cdot X_{-\alpha\ssub{i}}(I)$.
+\end{thmlist} \end{lemma}
+\begin{proof} The first two statements easily follow from the Chevalley commutator formula~\eqref{rel:CCF} while the third one is a formal consequence of the first two. \end{proof}
+
+\begin{lemma}\label{lemma:Stein_reduction}
+Under the assumptions of \cref{thm:DennisVaserstein} one has $X_{-\alpha_r}(R) \subseteq N_{rs}.$
+\end{lemma}
+\begin{proof}
+Let $\pi$ be the irreducible representation of $\G(\Phi, R)$ with the highest weight $\varpi_s$ (see Table~\ref{table:dv-reps}).
+Notice that $\Delta_r$ is an irreducible classical root system of type $\rA_\ell$, $\rC_\ell$ or $\rD_\ell$.
+Denote by $(\pi', V')$ the irreducible component of the restriction of $\pi$ to $\G(\Delta_r, R)$ that contains the highest weight vector $v^+$ of $\pi$.
+In all the cases under consideration, $\pi'$ is isomorphic to the natural representation of $\G(\Delta, R)$.
+Set $\Gamma = \{\lambda \in \Lambda(\pi') \mid \lambda - \alpha_r \in \Lambda(\pi) \}.$
+
+The set $\Gamma$ can be visualized using the weight diagrams in the following manner.
+After the removal of all bonds marked $r$ the weight diagram of $\pi$ splits into several connected components.
+The subset $\Lambda(\pi') \subseteq \Lambda(\pi)$ corresponds to the component of the diagram that contains the vertex marked $\varpi_s$.
+Clearly, $\Gamma$ consists of the weights of $\Lambda(\pi')$ incident to the removed bonds.
+
+By a consideration of the weight diagrams (see~\cite{PSV98}) we determine the number of elements in $\Lambda(\pi')$ and $\Gamma$ (see~Table~\ref{table:dv-reps}).
+
+Consider the subset $B \subset \E(\Delta_r, R, I)$, consisting of all elements $g$ such that $(g \cdot v^+)_\lambda = 0$ for all $\lambda\in\Gamma$.
+Set $A\coloneqq\U(\Phi^+, I)\cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).$
+
+Let $g$ be an element of $\E(\Delta_r, R, I)$. Applying \cref{lemma:uraction} to the subsystem $\Delta_r$, we find
+$x\in\U(\Delta_r^+, I)$ and $y\in \U(\Delta_r^-, I)$ such that $yx\cdot g \in B$.
+Consequenty, this shows that $A = A_{rs}$, indeed:
+\begin{equation*} \U(\Sigma^+_r, I) \cdot \U(\Sigma^-_r, I) \cdot g = \U(\Sigma^+_r, I) x^{-1} \cdot \U(\Sigma^-_r, I)^{x^{-1}} y^{-1} (yxg) \subseteq \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B. \end{equation*}
+
+Notice that by the definition of $\Gamma$ and \cref{lemma:Matsumoto} for any $s\in I$, $ g\in B$ one has $x_{-\alpha_r}(s) \cdot g \cdot v^+ = g \cdot v^+$.
+Consequently, one has
+\[ X_{-\alpha\ssub{r}}(I)^{B} \subseteq \U(\Phi^-, I) \cap \Stab(v^+) \subseteq \U(\Delta_s^-, I) \subseteq \EP_s(R, I), \]
+which implies the following inclusion:
+\begin{multline*}
+X_{\alpha_r}(I) \cdot X_{-\alpha_r}(I) \cdot B \cdot \EP_s(R, I) \subseteq 
+X_{\alpha_r}(I) \cdot B \cdot \EP_s(R, I) \cdot \EP_s(R, I) \subseteq \\
+\subseteq B \cdot \U(\Sigma_r^+, I) \cdot \EP_s(R, I) =
+B \cdot \EP_s(R, I).
+\end{multline*}
+Together with the third statement of \cref{lemma:dv_unipotent} this shows that
+\begin{equation*} \label{rel:sred}
+A = \U(\Phi^+\setminus\{\alpha_r\}, I) \cdot \U(\Phi^-, I) \cdot B \cdot \EP_s(R, I).
+\end{equation*}
+Finally, since $[B, X_{-\alpha_r}(R)] \subseteq \U(\Sigma_r^-, R) \cap \E(\Phi, R, I) = \U(\Sigma_r^-, I)$, we obtain the assertion of the lemma. Indeed,
+\begin{equation*} \label{rel:ninv} A^{X_{-\alpha\ssub{r}}(R)} = \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B ^{X_{-\alpha\ssub{r}}(R)} \cdot \EP_s(R, I) = A. \qedhere \end{equation*}
+\end{proof}
+
+\begin{lemma}\label{lemma:DVST}
+Assume that one of the following holds:
+\begin{lemlist}
+ \item \label{lemma:DVcaseCl} $\Phi=\rC_\ell$ and $\sr(I) \leq \ell-1$;
+ \item \label{lemma:DVcaseF4} $\Phi=\rF_4$ and $\asr(I) \leq 3$.
+\end{lemlist}
+Then one has $X_{-\alpha_s}(R) \subseteq N_{rs}$.
+\end{lemma}
+\begin{proof}
+Consider the subset $C \subseteq \EP_s(R, I)$, consisting of the elements satisfying the following condition:
+\begin{itemize}
+ \item \textsc{Case $\Phi=\rC_\ell$.} Matrix entries $(g_{i, 2})$, $i=2, \ldots, \ell$ form an $I$-unimodular column of height $\ell-1$.
+ \item \textsc{Case $\Phi=\rF_4$.} Matrix entries $(g_{\lambda, \lambda}, \ldots, g_{\lambda, \lambda - \alpha_3 - \alpha_2 - \alpha_1})$, where $\lambda = \varpi_4 - \alpha_4$ (see~\cite[Fig.~26]{PSV98}), 
+                                     form an $I$-unimodular column of height $4$. \end{itemize}
+
+Set $A' = \EP_\ell(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot C$.
+By \cref{item:asrUnipC} (in the case $\Phi=\rC_\ell$) or \cref{cor:embeddingBD} (in the case $\Phi=\rF_4$), applied to the subgroup $\G(\Delta_s, R, I)$,
+we find for every $g \in \EP_s(R, I)$ an element $x \in \U(\Sigma_r^+ \cap \Delta_s, I)$ such that $xg \in C$.  
+Notice that one immediately gets the equality $A_{rs} = A'$ from this.
+Indeed, for $g\in \EP_s(R, I)$ one has
+\begin{equation*} \EP_r(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot g \subseteq 
+ \EP_r(R, I)x^{-1}  \cdot \U(\Sigma_s^-, I) \cdot xg \subseteq A'. \end{equation*}
+
+By the very definition of $C$, for every $g \in C$ one can choose $y \in \U(\Sigma_s^+ \cap \Delta_r, I)$ such that $(y \cdot g)_{\varpi_s, \varpi_s - \alpha_s} = 0$.
+Consequently, for every $g\in C$ one has
+\begin{multline*}
+ \EP_r(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot g \subseteq \EP_r(R, I) y^{-1} \cdot \U(\Sigma_r^-\cap \Sigma_s^-, I)^{y^{-1}} \cdot y g \subseteq \\
+  \subseteq \EP_r(R, I) \cdot \U(\Sigma_r^-, I) \cdot y g
+\end{multline*}
+Notice that the matrix entry $(yg)_{\varpi_s, \varpi_s}$ is invertible.
+From the choice of $y$ it follows that for every $\xi\in R$ the element $g_1 \coloneqq (yg)^{x_{-\alpha_s}(\xi)}$
+satisfies the assumptions of \cref{lemma:Chevalley-Matsumoto} and therefore can be rewritten as $g_1 = uh$ for some $u \in \U(\Sigma_s^-, I)$, $h \in \EP_1(R, I)$.
+Consequently, one has
+\begin{multline*} {A_{rs}}^{X_{-\alpha_{s}}(R)} \subseteq \EP_r(R, I)^{X_{-\alpha_{s}}(R)} \cdot \U(\Sigma_r^-, I)^{X_{-\alpha_{s}}(R)} \cdot \U(\Sigma_s^-, I) \cdot \EP_s(R, I) \subseteq \\
+ \subseteq \EP_\ell(R, I) \cdot \U(\Phi^-, I) \cdot \EP_s(R, I) \subseteq A_{rs} \end{multline*}
+ as claimed.
+\end{proof}
 
 \section{Applications} \label{sec:applications}
 \subsection{Bounded generation}\label{sec:boundgen}
-\input{congrsubgr-boundgen}
+We now give an application of the parabolic factorizations to the problem of bounded generation.
+ 
+\begin{lemma}\label{lemma:srRI1_width}
+In the assumptions of \cref{thm:srRI1} the width of $\E(\Phi,R,I)$ with respect to $\mathcal{Z}(\Pi)$ does not exceed $3\left|\Phi^+\right|+2\rk\Phi-1$.
+\end{lemma}
+\begin{proof}
+Take an element $g\in\E(\Phi,R,I)$ and decompose it into $g=u_1 h v_2 u_3$, where $h\in\Hh(\Phi,R,I)$, $u_1,u_3\in\U(\Phi,I)$, $v_2\in\U(\Phi^-,I)$. 
+Write $h=\prod_{i=1}^\ell h_{\alpha_i}(\varepsilon_i)$, $\varepsilon\in1+I$. 
+Each $h_{\alpha_i}(\varepsilon_i)$ decomposes into $h_{\alpha_i}(\varepsilon_i) = x_{\alpha_i}(*) z_{-\alpha_i}(*,*) x_{-\alpha_i}(*)$ 
+(see \eqref{eq:rel-tor-elementary}), and since the torus normalizes each of $X_\alpha(I)$ (see formula~\eqref{rel:h-w}), we have a decomposition
+\[ g\in\U(\Phi,I)\cdot\prod_{i=1}^\ell\bigl(x_{\alpha_i}(*)z_{-\alpha_i}(*,*)\bigr)\cdot \U^-(\Phi,I) \U(\Phi,I), \]
+and the estimate follows.
+\end{proof}
+
+The following lemma is a corollary of Theorems~5.7 and 5.8 of~\cite{LSM}.
+\begin{lemma}
+Let $p$ be a rational prime, let $c$, $d$ be a pair of coprime integers such that $p \perp d$.
+Then under the assumption of the Generalized Riemann Hypothesis there exist infinitely many primes $q\equiv c\pmod{d}$ such that $p$ is a primitive root modulo $q$.
+\end{lemma}
+
+The following lemma is a relative version of \cite[Lemma~6]{VavSmSuUnitrEng} (see also~\cite{VseUnitrZ1p}):
+
+\begin{lemma}\label{lemma:Z1p}
+Set $R=\mathbb{Z}[\sfrac{1}{p}]$ and let $I$ be an ideal of $R$.
+Under the assumption of the GRH the width of $\SL(2, R, I)$ with respect to the generating set
+\[ \mathcal{Z}(\{-\alpha_1\})=X_{12}(I)\cup X_{21}(I) \cup \{z_{21}(s, \xi) \mid s\in I,\ \xi\in R\} \]
+does not exceed $6$.
+\end{lemma}
+
+\begin{proof}
+Clearly, $I$ is a principal ideal generated by some integer $m\in\mathbb{Z}$ not divisible by $p$.
+Let $g$ be an element of $\SL(2,R,I)$. Write
+\[ g=\begin{pmatrix}x & y \\ z & w\end{pmatrix},\ \text{for}\ x=p^\alpha a,\ z=p^\beta bm,\ \text{where}\ a,b,\alpha,\beta\in\mathbb{Z},\ p\nmid a,b. \]
+
+\textsc{Case 1:} $\alpha\geqslant\beta$. 
+Since $p^{\alpha-\beta}a\perp bm^2$ and $p\perp bm^2$, there exist infinitely many rational primes $q$ of the form $p^{\alpha-\beta}a+bm^2k$,
+such that $p$ is a primitive root modulo $q$. 
+We may assume that $q$ is prime to $b$. 
+Write
+\begin{align*}
+g_1 & = x_{12}(mk)\cdot g =
+\begin{pmatrix} p^\beta q & * \\ p^\beta bm & * \end{pmatrix}. \\
+\intertext{
+There exists $u\geqslant 1$ such that $p^u\equiv b\pmod q$, say $p^u=b+lq$. Then
+}
+g_2 & = x_{21}(ml)\cdot g_1 =
+\begin{pmatrix} p^\beta q & * \\ mp^{\beta+u} & * \end{pmatrix}. \\
+\intertext{
+Since $g_2\equiv 1\pmod m$, we can write $p^\beta q=1+cm$ for some $c$. Now set
+}
+g_3 & = x_{12}\left(\dfrac{-c}{p^{\beta+u}}\right)\cdot g_2 =
+\begin{pmatrix} 1 & * \\ mp^{\beta+u} & * \end{pmatrix}, \\
+g_4 & = x_{21}\left(-mp^{\beta+u}\right)\cdot g_3 =
+\begin{pmatrix} 1 & * \\ 0 & * \end{pmatrix}, \\
+g_5 & = x_{12}\left(\dfrac{c}{p^{\beta+u}}\right)\cdot g_4 =
+\begin{pmatrix} 1 & * \\ 0 & * \end{pmatrix}.
+\end{align*}
+Notice that $g_5=z_{21}\left(-mp^{\beta+u}, c/p^{\beta+u}\right)\cdot g_2$ hence $g=x_{12} \cdot x_{21} \cdot z_{21} \cdot x_{12}$
+and the length of $g$ does not exceed $4$.
+
+\textsc{Case 2:} $\alpha<\beta$. 
+Since $\mathbb{Z}[\sfrac{1}{p}]/I$ is finite, there exists $k>0$ such that $p^k\equiv 1\pmod I$.
+One can choose $k>\beta-\alpha$.
+Then $k+\alpha>-k+\beta$ and
+\[ h_{12}\left(p^k\right)\cdot g =
+\begin{pmatrix} p^k & 0 \\ 0 & p^{-k} \end{pmatrix}
+\begin{pmatrix} p^\alpha a & * \\ p^\beta bm & * \end{pmatrix}=
+\begin{pmatrix} p^{k+\alpha} a & * \\ p^{-k+\beta} bm & * \end{pmatrix}. \]
+We find ourselves in the situation of the previous case, therefore, we can write $g=h_{12}\cdot x_{12} \cdot x_{21} \cdot z_{21} \cdot x_{12}$.
+Finally, expressing $h=x_{21}\cdot z_{21}\cdot x_{12}$ as in \eqref{eq:rel-tor-elementary}, we get that $g=x_{21} \cdot z_{21} \cdot x_{12} \cdot x_{21} \cdot z_{21} \cdot x_{12}$.
+\end{proof}
+
+For the rest of this subsection $k$ denotes a global field. We assume that there is some finite set of places $S$ chosen on $k$. 
+Let $\mathcal{O}_S$ be a Dedekind ring of arithmetic type defined by $S$ and let $I$ be an ideal of $\mathcal{O}_S$.
+
+\begin{lemma}\label{lemma:width-dedekind}
+Let $\Phi$ be an irreducible classical root system of rank $\ell \geqslant 2$.
+If $k$ has a real embedding, then $\G(\Phi, \mathcal{O}_S, I)$ has finite width with respect to the generating set $\mathcal{Z}(\Sigma_\ell)$.
+\end{lemma}
+\begin{proof}
+First of all, notice that $\asr(I) \leqslant \asr(\mathcal{O}_S) \leqslant 2$. 
+By \cref{cor:bass-kolster-iterated} we can present any element 
+of $G=\G(\Phi, \mathcal{O}_S, I)$ as a product of a finite number of generators from $\mathcal{Z}(\Sigma_\ell)$ and one element of 
+$G_0 = \G(\{\alpha_\ell, -\alpha_\ell\}, \mathcal{O}_S, I)\cong\SL(2, \mathcal{O}_S, I)$.
+Consequently, to prove the statement of the lemma it suffices to express every element 
+$g = \begin{psmallmatrix}1+a & b \\ c & 1+d \end{psmallmatrix} \in G_0$
+as a product of a finite number of generators contained in some rank $2$ subgroup of $G$ containing $G_0$.
+
+From $\det(g)=1$ we conclude that $a+d=bc-ad\in I^2$. 
+Recall that the Vaserstein's congruence subgroup is defined as
+\[ G(I, I)=\left\{ \begin{pmatrix}1+a & b \\ c & 1+d\end{pmatrix}\in\SL(2, \mathcal{O}_S)\;\middle|\; a, d\in I^2, \ b, c\in I \right\}. \]
+Notice that $g_1=g\cdot z_{21}(a, 1)$ is contained in $G(I, I)$, indeed,
+\[ \begin{pmatrix} 1+a & b \\ c & 1+d \end{pmatrix} \cdot \begin{pmatrix} 1-a & -a \\ a & 1+a \end{pmatrix} = \begin{pmatrix} 1+ba-a^2 & b-a-ba-a^2 \\ c+a+ad-ac & 1+bc-ac \end{pmatrix} \in G(I, I). \]
+For any matrix $g'=\begin{psmallmatrix}1+a & b \\ c & 1+d\end{psmallmatrix}\in G(I, I)$ the matrix $x_{21}(-c)\cdot g'\cdot x_{12}(-b)$ lies in $\SL\left(2, \mathcal{O}_S, I^2\right)$.
+
+By \cref{lemma:Stepanov-ideal} the group $\E\left(\Phi, \mathcal{O}_S, I^2\right)$ is contained in $\E(\Phi, I)$ for any root system $\Phi\neq\rC_\ell$ of rank $\geqslant2$.
+Notice that under the assumptions of the lemma it is known that $\E(\Phi, I)$ has finite width with respect to $\mathcal{X}$, see~\cite[Theorem~3.3]{TavgenThesis}.
+
+In remains to consider the case $\Phi=\rC_\ell$. First of all, notice that $2abc-abd\in II^{\indexbox{2}}$, indeed,
+\[ \det(g_1)=a^3d-3a^2bc+a^2bd+ab^2c+a^3+a^2b+a^2d+2abc-abd+1. \]
+This means that
+\[ g_2=x_{21}(-a-c)\cdot g_1\cdot x_{12}(a-b)\equiv
+\begin{pmatrix}
+1+ab-a^2 & -ab-a^2 \\ ad-ac-abc & 1-ab+a^2
+\end{pmatrix}\bmod II^{\indexbox{2}}. \]
+Now for $g_3=g_2\cdot z_{12}\left(a^2-ab, 1\right)$ we have that
+\begin{align*}
+& g_3\equiv\begin{pmatrix} 1 & -2ab \\ -abc-a^2+ab-ac+ad & 1 \end{pmatrix}\bmod II^{\indexbox{2}}, \\
+& g_4=x_{12}(2ab)\cdot g_3\equiv x_{21}\left(-abc-a^2+ab-ac+ad\right)\bmod II^{\indexbox{2}}.
+\end{align*}
+Thus $g_4\cdot x_{21}(*)\in\SL\left(2, \mathcal{O}_S, II^{\indexbox{2}}\right)$ is contained in $\E(\rC_\ell, I)$ by \cref{lemma:Stepanov-ideal} and therefore can be expressed as a bounded product of $x_\alpha$.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:width}] The second assertion of the theorem is contained in \cref{lemma:srRI1_width}.
+The the first and the third assertions follow from \cref{lemma:Z1p,lemma:width-dedekind}. \end{proof}
+
 \subsection{Subsystem factorizations}\label{sec:subsysfact}
-\input{subsystem-factorizations}
+Consider the decreasing chain $\Phi_k$, $k=1, \ldots, \lfloor \ell/2 \rfloor$ of root subsystems of $\Phi=\rD_\ell$ defined as follows.
+If $2k \neq \ell$, let $\Phi_k$ be the subsystem of $\Phi$, spanned by the fundamental roots $\alpha_{2k-1}, \ldots, \alpha_\ell$.
+Clearly, such $\Phi_k$ has type $\rD_{\ell-2k+2}$. 
+In the remaining case $2k = \ell$ set $\Phi_k = \langle \alpha_\ell \rangle \cong \rA_1$.
+Now let $\beta_k$ be the maximal root of $\Phi_k$, i.\,e. $\beta_k = \alpha_\mathrm{max}(\Phi_k)$, $k=1, \ldots, \lfloor \ell/2 \rfloor$.
+Denote by $B$ the set of all $\beta_k$. From the definition it is clear that the elements of $B$ are mutually orthogonal to each other.
+The roots $\beta_k$ can also be defined by explicit formulae:
+\begin{align*}
+ \beta_k =  \alpha_{2k-1} + 2\alpha_{2k}+ \ldots + 2\alpha_{\ell-2} + \alpha_{\ell-1} + \alpha_\ell, & \text{ for } k=1, \ldots, \lfloor\ell/2\rfloor-1, \\
+ \beta_{\lfloor\ell/2\rfloor} = \alpha_{\ell-2}+\alpha_{\ell-1}+\alpha_\ell, & \text{ if $\ell$ is odd, } \\
+ \beta_{\lfloor\ell/2\rfloor} = \alpha_\ell, & \text{ if $\ell$ is even.}
+\end{align*}
+
+\begin{lemma}\label{lemma:nikolov-weyl} There exists an element $w\in W(\rD_\ell)$ such that $w(B) \subseteq \Delta_\ell^+$. \end{lemma}
+\begin{proof}
+\textsc{Case $\ell=4$.} Set $w = \sigma_{\alpha\ssub{1} + \alpha\ssub{2}} \circ \sigma_{\alpha\ssub{2} + \alpha\ssub{4}}$.
+Straightforward computation shows that 
+\[ w(\beta_1) = w(\alpha_\mathrm{max}) = \sigma_{\alpha\ssub{1} + \alpha\ssub{2}}(\alpha_1 + \alpha_2 + \alpha_3) = \alpha_3, \quad w(\beta_2) = w(\alpha_4) = \sigma_{\alpha\ssub{1} + \alpha\ssub{2}}(- \alpha_2) = \alpha_1, \]
+which implies the assertion of the lemma.
+
+\textsc{Case $\ell \geq 5$.}
+Recall from \cite[Table~9]{Dy72} that for odd (resp. even) $\ell$ all maximal subsystems of type $\rA_1+\ldots+\rA_1+\rD_3$
+(resp. $\rA_1+\ldots+\rA_1+\rD_4$) are conjugate under the action of $W(\Phi)$. Consequently, we can find $w\in W(\Phi)$
+such that $w(\beta_k) = \alpha_{2k-1}$ for $k < \lfloor\ell/2\rfloor$ (resp. $k < \lfloor\ell/2\rfloor-1$). 
+Now using transitivity of the action of $W(\rD_3)$ on the roots (resp. by the same argument as in the case $\ell=4$) we can move the remaining root $\beta_{\lfloor\ell/2\rfloor}$ 
+(resp. the remaining $2$ roots $\beta_{\lfloor\ell/2\rfloor-1}$, $\beta_{\lfloor\ell/2\rfloor}$) to
+$\alpha_{\ell-1}$ (resp. to $\alpha_{\ell-3}$, $\alpha_{\ell-1}$) while fixing all the other $\beta_k$. \end{proof}
+
+The following lemma is an analogue of Proposition~1 of~\cite{Nik07}.
+\begin{lemma}\label{lemma:nikolov-type-dl}
+Let $\Phi=\rD_\ell$, $\ell\geq 2$ and let $I$ be an ideal of a  commutative ring $R$.
+There exist an element $y\in\E(\Phi, R)$ and an element $w\in\widetilde{W}(\Phi)$ such that $\U(\Sigma_\ell^+, I)\subset[\U(\Delta_\ell^-, I), y]\cdot{}^w\!\U(\Delta_\ell^+, I)$.
+\end{lemma}
+\begin{proof}
+Since $\U(\Sigma_\ell^+, I)$ is abelian, we can decompose it as $\U(\Sigma_\ell^+, I)=\U(\Sigma_\ell^+\setminus B, I) \cdot \U(B, I)$. 
+Set $y=\prod_{\beta\in B}x_\beta(1)$. 
+We will now show by induction on $\ell$ that 
+\begin{equation}\label{eq:ind-stat} \U(\Sigma_\ell^+\setminus B, I)\subset[\U(\Delta_\ell^-, I), y]\cdot\U(B, I). \end{equation}
+The induction base in the cases $\ell=2, 3$ is trivial.
+
+Notice that $\beta_1$ is the only root of $\Phi$ satisfying $m_2(\beta_1)=2$, therefore the commutator formula~\eqref{rel:CCF} implies
+\[ \bigl[\U(\Delta_2^-, I), x_{\beta_1}(1)\bigr]=1. \]
+There is no root of the form $\gamma=\alpha+\beta$ with $\alpha\in\Sigma_2^-\cap\Delta_\ell$ and $\beta\in B\setminus\{\beta_1\}$, because such a root $\gamma$ must satisfy $m_2(\gamma)=-1$ and $m_\ell(\gamma)=1$. Thus~\eqref{rel:CCF} gives
+\[\Bigl[\U(\Sigma_2^-\cap\Delta_\ell, I), \prod_{i\neq1}x_{\beta_i}(1)\Bigr]=1. \]
+Since $B\setminus\{\beta_1\}\subset\Sigma_\ell^+\cap\Delta_2$, the above two identities imply
+\[ \Bigl[ \U(\Sigma_2^-\cap\Delta_\ell, I)\cdot\U(\Delta_{2, \ell}^-, I), x_{\beta_1}(1)\cdot\prod_{i\neq1}x_{\beta_i}(1) \Bigr] \equiv \bigl[ \U(\Sigma_2^-\cap\Delta_\ell, I), x_{\beta_1}(1) \bigr] \bmod \U(\Sigma_\ell^+\cap\Delta_2, I). \]
+Take an element $u\in\U(\Sigma_2^-\cap\Delta_\ell, I)$ and decompose it as $u=vw$, where $v\in\U(\Sigma_1^-\cap\Sigma_2^-\cap\Delta_\ell, I)$ and $w\in\U(\Sigma_2^-\cap\Delta_{1, \ell}, I)$.
+Using the identity
+\begin{equation}\label{eq:comm-ab-c}
+[ab, c]={}^a[b, c]\cdot[a, c], 
+\end{equation}
+we can rewrite
+\[ [vw, x_{\beta_1}(1)] = {}^v[w, x_{\beta_1}(1)]\cdot[v, x_{\beta_1}(1)].  \]
+Since $\U(\Sigma_1^-\cap\Sigma_2^-\cap\Delta_\ell, I)$ and $\U(\Sigma_2^-\cap\Delta_{1, \ell}, I)$ are abelian, it is easy to see that
+\[ [v, x_{\beta_1}(1)]\in\U(\Sigma_2^+\cap\Sigma_\ell^+\cap\Delta_1, I), \quad [w, x_{\beta_1}(1)]\in\U((\Sigma_1^+\cap\Sigma_\ell^+)\setminus\{\beta_1\}, I). \]
+Every element of $\U(\Sigma_2^+\cap\Sigma_\ell^+\cap\Delta_1, I)$ (resp. $\U(\Sigma_1^+\cap\Sigma_\ell^+\setminus\{\beta_1\}, I)$) can be expressed as such a commutator for a suitable choice of $v$ (resp. $w$).
+Indeed, set $v=x_\gamma(\xi_\gamma)\cdot v'$, $\gamma=-\alpha_1-\alpha_2$, $v' \in \U(\Sigma_1^- \cap \Sigma_2^- \cap \Delta_\ell \setminus \{\gamma\}, I)$.
+Using relation \eqref{eq:comm-ab-c} and the fact that $X_\gamma(I)$ commutes with $\U(\Sigma_2^+\cap\Delta_1, I)$ we get that:
+\begin{multline*}
+[v, x_{\beta_1}(1)] = [x_\gamma(\xi_\gamma)\cdot v', x_{\beta_1}(1)] = {}^{x_\gamma(\xi_\alpha)}[v', x_{\beta_1}(1)] \cdot [x_\gamma(\xi_\gamma), x_{\beta_1}(1)] = \\
+= [v', x_{\beta_1}(1)]\cdot x_{\beta_1-\alpha_1-\alpha_2}(\xi_\gamma) = \ldots = \prod_{\mathclap{\alpha\in\Sigma_1^- \cap \Sigma_2^- \cap \Delta_\ell}} x_{\beta_1+\alpha}(\xi_\alpha).
+ \end{multline*}
+It remains to note that $\Sigma_2^+ \cap \Sigma_\ell^+ \cap \Delta_1 = \beta_1 + \Sigma_1^- \cap \Sigma_2^- \cap \Delta_\ell$. The same argument works for $[w, x_{\beta_1}(1)]$.
+Direct calculation using the commutator formula shows that
+\[ {}^v\!\U(\Sigma_1^+\cap\Sigma_\ell^+\setminus\{\beta_1\}, I) \equiv \U(\Sigma_1^+\cap\Sigma_\ell^+\setminus\{\beta_1\}, I) \bmod \U(\Sigma_\ell^+\cap\Delta_2, I). \]
+Summing up the above arguments, we get that
+\[ [\U(\Sigma_2^-, I)\cdot\U(\Delta_{2, \ell}^-, I), y] \equiv \U((\Sigma_{1, 2}^+\cap\Sigma_\ell^+)\setminus\{\beta_1\}) \bmod \U(\Sigma_\ell^+\cap\Delta_2, I), \]
+hence the inclusion~\eqref{eq:ind-stat} follows from the induction hypothesis (applied to $\Delta_{1, 2} \cong \rD_{\ell-2}$). 
+
+Finally, we have found $a\in\U(\Sigma_\ell^+\setminus B, I)$ and $b\in\U(\Delta_\ell^-, I)$
+such that $$a\in[b, y]\cdot\prod_{\beta\in B}X_\beta\subset[\U(\Delta_\ell^-, I), y]\cdot\U(B, I).$$
+Now the assertion of the lemma follows from~\cref{lemma:nikolov-weyl}.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:spin-sln-prod}]
+Set $L = \E(\Delta_\ell, R, I) \leq \E(\rD_\ell, R, I)$ and denote by $\sigma$ the automorphism of $\G(\rD_\ell, R)$ induced by the sole diagram automorphism of the Dynkin diagram of $\rD_\ell$.
+By \cref{thm:DennisVaserstein} one has
+\begin{multline*}
+\E(\rD_\ell, R, I) = \EP_{\ell}(R, I)\cdot\U(\Sigma_{\ell-1}^- \cap \Sigma_{\ell}^-, I)\cdot\EP_{\ell-1}(R, I) = \\
+= L \cdot\U(\Sigma_\ell^+, I)\cdot\U(\Sigma_{\ell-1}^- \cap \Sigma_{\ell}^-, I)\cdot \big(L \cdot \U(\Sigma_\ell^+, I) \big)^\sigma.
+\end{multline*}  
+Now using \cref{lemma:nikolov-type-dl}, one can find $y_1, y_2\in\G(\rD_\ell, R)$ and $w_1, w_2\in\widetilde{W}(\rD_\ell)$ such that
+\begin{align*} & L \cdot \U(\Sigma_\ell^+, I) \subset L \cdot \U(\Delta_{\ell-1}^-, I) \cdot {}^{y_1}\!\U(\Delta_{\ell-1}^-, I) \cdot {}^{w_1}\!\U(\Delta_{\ell-1}^+, I), \\
+& \U(\Sigma_{\ell-1}^-\cap\Sigma_\ell^-, I) \subset \U(\Delta_\ell^+, I) \cdot {}^{y_2}\!\U(\Delta_\ell^+, I) \cdot {}^{w_2}\!\U(\Delta_\ell^-, I). \end{align*} 
+Thus $\E(\rD_\ell, R, I)$ is a product of at most $9$ conjugates of $L \cong \E(\rA_{\ell-1}, R, I)$. \end{proof}
 
 \printbibliography
 
