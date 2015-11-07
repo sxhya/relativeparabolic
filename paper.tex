@@ -1,19 +1,21 @@
 \documentclass[oneside, 12pt]{amsart}
-\usepackage{amscd, amsmath, amssymb, amsthm, amsfonts, amstext, geometry, verbatim, enumitem, graphicx, mathtools, xfrac, tikz-cd, microtype, nameref, thmtools, hyperref, cleveref}
+\usepackage{amscd, amsmath, amssymb, amsthm, amsfonts, amstext, geometry, verbatim, enumitem, graphicx, mathtools, xfrac, tikz-cd, microtype, nameref, thmtools}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage[capitalize]{cleveref}
 
 \hypersetup{
   pdfauthor={Sergey Sinchuk, Andrei Smolensky},
   pdftitle={Decompositions of congruence subgroups of Chevalley groups},  
+  colorlinks=true,
   urlcolor=blue}
 
-\usepackage[backend=bibtex, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
+\usepackage[hyperref=true, backend=bibtex, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
 \addbibresource{paper.bib}
 \renewbibmacro*{volume+number+eid}{\ifentrytype{article}{\- \iffieldundef{volume}{}{Vol.~\printfield{volume},}\iffieldundef{number}{}{ No.~\printfield{number},}}}
 \renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
 \newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
-\DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
 \DeclareFieldFormat[article, inproceedings, inbook, thesis]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
-%\renewcommand*{\bibfont}{\footnotesize}
+\renewcommand*{\bibfont}{\footnotesize}
 
 \oddsidemargin 5mm
 \marginparwidth 5mm
