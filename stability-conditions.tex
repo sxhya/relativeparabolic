@@ -81,20 +81,8 @@ This shows that no such $\mathfrak{m}$ may exist and, therefore, $\mathfrak{J}(a
 \end{proof}
 
 Obviously, the second statement of \cref{lemma:relative-asr-unimod} does not depend on $R$, hence, as suggested by the notation, $\asr(I)$ is independent of $R$.
-%As another corollary of \cref{lemma:relative-asr-unimod} we obtain the following reformulation of the absolute stable rank condition $\ASR_n(R)$.
-%\begin{cor}[A.~Bak, {cf.~\cite[\S~1]{Pl98}}] For a commutative ring $R$ the following statements are equivalent:
-%\begin{enumerate}
-% \item\label{asr_Stein} $R$ satisfies $\ASR_n(R)$;
-% \item\label{asr_Bak} For any \emph{unimodular} row $(a_1,\ldots,a_n,b,d)\in\Umd(n+2,R)$ there exist $c_1,\ldots,c_n\in R$ such that $(a_1+c_1d,\ldots,a_n+c_nd,b+td)$ is unimodular for all $t\in R$.
-%\end{enumerate}
-%\end{cor}
 
 Let $R$ be a commutative ring. We denote by $\Max(R)$ its \emph{maximum spectrum}, i.e. the set of maximal ideals of $R$, equipped with the Zariski topology. For a topological space $X$ denote by $\dim(X)$ its usual topological dimension.
-%The following result gives an upper estimate for the absolute stable rank (see~).
-%\begin{prop}\label{prop:asr-dimmax}
-%Let $R$ be a commutative ring whose maximum spectrum $\Max(R)$ can be covered with a finite family of subsets 
-%$X_1\ldots, X_m$ such that $\dim(X_i)\leqslant d$ for every $i$. Then $\asr(A)\leqslant d+1$.
-%\end{prop}
 From the definition of $\asr(I)$ and \cite[Theorem~2.3]{EO} (or~\cite[Theorem~3.7]{MKV}) it follows that
 \begin{equation} \label{sr-estimates} \sr(I)\leqslant\asr(I)\leqslant\asr(R)\leqslant \dim(\Max(R))+1\leqslant\dim(\Spec(R))+1. \end{equation}
 There exist examples of rings for which the first inequality in the above formula is strict.
@@ -103,12 +91,11 @@ On the other hand, \cite[Theorem~1.3]{MKV} shows that $\sr(R)=\asr(R)$ for any p
 \begin{example}
 From inequality~\eqref{sr-estimates} one concludes, in particular, that 
 \begin{itemize}
-%\item $\asr(R) = 1$ for every semilocal ring $R$;
+\item $\asr(R) = 1$ for every semilocal ring $R$;
 \item $\asr(R)\leqslant2$ for every Dedekind domain $R$;
 \item $\asr(A[x])\leqslant3$ for every locally principal ring $A$;
 \item $\asr(F[x_1,\ldots,x_n])\leqslant n+1$ for any field $F$.
 \end{itemize}
-%The last estimate further improves to $\sr(F[x_1, \ldots, x_n])\leqslant n$ for $F$ algebraic over a finite field (see~\cite[Corollary~17.4]{VS76}).
 For certain classes of fields there is also a lower estimate for $\sr(F[x_1, \ldots, x_n])$ which allows to compute precisely the value of both $\sr(R)$ and $\asr(R)$.
 For example, $\sr(F[x,y])=3$ for every $F$ with $\K_2^M(F)\neq0$ (see~\cite{Kru73}) and $\sr(F[x_1, \ldots, x_n])=n+1$ for $F\subseteq\mathbb{R}$, see~\cite[Theorem~8]{Va71}.
 Notice also that $\sr(\mathbb{Z}[x])=3$ (see \cite{GMV}) and $\sr(\mathbb{Z}[x_1,\ldots,x_n])=n+1$ for $n>1$ (see example after~\cite[Theorem~18.2]{VS76}).
@@ -123,8 +110,6 @@ Straightforward computation shows that the assertion of lemma holds for the matr
 \begin{equation*}
 a_{ij} = b_{ij} v_{j} + b_{ji} v_{i},\ j\neq i,\quad a_{ii} = b_{ii} v_{i} - \sum\limits_{\mathclap{\substack{j=1 \\ j\neq i}}}^\ell b_{ji} v_{j}. \qedhere
 \end{equation*}
-%$$(av)_k = \sum\limits_{i=1,\ i\neq k}^\ell \left( b_{ki} v_{i} + b_{ik} v_{k} \right)v_{i}  +
-%\left(b_{kk}v_{k} - \sum\limits_{i=1,\ i\neq k}^\ell b_{ik} v_{i}\right)v_{k} = \sum\limits_{i=1}^\ell b_{ki} v_{i}^2 = (bv')_k$$
 \end{proof}
 
 Let $v\in V=R^{2\ell}$ be a vector of the natural representation of $\G(\rD_\ell, R)$.
