@@ -115,7 +115,7 @@
 \newcommand\restr[2]{\ensuremath{\left.#1\right|_{#2}}}   
    
 \title [Decompositions of congruence subgroups of Chevalley groups] {Decompositions of congruence subgroups \\ of Chevalley groups}
-\keywords {parabolic decomposition, bounded generation, $\SL_2$-factorization, subsystem factorization. {\em Mathematical Subject Classification (2010):} 20G40, 20G35, 19B14}
+\keywords {parabolic decomposition, bounded generation, $\SL_2$-factorization, product decomposition. {\em Mathematical Subject Classification (2010):} 20G40, 20G35, 19B14}
 \author{Sergey Sinchuk}
 \author{Andrei Smolensky}
 \email{sinchukss {\it at} yandex.ru; andrei.smolensky {\it at} gmail.com}
@@ -169,11 +169,13 @@ We also note that the absolute case (i.\,e. $I=R$) of the theorem was treated by
 
 The next main result is the relative Dennis---Vaserstein decomposition, which holds for a broader class of rings as compared to \cref{thm:srRI1}.
 \begin{thm}\label{thm:DennisVaserstein}
-Let $\Phi \neq \rE_8$ be a reduced irreducible root system of rank $\ell$ and let $\{ r, s \}$ be a pair of distinct terminal vertices of the Dynkin diagram of $\Phi$. Denote the distance between $r$ and $s$ by $d$.
+Let $\Phi \neq \rE_8$ be a reduced irreducible root system of rank $\ell\geq 2$ and let $\{ r, s \}$ be a pair of distinct terminal vertices of the Dynkin diagram of $\Phi$. Denote the distance between $r$ and $s$ by $d$.
 Assume that $\Phi$, $I$ and $\{r, s\}$ satisfy either of the following assumptions:
 \begin{thmlist}
- \item $\asr(I) \leqslant d$ for $\Phi=\rF_4, \rE_\ell$ and $\{r, s\} = \{1, \ell \}$, 
- \item $\sr(I) \leqslant d$, in all other cases.
+ \item $\sr(I) \leqslant d$ for classical $\Phi$,
+ \item $\sr(I) \leqslant d$ for $\Phi=\rE_\ell$ with $\{r, s\} = \{ 2, \ell \}$.
+ \item $\asr(I) \leqslant d$ for $\Phi=\rE_\ell$ with $\{r, s\} = \{1, \ell \}$,
+ \item $\asr(I) \leqslant d$ for $\Phi=\rF_4$.
 \end{thmlist}
 Then $\E(\Phi, R, I) = \EP_r(R, I) \cdot \U(\Sigma^-_r \cap \Sigma^-_s, I) \cdot \EP_s(R, I).$ \end{thm}
 Even in the special case $I=R$ the above theorem contains several new cases as compared to~\cite[Theorems~2.5 and~4.1]{St78}.
@@ -642,7 +644,7 @@ Clearly, for $v'' = z_{-\alpha\ssub{2}}(-v'_2, 1)\cdot v'$ one has $v''_1=1$, he
 $g'=h_2 \cdot z_{-\alpha\ssub{2}}(-v'_2, 1) \cdot h_1 \cdot g$ fixes $v^+$. 
 Using the Levi decomposition we can write $g'=h \cdot y \cdot x \cdot g$ for some $y\in\U(\Sigma^-_\ell, I)$, $x \in \U(\Sigma^+_\ell, I)$, $h\in\E(\Delta_\ell, R, I)$.
 It is clear that $x$, $y$ are the desired elements.
-\end{proof}s
+\end{proof}
 
 \section{Relative parabolic factorizations} \label{sec:factorizations}
 In this section we formulate and prove the relative versions of the decompositions from~\cite{St78}, which will be the main technical tools throughout the next section.
@@ -825,7 +827,7 @@ which again implies the assertion of the lemma.
 \end{proof}
 
 \begin{proof}[Proof of \cref{thm:DennisVaserstein}]
-First of all, notice that in the case $\Phi=\rG_2$ the assertion of the theorem formally follows from \cref{thm:srRI1} and identities~\ref{rel:h-comm}--\ref{rel:h-w}.
+%First of all, notice that in the case $\Phi=\rG_2$ the assertion of the theorem formally follows from \cref{thm:srRI1} and identities~\ref{rel:h-comm}--\ref{rel:h-w}.
 Since the equality $A_{rs} = \E(\Phi, R, I)$ implies $A_{sr} = \E(\Phi, R, I)$, it suffices to consider only the following possibilities for $\Phi$, $s$, $r$:
 \begin{table}[htb]
 \[\begin{array}{l @{\qquad} l @{\qquad} c @{\quad} c @{\quad} c @{\qquad} c @{\qquad} c @{\qquad} c}
