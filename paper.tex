@@ -3,13 +3,15 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage[capitalize]{cleveref}
 
-\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.6}
 
 \hypersetup{
   pdfauthor={Sergey Sinchuk, Andrei Smolensky},
   pdftitle={Decompositions of congruence subgroups of Chevalley groups},  
   colorlinks=true,
-  urlcolor=darkblue}
+  urlcolor=darkblue,
+  linkcolor=darkblue,
+  citecolor=darkblue}
 
 \usepackage[hyperref=true, backend=bibtex, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
 \addbibresource{paper.bib}
@@ -112,7 +114,7 @@
    {_{\!\lower1.5pt\hbox{$\scriptscriptstyle #1$}}}}
    
 \title [Decompositions of congruence subgroups of Chevalley groups] {Decompositions of congruence subgroups \\ of Chevalley groups}
-\keywords {parabolic decomposition, bounded generation, $\SL_2$-factorization, product decomposition. {\em Mathematical Subject Classification (2010):} 20G40, 20G35, 19B14}
+\keywords {parabolic decomposition, bounded generation, $\SL_2$-factorization, subsystem factorization, product decomposition. {\em Mathematical Subject Classification (2010):} 20G40, 20G35, 19B14}
 \author{Sergey Sinchuk}
 \author{Andrei Smolensky}
 \email{sinchukss {\it at} yandex.ru; andrei.smolensky {\it at} gmail.com}
@@ -166,7 +168,7 @@ We also note that the absolute case (i.\,e. $I=R$) of the theorem was treated by
 
 The next main result is the relative Dennis---Vaserstein decomposition, which holds for a broader class of rings as compared to \cref{thm:srRI1}.
 \begin{thm}\label{thm:DennisVaserstein}
-Let $\Phi \neq \rE_8$ be a reduced irreducible root system of rank $\ell\geq 2$ and let $\{ r, s \}$ be a pair of distinct terminal vertices of the Dynkin diagram of $\Phi$. Denote the distance between $r$ and $s$ by $d$.
+Let $\Phi \neq \rE_8$ be a reduced irreducible root system of rank $\ell\geqslant 2$ and let $\{ r, s \}$ be a pair of distinct terminal vertices of the Dynkin diagram of $\Phi$. Denote the distance between $r$ and $s$ by $d$.
 Assume that $\Phi$, $I$ and $\{r, s\}$ satisfy either of the following assumptions:
 \begin{thmlist}
  \item $\sr(I) \leqslant d$ for classical $\Phi$,
