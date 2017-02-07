@@ -127,7 +127,7 @@
 \begin{document}
 
 \begin{abstract} 
-We formulate and prove relative versions of several classical ``parabolic'' decompositions known in the theory of Chevalley groups over commutative rings.
+We formulate and prove relative versions of several decompositions known in the theory of Chevalley groups over commutative rings.
 We apply them to construct new factorizations in terms of $\SL_2$ and $\SL_n$ subgroups and to obtain upper estimates on the width of principal congruence subgroups in terms of Tits---Vaserstein generators.
 Some of our results are new even in the absolute case and were previously studied only for groups over finite fields.
 \end{abstract}
@@ -135,10 +135,13 @@ Some of our results are new even in the absolute case and were previously studie
 \maketitle
 
 \section{Introduction}\label{sec:intro}
-The aim of the present paper is to extend various decomposition of Chevalley groups and their elementary subgroups to their principal congruence subgroups and relative elementary subgroups. We focus on the so-called ``parabolic decompositions'', i.e. decompositions involving parabolic and unipotent factors. The main result is the following
-
-\begin{restatable*}[Dennis---Vaserstein decomposition]{thm}{ThmDennisVaserstein}\label{thm:DennisVaserstein}
-Let $\Phi \neq \rE_8$ be a reduced irreducible root system of rank $\ell\geqslant 2$ and let $\{ r, s \}$ be a pair of distinct terminal vertices of the Dynkin diagram of $\Phi$. Denote the distance between $r$ and $s$ by $d$.
+The aim of this paper is to generalize several decompositions of Chevalley groups over rings 
+ to their principal congruence subgroups and relative elementary subgroups.
+We focus on the so-called ``parabolic decompositions'', i.e. decompositions involving parabolic and unipotent factors. 
+One of our main results is the following theorem.
+\begin{thm}[Dennis---Vaserstein decomposition]\label{thm:DennisVaserstein}
+Let $\Phi \neq \rE_8$ be a reduced irreducible root system of rank $\ell\geqslant 2$ and let $\{ r, s \}$ be a pair of distinct terminal vertices of the Dynkin diagram of $\Phi$.
+Denote the distance between $r$ and $s$ by $d$.
 Assume that $\Phi$, $I$ and $\{r, s\}$ satisfy either of the following assumptions:
 \begin{thmlist}
  \item $\sr(I) \leqslant d$ for classical $\Phi$,
@@ -147,21 +150,23 @@ Assume that $\Phi$, $I$ and $\{r, s\}$ satisfy either of the following assumptio
  \item $\asr(I) \leqslant d$ for $\Phi=\rF_4$.
 \end{thmlist}
 Then $\E(\Phi, R, I) = \EP_r(R, I) \cdot \U(\Sigma^-_r \cap \Sigma^-_s, I) \cdot \EP_s(R, I).$
-\end{restatable*}
+\end{thm}
 Even in the special case $I=R$ the above theorem contains several new cases as compared to~\cite[Theorems~2.5 and~4.1]{St78}.
-The term ``Dennis---Vaserstein decomposition'' is due to A.~Suslin and M.~Tulenbaev \cite[Lemma~2.1]{ST76}.
+%The term ``Dennis---Vaserstein decomposition'' is due to A.~Suslin and M.~Tulenbaev \cite[Lemma~2.1]{ST76}.
 The condition $\asr(I) \leq d$ is a relative version of the \emph{absolute stable range} condition of D.~Estes and J.~Ohm, which depends only on the ideal $I$ (see section~\ref{sec:rel-asr}).
+Another results of the paper are relative analogues of Gauss and Bass---Kolster decompositions (see~\cref{thm:srRI1,thm:BassKolster}).
 
-We also prove the relative analogues of Gauss and Bass---Kolster decompositions (\cref{thm:srRI1,thm:BassKolster}).
-
-We apply these decompositions to several problems. First, we investigate the factorizations of Chevalley groups in terms of their subsystem subgroups. One of such factorizations if a decomposition into the product of subgroups isomorphic to $\SL(2, R, I)$. We show in \cref{thm:SL2width} that for classical groups over rings satisfying assumptions close to the stable rank $\leqslant2$ there exist such factorizations of length having the leading term $3|\Phi^+|$ in case $\Phi=\rA_\ell, \rC_\ell$ and $4|\Phi^+|$ otherwise.
-
-Another is the decomposition in terms of subgroups of type $\rA_\ell$ of submaximal rank. We show that Dennis---Vaserstein decomposition can be of great help in this problem. Namely, we prove the following
-\begin{restatable*}{thm}{ThmSpinSLnProd}\label{thm:spin-sln-prod}
+We apply our decompositions to several problems. First, we obtain upper estimates of the number of factors in the presentation of a Chevalley group as a product of its subsystem subgroups of type $\rA_\ell$.
+For example, in~\cref{thm:SL2width} such estimates are given for relative classical groups and products of subgroups $\SL(2, R, I)$.
+% For classical groups over rings satisfying suitable dimension assumptions we show the existence of 
+% factorizations with $3|\Phi^+|$ in case $\Phi=\rA_\ell, \rC_\ell$ and $4|\Phi^+|$ otherwise, see
+Our another result is the decomposition in terms of subgroups of type $\rA_\ell$ of submaximal rank. 
+Using~\cref{thm:DennisVaserstein} we prove the following theorem inspired by the main result of~\cite{Nik07}.
+\begin{thm}\label{thm:spin-sln-prod}
 Assume that $\sr(I) \leqslant 2$. Then the group $\Epin(2\ell, R, I)=\E(\rD_\ell, R, I)$ is a product of at most $9$ regularly embedded subgroups of type $\rA_{\ell-1}$.
-\end{restatable*}
+\end{thm}
 
-Then we obtain the upper bounds on the width of $\E(\Phi, R, I)$ in terms of Vaserstein---Tits generators for various rings (\cref{thm:width}). 
+Finally, we obtain upper bounds on the width of $\E(\Phi, R, I)$ with respect to Vaserstein---Tits generators for several important classes of small-dimensional rings (see~\cref{thm:width}). 
 
 \section{Preliminaries}\label{sec:preliminaries}
 %Let us now fix the notations used in the paper.
@@ -655,8 +660,7 @@ Assume, for example, the latter. By the Levi decomposition we have $\U(\Sigma_r^
 which again implies the assertion of the lemma.
 \end{proof}
 
-\ThmDennisVaserstein
-\begin{proof} %[Proof of \cref{thm:DennisVaserstein}]
+\begin{proof} [Proof of \cref{thm:DennisVaserstein}]
 Since the equality $A_{rs} = \E(\Phi, R, I)$ implies $A_{sr} = \E(\Phi, R, I)$, it suffices to consider only the following possibilities for $\Phi$, $s$, $r$:
 \begin{table}[htb]
 \[\begin{array}{l @{\qquad} l @{\qquad} c @{\quad} c @{\quad} c @{\qquad} c @{\qquad} c @{\qquad} c}
@@ -1040,8 +1044,8 @@ such that $$a\in[b, y]\cdot\prod_{\beta\in B}X_\beta\subset[\U(\Delta_\ell^-, I)
 Now the assertion of the lemma follows from~\cref{lemma:nikolov-weyl}.
 \end{proof}
 
-\ThmSpinSLnProd
-\begin{proof} %[Proof of \cref{thm:spin-sln-prod}]
+%\ThmSpinSLnProd
+\begin{proof} [Proof of \cref{thm:spin-sln-prod}]
 Set $L = \E(\Delta_\ell, R, I) \leq \E(\rD_\ell, R, I)$ and denote by $\sigma$ the automorphism of $\G(\rD_\ell, R)$ induced by the 
 diagram automorphism of $\rD_\ell$ swapping $\alpha_\ell$ and $\alpha_{\ell-1}$.
 By \cref{thm:DennisVaserstein} one has
@@ -1167,7 +1171,7 @@ Now for $g_3=g_2\cdot z_{12}\left(a^2-ab, 1\right)$ we have that
 \end{align*}
 Thus $g_4\cdot x_{21}(*)\in\SL\left(2, \mathcal{O}_S, II^{\indexbox{2}}\right)$ is contained in $\E(\rC_\ell, I)$ by \cref{lemma:Stepanov-ideal} and therefore can be expressed as a bounded product of $x_\alpha$.
 \end{proof}
-The above lemmas together with \cref{cor:bass-kolster-count,thm:Gauss} give the following
+The above lemmas together with \cref{cor:bass-kolster-count,thm:Gauss} give the following.
 \begin{thm}\label{thm:width} Let $I$ be an ideal of a commutative ring $R$.
 \begin{thmlist}
 \item If $R=\mathcal{O}_S$ is a Dedekind ring of arithmetic type posessing a real embedding and $\Phi$ is classical of rank $\geqslant2$, then 
@@ -1181,6 +1185,7 @@ $W(\G(\Phi, R, I), \mathcal{Z}(\Sigma_\ell^-))$ is finite;
 \end{alignat*}
 \end{thmlist}
 \end{thm}
+Here $W(G, X)$ denotes \emph{the width of $G$ with respect to a generating set $X$}, i.\,e. the smallest natural number $N$ such that every element of $G$ is a product of at most $N$ elements of $X$.
 %\begin{proof}[Proof of \cref{thm:width}] The second assertion of the theorem is contained in \cref{lemma:srRI1_width}.
 %The the first and the third assertions follow from \cref{lemma:Z1p,lemma:width-dedekind}. \end{proof}
 
