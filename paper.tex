@@ -962,7 +962,7 @@ Then the principal congruence subgroup $\G(\Phi, R, I)$ can be presented as a pr
  Since a total of $\ell-1$ reductions are used, we get the estimate $N \leq N' - 3(\ell - 1) + 1$ and the assertion of \cref{thm:SL2width} follows.
 \end{proof}
 
-We will now turn our our attention to the factorizations in terms of large rank subsystem subgroups in order to prove \cref{thm:spin-sln-prod}.
+We now turn our attention to the proof of \cref{thm:spin-sln-prod} and the study of factorizations in terms of subsystem subgroups of large rank.
 
 Consider the decreasing chain $\Phi_k$, $k=1, \ldots, \lfloor \ell/2 \rfloor$ of root subsystems of $\Phi=\rD_\ell$ defined as follows.
 If $2k \neq \ell$, let $\Phi_k$ be the subsystem of $\Phi$, spanned by the fundamental roots $\alpha_{2k-1}, \ldots, \alpha_\ell$.
@@ -1060,7 +1060,9 @@ Now using \cref{lemma:nikolov-type-dl}, one can find $y_1, y_2\in\G(\rD_\ell, R)
 Thus $\E(\rD_\ell, R, I)$ is a product of at most $9$ subgroups isomorphic to $\E(\rA_{\ell-1}, R, I)$. \end{proof}
 
 \subsection{Bounded generation}\label{sec:boundgen}
-We now give an application of the parabolic factorizations to the problem of bounded generation.
+In this section we apply parabolic factorizations to the problem of bounded generation.
+The main result of this section gives an upper bound on the width of $\E(\Phi, R)$ in terms of Tits generators and is, thus,
+ a quantitative analogue of \cite[Theorem~3.4]{S} and a relative analogue of the results of~\cite{VseUnitrZ1p, VavSmSuUnitrEng}.
  
 \begin{lemma}\label{lemma:srRI1_width}
 In the assumptions of \cref{thm:srRI1} the width of $\E(\Phi,R,I)$ with respect to $\mathcal{Z}(\Pi)$ does not exceed $3\left|\Phi^+\right|+2\rk\Phi-1$.
@@ -1132,7 +1134,7 @@ We find ourselves in the situation of the previous case, therefore, we can write
 Finally, expressing $h=x_{21}\cdot z_{21}\cdot x_{12}$ as in \eqref{eq:rel-tor-elementary}, we get that $g=x_{21} \cdot z_{21} \cdot x_{12} \cdot x_{21} \cdot z_{21} \cdot x_{12}$.
 \end{proof}
 
-For the rest of this subsection $k$ denotes a global field. We assume that there is some finite set of places $S$ chosen on $k$. 
+For the rest of this subsection $k$ denotes a global field and $S$ some finite set of places on $k$. 
 Let $\mathcal{O}_S$ be the Dedekind ring of arithmetic type defined by $S$ and let $I$ be an ideal of $\mathcal{O}_S$.
 
 \begin{lemma}\label{lemma:width-dedekind}
@@ -1141,7 +1143,7 @@ If $k$ has a real embedding, then $\G(\Phi, \mathcal{O}_S, I)$ has finite width 
 \end{lemma}
 \begin{proof}
 First of all, notice that $\asr(I) \leqslant \asr(\mathcal{O}_S) \leqslant 2$. 
-By \cref{cor:bass-kolster-iterated} we can present any element 
+By \cref{cor:bass-kolster-iterated} we can write any element 
 of $G=\G(\Phi, \mathcal{O}_S, I)$ as a product of a finite number of generators from $\mathcal{Z}(\Sigma_\ell)$ and one element of 
 $G_0 = \G(\{\alpha_\ell, -\alpha_\ell\}, \mathcal{O}_S, I)\cong\SL(2, \mathcal{O}_S, I)$.
 Consequently, to prove the statement of the lemma it suffices to express every element 
@@ -1186,7 +1188,7 @@ $W(\G(\Phi, R, I), \mathcal{Z}(\Sigma_\ell^-))$ is finite;
 \end{alignat*}
 \end{thmlist}
 \end{thm}
-Here $W(G, X)$ denotes \emph{the width of $G$ with respect to a generating set $X$}, i.\,e. the smallest natural number $N$ such that every element of $G$ is a product of at most $N$ elements of $X$ and their inverses.
+Here $W(G, X)$ denotes \emph{the width of $G$ with respect to a generating set $X$}, i.\,e. the smallest natural number $N$ such that every element of $G$ is a product of at most $N$ elements of $X$ or their inverses.
 %\begin{proof}[Proof of \cref{thm:width}] The second assertion of the theorem is contained in \cref{lemma:srRI1_width}.
 %The the first and the third assertions follow from \cref{lemma:Z1p,lemma:width-dedekind}. \end{proof}
 
