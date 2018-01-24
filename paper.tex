@@ -391,17 +391,17 @@ Summarizing the above, we have found $g\in \EP_\ell(R, I)$ such that $v^{(4)}=g 
 and the assertion of the lemma immediately follows from the Levi decomposition. \end{proof}
 
 \begin{cor} \label{cor:embeddingBD}
- Denote by $i$ the standard embedding $\G(\rB_{\ell-1}, R, I) \hookrightarrow \G(\rD_\ell, R, I)$. 
+ Denote by $i$ the standard embedding $\G(\rB_{\ell-1}, R) \hookrightarrow \G(\rD_\ell, R)$. 
  If $\asr(I) \leqslant \ell-1$, then for every $I$-unimodular column $v \in \Ums(2\ell, I)$ there exists $g \in \U(\Sigma_{\ell-1}^+, I) \leqslant \E(\rB_{\ell-1}, R, I)$ such that
  the upper half of the vector $i(g) \cdot v$ forms an $I$-unimodular column of height $\ell$.
 \end{cor}
 \begin{proof}
  The assertion follows from the fact that for every $u \in \U(\Sigma_\ell^+, I) \leqslant \E(\rD_\ell, R, I)$ one can find $u' \in \G(\Delta_\ell, R, I)$ such that $uu'$ lies in the image of $i$. 
- Indeed, denote by $\sigma$ the automorphism of $\E(\rD_\ell, R)$ induced by the symmetry of its Dynkin diagram, and decompose $u$ into the product $u_1 \cdot u_2$, where $u_1 \in \U(\Sigma_\ell^+\cap\Delta_{\ell-1}, I)$ and $u_2 \in \U(\Sigma_\ell^+ \cap \Sigma_{\ell-1}^+, I)$.
- Then one takes $u' = \sigma(u_1)$.
+ Indeed, denote by $\sigma$ the automorphism of $\E(\rD_\ell, R)$ induced by the symmetry of its Dynkin diagram.
+ Write $u$ as a product $u_1 \cdot u_2$, where $u_1 \in \U(\Sigma_\ell^+\cap\Delta_{\ell-1}, I)$ and $u_2 \in \U(\Sigma_\ell^+ \cap \Sigma_{\ell-1}^+, I)$ and set $u' = \sigma(u_1)$.
 
- Now by \cref{item:asrUnipD} one finds a suitable $u \in \U(\Sigma_\ell^+, I) \leqslant \E(\rD_\ell, R, I)$ which makes the upper half unimodular,
- and since $u'$ lies in $\G(\Delta_\ell, R, I)$, the upper half remains unimodular.
+ Now by \cref{item:asrUnipD} one finds a suitable $u \in \U(\Sigma_\ell^+, I) \leqslant \E(\rD_\ell, R, I)$ such that $(u\cdot v)^+$ is unimodular.
+ Since $u'$ lies in $\G(\Delta_\ell, R, I)$ the column $(uu' \cdot v)^+$ is also unimodular, as claimed.
 \end{proof}
 
 \begin{lemma} \label{lemma:uraction} 
