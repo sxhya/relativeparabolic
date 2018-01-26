@@ -136,14 +136,14 @@ The aim of this paper is to generalize several decompositions of Chevalley group
 We focus on the so-called ``parabolic decompositions'', i.e. decompositions involving parabolic and unipotent factors. 
 One of our main results is the following theorem.
 \begin{thm}[Dennis--Vaserstein decomposition]\label{thm:DennisVaserstein}
-Let $\Phi \neq \rE_8$ be a reduced irreducible root system of rank $\ell\geqslant 2$ and let $\{ r, s \}$ be a pair of distinct endnodes of the Dynkin diagram of $\Phi$.
+Let $\Phi$ be a either a classical irreducible root system of rank $\ell\geqslant 2$ or $\Phi=\rE_7, \rE_8$. 
+Let $\{ r, s \}$ be a pair of distinct endnodes of the Dynkin diagram of $\Phi$.
 Denote the distance between $r$ and $s$ by $d$.
 Assume that $\Phi$, $I$ and $\{r, s\}$ satisfy either of the following assumptions:
 \begin{thmlist}
  \item $\sr(I) \leqslant d$ for classical $\Phi$,
  \item $\sr(I) \leqslant d$ for $\Phi=\rE_\ell$ with $\{r, s\} = \{ 2, \ell \}$,
  \item $\asr(I) \leqslant d$ for $\Phi=\rE_\ell$ with $\{r, s\} = \{1, \ell \}$,
- \item $\asr(I) \leqslant d$ for $\Phi=\rF_4$.
 \end{thmlist}
 Then $\E(\Phi, R, I) = \EP_r(R, I) \cdot \U(\Sigma^-_r \cap \Sigma^-_s, I) \cdot \EP_s(R, I).$
 \end{thm}
@@ -390,20 +390,6 @@ Clearly $v^{(4)}_2 = v^{(4)}_1-1$, therefore $v^{(4)}_+$ is $I$-unimodular.
 Summarizing the above, we have found $g\in \EP_\ell(R, I)$ such that $v^{(4)}=g \cdot v$
 and the assertion of the lemma immediately follows from the Levi decomposition. \end{proof}
 
-\begin{cor} \label{cor:embeddingBD}
- Denote by $i$ the standard embedding $\G(\rB_{\ell-1}, R) \hookrightarrow \G(\rD_\ell, R)$. 
- If $\asr(I) \leqslant \ell-1$, then for every $I$-unimodular column $v \in \Ums(2\ell, I)$ there exists $g \in \U(\Sigma_{\ell-1}^+, I) \leqslant \E(\rB_{\ell-1}, R, I)$ such that
- the upper half of the vector $i(g) \cdot v$ forms an $I$-unimodular column of height $\ell$.
-\end{cor}
-\begin{proof}
- The assertion follows from the fact that for every $u \in \U(\Sigma_\ell^+, I) \leqslant \E(\rD_\ell, R, I)$ one can find $u' \in \G(\Delta_\ell, R, I)$ such that $uu'$ lies in the image of $i$. 
- Indeed, denote by $\sigma$ the automorphism of $\E(\rD_\ell, R)$ induced by the symmetry of its Dynkin diagram.
- Write $u$ as a product $u_1 \cdot u_2$, where $u_1 \in \U(\Sigma_\ell^+\cap\Delta_{\ell-1}, I)$ and $u_2 \in \U(\Sigma_\ell^+ \cap \Sigma_{\ell-1}^+, I)$ and set $u' = \sigma(u_1)$.
-
- Now by \cref{item:asrUnipD} one finds a suitable $u \in \U(\Sigma_\ell^+, I) \leqslant \E(\rD_\ell, R, I)$ such that $(u\cdot v)^+$ is unimodular.
- Since $u'$ lies in $\G(\Delta_\ell, R, I)$ the column $(uu' \cdot v)^+$ is also unimodular, as claimed.
-\end{proof}
-
 \begin{lemma} \label{lemma:uraction} 
 Let $\Phi=\rA_\ell, \rC_\ell, \rD_\ell$. Denote by $\pi$ the natural representation of $\G(\Phi, R)$ on $V=R^n$, $n=\ell+1, 2\ell, 2\ell$ respectively.
 Assume that one of the following assumptions holds:
@@ -475,8 +461,7 @@ Since the equality $A_{rs} = \E(\Phi, R, I)$ implies $A_{sr} = \E(\Phi, R, I)$, 
 \rD_\ell, \ \ell\geqslant 4           & 1    &\ell   & 2\ell          & \text{natural}       & \rA_{\ell-1}              & \ell           & 2  \\ 
 \rD_\ell, \ \ell\geqslant 4           & \ell &\ell-1 & 2^{\ell-1}     & \text{half-spinor}   & \rA_{\ell-1}              & \ell           & \ell-2  \\
 \rE_\ell, \ \ell=6, 7                  & \ell &2      & 27, 56         & \text{minimal}       & \rA_{\ell-1}              & \ell           & 3       \\ 
-\rE_\ell, \ \ell=6, 7                  & \ell &1      & 27, 56         & \text{minimal}       & \rD_{\ell-1}              & 2(\ell-1)      & \ell-1  \\
-\rF_4                                & 4    &1     & 26             & \text{minimal}       & \rC_3                     & 6              & 3\end{array}\]
+\rE_\ell, \ \ell=6, 7                  & \ell &1      & 27, 56         & \text{minimal}       & \rD_{\ell-1}              & 2(\ell-1)      & \ell-1  \end{array}\]
  \caption{List of representations used in the proof of \cref{thm:DennisVaserstein}.} \label{table:dv-reps}
 \end{table}
 
@@ -500,8 +485,8 @@ All the possibilities for $\Phi$, $s$ and $r$ fall into one of the following thr
 x_{1, 0}(ab) = [x_{1, 2}(a), x_{2, 0}(b)] \cdot x_{1, -2}(-a b^2).
 \end{equation*}
   Since $X_{2, 0}(R)$, $X_{1, -2}(R)$ and $X_{1,2}(R)$ are contained in $N_{rs}$, the inclusion $X_{1, 0}(R) \subseteq N_{rs}$ follows.
- \item \textit{Case $\Phi = \rC_\ell, \rF_4$.}
- We settle these remaining cases in \cref{lemma:DVST}, where we invoke the stability conditions one more time. 
+ \item \textit{Case $\Phi = \rC_\ell$.}
+ We settle the remaining case in \cref{lemma:DVST}, where we invoke the stability conditions one more time. 
  In fact, we prove a stronger assertion, namely that $N_{rs}$ contains $X_{-\alpha\ssub{s}}(R)$ and, consequently, that $N_{rs} = \E(\Phi, R)$.
 \end{enumerate}
 
@@ -562,23 +547,13 @@ Finally, since $[B, X_{-\alpha_r}(R)] \subseteq \U(\Sigma_r^-, R) \cap \E(\Phi, 
 \end{proof}
 
 \begin{lemma}\label{lemma:DVST}
-Assume that one of the following holds:
-\begin{lemlist}
- \item \label{lemma:DVcaseCl} $\Phi=\rC_\ell$ and $\sr(I) \leq \ell-1$;
- \item \label{lemma:DVcaseF4} $\Phi=\rF_4$ and $\asr(I) \leq 3$.
-\end{lemlist}
-Then one has $X_{-\alpha_s}(R) \subseteq N_{rs}$.
+Assume that $\Phi=\rC_\ell$ and $\sr(I) \leq \ell-1$, then $X_{-\alpha_s}(R) \subseteq N_{rs}$.
 \end{lemma}
 \begin{proof}
-Consider the subset $C \subseteq \EP_s(R, I)$, consisting of the elements satisfying the following condition:
-\begin{itemize}
- \item \textsc{Case $\Phi=\rC_\ell$.} Matrix entries $(g_{i, 2})$, $i=2, \ldots, \ell$ form an $I$-unimodular column of height $\ell-1$.
- \item \textsc{Case $\Phi=\rF_4$.} Matrix entries $(g_{\lambda, \lambda}, \ldots, g_{\lambda, \lambda - \alpha_3 - \alpha_2 - \alpha_1})$, where $\lambda = \varpi_4 - \alpha_4$ (see~\cite[Fig.~26]{PSV98}), 
-                                     form an $I$-unimodular column of height $4$. \end{itemize}
+Denoteb by $C$ the set consisting of elements $g \in \EP_s(R, I)$ for which matrix entries $(g_{i, 2})$, $i=2, \ldots, \ell$ form an $I$-unimodular column of height $\ell-1$
 
 Set $A' = \EP_\ell(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot C$.
-Applying \cref{item:asrUnipC} or \cref{cor:embeddingBD} (in the cases $\Phi=\rC_\ell$ or $\Phi=\rF_4$, respectively), %to the subgroup $\G(\Delta_s, R, I)$,
-we find for every $g \in \EP_s(R, I)$ an element $x \in \U(\Sigma_r^+ \cap \Delta_s, I)$ such that $xg \in C$.  
+Applying \cref{item:asrUnipC} we find for every $g \in \EP_s(R, I)$ an element $x \in \U(\Sigma_r^+ \cap \Delta_s, I)$ such that $xg \in C$.  
 Notice that the equality $A_{rs} = A'$ follows from this, indeed, for $g\in \EP_s(R, I)$ one has
 \begin{equation*} \EP_r(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot g \subseteq 
  \EP_r(R, I)x^{-1}  \cdot \U(\Sigma_s^-, I) \cdot xg \subseteq A'. \end{equation*}
