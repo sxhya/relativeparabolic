@@ -144,6 +144,7 @@ Assume that $\Phi$, $I$ and $\{r, s\}$ satisfy either of the following assumptio
  \item $\sr(I) \leqslant d$ for classical $\Phi$,
  \item $\sr(I) \leqslant d$ for $\Phi=\rE_\ell$ with $\{r, s\} = \{ 2, \ell \}$,
  \item $\asr(I) \leqslant d$ for $\Phi=\rE_\ell$ with $\{r, s\} = \{1, \ell \}$,
+ \item $\sr(I) \leqslant d$ for $\Phi = \rF_4$ with $\{r,s\} = \{1, 4\}$.
 \end{thmlist}
 Then $\E(\Phi, R, I) = \EP_r(R, I) \cdot \U(\Sigma^-_r \cap \Sigma^-_s, I) \cdot \EP_s(R, I).$
 \end{thm}
@@ -464,7 +465,8 @@ Since the equality $A_{rs} = \E(\Phi, R, I)$ implies $A_{sr} = \E(\Phi, R, I)$, 
 \rD_\ell, \ \ell\geqslant 4           & 1    &\ell   & 2\ell          & \text{natural}       & \rA_{\ell-1}              & \ell           & 2  \\ 
 \rD_\ell, \ \ell\geqslant 4           & \ell &\ell-1 & 2^{\ell-1}     & \text{half-spinor}   & \rA_{\ell-1}              & \ell           & \ell-2  \\
 \rE_\ell, \ \ell=6, 7                  & \ell &2      & 27, 56         & \text{minimal}       & \rA_{\ell-1}              & \ell           & 3       \\ 
-\rE_\ell, \ \ell=6, 7                  & \ell &1      & 27, 56         & \text{minimal}       & \rD_{\ell-1}              & 2(\ell-1)      & \ell-1  \end{array}\]
+\rE_\ell, \ \ell=6, 7                  & \ell &1      & 27, 56         & \text{minimal}       & \rD_{\ell-1}              & 2(\ell-1)      & \ell-1 \\
+\rF_4,                                 & 4    & 1     & 26              & \text{minimal}       & \rC_{3}                  & 6              & 3 \end{array}\]
  \caption{List of representations used in the proof of \cref{thm:DennisVaserstein}.} \label{table:dv-reps}
 \end{table}
 
@@ -472,7 +474,6 @@ Denote by $L_{rs}$ the monoid consisting of elements $g\in \E(\Phi, R, I)$ such 
 It is easy to see that $L_{rs}$ contains $\EP_r(R, I)$ and is normalized by $N_{rs}$, i.\,e. ${L_{rs}}^{N\ssub{rs}}\subseteq L_{rs}$. Indeed, for $g\in N_{rs}$, $h\in L_{rs}$ one has
 \begin{equation}\label{rel:NnormL} h^g \cdot A_{rs} = g^{-1} \cdot h \cdot g \cdot A_{rs} \cdot g^{-1} \cdot g \subseteq g^{-1} \cdot h \cdot A_{rs} \cdot g \subseteq {A_{rs}}^g \subseteq A_{rs}.\end{equation}
 
-First of all notice that $N_{rs}$ is sufficiently large.
 \cref{lemma:Stein_reduction} below guarantees that $N_{rs}$ contains the root subgroup $X_{-\alpha_{r}}(R)$, which together with~\cref{lemma:dv-normal} 
  implies that $\EP_s(R) \subseteq N_{rs}$ and consequently that $\EP_s(R, I) \subseteq L_{rs}$. Indeed for $g\in \EP_s(R, I) \subseteq \EP_s(R)$ one has
 $g \cdot L_{rs} = g \cdot L_{rs} \cdot g^{-1} \cdot g \subseteq L_{rs} \cdot g \subseteq L_{rs}.$
@@ -490,20 +491,30 @@ All the possibilities for $\Phi$, $s$ and $r$ fall into one of the following thr
   Since $\widetilde{W}(\Delta_s) \subseteq \E(\Delta_s, R) \subseteq N_{rs}$ and $X_{-\alpha_s}(I) \subseteq \EP_r(R, I) \subseteq L_{rs}$,
    the required inclusion $\U(\Sigma_s^-, I) \subseteq L_{rs}$ follows from \cref{item-trans2}.  
  \item \textit{Case $\Phi = \rB_\ell$, $s=1$, $r=\ell$.} 
-  The argument from the previous case shows that $L_{\ell,1}$ contains root subgroups $X_\alpha(I)$, where $\alpha$ varies over the long roots of $\Sigma_1^-$. 
-  The inclusion $X_{0, 1}(I) \subseteq L_{\ell, 1}$ for the remaining short root follows from inclusions $X_{-1, 2}(I) \cup X_{2, 1}(I) \subseteq L_{\ell,1}$, $X_{2, 0}(R) \subseteq N_{\ell,1}$
-  using Chevalley commutator formula $x_{0, 1}(-ab) = [x_{-1,2}(a),\, x_{2,0}(b)] \cdot x_{2,1}(ab^2).$
+  The argument from the previous case shows that $L_{rs}$ contains root subgroups $X_\alpha(I)$, where $\alpha$ varies over the long roots of $\Sigma_1^-$.
+  Consider the following two roots of $\Phi$:
+  \begin{equation}\nonumber \beta = \alpha_2 + \ldots + \alpha_\ell,\ \gamma = -\alpha_1 - 2\alpha_2 - \ldots -2\alpha_\ell.\end{equation}
+  We need to verify the inclusion $X_{\beta+\gamma}(I) \subseteq L_{rs}$ for the remaining short root of $\Sigma_1^-$.
+  But the latter follows from $X_{\gamma}(I) \cup X_{-\alpha_1}(I) \subseteq L_{rs}$, $X_{\beta}(R) \subseteq N_{rs}$ using Chevalley commutator formula:
+  \begin{equation} \label{eq:CCF} x_{\beta+\gamma}(-ab) = [x_{\gamma}(a),\, x_{\beta}(b)] \cdot x_{\gamma + 2\beta}(ab^2). \end{equation}
+ \item \textit{Case $\Phi = \rF_4$, $s=4$, $r=1$.} In this case there are three possibilities for the $s$-shape and length of a root from $\Sigma_4^-$: 
+ \begin{itemize}
+  \item $\shape(s, \alpha) = 1$, $\alpha$ is short (there are 8 such roots);
+  \item $\shape(s, \alpha) = 2$, $\alpha$ is long (there are 6 such roots);
+  \item $\shape(s, \alpha) = 2$, $\alpha$ is short (there is only one such root: $\delta = -\alpha_1 -2\alpha_2-3\alpha_3-2\alpha_4$).
+ \end{itemize}
+ Since $\Delta_r \cap \Sigma_s^-$ contains roots of the first two types, we have the neccessary inclusions for the root subgroups of corresponding type via the same argument as above.
+ To verify the inclusion for the remaining short root subgroup invoke~\eqref{eq:CCF} with $\beta = \alpha_2 + \alpha_3,\ \gamma = -\alpha_{\mathrm{max}}$. 
  \item \textit{Case $\Phi = \rC_\ell$, $s=1$, $r=\ell$.} 
-  Similarly, one can show that $L_{\ell,1}$ contains $X_\alpha(I)$ for all short $\alpha \in \Sigma_1^-$.
-  However, the inclusion $X_{-1, 1}(I) \subseteq L_{\ell, 1}$ for the remaining long root does not immediately follow from commutator formulae.
-  To verify it we invoke stability conditions once again.
-  From~\cref{lemma:DVST} we obtain that $N_{\ell, 1}$ contains $X_{-\alpha\ssub{1}}(R)$ and therefore coincides with the whole $\E(\Phi, R)$, which gives the required assertion.
+  Similarly, one can show that $L_{rs}$ contains $X_\alpha(I)$ for all short $\alpha \in \Sigma_1^-$.
+  However, the inclusion $X_{-1, 1}(I) \subseteq L_{rs}$ for the remaining long root does not immediately follow from commutator formulae and to verify it we need to invoke stability conditions once again.
+  From~\cref{lemma:DVST} we obtain that $N_{rs}$ contains $X_{-\alpha_1}(R)$ and therefore coincides with $\E(\Phi, R)$, which gives the required assertion.
 \end{enumerate}
 
 Thus, we have just shown that $\mathcal{X}\subseteq L_{rs}$. 
 Recall from~\cite[Theorem~3.4]{S} that the group $\E(\Phi, R, I)$ is generated by $\mathcal{Z}(\Sigma_s^-)$.
 On the other hand, from $\mathcal{Z}(\Sigma_s^-) \subseteq \mathcal{X}^{\EP_s(R)} \subseteq L_{rs}^{N_{rs}} \subseteq L_{rs}$ we conclude that 
- $\E(\Phi, R, I) \subseteq L_{rs}$, which implies the assertion of the theorem.
+ $\E(\Phi, R, I) \subseteq L_{rs}$, which completes the proof.
 %Thus, to prove our assertion it suffices to show that $L_{rs}$ contains $\mathcal{Z}(\Sigma_s^-)$.
 %From the inclusion  and \eqref{rel:NnormL} it follows that we only need to verify the inclusion $\mathcal{X} \subseteq L_{rs}$.
 %In turn, the last inclusion follows from the same transitivity argument as above if we use the fact that $X_\alpha(I) \subseteq \EP_r(R, I) \subseteq L_{rs}$ for $\alpha \in \Delta_r \cup \Sigma_r$.
