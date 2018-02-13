@@ -134,8 +134,9 @@ Let $\Phi$ be an irreducible root system of rank $\ell\geqslant 2$ and $\{ r, s 
 Denote by $d$ the distance between $r$ and $s$ on the Dynkin diagram.
 Assume that $\Phi$, $I$ and $\{r, s\}$ satisfy either of the following assumptions:
 \begin{thmlist}
- \item $\asr(I) \leqslant d$ for $\Phi=\rE_\ell$ with $\{r, s\} = \{1, \ell \}$,
- \item $\sr(I) \leqslant d$ otherwise.
+ \item $\sr(I) \leqslant d$ for $\Phi$ classical or $\Phi=\rG_2, \rF_4$;
+ \item $\sr(I) \leqslant d$ for $\Phi=\rE_6,\rE_7$ with $\{r, s\} = \{2, \ell\}$;
+ \item $\asr(I) \leqslant d$ for $\Phi=\rE_6,\rE_7$ with $\{r, s\} = \{1, \ell \}$, 
 \end{thmlist}
 Then $\E(\Phi, R, I) = \EP_r(R, I) \cdot \U(\Sigma^-_r \cap \Sigma^-_s, I) \cdot \EP_s(R, I).$
 \end{thm}
@@ -433,12 +434,64 @@ $g \cdot A = g \cdot A \cdot g^{-1} \cdot g \subseteq A \cdot g \subseteq A,$ wh
 \end{proof}
 \end{comment}
 
+\subsection{Relative Gauss decomposition}\label{sec:gauss}
+The proof of the Gauss decomposition presented below is similar to the proof in the absolute case (cf.~\cite[Theorem~5.1]{Sm12}).
+
+\begin{prop} \label{thm:Gauss}
+Let $\Phi$ be a reduced irreducible root system of rank $\ell > 1$ and let $\Delta_k$, $\Delta_l$ be
+the reductive subsystems of $\Phi$ corresponding to a pair of distinct simple roots $\alpha_k$, $\alpha_l \in \Pi$.
+Suppose that both relative elementary subgroups $\E(\Delta_i, R, I)$, $i=k, l$ admit Gauss decomposition:
+\[ \E(\Delta_i, R, I) = \Hh(\Delta_i, R, I) \cdot \U(\Delta^+_i, I) \cdot \U(\Delta^-_i, I) \cdot \U(\Delta^+_i, I), \quad i=k, l. \]
+Then $\E(\Phi, R, I)$ also admits Gauss decomposition:
+\begin{equation} \label{eq:gauss1} \E(\Phi, R, I) = \Hh(\Phi, R, I) \cdot \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot \U(\Phi^+, I). \end{equation}
+\end{prop}
+\begin{proof}
+For a closed subset of roots $S \subseteq \Phi^+$ set $A(S, I) = \U(S, I) \cdot \U(-S, I) \cdot \U(S, I)$ (here by $-S$ we denote the corresponding subset of opposite roots).
+Notice that from Levi decomposition it follows that $A(\Phi^+, I) = A(\Delta_i^+, I) \cdot A(\Sigma_i^+, I)$.
+
+Denote by $A$ the product of subgroups in the right-hand side of~\eqref{eq:gauss1}.
+First of all, notice that for $h \in \Hh(\Phi, R, I)$, $\beta \in \Phi$ and $\xi \in R$ one has $x_\beta(\xi)^h = x_\beta(\xi + s\xi)$ for some $s\in I$.
+From this and the assumption of the proposition we obtain for $\alpha \in \Delta_k \cup \Delta_l$ that
+\begin{multline} \nonumber
+ A^{x_\alpha(\xi)} = (\Hh(\Phi, R, I) \cdot A(\Phi^+, I))^{X_\alpha(R)} \subseteq (\Hh(\Phi, R, I) \cdot \E(\Delta_i, R, I) \cdot A(\Sigma_i^+, I))^{x_\alpha(\xi)} \subseteq \\
+  \subseteq \Hh(\Phi, R, I) X_{\alpha}(I) \cdot \E(\Delta_i, R, I) \cdot A(\Sigma_i^+, I) \subseteq \Hh(\Phi, R, I) \cdot \Hh(\Delta_i, R, I) A(\Delta_i^+, I) \cdot A(\Sigma_i^+, I) \subseteq A.
+\end{multline}
+On the other hand, for $\beta \in \Phi^+$ we have
+\begin{equation} \nonumber
+ X_{\beta}(I) \cdot A \subseteq \Hh(\Phi, R, I) \cdot X_{\beta}(I) A(\Phi^+, I) \subseteq A.
+\end{equation}
+Thus, $A$ is normalized by root subgroups $X_\alpha(R)$, $\alpha \in \Delta_k \cup \Delta_l$ and therefore is normalized by $\E(\Phi, R)$.
+On the other hand, from $\U(\Phi^+, I) \cdot A \subseteq A$ and~\cref{lem:LN} we conclude that $\mathcal{X} \cdot A \subseteq A$ and hence
+ that $\E(\Phi, R, I) \cdot A \subseteq A$.
+\end{proof}
+
+\begin{thm}\label{thm:srRI1}
+Let $\Phi$ be a root system, let $I$ be an ideal of an arbitrary commutative ring $R$, and assume that $\sr(I)=1$.
+Then the relative elementary Chevalley group $\E(\Phi, R, I)$ admits Gauss decomposition:
+\[ \E(\Phi, R, I) = \Hh(\Phi, R, I) \cdot \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot \U(\Phi^+, I). \]
+\end{thm}
+\begin{proof}
+In view of \cref{thm:Gauss} it suffices to show that Gauss decomposition holds in the special case $\Phi=\rA_1$.
+Let $A=\begin{psmallmatrix}a & b \\ c & d\end{psmallmatrix}$ be an element of $\SL(2, R, I)$.
+The first column of $A$ is $I$-unimodular, therefore there exists $z\in I$ such that $a+cz\in R^*$.
+Multiplying $A$ on the left by $x_{12}(z)$, we get a matrix $A'=x_{12}(z)\cdot A=\begin{psmallmatrix}a' & b' \\ c & d\end{psmallmatrix}$ with invertible element $a'$ in the top-left corner.
+After multiplying $A'$ on the left by $x_{21}(-c/a')$ and on the right by $x_{12}(-b'/a')$ we get a diagonal matrix. 
+Thus we have obtained a relative Gauss decomposition for $A$:
+\begin{equation*}
+A=x_{12}(-z)\cdot x_{21}(c/a')\cdot
+\begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
+\cdot x_{12}(b'/a')=x_{12}(-z)\cdot
+\begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
+\cdot x_{21}(y) \cdot x_{12}(b'/a'), 
+\end{equation*}
+where $\varepsilon\in 1+I$ and $y\in I$. \end{proof}
+
 \subsection{Relative Dennis--Vaserstein decompositions}\label{sec:dennis-vaserstein}
 Let $\Phi$ be an irreducible root system of rank $\ell\geq 2$.
 Let $\{r, s\}$ be the indices of a pair of distinct endnodes of the Dynkin diagram of $\Phi$.
 
-Before we proceed with the proof of~\cref{thm:DennisVaserstein} let us remark that in the special case $\ell=2$
- $\E(\Phi, R, I)$ admits Gauss decomposition (see~\cref{thm:srRI1} below).
+Before we proceed with the proof of~\cref{thm:DennisVaserstein} let us remark that in the special case $\ell=2$, $\sr(I)\leq 1$
+ we already known that $\E(\Phi, R, I)$ admits Gauss decomposition.
 It is not hard to see that Dennis--Vaserstein decomposition follows from Gauss decomposition, 
  therefore, in the sequel we may assume, without loss of generality, that $\ell > 2$.
 
@@ -455,15 +508,14 @@ Notice that if the equality $A_{rs} = \E(\Phi, R, I)$ implies the ``symmetric'' 
 
 \begin{table}[htb]
 \[\begin{array}{l @{\qquad} l @{\qquad} c @{\quad} c @{\quad} c @{\qquad} c @{\qquad} c @{\qquad} c}
-\Phi                                 & s    &r      & |\Lambda(\pi)| & \text{type of $\pi$} & \text{type of $\Delta_r$} & |\Lambda(\pi')|& |\Gamma|  \\ \hline\vphantom{\Bigl(}
+\Phi                                  & s    &r      & |\Lambda(\pi)| & \text{type of $\pi$} & \text{type of $\Delta_r$} & |\Lambda(\pi')|& |\Gamma|  \\ \hline\vphantom{\Bigl(}
 \rA_\ell, \ \ell\geqslant 2           & 1    &\ell   & \ell+1         & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\     
 \rB_\ell, \ \ell\geqslant 2           & 1    &\ell   & 2\ell+1        & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\     
 \rC_\ell, \ \ell\geqslant 2           & 1    &\ell   & 2\ell          & \text{natural}       & \rA_{\ell-1}              & \ell           & 1  \\
 \rD_\ell, \ \ell\geqslant 4           & 1    &\ell   & 2\ell          & \text{natural}       & \rA_{\ell-1}              & \ell           & 2  \\ 
 \rD_\ell, \ \ell\geqslant 4           & \ell &\ell-1 & 2^{\ell-1}     & \text{half-spinor}   & \rA_{\ell-1}              & \ell           & \ell-2  \\
-\rE_\ell, \ \ell=6, 7, 8              & \ell &2      & 27, 56, 248    & \text{minimal}       & \rA_{\ell-1}              & \ell           & 3       \\ 
-\rE_\ell, \ \ell=6, 7, 8              & \ell &1      & 27, 56, 248    & \text{minimal}       & \rD_{\ell-1}              & 2(\ell-1)      & \ell-1 \\
-\rE_\ell, \ \ell=6, 7, 8              & 1    &2      & 27, 133, 3875  & \text{???}           & \rA_{\ell-1}              & ?              & ? \\
+\rE_\ell, \ \ell=6, 7                 & \ell &2      & 27, 56         & \text{minimal}       & \rA_{\ell-1}              & \ell           & 3       \\ 
+\rE_\ell, \ \ell=6, 7                 & \ell &1      & 27, 56         & \text{minimal}       & \rD_{\ell-1}              & 2(\ell-1)      & \ell-1 \\
 \rF_4,                                & 4    & 1     & 26             & \text{minimal}       & \rC_{3}                   & 6              & 3 \end{array}\]
  \caption{List of representations used in the proof of \cref{thm:DennisVaserstein}.} \label{table:dv-reps}
 \end{table}
@@ -535,45 +587,51 @@ Finally, since $[B, X_{-\alpha_r}(R)] \subseteq \U(\Sigma_r^-, R) \cap \E(\Phi, 
 \begin{equation*} \label{rel:ninv} A^{X_{-\alpha_{r}}(R)} = \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot B ^{X_{-\alpha_{r}}(R)} \cdot \EP_s(R, I) = A. \qedhere \end{equation*}
 \end{proof}
 
-\begin{proof} [Proof of \cref{thm:DennisVaserstein}]
-From Lemmas~\ref{lemma:Stein_reduction} and~\ref{lemma:dv-normal} it follows that $N(A_{rs})$ contains $\EP_s(R)$, 
- hence by~\cref{lem:LN} we obtain that $\EP_s(R, I) \subseteq L(A_{rs})$.
-
-Our next goal is to verify the inclusion $\U(\Sigma_s^-, I) \subseteq L(A_{rs})$. Our main tools will be~\cref{lem:LN} and \cref{item-trans2}.
-Since $\widetilde{W}(\Delta_s) \subseteq \E(\Delta_s, R) \subseteq N(A_{rs})$ and 
- $X_{\alpha}(I) \subseteq L(A_{rs})$ for $\alpha \in \Sigma^-_s\cap \Delta_r$, 
-we immediately obtain that $L(A_{rs})$ contains root subgroups $X_\alpha(I)$ for all $\alpha$ lying in the orbit $O = W(\Delta_s) \cdot (\Sigma^-_s\cap \Delta_r)$.
-Thus, we are left to consider five cases when $O$ does not coincide with $\Sigma^-_s$.
-\begin{enumerate} 
- \item \textit{Case $\Phi = \rE_8$, $s=8$, $r=1,2$.}  
- There is only one root in $\Sigma_8^-$ not lying in $O$, namely $-\alpha_{\max}$ with $\shape(\{\alpha_8\}, -\alpha_{\max}) = -2$.
- Since $X_{-\alpha_8}(R) \subseteq N(A_{rs})$, $X_{\alpha_8-\alpha_{\max}}(I) \subseteq L(A_{rs})$ the desired inclusion
-  follows from Chevalley commutator formula $x_{\alpha_{\max}}(\pm ab)=[x_{\alpha_8-\alpha_{\max}}(a), x_{\alpha_8}(b)].$
- \item \textit{Case $\Phi = \rE_7,$ (resp. $\Phi= \rE_8$), $s=1$, $r=2$.}
- There is only one (resp. there are $14$) roots in $\Sigma_1^-$ with $1$-shape $-2$, which are not contained in $O$ for this reason.
- Denote by $\beta$ the maximal root of $\Phi$ (resp. the maximal root of $\Delta_8 \cong \rE_7$).
- It is easy to check that $\shape(\{\alpha_1\}, \beta) = 2$ but $-\beta+\alpha_1 \in O$, therefore the assertion can be obtained via the same argument. 
+We will need one more root-theoretic lemma before we proceed with the proof of~\cref{thm:DennisVaserstein}.
+Let $\Phi$, $r$ and $s$ be as in~\cref{table:dv-reps}.
+Denote by $O$ the subset of roots of $\Sigma_s^-$ lying in the orbit $W(\Delta_s) \cdot (\Sigma^-_s\cap \Delta_r)$.
+\begin{lemma} \label{lemma:root-lemma}
+Suppose that $\Phi \neq \rC_\ell$. The following alternative holds: either $O$ coincides with $\Sigma_s^-$ or
+$\Phi=\rB_\ell, \rF_4$ and $\Sigma_s^- \setminus O$ consists of the sole short root $\gamma$, which can be presented as a sum 
+ $\gamma = \alpha + \beta$ for some short root $\alpha \in \Phi^+$ and some long root $\beta \in O$ satisfying $\beta + 2\alpha \in O$. 
+\end{lemma}
+\begin{proof}
+From \cref{lemma:abs} it follows that $O$ does not coincide with $\Sigma^-_s$ only in the following two cases.
+ \begin{enumerate} 
  \item \textit{Case $\Phi = \rB_\ell$, $s=1$, $r=\ell$.} 
- Only the sole short root of $\Sigma_1^-$ is not contained in $O$. Consider the following two roots of $\Phi$:
- \begin{equation}\nonumber \beta = \alpha_2 + \ldots + \alpha_\ell,\ \gamma = -\alpha_1 - 2\alpha_2 - \ldots -2\alpha_\ell.\end{equation}
- We need to verify $X_{\beta+\gamma}(I) \subseteq L(A_{rs})$, but this follows from $X_{\gamma}(I) \cup X_{-\alpha_1}(I) \subseteq L_{rs}$,
-  $X_{\beta}(R) \subseteq N(A_{rs})$ using Chevalley commutator formula:
-  \begin{equation} \label{eq:CCF} x_{\beta+\gamma}(-ab) = [x_{\gamma}(a),\, x_{\beta}(b)] \cdot x_{\gamma + 2\beta}(ab^2). \end{equation}
+ Only the sole short root of $\Sigma_1^-$ is not contained in $O$, denote it by $\gamma$. Set $\alpha = \alpha_2 + \ldots + \alpha_\ell,\ \beta = -\alpha_1 - 2\alpha_2 - \ldots -2\alpha_\ell.$
+ It is clear that $\alpha \in \Phi^+$, $\beta, \beta + 2\alpha \in O$.
  \item \textit{Case $\Phi = \rF_4$, $s=4$, $r=1$.} There are three possibilities for the $s$-shape and length of $\alpha\in \Sigma_4^-$: 
  \begin{itemize}
   \item $\shape(\{\alpha_4\}, \alpha) = 1$, $\alpha$ is short (there are 8 such roots);
   \item $\shape(\{\alpha_4\}, \alpha) = 2$, $\alpha$ is long (there are 6 such roots);
-  \item $\shape(\{\alpha_4\}, \alpha) = 2$, $\alpha$ is short (there is only one such root: $\delta = -\alpha_1 -2\alpha_2-3\alpha_3-2\alpha_4$).
+  \item $\shape(\{\alpha_4\}, \alpha) = 2$, $\alpha$ is short (there is only one such root, denote it $\gamma$).
  \end{itemize}
- Since $\Delta_r \cap \Sigma_s^-$ contains roots of the first two types, we only need to verify $X_\delta(I) \subseteq L(A_{rs})$. 
- But the latter inclusion follows from formula~\eqref{eq:CCF} with $\beta = \alpha_2 + \alpha_3,\ \gamma = -\alpha_{{\max}}$. 
+ Since $\Delta_r \cap \Sigma_s^-$ contains roots of the first two types, only $\gamma$ is not contained in $O$.
+ Clearly, $\gamma = -\alpha_1 -2\alpha_2-3\alpha_3-2\alpha_4 = \alpha + \beta$ for $\alpha = \alpha_2 + \alpha_3\in \Phi^+,$ $\beta = -\alpha_{{\max}} \in O$. \qedhere
+\end{enumerate}
+\end{proof}
+
+\begin{proof} [Proof of \cref{thm:DennisVaserstein}]
+From Lemmas~\ref{lemma:Stein_reduction} and~\ref{lemma:dv-normal} it follows that $N(A_{rs})$ contains $\EP_s(R)$.
+Thus, by~\cref{lem:LN} we obtain that $\EP_s(R, I) \subseteq L(A_{rs})$.
+
+Our next goal is to verify the inclusion $\U(\Sigma_s^-, I) \subseteq L(A_{rs})$.
+Since $\widetilde{W}(\Delta_s) \subseteq \E(\Delta_s, R) \subseteq N(A_{rs})$ and 
+ $X_{\alpha}(I) \subseteq L(A_{rs})$ for $\alpha \in \Sigma^-_s\cap \Delta_r$, 
+we obtain from~\cref{lem:LN} and \cref{item-trans2} that $L(A_{rs})$ contains root subgroups $X_\alpha(I)$ for $\alpha \in O = W(\Delta_s) \cdot (\Sigma^-_s\cap \Delta_r)$.
+Thus, by~\cref{lemma:root-lemma} we are left to consider two cases when $O$ does not coincide with $\Sigma^-_s$. 
+\begin{enumerate} 
+  \item \textit{Case $\Phi = \rB_\ell, \rF_4$.} Let $\alpha, \beta, \gamma$ be as in~\cref{lemma:root-lemma}.
+  Since $X_{\beta}(I), X_{\beta+2\alpha}(I) \subseteq L(A_{rs})$ and $X_{\alpha}(R) \subseteq N(A_{rs})$ we obtain the required inclusion
+   $X_{\gamma}(I)$ using Chevalley commutator formula:
+   \begin{equation} \nonumber x_{\gamma}(\pm ab) = [x_{\beta}(a),\, x_{\alpha}(b)] \cdot x_{\beta + 2\alpha}(ab^2). \end{equation}
  \item \textit{Case $\Phi = \rC_\ell$, $s=1$, $r=\ell$.} 
-  In this case the inclusion $X_{-\alpha_{\max}}(I) \subseteq L(A_{rs})$ does not follow from commutator formulae, therefore we need to invoke stability assumptions one more time.
+  In this case we need to invoke stability assumptions one more time.
   From~\cref{lemma:DVST} below we obtain that $N(A_{rs})$ contains $X_{-\alpha_1}(R)$ and therefore coincides with $\E(\Phi, R)$.
   The required inclusion now follows~\cref{item-trans1}.
 \end{enumerate}
-
-Thus, we have just shown that $\mathcal{X}\subseteq L(A_{rs})$. 
+Thus, we have shown that $\mathcal{X}\subseteq L(A_{rs})$. 
 Recall from~\cite[Theorem~3.4]{S} that the group $\E(\Phi, R, I)$ is generated by the subset $\mathcal{Z}(\Sigma_s^-)$.
 On the other hand, from $\mathcal{Z}(\Sigma_s^-) \subseteq \mathcal{X}^{\EP_s(R)} \subseteq L(A_{rs})^{N(A_{rs})} \subseteq L(A_{rs})$ we conclude that 
  $\E(\Phi, R, I) \subseteq L(A_{rs})$, which completes the proof.
@@ -583,7 +641,7 @@ On the other hand, from $\mathcal{Z}(\Sigma_s^-) \subseteq \mathcal{X}^{\EP_s(R)
 Assume that $\Phi=\rC_\ell$ and $\sr(I) \leq \ell-1$, then $X_{-\alpha_s}(R) \subseteq N_{rs}$.
 \end{lemma}
 \begin{proof}
-Denoteb by $C$ the set consisting of elements $g \in \EP_s(R, I)$ for which matrix entries $(g_{i, 2})$, $i=2, \ldots, \ell$ form an $I$-unimodular column of height $\ell-1$
+Denote by $C$ the set consisting of elements $g \in \EP_s(R, I)$ for which matrix entries $(g_{i, 2})$, $i=2, \ldots, \ell$ form an $I$-unimodular column of height $\ell-1$
 
 Set $A' = \EP_\ell(R, I) \cdot \U(\Sigma_s^- \cap \Sigma_r^-, I) \cdot C$.
 Applying \cref{item:asrUnipC} we find for every $g \in \EP_s(R, I)$ an element $x \in \U(\Sigma_r^+ \cap \Delta_s, I)$ such that $xg \in C$.  
@@ -605,58 +663,6 @@ Consequently, one has
 \subseteq \EP_r(R, I) \cdot \U(\Phi^-, I) \cdot \EP_s(R, I) \subseteq A_{rs}, \end{multline*}
 as claimed.
 \end{proof}
-
-\subsection{Relative Gauss decomposition}\label{sec:gauss}
-The proof of the Gauss decomposition presented below is similar to the proof in the absolute case (cf.~\cite[Theorem~5.1]{Sm12}).
-
-\begin{prop} \label{thm:Gauss}
-Let $\Phi$ be a reduced irreducible root system of rank $\ell > 1$ and let $\Delta_k$, $\Delta_l$ be
-the reductive subsystems of $\Phi$ corresponding to a pair of distinct simple roots $\alpha_k$, $\alpha_l \in \Pi$.
-Suppose that both relative elementary subgroups $\E(\Delta_i, R, I)$, $i=k, l$ admit Gauss decomposition:
-\[ \E(\Delta_i, R, I) = \Hh(\Delta_i, R, I) \cdot \U(\Delta^+_i, I) \cdot \U(\Delta^-_i, I) \cdot \U(\Delta^+_i, I), \quad i=k, l. \]
-Then $\E(\Phi, R, I)$ also admits Gauss decomposition:
-\begin{equation} \label{eq:gauss1} \E(\Phi, R, I) = \Hh(\Phi, R, I) \cdot \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot \U(\Phi^+, I). \end{equation}
-\end{prop}
-\begin{proof}
-For a closed subset of roots $S \subseteq \Phi^+$ set $A(S, I) = \U(S, I) \cdot \U(-S, I) \cdot \U(S, I)$ (here by $-S$ we denote the corresponding subset of opposite roots).
-Notice that from Levi decomposition it follows that $A(\Phi^+, I) = A(\Delta_i^+, I) \cdot A(\Sigma_i^+, I)$.
-
-Denote by $A$ the product of subgroups in the right-hand side of~\eqref{eq:gauss1}.
-First of all, notice that for $h \in \Hh(\Phi, R, I)$, $\beta \in \Phi$ and $\xi \in R$ one has $x_\beta(\xi)^h = x_\beta(\xi + s\xi)$ for some $s\in I$.
-From this and the assumption of the proposition we obtain for $\alpha \in \Delta_k \cup \Delta_l$ that
-\begin{multline} \nonumber
- A^{x_\alpha(\xi)} = (\Hh(\Phi, R, I) \cdot A(\Phi^+, I))^{X_\alpha(R)} \subseteq (\Hh(\Phi, R, I) \cdot \E(\Delta_i, R, I) \cdot A(\Sigma_i^+, I))^{x_\alpha(\xi)} \subseteq \\
-  \subseteq \Hh(\Phi, R, I) X_{\alpha}(I) \cdot \E(\Delta_i, R, I) \cdot A(\Sigma_i^+, I) \subseteq \Hh(\Phi, R, I) \cdot \Hh(\Delta_i, R, I) A(\Delta_i^+, I) \cdot A(\Sigma_i^+, I) \subseteq A.
-\end{multline}
-On the other hand, for $\beta \in \Phi^+$ we have
-\begin{equation} \nonumber
- X_{\beta}(I) \cdot A \subseteq \Hh(\Phi, R, I) \cdot X_{\beta}(I) A(\Phi^+, I) \subseteq A.
-\end{equation}
-Thus, $A$ is normalized by root subgroups $X_\alpha(R)$, $\alpha \in \Delta_k \cup \Delta_l$ and therefore is normalized by $\E(\Phi, R)$.
-On the other hand, from $\U(\Phi^+, I) \cdot A \subseteq A$ and~\cref{lem:LN} we conclude that $\mathcal{X} \cdot A \subseteq A$ and hence
- that $\E(\Phi, R, I) \cdot A \subseteq A$.
-\end{proof}
-
-\begin{thm}\label{thm:srRI1}
-Let $\Phi$ be a root system, let $I$ be an ideal of an arbitrary commutative ring $R$, and assume that $\sr(I)=1$.
-Then the relative elementary Chevalley group $\E(\Phi, R, I)$ admits Gauss decomposition:
-\[ \E(\Phi, R, I) = \Hh(\Phi, R, I) \cdot \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot \U(\Phi^+, I). \]
-\end{thm}
-\begin{proof}
-In view of \cref{thm:Gauss} it suffices to show that Gauss decomposition holds in the special case $\Phi=\rA_1$.
-Let $A=\begin{psmallmatrix}a & b \\ c & d\end{psmallmatrix}$ be an element of $\SL(2, R, I)$.
-The first column of $A$ is $I$-unimodular, therefore there exists $z\in I$ such that $a+cz\in R^*$.
-Multiplying $A$ on the left by $x_{12}(z)$, we get a matrix $A'=x_{12}(z)\cdot A=\begin{psmallmatrix}a' & b' \\ c & d\end{psmallmatrix}$ with invertible element $a'$ in the top-left corner.
-After multiplying $A'$ on the left by $x_{21}(-c/a')$ and on the right by $x_{12}(-b'/a')$ we get a diagonal matrix. 
-Thus we have obtained a relative Gauss decomposition for $A$:
-\begin{equation*}
-A=x_{12}(-z)\cdot x_{21}(c/a')\cdot
-\begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
-\cdot x_{12}(b'/a')=x_{12}(-z)\cdot
-\begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
-\cdot x_{21}(y) \cdot x_{12}(b'/a'), 
-\end{equation*}
-where $\varepsilon\in 1+I$ and $y\in I$. \end{proof}
 
 \subsection{Relative Bass--Kolster decompositions}\label{sec:bass-kolster}
 The next theorem is a relative version of the so-called Bass--Kolster decomposition (cf.~\cite[Theorem~2.1]{St78}).
