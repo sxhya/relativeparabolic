@@ -617,7 +617,7 @@ Thus, by~\cref{lemma:root-lemma} we are left to consider two cases when $O$ does
 \begin{enumerate} 
   \item \textit{Case $\Phi = \rB_\ell, \rF_4$.} Let $\alpha, \beta, \gamma$ be as in~\cref{lemma:root-lemma}.
   Since $X_{\beta}(I), X_{\beta+2\alpha}(I) \subseteq L(A_{rs})$ and $X_{\alpha}(R) \subseteq N(A_{rs})$ we obtain the required inclusion
-   $X_{\gamma}(I)$ using Chevalley commutator formula:
+   $X_{\gamma}(I) \subseteq L(A_{rs})$ using Chevalley commutator formula:
    \begin{equation} \nonumber x_{\gamma}(\pm ab) = [x_{\beta}(a),\, x_{\alpha}(b)] \cdot x_{\beta + 2\alpha}(ab^2). \end{equation}
  \item \textit{Case $\Phi = \rC_\ell$, $s=1$, $r=\ell$.} 
   In this case we need to invoke stability assumptions one more time.
@@ -631,7 +631,7 @@ On the other hand, from $\mathcal{Z}(\Sigma_s^-) \subseteq \mathcal{X}^{\EP_s(R)
 \end{proof}
 
 \begin{lemma}\label{lemma:DVST}
-Assume that $\Phi=\rC_\ell$ and $\sr(I) \leq \ell-1$, then $X_{-\alpha_s}(R) \subseteq N_{rs}$.
+Assume that $\Phi=\rC_\ell$ and $\sr(I) \leq \ell-1$, then $X_{-\alpha_s}(R) \subseteq N(A_{rs})$.
 \end{lemma}
 \begin{proof}
 Denote by $C$ the set consisting of elements $g \in \EP_s(R, I)$ for which matrix entries $(g_{i, 2})$, $i=2, \ldots, \ell$ form an $I$-unimodular column of height $\ell-1$
