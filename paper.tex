@@ -101,7 +101,7 @@
 \makeatother
    
 \title[Decompositions of congruence subgroups of Chevalley groups]{Decompositions of congruence subgroups \\ of Chevalley groups}
-\keywords {parabolic decomposition, bounded generation, $\SL_2$-factorization, subsystem factorization, product decomposition. {\em Mathematical Subject Classification (2010):} 20G40, 20G35, 19B14}
+\keywords {parabolic decomposition, bounded generation, $\SL_2$-factorization, subsystem factorization, product decomposition. {\em Mathematical Subject Classification (2010):} 20G35, 19B14}
 \author{Sergey Sinchuk}
 \address{Chebyshev laboratory, St. Petersburg State University, St. Petersburg, Russia}
 \email{sinchukss {\it at} yandex.ru;}
@@ -119,18 +119,23 @@
 We formulate and prove relative versions of several decompositions known in the theory of Chevalley groups over commutative rings.
 These decompositions are used to obtain factorizations in terms of subsystem subgroups of type $\rA_\ell$ and 
  upper estimates of the width of principal congruence subgroups in terms of Tits--Vaserstein generators.
-Some of our results are new even in the absolute case and were previously studied only for groups over finite fields.
+%Some of our results are new even in the absolute case and were previously studied only for groups over finite fields.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}\label{sec:intro}
-The aim of this paper is to generalize several decompositions of Chevalley groups over rings 
- to their principal congruence subgroups and relative elementary subgroups.
-We focus on the so-called ``parabolic decompositions'', i.e. decompositions involving parabolic and unipotent factors. 
-One of our main results is the following theorem.
-\begin{thm}[Dennis--Vaserstein decomposition]\label{thm:DennisVaserstein}
-Let $\Phi$ be an irreducible root system of rank $\ell\geqslant 2$ and $\{ r, s \}$ be a pair of distinct endnodes of the Dynkin diagram of $\Phi$.
+This paper studies decompositions of Chevalley groups over commutative rings (see e.\,g.~\cite{VP} and references therein for the introduction to the theory of Chevalley groups over rings).
+Recall that classical decompositions of Chevalley groups over fields such as e.\,g. Bruhat decomposition do not generalize to groups over more general classes of rings.
+Nevertheless, Chevalley groups over rings of {\it finite stable rank} do admit several remarkable ``parabolic decompositions'', i.\,e. decompositions formulated in terms of parabolic and unipotent subgroups.
+Main interest in these decompositions comes mainly from the study of stability problems for $\K_1$-function modeled on Chevalley groups (see e.\,g.~\cite{St78, Si13}).
+
+The first goal of this paper is to prove analogues of these decompositions for congruence subgroups of Chevalley groups of level $I \trianglelefteq R$
+ while making ring-theoretic assumptions only about the ideal $I$ and not the ring $R$ itself.
+One of our main results is the following theorem, which is, essentially, a version of Dennis--Vaserstein decomposition for the relative elementary group $\E(\Phi, R, I)$
+ (cf.~\cite[Theorems~2.5 and~4.1]{St78},~\cite[Theorem~1.2]{Si13}).
+\begin{thm}\label{thm:DennisVaserstein}
+Let $\Phi \neq \rE_8$ be an irreducible root system of rank $\ell\geqslant 2$ and $\{ r, s \}$ be a pair of distinct endnodes of the Dynkin diagram of $\Phi$.
 Denote by $d$ the distance between $r$ and $s$ on the Dynkin diagram.
 Assume that $\Phi$, $I$ and $\{r, s\}$ satisfy either of the following assumptions:
 \begin{thmlist}
@@ -140,19 +145,18 @@ Assume that $\Phi$, $I$ and $\{r, s\}$ satisfy either of the following assumptio
 \end{thmlist}
 Then $\E(\Phi, R, I) = \EP_r(R, I) \cdot \U(\Sigma^-_r \cap \Sigma^-_s, I) \cdot \EP_s(R, I).$
 \end{thm}
-Even in the special case $I=R$ the above theorem contains several new cases as compared to~\cite[Theorems~2.5 and~4.1]{St78}.
-The condition $\asr(I) \leq d$ is a relative version of the \emph{absolute stable range} condition of D.~Estes and J.~Ohm, which depends only on the ideal $I$ (see section~\ref{sec:rel-asr}).
-Another results of the paper are relative analogues of Gauss and Bass--Kolster decompositions (see~\cref{thm:srRI1,thm:BassKolster}).
+The notation for the groups and ring-theoretic invariants appearing in the above statement is introduced in Sections~\ref{sec:preliminaries} and~\ref{sec:stability-conditions}.
 
-We apply our decompositions to several problems. First, we obtain upper estimates of the number of factors in the presentation of a Chevalley group as a product of its subsystem subgroups of type $\rA_\ell$.
-For example, in~\cref{thm:SL2width} such estimates are given for relative classical groups and products of subgroups $\SL(2, R, I)$.
-Our another result is the decomposition in terms of subgroups of type $\rA_\ell$ of submaximal rank. 
-Using~\cref{thm:DennisVaserstein} we prove the following theorem inspired by the main result of~\cite{Nik07}.
+Our further results in this direction are relative analogues of Gauss and Bass--Kolster decompositions (see~\cref{thm:srRI1,thm:BassKolster}).
+%TODO: For what?
+Another goal of this paper is to apply parabolic decompositions for obtaining the estimates of the width of relative Chevalley groups in terms of certain generating sets.
+For example, in~\cref{thm:width} we obtain upper estimates on the width of $\E(\Phi, R, I)$ with respect to Tits--Vaserstein generators for several small-dimensional rings. 
+Also, as a corollary of Bass--Kolster decomposition we obtain upper estimates of the number of factors in the presentation of a classical Chevalley group
+ as a product of its subsystem subgroups $\SL(2, R, I)$, see~\cref{thm:SL2width}.
+Moreover, as a corollary of~\cref{thm:DennisVaserstein} we obtain the following theorem, which is inspired by the main result of~\cite{Nik07}.
 \begin{thm}\label{thm:spin-sln-prod}
 Assume that $\sr(I) \leqslant 2$. Then the group $\Epin(2\ell, R, I)=\E(\rD_\ell, R, I)$ is a product of at most $9$ regularly embedded subgroups of type $\rA_{\ell-1}$.
 \end{thm}
-
-Finally, we obtain upper bounds on the width of $\E(\Phi, R, I)$ with respect to Tits--Vaserstein generators for several important classes of small-dimensional rings (see~\cref{thm:width}). 
 
 \section{Preliminaries}\label{sec:preliminaries}
 Let $\Phi$ be a reduced irreducible root system of rank $\ell$ with a fixed basis of fundamental roots $\Pi=\{\alpha_1, \ldots, \alpha_l\}$.
@@ -250,7 +254,7 @@ Notice that $(1+s)^{-1}\in 1+I$ hence all the above factors lie in $\E(\Phi, R, 
 The following lemma is, in essence, a relative version of the classical Chevalley--Matsumoto decomposition.
 It can be easily deduced from the absolute statement (see e.\,g.~\cite[Theorem~1.3]{St78}).
 \begin{lemma}\label{lemma:Chevalley-Matsumoto}
-Let $\pi$ be a basic fundamental representation of $\G_{sc}(\Phi, R)$ with the highest weight $\varpi_s$.
+Let $\pi$ be a basic fundamental representation of $\G_{sc}(\Phi, R)$ with highest weight $\varpi_s$.
 Assume that $g\in \G_{sc}(\Phi, R, I)$ is such that $(g\cdot v^+)_{\varpi_{s}}=1$, then $g \in \U(\Sigma_s^-, I) \cdot \G_{sc}(\Delta_s, R, I) \cdot \U(\Sigma_s^+, I)$.
 \end{lemma}
 
@@ -476,7 +480,7 @@ Let $A=\begin{psmallmatrix}a & b \\ c & d\end{psmallmatrix}$ be an element of $\
 The first column of $A$ is $I$-unimodular, therefore there exists $z\in I$ such that $a+cz\in R^*$.
 Multiplying $A$ on the left by $x_{12}(z)$, we get a matrix $A'=x_{12}(z)\cdot A=\begin{psmallmatrix}a' & b' \\ c & d\end{psmallmatrix}$ with invertible element $a'$ in the top-left corner.
 After multiplying $A'$ on the left by $x_{21}(-c/a')$ and on the right by $x_{12}(-b'/a')$ we get a diagonal matrix. 
-Thus we have obtained a relative Gauss decomposition for $A$:
+Thus, we have obtained a relative Gauss decomposition for $A$:
 \begin{equation*}
 A=x_{12}(-z)\cdot x_{21}(c/a')\cdot
 \begin{pmatrix} \varepsilon & 0 \\ 0 & 1/\varepsilon \end{pmatrix}
@@ -614,7 +618,7 @@ Our next goal is to verify the inclusion $\U(\Sigma_s^-, I) \subseteq L(A_{rs})$
 Since $\widetilde{W}(\Delta_s) \subseteq \E(\Delta_s, R) \subseteq N(A_{rs})$ and 
  $X_{\alpha}(I) \subseteq L(A_{rs})$ for $\alpha \in \Sigma^-_s\cap \Delta_r$, 
 we obtain from~\cref{lem:LN} and \cref{item-trans2} that $L(A_{rs})$ contains root subgroups $X_\alpha(I)$ for $\alpha$ lying in the orbit $O = W(\Delta_s) \cdot (\Sigma^-_s\cap \Delta_r)$.
-Thus we are left to consider three cases when $O$ does not coincide with $\Sigma^-_s$. 
+Thus, we are left to consider three cases when $O$ does not coincide with $\Sigma^-_s$. 
 \begin{enumerate} 
   \item \textit{Case $\Phi = \rB_\ell$, $s=1$, $r=\ell$.} 
  Only the sole short root of $\Sigma_1^-$ is not contained in $O$, denote it by $\gamma$.
