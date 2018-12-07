@@ -1,6 +1,6 @@
 \documentclass[11pt]{amsart}
 \usepackage{amscd, amsmath, amssymb, amsthm, amsfonts, amstext, verbatim, enumitem, graphicx, mathtools, xfrac, tikz-cd, microtype, nameref, thmtools}
-\usepackage[breaklinks=true]{hyperref}
+%\usepackage{hyperref}
 \usepackage[capitalize]{cleveref}
 
 \definecolor{darkblue}{rgb}{0.0, 0.0, 0.6}
@@ -13,7 +13,7 @@
   linkcolor=darkblue,
   citecolor=darkblue}
 
-\usepackage[hyperref=true, backend=bibtex, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
+\usepackage[hyperref=true, backend=biber, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
 \addbibresource{paper.bib}
 \renewbibmacro*{volume+number+eid}{\ifentrytype{article}{\- \iffieldundef{volume}{}{Vol.~\printfield{volume},}\iffieldundef{number}{}{ No.~\printfield{number},}}}
 \renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
@@ -504,7 +504,7 @@ for some $\varepsilon\in 1+I$ and $y\in I$. \end{proof}
 Let $\Phi$ be an irreducible root system of rank $\ell\geq 2$ and $\{r, s\}$ be a pair of distinct endnodes of the Dynkin diagram of $\Phi$.
 
 Before we proceed with the proof of~\cref{thm:DennisVaserstein} let us remark that in the special case $\ell=2$, $\sr(I)= 1$
- we already known that $\E(\Phi, R, I)$ admits Gauss decomposition.
+ we already know that $\E(\Phi, R, I)$ admits Gauss decomposition.
 It is not hard to see that Dennis--Vaserstein decomposition follows from Gauss decomposition.
 Thus, in the sequel we may assume, without loss of generality, that $\ell > 2$.
 
@@ -665,7 +665,7 @@ Let $\Phi$ be a classical root system of rank $\ell\geqslant2$, let $R$ be an ar
 \end{array}\]
 Then the principal congruence subgroup $\G(\Phi, R, I)$ admits decomposition:
 \[ \G(\Phi, R, I)=  \U(\Phi^+, I) \cdot \U(\Phi^-, I) \cdot Z \cdot \U(\Sigma_1^-\setminus\{-\alpha_{\max}\}, I) \cdot \U(\Sigma_1, I) \cdot \G(\Delta_1, R, I), \]
-where $Z = Z_{\alpha_{\max}}(I)=\left\{z_{-\alpha_{\max}}(r, 1)\ \middle|\ r\in I \right\}$.
+where $Z = Z_{-\alpha_{\max}}(I)=\left\{z_{-\alpha_{\max}}(r, 1)\ \middle|\ r\in I \right\}$.
 \end{thm}
 \begin{proof}
 
@@ -964,7 +964,7 @@ For any $g'=\begin{psmallmatrix}1+a & b \\ c & 1+d\end{psmallmatrix}\in G(I, I)$
 By \cref{lemma:Stepanov-ideal} the group $\E\left(\Phi, \mathcal{O}_S, I^2\right)$ is contained in $\E(\Phi, I)$ for any root system $\Phi\neq\rC_\ell$ of rank $\geqslant2$.
 Notice that under the assumptions of the lemma a deep result of O.~Tavgen asserts that $\E(\Phi, I)$ has finite width with respect to $\mathcal{X}$, see~\cite[Theorem~3.3]{TavgenThesis}.
 
-In remains to consider the case $\Phi=\rC_\ell$. First of all, notice that $2abc-abd\in II^{\indexbox{2}}$, indeed,
+It remains to consider the case $\Phi=\rC_\ell$. First of all, notice that $2abc-abd\in II^{\indexbox{2}}$, indeed,
 \[ \det(g_1)=a^3d-3a^2bc+a^2bd+ab^2c+a^3+a^2b+a^2d+2abc-abd+1. \]
 Consequently we obtain that
 \[ g_2=x_{21}(-a-c)\cdot g_1\cdot x_{12}(a-b)\equiv
